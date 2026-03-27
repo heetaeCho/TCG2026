@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[ 50%] Building CXX object generated_build/CMakeFiles/test_1200.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:22:28: error: base class has incomplete type
+   22 | class TestBasicIo : public Exiv2::BasicIo {
+      |                     ~~~~~~~^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:37:14: error: only virtual member functions can be marked 'override'
+   37 |   int open() override {
+      |              ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:44:15: error: only virtual member functions can be marked 'override'
+   44 |   int close() override {
+      |               ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:50:28: error: unknown type name 'Position'
+   50 |   int seek(int64_t offset, Position /*pos*/) override {
+      |                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:56:17: error: only virtual member functions can be marked 'override'
+   56 |   size_t size() override {
+      |                 ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:61:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   61 |   const bool isopen() override { return open_; }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:61:23: error: only virtual member functions can be marked 'override'
+   61 |   const bool isopen() override { return open_; }
+      |                       ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:63:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   63 |   const int error() override { return 0; }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:63:21: error: only virtual member functions can be marked 'override'
+   63 |   const int error() override { return 0; }
+      |                     ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:65:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   65 |   const bool eof() override { return false; }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:65:20: error: only virtual member functions can be marked 'override'
+   65 |   const bool eof() override { return false; }
+      |                    ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:67:29: error: only virtual member functions can be marked 'override'
+   67 |   const std::string& path() override { return path_; }
+      |                             ^~~~~~~~
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'Exiv2::BmffImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp:90:17: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BmffImage, std::unique_ptr<(anonymous namespace)::TestBasicIo>, bool, int>' requested here
+   90 |     return std::make_unique<Exiv2::BmffImage>(std::move(io), /*create=*/false,
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/bmffimage.hpp:58:3: note: candidate constructor not viable: no known conversion from 'unique_ptr<(anonymous namespace)::TestBasicIo, default_delete<(anonymous namespace)::TestBasicIo>>' to 'unique_ptr<BasicIo, default_delete<Exiv2::BasicIo>>' for 1st argument
+   58 |   BmffImage(std::unique_ptr<BasicIo> io, bool create, size_t max_box_depth = 1000);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/bmffimage.hpp:40:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   40 | class EXIV2API BmffImage : public Image {
+      |                ^~~~~~~~~
+3 warnings and 10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1200.dir/build.make:79: generated_build/CMakeFiles/test_1200.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1200.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24507: generated_build/CMakeFiles/test_1200.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24514: generated_build/CMakeFiles/test_1200.dir/rule] Error 2
+gmake: *** [Makefile:6965: test_1200] Error 2

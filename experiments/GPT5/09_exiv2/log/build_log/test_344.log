@@ -1,0 +1,186 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_344.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:12:5: error: only virtual member functions can be marked 'override'
+   12 |     MOCK_METHOD(bool, go, (GoEvent event), (const, override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:144:1: note: expanded from here
+  144 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:17:21: error: field type 'MockTiffVisitor' is an abstract class
+   17 |     MockTiffVisitor mockVisitor;
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:85:16: note: unimplemented pure virtual method 'visitEntry' in 'MockTiffVisitor'
+   85 |   virtual void visitEntry(TiffEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:87:16: note: unimplemented pure virtual method 'visitDataEntry' in 'MockTiffVisitor'
+   87 |   virtual void visitDataEntry(TiffDataEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:89:16: note: unimplemented pure virtual method 'visitImageEntry' in 'MockTiffVisitor'
+   89 |   virtual void visitImageEntry(TiffImageEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:91:16: note: unimplemented pure virtual method 'visitSizeEntry' in 'MockTiffVisitor'
+   91 |   virtual void visitSizeEntry(TiffSizeEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:93:16: note: unimplemented pure virtual method 'visitDirectory' in 'MockTiffVisitor'
+   93 |   virtual void visitDirectory(TiffDirectory* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:105:16: note: unimplemented pure virtual method 'visitSubIfd' in 'MockTiffVisitor'
+  105 |   virtual void visitSubIfd(TiffSubIfd* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:109:16: note: unimplemented pure virtual method 'visitIfdMakernote' in 'MockTiffVisitor'
+  109 |   virtual void visitIfdMakernote(TiffIfdMakernote* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:113:16: note: unimplemented pure virtual method 'visitBinaryArray' in 'MockTiffVisitor'
+  113 |   virtual void visitBinaryArray(TiffBinaryArray* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:120:16: note: unimplemented pure virtual method 'visitBinaryElement' in 'MockTiffVisitor'
+  120 |   virtual void visitBinaryElement(TiffBinaryElement* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:22:27: error: no matching constructor for initialization of 'TiffMnEntry'
+   22 |         tiffMnEntry = new TiffMnEntry(123, 1, 2);
+      |                           ^           ~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1015:3: note: candidate constructor not viable: no known conversion from 'int' to 'IfdId' for 2nd argument
+ 1015 |   TiffMnEntry(uint16_t tag, IfdId group, IfdId mnGroup);
+      |   ^                         ~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1006:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+ 1006 | class TiffMnEntry : public TiffEntryBase {
+      |       ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:36:18: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffMnEntry'
+   36 |     tiffMnEntry->doAccept(mockVisitor);
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1024:8: note: declared protected here
+ 1024 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:45:33: error: use of undeclared identifier 'geKnownMakernote'; did you mean 'MockTiffVisitor::geKnownMakernote'?
+   45 |     EXPECT_CALL(mockVisitor, go(geKnownMakernote)).WillOnce(testing::Return(true));
+      |                                 ^~~~~~~~~~~~~~~~
+      |                                 MockTiffVisitor::geKnownMakernote
+/usr/local/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/local/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:52:5: note: 'MockTiffVisitor::geKnownMakernote' declared here
+   52 |     geKnownMakernote = 1
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:48:18: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffMnEntry'
+   48 |     tiffMnEntry->doAccept(mockVisitor);
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1024:8: note: declared protected here
+ 1024 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:57:33: error: use of undeclared identifier 'geKnownMakernote'; did you mean 'MockTiffVisitor::geKnownMakernote'?
+   57 |     EXPECT_CALL(mockVisitor, go(geKnownMakernote)).WillOnce(testing::Return(false));
+      |                                 ^~~~~~~~~~~~~~~~
+      |                                 MockTiffVisitor::geKnownMakernote
+/usr/local/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/local/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:52:5: note: 'MockTiffVisitor::geKnownMakernote' declared here
+   52 |     geKnownMakernote = 1
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:60:18: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffMnEntry'
+   60 |     tiffMnEntry->doAccept(mockVisitor);
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1024:8: note: declared protected here
+ 1024 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:69:18: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffMnEntry'
+   69 |     tiffMnEntry->doAccept(mockVisitor);
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1024:8: note: declared protected here
+ 1024 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::TiffMnEntryTest_DoAccept_ValidVisitor_VisitsMnEntry_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:31:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::TiffMnEntryTest_DoAccept_ValidVisitor_VisitsMnEntry_Test>::CreateTest' requested here
+   31 | TEST_F(TiffMnEntryTest, DoAccept_ValidVisitor_VisitsMnEntry) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::TiffMnEntryTest_DoAccept_VisitorGoReturnsTrue_VisitsMnEntry_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:40:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::TiffMnEntryTest_DoAccept_VisitorGoReturnsTrue_VisitsMnEntry_Test>::CreateTest' requested here
+   40 | TEST_F(TiffMnEntryTest, DoAccept_VisitorGoReturnsTrue_VisitsMnEntry) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::TiffMnEntryTest_DoAccept_VisitorGoReturnsFalse_DoesNotVisitMnEntry_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:52:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::TiffMnEntryTest_DoAccept_VisitorGoReturnsFalse_DoesNotVisitMnEntry_Test>::CreateTest' requested here
+   52 | TEST_F(TiffMnEntryTest, DoAccept_VisitorGoReturnsFalse_DoesNotVisitMnEntry) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::TiffMnEntryTest_DoAccept_VisitorWithNullMn_VisitsMnEntryOnce_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp:64:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::TiffMnEntryTest_DoAccept_VisitorWithNullMn_VisitsMnEntryOnce_Test>::CreateTest' requested here
+   64 | TEST_F(TiffMnEntryTest, DoAccept_VisitorWithNullMn_VisitsMnEntryOnce) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_344.dir/build.make:79: generated_build/CMakeFiles/test_344.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_344.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:78023: generated_build/CMakeFiles/test_344.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:78030: generated_build/CMakeFiles/test_344.dir/rule] Error 2
+gmake: *** [Makefile:27427: test_344] Error 2

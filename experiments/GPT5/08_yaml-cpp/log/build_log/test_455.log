@@ -1,0 +1,43 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_455.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_455.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_455.cpp:43:22: error: call to implicitly-deleted copy constructor of 'YAML::EmitterState'
+   43 |   YAML::EmitterState copy = original;
+      |                      ^      ~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy constructor of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy constructor
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:66:3: note: 'SettingChanges' has been explicitly marked deleted here
+   66 |   SettingChanges(const SettingChanges&) = delete;
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_455.cpp:53:10: error: object of type 'YAML::EmitterState' cannot be assigned because its copy assignment operator is implicitly deleted
+   53 |   target = source;
+      |          ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy assignment operator of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy assignment operator
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:68:19: note: 'operator=' has been explicitly marked deleted here
+   68 |   SettingChanges& operator=(const SettingChanges&) = delete;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_455.cpp:63:22: error: call to implicitly-deleted copy constructor of 'YAML::EmitterState'
+   63 |   YAML::EmitterState moved_to(std::move(original));
+      |                      ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy constructor of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy constructor
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:66:3: note: 'SettingChanges' has been explicitly marked deleted here
+   66 |   SettingChanges(const SettingChanges&) = delete;
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_455.cpp:72:10: error: object of type 'YAML::EmitterState' cannot be assigned because its copy assignment operator is implicitly deleted
+   72 |   target = std::move(source);
+      |          ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy assignment operator of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy assignment operator
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:68:19: note: 'operator=' has been explicitly marked deleted here
+   68 |   SettingChanges& operator=(const SettingChanges&) = delete;
+      |                   ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_455.dir/build.make:79: generated_build/CMakeFiles/test_455.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_455.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21419: generated_build/CMakeFiles/test_455.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21426: generated_build/CMakeFiles/test_455.dir/rule] Error 2
+gmake: *** [Makefile:7980: test_455] Error 2

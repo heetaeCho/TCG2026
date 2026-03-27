@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1770.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:31:19: error: variable type 'CiffComponent' is an abstract class
+   31 |     CiffComponent emptyComponent(0, 0);
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:54:19: error: variable type 'CiffComponent' is an abstract class
+   54 |     CiffComponent emptyComponent(0, 0);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:69:38: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   69 |     ByteOrder byteOrder = ByteOrder::BigEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~
+      |                                      bigEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:81:38: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   81 |     ByteOrder byteOrder = ByteOrder::BigEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~
+      |                                      bigEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:104:23: error: variable type 'MockCiffComponent' is an abstract class
+  104 |     MockCiffComponent mockComponent(10, 20);
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'MockCiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'MockCiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:105:5: error: unknown type name 'UniquePtr'; did you mean 'CiffDirectory::UniquePtr'?
+  105 |     UniquePtr mockChildComponent = std::make_unique<CiffComponent>(30, 40);
+      |     ^~~~~~~~~
+      |     CiffDirectory::UniquePtr
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:64:9: note: 'CiffDirectory::UniquePtr' declared here
+   64 |   using UniquePtr = std::unique_ptr<CiffComponent>;
+      |         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'Exiv2::Internal::CiffComponent'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp:13:26: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::CiffComponent, int, int>' requested here
+   13 |         component = std::make_unique<CiffComponent>(10, 20);
+      |                          ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1770.dir/build.make:79: generated_build/CMakeFiles/test_1770.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1770.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:72719: generated_build/CMakeFiles/test_1770.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:72726: generated_build/CMakeFiles/test_1770.dir/rule] Error 2
+gmake: *** [Makefile:25399: test_1770] Error 2

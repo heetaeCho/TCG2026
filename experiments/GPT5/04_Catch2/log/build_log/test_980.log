@@ -1,0 +1,106 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_980.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:15:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:6330:11: warning: 'FAIL' macro redefined [-Wmacro-redefined]
+ 6330 |   #define FAIL( ... ) INTERNAL_CATCH_MSG( "FAIL", Catch::ResultWas::ExplicitFailure, Catch::ResultDisposition::Normal, __VA_ARGS__ )
+      |           ^
+/usr/local/include/gtest/gtest.h:1769:9: note: previous definition is here
+ 1769 | #define FAIL() GTEST_FAIL()
+      |         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:15:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:6332:11: warning: 'SUCCEED' macro redefined [-Wmacro-redefined]
+ 6332 |   #define SUCCEED( ... ) INTERNAL_CATCH_MSG( "SUCCEED", Catch::ResultWas::Ok, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |           ^
+/usr/local/include/gtest/gtest.h:1779:9: note: previous definition is here
+ 1779 | #define SUCCEED() GTEST_SUCCEED()
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:115:49: error: too many arguments provided to function-like macro invocation
+  115 |         using Expected = CM::ApproxMatcher<int, std::allocator<int>, std::allocator<int>>;
+      |                                                 ^
+/usr/local/include/gtest/gtest.h:1793:9: note: macro 'EXPECT_NO_THROW' defined here
+ 1793 | #define EXPECT_NO_THROW(statement) \
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:111:5: note: cannot use initializer list at the beginning of a macro argument
+  111 |     EXPECT_NO_THROW({
+      |     ^               ~
+  112 | 
+  113 |         auto m = CM::Approx(empty);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  114 | 
+  115 |         using Expected = CM::ApproxMatcher<int, std::allocator<int>, std::allocator<int>>;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  116 | 
+  117 |         static_assert(std::is_same<decltype(m), Expected>::value, "Type should still match for empty comparator");
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  118 | 
+  119 |         (void)m;
+      |         ~~~~~~~~
+  120 | 
+  121 |     });
+      |     ~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:111:5: error: use of undeclared identifier 'EXPECT_NO_THROW'
+  111 |     EXPECT_NO_THROW({
+      |     ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:69:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ext/alloc_traits.h:34:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:68:16: error: static assertion failed due to requirement 'is_same<std::allocator<float>, MyAlloc<float>>::value': allocator_traits<A>::rebind_alloc<A::value_type> must be A
+   68 |         static_assert(is_same<
+      |                       ^~~~~~~~
+   69 |           typename _Tp::template rebind<typename _Tp::value_type>::other,
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   70 |                         _Tp>::value,
+      |                         ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:94:5: note: in instantiation of template class 'std::__allocator_traits_base::__rebind<MyAlloc<float>, float>' requested here
+   94 |     using __alloc_rebind
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:228:2: note: in instantiation of template type alias '__alloc_rebind' requested here
+  228 |         using rebind_alloc = __alloc_rebind<_Alloc, _Tp>;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ext/alloc_traits.h:126:47: note: in instantiation of template type alias 'rebind_alloc' requested here
+  126 |       { typedef typename _Base_type::template rebind_alloc<_Tp> other; };
+      |                                               ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:87:59: note: in instantiation of template class '__gnu_cxx::__alloc_traits<MyAlloc<float>>::rebind<float>' requested here
+   87 |       typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+      |                                                           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:425:30: note: in instantiation of template class 'std::_Vector_base<float, MyAlloc<float>>' requested here
+  425 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |                              ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:163:27: note: in instantiation of template class 'std::vector<float, MyAlloc<float>>' requested here
+  163 |     std::vector<float, A> comp{1.0f, 2.0f};
+      |                           ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:61:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/vector:66:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:134:11: error: base specifier must name a class
+  134 |         : public _Tp_alloc_type, public _Vector_impl_data
+      |           ~~~~~~~^~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:371:20: note: in instantiation of member class 'std::_Vector_base<float, MyAlloc<float>>::_Vector_impl' requested here
+  371 |       _Vector_impl _M_impl;
+      |                    ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:425:30: note: in instantiation of template class 'std::_Vector_base<float, MyAlloc<float>>' requested here
+  425 |     class vector : protected _Vector_base<_Tp, _Alloc>
+      |                              ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:163:27: note: in instantiation of template class 'std::vector<float, MyAlloc<float>>' requested here
+  163 |     std::vector<float, A> comp{1.0f, 2.0f};
+      |                           ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:69:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:64:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ext/alloc_traits.h:44:47: error: type '_Tp_alloc_type' (aka 'int') cannot be used prior to '::' because it has no members
+   44 | template<typename _Alloc, typename = typename _Alloc::value_type>
+      |                                               ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:447:26: note: in instantiation of default argument for '__alloc_traits<_Tp_alloc_type>' required here
+  447 |       typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Alloc_traits;
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp:163:27: note: in instantiation of template class 'std::vector<float, MyAlloc<float>>' requested here
+  163 |     std::vector<float, A> comp{1.0f, 2.0f};
+      |                           ^
+2 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_980.dir/build.make:79: generated_build/CMakeFiles/test_980.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_980.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29266: generated_build/CMakeFiles/test_980.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29273: generated_build/CMakeFiles/test_980.dir/rule] Error 2
+gmake: *** [Makefile:10667: test_980] Error 2

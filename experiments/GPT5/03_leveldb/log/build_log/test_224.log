@@ -1,0 +1,115 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+Consolidate compiler generated dependencies of target test_224
+[100%] Building CXX object generated_build/CMakeFiles/test_224.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp.o
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:131:10: error: field type 'MockDB' is an abstract class
+  131 |   MockDB mock_db_;
+      |          ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:66:18: note: unimplemented pure virtual method 'Put' in 'MockDB'
+   66 |   virtual Status Put(const WriteOptions& options, const Slice& key,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:73:18: note: unimplemented pure virtual method 'Delete' in 'MockDB'
+   73 |   virtual Status Delete(const WriteOptions& options, const Slice& key) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:87:18: note: unimplemented pure virtual method 'Get' in 'MockDB'
+   87 |   virtual Status Get(const ReadOptions& options, const Slice& key,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:96:21: note: unimplemented pure virtual method 'NewIterator' in 'MockDB'
+   96 |   virtual Iterator* NewIterator(const ReadOptions& options) = 0;
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:102:27: note: unimplemented pure virtual method 'GetSnapshot' in 'MockDB'
+  102 |   virtual const Snapshot* GetSnapshot() = 0;
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:106:16: note: unimplemented pure virtual method 'ReleaseSnapshot' in 'MockDB'
+  106 |   virtual void ReleaseSnapshot(const Snapshot* snapshot) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:124:16: note: unimplemented pure virtual method 'GetProperty' in 'MockDB'
+  124 |   virtual bool GetProperty(const Slice& property, std::string* value) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:134:16: note: unimplemented pure virtual method 'GetApproximateSizes' in 'MockDB'
+  134 |   virtual void GetApproximateSizes(const Range* range, int n,
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/db.h:147:16: note: unimplemented pure virtual method 'CompactRange' in 'MockDB'
+  147 |   virtual void CompactRange(const Slice* begin, const Slice* end) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:161:3: error: no matching function for call to 'leveldb_write'
+  161 |   leveldb_write(&cdb_, &copt_, &cbatch_, &err_);
+      |   ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:31:8: note: candidate function not viable: no known conversion from 'leveldb_t *' (aka '(anonymous namespace)::leveldb_t *') to 'leveldb_t *' for 1st argument
+   31 |   void leveldb_write(leveldb_t* db,
+      |        ^             ~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:185:3: error: no matching function for call to 'leveldb_write'
+  185 |   leveldb_write(&cdb_, &copt_, &cbatch_, &err_);
+      |   ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:31:8: note: candidate function not viable: no known conversion from 'leveldb_t *' (aka '(anonymous namespace)::leveldb_t *') to 'leveldb_t *' for 1st argument
+   31 |   void leveldb_write(leveldb_t* db,
+      |        ^             ~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:225:3: error: no matching function for call to 'leveldb_write'
+  225 |   leveldb_write(&cdb_, &copt_, &cbatch_, /*errptr=*/nullptr);
+      |   ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:31:8: note: candidate function not viable: no known conversion from 'leveldb_t *' (aka '(anonymous namespace)::leveldb_t *') to 'leveldb_t *' for 1st argument
+   31 |   void leveldb_write(leveldb_t* db,
+      |        ^             ~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:243:3: error: no matching function for call to 'leveldb_write'
+  243 |   leveldb_write(&cdb_, &copt_, &cbatch_, &err_);
+      |   ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:31:8: note: candidate function not viable: no known conversion from 'leveldb_t *' (aka '(anonymous namespace)::leveldb_t *') to 'leveldb_t *' for 1st argument
+   31 |   void leveldb_write(leveldb_t* db,
+      |        ^             ~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:5:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:62:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type '(anonymous namespace)::LeveldbWriteTest_224_CallsWriteWithProvidedArgs_OKLeavesErrNull_224_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:149:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<(anonymous namespace)::LeveldbWriteTest_224_CallsWriteWithProvidedArgs_OKLeavesErrNull_224_Test>::CreateTest' requested here
+  149 | TEST_F(LeveldbWriteTest_224, CallsWriteWithProvidedArgs_OKLeavesErrNull_224) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type '(anonymous namespace)::LeveldbWriteTest_224_PropagatesNonOKStatusIntoErrptr_224_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:173:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<(anonymous namespace)::LeveldbWriteTest_224_PropagatesNonOKStatusIntoErrptr_224_Test>::CreateTest' requested here
+  173 | TEST_F(LeveldbWriteTest_224, PropagatesNonOKStatusIntoErrptr_224) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type '(anonymous namespace)::LeveldbWriteTest_224_NullErrptrIsHandled_NoCrashAndWriteStillCalled_224_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:213:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<(anonymous namespace)::LeveldbWriteTest_224_NullErrptrIsHandled_NoCrashAndWriteStillCalled_224_Test>::CreateTest' requested here
+  213 | TEST_F(LeveldbWriteTest_224, NullErrptrIsHandled_NoCrashAndWriteStillCalled_224) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type '(anonymous namespace)::LeveldbWriteTest_224_WorksWithEmptyBatch_CallsWriteOnce_224_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp:233:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<(anonymous namespace)::LeveldbWriteTest_224_WorksWithEmptyBatch_CallsWriteOnce_224_Test>::CreateTest' requested here
+  233 | TEST_F(LeveldbWriteTest_224, WorksWithEmptyBatch_CallsWriteOnce_224) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_224.dir/build.make:76: generated_build/CMakeFiles/test_224.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_224.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:10505: generated_build/CMakeFiles/test_224.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:10512: generated_build/CMakeFiles/test_224.dir/rule] Error 2
+gmake: *** [Makefile:4365: test_224] Error 2

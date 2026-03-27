@@ -1,0 +1,41 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_541.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:27:30: error: using declaration cannot refer to class member
+   27 | using Catch::OutputRedirect::Kind;
+      |       ~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:27:7: note: use an alias declaration instead
+   27 | using Catch::OutputRedirect::Kind;
+      |       ^
+      |       Kind = 
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:39:44: error: use of undeclared identifier 'Kind'
+   39 |     EXPECT_TRUE(Catch::isRedirectAvailable(Kind::None));
+      |                                            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:49:44: error: use of undeclared identifier 'Kind'
+   49 |     EXPECT_TRUE(Catch::isRedirectAvailable(Kind::Streams));
+      |                                            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:65:45: error: use of undeclared identifier 'Kind'
+   65 |     EXPECT_FALSE(Catch::isRedirectAvailable(Kind::FileDescriptors));
+      |                                             ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:77:32: error: unknown type name 'Kind'
+   77 |     auto invalid = static_cast<Kind>(42); // value not defined in the enum
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:79:45: error: cannot initialize a parameter of type 'Catch::OutputRedirect::Kind' with an lvalue of type 'int'
+   79 |     EXPECT_FALSE(Catch::isRedirectAvailable(invalid));
+      |                                             ^~~~~~~
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp:21:54: note: passing argument to parameter 'kind' here
+   21 | bool isRedirectAvailable(Catch::OutputRedirect::Kind kind);
+      |                                                      ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_541.dir/build.make:79: generated_build/CMakeFiles/test_541.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_541.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29714: generated_build/CMakeFiles/test_541.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29721: generated_build/CMakeFiles/test_541.dir/rule] Error 2
+gmake: *** [Makefile:10849: test_541] Error 2

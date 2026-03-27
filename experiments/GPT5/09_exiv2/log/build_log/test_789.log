@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_789.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_789.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_789.cpp:38:32: error: non-virtual member function marked 'override' hides virtual member function
+   38 |   std::string toString() const override { return s_; }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:129:23: note: hidden overloaded virtual function 'Exiv2::Value::toString' declared here: different number of parameters (1 vs 0)
+  129 |   virtual std::string toString(size_t n) const;
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_789.cpp:33:12: error: constructor for '(anonymous namespace)::TestValue' must explicitly initialize the base class 'Exiv2::Value' which does not have a default constructor
+   33 |   explicit TestValue(std::string s) : s_(std::move(s)) {}
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:33:16: note: 'Exiv2::Value' declared here
+   33 | class EXIV2API Value {
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_789.cpp:45:19: error: variable type 'const TestValue' is an abstract class
+   45 |   const TestValue v("hello");
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'TestValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'TestValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'TestValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'TestValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'TestValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'TestValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'TestValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'TestValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'TestValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'TestValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'TestValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_789.cpp:52:19: error: variable type 'const TestValue' is an abstract class
+   52 |   const TestValue v("same-for-all");
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_789.cpp:66:19: error: variable type 'const TestValue' is an abstract class
+   66 |   const TestValue v("boundary");
+      |                   ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_789.dir/build.make:79: generated_build/CMakeFiles/test_789.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_789.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:79927: generated_build/CMakeFiles/test_789.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:79934: generated_build/CMakeFiles/test_789.dir/rule] Error 2
+gmake: *** [Makefile:28155: test_789] Error 2

@@ -1,0 +1,45 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1777.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1777.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1777.cpp:33:12: error: 'byteOrder_' is a private member of 'Exiv2::Internal::CiffHeader'
+   33 |     header.byteOrder_ = bigEndian;
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:459:13: note: declared private here
+  459 |   ByteOrder byteOrder_ = littleEndian;       //!< Applicable byte order
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1777.cpp:41:12: error: 'pPadding_' is a private member of 'Exiv2::Internal::CiffHeader'
+   41 |     header.pPadding_.clear();
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:461:8: note: declared private here
+  461 |   Blob pPadding_;                            //!< the (unknown) remainder
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1777.cpp:72:19: error: variable type 'CiffComponent' is an abstract class
+   72 |     CiffComponent mockComponent;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1777.cpp:80:12: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   80 |     header.pRootDir_ = std::make_unique<CiffComponent>(mockComponent);
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1777.cpp:87:12: error: 'byteOrder_' is a private member of 'Exiv2::Internal::CiffHeader'
+   87 |     header.byteOrder_ = invalidByteOrder;
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:459:13: note: declared private here
+  459 |   ByteOrder byteOrder_ = littleEndian;       //!< Applicable byte order
+      |             ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1777.dir/build.make:79: generated_build/CMakeFiles/test_1777.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1777.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:76561: generated_build/CMakeFiles/test_1777.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:76568: generated_build/CMakeFiles/test_1777.dir/rule] Error 2
+gmake: *** [Makefile:26868: test_1777] Error 2

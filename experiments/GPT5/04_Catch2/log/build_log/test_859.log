@@ -1,0 +1,66 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_859.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp:41:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   41 | class TestCumulativeReporter_859 final : public CumulativeReporterBase {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_cumulative_base.hpp:122:22: note: unimplemented pure virtual method 'testRunEndedCumulative' in 'TestCumulativeReporter_859'
+  122 |         virtual void testRunEndedCumulative() = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp:61:12: error: no matching constructor for initialization of 'SectionInfo'
+   61 |     return SectionInfo{
+      |            ^          ~
+   62 | 
+   63 |         SourceLineInfo{ "dummy.cpp", 123 },
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   64 | 
+   65 |         name,
+      |         ~~~~~
+   66 | 
+   67 |         std::string{} // description
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   68 | 
+   69 |     };
+      |     ~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_section_info.hpp:24:9: note: candidate constructor not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'const char *const' for 3rd argument
+   24 |         SectionInfo( SourceLineInfo const& _lineInfo, std::string _name,
+      |         ^
+   25 |                     const char* const = nullptr ):
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp:119:12: error: no matching constructor for initialization of 'ReporterConfig'
+  119 |     return ReporterConfig{ *cfg, os };
+      |            ^             ~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 2 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp:137:32: error: variable type 'TestCumulativeReporter_859' is an abstract class
+  137 |     TestCumulativeReporter_859 rep{ std::move(rc) };
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp:171:32: error: variable type 'TestCumulativeReporter_859' is an abstract class
+  171 |     TestCumulativeReporter_859 rep{ std::move(rc) };
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp:215:32: error: variable type 'TestCumulativeReporter_859' is an abstract class
+  215 |     TestCumulativeReporter_859 rep{ std::move(rc) };
+      |                                ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_859.dir/build.make:79: generated_build/CMakeFiles/test_859.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_859.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19634: generated_build/CMakeFiles/test_859.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19641: generated_build/CMakeFiles/test_859.dir/rule] Error 2
+gmake: *** [Makefile:6754: test_859] Error 2

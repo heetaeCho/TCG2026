@@ -1,0 +1,21 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1083.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1083.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1083.cpp:31:32: error: non-virtual member function marked 'override' hides virtual member function
+   31 |   const std::string mimeType() override { return "application/x-testimage"; }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: hidden overloaded virtual function 'Exiv2::Image::mimeType' declared here: different return type ('basic_string<...>' vs 'const basic_string<...>')
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1083.cpp:39:11: error: allocating an object of abstract class type 'TestImage_1083'
+   39 |       new TestImage_1083(Exiv2::ImageType::none, /*supportedMetadata=*/0, std::move(io)));
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'TestImage_1083'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1083.dir/build.make:79: generated_build/CMakeFiles/test_1083.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1083.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14409: generated_build/CMakeFiles/test_1083.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14416: generated_build/CMakeFiles/test_1083.dir/rule] Error 2
+gmake: *** [Makefile:3104: test_1083] Error 2

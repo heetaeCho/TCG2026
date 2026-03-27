@@ -1,0 +1,141 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1740.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:8:28: error: base class has incomplete type
+    8 | class MockBasicIo : public Exiv2::BasicIo {
+      |                     ~~~~~~~^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:10:5: error: only virtual member functions can be marked 'override'
+   10 |     MOCK_METHOD(void, someMethod, (), (override)); // Add any necessary mock methods
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:147:1: note: expanded from here
+  147 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:14:8: error: expected class name
+   14 | TEST_F(Cr2ImageTest_1740, PixelWidthReturnsCorrectValue_1740) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:14:1: error: only virtual member functions can be marked 'override'
+   14 | TEST_F(Cr2ImageTest_1740, PixelWidthReturnsCorrectValue_1740) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1490:59: note: expanded from macro 'GTEST_TEST_'
+ 1490 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:14:1: error: only virtual member functions can be marked 'override'
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1503:21: note: expanded from macro 'GTEST_TEST_'
+ 1503 |     void TestBody() override;                                                  \
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:14:8: error: use of undeclared identifier 'Cr2ImageTest_1740'
+   14 | TEST_F(Cr2ImageTest_1740, PixelWidthReturnsCorrectValue_1740) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:14:8: error: use of undeclared identifier 'Cr2ImageTest_1740'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:14:8: error: use of undeclared identifier 'Cr2ImageTest_1740'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:17:21: error: no matching constructor for initialization of 'Exiv2::Cr2Image'
+   17 |     Exiv2::Cr2Image cr2Image(std::move(mockIo), true);
+      |                     ^        ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/cr2image.hpp:46:3: note: candidate constructor not viable: no known conversion from 'unique_ptr<MockBasicIo, default_delete<MockBasicIo>>' to 'unique_ptr<BasicIo, default_delete<Exiv2::BasicIo>>' for 1st argument
+   46 |   Cr2Image(std::unique_ptr<BasicIo> io, bool create);
+      |   ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/cr2image.hpp:27:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   27 | class EXIV2API Cr2Image : public Image {
+      |                ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:29:8: error: expected class name
+   29 | TEST_F(Cr2ImageTest_1741, PixelHeightReturnsCorrectValue_1741) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:29:1: error: only virtual member functions can be marked 'override'
+   29 | TEST_F(Cr2ImageTest_1741, PixelHeightReturnsCorrectValue_1741) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1490:59: note: expanded from macro 'GTEST_TEST_'
+ 1490 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:29:1: error: only virtual member functions can be marked 'override'
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1503:21: note: expanded from macro 'GTEST_TEST_'
+ 1503 |     void TestBody() override;                                                  \
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:29:8: error: use of undeclared identifier 'Cr2ImageTest_1741'
+   29 | TEST_F(Cr2ImageTest_1741, PixelHeightReturnsCorrectValue_1741) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:29:8: error: use of undeclared identifier 'Cr2ImageTest_1741'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:29:8: error: use of undeclared identifier 'Cr2ImageTest_1741'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:32:21: error: no matching constructor for initialization of 'Exiv2::Cr2Image'
+   32 |     Exiv2::Cr2Image cr2Image(std::move(mockIo), true);
+      |                     ^        ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/cr2image.hpp:46:3: note: candidate constructor not viable: no known conversion from 'unique_ptr<MockBasicIo, default_delete<MockBasicIo>>' to 'unique_ptr<BasicIo, default_delete<Exiv2::BasicIo>>' for 1st argument
+   46 |   Cr2Image(std::unique_ptr<BasicIo> io, bool create);
+      |   ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/cr2image.hpp:27:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   27 | class EXIV2API Cr2Image : public Image {
+      |                ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:42:8: error: expected class name
+   42 | TEST_F(Cr2ImageTest_1742, PixelDimensionsReturnZeroWhenNotFound_1742) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:42:1: error: only virtual member functions can be marked 'override'
+   42 | TEST_F(Cr2ImageTest_1742, PixelDimensionsReturnZeroWhenNotFound_1742) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1490:59: note: expanded from macro 'GTEST_TEST_'
+ 1490 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp:42:1: error: only virtual member functions can be marked 'override'
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1503:21: note: expanded from macro 'GTEST_TEST_'
+ 1503 |     void TestBody() override;                                                  \
+      |                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1740.dir/build.make:79: generated_build/CMakeFiles/test_1740.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1740.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:69931: generated_build/CMakeFiles/test_1740.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:69938: generated_build/CMakeFiles/test_1740.dir/rule] Error 2
+gmake: *** [Makefile:24333: test_1740] Error 2

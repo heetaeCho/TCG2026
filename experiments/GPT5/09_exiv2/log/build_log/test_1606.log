@@ -1,0 +1,131 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[ 50%] Building CXX object generated_build/CMakeFiles/test_1606.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1606.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1606.cpp:29:3: error: non-virtual member function marked 'override' hides virtual member function
+   29 |   MOCK_METHOD(uint32_t, toUint32, (size_t n), (override));
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:146:1: note: expanded from here
+  146 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: hidden overloaded virtual function 'Exiv2::Value::toUint32' declared here: different qualifiers ('const' vs unqualified)
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1606.cpp:26:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   26 | class MockValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'MockValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'MockValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'MockValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'MockValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'MockValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'MockValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'MockValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'MockValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'MockValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1606.cpp:47:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:14:
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/utils.hpp:9:45: error: 'auto' not allowed in function prototype
+    9 | constexpr bool contains(std::string_view s, auto c) {
+      |                                             ^~~~
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1606.cpp:47:
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:987:14: error: no member named 'starts_with' in 'std::basic_string<char>'
+  987 |   if (!model.starts_with("DSC-") ||
+      |        ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:988:81: error: no member named 'starts_with' in 'std::basic_string<char>'
+  988 |       std::any_of(models.begin(), models.end(), [&model](auto m) { return model.starts_with(m); }))
+      |                                                                           ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1007:15: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1007 |     if (model.starts_with(m))
+      |         ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1013:83: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1013 |   if (std::any_of(models2.begin(), models2.end(), [&model](auto m) { return model.starts_with(m); }))
+      |                                                                             ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1016:13: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1016 |   if (model.starts_with("ILCA-"))
+      |       ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1035:81: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1035 |   if (std::any_of(models.begin(), models.end(), [&model](auto m) { return model.starts_with(m); }))
+      |                                                                           ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1055:15: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1055 |     if (model.starts_with(m))
+      |         ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1059:15: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1059 |     if (model.starts_with(m) && status && aFAreaModeSetting == 4)
+      |         ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1063:15: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1063 |     if (model.starts_with(m) && status && aFAreaModeSetting != 8)
+      |         ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1066:13: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1066 |   if (model.starts_with("ILCA-99M2") && status && aFAreaModeSetting != 8)
+      |       ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1069:13: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1069 |   if (model.starts_with("ILCA-") && status && aFAreaModeSetting == 8)
+      |       ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1073:15: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1073 |     if (model.starts_with(m))
+      |         ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1088:84: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1088 |   if (std::none_of(models1.begin(), models1.end(), [&model](auto m) { return model.starts_with(m); }))
+      |                                                                              ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1092:15: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1092 |     if (model.starts_with(m))
+      |         ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1109:14: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1109 |   if (!model.starts_with("DSC-") ||
+      |        ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1110:81: error: no member named 'starts_with' in 'std::basic_string<char>'
+ 1110 |       std::any_of(models.begin(), models.end(), [&model](auto m) { return model.starts_with(m); }))
+      |                                                                           ~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/sonymn_int.cpp:1162:16: error: no member named 'format' in namespace 'std'
+ 1162 |   return os << stringFormat("{:.1f}", static_cast<double>(r) / static_cast<double>(s));
+      |                ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/image_int.hpp:18:27: note: expanded from macro 'stringFormat'
+   18 | #define stringFormat std::format
+      |                      ~~~~~^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1606.dir/build.make:79: generated_build/CMakeFiles/test_1606.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1606.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:12199: generated_build/CMakeFiles/test_1606.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:12206: generated_build/CMakeFiles/test_1606.dir/rule] Error 2
+gmake: *** [Makefile:2259: test_1606] Error 2

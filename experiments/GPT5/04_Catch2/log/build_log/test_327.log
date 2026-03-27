@@ -1,0 +1,123 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_327.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:47:63: error: no member named 'strlen' in namespace 'std'; did you mean simply 'strlen'?
+   47 |     StringRef(const char* raw) : s_(raw ? raw : ""), n_(raw ? std::strlen(raw) : 0) {}
+      |                                                               ^~~~~~~~~~~
+      |                                                               strlen
+/usr/include/string.h:407:15: note: 'strlen' declared here
+  407 | extern size_t strlen (const char *__s)
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:321:2: error: expected ';' after struct
+  321 | }
+      |  ^
+      |  ;
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:107:6: error: cannot form a reference to 'void'
+  107 |     T& operator*() const { return *p_; }
+      |      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:451:86: note: in instantiation of template class 'Catch::Detail::unique_ptr<void>' requested here
+  451 |                                           Catch::Detail::unique_ptr<void> /*ignored*/) {
+      |                                                                                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:511:45: error: call to deleted function 'cref'
+  511 |     EXPECT_CALL(gen, get()).WillOnce(Return(std::cref(42)));
+      |                                             ^~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:381:5: note: candidate function [with _Tp = int]
+  381 |     cref(const _Tp& __t) noexcept
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:388:10: note: candidate function [with _Tp = int] has been explicitly deleted
+  388 |     void cref(const _Tp&&) = delete;
+      |          ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:401:5: note: candidate template ignored: could not match 'reference_wrapper<_Tp>' against 'int'
+  401 |     cref(reference_wrapper<_Tp> __t) noexcept
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:511:38: error: no matching function for call to 'Return'
+  511 |     EXPECT_CALL(gen, get()).WillOnce(Return(std::cref(42)));
+      |                                      ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:1898:27: note: candidate template ignored: substitution failure [with R = void]: argument may not have 'void' type
+ 1898 | internal::ReturnAction<R> Return(R value) {
+      |                           ^        ~~~~~
+/usr/local/include/gmock/gmock-actions.h:1908:54: note: candidate function not viable: requires 0 arguments, but 1 was provided
+ 1908 | inline PolymorphicAction<internal::ReturnVoidAction> Return() {
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:571:45: error: call to deleted function 'cref'
+  571 |     EXPECT_CALL(gen, get()).WillOnce(Return(std::cref(std::string("ok"))));
+      |                                             ^~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:381:5: note: candidate function [with _Tp = std::basic_string<char>]
+  381 |     cref(const _Tp& __t) noexcept
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:388:10: note: candidate function [with _Tp = std::basic_string<char>] has been explicitly deleted
+  388 |     void cref(const _Tp&&) = delete;
+      |          ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:401:5: note: candidate template ignored: could not match 'reference_wrapper' against 'basic_string'
+  401 |     cref(reference_wrapper<_Tp> __t) noexcept
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:571:38: error: no matching function for call to 'Return'
+  571 |     EXPECT_CALL(gen, get()).WillOnce(Return(std::cref(std::string("ok"))));
+      |                                      ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:1898:27: note: candidate template ignored: substitution failure [with R = void]: argument may not have 'void' type
+ 1898 | internal::ReturnAction<R> Return(R value) {
+      |                           ^        ~~~~~
+/usr/local/include/gmock/gmock-actions.h:1908:54: note: candidate function not viable: requires 0 arguments, but 1 was provided
+ 1908 | inline PolymorphicAction<internal::ReturnVoidAction> Return() {
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:635:32: error: call to deleted function 'cref'
+  635 |         .WillRepeatedly(Return(std::cref(3.14)));
+      |                                ^~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:381:5: note: candidate function [with _Tp = double]
+  381 |     cref(const _Tp& __t) noexcept
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:388:10: note: candidate function [with _Tp = double] has been explicitly deleted
+  388 |     void cref(const _Tp&&) = delete;
+      |          ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/refwrap.h:401:5: note: candidate template ignored: could not match 'reference_wrapper<_Tp>' against 'double'
+  401 |     cref(reference_wrapper<_Tp> __t) noexcept
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:635:25: error: no matching function for call to 'Return'
+  635 |         .WillRepeatedly(Return(std::cref(3.14)));
+      |                         ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:1898:27: note: candidate template ignored: substitution failure [with R = void]: argument may not have 'void' type
+ 1898 | internal::ReturnAction<R> Return(R value) {
+      |                           ^        ~~~~~
+/usr/local/include/gmock/gmock-actions.h:1908:54: note: candidate function not viable: requires 0 arguments, but 1 was provided
+ 1908 | inline PolymorphicAction<internal::ReturnVoidAction> Return() {
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:273:19: error: no matching function for call to 'createGeneratorTracker'
+  273 |         tracker = createGeneratorTracker(
+      |                   ^~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:531:42: note: in instantiation of function template specialization 'Catch::Generators::generate<(lambda at /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:533:21)>' requested here
+  531 |     int const value = Catch::Generators::generate(
+      |                                          ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:233:20: note: candidate function not viable: no known conversion from 'unique_ptr<Catch::Generators::Generators<int>>' to 'unique_ptr<void>' for 3rd argument
+  233 | IGeneratorTracker* createGeneratorTracker(StringRef, SourceLineInfo const&, Catch::Detail::unique_ptr<void>);
+      |                    ^                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:273:19: error: no matching function for call to 'createGeneratorTracker'
+  273 |         tracker = createGeneratorTracker(
+      |                   ^~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:589:42: note: in instantiation of function template specialization 'Catch::Generators::generate<(lambda at /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:591:21)>' requested here
+  589 |     std::string out = Catch::Generators::generate(
+      |                                          ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:233:20: note: candidate function not viable: no known conversion from 'unique_ptr<Catch::Generators::Generators<std::basic_string<char>>>' to 'unique_ptr<void>' for 3rd argument
+  233 | IGeneratorTracker* createGeneratorTracker(StringRef, SourceLineInfo const&, Catch::Detail::unique_ptr<void>);
+      |                    ^                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:273:19: error: no matching function for call to 'createGeneratorTracker'
+  273 |         tracker = createGeneratorTracker(
+      |                   ^~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:645:36: note: in instantiation of function template specialization 'Catch::Generators::generate<(lambda at /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:649:9)>' requested here
+  645 |     auto out1 = Catch::Generators::generate(
+      |                                    ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:233:20: note: candidate function not viable: no known conversion from 'unique_ptr<Catch::Generators::Generators<double>>' to 'unique_ptr<void>' for 3rd argument
+  233 | IGeneratorTracker* createGeneratorTracker(StringRef, SourceLineInfo const&, Catch::Detail::unique_ptr<void>);
+      |                    ^                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:273:19: error: no matching function for call to 'createGeneratorTracker'
+  273 |         tracker = createGeneratorTracker(
+      |                   ^~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:673:36: note: in instantiation of function template specialization 'Catch::Generators::generate<(lambda at /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:677:9)>' requested here
+  673 |     auto out2 = Catch::Generators::generate(
+      |                                    ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp:233:20: note: candidate function not viable: no known conversion from 'unique_ptr<Catch::Generators::Generators<double>>' to 'unique_ptr<void>' for 3rd argument
+  233 | IGeneratorTracker* createGeneratorTracker(StringRef, SourceLineInfo const&, Catch::Detail::unique_ptr<void>);
+      |                    ^                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_327.dir/build.make:79: generated_build/CMakeFiles/test_327.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_327.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:20978: generated_build/CMakeFiles/test_327.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:20985: generated_build/CMakeFiles/test_327.dir/rule] Error 2
+gmake: *** [Makefile:7300: test_327] Error 2

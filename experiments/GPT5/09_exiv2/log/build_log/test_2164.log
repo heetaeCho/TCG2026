@@ -1,0 +1,72 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_2164.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:31:32: error: non-virtual member function marked 'override' hides virtual member function
+   31 |   std::string toString() const override { return payload_; }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:129:23: note: hidden overloaded virtual function 'Exiv2::Value::toString' declared here: different number of parameters (1 vs 0)
+  129 |   virtual std::string toString(size_t n) const;
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:41:32: error: non-virtual member function marked 'override' hides virtual member function
+   41 |   const Exiv2::Value* clone_() override {
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:23:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   23 | class CloneCountingValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'CloneCountingValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'CloneCountingValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'CloneCountingValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'CloneCountingValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'CloneCountingValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'CloneCountingValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'CloneCountingValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'CloneCountingValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'CloneCountingValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'CloneCountingValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:43:16: error: allocating an object of abstract class type 'CloneCountingValue'
+   43 |     return new CloneCountingValue(*this);
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:66:22: error: variable type 'CloneCountingValue' is an abstract class
+   66 |   CloneCountingValue v(Exiv2::asciiString, "original");
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:82:22: error: variable type 'CloneCountingValue' is an abstract class
+   82 |   CloneCountingValue v(Exiv2::asciiString, "before");
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:104:22: error: variable type 'CloneCountingValue' is an abstract class
+  104 |   CloneCountingValue v1(Exiv2::asciiString, "v1");
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:105:22: error: variable type 'CloneCountingValue' is an abstract class
+  105 |   CloneCountingValue v2(Exiv2::asciiString, "v2");
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp:151:22: error: variable type 'CloneCountingValue' is an abstract class
+  151 |   CloneCountingValue v(Exiv2::asciiString, "x");
+      |                      ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2164.dir/build.make:79: generated_build/CMakeFiles/test_2164.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_2164.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:68571: generated_build/CMakeFiles/test_2164.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:68578: generated_build/CMakeFiles/test_2164.dir/rule] Error 2
+gmake: *** [Makefile:23813: test_2164] Error 2

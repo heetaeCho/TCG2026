@@ -1,0 +1,25 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_764.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_764.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_764.cpp:337:53: error: no matching literal operator for call to 'operator""s' with arguments of types 'const char *' and 'unsigned long', and no matching literal operator template
+  337 |     ASSERT_GE(out.str().size(),  ("Invalid Filter: "s).size() + longArg.size() + 1);
+      |                                                     ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_764.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Catch::ColourImpl'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Catch::ColourImpl>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_764.cpp:197:20: note: in instantiation of member function 'std::unique_ptr<Catch::ColourImpl>::~unique_ptr' requested here
+  197 |         , m_colour(makeColourImpl(config.colourMode(), m_wrapped_stream.get())) {}
+      |                    ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_764.cpp:29:7: note: forward declaration of 'Catch::ColourImpl'
+   29 | class ColourImpl;
+      |       ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_764.dir/build.make:79: generated_build/CMakeFiles/test_764.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_764.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:10514: generated_build/CMakeFiles/test_764.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:10521: generated_build/CMakeFiles/test_764.dir/rule] Error 2
+gmake: *** [Makefile:3049: test_764] Error 2

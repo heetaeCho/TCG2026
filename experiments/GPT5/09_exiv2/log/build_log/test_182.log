@@ -1,0 +1,43 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_182.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:7:31: error: unknown type name 'TagDetails'
+    7 |     template <size_t N, const TagDetails (&array)[N]>
+      |                               ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:8:67: error: unknown type name 'ExifData'
+    8 |     std::ostream& printTag(std::ostream& os, int64_t value, const ExifData*) {
+      |                                                                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:10:23: error: no member named 'find' in namespace 'Exiv2'; did you mean 'std::find'?
+   10 |         if (auto td = Exiv2::find(array, value))
+      |                       ^~~~~~~~~~~
+      |                       std::find
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/streambuf_iterator.h:435:5: note: 'std::find' declared here
+  435 |     find(istreambuf_iterator<_CharT> __first,
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:17:29: error: expected class name
+   17 | class MockExifData : public ExifData {
+      |                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:43:11: error: unknown type name 'TagDetails'
+   43 |     const TagDetails array[] = {{1, "Label1"}, {2, "Label2"}};
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:59:11: error: unknown type name 'TagDetails'
+   59 |     const TagDetails array[] = {{1, "Label1"}, {2, "Label2"}};
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:75:11: error: unknown type name 'TagDetails'
+   75 |     const TagDetails emptyArray[] = {}; // Empty array
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:78:94: error: too many arguments provided to function-like macro invocation
+   78 |     EXPECT_DEATH(Exiv2::Internal::printTag<0, emptyArray>(std::ostringstream(), 1, nullptr), "Passed zero length printTag");
+      |                                                                                              ^
+/usr/local/include/gtest/gtest-death-test.h:189:9: note: macro 'EXPECT_DEATH' defined here
+  189 | #define EXPECT_DEATH(statement, matcher) \
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp:78:5: error: use of undeclared identifier 'EXPECT_DEATH'
+   78 |     EXPECT_DEATH(Exiv2::Internal::printTag<0, emptyArray>(std::ostringstream(), 1, nullptr), "Passed zero length printTag");
+      |     ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_182.dir/build.make:79: generated_build/CMakeFiles/test_182.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_182.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:43071: generated_build/CMakeFiles/test_182.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:43078: generated_build/CMakeFiles/test_182.dir/rule] Error 2
+gmake: *** [Makefile:14063: test_182] Error 2

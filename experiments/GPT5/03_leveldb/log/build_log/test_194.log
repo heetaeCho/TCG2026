@@ -1,0 +1,57 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+Consolidate compiler generated dependencies of target test_194
+[100%] Building CXX object generated_build/CMakeFiles/test_194.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp.o
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:149:9: error: return type 'bool' must match previous return type 'void' when lambda expression has unspecified explicit return type
+  149 |         return true;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:17: error: no viable conversion from 'typename std::decay<(lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)>::type' (aka '(lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)') to 'const Action<bool (const Slice &, const Slice &)>'
+  135 |       .WillOnce(Invoke([&](const Slice& forwarded_key, const Slice& forwarded_filter) {
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  136 | 
+  137 |         // We cannot assert anything about how the key is derived,
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  138 | 
+  139 |         // but we can assert the filter is forwarded unchanged.
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  140 | 
+  141 |         ASSERT_EQ(forwarded_filter.size(), filter.size());
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  142 | 
+  143 |         ASSERT_EQ(std::string(forwarded_filter.data(), forwarded_filter.size()),
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  144 | 
+  145 |                   std::string(filter.data(), filter.size()));
+      |                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  146 | 
+  147 |         // Return an arbitrary value to propagate back
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  148 | 
+  149 |         return true;
+      |         ~~~~~~~~~~~~
+  150 | 
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::decay<(lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)>::type' (aka '(lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)') to 'const Action<bool (const Slice &, const Slice &)> &' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'typename std::decay<(lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)>::type' (aka '(lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)') to 'Action<bool (const Slice &, const Slice &)> &&' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:471:3: note: candidate template ignored: requirement 'internal::is_constructible<std::function<bool ()>, (lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)>::value' was not satisfied [with G = typename std::decay<(lambda at /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp:135:24)>::type]
+  471 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:476:12: note: explicit constructor is not a candidate
+  476 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:483:12: note: explicit constructor is not a candidate
+  483 |   explicit Action(const Action<Func>& action) : fun_(action.fun_) {}
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:1011:47: note: passing argument to parameter 'action' here
+ 1011 |   TypedExpectation& WillOnce(const Action<F>& action) {
+      |                                               ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_194.dir/build.make:76: generated_build/CMakeFiles/test_194.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_194.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5923: generated_build/CMakeFiles/test_194.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5930: generated_build/CMakeFiles/test_194.dir/rule] Error 2
+gmake: *** [Makefile:2311: test_194] Error 2

@@ -1,0 +1,25 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_182.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_182.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_182.cpp:13:58: error: 'proxy' is a private member of 'YAML::detail::node_iterator_base<YAML::Node>'
+   13 | using Proxy182 = YAML::detail::node_iterator_base<V182>::proxy;
+      |                                                          ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:59:10: note: declared private here
+   59 |   struct proxy {
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_182.cpp:21:12: error: no viable conversion from returned value of type 'value_type' (aka 'const YAML::detail::iterator_value') to function return type 'Value182' (aka 'node_iterator_value<YAML::Node>')
+   21 |     return *it;
+      |            ^~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:26:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'value_type' (aka 'const YAML::detail::iterator_value') to 'const node_iterator_value<Node> &' for 1st argument
+   26 | struct node_iterator_value : public std::pair<V*, V*> {
+      |        ^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:26:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'value_type' (aka 'const YAML::detail::iterator_value') to 'node_iterator_value<Node> &&' for 1st argument
+   26 | struct node_iterator_value : public std::pair<V*, V*> {
+      |        ^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:30:12: note: explicit constructor is not a candidate
+   30 |   explicit node_iterator_value(V& rhs) : kv(), pNode(&rhs) {}
+      |            ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_182.dir/build.make:79: generated_build/CMakeFiles/test_182.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_182.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:13419: generated_build/CMakeFiles/test_182.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:13426: generated_build/CMakeFiles/test_182.dir/rule] Error 2
+gmake: *** [Makefile:4730: test_182] Error 2

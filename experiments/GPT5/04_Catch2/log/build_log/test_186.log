@@ -1,0 +1,21 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_186.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_186.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_186.cpp:15:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_quantifiers.hpp:50:50: error: no member named 'describe' in 'MoveOnlyMatcher'
+   50 |                 return "none match " + m_matcher.describe();
+      |                                        ~~~~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_186.cpp:147:20: note: in instantiation of member function 'Catch::Matchers::NoneMatchMatcher<MoveOnlyMatcher>::describe' requested here
+  147 |     auto wrapper = NoneMatch(std::move(mm));
+      |                    ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_186.cpp:15:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_quantifiers.hpp:50:50: error: no member named 'describe' in 'CopyMoveProbe'
+   50 |                 return "none match " + m_matcher.describe();
+      |                                        ~~~~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_186.cpp:163:20: note: in instantiation of member function 'Catch::Matchers::NoneMatchMatcher<CopyMoveProbe>::describe' requested here
+  163 |     auto wrapper = NoneMatch(CopyMoveProbe{}); // rvalue
+      |                    ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_186.dir/build.make:79: generated_build/CMakeFiles/test_186.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_186.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:31154: generated_build/CMakeFiles/test_186.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:31161: generated_build/CMakeFiles/test_186.dir/rule] Error 2
+gmake: *** [Makefile:11434: test_186] Error 2

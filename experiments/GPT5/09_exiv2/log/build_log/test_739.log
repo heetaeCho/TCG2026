@@ -1,0 +1,237 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_739.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:31:32: error: non-virtual member function marked 'override' hides virtual member function
+   31 |   const Exiv2::Value* clone_() override {
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:19:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   19 | class CountingCloneValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'CountingCloneValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'CountingCloneValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'CountingCloneValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'CountingCloneValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'CountingCloneValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'CountingCloneValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'CountingCloneValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'CountingCloneValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'CountingCloneValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'CountingCloneValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'CountingCloneValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:33:16: error: allocating an object of abstract class type 'CountingCloneValue'
+   33 |     return new CountingCloneValue(*this);
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:48:32: error: non-virtual member function marked 'override' hides virtual member function
+   48 |   const Exiv2::Value* clone_() override { throw std::runtime_error("clone failed"); }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:41:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   41 | class ThrowingCloneValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'ThrowingCloneValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'ThrowingCloneValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'ThrowingCloneValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'ThrowingCloneValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'ThrowingCloneValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'ThrowingCloneValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'ThrowingCloneValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'ThrowingCloneValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'ThrowingCloneValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'ThrowingCloneValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'ThrowingCloneValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:57:18: error: field has incomplete type 'Exiv2::ExifKey'
+   57 |   Exiv2::ExifKey key_;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:127:22: error: variable type 'CountingCloneValue' is an abstract class
+  127 |   CountingCloneValue cv(Exiv2::asciiString);
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:143:22: error: variable type 'ThrowingCloneValue' is an abstract class
+  143 |   ThrowingCloneValue tv(Exiv2::asciiString);
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:156:22: error: variable type 'ThrowingCloneValue' is an abstract class
+  156 |   ThrowingCloneValue bad(Exiv2::asciiString);
+      |                      ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_NullptrClearsStoredValue_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:63:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_NullptrClearsStoredValue_739_Test>::CreateTest' requested here
+   63 | TEST_F(ExifdatumSetValueTest_739, NullptrClearsStoredValue_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_NonNullUsesCloneNotAlias_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:82:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_NonNullUsesCloneNotAlias_739_Test>::CreateTest' requested here
+   82 | TEST_F(ExifdatumSetValueTest_739, NonNullUsesCloneNotAlias_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_ReplacesPreviouslyStoredValue_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:98:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_ReplacesPreviouslyStoredValue_739_Test>::CreateTest' requested here
+   98 | TEST_F(ExifdatumSetValueTest_739, ReplacesPreviouslyStoredValue_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_RepeatedNullptrIsIdempotent_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:114:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_RepeatedNullptrIsIdempotent_739_Test>::CreateTest' requested here
+  114 | TEST_F(ExifdatumSetValueTest_739, RepeatedNullptrIsIdempotent_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_CallsCloneExactlyOncePerNonNullSet_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:124:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_CallsCloneExactlyOncePerNonNullSet_739_Test>::CreateTest' requested here
+  124 | TEST_F(ExifdatumSetValueTest_739, CallsCloneExactlyOncePerNonNullSet_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_DoesNotCallCloneWhenNullptr_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:135:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_DoesNotCallCloneWhenNullptr_739_Test>::CreateTest' requested here
+  135 | TEST_F(ExifdatumSetValueTest_739, DoesNotCallCloneWhenNullptr_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_PropagatesExceptionIfCloneThrows_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:142:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_PropagatesExceptionIfCloneThrows_739_Test>::CreateTest' requested here
+  142 | TEST_F(ExifdatumSetValueTest_739, PropagatesExceptionIfCloneThrows_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ExifdatumSetValueTest_739_AfterExceptionPreviouslyStoredValueRemainsUsable_739_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp:147:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ExifdatumSetValueTest_739_AfterExceptionPreviouslyStoredValueRemainsUsable_739_Test>::CreateTest' requested here
+  147 | TEST_F(ExifdatumSetValueTest_739, AfterExceptionPreviouslyStoredValueRemainsUsable_739) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+2 warnings and 15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_739.dir/build.make:79: generated_build/CMakeFiles/test_739.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_739.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:39943: generated_build/CMakeFiles/test_739.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:39950: generated_build/CMakeFiles/test_739.dir/rule] Error 2
+gmake: *** [Makefile:12867: test_739] Error 2

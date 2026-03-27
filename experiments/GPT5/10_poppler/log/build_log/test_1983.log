@@ -1,0 +1,47 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1983.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp.o
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:5:22: error: unknown type name 'openFile'
+    5 | MOCK_FUNCTION(FILE*, openFile, (const char* path, const char* mode), noexcept);
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:5:33: error: a type specifier is required for all declarations
+    5 | MOCK_FUNCTION(FILE*, openFile, (const char* path, const char* mode), noexcept);
+      |                                 ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:5:70: error: expected parameter declarator
+    5 | MOCK_FUNCTION(FILE*, openFile, (const char* path, const char* mode), noexcept);
+      |                                                                      ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:5:70: error: expected ')'
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:5:14: note: to match this '('
+    5 | MOCK_FUNCTION(FILE*, openFile, (const char* path, const char* mode), noexcept);
+      |              ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:5:1: error: a type specifier is required for all declarations
+    5 | MOCK_FUNCTION(FILE*, openFile, (const char* path, const char* mode), noexcept);
+      | ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:17:54: error: use of undeclared identifier 'openFile'
+   17 |         ::testing::Mock::VerifyAndClearExpectations(&openFile);
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:25:17: error: use of undeclared identifier 'openFile'
+   25 |     EXPECT_CALL(openFile, Call(path, "rb")).WillOnce(testing::Return(reinterpret_cast<FILE*>(1))); // Simulate file open success
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:28:19: error: use of undeclared identifier 'FileExists'
+   28 |     bool result = FileExists(path);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:38:17: error: use of undeclared identifier 'openFile'
+   38 |     EXPECT_CALL(openFile, Call(path, "rb")).WillOnce(testing::Return(nullptr)); // Simulate file open failure
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:41:19: error: use of undeclared identifier 'FileExists'
+   41 |     bool result = FileExists(path);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:51:17: error: use of undeclared identifier 'openFile'
+   51 |     EXPECT_CALL(openFile, Call(path, "rb")).WillOnce(testing::Return(nullptr)); // Simulate file open failure due to permission issues
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:54:19: error: use of undeclared identifier 'FileExists'
+   54 |     bool result = FileExists(path);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp:8:7: warning: 'FileExistsTest_1983' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    8 | class FileExistsTest_1983 : public ::testing::Test {
+      |       ^
+1 warning and 12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1983.dir/build.make:79: generated_build/CMakeFiles/test_1983.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1983.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19913: generated_build/CMakeFiles/test_1983.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19920: generated_build/CMakeFiles/test_1983.dir/rule] Error 2
+gmake: *** [Makefile:4586: test_1983] Error 2

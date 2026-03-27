@@ -1,0 +1,28 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_450.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_450.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_450.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:61:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/vector:66:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:1586:2: warning: unsupported MC/DC boolean expression; contains an operation with a nested boolean expression. Expression will not be covered
+ 1586 |         __glibcxx_assert(_Alloc_traits::propagate_on_container_swap::value
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++config.h:615:8: note: expanded from macro '__glibcxx_assert'
+  615 |   do { __glibcxx_constexpr_assert(cond); } while (false)
+      |        ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++config.h:569:7: note: expanded from macro '__glibcxx_constexpr_assert'
+  569 |   if (std::__is_constant_evaluated() && !bool(cond))    \
+      |       ^
+1 warning generated.
+[100%] Linking CXX executable /home/user/MyProjects/NewTCG/experiments/02_re2/build/test_450/test_450
+/usr/bin/ld: /usr/bin/ld: DWARF error: invalid or unhandled FORM value: 0x23
+CMakeFiles/test_450.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_450.cpp.o: in function `RWLockerTest_450_DestructorCallsReaderUnlockByDefault_450_Test::TestBody()':
+test_450.cpp:(.text+0x42): undefined reference to `re2::DFA::RWLocker::RWLocker(re2::CacheMutex*)'
+/usr/bin/ld: CMakeFiles/test_450.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_450.cpp.o: in function `RWLockerTest_450_LockForWritingLeadsToWriterUnlock_450_Test::TestBody()':
+test_450.cpp:(.text+0x232): undefined reference to `re2::DFA::RWLocker::RWLocker(re2::CacheMutex*)'
+/usr/bin/ld: CMakeFiles/test_450.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_450.cpp.o: in function `RWLockerTest_450_MultipleLockForWritingCalls_DoNotDoubleUnlock_450_Test::TestBody()':
+test_450.cpp:(.text+0x482): undefined reference to `re2::DFA::RWLocker::RWLocker(re2::CacheMutex*)'
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[3]: *** [generated_build/CMakeFiles/test_450.dir/build.make:165: /home/user/MyProjects/NewTCG/experiments/02_re2/build/test_450/test_450] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:3657: generated_build/CMakeFiles/test_450.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:3664: generated_build/CMakeFiles/test_450.dir/rule] Error 2
+gmake: *** [Makefile:868: test_450] Error 2

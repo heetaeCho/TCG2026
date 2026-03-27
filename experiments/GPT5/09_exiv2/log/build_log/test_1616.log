@@ -1,0 +1,111 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1616.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:23:18: error: non-virtual member function marked 'override' hides virtual member function
+   23 |   size_t count() override { return count_; }
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: hidden overloaded virtual function 'Exiv2::Value::count' declared here: different qualifiers ('const' vs unqualified)
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:25:47: error: non-virtual member function marked 'override' hides virtual member function
+   25 |   const std::ostream& write(std::ostream& os) override {
+      |                                               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: hidden overloaded virtual function 'Exiv2::Value::write' declared here: different return type ('std::ostream &' (aka 'basic_ostream<char> &') vs 'const std::ostream &' (aka 'const basic_ostream<char> &'))
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:30:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   30 |   const int64_t toInt64(size_t /*n*/) override { return i64_; }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:30:39: error: non-virtual member function marked 'override' hides virtual member function
+   30 |   const int64_t toInt64(size_t /*n*/) override { return i64_; }
+      |                                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: hidden overloaded virtual function 'Exiv2::Value::toInt64' declared here: different return type ('int64_t' (aka 'long') vs 'const int64_t' (aka 'const long'))
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:34:32: error: non-virtual member function marked 'override' hides virtual member function
+   34 |   const Exiv2::Value* clone_() override { return new FakeValue(*this); }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:18:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   18 | class FakeValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'FakeValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'FakeValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'FakeValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'FakeValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'FakeValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'FakeValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'FakeValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'FakeValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'FakeValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'FakeValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'FakeValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:34:54: error: allocating an object of abstract class type 'FakeValue'
+   34 |   const Exiv2::Value* clone_() override { return new FakeValue(*this); }
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:57:10: error: 'Exiv2::ExifKey' is an incomplete type
+   57 |   md.add(Exiv2::ExifKey("Exif.SonyMisc1.0x0004"), new FakeValue(count, std::to_string(v), v));
+      |          ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:57:55: error: allocating an object of abstract class type 'FakeValue'
+   57 |   md.add(Exiv2::ExifKey("Exif.SonyMisc1.0x0004"), new FakeValue(count, std::to_string(v), v));
+      |                                                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:68:13: error: variable type 'FakeValue' is an abstract class
+   68 |   FakeValue value(/*count=*/1, /*repr=*/"25", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:79:13: error: variable type 'FakeValue' is an abstract class
+   79 |   FakeValue value(/*count=*/1, /*repr=*/"25", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:90:13: error: variable type 'FakeValue' is an abstract class
+   90 |   FakeValue value(/*count=*/2, /*repr=*/"25 26", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:103:13: error: variable type 'FakeValue' is an abstract class
+  103 |   FakeValue value(/*count=*/1, /*repr=*/"25", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:112:13: error: variable type 'FakeValue' is an abstract class
+  112 |   FakeValue value(/*count=*/1, /*repr=*/"25", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:122:13: error: variable type 'FakeValue' is an abstract class
+  122 |   FakeValue value(/*count=*/1, /*repr=*/"25", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:132:13: error: variable type 'FakeValue' is an abstract class
+  132 |   FakeValue value(/*count=*/1, /*repr=*/"25", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:142:13: error: variable type 'FakeValue' is an abstract class
+  142 |   FakeValue value(/*count=*/1, /*repr=*/"25", /*i64=*/25);
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp:152:13: error: variable type 'FakeValue' is an abstract class
+  152 |   FakeValue value(/*count=*/1, /*repr=*/"7", /*i64=*/7);
+      |             ^
+2 warnings and 16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1616.dir/build.make:79: generated_build/CMakeFiles/test_1616.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1616.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:45145: generated_build/CMakeFiles/test_1616.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:45152: generated_build/CMakeFiles/test_1616.dir/rule] Error 2
+gmake: *** [Makefile:14856: test_1616] Error 2

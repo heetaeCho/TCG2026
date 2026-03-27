@@ -1,0 +1,34 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_1026.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1026.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1026.cpp:25:12: error: no matching constructor for initialization of 'NameAndLocation'
+   25 |     return NameAndLocation{name, file, line};
+      |            ^              ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:9: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   25 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:21:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   21 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:21:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   21 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1026.cpp:51:14: error: variable type 'ITracker' is an abstract class
+   51 |     ITracker tracker{makeNAL("root", "file.cpp", 10), /*parent*/nullptr};
+      |              ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:115:22: note: unimplemented pure virtual method 'isComplete' in 'ITracker'
+  115 |         virtual bool isComplete() const = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:126:22: note: unimplemented pure virtual method 'close' in 'ITracker'
+  126 |         virtual void close() = 0; // Successfully complete
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:127:22: note: unimplemented pure virtual method 'fail' in 'ITracker'
+  127 |         virtual void fail() = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1026.cpp:65:14: error: variable type 'ITracker' is an abstract class
+   65 |     ITracker tracker{makeNAL("root", "file.cpp", 10), /*parent*/nullptr};
+      |              ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1026.dir/build.make:79: generated_build/CMakeFiles/test_1026.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1026.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24626: generated_build/CMakeFiles/test_1026.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24633: generated_build/CMakeFiles/test_1026.dir/rule] Error 2
+gmake: *** [Makefile:8782: test_1026] Error 2

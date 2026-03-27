@@ -1,0 +1,49 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_457.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_457.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_457.cpp:29:40: error: use of undeclared identifier 'EMITTER_MANIP'; did you mean 'YAML::EMITTER_MANIP'?
+   29 |   EXPECT_EQ(state.GetBoolCaseFormat(), EMITTER_MANIP());
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:13:6: note: 'YAML::EMITTER_MANIP' declared here
+   13 | enum EMITTER_MANIP {
+      |      ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_457.cpp:43:22: error: call to implicitly-deleted copy constructor of 'YAML::EmitterState'
+   43 |   YAML::EmitterState copy(original);
+      |                      ^    ~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy constructor of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy constructor
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:66:3: note: 'SettingChanges' has been explicitly marked deleted here
+   66 |   SettingChanges(const SettingChanges&) = delete;
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_457.cpp:53:12: error: object of type 'YAML::EmitterState' cannot be assigned because its copy assignment operator is implicitly deleted
+   53 |   assigned = original;
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy assignment operator of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy assignment operator
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:68:19: note: 'operator=' has been explicitly marked deleted here
+   68 |   SettingChanges& operator=(const SettingChanges&) = delete;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_457.cpp:63:22: error: call to implicitly-deleted copy constructor of 'YAML::EmitterState'
+   63 |   YAML::EmitterState moved(std::move(src));
+      |                      ^     ~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy constructor of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy constructor
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:66:3: note: 'SettingChanges' has been explicitly marked deleted here
+   66 |   SettingChanges(const SettingChanges&) = delete;
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_457.cpp:72:7: error: object of type 'YAML::EmitterState' cannot be assigned because its copy assignment operator is implicitly deleted
+   72 |   dst = std::move(src);
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/emitterstate.h:150:18: note: copy assignment operator of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy assignment operator
+  150 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:68:19: note: 'operator=' has been explicitly marked deleted here
+   68 |   SettingChanges& operator=(const SettingChanges&) = delete;
+      |                   ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_457.dir/build.make:79: generated_build/CMakeFiles/test_457.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_457.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23275: generated_build/CMakeFiles/test_457.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23282: generated_build/CMakeFiles/test_457.dir/rule] Error 2
+gmake: *** [Makefile:8734: test_457] Error 2

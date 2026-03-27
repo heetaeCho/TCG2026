@@ -1,0 +1,60 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+Consolidate compiler generated dependencies of target test_143
+[100%] Building CXX object generated_build/CMakeFiles/test_143.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp:15:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:5:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:182:7: error: attribute exclusive_locks_required ignored, because it is not attached to a declaration [-Werror,-Wignored-attributes]
+  182 |       EXCLUSIVE_LOCKS_REQUIRED(mu);
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./port/thread_annotations.h:43:57: note: expanded from macro 'EXCLUSIVE_LOCKS_REQUIRED'
+   43 |   THREAD_ANNOTATION_ATTRIBUTE__(exclusive_locks_required(__VA_ARGS__))
+      |                                                         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp:15:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:777:51: error: use of undeclared identifier 'port'
+  777 | Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
+      |                                                   ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp:33:12: error: 'LevelFileNumIterator' is a private member of 'leveldb::Version'
+   33 |   Version::LevelFileNumIterator it;
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:121:9: note: declared private here
+  121 |   class LevelFileNumIterator;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp:33:33: error: no matching constructor for initialization of 'Version::LevelFileNumIterator'
+   33 |   Version::LevelFileNumIterator it;
+      |                                 ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:163:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  163 | class Version::LevelFileNumIterator : public Iterator {
+      |                ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:165:3: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  165 |   LevelFileNumIterator(const InternalKeyComparator& icmp,
+      |   ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  166 |                        const std::vector<FileMetaData*>* flist)
+      |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp:65:12: error: 'LevelFileNumIterator' is a private member of 'leveldb::Version'
+   65 |   Version::LevelFileNumIterator it;
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:121:9: note: declared private here
+  121 |   class LevelFileNumIterator;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp:65:33: error: no matching constructor for initialization of 'Version::LevelFileNumIterator'
+   65 |   Version::LevelFileNumIterator it;
+      |                                 ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:163:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  163 | class Version::LevelFileNumIterator : public Iterator {
+      |                ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:165:3: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  165 |   LevelFileNumIterator(const InternalKeyComparator& icmp,
+      |   ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  166 |                        const std::vector<FileMetaData*>* flist)
+      |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_143.dir/build.make:76: generated_build/CMakeFiles/test_143.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_143.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5952: generated_build/CMakeFiles/test_143.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5959: generated_build/CMakeFiles/test_143.dir/rule] Error 2
+gmake: *** [Makefile:2324: test_143] Error 2

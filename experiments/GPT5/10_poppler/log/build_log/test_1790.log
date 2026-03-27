@@ -1,0 +1,57 @@
+[ 66%] Built target poppler
+[ 66%] Building CXX object generated_build/CMakeFiles/test_1790.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp.o
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:19:8: error: unknown type name 'SECOidTag'; did you mean 'SECOidData'?
+   19 | static SECOidTag my_NSS_CMSAttribute_GetType(NSSCMSAttribute* attr) {
+      |        ^~~~~~~~~
+      |        SECOidData
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:5:8: note: 'SECOidData' declared here
+    5 | struct SECOidData {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:21:15: error: no matching function for call to 'SECOID_FindOID'
+   21 |     typetag = SECOID_FindOID(&(attr->type));
+      |               ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:14:13: note: candidate function not viable: no known conversion from 'SECOidData **' to 'NSSCMSAttribute *' for 1st argument
+   14 | SECOidData* SECOID_FindOID(NSSCMSAttribute* attr) {
+      |             ^              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:23:16: error: use of undeclared identifier 'SEC_OID_UNKNOWN'
+   23 |         return SEC_OID_UNKNOWN;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:25:12: error: no viable conversion from returned value of type 'int' to function return type 'SECOidData'
+   25 |     return typetag->offset;
+      |            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:5:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const SECOidData &' for 1st argument
+    5 | struct SECOidData {
+      |        ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:5:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'SECOidData &&' for 1st argument
+    5 | struct SECOidData {
+      |        ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:46:51: error: use of undeclared identifier 'SEC_OID_UNKNOWN'
+   46 |     EXPECT_EQ(my_NSS_CMSAttribute_GetType(&attr), SEC_OID_UNKNOWN);
+      |                                                   ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:56:51: error: use of undeclared identifier 'SEC_OID_UNKNOWN'
+   56 |     EXPECT_EQ(my_NSS_CMSAttribute_GetType(&attr), SEC_OID_UNKNOWN);
+      |                                                   ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:28:7: warning: 'NSSCryptoSignBackendTest_1790' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   28 | class NSSCryptoSignBackendTest_1790 : public testing::Test {};
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const SECOidData' and 'const int')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<SECOidData, int>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp:37:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<SECOidData, int, nullptr>' requested here
+   37 |     EXPECT_EQ(my_NSS_CMSAttribute_GetType(&attr), 10);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:1386:13: note: candidate function not viable: no known conversion from 'const SECOidData' to 'faketype' for 1st argument
+ 1386 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1790.dir/build.make:79: generated_build/CMakeFiles/test_1790.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1790.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:50857: generated_build/CMakeFiles/test_1790.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:50864: generated_build/CMakeFiles/test_1790.dir/rule] Error 2
+gmake: *** [Makefile:17157: test_1790] Error 2

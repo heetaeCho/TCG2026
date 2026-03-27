@@ -1,0 +1,105 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+Consolidate compiler generated dependencies of target test_160
+[100%] Building CXX object generated_build/CMakeFiles/test_160.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:7:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:182:7: error: attribute exclusive_locks_required ignored, because it is not attached to a declaration [-Werror,-Wignored-attributes]
+  182 |       EXCLUSIVE_LOCKS_REQUIRED(mu);
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./port/thread_annotations.h:43:57: note: expanded from macro 'EXCLUSIVE_LOCKS_REQUIRED'
+   43 |   THREAD_ANNOTATION_ATTRIBUTE__(exclusive_locks_required(__VA_ARGS__))
+      |                                                         ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:71:3: error: must use 'class' tag to refer to type 'BytewiseComparator' in this scope
+   71 |   BytewiseComparator user_;
+      |   ^
+      |   class 
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/comparator.h:60:34: note: class 'BytewiseComparator' is hidden by a non-type declaration of 'BytewiseComparator' here
+   60 | LEVELDB_EXPORT const Comparator* BytewiseComparator();
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:79:37: error: 'Builder' is a private member of 'leveldb::VersionSet'
+   79 |   using BySmallestKey = VersionSet::Builder::BySmallestKey;
+      |                                     ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:273:9: note: declared private here
+  273 |   class Builder;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:79:37: error: incomplete type 'leveldb::VersionSet::Builder' named in nested name specifier
+   79 |   using BySmallestKey = VersionSet::Builder::BySmallestKey;
+      |                         ~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:273:9: note: forward declaration of 'leveldb::VersionSet::Builder'
+  273 |   class Builder;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:123:44: error: use of undeclared identifier 'cmp'; did you mean 'bcmp'?
+  123 |   BuilderComparatorTest_160::BySmallestKey cmp;
+      |                                            ^~~
+      |                                            bcmp
+/usr/include/strings.h:34:12: note: 'bcmp' declared here
+   34 | extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:123:43: error: expected ';' after expression
+  123 |   BuilderComparatorTest_160::BySmallestKey cmp;
+      |                                           ^
+      |                                           ;
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:123:30: error: no member named 'BySmallestKey' in 'leveldb::BuilderComparatorTest_160'
+  123 |   BuilderComparatorTest_160::BySmallestKey cmp;
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:125:3: error: use of undeclared identifier 'cmp'; did you mean 'bcmp'?
+  125 |   cmp.internal_comparator = &icmp_;
+      |   ^~~
+      |   bcmp
+/usr/include/strings.h:34:12: note: 'bcmp' declared here
+   34 | extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:125:6: error: member reference base type 'int (const void *, const void *, size_t) noexcept(true)' (aka 'int (const void *, const void *, unsigned long) noexcept(true)') is not a structure or union
+  125 |   cmp.internal_comparator = &icmp_;
+      |   ~~~^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:139:15: error: use of undeclared identifier 'cmp'
+  139 |   EXPECT_TRUE(cmp(f1, f2));
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:141:16: error: use of undeclared identifier 'cmp'
+  141 |   EXPECT_FALSE(cmp(f2, f1));
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:147:54: error: no member named 'BySmallestKey' in 'leveldb::BuilderComparatorTest_160'
+  147 |   std::set<FileMetaData*, BuilderComparatorTest_160::BySmallestKey> files(cmp);
+      |                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:147:75: error: use of undeclared identifier 'cmp'; did you mean 'bcmp'?
+  147 |   std::set<FileMetaData*, BuilderComparatorTest_160::BySmallestKey> files(cmp);
+      |                                                                           ^~~
+      |                                                                           bcmp
+/usr/include/strings.h:34:12: note: 'bcmp' declared here
+   34 | extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:123:44: error: expression result unused [-Werror,-Wunused-value]
+  123 |   BuilderComparatorTest_160::BySmallestKey cmp;
+      |                                            ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:177:44: error: use of undeclared identifier 'cmp'; did you mean 'bcmp'?
+  177 |   BuilderComparatorTest_160::BySmallestKey cmp;
+      |                                            ^~~
+      |                                            bcmp
+/usr/include/strings.h:34:12: note: 'bcmp' declared here
+   34 | extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:177:43: error: expected ';' after expression
+  177 |   BuilderComparatorTest_160::BySmallestKey cmp;
+      |                                           ^
+      |                                           ;
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:177:30: error: no member named 'BySmallestKey' in 'leveldb::BuilderComparatorTest_160'
+  177 |   BuilderComparatorTest_160::BySmallestKey cmp;
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp:179:3: error: use of undeclared identifier 'cmp'; did you mean 'bcmp'?
+  179 |   cmp.internal_comparator = &icmp_;
+      |   ^~~
+      |   bcmp
+/usr/include/strings.h:34:12: note: 'bcmp' declared here
+   34 | extern int bcmp (const void *__s1, const void *__s2, size_t __n)
+      |            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_160.dir/build.make:76: generated_build/CMakeFiles/test_160.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_160.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:2617: generated_build/CMakeFiles/test_160.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:2624: generated_build/CMakeFiles/test_160.dir/rule] Error 2
+gmake: *** [Makefile:829: test_160] Error 2

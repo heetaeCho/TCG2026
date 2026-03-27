@@ -1,0 +1,121 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1221.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:24:29: error: constant expression evaluates to -40 which cannot be narrowed to type 'byte' (aka 'unsigned char') [-Wc++11-narrowing]
+   24 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:24:29: note: insert an explicit cast to silence this issue
+   24 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+      |                             static_cast<byte>( )
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:28:25: error: 'writeHeader' is a protected member of 'Exiv2::JpegImage'
+   28 |     EXPECT_EQ(jpegImage.writeHeader(*mockIo), 0);  // Expect success (0)
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jpgimage.hpp:188:7: note: declared protected here
+  188 |   int writeHeader(BasicIo& outIo) const override;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:35:29: error: constant expression evaluates to -40 which cannot be narrowed to type 'byte' (aka 'unsigned char') [-Wc++11-narrowing]
+   35 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:35:29: note: insert an explicit cast to silence this issue
+   35 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+      |                             static_cast<byte>( )
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:39:25: error: 'writeHeader' is a protected member of 'Exiv2::JpegImage'
+   39 |     EXPECT_EQ(jpegImage.writeHeader(*mockIo), 4);  // Expect failure (error code 4)
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jpgimage.hpp:188:7: note: declared protected here
+  188 |   int writeHeader(BasicIo& outIo) const override;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:46:29: error: constant expression evaluates to -40 which cannot be narrowed to type 'byte' (aka 'unsigned char') [-Wc++11-narrowing]
+   46 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:46:29: note: insert an explicit cast to silence this issue
+   46 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+      |                             static_cast<byte>( )
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:50:25: error: 'writeHeader' is a protected member of 'Exiv2::JpegImage'
+   50 |     EXPECT_EQ(jpegImage.writeHeader(*mockIo), 4);  // Expect failure (error code 4)
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jpgimage.hpp:188:7: note: declared protected here
+  188 |   int writeHeader(BasicIo& outIo) const override;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:57:29: error: constant expression evaluates to -40 which cannot be narrowed to type 'byte' (aka 'unsigned char') [-Wc++11-narrowing]
+   57 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:57:29: note: insert an explicit cast to silence this issue
+   57 |     byte tmpBuf[2] = {0xff, -40};  // Expected SOI marker byte sequence
+      |                             ^~~
+      |                             static_cast<byte>( )
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:60:25: error: 'writeHeader' is a protected member of 'Exiv2::JpegImage'
+   60 |     EXPECT_EQ(jpegImage.writeHeader(*mockIo), 4);  // Expect failure (error code 4)
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jpgimage.hpp:188:7: note: declared protected here
+  188 |   int writeHeader(BasicIo& outIo) const override;
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'Exiv2::MockBasicIo'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp:17:35: note: in instantiation of function template specialization 'std::make_unique<Exiv2::MockBasicIo>' requested here
+   17 |     JpegImageTest() : mockIo(std::make_unique<MockBasicIo>()) {}
+      |                                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:61:15: note: unimplemented pure virtual method 'open' in 'MockBasicIo'
+   61 |   virtual int open() = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:70:15: note: unimplemented pure virtual method 'close' in 'MockBasicIo'
+   70 |   virtual int close() = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:98:15: note: unimplemented pure virtual method 'putb' in 'MockBasicIo'
+   98 |   virtual int putb(byte data) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: unimplemented pure virtual method 'read' in 'MockBasicIo'
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:122:18: note: unimplemented pure virtual method 'read' in 'MockBasicIo'
+  122 |   virtual size_t read(byte* buf, size_t rcount) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:140:15: note: unimplemented pure virtual method 'getb' in 'MockBasicIo'
+  140 |   virtual int getb() = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:154:16: note: unimplemented pure virtual method 'transfer' in 'MockBasicIo'
+  154 |   virtual void transfer(BasicIo& src) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:163:15: note: unimplemented pure virtual method 'seek' in 'MockBasicIo'
+  163 |   virtual int seek(int64_t offset, Position pos) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:184:17: note: unimplemented pure virtual method 'mmap' in 'MockBasicIo'
+  184 |   virtual byte* mmap(bool isWriteable = false) = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:191:15: note: unimplemented pure virtual method 'munmap' in 'MockBasicIo'
+  191 |   virtual int munmap() = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:201:32: note: unimplemented pure virtual method 'tell' in 'MockBasicIo'
+  201 |   [[nodiscard]] virtual size_t tell() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:207:32: note: unimplemented pure virtual method 'size' in 'MockBasicIo'
+  207 |   [[nodiscard]] virtual size_t size() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:209:30: note: unimplemented pure virtual method 'isopen' in 'MockBasicIo'
+  209 |   [[nodiscard]] virtual bool isopen() const = 0;
+      |                              ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:213:30: note: unimplemented pure virtual method 'eof' in 'MockBasicIo'
+  213 |   [[nodiscard]] virtual bool eof() const = 0;
+      |                              ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: unimplemented pure virtual method 'path' in 'MockBasicIo'
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MockBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1221.dir/build.make:79: generated_build/CMakeFiles/test_1221.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1221.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24065: generated_build/CMakeFiles/test_1221.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24072: generated_build/CMakeFiles/test_1221.dir/rule] Error 2
+gmake: *** [Makefile:6796: test_1221] Error 2

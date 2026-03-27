@@ -1,0 +1,129 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1786.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:18:19: error: variable type 'CiffComponent' is an abstract class
+   18 |     CiffComponent mockComponent(crwTagId, crwDir);
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:19:29: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   19 |     EXPECT_CALL(*ciffHeader.pRootDir_, findComponent(crwTagId, crwDir))
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:19:5: error: no member named 'gmock_findComponent' in 'Exiv2::Internal::CiffDirectory'
+   19 |     EXPECT_CALL(*ciffHeader.pRootDir_, findComponent(crwTagId, crwDir))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:25:1: note: expanded from here
+   25 | gmock_findComponent
+      | ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:36:16: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   36 |     ciffHeader.pRootDir_ = nullptr;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:51:29: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   51 |     EXPECT_CALL(*ciffHeader.pRootDir_, add(testing::_, testing::_, testing::_))
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:51:5: error: no member named 'gmock_add' in 'Exiv2::Internal::CiffDirectory'
+   51 |     EXPECT_CALL(*ciffHeader.pRootDir_, add(testing::_, testing::_, testing::_))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:41:1: note: expanded from here
+   41 | gmock_add
+      | ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:52:49: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   52 |         .WillOnce(testing::ReturnRef(ciffHeader.pRootDir_));
+      |                                                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:66:29: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   66 |     EXPECT_CALL(*ciffHeader.pRootDir_, remove(crwTagId, crwDir))
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:66:5: error: no member named 'gmock_remove' in 'Exiv2::Internal::CiffDirectory'
+   66 |     EXPECT_CALL(*ciffHeader.pRootDir_, remove(crwTagId, crwDir))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:98:1: note: expanded from here
+   98 | gmock_remove
+      | ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:77:29: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   77 |     EXPECT_CALL(*ciffHeader.pRootDir_, write(testing::_))
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:77:5: error: no member named 'gmock_write' in 'Exiv2::Internal::CiffDirectory'
+   77 |     EXPECT_CALL(*ciffHeader.pRootDir_, write(testing::_))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:58:1: note: expanded from here
+   58 | gmock_write
+      | ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:88:11: error: variable has incomplete type 'Image'
+   88 |     Image image;
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:24:7: note: forward declaration of 'Exiv2::Image'
+   24 | class Image;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:91:29: error: 'pRootDir_' is a private member of 'Exiv2::Internal::CiffHeader'
+   91 |     EXPECT_CALL(*ciffHeader.pRootDir_, decode(image, testing::_))
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:458:34: note: declared private here
+  458 |   std::unique_ptr<CiffDirectory> pRootDir_;  //!< Pointer to the root directory
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp:91:5: error: no member named 'gmock_decode' in 'Exiv2::Internal::CiffDirectory'
+   91 |     EXPECT_CALL(*ciffHeader.pRootDir_, decode(image, testing::_))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:5:1: note: expanded from here
+    5 | gmock_decode
+      | ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1786.dir/build.make:79: generated_build/CMakeFiles/test_1786.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1786.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24439: generated_build/CMakeFiles/test_1786.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24446: generated_build/CMakeFiles/test_1786.dir/rule] Error 2
+gmake: *** [Makefile:6939: test_1786] Error 2

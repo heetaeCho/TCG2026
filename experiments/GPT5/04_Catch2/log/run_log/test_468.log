@@ -1,0 +1,52 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from XmlWriter_ScopedElement_MoveAssign_468
+[ RUN      ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignEndsPreviousElementImmediately_468
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_468.cpp:81: Failure
+Value of: Contains(oss1.str(), "</one>")
+  Actual: false
+Expected: true
+Move-assignment should end the previous LHS element immediately.
+
+[  FAILED  ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignEndsPreviousElementImmediately_468 (0 ms)
+[ RUN      ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignThenDestructionClosesAdoptedElement_468
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_468.cpp:141: Failure
+Value of: Contains(oss1.str(), "</one>")
+  Actual: false
+Expected: true
+
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_468.cpp:155: Failure
+Value of: Contains(oss2.str(), "</two>")
+  Actual: false
+Expected: true
+The adopted element should be closed when the (new) owner is destroyed.
+
+[  FAILED  ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignThenDestructionClosesAdoptedElement_468 (0 ms)
+[ RUN      ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignIntoEmptyDoesNotEndAnything_468
+[       OK ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignIntoEmptyDoesNotEndAnything_468 (0 ms)
+[ RUN      ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignIntoEmpty_RAIICleanupClosesBoth_468
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_468.cpp:253: Failure
+Value of: Contains(ossA.str(), "</A>")
+  Actual: false
+Expected: true
+RAII should close 'A' exactly once at destruction.
+
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_468.cpp:257: Failure
+Value of: Contains(ossB.str(), "</B>")
+  Actual: false
+Expected: true
+RAII should close 'B' exactly once at destruction.
+
+[  FAILED  ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignIntoEmpty_RAIICleanupClosesBoth_468 (0 ms)
+[----------] 4 tests from XmlWriter_ScopedElement_MoveAssign_468 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignEndsPreviousElementImmediately_468
+[  FAILED  ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignThenDestructionClosesAdoptedElement_468
+[  FAILED  ] XmlWriter_ScopedElement_MoveAssign_468.MoveAssignIntoEmpty_RAIICleanupClosesBoth_468
+
+ 3 FAILED TESTS

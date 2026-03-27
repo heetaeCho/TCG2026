@@ -1,0 +1,66 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_365.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp:33:14: error: use of class template 'BasicResult' requires template arguments
+   33 |     auto r = BasicResult::ok();
+      |              ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:235:19: note: template is declared here
+  234 |             template <typename T = void>
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  235 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp:75:15: error: use of class template 'BasicResult' requires template arguments
+   75 |     auto r1 = BasicResult::ok();
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:235:19: note: template is declared here
+  234 |             template <typename T = void>
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  235 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp:77:15: error: use of class template 'BasicResult' requires template arguments
+   77 |     auto r2 = BasicResult::ok();
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:235:19: note: template is declared here
+  234 |             template <typename T = void>
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  235 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp:101:27: error: use of class template 'BasicResult' requires template arguments
+  101 |     const auto original = BasicResult::ok();
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:235:19: note: template is declared here
+  234 |             template <typename T = void>
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  235 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp:131:32: error: use of class template 'BasicResult' requires template arguments
+  131 |     auto make_ok = [] { return BasicResult::ok(); };
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:235:19: note: template is declared here
+  234 |             template <typename T = void>
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  235 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp:135:18: error: no matching function for call to 'move'
+  135 |     auto moved = std::move(make_ok());  // move-construct from a temporary
+      |                  ^~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/move.h:97:5: note: candidate template ignored: substitution failure [with _Tp = void]: cannot form a reference to 'void'
+   96 |     constexpr typename std::remove_reference<_Tp>::type&&
+      |                                                        ~~
+   97 |     move(_Tp&& __t) noexcept
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_algobase.h:657:5: note: candidate function template not viable: requires 3 arguments, but 1 was provided
+  657 |     move(_II __first, _II __last, _OI __result)
+      |     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp:155:18: error: use of class template 'BasicResult' requires template arguments
+  155 |         auto r = BasicResult::ok();
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:235:19: note: template is declared here
+  234 |             template <typename T = void>
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  235 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_365.dir/build.make:79: generated_build/CMakeFiles/test_365.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_365.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11026: generated_build/CMakeFiles/test_365.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11033: generated_build/CMakeFiles/test_365.dir/rule] Error 2
+gmake: *** [Makefile:3257: test_365] Error 2

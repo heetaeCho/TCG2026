@@ -1,0 +1,100 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_394.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:11:5: error: only virtual member functions can be marked 'override'
+   11 |     MOCK_METHOD(size_t, write, (const void* buffer, size_t size), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:197:1: note: expanded from here
+  197 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:20:67: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   20 |         tiffIfdMakernote_ = std::make_unique<TiffIfdMakernote>(1, IfdId::ExifIFD, IfdId::ExifIFD, std::move(header), false);
+      |                                                                   ^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:20:83: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   20 |         tiffIfdMakernote_ = std::make_unique<TiffIfdMakernote>(1, IfdId::ExifIFD, IfdId::ExifIFD, std::move(header), false);
+      |                                                                                   ^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:29:80: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   29 |     size_t expectedSize = tiffIfdMakernote_->sizeHeader() + tiffIfdMakernote_->doSize();
+      |                                                                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1178:24: note: declared protected here
+ 1178 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:30:34: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   30 |     EXPECT_EQ(tiffIfdMakernote_->doSize(), expectedSize);
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1178:24: note: declared protected here
+ 1178 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:36:63: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   36 |     tiffIfdMakernote_ = std::make_unique<TiffIfdMakernote>(1, IfdId::ExifIFD, IfdId::ExifIFD, nullptr, false);
+      |                                                               ^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:36:79: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   36 |     tiffIfdMakernote_ = std::make_unique<TiffIfdMakernote>(1, IfdId::ExifIFD, IfdId::ExifIFD, nullptr, false);
+      |                                                                               ^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:37:34: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   37 |     EXPECT_EQ(tiffIfdMakernote_->doSize(), tiffIfdMakernote_->sizeHeader());
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1178:24: note: declared protected here
+ 1178 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:50:19: error: call to implicitly-deleted default constructor of 'MockIoWrapper'
+   50 |     MockIoWrapper mockIoWrapper;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:9:23: note: default constructor of 'MockIoWrapper' is implicitly deleted because base class 'IoWrapper' has no default constructor
+    9 | class MockIoWrapper : public IoWrapper {
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:65:34: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   65 |     EXPECT_EQ(tiffIfdMakernote_->doSize(), largeSize);
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1178:24: note: declared protected here
+ 1178 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'Exiv2::Internal::MnHeader'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:19:28: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::MnHeader>' requested here
+   19 |         auto header = std::make_unique<MnHeader>();
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:36:7: note: forward declaration of 'Exiv2::Internal::MnHeader'
+   36 | class MnHeader;
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Internal::MnHeader'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::Internal::MnHeader>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp:19:23: note: in instantiation of member function 'std::unique_ptr<Exiv2::Internal::MnHeader>::~unique_ptr' requested here
+   19 |         auto header = std::make_unique<MnHeader>();
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:36:7: note: forward declaration of 'Exiv2::Internal::MnHeader'
+   36 | class MnHeader;
+      |       ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_394.dir/build.make:79: generated_build/CMakeFiles/test_394.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_394.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:36917: generated_build/CMakeFiles/test_394.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:36924: generated_build/CMakeFiles/test_394.dir/rule] Error 2
+gmake: *** [Makefile:11710: test_394] Error 2

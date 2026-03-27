@@ -1,0 +1,59 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+Consolidate compiler generated dependencies of target test_168
+[ 80%] Building CXX object generated_build/CMakeFiles/test_168.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp:7:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:182:7: error: attribute exclusive_locks_required ignored, because it is not attached to a declaration [-Werror,-Wignored-attributes]
+  182 |       EXCLUSIVE_LOCKS_REQUIRED(mu);
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./port/thread_annotations.h:43:57: note: expanded from macro 'EXCLUSIVE_LOCKS_REQUIRED'
+   43 |   THREAD_ANNOTATION_ATTRIBUTE__(exclusive_locks_required(__VA_ARGS__))
+      |                                                         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp:15:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./util/mutexlock.h:25:22: error: use of undeclared identifier 'port'
+   25 |   explicit MutexLock(port::Mutex* mu) EXCLUSIVE_LOCK_FUNCTION(mu) : mu_(mu) {
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./util/mutexlock.h:34:3: error: use of undeclared identifier 'port'
+   34 |   port::Mutex* const mu_;
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp:91:5: error: use of undeclared identifier 'port'
+   91 |     port::Mutex mu;
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp:93:5: error: constructor 'VSFixture' must not return void expression
+   93 |     ASSERT_TRUE(vset->LogAndApply(&ve, &mu).ok());
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1990:32: note: expanded from macro 'ASSERT_TRUE'
+ 1990 | #define ASSERT_TRUE(condition) GTEST_ASSERT_TRUE(condition)
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1973:23: note: expanded from macro 'GTEST_ASSERT_TRUE'
+ 1972 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1973 |                       GTEST_FATAL_FAILURE_)
+      |                       ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1505:5: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1505 |     fail(::testing::internal::GetBoolAssertionFailureMessage(\
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1506 |         gtest_ar_, text, #actual, #expected).c_str())
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1346:3: note: expanded from macro 'GTEST_FATAL_FAILURE_'
+ 1346 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kFatalFailure)
+      |   ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp:107:31: error: no viable conversion from 'const InternalKey' to 'uint64_t' (aka 'unsigned long')
+  107 |     ve.AddFile(level, number, smallest, largest, size);
+      |                               ^~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_edit.h:63:51: note: passing argument to parameter 'file_size' here
+   63 |   void AddFile(int level, uint64_t file, uint64_t file_size,
+      |                                                   ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp:109:5: error: use of undeclared identifier 'port'
+  109 |     port::Mutex mu;
+      |     ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_168.dir/build.make:76: generated_build/CMakeFiles/test_168.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_168.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:2878: generated_build/CMakeFiles/test_168.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:2885: generated_build/CMakeFiles/test_168.dir/rule] Error 2
+gmake: *** [Makefile:946: test_168] Error 2

@@ -1,0 +1,32 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_49.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_49.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_49.cpp:15:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiType1.cc:38:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiType1.h:28:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiBase.h:55:28: error: no template named 'span' in namespace 'std'
+   55 |     explicit FoFiBase(std::span<const unsigned char> fileA);
+      |                       ~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiBase.h:73:10: error: no template named 'span' in namespace 'std'
+   73 |     std::span<const unsigned char> file;
+      |     ~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_49.cpp:15:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiType1.cc:314:9: error: cannot initialize object parameter of type 'const FoFiBase' with an expression of type 'FoFiType1'
+  314 |     if (getU8(0, &ok) != 0x80 || !ok) {
+      |         ^~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiType1.cc:320:12: error: cannot initialize object parameter of type 'const FoFiBase' with an expression of type 'FoFiType1'
+  320 |     while (getU8(pos1, &ok) == 0x80 && ok) {
+      |            ^~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiType1.cc:321:16: error: cannot initialize object parameter of type 'const FoFiBase' with an expression of type 'FoFiType1'
+  321 |         type = getU8(pos1 + 1, &ok);
+      |                ^~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiType1.cc:325:18: error: cannot initialize object parameter of type 'const FoFiBase' with an expression of type 'FoFiType1'
+  325 |         segLen = getU32LE(pos1 + 2, &ok);
+      |                  ^~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/fofi/FoFiType1.cc:327:21: error: cannot initialize object parameter of type 'const FoFiBase' with an expression of type 'FoFiType1'
+  327 |         if (!ok || !checkRegion(pos1, segLen)) {
+      |                     ^~~~~~~~~~~
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_49.dir/build.make:79: generated_build/CMakeFiles/test_49.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_49.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:80105: generated_build/CMakeFiles/test_49.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:80112: generated_build/CMakeFiles/test_49.dir/rule] Error 2
+gmake: *** [Makefile:29039: test_49] Error 2

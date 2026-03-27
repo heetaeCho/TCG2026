@@ -1,0 +1,56 @@
+[ 87%] Built target libninja
+[100%] Built target libninja-re2c
+[100%] Building CXX object generated_build/CMakeFiles/test_89.dir/home/user/MyProjects/NewTCG/experiments/06_ninja/test_files/test_89.cpp.o
+/home/user/MyProjects/NewTCG/experiments/06_ninja/test_files/test_89.cpp:27:23: error: non-virtual member function marked 'override' hides virtual member function
+   27 |   size_t CanRunMore() override { return 0u; }
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/ninja/src/build.h:152:18: note: hidden overloaded virtual function 'CommandRunner::CanRunMore' declared here: different qualifiers ('const' vs unqualified)
+  152 |   virtual size_t CanRunMore() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/06_ninja/test_files/test_89.cpp:45:24: error: field type 'TestCommandRunner_89' is an abstract class
+   45 |   TestCommandRunner_89 runner_;
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/ninja/src/build.h:152:18: note: unimplemented pure virtual method 'CanRunMore' in 'TestCommandRunner_89'
+  152 |   virtual size_t CanRunMore() const = 0;
+      |                  ^
+In file included from /home/user/MyProjects/NewTCG/experiments/06_ninja/test_files/test_89.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CommandRunnerTest_89_DefaultGetActiveEdgesReturnsEmpty_89_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/06_ninja/test_files/test_89.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CommandRunnerTest_89_DefaultGetActiveEdgesReturnsEmpty_89_Test>::CreateTest' requested here
+   53 | TEST_F(CommandRunnerTest_89, DefaultGetActiveEdgesReturnsEmpty_89) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CommandRunnerTest_89_GetActiveEdgesIsNotAffectedByCallerModifications_89_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/06_ninja/test_files/test_89.cpp:71:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CommandRunnerTest_89_GetActiveEdgesIsNotAffectedByCallerModifications_89_Test>::CreateTest' requested here
+   71 | TEST_F(CommandRunnerTest_89, GetActiveEdgesIsNotAffectedByCallerModifications_89) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_89.dir/build.make:79: generated_build/CMakeFiles/test_89.dir/home/user/MyProjects/NewTCG/experiments/06_ninja/test_files/test_89.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:6519: generated_build/CMakeFiles/test_89.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:6526: generated_build/CMakeFiles/test_89.dir/rule] Error 2
+gmake: *** [Makefile:2493: test_89] Error 2

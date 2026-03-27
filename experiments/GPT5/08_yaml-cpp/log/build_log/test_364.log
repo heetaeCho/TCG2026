@@ -1,0 +1,20 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_364.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_364.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_364.cpp:11:
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/contrib/dragonbox.h:2556:69: error: call to deleted constructor of 'std::unique_ptr<int>'
+ 2556 |                         return f(nearest_toward_minus_infinity_t{}, args...);
+      |                                                                     ^~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_364.cpp:88:29: note: in instantiation of function template specialization 'YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::nearest_toward_minus_infinity_t::delegate<int, (anonymous namespace)::MoveOnlyFunctor, std::unique_ptr<int>>' requested here
+   88 |   int ret = RoundingPolicy::delegate(0, MoveOnlyFunctor{}, std::move(p));
+      |                             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: 'unique_ptr' has been explicitly marked deleted here
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_364.cpp:41:44: note: passing argument to parameter 'p' here
+   41 |   int operator()(Tag, std::unique_ptr<int> p) const { return p ? *p : -1; }
+      |                                            ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_364.dir/build.make:79: generated_build/CMakeFiles/test_364.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_364.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:17867: generated_build/CMakeFiles/test_364.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:17874: generated_build/CMakeFiles/test_364.dir/rule] Error 2
+gmake: *** [Makefile:6537: test_364] Error 2

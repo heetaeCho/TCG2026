@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1377.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:25:31: error: only virtual member functions can be marked 'override'
+   25 |   Exiv2::Value* clone() const override { return new FakeValueForPrintInt64(*this); }
+      |                               ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:27:32: error: only virtual member functions can be marked 'override'
+   27 |   Exiv2::TypeId typeId() const override { return Exiv2::invalidTypeId; }
+      |                                ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:19:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   19 | class FakeValueForPrintInt64 final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'FakeValueForPrintInt64'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'FakeValueForPrintInt64'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'FakeValueForPrintInt64'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'FakeValueForPrintInt64'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:21:3: error: constructor for '(anonymous namespace)::FakeValueForPrintInt64' must explicitly initialize the base class 'Exiv2::Value' which does not have a default constructor
+   21 |   FakeValueForPrintInt64(Exiv2::Rational r, std::string printed)
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:33:16: note: 'Exiv2::Value' declared here
+   33 | class EXIV2API Value {
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:25:53: error: allocating an object of abstract class type 'FakeValueForPrintInt64'
+   25 |   Exiv2::Value* clone() const override { return new FakeValueForPrintInt64(*this); }
+      |                                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:61:40: error: no member named 'printInt64' in namespace 'Exiv2::Internal'
+   61 |   std::ostream& ret = Exiv2::Internal::printInt64(os, *v, nullptr);
+      |                       ~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:75:20: error: no member named 'printInt64' in namespace 'Exiv2::Internal'
+   75 |   Exiv2::Internal::printInt64(os, *v, nullptr);
+      |   ~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:88:20: error: no member named 'printInt64' in namespace 'Exiv2::Internal'
+   88 |   Exiv2::Internal::printInt64(os, *v, nullptr);
+      |   ~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:102:20: error: no member named 'printInt64' in namespace 'Exiv2::Internal'
+  102 |   Exiv2::Internal::printInt64(os, *v, nullptr);
+      |   ~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:109:26: error: variable type 'FakeValueForPrintInt64' is an abstract class
+  109 |   FakeValueForPrintInt64 fake(/*r=*/Exiv2::Rational{42, 0}, /*printed=*/"FAKE_VALUE");
+      |                          ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:112:40: error: no member named 'printInt64' in namespace 'Exiv2::Internal'
+  112 |   std::ostream& ret = Exiv2::Internal::printInt64(os, fake, nullptr);
+      |                       ~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:119:26: error: variable type 'FakeValueForPrintInt64' is an abstract class
+  119 |   FakeValueForPrintInt64 fake(/*r=*/Exiv2::Rational{42, -7}, /*printed=*/"NEG_DEN");
+      |                          ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp:126:20: error: no member named 'printInt64' in namespace 'Exiv2::Internal'
+  126 |   Exiv2::Internal::printInt64(os, fake, &exif);
+      |   ~~~~~~~~~~~~~~~~~^
+1 warning and 12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1377.dir/build.make:79: generated_build/CMakeFiles/test_1377.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1377.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:36747: generated_build/CMakeFiles/test_1377.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:36754: generated_build/CMakeFiles/test_1377.dir/rule] Error 2
+gmake: *** [Makefile:11645: test_1377] Error 2

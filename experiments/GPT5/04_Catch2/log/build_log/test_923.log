@@ -1,0 +1,39 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_923.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_923.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_923.cpp:11:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:6330:11: warning: 'FAIL' macro redefined [-Wmacro-redefined]
+ 6330 |   #define FAIL( ... ) INTERNAL_CATCH_MSG( "FAIL", Catch::ResultWas::ExplicitFailure, Catch::ResultDisposition::Normal, __VA_ARGS__ )
+      |           ^
+/usr/local/include/gtest/gtest.h:1769:9: note: previous definition is here
+ 1769 | #define FAIL() GTEST_FAIL()
+      |         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_923.cpp:11:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:6332:11: warning: 'SUCCEED' macro redefined [-Wmacro-redefined]
+ 6332 |   #define SUCCEED( ... ) INTERNAL_CATCH_MSG( "SUCCEED", Catch::ResultWas::Ok, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |           ^
+/usr/local/include/gtest/gtest.h:1779:9: note: previous definition is here
+ 1779 | #define SUCCEED() GTEST_SUCCEED()
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_923.cpp:99:12: error: no matching conversion for functional-style cast from 'std::unique_ptr<IGen>' (aka 'unique_ptr<IGenerator<int>>') to 'Catch::Generators::GeneratorWrapper<int>'
+   99 |     return Catch::Generators::GeneratorWrapper<int>(
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  100 | 
+  101 |         std::unique_ptr<IGen>(new VectorIntGenerator(std::move(values))));
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:7523:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::unique_ptr<IGen>' (aka 'unique_ptr<IGenerator<int>>') to 'const GeneratorWrapper<int>' for 1st argument
+ 7523 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:7523:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::unique_ptr<IGen>' (aka 'unique_ptr<IGenerator<int>>') to 'GeneratorWrapper<int>' for 1st argument
+ 7523 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:7527:9: note: candidate constructor not viable: no known conversion from 'std::unique_ptr<IGen>' (aka 'unique_ptr<IGenerator<int>>') to 'IGenerator<int> *' for 1st argument
+ 7527 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/extras/catch_amalgamated.hpp:7529:9: note: candidate constructor not viable: no known conversion from 'std::unique_ptr<IGen>' (aka 'unique_ptr<IGenerator<int>>') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+ 7529 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_923.dir/build.make:79: generated_build/CMakeFiles/test_923.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_923.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:25362: generated_build/CMakeFiles/test_923.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:25369: generated_build/CMakeFiles/test_923.dir/rule] Error 2
+gmake: *** [Makefile:9081: test_923] Error 2

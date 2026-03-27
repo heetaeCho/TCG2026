@@ -1,0 +1,177 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1537.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:43:18: error: non-virtual member function marked 'override' hides virtual member function
+   43 |   size_t count() override { return count_; }
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: hidden overloaded virtual function 'Exiv2::Value::count' declared here: different qualifiers ('const' vs unqualified)
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:45:35: error: non-virtual member function marked 'override' hides virtual member function
+   45 |   uint32_t toUint32(size_t /*n*/) override { return u32_; }
+      |                                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: hidden overloaded virtual function 'Exiv2::Value::toUint32' declared here: different qualifiers ('const' vs unqualified)
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:47:38: error: non-virtual member function marked 'override' hides virtual member function
+   47 |   std::string toString(size_t /*n*/) override { return s_; }
+      |                                      ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:129:23: note: hidden overloaded virtual function 'Exiv2::Value::toString' declared here: different qualifiers ('const' vs unqualified)
+  129 |   virtual std::string toString(size_t n) const;
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:50:32: error: non-virtual member function marked 'override' hides virtual member function
+   50 |   const Exiv2::Value* clone_() override { return new SimpleValue(*this); }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:38:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   38 | class SimpleValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'SimpleValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'SimpleValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'SimpleValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'SimpleValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'SimpleValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'SimpleValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'SimpleValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'SimpleValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'SimpleValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'SimpleValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'SimpleValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:50:54: error: allocating an object of abstract class type 'SimpleValue'
+   50 |   const Exiv2::Value* clone_() override { return new SimpleValue(*this); }
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:59:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   59 | class FinderAwareRoot final : public TiffComponent {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:312:18: note: unimplemented pure virtual method 'doWrite' in 'FinderAwareRoot'
+  312 |   virtual size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'FinderAwareRoot'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:321:18: note: unimplemented pure virtual method 'doWriteData' in 'FinderAwareRoot'
+  321 |   virtual size_t doWriteData(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t dataIdx,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:324:18: note: unimplemented pure virtual method 'doWriteImage' in 'FinderAwareRoot'
+  324 |   virtual size_t doWriteImage(IoWrapper& ioWrapper, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:326:32: note: unimplemented pure virtual method 'doSize' in 'FinderAwareRoot'
+  326 |   [[nodiscard]] virtual size_t doSize() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:328:32: note: unimplemented pure virtual method 'doCount' in 'FinderAwareRoot'
+  328 |   [[nodiscard]] virtual size_t doCount() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:330:32: note: unimplemented pure virtual method 'doSizeData' in 'FinderAwareRoot'
+  330 |   [[nodiscard]] virtual size_t doSizeData() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:332:32: note: unimplemented pure virtual method 'doSizeImage' in 'FinderAwareRoot'
+  332 |   [[nodiscard]] virtual size_t doSizeImage() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:101:19: error: variable type 'FinderAwareRoot' is an abstract class
+  101 |   FinderAwareRoot root;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:111:19: error: variable type 'FinderAwareRoot' is an abstract class
+  111 |   FinderAwareRoot root;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:132:19: error: variable type 'FinderAwareRoot' is an abstract class
+  132 |   FinderAwareRoot root;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:148:19: error: variable type 'FinderAwareRoot' is an abstract class
+  148 |   FinderAwareRoot root;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:167:19: error: variable type 'FinderAwareRoot' is an abstract class
+  167 |   FinderAwareRoot root;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:183:19: error: variable type 'FinderAwareRoot' is an abstract class
+  183 |   FinderAwareRoot root;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:202:19: error: variable type 'FinderAwareRoot' is an abstract class
+  202 |   FinderAwareRoot root;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:223:19: error: variable type 'FinderAwareRoot' is an abstract class
+  223 |   FinderAwareRoot root;
+      |                   ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'Exiv2::Internal::TiffEntryBase'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:83:21: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffEntryBase, unsigned short &, Exiv2::IfdId &, Exiv2::Internal::TiffType>' requested here
+   83 |   auto entry = std::make_unique<TiffEntryBase>(tag, group, static_cast<Exiv2::Internal::TiffType>(0));
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffEntryBase'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffEntryBase'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:495:16: note: unimplemented pure virtual method 'doEncode' in 'TiffEntryBase'
+  495 |   virtual void doEncode(TiffEncoder& encoder, const Exifdatum* datum) = 0;
+      |                ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::SimpleValue'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:116:44: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::SimpleValue, unsigned int, const char (&)[4], int>' requested here
+  116 |                                       std::make_unique<SimpleValue>(123U, "123", 1));
+      |                                            ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::SimpleValue'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:118:45: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::SimpleValue, unsigned int, const char (&)[6], int>' requested here
+  118 |                                        std::make_unique<SimpleValue>(0U, "12345", 1));
+      |                                             ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::SimpleValue'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:226:44: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::SimpleValue, unsigned int, const char (&)[2], int>' requested here
+  226 |                                       std::make_unique<SimpleValue>(1U, "1", 1));
+      |                                            ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::SimpleValue'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp:228:45: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::SimpleValue, unsigned int, const char (&)[3], int>' requested here
+  228 |                                        std::make_unique<SimpleValue>(0U, "42", 1));
+      |                                             ^
+2 warnings and 18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1537.dir/build.make:79: generated_build/CMakeFiles/test_1537.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1537.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:53645: generated_build/CMakeFiles/test_1537.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:53652: generated_build/CMakeFiles/test_1537.dir/rule] Error 2
+gmake: *** [Makefile:18106: test_1537] Error 2

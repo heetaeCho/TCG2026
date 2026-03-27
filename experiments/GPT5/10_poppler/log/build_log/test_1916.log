@@ -1,0 +1,100 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1916.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Function.cc:42:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:47:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:172:24: error: no member named 'starts_with' in 'std::basic_string<char>'
+  172 |     using std::string::starts_with;
+      |           ~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:175:24: error: no member named 'ends_with' in 'std::basic_string<char>'
+  175 |     using std::string::ends_with;
+      |           ~~~~~~~~~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Function.cc:42:
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:99:47: warning: designated initializers are a C++20 extension [-Wc++20-designator]
+   99 |     static constexpr Ref INVALID() { return { .num = -1, .gen = -1 }; };
+      |                                               ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:279:18: error: expected parameter declarator
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                  ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:279:9: error: a type specifier is required for all declarations
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |         ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:279:56: error: expected ';' at end of declaration list
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                                                        ^
+      |                                                        ;
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Function.cc:42:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:621:
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:315:31: error: no template named 'span' in namespace 'std'
+  315 |     virtual size_t write(std::span<const unsigned char> data) = 0;
+      |                          ~~~~~^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:336:23: error: no template named 'span' in namespace 'std'
+  336 |     size_t write(std::span<const unsigned char> data) override;
+      |                  ~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:3:
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Function.cc:1424:62: error: no member named 'numbers' in namespace 'std'
+ 1424 |                 double result = atan2(r1, r2) * 180.0 / std::numbers::pi;
+      |                                                         ~~~~~^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Function.cc:1451:60: error: no member named 'numbers' in namespace 'std'
+ 1451 |                 stack->pushReal(cos(stack->popNum() * std::numbers::pi / 180.0));
+      |                                                       ~~~~~^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Function.cc:1642:60: error: no member named 'numbers' in namespace 'std'
+ 1642 |                 stack->pushReal(sin(stack->popNum() * std::numbers::pi / 180.0));
+      |                                                       ~~~~~^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:47:5: error: cannot use 'try' with exceptions disabled
+   47 |     EXPECT_NO_THROW(stack.pushInt(1));  // Test pushing an element
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:52:5: error: invalid argument type 'void' to unary expression
+   52 |     EXPECT_FALSE(stack.pushInt(101));  // Should not overflow the stack
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1827:33: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:23: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1812 |                       GTEST_NONFATAL_FAILURE_)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:57:5: error: cannot use 'try' with exceptions disabled
+   57 |     EXPECT_THROW(stack.popInt(), std::underflow_error);  // Should throw underflow error when popping from an empty stack
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:74:5: error: cannot use 'try' with exceptions disabled
+   74 |     EXPECT_THROW(stack.topIsReal(), std::underflow_error);  // Should throw underflow error when checking the top of an empty stack
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:105:24: error: 'checkType' is a private member of 'PSStack'
+  105 |     EXPECT_FALSE(stack.checkType(psBool, psInt));  // Should return false since the types don't match
+      |                        ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Function.cc:1012:10: note: declared private here
+ 1012 |     bool checkType(PSObjectType t1, PSObjectType t2)
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp:10:7: warning: 'PSStackTest_1916' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   10 | class PSStackTest_1916 : public ::testing::Test {
+      |       ^
+2 warnings and 15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1916.dir/build.make:79: generated_build/CMakeFiles/test_1916.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1916.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:69769: generated_build/CMakeFiles/test_1916.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:69776: generated_build/CMakeFiles/test_1916.dir/rule] Error 2
+gmake: *** [Makefile:24840: test_1916] Error 2

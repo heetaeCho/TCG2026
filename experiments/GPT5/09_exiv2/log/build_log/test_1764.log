@@ -1,0 +1,94 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1764.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:11:19: error: return type 'CiffComponent' is an abstract class
+   11 |     CiffComponent createComponent(uint16_t tag, uint16_t dir) {
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:12:16: error: allocating an object of abstract class type 'CiffComponent'
+   12 |         return CiffComponent(tag, dir);
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:21:19: error: variable type 'CiffComponent' is an abstract class
+   21 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:32:19: error: variable type 'CiffComponent' is an abstract class
+   32 |     CiffComponent component = createComponent(tag, 0);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:40:19: error: variable type 'CiffComponent' is an abstract class
+   40 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:52:19: error: variable type 'CiffComponent' is an abstract class
+   52 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:64:19: error: variable type 'CiffComponent' is an abstract class
+   64 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:69:38: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   69 |     ByteOrder byteOrder = ByteOrder::BigEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~
+      |                                      bigEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:82:19: error: variable type 'CiffComponent' is an abstract class
+   82 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:85:63: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   85 |     EXPECT_THROW(component.read(invalidData, 0, 0, ByteOrder::BigEndian), std::invalid_argument);
+      |                                                    ~~~~~~~~~~~^~~~~~~~~
+      |                                                               bigEndian
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:92:19: error: variable type 'CiffComponent' is an abstract class
+   92 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:104:19: error: variable type 'CiffComponent' is an abstract class
+  104 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:106:11: error: variable has incomplete type 'Image'
+  106 |     Image image;  // Assuming Image is a known object
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:24:7: note: forward declaration of 'Exiv2::Image'
+   24 | class Image;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:107:38: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+  107 |     ByteOrder byteOrder = ByteOrder::LittleEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                      littleEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:122:19: error: variable type 'CiffComponent' is an abstract class
+  122 |     CiffComponent component = createComponent(tag, dir);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp:125:38: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+  125 |     ByteOrder byteOrder = ByteOrder::BigEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~
+      |                                      bigEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1764.dir/build.make:79: generated_build/CMakeFiles/test_1764.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1764.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:46369: generated_build/CMakeFiles/test_1764.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:46376: generated_build/CMakeFiles/test_1764.dir/rule] Error 2
+gmake: *** [Makefile:15324: test_1764] Error 2

@@ -1,0 +1,75 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_181.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp:9:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:57:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:47:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:172:24: error: no member named 'starts_with' in 'std::basic_string<char>'
+  172 |     using std::string::starts_with;
+      |           ~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:175:24: error: no member named 'ends_with' in 'std::basic_string<char>'
+  175 |     using std::string::ends_with;
+      |           ~~~~~~~~~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp:9:
+In file included from /home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:57:
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:99:47: warning: designated initializers are a C++20 extension [-Wc++20-designator]
+   99 |     static constexpr Ref INVALID() { return { .num = -1, .gen = -1 }; };
+      |                                               ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:279:18: error: expected parameter declarator
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                  ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:279:9: error: a type specifier is required for all declarations
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |         ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Object.h:279:56: error: expected ';' at end of declaration list
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                                                        ^
+      |                                                        ;
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp:9:
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:315:31: error: no template named 'span' in namespace 'std'
+  315 |     virtual size_t write(std::span<const unsigned char> data) = 0;
+      |                          ~~~~~^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:336:23: error: no template named 'span' in namespace 'std'
+  336 |     size_t write(std::span<const unsigned char> data) override;
+      |                  ~~~~~^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp:40:68: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+   40 |   ASSERT_NO_THROW(base = std::unique_ptr<Stream>(new ASCII85Stream(0)));
+      |                                                                    ^
+      |                                                                    nullptr
+/usr/local/include/gtest/gtest.h:1800:24: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1415:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1415 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);         \
+      |                                                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp:40:3: error: cannot use 'try' with exceptions disabled
+   40 |   ASSERT_NO_THROW(base = std::unique_ptr<Stream>(new ASCII85Stream(0)));
+      |   ^
+/usr/local/include/gtest/gtest.h:1800:3: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'ASCII85Stream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp:18:17: note: in instantiation of function template specialization 'std::make_unique<ASCII85Stream, int>' requested here
+   18 |     return std::make_unique<ASCII85Stream>(0);
+      |                 ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:875:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const ASCII85Stream' for 1st argument
+  875 | class ASCII85Stream : public OwnedFilterStream
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/poppler/Stream.h:878:14: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<Stream>' for 1st argument
+  878 |     explicit ASCII85Stream(std::unique_ptr<Stream> strA);
+      |              ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_181.dir/build.make:79: generated_build/CMakeFiles/test_181.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_181.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:38057: generated_build/CMakeFiles/test_181.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:38064: generated_build/CMakeFiles/test_181.dir/rule] Error 2
+gmake: *** [Makefile:11957: test_181] Error 2

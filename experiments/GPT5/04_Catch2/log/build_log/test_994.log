@@ -1,0 +1,22 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_994.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_994.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_994.cpp:39:9: error: redefinition of 'unique_ptr' as different kind of symbol
+   39 |         using unique_ptr = std::unique_ptr<T>;
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:24:11: note: previous definition is here
+   24 |     class unique_ptr {
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::TestCaseInfo' may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_994.cpp:105:15: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::TestCaseInfo>::~unique_ptr' requested here
+  105 |     auto tc = Catch::makeTestCaseInfo(className, nat, sli);
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_994.cpp:33:12: note: forward declaration of 'Catch::TestCaseInfo'
+   33 |     struct TestCaseInfo; // forward declaration only (we never inspect internals)
+      |            ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_994.dir/build.make:79: generated_build/CMakeFiles/test_994.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_994.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:35474: generated_build/CMakeFiles/test_994.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:35481: generated_build/CMakeFiles/test_994.dir/rule] Error 2
+gmake: *** [Makefile:13189: test_994] Error 2

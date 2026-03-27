@@ -1,0 +1,54 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_84.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp:19:11: error: 'brand_' is a private member of 'Exiv2::Jp2Image'
+   19 |     image.brand_ = Internal::brandJph;
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jp2image.hpp:87:12: note: declared private here
+   87 |   uint32_t brand_{0};
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp:27:11: error: 'brand_' is a private member of 'Exiv2::Jp2Image'
+   27 |     image.brand_ = 1234;  // Any value not equal to Internal::brandJph
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jp2image.hpp:87:12: note: declared private here
+   87 |   uint32_t brand_{0};
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp:37:11: error: 'brand_' is a private member of 'Exiv2::Jp2Image'
+   37 |     image.brand_ = 0xFFFFFFFF;  // Max value for uint32_t
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jp2image.hpp:87:12: note: declared private here
+   87 |   uint32_t brand_{0};
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp:45:11: error: 'brand_' is a private member of 'Exiv2::Jp2Image'
+   45 |     image.brand_ = 0;  // Zero value
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jp2image.hpp:87:12: note: declared private here
+   87 |   uint32_t brand_{0};
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp:55:11: error: 'brand_' is a private member of 'Exiv2::Jp2Image'
+   55 |     image.brand_ = 9999;  // An arbitrary value
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/jp2image.hpp:87:12: note: declared private here
+   87 |   uint32_t brand_{0};
+      |            ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp:18:20: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   18 |     Jp2Image image(nullptr, false);
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_84.dir/build.make:79: generated_build/CMakeFiles/test_84.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_84.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:32327: generated_build/CMakeFiles/test_84.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:32334: generated_build/CMakeFiles/test_84.dir/rule] Error 2
+gmake: *** [Makefile:9955: test_84] Error 2

@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1236.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:43:11: error: variable type 'Image' is an abstract class
+   43 |     Image image(ImageType::png, 0, nullptr);
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:47:44: error: use of undeclared identifier 'TxtChunkType'; did you mean 'PngChunk::TxtChunkType'?
+   47 |     PngChunk::decodeTXTChunk(&image, data, TxtChunkType::text);
+      |                                            ^~~~~~~~~~~~
+      |                                            PngChunk::TxtChunkType
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/pngchunk_int.hpp:34:8: note: 'PngChunk::TxtChunkType' declared here
+   34 |   enum TxtChunkType { tEXt_Chunk = 0, zTXt_Chunk = 1, iTXt_Chunk = 2 };
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:47:58: error: no member named 'text' in 'Exiv2::Internal::PngChunk::TxtChunkType'
+   47 |     PngChunk::decodeTXTChunk(&image, data, TxtChunkType::text);
+      |                                            ~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:55:53: error: use of undeclared identifier 'TxtChunkType'; did you mean 'PngChunk::TxtChunkType'?
+   55 |     DataBuf result = PngChunk::decodeTXTChunk(data, TxtChunkType::text);
+      |                                                     ^~~~~~~~~~~~
+      |                                                     PngChunk::TxtChunkType
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/pngchunk_int.hpp:34:8: note: 'PngChunk::TxtChunkType' declared here
+   34 |   enum TxtChunkType { tEXt_Chunk = 0, zTXt_Chunk = 1, iTXt_Chunk = 2 };
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:55:67: error: no member named 'text' in 'Exiv2::Internal::PngChunk::TxtChunkType'
+   55 |     DataBuf result = PngChunk::decodeTXTChunk(data, TxtChunkType::text);
+      |                                                     ~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:79:11: error: variable type 'Image' is an abstract class
+   79 |     Image image(ImageType::png, 0, nullptr);
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:83:44: error: use of undeclared identifier 'TxtChunkType'; did you mean 'PngChunk::TxtChunkType'?
+   83 |     PngChunk::decodeTXTChunk(&image, data, TxtChunkType::text);
+      |                                            ^~~~~~~~~~~~
+      |                                            PngChunk::TxtChunkType
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/pngchunk_int.hpp:34:8: note: 'PngChunk::TxtChunkType' declared here
+   34 |   enum TxtChunkType { tEXt_Chunk = 0, zTXt_Chunk = 1, iTXt_Chunk = 2 };
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:83:58: error: no member named 'text' in 'Exiv2::Internal::PngChunk::TxtChunkType'
+   83 |     PngChunk::decodeTXTChunk(&image, data, TxtChunkType::text);
+      |                                            ~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:95:11: error: variable type 'Image' is an abstract class
+   95 |     Image image(ImageType::png, 0, nullptr);
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp:98:15: error: 'parseChunkContent' is a private member of 'Exiv2::Internal::PngChunk'
+   98 |     PngChunk::parseChunkContent(&image, data.c_data(), data.size(), data);
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/pngchunk_int.hpp:99:15: note: declared private here
+   99 |   static void parseChunkContent(Image* pImage, const byte* key, size_t keySize, const DataBuf& arr);
+      |               ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1236.dir/build.make:79: generated_build/CMakeFiles/test_1236.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1236.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:20393: generated_build/CMakeFiles/test_1236.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:20400: generated_build/CMakeFiles/test_1236.dir/rule] Error 2
+gmake: *** [Makefile:5392: test_1236] Error 2

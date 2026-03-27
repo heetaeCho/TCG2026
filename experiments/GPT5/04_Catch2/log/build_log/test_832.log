@@ -1,0 +1,132 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_832.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:79:38: error: no viable conversion from 'StringRef' to 'SourceLineInfo'
+   79 |     AssertionInfo info{ "unused"_sr, macroName, sli, ResultDisposition::Normal };
+      |                                      ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'StringRef' to 'const SourceLineInfo &' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'StringRef' to 'SourceLineInfo &&' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:79:49: error: no viable conversion from 'SourceLineInfo' to 'StringRef'
+   79 |     AssertionInfo info{ "unused"_sr, macroName, sli, ResultDisposition::Normal };
+      |                                                 ^~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:23:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'SourceLineInfo' to 'const StringRef &' for 1st argument
+   23 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:23:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'SourceLineInfo' to 'StringRef &&' for 1st argument
+   23 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:39:9: note: candidate constructor not viable: no known conversion from 'SourceLineInfo' to 'const char *' for 1st argument
+   39 |         StringRef( char const* rawChars ) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:46:9: note: candidate constructor not viable: no known conversion from 'SourceLineInfo' to 'const std::string &' (aka 'const basic_string<char> &') for 1st argument
+   46 |         StringRef( std::string const& stdString ) noexcept
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:85:25: error: no matching constructor for initialization of 'AssertionResultData'
+   85 |     AssertionResultData data{ type };
+      |                         ^   ~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:21:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'ResultWas::OfType' to 'const AssertionResultData' for 1st argument
+   21 |     struct AssertionResultData
+      |            ^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:21:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'ResultWas::OfType' to 'AssertionResultData' for 1st argument
+   21 |     struct AssertionResultData
+      |            ^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:25:9: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   25 |         AssertionResultData( ResultWas::OfType _resultType, LazyExpression const& _lazyExpression );
+      |         ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:89:14: error: no member named 'expression' in 'Catch::AssertionResultData'
+   89 |         data.expression = expr.to_string();
+      |         ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:89:32: error: no member named 'to_string' in 'Catch::StringRef'
+   89 |         data.expression = expr.to_string();
+      |                           ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:91:14: error: no member named 'macroName' in 'Catch::AssertionResultData'
+   91 |         data.macroName = macroName;
+      |         ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:93:14: error: no member named 'decomposedExpression' in 'Catch::AssertionResultData'
+   93 |         data.decomposedExpression = exprInMacro.to_string();
+      |         ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:93:49: error: no member named 'to_string' in 'Catch::StringRef'
+   93 |         data.decomposedExpression = exprInMacro.to_string();
+      |                                     ~~~~~~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:99:14: error: no member named 'reconstruct' in 'Catch::AssertionResultData'
+   99 |         data.reconstruct = expanded.to_string();
+      |         ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:99:37: error: no member named 'to_string' in 'Catch::StringRef'
+   99 |         data.reconstruct = expanded.to_string();
+      |                            ~~~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:105:22: error: no viable overloaded '='
+  105 |         data.message = message;
+      |         ~~~~~~~~~~~~ ^ ~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:800:7: note: candidate function not viable: no known conversion from 'StringRef' to 'const basic_string<char>' for 1st argument
+  800 |       operator=(const basic_string& __str)
+      |       ^         ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:811:7: note: candidate function not viable: no known conversion from 'StringRef' to 'const char *' for 1st argument
+  811 |       operator=(const _CharT* __s)
+      |       ^         ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:823:7: note: candidate function not viable: no known conversion from 'StringRef' to 'char' for 1st argument
+  823 |       operator=(_CharT __c)
+      |       ^         ~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:841:7: note: candidate function not viable: no known conversion from 'StringRef' to 'basic_string<char>' for 1st argument
+  841 |       operator=(basic_string&& __str)
+      |       ^         ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:909:7: note: candidate function not viable: no known conversion from 'StringRef' to 'initializer_list<char>' for 1st argument
+  909 |       operator=(initializer_list<_CharT> __l)
+      |       ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:924:8: note: candidate template ignored: requirement '__and_<std::is_convertible<const Catch::StringRef &, std::basic_string_view<char, std::char_traits<char>>>, std::__not_<std::is_convertible<const Catch::StringRef *, const std::basic_string<char, std::char_traits<char>, std::allocator<char>> *>>, std::__not_<std::is_convertible<const Catch::StringRef &, const char *>>>::value' was not satisfied [with _Tp = StringRef]
+  924 |        operator=(const _Tp& __svt)
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:109:10: error: no member named 'lineInfo' in 'Catch::AssertionResultData'
+  109 |     data.lineInfo = sli;
+      |     ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:113:12: error: no matching constructor for initialization of 'AssertionResult'
+  113 |     return AssertionResult{ info, CATCH_MOVE(data) };
+      |            ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:38:9: note: candidate constructor not viable: expects an rvalue for 2nd argument
+   38 |         AssertionResult( AssertionInfo const& info, AssertionResultData&& data );
+      |         ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:137:20: error: no matching constructor for initialization of 'ReporterConfig'
+  137 |     ReporterConfig cfg{ os, {}, {}, {} };
+      |                    ^  ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: no known conversion from 'std::ostringstream' (aka 'basic_ostringstream<char>') to 'const IConfig *' for 1st argument
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp:17:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_sonarqube.hpp:11:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_cumulative_base.hpp:11:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:11:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:17:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IStream' may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IStream>::~unique_ptr' requested here
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:32:11: note: forward declaration of 'Catch::IStream'
+   32 |     class IStream;
+      |           ^
+1 warning and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_832.dir/build.make:79: generated_build/CMakeFiles/test_832.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_832.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:12082: generated_build/CMakeFiles/test_832.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:12089: generated_build/CMakeFiles/test_832.dir/rule] Error 2
+gmake: *** [Makefile:3686: test_832] Error 2

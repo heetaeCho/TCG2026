@@ -1,0 +1,40 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_644.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:33:34: warning: inline function 'Catch::Context::getConfig' is not defined [-Wundefined-inline]
+   33 |         constexpr IConfig const* getConfig() const;
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:113:19: note: used here
+  113 |     EXPECT_EQ(ctx.getConfig(), nullptr);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:31:35: warning: inline function 'Catch::Context::getResultCapture' is not defined [-Wundefined-inline]
+   31 |         constexpr IResultCapture* getResultCapture() const;
+      |                                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:115:19: note: used here
+  115 |     EXPECT_EQ(ctx.getResultCapture(), nullptr);
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:37:24: warning: inline function 'Catch::Context::setConfig' is not defined [-Wundefined-inline]
+   37 |         constexpr void setConfig(IConfig const* config);
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:141:9: note: used here
+  141 |     ctx.setConfig(&cfg);
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:35:24: warning: inline function 'Catch::Context::setResultCapture' is not defined [-Wundefined-inline]
+   35 |         constexpr void setResultCapture(IResultCapture* resultCapture);
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp:143:9: note: used here
+  143 |     ctx.setResultCapture(&res);
+      |         ^
+4 warnings generated.
+[100%] Linking CXX executable /home/user/MyProjects/NewTCG/experiments/04_Catch2/build/test_644/test_644
+/usr/bin/ld: /usr/bin/ld: DWARF error: invalid or unhandled FORM value: 0x23
+CMakeFiles/test_644.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp.o: in function `ContextTest_644_CleanUpThenGetContext_IsUsableAndStable_644_Test::TestBody()':
+test_644.cpp:(.text+0xdc2): undefined reference to `Catch::Context::cleanUpContext()'
+/usr/bin/ld: CMakeFiles/test_644.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp.o: in function `ContextTest_644_StateDoesNotPersistAcrossCleanup_ForPointers_644_Test::TestBody()':
+test_644.cpp:(.text+0x12e0): undefined reference to `Catch::Context::cleanUpContext()'
+/usr/bin/ld: CMakeFiles/test_644.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_644.cpp.o: in function `ContextTest_644::TearDown()':
+test_644.cpp:(.text._ZN15ContextTest_6448TearDownEv[_ZN15ContextTest_6448TearDownEv]+0x27): undefined reference to `Catch::Context::cleanUpContext()'
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+gmake[3]: *** [generated_build/CMakeFiles/test_644.dir/build.make:101: /home/user/MyProjects/NewTCG/experiments/04_Catch2/build/test_644/test_644] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:34354: generated_build/CMakeFiles/test_644.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:34361: generated_build/CMakeFiles/test_644.dir/rule] Error 2
+gmake: *** [Makefile:12734: test_644] Error 2

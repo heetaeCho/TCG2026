@@ -1,0 +1,92 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+Consolidate compiler generated dependencies of target test_253
+[100%] Building CXX object generated_build/CMakeFiles/test_253.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp.o
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:29:38: error: base class has incomplete type
+   29 | struct leveldb_comparator_t : public leveldb::Comparator {
+      |                               ~~~~~~~^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/options.h:15:7: note: forward declaration of 'leveldb::Comparator'
+   15 | class Comparator;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:39:27: error: only virtual member functions can be marked 'override'
+   39 |   ~leveldb_comparator_t() override;
+      |                           ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:41:30: error: no type named 'Slice' in namespace 'leveldb'
+   41 |   int Compare(const leveldb::Slice& a, const leveldb::Slice& b) const override;
+      |                     ~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:41:55: error: no type named 'Slice' in namespace 'leveldb'
+   41 |   int Compare(const leveldb::Slice& a, const leveldb::Slice& b) const override;
+      |                                              ~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:43:28: error: only virtual member functions can be marked 'override'
+   43 |   const char* Name() const override;
+      |                            ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:45:59: error: no type named 'Slice' in namespace 'leveldb'
+   45 |   void FindShortestSeparator(std::string*, const leveldb::Slice&) const override;
+      |                                                  ~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:47:51: error: only virtual member functions can be marked 'override'
+   47 |   void FindShortSuccessor(std::string* key) const override;
+      |                                                   ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:81:33: error: static_cast from 'leveldb_comparator_t *' to 'const leveldb::Comparator *', which are not related by inheritance, is not allowed
+   81 |   EXPECT_EQ(opt.rep.comparator, static_cast<const leveldb::Comparator*>(&cmp_instance));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/options.h:15:7: note: 'Comparator' is incomplete
+   15 | class Comparator;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:101:33: error: static_cast from 'leveldb_comparator_t *' to 'const leveldb::Comparator *', which are not related by inheritance, is not allowed
+  101 |   ASSERT_EQ(opt.rep.comparator, static_cast<const leveldb::Comparator*>(&cmp_a));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2073:54: note: expanded from macro 'ASSERT_EQ'
+ 2073 | # define ASSERT_EQ(val1, val2) GTEST_ASSERT_EQ(val1, val2)
+      |                                                      ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2057:69: note: expanded from macro 'GTEST_ASSERT_EQ'
+ 2057 |   ASSERT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:168:40: note: expanded from macro 'ASSERT_PRED_FORMAT2'
+  168 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+      |                                        ^~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/options.h:15:7: note: 'Comparator' is incomplete
+   15 | class Comparator;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp:107:33: error: static_cast from 'leveldb_comparator_t *' to 'const leveldb::Comparator *', which are not related by inheritance, is not allowed
+  107 |   EXPECT_EQ(opt.rep.comparator, static_cast<const leveldb::Comparator*>(&cmp_b));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/options.h:15:7: note: 'Comparator' is incomplete
+   15 | class Comparator;
+      |       ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_253.dir/build.make:76: generated_build/CMakeFiles/test_253.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_253.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4589: generated_build/CMakeFiles/test_253.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4596: generated_build/CMakeFiles/test_253.dir/rule] Error 2
+gmake: *** [Makefile:1713: test_253] Error 2

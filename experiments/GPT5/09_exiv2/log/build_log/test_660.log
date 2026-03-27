@@ -1,0 +1,130 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_660.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:58:28: error: no type named 'Position' in namespace 'Exiv2'; did you mean simply 'Position'?
+   58 |   int seek(int64_t offset, Exiv2::Position pos) override {
+      |                            ^~~~~~~~~~~~~~~
+      |                            Position
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:36:8: note: 'Position' declared here
+   36 |   enum Position { beg, cur, end };
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:72:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   72 |   const size_t tell() override { return pos_; }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:72:23: error: non-virtual member function marked 'override' hides virtual member function
+   72 |   const size_t tell() override { return pos_; }
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:201:32: note: hidden overloaded virtual function 'Exiv2::BasicIo::tell' declared here: different return type ('size_t' (aka 'unsigned long') vs 'const size_t' (aka 'const unsigned long'))
+  201 |   [[nodiscard]] virtual size_t tell() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:73:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   73 |   const size_t size() override { return data_.size(); }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:73:23: error: non-virtual member function marked 'override' hides virtual member function
+   73 |   const size_t size() override { return data_.size(); }
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:207:32: note: hidden overloaded virtual function 'Exiv2::BasicIo::size' declared here: different return type ('size_t' (aka 'unsigned long') vs 'const size_t' (aka 'const unsigned long'))
+  207 |   [[nodiscard]] virtual size_t size() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:74:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   74 |   const bool isopen() override { return open_; }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:74:23: error: non-virtual member function marked 'override' hides virtual member function
+   74 |   const bool isopen() override { return open_; }
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:209:30: note: hidden overloaded virtual function 'Exiv2::BasicIo::isopen' declared here: different return type ('bool' vs 'const bool')
+  209 |   [[nodiscard]] virtual bool isopen() const = 0;
+      |                              ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:87:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   87 |   const int error() override { return 0; }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:87:21: error: non-virtual member function marked 'override' hides virtual member function
+   87 |   const int error() override { return 0; }
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:211:29: note: hidden overloaded virtual function 'Exiv2::BasicIo::error' declared here: different return type ('int' vs 'const int')
+  211 |   [[nodiscard]] virtual int error() const = 0;
+      |                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:88:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   88 |   const bool eof() override { return pos_ >= data_.size(); }
+      |   ^~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:88:20: error: non-virtual member function marked 'override' hides virtual member function
+   88 |   const bool eof() override { return pos_ >= data_.size(); }
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:213:30: note: hidden overloaded virtual function 'Exiv2::BasicIo::eof' declared here: different return type ('bool' vs 'const bool')
+  213 |   [[nodiscard]] virtual bool eof() const = 0;
+      |                              ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:89:29: error: non-virtual member function marked 'override' hides virtual member function
+   89 |   const std::string& path() override { return path_; }
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: hidden overloaded virtual function 'Exiv2::BasicIo::path' declared here: different qualifiers ('const' vs unqualified)
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:25:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   25 | class MemBasicIo final : public Exiv2::BasicIo {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:163:15: note: unimplemented pure virtual method 'seek' in 'MemBasicIo'
+  163 |   virtual int seek(int64_t offset, Position pos) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:201:32: note: unimplemented pure virtual method 'tell' in 'MemBasicIo'
+  201 |   [[nodiscard]] virtual size_t tell() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:207:32: note: unimplemented pure virtual method 'size' in 'MemBasicIo'
+  207 |   [[nodiscard]] virtual size_t size() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:209:30: note: unimplemented pure virtual method 'isopen' in 'MemBasicIo'
+  209 |   [[nodiscard]] virtual bool isopen() const = 0;
+      |                              ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:211:29: note: unimplemented pure virtual method 'error' in 'MemBasicIo'
+  211 |   [[nodiscard]] virtual int error() const = 0;
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:213:30: note: unimplemented pure virtual method 'eof' in 'MemBasicIo'
+  213 |   [[nodiscard]] virtual bool eof() const = 0;
+      |                              ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: unimplemented pure virtual method 'path' in 'MemBasicIo'
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MemBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:60:16: error: no member named 'beg' in namespace 'Exiv2'; did you mean simply 'beg'?
+   60 |     if (pos == Exiv2::beg) base = 0;
+      |                ^~~~~~~~~~
+      |                beg
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:36:19: note: 'beg' declared here
+   36 |   enum Position { beg, cur, end };
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:61:21: error: no member named 'cur' in namespace 'Exiv2'; did you mean simply 'cur'?
+   61 |     else if (pos == Exiv2::cur) base = static_cast<int64_t>(pos_);
+      |                     ^~~~~~~~~~
+      |                     cur
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:36:24: note: 'cur' declared here
+   36 |   enum Position { beg, cur, end };
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:62:21: error: no member named 'end' in namespace 'Exiv2'; did you mean simply 'end'?
+   62 |     else if (pos == Exiv2::end) base = static_cast<int64_t>(data_.size());
+      |                     ^~~~~~~~~~
+      |                     end
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:36:29: note: 'end' declared here
+   36 |   enum Position { beg, cur, end };
+      |                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:129:19: error: variable has incomplete type 'Exiv2::XmpKey'
+  129 |     Exiv2::XmpKey xk(key);
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:7:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::MemBasicIo'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp:123:20: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::MemBasicIo, std::vector<unsigned char>>' requested here
+  123 |     auto io = std::make_unique<MemBasicIo>(std::move(io_data));
+      |                    ^
+6 warnings and 12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_660.dir/build.make:79: generated_build/CMakeFiles/test_660.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_660.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:8765: generated_build/CMakeFiles/test_660.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:8772: generated_build/CMakeFiles/test_660.dir/rule] Error 2
+gmake: *** [Makefile:946: test_660] Error 2

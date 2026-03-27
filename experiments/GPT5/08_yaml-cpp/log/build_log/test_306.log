@@ -1,0 +1,39 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_306.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp:12:13: error: use of undeclared identifier 'stdr'; did you mean 'std'?
+   12 | using u32 = stdr::uint_least32_t;
+      |             ^~~~
+      |             std
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/cstring:73:11: note: 'std' declared here
+   73 | namespace std _GLIBCXX_VISIBILITY(default)
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp:13:13: error: use of undeclared identifier 'stdr'; did you mean 'std'?
+   13 | using u64 = stdr::uint_least64_t;
+      |             ^~~~
+      |             std
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/cstring:73:11: note: 'std' declared here
+   73 | namespace std _GLIBCXX_VISIBILITY(default)
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp:15:15: error: constexpr variable 'kConstexprProduct_306' must be initialized by a constant expression
+   15 | constexpr u64 kConstexprProduct_306 =
+      |               ^
+   16 |     YAML::jkj::dragonbox::detail::wuint::umul64(u32{12345}, u32{6789});
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp:16:5: note: non-constexpr function 'umul64' cannot be used in a constant expression
+   16 |     YAML::jkj::dragonbox::detail::wuint::umul64(u32{12345}, u32{6789});
+      |     ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/contrib/dragonbox.h:722:61: note: declared here
+  722 |                 inline JKJ_CONSTEXPR20 stdr::uint_least64_t umul64(stdr::uint_least32_t x,
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp:17:15: error: static assertion expression is not an integral constant expression
+   17 | static_assert(kConstexprProduct_306 == u64{12345} * u64{6789},
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp:17:15: note: initializer of 'kConstexprProduct_306' is not a constant expression
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp:15:15: note: declared here
+   15 | constexpr u64 kConstexprProduct_306 =
+      |               ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_306.dir/build.make:79: generated_build/CMakeFiles/test_306.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_306.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:17419: generated_build/CMakeFiles/test_306.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:17426: generated_build/CMakeFiles/test_306.dir/rule] Error 2
+gmake: *** [Makefile:6355: test_306] Error 2

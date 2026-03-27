@@ -1,0 +1,26 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+Consolidate compiler generated dependencies of target test_366
+[ 80%] Building CXX object generated_build/CMakeFiles/test_366.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_366.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_366.cpp:9:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:99:9: error: calling a private destructor of class 'leveldb::MemTable'
+   99 |         delete __ptr;
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<leveldb::MemTable>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_366.cpp:27:12: note: in instantiation of member function 'std::unique_ptr<leveldb::MemTable>::~unique_ptr' requested here
+   27 |     return std::unique_ptr<MemTable>(new MemTable(ikc));
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/memtable.h:77:3: note: declared private here
+   77 |   ~MemTable();  // Private since only Unref() should be used to delete it
+      |   ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_366.dir/build.make:76: generated_build/CMakeFiles/test_366.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_366.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5720: generated_build/CMakeFiles/test_366.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5727: generated_build/CMakeFiles/test_366.dir/rule] Error 2
+gmake: *** [Makefile:2220: test_366] Error 2

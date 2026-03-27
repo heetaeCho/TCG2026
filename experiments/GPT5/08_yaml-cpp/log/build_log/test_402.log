@@ -1,0 +1,77 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_402.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:14:38: error: no member named 'jkj' in namespace 'YAML::jkj::dragonbox'
+   14 | namespace db = YAML::jkj::dragonbox::jkj::dragonbox::jkj::dragonbox::jkj::dragonbox;
+      |                ~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:15:19: error: use of undeclared identifier 'db'
+   15 | namespace wuint = db::detail::wuint;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:21:17: error: use of undeclared identifier 'requires'
+   21 |   if constexpr (requires { CacheEntry{hi, lo}; }) {
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:23:24: error: use of undeclared identifier 'requires'
+   23 |   } else if constexpr (requires { c.high_ = hi; c.low_ = lo; }) {
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:41:27: error: use of undeclared identifier 'wuint'
+   41 |   return static_cast<int>(wuint::total_bits - wuint::significand_bits - 1);
+      |                           ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:41:47: error: use of undeclared identifier 'wuint'
+   41 |   return static_cast<int>(wuint::total_bits - wuint::significand_bits - 1);
+      |                                               ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:38:15: error: no return statement in constexpr function
+   38 | constexpr int MaxSafeBeta() {
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:46:13: warning: uninitialized variable in a constexpr function is a C++20 extension [-Wc++20-extensions]
+   46 |   const int max_beta = MaxSafeBeta();
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:57:17: error: use of undeclared identifier 'wuint'
+   57 |   using Cache = wuint::cache_entry_type;
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:59:3: error: unknown type name 'Cache'
+   59 |   Cache cache{};
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:66:25: error: use of undeclared identifier 'wuint'
+   66 |   EXPECT_TRUE((noexcept(wuint::compute_right_endpoint_for_shorter_interval_case(cache, beta_i))));
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:70:17: error: use of undeclared identifier 'wuint'
+   70 |   using Cache = wuint::cache_entry_type;
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:71:24: error: use of undeclared identifier 'wuint'
+   71 |   using Ret = decltype(wuint::compute_right_endpoint_for_shorter_interval_case(std::declval<Cache const&>(),
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:71:93: error: use of undeclared identifier 'Cache'
+   71 |   using Ret = decltype(wuint::compute_right_endpoint_for_shorter_interval_case(std::declval<Cache const&>(),
+      |                                                                                             ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:74:32: error: use of undeclared identifier 'Ret'
+   74 |   static_assert(std::is_same_v<Ret, wuint::carrier_uint>,
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:80:17: error: use of undeclared identifier 'wuint'
+   80 |   using Cache = wuint::cache_entry_type;
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:83:17: error: static assertion expression is not an integral constant expression
+   83 |   static_assert(max_beta >= 0, "Unexpected configuration: max beta must be non-negative.");
+      |                 ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:83:17: note: initializer of 'max_beta' is unknown
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:82:17: note: declared here
+   82 |   constexpr int max_beta = MaxSafeBeta();
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:86:13: error: unknown type name 'Cache'
+   86 |   constexpr Cache cache = []() constexpr {
+      |             ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:87:5: error: use of undeclared identifier 'Cache'; did you mean 'cache'?
+   87 |     Cache c{};
+      |     ^~~~~
+      |     cache
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:86:19: note: 'cache' declared here
+   86 |   constexpr Cache cache = []() constexpr {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp:87:10: error: expected ';' after expression
+   87 |     Cache c{};
+      |          ^
+      |          ;
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_402.dir/build.make:79: generated_build/CMakeFiles/test_402.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_402.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23755: generated_build/CMakeFiles/test_402.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23762: generated_build/CMakeFiles/test_402.dir/rule] Error 2
+gmake: *** [Makefile:8929: test_402] Error 2

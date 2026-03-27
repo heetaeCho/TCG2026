@@ -1,0 +1,139 @@
+[ 80%] Built target Catch2
+[ 80%] Building CXX object generated_build/CMakeFiles/test_1022.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:55:23: error: field type 'DummyTracker_1022' is an abstract class
+   55 |     DummyTracker_1022 root{ "root", Catch::SourceLineInfo{"root.cpp", 1}, nullptr };
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:115:22: note: unimplemented pure virtual method 'isComplete' in 'DummyTracker_1022'
+  115 |         virtual bool isComplete() const = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:126:22: note: unimplemented pure virtual method 'close' in 'DummyTracker_1022'
+  126 |         virtual void close() = 0; // Successfully complete
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:127:22: note: unimplemented pure virtual method 'fail' in 'DummyTracker_1022'
+  127 |         virtual void fail() = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:119:22: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_FindsExactMatchingChild_1022_Test'
+  119 |     auto* expected = addChild("childA", "fileA.cpp", 10);
+      |                      ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:123:5: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_FindsExactMatchingChild_1022_Test'
+  123 |     addChild("childB", "fileB.cpp", 20);
+      |     ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:139:5: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_DifferentLineDoesNotMatch_1022_Test'
+  139 |     addChild("childA", "fileA.cpp", 10);
+      |     ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:155:5: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_DifferentNameSameLineDoesNotMatch_1022_Test'
+  155 |     addChild("childA", "fileA.cpp", 10);
+      |     ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:171:5: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_DifferentFileSameNameAndLineDoesNotMatch_1022_Test'
+  171 |     addChild("childA", "fileA.cpp", 10);
+      |     ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:189:19: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_ReturnsFirstMatchingChildWhenMultiple_1022_Test'
+  189 |     auto* first = addChild("dup", "file.cpp", 42);
+      |                   ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:193:5: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_ReturnsFirstMatchingChildWhenMultiple_1022_Test'
+  193 |     addChild("other", "file.cpp", 42);
+      |     ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:197:20: error: cannot initialize object parameter of type 'ITrackerFindChildTest_1022' with an expression of type 'ITrackerFindChildTest_1022_ReturnsFirstMatchingChildWhenMultiple_1022_Test'
+  197 |     auto* second = addChild("dup", "file.cpp", 42);
+      |                    ^~~~~~~~
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ITrackerFindChildTest_1022_ReturnsNullWhenNoChildren_1022_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:105:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ITrackerFindChildTest_1022_ReturnsNullWhenNoChildren_1022_Test>::CreateTest' requested here
+  105 | TEST_F(ITrackerFindChildTest_1022, ReturnsNullWhenNoChildren_1022) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ITrackerFindChildTest_1022_FindsExactMatchingChild_1022_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:117:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ITrackerFindChildTest_1022_FindsExactMatchingChild_1022_Test>::CreateTest' requested here
+  117 | TEST_F(ITrackerFindChildTest_1022, FindsExactMatchingChild_1022) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ITrackerFindChildTest_1022_DifferentLineDoesNotMatch_1022_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:137:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ITrackerFindChildTest_1022_DifferentLineDoesNotMatch_1022_Test>::CreateTest' requested here
+  137 | TEST_F(ITrackerFindChildTest_1022, DifferentLineDoesNotMatch_1022) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ITrackerFindChildTest_1022_DifferentNameSameLineDoesNotMatch_1022_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:153:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ITrackerFindChildTest_1022_DifferentNameSameLineDoesNotMatch_1022_Test>::CreateTest' requested here
+  153 | TEST_F(ITrackerFindChildTest_1022, DifferentNameSameLineDoesNotMatch_1022) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ITrackerFindChildTest_1022_DifferentFileSameNameAndLineDoesNotMatch_1022_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:169:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ITrackerFindChildTest_1022_DifferentFileSameNameAndLineDoesNotMatch_1022_Test>::CreateTest' requested here
+  169 | TEST_F(ITrackerFindChildTest_1022, DifferentFileSameNameAndLineDoesNotMatch_1022) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ITrackerFindChildTest_1022_ReturnsFirstMatchingChildWhenMultiple_1022_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp:185:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ITrackerFindChildTest_1022_ReturnsFirstMatchingChildWhenMultiple_1022_Test>::CreateTest' requested here
+  185 | TEST_F(ITrackerFindChildTest_1022, ReturnsFirstMatchingChildWhenMultiple_1022) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1022.dir/build.make:79: generated_build/CMakeFiles/test_1022.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_1022.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:10578: generated_build/CMakeFiles/test_1022.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:10585: generated_build/CMakeFiles/test_1022.dir/rule] Error 2
+gmake: *** [Makefile:3075: test_1022] Error 2

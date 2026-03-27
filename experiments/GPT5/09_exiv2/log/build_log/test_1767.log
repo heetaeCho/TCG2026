@@ -1,0 +1,208 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1767.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:13:19: error: field type 'CiffComponent' is an abstract class
+   13 |     CiffComponent component{100, 200};  // Example tag and dir values
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:55:5: error: unknown type name 'UniquePtr'; did you mean 'CiffDirectory::UniquePtr'?
+   55 |     UniquePtr mockComponent = std::make_unique<CiffComponent>(100, 200);
+      |     ^~~~~~~~~
+      |     CiffDirectory::UniquePtr
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:64:9: note: 'CiffDirectory::UniquePtr' declared here
+   64 |   using UniquePtr = std::unique_ptr<CiffComponent>;
+      |         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'Exiv2::Internal::CiffComponent'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:55:36: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::CiffComponent, int, int>' requested here
+   55 |     UniquePtr mockComponent = std::make_unique<CiffComponent>(100, 200);
+      |                                    ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetAndGetOffset_1767_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:17:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetAndGetOffset_1767_Test>::CreateTest' requested here
+   17 | TEST_F(CiffComponentTest, SetAndGetOffset_1767) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetAndGetDir_1768_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:23:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetAndGetDir_1768_Test>::CreateTest' requested here
+   23 | TEST_F(CiffComponentTest, SetAndGetDir_1768) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetOffsetToZero_1769_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:29:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetOffsetToZero_1769_Test>::CreateTest' requested here
+   29 | TEST_F(CiffComponentTest, SetOffsetToZero_1769) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetDirToZero_1770_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:35:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetDirToZero_1770_Test>::CreateTest' requested here
+   35 | TEST_F(CiffComponentTest, SetDirToZero_1770) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_EmptyComponent_1771_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:41:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_EmptyComponent_1771_Test>::CreateTest' requested here
+   41 | TEST_F(CiffComponentTest, EmptyComponent_1771) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetValueNotEmpty_1772_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:46:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetValueNotEmpty_1772_Test>::CreateTest' requested here
+   46 | TEST_F(CiffComponentTest, SetValueNotEmpty_1772) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_AddComponent_1773_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_AddComponent_1773_Test>::CreateTest' requested here
+   53 | TEST_F(CiffComponentTest, AddComponent_1773) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetMaxSize_1774_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:61:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetMaxSize_1774_Test>::CreateTest' requested here
+   61 | TEST_F(CiffComponentTest, SetMaxSize_1774) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_ReadWithSizeZero_1775_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:67:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_ReadWithSizeZero_1775_Test>::CreateTest' requested here
+   67 | TEST_F(CiffComponentTest, ReadWithSizeZero_1775) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_WriteComponent_1776_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:75:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_WriteComponent_1776_Test>::CreateTest' requested here
+   75 | TEST_F(CiffComponentTest, WriteComponent_1776) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_RemoveComponent_1777_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp:85:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_RemoveComponent_1777_Test>::CreateTest' requested here
+   85 | TEST_F(CiffComponentTest, RemoveComponent_1777) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1767.dir/build.make:79: generated_build/CMakeFiles/test_1767.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1767.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:38821: generated_build/CMakeFiles/test_1767.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:38828: generated_build/CMakeFiles/test_1767.dir/rule] Error 2
+gmake: *** [Makefile:12438: test_1767] Error 2

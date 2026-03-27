@@ -1,0 +1,55 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_772.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_772.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_772.cpp:49:17: error: variable has incomplete type 'NameAndTags'
+   49 |     NameAndTags nat{ StringRef{name}, StringRef{} };
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:47:12: note: forward declaration of 'Catch::NameAndTags'
+   47 |     struct NameAndTags;
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_772.cpp:115:12: error: no matching constructor for initialization of 'ReporterConfig'
+  115 |     return ReporterConfig(os, /*fullConfig*/ nullptr);
+      |            ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 2 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_772.cpp:169:17: error: no matching constructor for initialization of 'SectionInfo'
+  169 |     SectionInfo si{ StringRef{"sec"}, SourceLineInfo{__FILE__, static_cast<std::size_t>(__LINE__)} };
+      |                 ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_section_info.hpp:24:9: note: candidate constructor not viable: no known conversion from 'StringRef' to 'const SourceLineInfo' for 1st argument
+   24 |         SectionInfo( SourceLineInfo const& _lineInfo, std::string _name,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_772.cpp:175:18: error: no matching constructor for initialization of 'SectionStats'
+  175 |     SectionStats sstats{ si, Counts{}, /*missing assertions*/ false, /*duration*/ 0.0 };
+      |                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:73:9: note: candidate constructor not viable: expects an rvalue for 1st argument
+   73 |         SectionStats(   SectionInfo&& _sectionInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_772.dir/build.make:79: generated_build/CMakeFiles/test_772.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_772.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23570: generated_build/CMakeFiles/test_772.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23577: generated_build/CMakeFiles/test_772.dir/rule] Error 2
+gmake: *** [Makefile:8353: test_772] Error 2

@@ -1,0 +1,106 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_361.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:13:72: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   13 |         tiffIfdMakernote_ = std::make_unique<TiffIfdMakernote>(0x1234, IfdId::Exif, IfdId::MakerNote, std::move(pHeader_), true);
+      |                                                                        ^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:13:85: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   13 |         tiffIfdMakernote_ = std::make_unique<TiffIfdMakernote>(0x1234, IfdId::Exif, IfdId::MakerNote, std::move(pHeader_), true);
+      |                                                                                     ^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:23:34: error: 'doCount' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   23 |     EXPECT_EQ(tiffIfdMakernote_->doCount(), 0);  // Modify expected value based on actual behavior
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1184:24: note: declared protected here
+ 1184 |   [[nodiscard]] size_t doCount() const override;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:29:34: error: 'doCount' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   29 |     EXPECT_EQ(tiffIfdMakernote_->doCount(), 0);  // Modify based on actual behavior
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1184:24: note: declared protected here
+ 1184 |   [[nodiscard]] size_t doCount() const override;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:36:34: error: 'doCount' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   36 |     EXPECT_EQ(tiffIfdMakernote_->doCount(), 0);  // Modify expected value based on actual behavior
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1184:24: note: declared protected here
+ 1184 |   [[nodiscard]] size_t doCount() const override;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:42:5: error: only virtual member functions can be marked 'override'
+   42 |     MOCK_METHOD(size_t, write, (const byte* buffer, size_t size), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:47:1: note: expanded from here
+   47 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:47:19: error: call to implicitly-deleted default constructor of 'MockIoWrapper'
+   47 |     MockIoWrapper mockIoWrapper;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:40:23: note: default constructor of 'MockIoWrapper' is implicitly deleted because base class 'IoWrapper' has no default constructor
+   40 | class MockIoWrapper : public IoWrapper {
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:52:40: error: 'doWrite' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   52 |     size_t result = tiffIfdMakernote_->doWrite(mockIoWrapper, ByteOrder::littleEndian, offset, 0, 0, imageIdx);
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1156:10: note: declared protected here
+ 1156 |   size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:59:19: error: call to implicitly-deleted default constructor of 'MockIoWrapper'
+   59 |     MockIoWrapper mockIoWrapper;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:40:23: note: default constructor of 'MockIoWrapper' is implicitly deleted because base class 'IoWrapper' has no default constructor
+   40 | class MockIoWrapper : public IoWrapper {
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:62:40: error: 'doWrite' is a protected member of 'Exiv2::Internal::TiffIfdMakernote'
+   62 |     size_t result = tiffIfdMakernote_->doWrite(mockIoWrapper, ByteOrder::littleEndian, offset, 0, 0, imageIdx);
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:1156:10: note: declared protected here
+ 1156 |   size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |          ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'Exiv2::Internal::MnHeader'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:12:25: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::MnHeader>' requested here
+   12 |         pHeader_ = std::make_unique<MnHeader>();  // Assuming MnHeader is valid
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:36:7: note: forward declaration of 'Exiv2::Internal::MnHeader'
+   36 | class MnHeader;
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Internal::MnHeader'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::Internal::MnHeader>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp:12:20: note: in instantiation of member function 'std::unique_ptr<Exiv2::Internal::MnHeader>::~unique_ptr' requested here
+   12 |         pHeader_ = std::make_unique<MnHeader>();  // Assuming MnHeader is valid
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:36:7: note: forward declaration of 'Exiv2::Internal::MnHeader'
+   36 | class MnHeader;
+      |       ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_361.dir/build.make:79: generated_build/CMakeFiles/test_361.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_361.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:27057: generated_build/CMakeFiles/test_361.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:27064: generated_build/CMakeFiles/test_361.dir/rule] Error 2
+gmake: *** [Makefile:7940: test_361] Error 2

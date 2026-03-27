@@ -1,0 +1,54 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_19.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_19.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_19.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+/usr/local/include/gtest/gtest-printers.h:220:14: error: cannot cast 'NullOStream' to its private base class '__streambuf_type' (aka 'basic_streambuf<char, std::char_traits<char>>')
+  220 |       *os << p;
+      |              ^
+/usr/local/include/gtest/gtest-printers.h:358:12: note: in instantiation of function template specialization 'testing::internal::PointerPrinter::PrintValue<NullOStream>' requested here
+  358 |   Printer::PrintValue(value, os);
+      |            ^
+/usr/local/include/gtest/gtest-printers.h:487:13: note: in instantiation of function template specialization 'testing::internal::PrintWithFallback<NullOStream *>' requested here
+  487 |   internal::PrintWithFallback(value, os);
+      |             ^
+/usr/local/include/gtest/gtest-printers.h:844:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<NullOStream *>' requested here
+  844 |     PrintTo(value, os);
+      |     ^
+/usr/local/include/gtest/gtest-printers.h:1148:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<NullOStream *>::Print' requested here
+ 1148 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/local/include/gtest/gtest-printers.h:1026:5: note: in instantiation of function template specialization 'testing::internal::UniversalPrint<NullOStream *>' requested here
+ 1026 |     UniversalPrint(value, os);
+      |     ^
+/usr/local/include/gtest/gtest-printers.h:1186:39: note: (skipping 2 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+ 1186 |   internal::UniversalTersePrinter<T>::Print(value, &ss);
+      |                                       ^
+/usr/local/include/gtest/gtest-printers.h:461:39: note: in instantiation of member function 'testing::internal::FormatForComparison<NullOStream *, std::basic_ostream<char> *>::Format' requested here
+  461 |   return FormatForComparison<T1, T2>::Format(value);
+      |                                       ^
+/usr/local/include/gtest/gtest.h:1379:20: note: in instantiation of function template specialization 'testing::internal::FormatForComparisonFailureMessage<NullOStream *, std::basic_ostream<char> *>' requested here
+ 1379 |                    FormatForComparisonFailureMessage(rhs, lhs), false);
+      |                    ^
+/usr/local/include/gtest/gtest.h:1398:10: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQFailure<std::basic_ostream<char> *, NullOStream *>' requested here
+ 1398 |   return CmpHelperEQFailure(lhs_expression, rhs_expression, lhs, rhs);
+      |          ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<std::basic_ostream<char> *, NullOStream *>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_19.cpp:75:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<std::basic_ostream<char> *, NullOStream *, nullptr>' requested here
+   75 |     EXPECT_EQ(&ref, &os_);      // operator<< returns *this
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/fuzzing/NullOStream.h:22:27: note: constrained by private inheritance here
+   22 | class NullOStream final : private NullStreambuf, public std::ostream {
+      |                           ^~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_19.dir/build.make:79: generated_build/CMakeFiles/test_19.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_19.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:27090: generated_build/CMakeFiles/test_19.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:27097: generated_build/CMakeFiles/test_19.dir/rule] Error 2
+gmake: *** [Makefile:9783: test_19] Error 2

@@ -1,0 +1,90 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_134.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:6:30: error: base specifier must name a class
+    6 | class MockByteOrder : public Exiv2::ByteOrder {
+      |                       ~~~~~~~^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:53:11: error: unknown type name 'byte'
+   53 |     const byte* invalidBuffer = nullptr;
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:62:16: error: expected ';' after expression
+   62 |     Exiv2::Date newDate(2023, 8, 12);
+      |                ^
+      |                ;
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:62:12: error: no member named 'Date' in namespace 'Exiv2'; did you mean 'date'?
+   62 |     Exiv2::Date newDate(2023, 8, 12);
+      |     ~~~~~~~^~~~
+      |            date
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:86:3: note: 'date' declared here
+   86 |   date = 0x10001,           //!< IPTC date type.
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:62:17: error: use of undeclared identifier 'newDate'
+   62 |     Exiv2::Date newDate(2023, 8, 12);
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:64:27: error: use of undeclared identifier 'newDate'
+   64 |         dateValue.setDate(newDate);
+      |                           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:68:11: error: no type named 'Date' in namespace 'Exiv2'; did you mean 'Exiv2::DateValue::Date'?
+   68 |     const Exiv2::Date& retrievedDate = dateValue.getDate();
+      |           ^~~~~~~~~~~
+      |           Exiv2::DateValue::Date
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:913:19: note: 'Exiv2::DateValue::Date' declared here
+  913 |   struct EXIV2API Date {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:69:33: error: called object type 'int32_t' (aka 'int') is not a function or function pointer
+   69 |     EXPECT_EQ(retrievedDate.year(), 2023);
+      |               ~~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:70:34: error: called object type 'int32_t' (aka 'int') is not a function or function pointer
+   70 |     EXPECT_EQ(retrievedDate.month(), 8);
+      |               ~~~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:71:32: error: called object type 'int32_t' (aka 'int') is not a function or function pointer
+   71 |     EXPECT_EQ(retrievedDate.day(), 12);
+      |               ~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:77:5: error: unknown type name 'byte'
+   77 |     byte buffer[10]; // Arbitrary size
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp:122:5: error: unknown type name 'byte'
+  122 |     byte buffer[2]; // Assuming a larger buffer is needed
+      |     ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_134.dir/build.make:79: generated_build/CMakeFiles/test_134.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_134.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:13117: generated_build/CMakeFiles/test_134.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:13124: generated_build/CMakeFiles/test_134.dir/rule] Error 2
+gmake: *** [Makefile:2610: test_134] Error 2

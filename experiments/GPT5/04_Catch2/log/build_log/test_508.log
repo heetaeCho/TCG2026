@@ -1,0 +1,58 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_508.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp:51:28: error: base class has incomplete type
+   51 | struct NoopEventListener : Catch::IEventListener {
+      |                            ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:30:11: note: forward declaration of 'Catch::IEventListener'
+   30 |     class IEventListener;
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp:73:27: error: base class has incomplete type
+   73 | class StubConfig : public Catch::IConfig {
+      |                    ~~~~~~~^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:29:11: note: forward declaration of 'Catch::IConfig'
+   29 |     class IConfig;
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp:79:19: error: only virtual member functions can be marked 'override'
+   79 |     ~StubConfig() override = default;
+      |                   ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp:85:37: error: only virtual member functions can be marked 'override'
+   85 |     std::string const& name() const override {
+      |                                     ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp:239:34: error: no matching constructor for initialization of 'Catch::IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  239 |         Catch::IEventListenerPtr reporter(listener_.release());
+      |                                  ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'pointer' (aka '(anonymous namespace)::NoopEventListener *') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: no known conversion from 'pointer' (aka '(anonymous namespace)::NoopEventListener *') to 'Catch::IEventListener *' for 1st argument
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka '(anonymous namespace)::NoopEventListener *') to 'const unique_ptr<IEventListener>' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka '(anonymous namespace)::NoopEventListener *') to 'unique_ptr<IEventListener>' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr<U>' against 'pointer' (aka '(anonymous namespace)::NoopEventListener *')
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'Catch::RunContext'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp:243:21: note: in instantiation of function template specialization 'std::make_unique<Catch::RunContext, (anonymous namespace)::StubConfig *, Catch::Detail::unique_ptr<Catch::IEventListener>>' requested here
+  243 |         ctx_ = std::make_unique<Catch::RunContext>(config_.get(), std::move(reporter));
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:42:18: note: candidate constructor not viable: no known conversion from '(anonymous namespace)::StubConfig *' to 'const IConfig *' for 1st argument
+   42 |         explicit RunContext( IConfig const* _config, IEventListenerPtr&& reporter );
+      |                  ^           ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:39:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   39 |         RunContext( RunContext const& ) = delete;
+      |         ^           ~~~~~~~~~~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_508.dir/build.make:79: generated_build/CMakeFiles/test_508.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_508.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9010: generated_build/CMakeFiles/test_508.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9017: generated_build/CMakeFiles/test_508.dir/rule] Error 2
+gmake: *** [Makefile:2438: test_508] Error 2

@@ -1,0 +1,71 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_159.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp.o
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:35:51: error: cannot initialize a parameter of type 'ParseFlags' with an rvalue of type 'int'
+   35 |   Regexp* lit = Regexp::NewLiteral('a', /*flags=*/0);
+      |                                                   ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:431:51: note: passing argument to parameter 'flags' here
+  431 |   static Regexp* NewLiteral(Rune rune, ParseFlags flags);
+      |                                                   ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:41:48: error: cannot initialize a parameter of type 'ParseFlags' with an rvalue of type 'int'
+   41 |   Regexp* cap = Regexp::Capture(lit, /*flags=*/0, /*cap=*/1);
+      |                                                ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:429:50: note: passing argument to parameter 'flags' here
+  429 |   static Regexp* Capture(Regexp* sub, ParseFlags flags, int cap);
+      |                                                  ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:71:57: error: cannot initialize a parameter of type 'ParseFlags' with an rvalue of type 'int'
+   71 |   Regexp* inner_lit = Regexp::NewLiteral('x', /*flags=*/0);
+      |                                                         ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:431:51: note: passing argument to parameter 'flags' here
+  431 |   static Regexp* NewLiteral(Rune rune, ParseFlags flags);
+      |                                                   ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:77:60: error: cannot initialize a parameter of type 'ParseFlags' with an rvalue of type 'int'
+   77 |   Regexp* inner_cap = Regexp::Capture(inner_lit, /*flags=*/0, /*cap=*/1);
+      |                                                            ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:429:50: note: passing argument to parameter 'flags' here
+  429 |   static Regexp* Capture(Regexp* sub, ParseFlags flags, int cap);
+      |                                                  ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:85:60: error: cannot initialize a parameter of type 'ParseFlags' with an rvalue of type 'int'
+   85 |   Regexp* outer_cap = Regexp::Capture(inner_cap, /*flags=*/0, /*cap=*/2);
+      |                                                            ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:429:50: note: passing argument to parameter 'flags' here
+  429 |   static Regexp* Capture(Regexp* sub, ParseFlags flags, int cap);
+      |                                                  ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:135:3: error: use of undeclared identifier 'Rune'; did you mean 'Run'?
+  135 |   Rune runes[2] = { 'a', 'b' };
+      |   ^~~~
+      |   Run
+/usr/local/include/gtest/gtest.h:331:8: note: 'Run' declared here
+  331 |   void Run();
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:135:7: error: expected ';' after expression
+  135 |   Rune runes[2] = { 'a', 'b' };
+      |       ^
+      |       ;
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:135:3: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+  135 |   Rune runes[2] = { 'a', 'b' };
+      |   ^~~~
+      |       ()
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:135:8: error: use of undeclared identifier 'runes'; did you mean 'nrunes'?
+  135 |   Rune runes[2] = { 'a', 'b' };
+      |        ^~~~~
+      |        nrunes
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:133:7: note: 'nrunes' declared here
+  133 |   int nrunes = 2;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:135:13: error: subscripted value is not an array, pointer, or vector
+  135 |   Rune runes[2] = { 'a', 'b' };
+      |        ~~~~~^~
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:139:42: error: use of undeclared identifier 'runes'
+  139 |   Regexp* litstr = Regexp::LiteralString(runes, nrunes, /*flags=*/0);
+      |                                          ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp:145:51: error: cannot initialize a parameter of type 'ParseFlags' with an rvalue of type 'int'
+  145 |   Regexp* cap = Regexp::Capture(litstr, /*flags=*/0, /*cap=*/1);
+      |                                                   ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:429:50: note: passing argument to parameter 'flags' here
+  429 |   static Regexp* Capture(Regexp* sub, ParseFlags flags, int cap);
+      |                                                  ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_159.dir/build.make:79: generated_build/CMakeFiles/test_159.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_159.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9225: generated_build/CMakeFiles/test_159.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9232: generated_build/CMakeFiles/test_159.dir/rule] Error 2
+gmake: *** [Makefile:3130: test_159] Error 2

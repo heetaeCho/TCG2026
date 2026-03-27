@@ -1,0 +1,22 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_343.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_343.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_343.cpp:9:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_uniform_floating_point_distribution.hpp:13:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_uniform_integer_distribution.hpp:12:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_random_integer_helpers.hpp:146:28: error: static assertion failed due to requirement 'mersenne_twister_engine<unsigned long, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::max() == static_cast<unsigned long>(-1)': Generator must be able to output all numbers in its result type (effectively it must be a random bit generator)
+  146 |                            Generator::max() == static_cast<gresult_type>( -1 ),
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_uniform_integer_distribution.hpp:87:43: note: in instantiation of function template specialization 'Catch::Detail::fillBitsFrom<unsigned long, std::mersenne_twister_engine<unsigned long, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>>' requested here
+   87 |             return transposeBack( Detail::fillBitsFrom<UnsignedIntegerType>( g ) );
+      |                                           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_343.cpp:105:24: note: in instantiation of function template specialization 'Catch::uniform_floating_point_distribution<double>::operator()<std::mersenne_twister_engine<unsigned long, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>>' requested here
+  105 |         double x = dist(rng);
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_random_integer_helpers.hpp:146:45: note: expression evaluates to '4294967295 == 18446744073709551615'
+  146 |                            Generator::max() == static_cast<gresult_type>( -1 ),
+      |                            ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_343.dir/build.make:79: generated_build/CMakeFiles/test_343.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_343.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:7474: generated_build/CMakeFiles/test_343.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:7481: generated_build/CMakeFiles/test_343.dir/rule] Error 2
+gmake: *** [Makefile:1814: test_343] Error 2

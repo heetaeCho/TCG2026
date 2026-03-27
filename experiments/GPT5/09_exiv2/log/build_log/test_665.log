@@ -1,0 +1,40 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_665.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_665.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_665.cpp:92:32: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   92 |   const Exiv2::IptcKey emptyKey(std::string());
+      |                                ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_665.cpp:92:33: note: add a pair of parentheses to declare a variable
+   92 |   const Exiv2::IptcKey emptyKey(std::string());
+      |                                 ^            
+      |                                 (            )
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_665.cpp:95:20: error: no matching constructor for initialization of 'Exiv2::Iptcdatum'
+   95 |   Exiv2::Iptcdatum d(emptyKey, nullptr);
+      |                    ^ ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/iptc.hpp:49:12: note: candidate constructor not viable: no known conversion from 'const Exiv2::IptcKey (std::string (*)())' (aka 'const Exiv2::IptcKey (basic_string<char> (*)())') to 'const IptcKey' for 1st argument
+   49 |   explicit Iptcdatum(const IptcKey& key, const Value* pValue = nullptr);
+      |            ^         ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/iptc.hpp:51:3: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+   51 |   Iptcdatum(const Iptcdatum& rhs);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_665.cpp:98:30: error: member reference base type 'const Exiv2::IptcKey (std::string (*)())' (aka 'const Exiv2::IptcKey (basic_string<char> (*)())') is not a structure or union
+   98 |   EXPECT_EQ(d.key(), emptyKey.key());
+      |                      ~~~~~~~~^~~~
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_665.dir/build.make:79: generated_build/CMakeFiles/test_665.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_665.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:65987: generated_build/CMakeFiles/test_665.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:65994: generated_build/CMakeFiles/test_665.dir/rule] Error 2
+gmake: *** [Makefile:22825: test_665] Error 2

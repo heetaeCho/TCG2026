@@ -1,0 +1,31 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_275.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_275.cpp.o
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_275.cpp:73:15: error: no matching function for call to 'Parse'
+   73 |   ASSERT_TRUE(Parse(s.c_str(), s.size(), /*dest=*/nullptr, 10));
+      |               ^~~~~
+/usr/local/include/gtest/gtest.h:1831:50: note: expanded from macro 'ASSERT_TRUE'
+ 1831 | #define ASSERT_TRUE(condition) GTEST_ASSERT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1814:23: note: expanded from macro 'GTEST_ASSERT_TRUE'
+ 1814 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, GTEST_FATAL_FAILURE_)
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/re2.h:843:6: note: candidate template ignored: could not match 'T *' against 'std::nullptr_t'
+  843 | bool Parse(const char* str, size_t n, T* dest, int radix);
+      |      ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/re2.h:866:6: note: candidate template ignored: could not match 'absl::optional<T> *' against 'std::nullptr_t'
+  866 | bool Parse(const char* str, size_t n, absl::optional<T>* dest, int radix) {
+      |      ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/re2.h:850:6: note: candidate function not viable: requires 3 arguments, but 4 were provided
+  850 | bool Parse(const char* str, size_t n, absl::optional<T>* dest) {
+      |      ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/re2.h:829:6: note: candidate function not viable: requires 3 arguments, but 4 were provided
+  829 | bool Parse(const char* str, size_t n, T* dest);
+      |      ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_275.dir/build.make:79: generated_build/CMakeFiles/test_275.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_275.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:12617: generated_build/CMakeFiles/test_275.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:12624: generated_build/CMakeFiles/test_275.dir/rule] Error 2
+gmake: *** [Makefile:4508: test_275] Error 2

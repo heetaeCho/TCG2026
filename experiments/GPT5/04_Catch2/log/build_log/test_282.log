@@ -1,0 +1,26 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_282.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_282.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_282.cpp:73:8: error: redefinition of 'TestCaseInfo'
+   73 | struct TestCaseInfo {
+      |        ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: previous definition is here
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_282.cpp:87:30: error: no matching constructor for initialization of 'Catch::TestCaseInfo'
+   87 |     Catch::TestCaseInfo info_{};
+      |                              ^~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_282.dir/build.make:79: generated_build/CMakeFiles/test_282.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_282.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:32018: generated_build/CMakeFiles/test_282.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:32025: generated_build/CMakeFiles/test_282.dir/rule] Error 2
+gmake: *** [Makefile:11785: test_282] Error 2

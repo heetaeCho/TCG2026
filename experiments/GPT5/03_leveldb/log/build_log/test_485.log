@@ -1,0 +1,36 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+Consolidate compiler generated dependencies of target test_485
+[ 80%] Building CXX object generated_build/CMakeFiles/test_485.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_485.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_485.cpp:5:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./util/mutexlock.h:25:22: error: use of undeclared identifier 'port'
+   25 |   explicit MutexLock(port::Mutex* mu) EXCLUSIVE_LOCK_FUNCTION(mu) : mu_(mu) {
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./util/mutexlock.h:34:3: error: use of undeclared identifier 'port'
+   34 |   port::Mutex* const mu_;
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_485.cpp:65:15: error: no matching constructor for initialization of 'MutexLock'
+   65 |     MutexLock hold(&mu);
+      |               ^    ~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./util/mutexlock.h:30:3: note: candidate constructor not viable: no known conversion from 'Mutex *' to 'const MutexLock' for 1st argument
+   30 |   MutexLock(const MutexLock&) = delete;
+      |   ^         ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_485.cpp:125:15: error: no matching constructor for initialization of 'MutexLock'
+  125 |     MutexLock hold(&mu);  // lock held
+      |               ^    ~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./util/mutexlock.h:30:3: note: candidate constructor not viable: no known conversion from 'Mutex *' to 'const MutexLock' for 1st argument
+   30 |   MutexLock(const MutexLock&) = delete;
+      |   ^         ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_485.cpp:173:17: error: no matching constructor for initialization of 'MutexLock'
+  173 |       MutexLock hold(&mu);
+      |                 ^    ~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./util/mutexlock.h:30:3: note: candidate constructor not viable: no known conversion from 'Mutex *' to 'const MutexLock' for 1st argument
+   30 |   MutexLock(const MutexLock&) = delete;
+      |   ^         ~~~~~~~~~~~~~~~~
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_485.dir/build.make:76: generated_build/CMakeFiles/test_485.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_485.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4676: generated_build/CMakeFiles/test_485.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4683: generated_build/CMakeFiles/test_485.dir/rule] Error 2
+gmake: *** [Makefile:1752: test_485] Error 2

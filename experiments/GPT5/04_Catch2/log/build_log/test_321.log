@@ -1,0 +1,247 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_321.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:31:8: error: redefinition of 'IGenerator'
+   31 | struct IGenerator {
+      |        ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:34:11: note: previous definition is here
+   34 |     class IGenerator : public GeneratorUntypedBase {
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:65:7: error: redefinition of 'GeneratorWrapper'
+   65 | class GeneratorWrapper {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: previous definition is here
+   52 |     class GeneratorWrapper final {
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:99:7: error: redefinition of 'Generators'
+   99 | class Generators {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:120:11: note: previous definition is here
+  120 |     class Generators : public IGenerator<T> {
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:183:41: error: no viable conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()>'
+  183 |     ON_CALL(*mock, get()).WillByDefault(Return(dummy));
+      |                                         ^~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()> &' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'Action<const int &()> &&' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:769:3: note: candidate template ignored: requirement 'internal::disjunction<std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>, std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>>::value' was not satisfied [with G = internal::ReturnAction<int>]
+  769 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:781:3: note: candidate template ignored: could not match 'Action' against 'ReturnAction'
+  781 |   Action(const Action<Func>& action)  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:774:12: note: explicit constructor is not a candidate
+  774 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/local/include/gmock/gmock-actions.h:939:3: note: candidate template ignored: could not match 'OnceAction' against 'Action'
+  939 |   operator OnceAction<U(Args...)>() && {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:950:3: note: candidate template ignored: requirement 'conjunction<testing::internal::negation<std::is_same<void, const int &>>, testing::internal::negation<std::is_reference<const int &>>, std::is_convertible<const int &, const int &>, std::is_copy_constructible<const int &>>::value' was not satisfied [with U = const int &, Args = <>]
+  950 |   operator Action<U(Args...)>() const {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:310:46: note: passing argument to parameter 'action' here
+  310 |   OnCallSpec& WillByDefault(const Action<F>& action) {
+      |                                              ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:199:27: error: no matching conversion for functional-style cast from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>'
+  199 |     Generators<int> gens{ GeneratorWrapper<int>(std::move(mock)) };
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'const GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:56:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'IGenerator<int> *' for 1st argument
+   56 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:58:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+   58 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:223:39: error: no viable conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()>'
+  223 |     ON_CALL(*m1, get()).WillByDefault(Return(d1));
+      |                                       ^~~~~~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()> &' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'Action<const int &()> &&' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:769:3: note: candidate template ignored: requirement 'internal::disjunction<std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>, std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>>::value' was not satisfied [with G = internal::ReturnAction<int>]
+  769 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:781:3: note: candidate template ignored: could not match 'Action' against 'ReturnAction'
+  781 |   Action(const Action<Func>& action)  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:774:12: note: explicit constructor is not a candidate
+  774 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/local/include/gmock/gmock-actions.h:939:3: note: candidate template ignored: could not match 'OnceAction' against 'Action'
+  939 |   operator OnceAction<U(Args...)>() && {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:950:3: note: candidate template ignored: requirement 'conjunction<testing::internal::negation<std::is_same<void, const int &>>, testing::internal::negation<std::is_reference<const int &>>, std::is_convertible<const int &, const int &>, std::is_copy_constructible<const int &>>::value' was not satisfied [with U = const int &, Args = <>]
+  950 |   operator Action<U(Args...)>() const {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:310:46: note: passing argument to parameter 'action' here
+  310 |   OnCallSpec& WillByDefault(const Action<F>& action) {
+      |                                              ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:225:39: error: no viable conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()>'
+  225 |     ON_CALL(*m2, get()).WillByDefault(Return(d2));
+      |                                       ^~~~~~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()> &' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'Action<const int &()> &&' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:769:3: note: candidate template ignored: requirement 'internal::disjunction<std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>, std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>>::value' was not satisfied [with G = internal::ReturnAction<int>]
+  769 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:781:3: note: candidate template ignored: could not match 'Action' against 'ReturnAction'
+  781 |   Action(const Action<Func>& action)  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:774:12: note: explicit constructor is not a candidate
+  774 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/local/include/gmock/gmock-actions.h:939:3: note: candidate template ignored: could not match 'OnceAction' against 'Action'
+  939 |   operator OnceAction<U(Args...)>() && {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:950:3: note: candidate template ignored: requirement 'conjunction<testing::internal::negation<std::is_same<void, const int &>>, testing::internal::negation<std::is_reference<const int &>>, std::is_convertible<const int &, const int &>, std::is_copy_constructible<const int &>>::value' was not satisfied [with U = const int &, Args = <>]
+  950 |   operator Action<U(Args...)>() const {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:310:46: note: passing argument to parameter 'action' here
+  310 |   OnCallSpec& WillByDefault(const Action<F>& action) {
+      |                                              ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:243:9: error: no matching conversion for functional-style cast from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>'
+  243 |         GeneratorWrapper<int>(std::move(m1)),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'const GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:56:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'IGenerator<int> *' for 1st argument
+   56 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:58:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+   58 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:245:9: error: no matching conversion for functional-style cast from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>'
+  245 |         GeneratorWrapper<int>(std::move(m2))
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'const GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:56:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'IGenerator<int> *' for 1st argument
+   56 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:58:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+   58 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:271:39: error: no viable conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()>'
+  271 |     ON_CALL(*g1, get()).WillByDefault(Return(a));
+      |                                       ^~~~~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()> &' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'Action<const int &()> &&' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:769:3: note: candidate template ignored: requirement 'internal::disjunction<std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>, std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>>::value' was not satisfied [with G = internal::ReturnAction<int>]
+  769 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:781:3: note: candidate template ignored: could not match 'Action' against 'ReturnAction'
+  781 |   Action(const Action<Func>& action)  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:774:12: note: explicit constructor is not a candidate
+  774 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/local/include/gmock/gmock-actions.h:939:3: note: candidate template ignored: could not match 'OnceAction' against 'Action'
+  939 |   operator OnceAction<U(Args...)>() && {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:950:3: note: candidate template ignored: requirement 'conjunction<testing::internal::negation<std::is_same<void, const int &>>, testing::internal::negation<std::is_reference<const int &>>, std::is_convertible<const int &, const int &>, std::is_copy_constructible<const int &>>::value' was not satisfied [with U = const int &, Args = <>]
+  950 |   operator Action<U(Args...)>() const {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:310:46: note: passing argument to parameter 'action' here
+  310 |   OnCallSpec& WillByDefault(const Action<F>& action) {
+      |                                              ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:273:39: error: no viable conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()>'
+  273 |     ON_CALL(*g2, get()).WillByDefault(Return(b));
+      |                                       ^~~~~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'const Action<const int &()> &' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::ReturnAction<int>' to 'Action<const int &()> &&' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:769:3: note: candidate template ignored: requirement 'internal::disjunction<std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>, std::is_constructible<std::function<const int &()>, testing::internal::ReturnAction<int>>>::value' was not satisfied [with G = internal::ReturnAction<int>]
+  769 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:781:3: note: candidate template ignored: could not match 'Action' against 'ReturnAction'
+  781 |   Action(const Action<Func>& action)  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:774:12: note: explicit constructor is not a candidate
+  774 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/local/include/gmock/gmock-actions.h:939:3: note: candidate template ignored: could not match 'OnceAction' against 'Action'
+  939 |   operator OnceAction<U(Args...)>() && {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:950:3: note: candidate template ignored: requirement 'conjunction<testing::internal::negation<std::is_same<void, const int &>>, testing::internal::negation<std::is_reference<const int &>>, std::is_convertible<const int &, const int &>, std::is_copy_constructible<const int &>>::value' was not satisfied [with U = const int &, Args = <>]
+  950 |   operator Action<U(Args...)>() const {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:310:46: note: passing argument to parameter 'action' here
+  310 |   OnCallSpec& WillByDefault(const Action<F>& action) {
+      |                                              ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:301:9: error: no matching conversion for functional-style cast from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>'
+  301 |         GeneratorWrapper<int>(std::move(g1)),
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'const GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:56:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'IGenerator<int> *' for 1st argument
+   56 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:58:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+   58 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:303:9: error: no matching conversion for functional-style cast from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>'
+  303 |         GeneratorWrapper<int>(std::move(g2))
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'const GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:52:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorWrapper<int>' for 1st argument
+   52 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:56:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'IGenerator<int> *' for 1st argument
+   56 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:58:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::MockIGenerator<int>>') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+   58 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:153:13: error: no matching member function for call to 'add_generators'
+  153 |             add_generators(CATCH_FORWARD(moreGenerators)...);
+      |             ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp:165:21: note: in instantiation of function template specialization 'Catch::Generators::Generators<int>::Generators<>' requested here
+  165 |     Generators<int> gens;  // relies on variadic ctor allowing zero args
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:139:36: note: candidate function template not viable: requires single argument 'valueOrGenerator', but no arguments were provided
+  139 |         template <typename U> void add_generators( U&& valueOrGenerator ) {
+      |                                    ^               ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:144:14: note: candidate function template not viable: requires at least argument 'valueOrGenerator', but no arguments were provided
+  144 |         void add_generators( U&& valueOrGenerator, Gs&&... moreGenerators ) {
+      |              ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_321.dir/build.make:79: generated_build/CMakeFiles/test_321.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_321.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21874: generated_build/CMakeFiles/test_321.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21881: generated_build/CMakeFiles/test_321.dir/rule] Error 2
+gmake: *** [Makefile:7664: test_321] Error 2

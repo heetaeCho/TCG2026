@@ -1,0 +1,147 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1483.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:35:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:47:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:172:24: error: no member named 'starts_with' in 'std::basic_string<char>'
+  172 |     using std::string::starts_with;
+      |           ~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:175:24: error: no member named 'ends_with' in 'std::basic_string<char>'
+  175 |     using std::string::ends_with;
+      |           ~~~~~~~~~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:35:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:99:47: warning: designated initializers are a C++20 extension [-Wc++20-designator]
+   99 |     static constexpr Ref INVALID() { return { .num = -1, .gen = -1 }; };
+      |                                               ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:18: error: expected parameter declarator
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:9: error: a type specifier is required for all declarations
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:56: error: expected ';' at end of declaration list
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                                                        ^
+      |                                                        ;
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:35:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:621:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:315:31: error: no template named 'span' in namespace 'std'
+  315 |     virtual size_t write(std::span<const unsigned char> data) = 0;
+      |                          ~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:336:23: error: no template named 'span' in namespace 'std'
+  336 |     size_t write(std::span<const unsigned char> data) override;
+      |                  ~~~~~^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:18:39: error: use of undeclared identifier 'MockStream'; did you mean 'mockStream'?
+   18 |         mockStream = std::make_unique<MockStream>(); // Assuming MockStream is a mock class for Stream
+      |                                       ^~~~~~~~~~
+      |                                       mockStream
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:12:29: note: 'mockStream' declared here
+   12 |     std::unique_ptr<Stream> mockStream;
+      |                             ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:18:22: error: no matching function for call to 'make_unique'
+   18 |         mockStream = std::make_unique<MockStream>(); // Assuming MockStream is a mock class for Stream
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1069:5: note: candidate template ignored: invalid explicitly-specified argument for template parameter '_Tp'
+ 1069 |     make_unique(_Args&&... __args)
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1094:5: note: candidate template ignored: invalid explicitly-specified argument for template parameter '_Tp'
+ 1094 |     make_unique(_Args&&...) = delete;
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1084:5: note: candidate function template not viable: requires single argument '__num', but no arguments were provided
+ 1084 |     make_unique(size_t __num)
+      |     ^           ~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:25:17: error: no matching constructor for initialization of 'JBIG2Stream'
+   25 |     JBIG2Stream stream(std::move(mockStream), std::move(mockGlobalsStream), &mockGlobalsStreamRef);
+      |                 ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:51:5: note: candidate constructor not viable: no known conversion from 'Ref *' to 'Object *' for 3rd argument
+   51 |     JBIG2Stream(std::unique_ptr<Stream> strA, Object &&globalsStreamA, Object *globalsStreamRefA);
+      |     ^                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:48:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   48 | class JBIG2Stream : public OwnedFilterStream
+      |       ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:44:9: error: cannot use 'throw' with exceptions disabled
+   44 |         throw std::runtime_error("An error occurred in JBIG2Stream");
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:42:5: error: cannot use 'try' with exceptions disabled
+   42 |     EXPECT_THROW({
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:50:17: error: no matching constructor for initialization of 'JBIG2Stream'
+   50 |     JBIG2Stream stream(std::move(mockStream), std::move(mockGlobalsStream), &mockGlobalsStreamRef);
+      |                 ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:51:5: note: candidate constructor not viable: no known conversion from 'Ref *' to 'Object *' for 3rd argument
+   51 |     JBIG2Stream(std::unique_ptr<Stream> strA, Object &&globalsStreamA, Object *globalsStreamRefA);
+      |     ^                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:48:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   48 | class JBIG2Stream : public OwnedFilterStream
+      |       ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:53:5: error: no member named 'gmock_rewind' in 'Stream'
+   53 |     EXPECT_CALL(*mockStream, rewind()).WillOnce(Return(true));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:14:1: note: expanded from here
+   14 | gmock_rewind
+      | ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:59:17: error: no matching constructor for initialization of 'JBIG2Stream'
+   59 |     JBIG2Stream stream(std::move(mockStream), std::move(mockGlobalsStream), &mockGlobalsStreamRef);
+      |                 ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:51:5: note: candidate constructor not viable: no known conversion from 'Ref *' to 'Object *' for 3rd argument
+   51 |     JBIG2Stream(std::unique_ptr<Stream> strA, Object &&globalsStreamA, Object *globalsStreamRefA);
+      |     ^                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:48:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   48 | class JBIG2Stream : public OwnedFilterStream
+      |       ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:62:5: error: no member named 'gmock_getPos' in 'Stream'
+   62 |     EXPECT_CALL(*mockStream, getPos()).WillOnce(Return(0));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:76:1: note: expanded from here
+   76 | gmock_getPos
+      | ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:68:17: error: no matching constructor for initialization of 'JBIG2Stream'
+   68 |     JBIG2Stream stream(std::move(mockStream), std::move(mockGlobalsStream), &mockGlobalsStreamRef);
+      |                 ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:51:5: note: candidate constructor not viable: no known conversion from 'Ref *' to 'Object *' for 3rd argument
+   51 |     JBIG2Stream(std::unique_ptr<Stream> strA, Object &&globalsStreamA, Object *globalsStreamRefA);
+      |     ^                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JBIG2Stream.h:48:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   48 | class JBIG2Stream : public OwnedFilterStream
+      |       ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:71:5: error: no member named 'gmock_getPos' in 'Stream'
+   71 |     EXPECT_CALL(*mockStream, getPos()).WillOnce(Throw(std::runtime_error("getPos failed")));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:27:1: note: expanded from here
+   27 | gmock_getPos
+      | ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp:71:49: error: use of undeclared identifier 'Throw'; did you mean 'throw'?
+   71 |     EXPECT_CALL(*mockStream, getPos()).WillOnce(Throw(std::runtime_error("getPos failed")));
+      |                                                 ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1483.dir/build.make:79: generated_build/CMakeFiles/test_1483.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1483.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:71049: generated_build/CMakeFiles/test_1483.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:71056: generated_build/CMakeFiles/test_1483.dir/rule] Error 2
+gmake: *** [Makefile:25360: test_1483] Error 2

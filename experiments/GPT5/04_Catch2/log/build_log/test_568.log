@@ -1,0 +1,35 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_568.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_568.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_568.cpp:53:5: error: use of class template 'ListenerRegistrar' requires template arguments
+   53 |     ListenerRegistrar::TypedListenerFactory makeFactory(const Catch::StringRef& name) {
+      |     ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_registrars.hpp:67:11: note: template is declared here
+   66 |     template<typename T>
+      |     ~~~~~~~~~~~~~~~~~~~~
+   67 |     class ListenerRegistrar {
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_568.cpp:55:16: error: use of class template 'ListenerRegistrar' requires template arguments
+   55 |         return ListenerRegistrar::TypedListenerFactory{name};
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_registrars.hpp:67:11: note: template is declared here
+   66 |     template<typename T>
+      |     ~~~~~~~~~~~~~~~~~~~~
+   67 |     class ListenerRegistrar {
+      |           ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_568.cpp:11:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_registrars.hpp:11:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:11:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IEventListener' may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_568.cpp:171:30: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IEventListener>::~unique_ptr' requested here
+  171 |     Catch::IEventListenerPtr listener;
+      |                              ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:20:11: note: forward declaration of 'Catch::IEventListener'
+   20 |     class IEventListener;
+      |           ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_568.dir/build.make:79: generated_build/CMakeFiles/test_568.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_568.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:33746: generated_build/CMakeFiles/test_568.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:33753: generated_build/CMakeFiles/test_568.dir/rule] Error 2
+gmake: *** [Makefile:12487: test_568] Error 2

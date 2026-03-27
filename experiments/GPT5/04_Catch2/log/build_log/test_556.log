@@ -1,0 +1,64 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_556.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp:119:44: error: non-virtual member function marked 'override' hides virtual member function
+  119 |     const std::string getCurrentTestName() override { return {}; }
+      |                                            ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:101:29: note: hidden overloaded virtual function 'Catch::IResultCapture::getCurrentTestName' declared here: different return type ('basic_string<...>' vs 'const basic_string<...>')
+  101 |         virtual std::string getCurrentTestName() const = 0;
+      |                             ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp:121:51: error: non-virtual member function marked 'override' hides virtual member function
+  121 |     const Catch::AssertionResult* getLastResult() override { return nullptr; }
+      |                                                   ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:102:40: note: hidden overloaded virtual function 'Catch::IResultCapture::getLastResult' declared here: different qualifiers ('const' vs unqualified)
+  102 |         virtual const AssertionResult* getLastResult() const = 0;
+      |                                        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp:147:23: error: field type 'MockResultCapture' is an abstract class
+  147 |     MockResultCapture mock_;
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:101:29: note: unimplemented pure virtual method 'getCurrentTestName' in 'MockResultCapture'
+  101 |         virtual std::string getCurrentTestName() const = 0;
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:102:40: note: unimplemented pure virtual method 'getLastResult' in 'MockResultCapture'
+  102 |         virtual const AssertionResult* getLastResult() const = 0;
+      |                                        ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AssertionHandler_HandleExceptionThrownAsExpected_556_CallsHandleNonExprWithOk_556_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp:155:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AssertionHandler_HandleExceptionThrownAsExpected_556_CallsHandleNonExprWithOk_556_Test>::CreateTest' requested here
+  155 | TEST_F(AssertionHandler_HandleExceptionThrownAsExpected_556,
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AssertionHandler_HandleExceptionThrownAsExpected_556_DoesNotThrow_556_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp:195:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AssertionHandler_HandleExceptionThrownAsExpected_556_DoesNotThrow_556_Test>::CreateTest' requested here
+  195 | TEST_F(AssertionHandler_HandleExceptionThrownAsExpected_556,
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_556.dir/build.make:79: generated_build/CMakeFiles/test_556.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_556.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:20306: generated_build/CMakeFiles/test_556.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:20313: generated_build/CMakeFiles/test_556.dir/rule] Error 2
+gmake: *** [Makefile:7027: test_556] Error 2

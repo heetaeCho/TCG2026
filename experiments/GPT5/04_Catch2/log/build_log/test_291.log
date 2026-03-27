@@ -1,0 +1,34 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_291.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_291.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_291.cpp:53:24: error: no matching constructor for initialization of 'LazyExpression'
+   53 |         LazyExpression lazy{};
+      |                        ^   ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:25:19: note: candidate constructor not viable: requires single argument 'isNegated', but no arguments were provided
+   25 |         constexpr LazyExpression( bool isNegated ):
+      |                   ^               ~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:28:19: note: candidate constructor not viable: requires single argument 'other', but no arguments were provided
+   28 |         constexpr LazyExpression(LazyExpression const& other) = default;
+      |                   ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_291.cpp:131:28: error: no member named 'NoAssertion' in 'Catch::ResultWas::OfType'
+  131 |         ResultWas::OfType::NoAssertion // boundary-ish category
+      |         ~~~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest-param-test.h:499:43: note: expanded from macro 'INSTANTIATE_TEST_SUITE_P'
+  499 |     return GTEST_EXPAND_(GTEST_GET_FIRST_(__VA_ARGS__, DUMMY_PARAM_));       \
+      |                                           ^~~~~~~~~~~
+/usr/local/include/gtest/gtest-param-test.h:493:38: note: expanded from macro 'GTEST_GET_FIRST_'
+  493 | #define GTEST_GET_FIRST_(first, ...) first
+      |                                      ^~~~~
+/usr/local/include/gtest/gtest-param-test.h:492:28: note: expanded from macro 'GTEST_EXPAND_'
+  492 | #define GTEST_EXPAND_(arg) arg
+      |                            ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_291.cpp:131:28: error: no member named 'NoAssertion' in 'Catch::ResultWas::OfType'
+  131 |         ResultWas::OfType::NoAssertion // boundary-ish category
+      |         ~~~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest-param-test.h:508:32: note: expanded from macro 'INSTANTIATE_TEST_SUITE_P'
+  508 |       auto t = std::make_tuple(__VA_ARGS__);                                 \
+      |                                ^~~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_291.dir/build.make:79: generated_build/CMakeFiles/test_291.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_291.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14930: generated_build/CMakeFiles/test_291.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14937: generated_build/CMakeFiles/test_291.dir/rule] Error 2
+gmake: *** [Makefile:4843: test_291] Error 2

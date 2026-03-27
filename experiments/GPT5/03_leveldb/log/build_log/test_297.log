@@ -1,0 +1,66 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+Consolidate compiler generated dependencies of target test_297
+[ 80%] Building CXX object generated_build/CMakeFiles/test_297.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:13:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:174:3: error: use of undeclared identifier 'port'
+  174 |   port::Mutex mutex_;
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:176:3: error: use of undeclared identifier 'port'
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:176:50: error: attribute guarded_by ignored, because it is not attached to a declaration [-Werror,-Wignored-attributes]
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |                                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./port/thread_annotations.h:24:63: note: expanded from macro 'GUARDED_BY'
+   24 | #define GUARDED_BY(x) THREAD_ANNOTATION_ATTRIBUTE__(guarded_by(x))
+      |                                                               ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:33:18: error: 'CompactionState' is a private member of 'leveldb::DBImpl'
+   33 |   static DBImpl::CompactionState MakeCS() {
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:76:10: note: declared private here
+   76 |   struct CompactionState;
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:33:34: error: incomplete result type 'DBImpl::CompactionState' in function definition
+   33 |   static DBImpl::CompactionState MakeCS() {
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:76:10: note: forward declaration of 'leveldb::DBImpl::CompactionState'
+   76 |   struct CompactionState;
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:39:20: error: 'CompactionState' is a private member of 'leveldb::DBImpl'
+   39 |     return DBImpl::CompactionState(/*Compaction*=*/nullptr);
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:76:10: note: declared private here
+   76 |   struct CompactionState;
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:39:12: error: 'DBImpl::CompactionState' is an incomplete type
+   39 |     return DBImpl::CompactionState(/*Compaction*=*/nullptr);
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:76:10: note: forward declaration of 'leveldb::DBImpl::CompactionState'
+   76 |   struct CompactionState;
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:39:12: error: initialization of incomplete type 'DBImpl::CompactionState'
+   39 |     return DBImpl::CompactionState(/*Compaction*=*/nullptr);
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/db_impl.h:76:10: note: forward declaration of 'leveldb::DBImpl::CompactionState'
+   76 |   struct CompactionState;
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:65:11: error: no type named 'Output' in 'leveldb::DBImpl'
+   65 |   DBImpl::Output* ptr = cs.current_output();
+      |   ~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:97:11: error: no type named 'Output' in 'leveldb::DBImpl'
+   97 |   DBImpl::Output* ptr = cs.current_output();
+      |   ~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:119:11: error: no type named 'Output' in 'leveldb::DBImpl'
+  119 |   DBImpl::Output* first_back = cs.current_output();
+      |   ~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp:127:11: error: no type named 'Output' in 'leveldb::DBImpl'
+  127 |   DBImpl::Output* second_back = cs.current_output();
+      |   ~~~~~~~~^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_297.dir/build.make:76: generated_build/CMakeFiles/test_297.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_297.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:6822: generated_build/CMakeFiles/test_297.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:6829: generated_build/CMakeFiles/test_297.dir/rule] Error 2
+gmake: *** [Makefile:2714: test_297] Error 2

@@ -1,0 +1,45 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_162.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp:157:19: error: static assertion failed due to requirement 'std::is_move_assignable<Catch::Matchers::Detail::MatchAnyOfGeneric<DummyMatcher162, DummyMatcher162>>::value': Should be move-assignable
+  157 |     static_assert(std::is_move_assignable<AnyT>::value,    "Should be move-assignable");
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp:189:11: error: overload resolution selected deleted operator '='
+  189 |     other = std::move(moved);  // move-assign should be valid
+      |     ~~~~~ ^ ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:168:32: note: candidate function has been explicitly deleted
+  168 |             MatchAnyOfGeneric& operator=(MatchAnyOfGeneric const&) = delete;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:102:63: error: no member named 'toString' in 'DummyMatcher162'
+  102 |                 static_cast<MatcherTs const*>(matchers[Idx])->toString()...
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:181:24: note: in instantiation of function template specialization 'Catch::Matchers::Detail::describe_multi_matcher<DummyMatcher162, DummyMatcher162, DummyMatcher162, 0UL, 1UL, 2UL>' requested here
+  181 |                 return describe_multi_matcher<MatcherTs...>(" or "_sr, m_matchers, std::index_sequence_for<MatcherTs...>{});
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp:213:31: note: in instantiation of member function 'Catch::Matchers::Detail::MatchAnyOfGeneric<DummyMatcher162, DummyMatcher162, DummyMatcher162>::describe' requested here
+  213 |     const std::string d = any.describe();
+      |                               ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp:13:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:102:63: error: no member named 'toString' in 'DummyMatcher162'
+  102 |                 static_cast<MatcherTs const*>(matchers[Idx])->toString()...
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:181:24: note: in instantiation of function template specialization 'Catch::Matchers::Detail::describe_multi_matcher<DummyMatcher162, 0UL>' requested here
+  181 |                 return describe_multi_matcher<MatcherTs...>(" or "_sr, m_matchers, std::index_sequence_for<MatcherTs...>{});
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp:255:31: note: in instantiation of member function 'Catch::Matchers::Detail::MatchAnyOfGeneric<DummyMatcher162>::describe' requested here
+  255 |     const std::string d = any.describe();
+      |                               ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp:13:
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:102:63: error: no member named 'toString' in 'DummyMatcher162'
+  102 |                 static_cast<MatcherTs const*>(matchers[Idx])->toString()...
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:181:24: note: in instantiation of function template specialization 'Catch::Matchers::Detail::describe_multi_matcher<DummyMatcher162, DummyMatcher162, 0UL, 1UL>' requested here
+  181 |                 return describe_multi_matcher<MatcherTs...>(" or "_sr, m_matchers, std::index_sequence_for<MatcherTs...>{});
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp:105:57: note: in instantiation of member function 'Catch::Matchers::Detail::MatchAnyOfGeneric<DummyMatcher162, DummyMatcher162>::describe' requested here
+  105 |     MatchAnyOfGeneric<DummyMatcher162, DummyMatcher162> any(m1, m2);
+      |                                                         ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_162.dir/build.make:79: generated_build/CMakeFiles/test_162.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_162.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11122: generated_build/CMakeFiles/test_162.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11129: generated_build/CMakeFiles/test_162.dir/rule] Error 2
+gmake: *** [Makefile:3296: test_162] Error 2

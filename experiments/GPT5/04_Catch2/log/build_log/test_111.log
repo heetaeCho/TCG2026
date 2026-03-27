@@ -1,0 +1,28 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_111.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp:65:12: error: enumeration redeclared with different underlying type 'int' (was 'std::uint8_t' (aka 'unsigned char'))
+   65 | enum class ColourMode { None = 0, Auto = 1 };
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:33:16: note: previous declaration is here
+   33 |     enum class ColourMode : std::uint8_t;
+      |                ^            ~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp:127:29: error: incomplete type 'Catch::ColourMode' named in nested name specifier
+  127 |     const ColourMode mode = ColourMode::Auto;
+      |                             ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp:169:66: error: incomplete type 'Catch::ColourMode' named in nested name specifier
+  169 |     ReporterConfig rc = MakeConfig(&dummyCfg, std::move(stream), ColourMode::None, {});
+      |                                                                  ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp:203:29: error: incomplete type 'Catch::ColourMode' named in nested name specifier
+  203 |     const ColourMode mode = ColourMode::Auto;
+      |                             ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp:263:65: error: incomplete type 'Catch::ColourMode' named in nested name specifier
+  263 |     ReporterConfig rc = MakeConfig(&cfg, std::move(nullStream), ColourMode::None, {});
+      |                                                                 ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp:297:61: error: incomplete type 'Catch::ColourMode' named in nested name specifier
+  297 |     ReporterConfig rc = MakeConfig(&cfg, std::move(stream), ColourMode::None, opts);
+      |                                                             ^~~~~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_111.dir/build.make:79: generated_build/CMakeFiles/test_111.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_111.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23218: generated_build/CMakeFiles/test_111.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23225: generated_build/CMakeFiles/test_111.dir/rule] Error 2
+gmake: *** [Makefile:8210: test_111] Error 2

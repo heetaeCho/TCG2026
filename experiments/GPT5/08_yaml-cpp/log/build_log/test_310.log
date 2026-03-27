@@ -1,0 +1,23 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_310.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_310.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_310.cpp:121:27: error: constexpr variable 'got' must be initialized by a constant expression
+  121 |   constexpr std::uint64_t got = umul96_upper64(x, y);
+      |                           ^     ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_310.cpp:121:33: note: non-constexpr function 'umul96_upper64' cannot be used in a constant expression
+  121 |   constexpr std::uint64_t got = umul96_upper64(x, y);
+      |                                 ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/contrib/dragonbox.h:832:17: note: declared here
+  832 |                 umul96_upper64(stdr::uint_least32_t x, stdr::uint_least64_t y) noexcept {
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_310.cpp:122:17: error: static assertion expression is not an integral constant expression
+  122 |   static_assert(got == expected, "umul96_upper64 constexpr result mismatch");
+      |                 ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_310.cpp:122:17: note: initializer of 'got' is not a constant expression
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_310.cpp:121:27: note: declared here
+  121 |   constexpr std::uint64_t got = umul96_upper64(x, y);
+      |                           ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_310.dir/build.make:79: generated_build/CMakeFiles/test_310.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_310.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:12843: generated_build/CMakeFiles/test_310.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:12850: generated_build/CMakeFiles/test_310.dir/rule] Error 2
+gmake: *** [Makefile:4496: test_310] Error 2

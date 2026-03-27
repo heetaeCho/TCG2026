@@ -1,0 +1,46 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_443.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp:55:11: error: no matching constructor for initialization of 'ITracker'
+   55 |         : ITracker(MakeNAL(), parent) {}
+      |           ^        ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:95:9: note: candidate constructor not viable: 1st argument ('NameAndLocation_t' (aka 'const Catch::TestCaseTracking::NameAndLocation')) would lose const qualifier
+   95 |         ITracker( NameAndLocation&& nameAndLoc, ITracker* parent ):
+      |         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:75:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   75 |     class ITracker {
+      |           ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp:77:18: error: variable type 'DummyTracker' is an abstract class
+   77 |     DummyTracker t; // no parent, no children attached
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:115:22: note: unimplemented pure virtual method 'isComplete' in 'DummyTracker'
+  115 |         virtual bool isComplete() const = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:126:22: note: unimplemented pure virtual method 'close' in 'DummyTracker'
+  126 |         virtual void close() = 0; // Successfully complete
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:127:22: note: unimplemented pure virtual method 'fail' in 'DummyTracker'
+  127 |         virtual void fail() = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp:89:18: error: variable type 'DummyTracker' is an abstract class
+   89 |     DummyTracker parent;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp:109:18: error: variable type 'DummyTracker' is an abstract class
+  109 |     DummyTracker parent;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp:131:18: error: variable type 'DummyTracker' is an abstract class
+  131 |     DummyTracker parent;
+      |                  ^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::DummyTracker'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp:155:28: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::DummyTracker, (anonymous namespace)::DummyTracker *&>' requested here
+  155 |     auto grandChild = std::make_unique<DummyTracker>(childRaw);
+      |                            ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_443.dir/build.make:79: generated_build/CMakeFiles/test_443.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_443.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:26546: generated_build/CMakeFiles/test_443.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:26553: generated_build/CMakeFiles/test_443.dir/rule] Error 2
+gmake: *** [Makefile:9562: test_443] Error 2

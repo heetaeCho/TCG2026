@@ -1,0 +1,84 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_448.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_448.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_448.cpp:33:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:50:
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:58:7: error: redefinition of 'Prog'
+   58 | class Prog {
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_448.cpp:15:8: note: previous definition is here
+   15 | struct Prog {
+      |        ^
+In file included from /home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_448.cpp:33:
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:65:12: error: out-of-line definition of 'TESTING_ONLY_set_dfa_should_bail_when_slow' does not match any declaration in 're2::Prog'
+   65 | void Prog::TESTING_ONLY_set_dfa_should_bail_when_slow(bool b) {
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:105:34: error: no type named 'DFAStateCallback' in 're2::Prog'
+  105 |   int BuildAllStates(const Prog::DFAStateCallback& cb);
+      |                            ~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:317:21: error: no member named 'bytemap_range' in 're2::Prog'
+  317 |       return prog_->bytemap_range();
+      |              ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:318:19: error: no member named 'bytemap' in 're2::Prog'
+  318 |     return prog_->bytemap()[c];
+      |            ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:429:60: error: no member named 'DumpUnanchored' in 're2::Prog'
+  429 |     absl::FPrintF(stderr, "\nkind %d\n%s\n", kind_, prog_->DumpUnanchored());
+      |                                                     ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:431:16: error: no member named 'kLongestMatch' in 're2::Prog'; did you mean 'kInstMatch'?
+  431 |   if (kind_ == Prog::kLongestMatch)
+      |                ^~~~~~~~~~~~~~~~~~~
+      |                kInstMatch
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:37:3: note: 'kInstMatch' declared here
+   37 |   kInstMatch,        // found a match!
+      |   ^
+In file included from /home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_448.cpp:33:
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:432:20: error: no member named 'size' in 're2::Prog'
+  432 |     nmark = prog_->size();
+      |             ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:434:23: error: no member named 'inst_count' in 're2::Prog'
+  434 |   int nstack = prog_->inst_count(kInstCapture) +
+      |                ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:435:23: error: no member named 'inst_count' in 're2::Prog'
+  435 |                prog_->inst_count(kInstEmptyWidth) +
+      |                ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:436:23: error: no member named 'inst_count' in 're2::Prog'
+  436 |                prog_->inst_count(kInstNop) +
+      |                ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:441:26: error: no member named 'size' in 're2::Prog'
+  441 |   mem_budget_ -= (prog_->size() + nmark) *
+      |                   ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:457:22: error: no member named 'bytemap_range' in 're2::Prog'
+  457 |   int nnext = prog_->bytemap_range() + 1;  // + 1 for kByteEndText slot
+      |               ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:459:31: error: no member named 'list_count' in 're2::Prog'
+  459 |                       (prog_->list_count()+nmark)*sizeof(int);
+      |                        ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:465:26: error: no member named 'size' in 're2::Prog'
+  465 |   q0_ = new Workq(prog_->size(), nmark);
+      |                   ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:466:26: error: no member named 'size' in 're2::Prog'
+  466 |   q1_ = new Workq(prog_->size(), nmark);
+      |                   ~~~~~  ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:431:13: warning: result of comparison of constant 'kInstMatch' (5) with expression of type 'Prog::MatchKind' is always false [-Wtautological-constant-out-of-range-compare]
+  431 |   if (kind_ == Prog::kLongestMatch)
+      |       ~~~~~ ^        ~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:628:31: error: no member named 'kFirstMatch' in 're2::Prog'; did you mean 'kInstMatch'?
+  628 |     if (sawmatch && (kind_ == Prog::kFirstMatch || q->is_mark(id)))
+      |                               ^~~~~~~~~~~~~~~~~
+      |                               kInstMatch
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:37:3: note: 'kInstMatch' declared here
+   37 |   kInstMatch,        // found a match!
+      |   ^
+In file included from /home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_448.cpp:33:
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:637:11: error: no type named 'Inst' in 're2::Prog'
+  637 |     Prog::Inst* ip = prog_->inst(id);
+      |     ~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/dfa.cc:637:29: error: no member named 'inst' in 're2::Prog'
+  637 |     Prog::Inst* ip = prog_->inst(id);
+      |                      ~~~~~  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_448.dir/build.make:79: generated_build/CMakeFiles/test_448.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_448.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4617: generated_build/CMakeFiles/test_448.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4624: generated_build/CMakeFiles/test_448.dir/rule] Error 2
+gmake: *** [Makefile:1258: test_448] Error 2

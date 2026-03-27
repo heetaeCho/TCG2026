@@ -1,0 +1,26 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_372.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_372.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_372.cpp:37:20: error: no member named 'interval_type' in namespace 'YAML::jkj::dragonbox'; did you mean 'YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::interval_type'?
+   37 |   using Expected = YAML::jkj::dragonbox::interval_type::left_closed_right_open;
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                    YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::interval_type
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/contrib/dragonbox.h:2437:27: note: 'YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::interval_type' declared here
+ 2437 |                 namespace interval_type {
+      |                           ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_372.cpp:87:24: error: invalid operands to binary expression ('const interval_type::left_closed_right_open' and 'const Ret' (aka 'const YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::interval_type::left_closed_right_open'))
+   87 |     EXPECT_TRUE(actual == expected);
+      |                 ~~~~~~ ^  ~~~~~~~~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_372.dir/build.make:79: generated_build/CMakeFiles/test_372.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_372.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24363: generated_build/CMakeFiles/test_372.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24370: generated_build/CMakeFiles/test_372.dir/rule] Error 2
+gmake: *** [Makefile:9176: test_372] Error 2

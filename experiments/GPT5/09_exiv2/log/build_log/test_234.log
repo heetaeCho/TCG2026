@@ -1,0 +1,136 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_234.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:8:32: error: base class has incomplete type
+    8 | class MockTiffEncoder : public TiffEncoder {
+      |                         ~~~~~~~^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:41:7: note: forward declaration of 'Exiv2::Internal::TiffEncoder'
+   41 | class TiffEncoder;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:10:5: error: only virtual member functions can be marked 'override'
+   10 |     MOCK_METHOD(void, encode, (const Exifdatum* datum), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:197:1: note: expanded from here
+  197 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:15:5: error: only virtual member functions can be marked 'override'
+   15 |     MOCK_METHOD(size_t, write, (const byte* buffer, size_t size), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:143:1: note: expanded from here
+  143 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:24:21: error: allocating an object of abstract class type 'TiffEntryBase'
+   24 |         entry = new TiffEntryBase(1, 0, TiffType::Short);  // Example constructor arguments
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffEntryBase'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffEntryBase'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:495:16: note: unimplemented pure virtual method 'doEncode' in 'TiffEntryBase'
+  495 |   virtual void doEncode(TiffEncoder& encoder, const Exifdatum* datum) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:35:39: error: no member named 'Short' in 'Exiv2::Internal::TiffType'
+   35 |     TiffType expectedType = TiffType::Short;  // Assuming the constructor is set to this type
+      |                             ~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:54:15: error: variable has incomplete type 'Exifdatum'
+   54 |     Exifdatum datum;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:18:7: note: forward declaration of 'Exiv2::Exifdatum'
+   18 | class Exifdatum;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:61:19: error: call to implicitly-deleted default constructor of 'MockIoWrapper'
+   61 |     MockIoWrapper mockIoWrapper;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:13:23: note: default constructor of 'MockIoWrapper' is implicitly deleted because base class 'IoWrapper' has no default constructor
+   13 | class MockIoWrapper : public IoWrapper {
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:63:62: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   63 |     size_t result = entry->doWrite(mockIoWrapper, ByteOrder::BigEndian, 0, 0, 0, imageIdx);
+      |                                                   ~~~~~~~~~~~^~~~~~~~~
+      |                                                              bigEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:63:28: error: 'doWrite' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   63 |     size_t result = entry->doWrite(mockIoWrapper, ByteOrder::BigEndian, 0, 0, 0, imageIdx);
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:509:10: note: declared protected here
+  509 |   size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |          ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:71:22: error: 'storage' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   71 |     EXPECT_EQ(entry->storage(), mockStorage);
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:540:42: note: declared protected here
+  540 |   [[nodiscard]] std::shared_ptr<DataBuf> storage() const {
+      |                                          ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:76:44: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+   76 |     entry->updateValue(nullptr, ByteOrder::LittleEndian);
+      |                                 ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                            littleEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:83:12: error: 'setIdx' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   83 |     entry->setIdx(42);  // Assuming setIdx is implemented correctly
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:501:8: note: declared protected here
+  501 |   void setIdx(int idx) {
+      |        ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:76:24: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::~unique_ptr' requested here
+   76 |     entry->updateValue(nullptr, ByteOrder::LittleEndian);
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:22:7: note: forward declaration of 'Exiv2::Value'
+   22 | class Value;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp:24:51: error: no member named 'Short' in 'Exiv2::Internal::TiffType'
+   24 |         entry = new TiffEntryBase(1, 0, TiffType::Short);  // Example constructor arguments
+      |                                         ~~~~~~~~~~^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_234.dir/build.make:79: generated_build/CMakeFiles/test_234.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_234.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:79689: generated_build/CMakeFiles/test_234.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:79696: generated_build/CMakeFiles/test_234.dir/rule] Error 2
+gmake: *** [Makefile:28064: test_234] Error 2

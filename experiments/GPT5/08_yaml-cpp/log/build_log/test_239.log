@@ -1,0 +1,79 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_239.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp:41:12: error: calling a private constructor of class 'YAML::Mark'
+   41 |     return Mark(pos, line, column);
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:24:3: note: declared private here
+   24 |   Mark(int pos_, int line_, int column_)
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp:44:12: error: no matching constructor for initialization of 'Mark'
+   44 |     return Mark(line, column);
+      |            ^    ~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:13:21: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   13 | struct YAML_CPP_API Mark {
+      |                     ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:13:21: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   13 | struct YAML_CPP_API Mark {
+      |                     ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:24:3: note: candidate constructor not viable: requires 3 arguments, but 2 were provided
+   24 |   Mark(int pos_, int line_, int column_)
+      |   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:14:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   14 |   Mark() : pos(0), line(0), column(0) {}
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp:46:12: error: no matching conversion for functional-style cast from 'int' to 'Mark'
+   46 |     return Mark(pos);
+      |            ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:13:21: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const Mark' for 1st argument
+   13 | struct YAML_CPP_API Mark {
+      |                     ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:13:21: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'Mark' for 1st argument
+   13 | struct YAML_CPP_API Mark {
+      |                     ^~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:14:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   14 |   Mark() : pos(0), line(0), column(0) {}
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/mark.h:24:3: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+   24 |   Mark(int pos_, int line_, int column_)
+      |   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp:59:19: error: invalid operands to binary expression ('const Mark' and 'const Mark')
+   59 |     EXPECT_TRUE(a == b);
+      |                 ~ ^  ~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:140:19: note: candidate function not viable: no known conversion from 'const Mark' to 'const Node' for 1st argument
+  140 | YAML_CPP_API bool operator==(const Node& lhs, const Node& rhs);
+      |                   ^          ~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp:115:18: error: invalid operands to binary expression ('const Mark' and 'const Mark')
+  115 |     if (!(before == desired)) {
+      |           ~~~~~~ ^  ~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:140:19: note: candidate function not viable: no known conversion from 'const Mark' to 'const Node' for 1st argument
+  140 | YAML_CPP_API bool operator==(const Node& lhs, const Node& rhs);
+      |                   ^          ~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp:116:27: error: invalid operands to binary expression ('const Mark' and 'const Mark')
+  116 |       EXPECT_FALSE(before == after_ref);
+      |                    ~~~~~~ ^  ~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:140:19: note: candidate function not viable: no known conversion from 'const Mark' to 'const Node' for 1st argument
+  140 | YAML_CPP_API bool operator==(const Node& lhs, const Node& rhs);
+      |                   ^          ~~~~~~~~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_239.dir/build.make:79: generated_build/CMakeFiles/test_239.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_239.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14571: generated_build/CMakeFiles/test_239.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14578: generated_build/CMakeFiles/test_239.dir/rule] Error 2
+gmake: *** [Makefile:5198: test_239] Error 2

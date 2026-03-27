@@ -1,0 +1,97 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_46.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:17:32: error: 'iptcMetadata_' is a private member of 'Exiv2::IptcData'
+   17 |         EXPECT_EQ(it, iptcData.iptcMetadata_.end());
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/iptc.hpp:268:16: note: declared private here
+  268 |   IptcMetadata iptcMetadata_;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:23:19: error: no matching constructor for initialization of 'Iptcdatum'
+   23 |         Iptcdatum datum;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/iptc.hpp:51:3: note: candidate constructor not viable: requires single argument 'rhs', but no arguments were provided
+   51 |   Iptcdatum(const Iptcdatum& rhs);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/iptc.hpp:49:12: note: candidate constructor not viable: requires at least argument 'key', but no arguments were provided
+   49 |   explicit Iptcdatum(const IptcKey& key, const Value* pValue = nullptr);
+      |            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:34:17: error: no matching constructor for initialization of 'IptcKey'
+   34 |         IptcKey key;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:254:12: note: candidate constructor not viable: requires single argument 'key', but no arguments were provided
+  254 |   explicit IptcKey(std::string key);
+      |            ^       ~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:260:3: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  260 |   IptcKey(uint16_t tag, uint16_t record);
+      |   ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:35:15: error: variable has incomplete type 'Value'
+   35 |         Value value;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:44:19: error: no matching constructor for initialization of 'Iptcdatum'
+   44 |         Iptcdatum datum;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/iptc.hpp:51:3: note: candidate constructor not viable: requires single argument 'rhs', but no arguments were provided
+   51 |   Iptcdatum(const Iptcdatum& rhs);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/iptc.hpp:49:12: note: candidate constructor not viable: requires at least argument 'key', but no arguments were provided
+   49 |   explicit Iptcdatum(const IptcKey& key, const Value* pValue = nullptr);
+      |            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:78:17: error: no matching constructor for initialization of 'IptcKey'
+   78 |         IptcKey key;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:254:12: note: candidate constructor not viable: requires single argument 'key', but no arguments were provided
+  254 |   explicit IptcKey(std::string key);
+      |            ^       ~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/datasets.hpp:260:3: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  260 |   IptcKey(uint16_t tag, uint16_t record);
+      |   ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:130:22: error: no matching constructor for initialization of 'Slice<byte *>' (aka 'Slice<unsigned char *>')
+  130 |         Slice<byte*> bytes; // Assuming appropriate slice
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/slice.hpp:465:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  465 | struct Slice<T*> : public Internal::MutableSliceBase<Internal::PtrSliceStorage, T*> {
+      |        ^~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/slice.hpp:465:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  465 | struct Slice<T*> : public Internal::MutableSliceBase<Internal::PtrSliceStorage, T*> {
+      |        ^~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/slice.hpp:466:3: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  466 |   Slice(T* ptr, size_t begin, size_t end) : Internal::MutableSliceBase<Internal::PtrSliceStorage, T*>(ptr, begin, end) {
+      |   ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const Exiv2::Iptcdatum' and 'const Exiv2::Iptcdatum')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Exiv2::Iptcdatum, Exiv2::Iptcdatum>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp:29:9: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Exiv2::Iptcdatum, Exiv2::Iptcdatum, nullptr>' requested here
+   29 |         EXPECT_EQ(iptcData[key], datum);
+      |         ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:1386:13: note: candidate function not viable: no known conversion from 'const Exiv2::Iptcdatum' to 'faketype' for 1st argument
+ 1386 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_46.dir/build.make:79: generated_build/CMakeFiles/test_46.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_46.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:37495: generated_build/CMakeFiles/test_46.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:37502: generated_build/CMakeFiles/test_46.dir/rule] Error 2
+gmake: *** [Makefile:11931: test_46] Error 2

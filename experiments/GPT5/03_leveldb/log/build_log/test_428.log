@@ -1,0 +1,59 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+Consolidate compiler generated dependencies of target test_428
+[100%] Building CXX object generated_build/CMakeFiles/test_428.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_428.cpp.o
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_428.cpp:81:5: error: no viable conversion from returned value of type 'void' to function return type 'std::string' (aka 'basic_string<char>')
+   81 |     ASSERT_NE(fp_, nullptr);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2077:32: note: expanded from macro 'ASSERT_NE'
+ 2077 | # define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2059:3: note: expanded from macro 'GTEST_ASSERT_NE'
+ 2059 |   ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:168:44: note: expanded from macro 'ASSERT_PRED_FORMAT2'
+  168 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+note: (skipping 2 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1346:10: note: expanded from macro 'GTEST_FATAL_FAILURE_'
+ 1346 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kFatalFailure)
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1343:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1343 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1339:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1339 |   ::testing::internal::AssertHelper(result_type, file, line, message) \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1340 |     = ::testing::Message()
+      |     ~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:537:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'const basic_string<char> &' for 1st argument
+  537 |       basic_string(const basic_string& __str)
+      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:631:7: note: candidate constructor template not viable: cannot convert argument of incomplete type 'void' to 'const char *' for 1st argument
+  631 |       basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+      |       ^            ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:667:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'basic_string<char> &&' for 1st argument
+  667 |       basic_string(basic_string&& __str) noexcept
+      |       ^            ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:695:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'initializer_list<char>' for 1st argument
+  695 |       basic_string(initializer_list<_CharT> __l, const _Alloc& __a = _Alloc())
+      |       ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:525:7: note: explicit constructor is not a candidate
+  525 |       basic_string(const _Alloc& __a) _GLIBCXX_NOEXCEPT
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:783:2: note: explicit constructor is not a candidate
+  783 |         basic_string(const _Tp& __t, const _Alloc& __a = _Alloc())
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_428.cpp:293:24: error: call to deleted constructor of 'std::sregex_iterator' (aka 'regex_iterator<__normal_iterator<const char *, std::basic_string<char>>>')
+  293 |   std::sregex_iterator it(s.begin(), s.end(), HeaderRegex());
+      |                        ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/regex.h:2768:7: note: 'regex_iterator' has been explicitly marked deleted here
+ 2768 |       regex_iterator(_Bi_iter, _Bi_iter, const regex_type&&,
+      |       ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_428.dir/build.make:76: generated_build/CMakeFiles/test_428.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_428.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:13782: generated_build/CMakeFiles/test_428.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:13789: generated_build/CMakeFiles/test_428.dir/rule] Error 2
+gmake: *** [Makefile:5834: test_428] Error 2

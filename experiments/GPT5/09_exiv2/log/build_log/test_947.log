@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_947.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_947.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_947.cpp:37:32: error: non-virtual member function marked 'override' hides virtual member function
+   37 |   const Exiv2::Value* clone_() override { return new ThrowingToStringValue(*this); }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_947.cpp:27:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   27 | class ThrowingToStringValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'ThrowingToStringValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'ThrowingToStringValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'ThrowingToStringValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'ThrowingToStringValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'ThrowingToStringValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'ThrowingToStringValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'ThrowingToStringValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'ThrowingToStringValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'ThrowingToStringValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'ThrowingToStringValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'ThrowingToStringValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_947.cpp:37:54: error: allocating an object of abstract class type 'ThrowingToStringValue'
+   37 |   const Exiv2::Value* clone_() override { return new ThrowingToStringValue(*this); }
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_947.cpp:153:25: error: variable type 'ThrowingToStringValue' is an abstract class
+  153 |   ThrowingToStringValue throwingValue;
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_947.cpp:154:10: error: 'Exiv2::ExifKey' is an incomplete type
+  154 |   md.add(Exiv2::ExifKey("Exif.Image.Model"), &throwingValue);
+      |          ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_947.dir/build.make:79: generated_build/CMakeFiles/test_947.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_947.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:45519: generated_build/CMakeFiles/test_947.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:45526: generated_build/CMakeFiles/test_947.dir/rule] Error 2
+gmake: *** [Makefile:14999: test_947] Error 2

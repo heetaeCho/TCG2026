@@ -1,0 +1,52 @@
+[ 80%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_440.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:39:23: error: non-virtual member function marked 'override' hides virtual member function
+   39 |     bool isComplete() override { return false; }
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:115:22: note: hidden overloaded virtual function 'Catch::TestCaseTracking::ITracker::isComplete' declared here: different qualifiers ('const' vs unqualified)
+  115 |         virtual bool isComplete() const = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:27:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   27 | class ConcreteTracker_440 final : public ITracker {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:115:22: note: unimplemented pure virtual method 'isComplete' in 'ConcreteTracker_440'
+  115 |         virtual bool isComplete() const = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:67:8: error: no type named 'NameAndLocation' in namespace 'Catch'; did you mean 'Catch::TestCaseTracking::NameAndLocation'?
+   67 | static Catch::NameAndLocation makeNAL_440(const char* name,
+      |        ^~~~~~~~~~~~~~~~~~~~~~
+      |        Catch::TestCaseTracking::NameAndLocation
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:21:12: note: 'Catch::TestCaseTracking::NameAndLocation' declared here
+   21 |     struct NameAndLocation {
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:73:19: error: no member named 'NameAndLocation' in namespace 'Catch'
+   73 |     return Catch::NameAndLocation{name, Catch::SourceLineInfo{file, static_cast<std::uint32_t>(line)}};
+      |            ~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:73:34: error: expected ';' after return statement
+   73 |     return Catch::NameAndLocation{name, Catch::SourceLineInfo{file, static_cast<std::uint32_t>(line)}};
+      |                                  ^
+      |                                  ;
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:89:40: error: no type named 'NameAndLocation' in namespace 'Catch'; did you mean 'Catch::TestCaseTracking::NameAndLocation'?
+   89 |                                  const Catch::NameAndLocation&>,
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~
+      |                                        Catch::TestCaseTracking::NameAndLocation
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:21:12: note: 'Catch::TestCaseTracking::NameAndLocation' declared here
+   21 |     struct NameAndLocation {
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:107:25: error: variable type 'ConcreteTracker_440' is an abstract class
+  107 |     ConcreteTracker_440 tracker{std::move(nal), /*parent*/nullptr};
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:139:25: error: variable type 'ConcreteTracker_440' is an abstract class
+  139 |     ConcreteTracker_440 tracker{std::move(nal), /*parent*/nullptr};
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:165:25: error: variable type 'ConcreteTracker_440' is an abstract class
+  165 |     ConcreteTracker_440 tracker{makeNAL_440("rvalue_ctor_440"), /*parent*/nullptr};
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp:185:25: error: variable type 'ConcreteTracker_440' is an abstract class
+  185 |     ConcreteTracker_440 tracker{std::move(nal), /*parent*/nullptr};
+      |                         ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_440.dir/build.make:79: generated_build/CMakeFiles/test_440.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_440.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:15442: generated_build/CMakeFiles/test_440.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:15449: generated_build/CMakeFiles/test_440.dir/rule] Error 2
+gmake: *** [Makefile:5051: test_440] Error 2

@@ -1,0 +1,31 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_769.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_769.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_769.cpp:95:25: error: variable has incomplete type 'TestSpec'
+   95 |         static TestSpec spec;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:61:11: note: forward declaration of 'Catch::TestSpec'
+   61 |     class TestSpec;
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_769.cpp:179:20: error: no matching constructor for initialization of 'ReporterConfig'
+  179 |     ReporterConfig rcfg{cfg, os};
+      |                    ^   ~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 2 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_769.dir/build.make:79: generated_build/CMakeFiles/test_769.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_769.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21362: generated_build/CMakeFiles/test_769.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21369: generated_build/CMakeFiles/test_769.dir/rule] Error 2
+gmake: *** [Makefile:7456: test_769] Error 2

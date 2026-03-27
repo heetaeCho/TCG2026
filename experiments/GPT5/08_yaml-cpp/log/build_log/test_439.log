@@ -1,0 +1,22 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_439.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_439.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_439.cpp:20:10: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   20 |   struct TrackingChange final : YAML::SettingChangeBase {
+      |          ^
+/home/user/MyProjects/NewTCG/TestProjects/yaml-cpp/src/setting.h:20:16: note: unimplemented pure virtual method 'pop' in 'TrackingChange'
+   20 |   virtual void pop() = 0;
+      |                ^
+In file included from /home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_439.cpp:3:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::SettingChangesTest_439::TrackingChange'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_439.cpp:50:21: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::SettingChangesTest_439::TrackingChange, int>' requested here
+   50 |   changes.push(std::make_unique<TrackingChange>(1));
+      |                     ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_439.dir/build.make:79: generated_build/CMakeFiles/test_439.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_439.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5323: generated_build/CMakeFiles/test_439.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5330: generated_build/CMakeFiles/test_439.dir/rule] Error 2
+gmake: *** [Makefile:1441: test_439] Error 2

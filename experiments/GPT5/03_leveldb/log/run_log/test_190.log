@@ -1,0 +1,16 @@
+Running main() from /home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from InternalKeyComparator_FindShortestSeparator_190
+[ RUN      ] InternalKeyComparator_FindShortestSeparator_190.NoChangeWhenTmpNotShorter_190
+[       OK ] InternalKeyComparator_FindShortestSeparator_190.NoChangeWhenTmpNotShorter_190 (0 ms)
+[ RUN      ] InternalKeyComparator_FindShortestSeparator_190.NoChangeWhenTmpNotGreater_190
+[       OK ] InternalKeyComparator_FindShortestSeparator_190.NoChangeWhenTmpNotGreater_190 (0 ms)
+[ RUN      ] InternalKeyComparator_FindShortestSeparator_190.UpdatesWhenShorterAndGreater_190
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_190.cpp:233: Failure
+Mock function called more times than expected - returning default value.
+    Function call: Compare(@0x7ffd03f401b0 16-byte object <E0-04 F4-03 FD-7F 00-00 03-00 00-00 00-00 00-00>, @0x7ffd03f401a0 16-byte object <80-02 F4-03 FD-7F 00-00 02-00 00-00 00-00 00-00>)
+          Returns: 0
+         Expected: to be called once
+           Actual: called twice - over-saturated and active
+test_190: /home/user/MyProjects/NewTCG/TestProjects/leveldb/db/dbformat.cc:78: virtual void leveldb::InternalKeyComparator::FindShortestSeparator(std::string *, const Slice &) const: Assertion `this->Compare(*start, tmp) < 0' failed.

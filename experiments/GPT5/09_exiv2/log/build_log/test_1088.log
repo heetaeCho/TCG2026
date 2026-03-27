@@ -1,0 +1,120 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1088.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:13:11: error: field type 'Image' is an abstract class
+   13 |     Image image_;
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:11:37: error: no member named 'Unknown' in 'Exiv2::ImageType'
+   11 |     ImageTest() : image_(ImageType::Unknown, 0, std::make_unique<BasicIo>()) {}
+      |                          ~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:48:5: error: unknown type name 'MockExternalHandler'
+   48 |     MockExternalHandler mockHandler;
+      |     ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:11:54: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   11 |     ImageTest() : image_(ImageType::Unknown, 0, std::make_unique<BasicIo>()) {}
+      |                                                      ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:11:49: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   11 |     ImageTest() : image_(ImageType::Unknown, 0, std::make_unique<BasicIo>()) {}
+      |                                                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_SetByteOrder_Normal_1088_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:17:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_SetByteOrder_Normal_1088_Test>::CreateTest' requested here
+   17 | TEST_F(ImageTest, SetByteOrder_Normal_1088) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_SetByteOrder_Invalid_1089_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:25:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_SetByteOrder_Invalid_1089_Test>::CreateTest' requested here
+   25 | TEST_F(ImageTest, SetByteOrder_Invalid_1089) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_SetByteOrder_Exceptional_1090_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:33:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_SetByteOrder_Exceptional_1090_Test>::CreateTest' requested here
+   33 | TEST_F(ImageTest, SetByteOrder_Exceptional_1090) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_SetByteOrder_ExternalInteraction_1091_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp:46:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_SetByteOrder_ExternalInteraction_1091_Test>::CreateTest' requested here
+   46 | TEST_F(ImageTest, SetByteOrder_ExternalInteraction_1091) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1088.dir/build.make:79: generated_build/CMakeFiles/test_1088.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1088.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:18965: generated_build/CMakeFiles/test_1088.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:18972: generated_build/CMakeFiles/test_1088.dir/rule] Error 2
+gmake: *** [Makefile:4846: test_1088] Error 2

@@ -1,0 +1,290 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1702.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:10:5: error: only virtual member functions can be marked 'override'
+   10 |     MOCK_METHOD(void, accept, (TiffVisitor& visitor), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:205:1: note: expanded from here
+  205 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:15:11: error: unknown type name 'byte'
+   15 |     const byte* pData_ = nullptr;
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:21:41: error: unknown type name 'byte'
+   21 |         pData_ = reinterpret_cast<const byte*>(malloc(10));  // Dummy data
+      |                                         ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:26:25: error: unknown type name 'byte'
+   26 |         free(const_cast<byte*>(pData_));  // Clean up
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:33:23: error: variable type 'MockTiffComponent' is an abstract class
+   33 |     MockTiffComponent mockComponent;
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'MockTiffComponent'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:312:18: note: unimplemented pure virtual method 'doWrite' in 'MockTiffComponent'
+  312 |   virtual size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'MockTiffComponent'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:321:18: note: unimplemented pure virtual method 'doWriteData' in 'MockTiffComponent'
+  321 |   virtual size_t doWriteData(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t dataIdx,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:324:18: note: unimplemented pure virtual method 'doWriteImage' in 'MockTiffComponent'
+  324 |   virtual size_t doWriteImage(IoWrapper& ioWrapper, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:326:32: note: unimplemented pure virtual method 'doSize' in 'MockTiffComponent'
+  326 |   [[nodiscard]] virtual size_t doSize() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:328:32: note: unimplemented pure virtual method 'doCount' in 'MockTiffComponent'
+  328 |   [[nodiscard]] virtual size_t doCount() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:330:32: note: unimplemented pure virtual method 'doSizeData' in 'MockTiffComponent'
+  330 |   [[nodiscard]] virtual size_t doSizeData() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:332:32: note: unimplemented pure virtual method 'doSizeImage' in 'MockTiffComponent'
+  332 |   [[nodiscard]] virtual size_t doSizeImage() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:39:12: error: 'postList_' is a private member of 'Exiv2::Internal::TiffReader'
+   39 |     reader.postList_.push_back(&mockComponent);
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:671:12: note: declared private here
+  671 |   PostList postList_;      //!< List of components with deferred reading
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:59:12: error: 'postProc_' is a private member of 'Exiv2::Internal::TiffReader'
+   59 |     reader.postProc_ = true;  // Set the state to true for processing
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:672:8: note: declared private here
+  672 |   bool postProc_{false};   //!< True in postProcessList()
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:69:23: error: variable type 'MockTiffComponent' is an abstract class
+   69 |     MockTiffComponent mockComponent;
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:74:12: error: 'postList_' is a private member of 'Exiv2::Internal::TiffReader'
+   74 |     reader.postList_.push_back(&mockComponent);
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:671:12: note: declared private here
+  671 |   PostList postList_;      //!< List of components with deferred reading
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:87:12: error: 'postProc_' is a private member of 'Exiv2::Internal::TiffReader'
+   87 |     reader.postProc_ = true;  // Start with postProc set to true
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:672:8: note: declared private here
+  672 |   bool postProc_{false};   //!< True in postProcessList()
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:88:23: error: variable type 'MockTiffComponent' is an abstract class
+   88 |     MockTiffComponent mockComponent;
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:91:12: error: 'postList_' is a private member of 'Exiv2::Internal::TiffReader'
+   91 |     reader.postList_.push_back(&mockComponent);
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:671:12: note: declared private here
+  671 |   PostList postList_;      //!< List of components with deferred reading
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:96:25: error: 'postProc_' is a private member of 'Exiv2::Internal::TiffReader'
+   96 |     EXPECT_FALSE(reader.postProc_);
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:672:8: note: declared private here
+  672 |   bool postProc_{false};   //!< True in postProcessList()
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:13:7: error: implicit default constructor for 'TiffReaderTest_1702' must explicitly initialize the member 'state_' which does not have a default constructor
+   13 | class TiffReaderTest_1702 : public testing::Test {
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:31:1: note: in implicit default constructor for 'TiffReaderTest_1702' first required here
+   31 | TEST_F(TiffReaderTest_1702, postProcess_NormalOperation_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1489:5: note: expanded from macro 'GTEST_TEST_'
+ 1489 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/usr/local/include/gtest/internal/gtest-internal.h:1478:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1478 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:2:1: note: expanded from here
+    2 | TiffReaderTest_1702_postProcess_NormalOperation_1702_Test
+      | ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:44: note: in defaulted default constructor for 'TiffReaderTest_1702_postProcess_NormalOperation_1702_Test' first required here
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:31:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffReaderTest_1702_postProcess_NormalOperation_1702_Test>::CreateTest' requested here
+   31 | TEST_F(TiffReaderTest_1702, postProcess_NormalOperation_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:17:17: note: member is declared here
+   17 |     TiffRwState state_;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:533:7: note: 'Exiv2::Internal::TiffRwState' declared here
+  533 | class TiffRwState {
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffReaderTest_1702_postProcess_NormalOperation_1702_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:31:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffReaderTest_1702_postProcess_NormalOperation_1702_Test>::CreateTest' requested here
+   31 | TEST_F(TiffReaderTest_1702, postProcess_NormalOperation_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:47:1: error: constructor for 'TiffReaderTest_1702_postProcess_EmptyPostList_1702_Test' must explicitly initialize the base class 'TiffReaderTest_1702' which does not have a default constructor
+   47 | TEST_F(TiffReaderTest_1702, postProcess_EmptyPostList_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1489:5: note: expanded from macro 'GTEST_TEST_'
+ 1489 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/usr/local/include/gtest/internal/gtest-internal.h:1478:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1478 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:59:1: note: expanded from here
+   59 | TiffReaderTest_1702_postProcess_EmptyPostList_1702_Test
+      | ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:44: note: in defaulted default constructor for 'TiffReaderTest_1702_postProcess_EmptyPostList_1702_Test' first required here
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffReaderTest_1702_postProcess_EmptyPostList_1702_Test>::CreateTest' requested here
+   47 | TEST_F(TiffReaderTest_1702, postProcess_EmptyPostList_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:13:7: note: 'TiffReaderTest_1702' declared here
+   13 | class TiffReaderTest_1702 : public testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffReaderTest_1702_postProcess_EmptyPostList_1702_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffReaderTest_1702_postProcess_EmptyPostList_1702_Test>::CreateTest' requested here
+   47 | TEST_F(TiffReaderTest_1702, postProcess_EmptyPostList_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:57:1: error: constructor for 'TiffReaderTest_1702_postProcess_EmptyPostListWithPostProcTrue_1702_Test' must explicitly initialize the base class 'TiffReaderTest_1702' which does not have a default constructor
+   57 | TEST_F(TiffReaderTest_1702, postProcess_EmptyPostListWithPostProcTrue_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1489:5: note: expanded from macro 'GTEST_TEST_'
+ 1489 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/usr/local/include/gtest/internal/gtest-internal.h:1478:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1478 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:16:1: note: expanded from here
+   16 | TiffReaderTest_1702_postProcess_EmptyPostListWithPostProcTrue_1702_Test
+      | ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:44: note: in defaulted default constructor for 'TiffReaderTest_1702_postProcess_EmptyPostListWithPostProcTrue_1702_Test' first required here
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:57:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffReaderTest_1702_postProcess_EmptyPostListWithPostProcTrue_1702_Test>::CreateTest' requested here
+   57 | TEST_F(TiffReaderTest_1702, postProcess_EmptyPostListWithPostProcTrue_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:13:7: note: 'TiffReaderTest_1702' declared here
+   13 | class TiffReaderTest_1702 : public testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffReaderTest_1702_postProcess_EmptyPostListWithPostProcTrue_1702_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp:57:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffReaderTest_1702_postProcess_EmptyPostListWithPostProcTrue_1702_Test>::CreateTest' requested here
+   57 | TEST_F(TiffReaderTest_1702, postProcess_EmptyPostListWithPostProcTrue_1702) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1702.dir/build.make:79: generated_build/CMakeFiles/test_1702.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1702.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:30083: generated_build/CMakeFiles/test_1702.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:30090: generated_build/CMakeFiles/test_1702.dir/rule] Error 2
+gmake: *** [Makefile:9097: test_1702] Error 2

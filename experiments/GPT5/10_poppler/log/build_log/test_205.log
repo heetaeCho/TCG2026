@@ -1,0 +1,107 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_205.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:9:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:57:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:47:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:172:24: error: no member named 'starts_with' in 'std::basic_string<char>'
+  172 |     using std::string::starts_with;
+      |           ~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:175:24: error: no member named 'ends_with' in 'std::basic_string<char>'
+  175 |     using std::string::ends_with;
+      |           ~~~~~~~~~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:9:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:57:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:99:47: warning: designated initializers are a C++20 extension [-Wc++20-designator]
+   99 |     static constexpr Ref INVALID() { return { .num = -1, .gen = -1 }; };
+      |                                               ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:18: error: expected parameter declarator
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:9: error: a type specifier is required for all declarations
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:56: error: expected ';' at end of declaration list
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                                                        ^
+      |                                                        ;
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:9:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:315:31: error: no template named 'span' in namespace 'std'
+  315 |     virtual size_t write(std::span<const unsigned char> data) = 0;
+      |                          ~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:336:23: error: no template named 'span' in namespace 'std'
+  336 |     size_t write(std::span<const unsigned char> data) override;
+      |                  ~~~~~^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:21:16: error: only virtual member functions can be marked 'override'
+   21 |   void reset() override { pos_ = 0; }
+      |                ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:41:7: error: virtual function 'getPos' has a different return type ('int') than the function it overrides (which has return type 'Goffset' (aka 'long long'))
+   41 |   int getPos() override { return pos_; }
+      |   ~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:234:21: note: overridden virtual function is here
+  234 |     virtual Goffset getPos() = 0;
+      |             ~~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:61:22: error: only virtual member functions can be marked 'override'
+   61 |   Goffset getStart() override { return start_; }
+      |                      ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:63:29: error: only virtual member functions can be marked 'override'
+   63 |   void moveStart(int delta) override {
+      |                             ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:68:27: error: non-virtual member function marked 'override' hides virtual member function
+   68 |   Stream *getNextStream() override { return nullptr; }
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:265:21: note: hidden overloaded virtual function 'Stream::getNextStream' declared here: different qualifiers ('const' vs unqualified)
+  265 |     virtual Stream *getNextStream() const { return nullptr; }
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:70:35: error: non-virtual member function marked 'override' hides virtual member function
+   70 |   bool isBinary(bool /*unnamed*/) override { return true; }
+      |                                   ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different qualifiers ('const' vs unqualified)
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:13:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   13 | class CountingMemStream final : public Stream {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'CountingMemStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'CountingMemStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'CountingMemStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'CountingMemStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'CountingMemStream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'CountingMemStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'CountingMemStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'CountingMemStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:13:7: warning: 'CountingMemStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class CountingMemStream final : public Stream {
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:82:7: warning: 'FixedLengthEncoderTest_205' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   82 | class FixedLengthEncoderTest_205 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'CountingMemStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp:90:16: note: in instantiation of function template specialization 'std::make_unique<CountingMemStream, const char (&)[4]>' requested here
+   90 |   base_ = std::make_unique<CountingMemStream>("abc");
+      |                ^
+4 warnings and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_205.dir/build.make:79: generated_build/CMakeFiles/test_205.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_205.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:40393: generated_build/CMakeFiles/test_205.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:40400: generated_build/CMakeFiles/test_205.dir/rule] Error 2
+gmake: *** [Makefile:12906: test_205] Error 2

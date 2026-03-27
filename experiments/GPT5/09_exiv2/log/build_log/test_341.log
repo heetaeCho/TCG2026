@@ -1,0 +1,66 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_341.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:18:19: error: cannot initialize a member subobject of type 'IfdId' with an rvalue of type 'int'
+   18 |     IfdId group = 1;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:20:21: error: cannot initialize a member subobject of type 'IfdId' with an rvalue of type 'int'
+   20 |     IfdId dtGroup = 2;
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:29:21: error: variable type 'TiffVisitorMock' is an abstract class
+   29 |     TiffVisitorMock mockVisitor;
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:85:16: note: unimplemented pure virtual method 'visitEntry' in 'TiffVisitorMock'
+   85 |   virtual void visitEntry(TiffEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:87:16: note: unimplemented pure virtual method 'visitDataEntry' in 'TiffVisitorMock'
+   87 |   virtual void visitDataEntry(TiffDataEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:89:16: note: unimplemented pure virtual method 'visitImageEntry' in 'TiffVisitorMock'
+   89 |   virtual void visitImageEntry(TiffImageEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:93:16: note: unimplemented pure virtual method 'visitDirectory' in 'TiffVisitorMock'
+   93 |   virtual void visitDirectory(TiffDirectory* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:105:16: note: unimplemented pure virtual method 'visitSubIfd' in 'TiffVisitorMock'
+  105 |   virtual void visitSubIfd(TiffSubIfd* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:107:16: note: unimplemented pure virtual method 'visitMnEntry' in 'TiffVisitorMock'
+  107 |   virtual void visitMnEntry(TiffMnEntry* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:109:16: note: unimplemented pure virtual method 'visitIfdMakernote' in 'TiffVisitorMock'
+  109 |   virtual void visitIfdMakernote(TiffIfdMakernote* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:113:16: note: unimplemented pure virtual method 'visitBinaryArray' in 'TiffVisitorMock'
+  113 |   virtual void visitBinaryArray(TiffBinaryArray* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:120:16: note: unimplemented pure virtual method 'visitBinaryElement' in 'TiffVisitorMock'
+  120 |   virtual void visitBinaryElement(TiffBinaryElement* object) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:34:15: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffSizeEntry'
+   34 |     sizeEntry.doAccept(mockVisitor);
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:801:8: note: declared protected here
+  801 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:41:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+   41 |     IfdId minGroup = 0;
+      |           ^          ~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:42:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+   42 |     IfdId maxGroup = 65535;
+      |           ^          ~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:56:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+   56 |     IfdId zeroGroup = 0;
+      |           ^           ~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:69:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+   69 |     IfdId invalidGroup = 70000;  // Exceeds IfdId max
+      |           ^              ~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp:68:27: warning: implicit conversion from 'int' to 'uint16_t' (aka 'unsigned short') changes value from 70000 to 4464 [-Wconstant-conversion]
+   68 |     uint16_t invalidTag = 70000; // Exceeds uint16_t max
+      |              ~~~~~~~~~~   ^~~~~
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_341.dir/build.make:79: generated_build/CMakeFiles/test_341.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_341.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:53373: generated_build/CMakeFiles/test_341.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:53380: generated_build/CMakeFiles/test_341.dir/rule] Error 2
+gmake: *** [Makefile:18002: test_341] Error 2

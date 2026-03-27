@@ -1,0 +1,78 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_542.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:25:7: error: no member named 'makeOutputRedirect' in namespace 'Catch::Detail'; did you mean 'Catch::makeOutputRedirect'?
+   25 | using Catch::Detail::makeOutputRedirect;
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |       Catch::makeOutputRedirect
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_output_redirect.hpp:52:40: note: 'Catch::makeOutputRedirect' declared here
+   52 |     Detail::unique_ptr<OutputRedirect> makeOutputRedirect( bool actual );
+      |                                        ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:53:37: error: no type named 'NoopRedirect' in namespace 'Catch::Detail'
+   53 |         dynamic_cast<Catch::Detail::NoopRedirect*>(ptr.get());
+      |                      ~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:81:50: error: no type named 'StreamRedirect' in namespace 'Catch::Detail'
+   81 |     auto* asStream = dynamic_cast<Catch::Detail::StreamRedirect*>(ptr.get());
+      |                                   ~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:109:43: warning: expression with side effects will be evaluated despite being used as an operand to 'typeid' [-Wpotentially-evaluated-expression]
+  109 |     const std::type_info& tFalse = typeid(*falsePtr);
+      |                                           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:111:43: warning: expression with side effects will be evaluated despite being used as an operand to 'typeid' [-Wpotentially-evaluated-expression]
+  111 |     const std::type_info& tTrue  = typeid(*truePtr);
+      |                                           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:147:43: error: no type named 'StreamRedirect' in namespace 'Catch::Detail'
+  147 |     EXPECT_NE(dynamic_cast<Catch::Detail::StreamRedirect*>(moved.get()), nullptr);
+      |                            ~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1887:57: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:161:36: error: no member named 'OutputRedirect' in namespace 'Catch::Detail'
+  161 |     std::unique_ptr<Catch::Detail::OutputRedirect> basePtr = makeOutputRedirect(true);
+      |                     ~~~~~~~~~~~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:5:
+/usr/local/include/gtest/gtest.h:1472:28: error: invalid operands to binary expression ('const Catch::Detail::unique_ptr<Catch::OutputRedirect>' and 'const std::nullptr_t')
+ 1472 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/include/gtest/gtest.h:1462:14: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1462 |     if (val1 op val2) {                                                    \
+      |         ~~~~ ^  ~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:41:5: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<Catch::Detail::unique_ptr<Catch::OutputRedirect>, std::nullptr_t>' requested here
+   41 |     ASSERT_NE(ptr, nullptr) << "Factory must return a valid pointer";
+      |     ^
+/usr/local/include/gtest/gtest.h:1918:31: note: expanded from macro 'ASSERT_NE'
+ 1918 | #define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+      |                               ^
+/usr/local/include/gtest/gtest.h:1900:44: note: expanded from macro 'GTEST_ASSERT_NE'
+ 1900 |   ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/local/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const Catch::Detail::unique_ptr<Catch::OutputRedirect>' to 'faketype' for 1st argument
+ 1387 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const Catch::Detail::unique_ptr<Catch::OutputRedirect>' and 'const std::nullptr_t')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Catch::Detail::unique_ptr<Catch::OutputRedirect>, std::nullptr_t>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp:133:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Catch::Detail::unique_ptr<Catch::OutputRedirect>, std::nullptr_t, nullptr>' requested here
+  133 |     EXPECT_EQ(original, nullptr) << "Moved-from unique_ptr should be null";
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:1386:13: note: candidate function not viable: no known conversion from 'const Catch::Detail::unique_ptr<Catch::OutputRedirect>' to 'faketype' for 1st argument
+ 1386 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+2 warnings and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_542.dir/build.make:79: generated_build/CMakeFiles/test_542.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_542.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:7602: generated_build/CMakeFiles/test_542.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:7609: generated_build/CMakeFiles/test_542.dir/rule] Error 2
+gmake: *** [Makefile:1866: test_542] Error 2

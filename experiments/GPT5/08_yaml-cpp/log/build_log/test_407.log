@@ -1,0 +1,60 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_407.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp.o
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:17:21: error: no member named 'powl' in namespace 'std'; did you mean simply 'powl'?
+   17 |   long double p10 = std::powl(10.0L, static_cast<long double>(v.exponent));
+      |                     ^~~~~~~~~
+      |                     powl
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:140:1: note: 'powl' declared here
+  140 | __MATHCALL_VEC (pow,, (_Mdouble_ __x, _Mdouble_ __y));
+      | ^
+/usr/include/math.h:280:3: note: expanded from macro '__MATHCALL_VEC'
+  280 |   __MATHCALL (function, suffix, args)
+      |   ^
+/usr/include/math.h:287:3: note: expanded from macro '__MATHCALL'
+  287 |   __MATHDECL (_Mdouble_,function,suffix, args)
+      |   ^
+/usr/include/math.h:289:3: note: expanded from macro '__MATHDECL'
+  289 |   __MATHDECL_1(type, function,suffix, args); \
+      |   ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/math.h:297:15: note: expanded from macro '__MATHDECL_1_IMPL'
+  297 |   extern type __MATH_PRECNAME(function,suffix) args __THROW
+      |               ^
+/usr/include/math.h:394:35: note: expanded from macro '__MATH_PRECNAME'
+  394 | #  define __MATH_PRECNAME(name,r) name##l##r
+      |                                   ^
+<scratch space>:197:1: note: expanded from here
+  197 | powl
+      | ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:20:17: error: use of undeclared identifier 'requires'
+   20 |   if constexpr (requires { v.is_negative; }) {
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:22:24: error: use of undeclared identifier 'requires'
+   22 |   } else if constexpr (requires { v.sign; }) {
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:77:19: error: use of undeclared identifier 'requires'
+   77 |     if constexpr (requires { d.is_negative; }) {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:123:19: error: use of undeclared identifier 'requires'
+  123 |     if constexpr (requires { d.is_negative; }) {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:195:17: error: use of undeclared identifier 'requires'
+  195 |   if constexpr (requires { a.is_negative; }) {
+      |                 ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:24:29: error: no member named 'sign' in 'YAML::jkj::dragonbox::decimal_fp<unsigned int, int, true, false>'
+   24 |     if (static_cast<bool>(v.sign)) out = -out;
+      |                           ~ ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:60:27: note: in instantiation of function template specialization '(anonymous namespace)::DecimalFpToLongDouble<YAML::jkj::dragonbox::decimal_fp<unsigned int, int, true, false>>' requested here
+   60 |     const long double r = DecimalFpToLongDouble(d);
+      |                           ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:24:29: error: no member named 'sign' in 'YAML::jkj::dragonbox::decimal_fp<unsigned long, int, true, false>'
+   24 |     if (static_cast<bool>(v.sign)) out = -out;
+      |                           ~ ^
+/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp:106:36: note: in instantiation of function template specialization '(anonymous namespace)::DecimalFpToLongDouble<YAML::jkj::dragonbox::decimal_fp<unsigned long, int, true, false>>' requested here
+  106 |     ExpectRoundTripOrAdjacent(1.0, DecimalFpToLongDouble(d));
+      |                                    ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_407.dir/build.make:79: generated_build/CMakeFiles/test_407.dir/home/user/MyProjects/NewTCG/experiments/08_yaml-cpp/test_files/test_407.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:15979: generated_build/CMakeFiles/test_407.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:15986: generated_build/CMakeFiles/test_407.dir/rule] Error 2
+gmake: *** [Makefile:5770: test_407] Error 2

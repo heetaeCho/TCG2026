@@ -1,0 +1,47 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_494.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp:19:
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/parse.cc:1124:11: warning: unsupported MC/DC boolean expression; number of conditions (17) exceeds max (6). Expression will not be covered
+ 1124 |       if (first != NULL &&
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/parse.cc:2107:7: warning: unsupported MC/DC boolean expression; number of conditions (7) exceeds max (6). Expression will not be covered
+ 2107 |   if ((t.size() > 3 && (t[2] == '=' || t[2] == '!')) ||
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp:43:11: error: 'ParseState' is a private member of 're2::Regexp'
+   43 |   Regexp::ParseState MakeState(absl::string_view whole = absl::string_view()) {
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:495:9: note: declared private here
+  495 |   class ParseState;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp:57:32: error: 'ParseState' is a private member of 're2::Regexp'
+   57 |   void FinishAndDelete(Regexp::ParseState& ps) {
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:495:9: note: declared private here
+  495 |   class ParseState;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp:47:20: error: 'ParseState' is a private member of 're2::Regexp'
+   47 |     return Regexp::ParseState(/*flags=*/0, whole, &status_);
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:495:9: note: declared private here
+  495 |   class ParseState;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp:47:12: error: no matching constructor for initialization of 'Regexp::ParseState'
+   47 |     return Regexp::ParseState(/*flags=*/0, whole, &status_);
+      |            ^                            ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/parse.cc:193:21: note: candidate constructor not viable: no known conversion from 'int' to 'ParseFlags' for 1st argument
+  193 | Regexp::ParseState::ParseState(ParseFlags flags,
+      |                     ^          ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/parse.cc:185:3: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+  185 |   ParseState(const ParseState&) = delete;
+      |   ^          ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp:61:12: error: calling a private destructor of class 'Regexp'
+   61 |     delete re;  // re may be nullptr; delete nullptr is safe
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/regexp.h:490:3: note: declared private here
+  490 |   ~Regexp();
+      |   ^
+2 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_494.dir/build.make:79: generated_build/CMakeFiles/test_494.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_494.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9929: generated_build/CMakeFiles/test_494.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9936: generated_build/CMakeFiles/test_494.dir/rule] Error 2
+gmake: *** [Makefile:3416: test_494] Error 2

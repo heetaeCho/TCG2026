@@ -1,0 +1,127 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_173.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:75:38: error: expected class name
+   75 | struct GenericIntPredicate : Detail::MatcherGenericBase {
+      |                                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:95:34: error: only virtual member functions can be marked 'override'
+   95 |     std::string describe() const override { return desc_; }
+      |                                  ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:159:26: error: value of type 'const Catch::Matchers::CountingIntMatcher' is not contextually convertible to 'bool'
+  159 |     using Ret = decltype(std::declval<L const&>() && std::declval<R const&>());
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:159:51: error: invalid operands to binary expression ('const Catch::Matchers::CountingIntMatcher' and 'const Catch::Matchers::GenericIntPredicate')
+  159 |     using Ret = decltype(std::declval<L const&>() && std::declval<R const&>());
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:174:27: note: candidate template ignored: could not match 'const MatcherBase<T>' against 'const Catch::Matchers::GenericIntPredicate'
+  174 |     Detail::MatchAllOf<T> operator&& (MatcherBase<T> const& lhs, MatcherBase<T> const& rhs) {
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:250:9: note: candidate template ignored: requirement 'Detail::are_generic_matchers_v<Catch::Matchers::CountingIntMatcher, Catch::Matchers::GenericIntPredicate>' was not satisfied [with MatcherLHS = Catch::Matchers::CountingIntMatcher, MatcherRHS = Catch::Matchers::GenericIntPredicate]
+  250 |         operator && (MatcherLHS const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:271:9: note: candidate template ignored: could not match 'const MatcherBase<ArgRHS>' against 'const Catch::Matchers::GenericIntPredicate'
+  271 |         operator && (MatcherLHS const& lhs, MatcherBase<ArgRHS> const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:277:9: note: candidate template ignored: requirement 'Detail::is_generic_matcher_v<Catch::Matchers::GenericIntPredicate>' was not satisfied [with ArgLHS = int, MatcherRHS = Catch::Matchers::GenericIntPredicate]
+  277 |         operator && (MatcherBase<ArgLHS> const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:175:31: error: use of undeclared identifier 'Ret'
+  175 |     EXPECT_TRUE((std::is_same<Ret, Expected>::value));
+      |                               ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:213:21: error: value of type 'CountingIntMatcher' is not contextually convertible to 'bool'
+  213 |     auto combined = lhs && rhs;
+      |                     ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:213:25: error: invalid operands to binary expression ('CountingIntMatcher' and 'GenericIntPredicate')
+  213 |     auto combined = lhs && rhs;
+      |                     ~~~ ^  ~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:174:27: note: candidate template ignored: could not match 'MatcherBase<T>' against 'GenericIntPredicate'
+  174 |     Detail::MatchAllOf<T> operator&& (MatcherBase<T> const& lhs, MatcherBase<T> const& rhs) {
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:250:9: note: candidate template ignored: requirement 'Detail::are_generic_matchers_v<Catch::Matchers::CountingIntMatcher, Catch::Matchers::GenericIntPredicate>' was not satisfied [with MatcherLHS = CountingIntMatcher, MatcherRHS = GenericIntPredicate]
+  250 |         operator && (MatcherLHS const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:271:9: note: candidate template ignored: could not match 'MatcherBase<ArgRHS>' against 'GenericIntPredicate'
+  271 |         operator && (MatcherLHS const& lhs, MatcherBase<ArgRHS> const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:277:9: note: candidate template ignored: requirement 'Detail::is_generic_matcher_v<Catch::Matchers::GenericIntPredicate>' was not satisfied [with ArgLHS = int, MatcherRHS = GenericIntPredicate]
+  277 |         operator && (MatcherBase<ArgLHS> const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:231:21: error: value of type 'CountingIntMatcher' is not contextually convertible to 'bool'
+  231 |     auto combined = lhs && rhs;
+      |                     ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:231:25: error: invalid operands to binary expression ('CountingIntMatcher' and 'GenericIntPredicate')
+  231 |     auto combined = lhs && rhs;
+      |                     ~~~ ^  ~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:174:27: note: candidate template ignored: could not match 'MatcherBase<T>' against 'GenericIntPredicate'
+  174 |     Detail::MatchAllOf<T> operator&& (MatcherBase<T> const& lhs, MatcherBase<T> const& rhs) {
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:250:9: note: candidate template ignored: requirement 'Detail::are_generic_matchers_v<Catch::Matchers::CountingIntMatcher, Catch::Matchers::GenericIntPredicate>' was not satisfied [with MatcherLHS = CountingIntMatcher, MatcherRHS = GenericIntPredicate]
+  250 |         operator && (MatcherLHS const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:271:9: note: candidate template ignored: could not match 'MatcherBase<ArgRHS>' against 'GenericIntPredicate'
+  271 |         operator && (MatcherLHS const& lhs, MatcherBase<ArgRHS> const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:277:9: note: candidate template ignored: requirement 'Detail::is_generic_matcher_v<Catch::Matchers::GenericIntPredicate>' was not satisfied [with ArgLHS = int, MatcherRHS = GenericIntPredicate]
+  277 |         operator && (MatcherBase<ArgLHS> const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:249:21: error: value of type 'CountingIntMatcher' is not contextually convertible to 'bool'
+  249 |     auto combined = lhs && rhs;
+      |                     ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:249:25: error: invalid operands to binary expression ('CountingIntMatcher' and 'GenericIntPredicate')
+  249 |     auto combined = lhs && rhs;
+      |                     ~~~ ^  ~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:174:27: note: candidate template ignored: could not match 'MatcherBase<T>' against 'GenericIntPredicate'
+  174 |     Detail::MatchAllOf<T> operator&& (MatcherBase<T> const& lhs, MatcherBase<T> const& rhs) {
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:250:9: note: candidate template ignored: requirement 'Detail::are_generic_matchers_v<Catch::Matchers::CountingIntMatcher, Catch::Matchers::GenericIntPredicate>' was not satisfied [with MatcherLHS = CountingIntMatcher, MatcherRHS = GenericIntPredicate]
+  250 |         operator && (MatcherLHS const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:271:9: note: candidate template ignored: could not match 'MatcherBase<ArgRHS>' against 'GenericIntPredicate'
+  271 |         operator && (MatcherLHS const& lhs, MatcherBase<ArgRHS> const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:277:9: note: candidate template ignored: requirement 'Detail::is_generic_matcher_v<Catch::Matchers::GenericIntPredicate>' was not satisfied [with ArgLHS = int, MatcherRHS = GenericIntPredicate]
+  277 |         operator && (MatcherBase<ArgLHS> const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:269:22: error: value of type 'CountingIntMatcher' is not contextually convertible to 'bool'
+  269 |     auto combined = (lhs && rhs1) && rhs2;
+      |                      ^~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:269:26: error: invalid operands to binary expression ('CountingIntMatcher' and 'GenericIntPredicate')
+  269 |     auto combined = (lhs && rhs1) && rhs2;
+      |                      ~~~ ^  ~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:174:27: note: candidate template ignored: could not match 'MatcherBase<T>' against 'GenericIntPredicate'
+  174 |     Detail::MatchAllOf<T> operator&& (MatcherBase<T> const& lhs, MatcherBase<T> const& rhs) {
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:250:9: note: candidate template ignored: requirement 'Detail::are_generic_matchers_v<Catch::Matchers::CountingIntMatcher, Catch::Matchers::GenericIntPredicate>' was not satisfied [with MatcherLHS = CountingIntMatcher, MatcherRHS = GenericIntPredicate]
+  250 |         operator && (MatcherLHS const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:271:9: note: candidate template ignored: could not match 'MatcherBase<ArgRHS>' against 'GenericIntPredicate'
+  271 |         operator && (MatcherLHS const& lhs, MatcherBase<ArgRHS> const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:277:9: note: candidate template ignored: requirement 'Detail::is_generic_matcher_v<Catch::Matchers::GenericIntPredicate>' was not satisfied [with ArgLHS = int, MatcherRHS = GenericIntPredicate]
+  277 |         operator && (MatcherBase<ArgLHS> const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:285:9: error: value of type 'CountingIntMatcher' is not contextually convertible to 'bool'
+  285 |         CountingIntMatcher([](int v){ return v % 2 == 0; }) &&
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp:285:61: error: invalid operands to binary expression ('CountingIntMatcher' and 'GenericIntPredicate')
+  285 |         CountingIntMatcher([](int v){ return v % 2 == 0; }) &&
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+  286 | 
+  287 |         GenericIntPredicate([](int v){ return v != 6; });
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:174:27: note: candidate template ignored: could not match 'MatcherBase<T>' against 'GenericIntPredicate'
+  174 |     Detail::MatchAllOf<T> operator&& (MatcherBase<T> const& lhs, MatcherBase<T> const& rhs) {
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:250:9: note: candidate template ignored: requirement 'Detail::are_generic_matchers_v<Catch::Matchers::CountingIntMatcher, Catch::Matchers::GenericIntPredicate>' was not satisfied [with MatcherLHS = CountingIntMatcher, MatcherRHS = GenericIntPredicate]
+  250 |         operator && (MatcherLHS const& lhs, MatcherRHS const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:271:9: note: candidate template ignored: could not match 'MatcherBase<ArgRHS>' against 'GenericIntPredicate'
+  271 |         operator && (MatcherLHS const& lhs, MatcherBase<ArgRHS> const& rhs) {
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:277:9: note: candidate template ignored: requirement 'Detail::is_generic_matcher_v<Catch::Matchers::GenericIntPredicate>' was not satisfied [with ArgLHS = int, MatcherRHS = GenericIntPredicate]
+  277 |         operator && (MatcherBase<ArgLHS> const& lhs, MatcherRHS const& rhs) {
+      |         ^
+15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_173.dir/build.make:79: generated_build/CMakeFiles/test_173.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_173.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:33906: generated_build/CMakeFiles/test_173.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:33913: generated_build/CMakeFiles/test_173.dir/rule] Error 2
+gmake: *** [Makefile:12552: test_173] Error 2

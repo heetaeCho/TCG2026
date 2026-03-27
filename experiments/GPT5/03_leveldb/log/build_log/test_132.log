@@ -1,0 +1,78 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+Consolidate compiler generated dependencies of target test_132
+[100%] Building CXX object generated_build/CMakeFiles/test_132.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:25:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:5:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.h:182:7: error: attribute exclusive_locks_required ignored, because it is not attached to a declaration [-Werror,-Wignored-attributes]
+  182 |       EXCLUSIVE_LOCKS_REQUIRED(mu);
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./port/thread_annotations.h:43:57: note: expanded from macro 'EXCLUSIVE_LOCKS_REQUIRED'
+   43 |   THREAD_ANNOTATION_ATTRIBUTE__(exclusive_locks_required(__VA_ARGS__))
+      |                                                         ^
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:25:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./db/version_set.cc:777:51: error: use of undeclared identifier 'port'
+  777 | Status VersionSet::LogAndApply(VersionEdit* edit, port::Mutex* mu) {
+      |                                                   ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:49:3: error: non-virtual member function marked 'override' hides virtual member function
+   49 |   MOCK_METHOD(int, Compare,
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:113:1: note: expanded from here
+  113 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/comparator.h:28:15: note: hidden overloaded virtual function 'leveldb::Comparator::Compare' declared here: different qualifiers ('const' vs unqualified)
+   28 |   virtual int Compare(const Slice& a, const Slice& b) const = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:67:18: error: variable type 'MockComparator' is an abstract class
+   67 |   MockComparator cmp;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/comparator.h:28:15: note: unimplemented pure virtual method 'Compare' in 'MockComparator'
+   28 |   virtual int Compare(const Slice& a, const Slice& b) const = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/comparator.h:40:23: note: unimplemented pure virtual method 'Name' in 'MockComparator'
+   40 |   virtual const char* Name() const = 0;
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/comparator.h:48:16: note: unimplemented pure virtual method 'FindShortestSeparator' in 'MockComparator'
+   48 |   virtual void FindShortestSeparator(std::string* start,
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/comparator.h:54:16: note: unimplemented pure virtual method 'FindShortSuccessor' in 'MockComparator'
+   54 |   virtual void FindShortSuccessor(std::string* key) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:91:18: error: variable type 'MockComparator' is an abstract class
+   91 |   MockComparator cmp;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:115:18: error: variable type 'MockComparator' is an abstract class
+  115 |   MockComparator cmp;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:139:18: error: variable type 'MockComparator' is an abstract class
+  139 |   MockComparator cmp;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp:163:18: error: variable type 'MockComparator' is an abstract class
+  163 |   MockComparator cmp;
+      |                  ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_132.dir/build.make:76: generated_build/CMakeFiles/test_132.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_132.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11955: generated_build/CMakeFiles/test_132.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11962: generated_build/CMakeFiles/test_132.dir/rule] Error 2
+gmake: *** [Makefile:5015: test_132] Error 2

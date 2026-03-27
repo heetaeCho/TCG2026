@@ -1,0 +1,123 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1292.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:20:40: error: non-virtual member function marked 'override' hides virtual member function
+   20 |   const std::string toString(size_t n) override {
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:129:23: note: hidden overloaded virtual function 'Exiv2::Value::toString' declared here: different return type ('basic_string<...>' vs 'const basic_string<...>')
+  129 |   virtual std::string toString(size_t n) const;
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:26:32: error: non-virtual member function marked 'override' hides virtual member function
+   26 |   const Exiv2::Value* clone_() override { return new TestValue(*this); }
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:14:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   14 | class TestValue final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'TestValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'TestValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'TestValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'TestValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'TestValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'TestValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'TestValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'TestValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'TestValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'TestValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'TestValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:26:54: error: allocating an object of abstract class type 'TestValue'
+   26 |   const Exiv2::Value* clone_() override { return new TestValue(*this); }
+      |                                                      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:33:24: error: incomplete result type 'Exiv2::XmpKey' in function definition
+   33 |   static Exiv2::XmpKey MakeKey() {
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:35:12: error: 'Exiv2::XmpKey' is an incomplete type
+   35 |     return Exiv2::XmpKey("Xmp.dc.title");
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:35:12: error: initialization of incomplete type 'Exiv2::XmpKey'
+   35 |     return Exiv2::XmpKey("Xmp.dc.title");
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:42:23: error: variable has incomplete type 'const Exiv2::XmpKey'
+   42 |   const Exiv2::XmpKey key = MakeKey();
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:52:23: error: variable has incomplete type 'const Exiv2::XmpKey'
+   52 |   const Exiv2::XmpKey key = MakeKey();
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:54:19: error: variable type 'const TestValue' is an abstract class
+   54 |   const TestValue tv("base");
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:61:23: error: variable has incomplete type 'const Exiv2::XmpKey'
+   61 |   const Exiv2::XmpKey key = MakeKey();
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:63:19: error: variable type 'const TestValue' is an abstract class
+   63 |   const TestValue tv("v");
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:72:23: error: variable has incomplete type 'const Exiv2::XmpKey'
+   72 |   const Exiv2::XmpKey key = MakeKey();
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:74:19: error: variable type 'const TestValue' is an abstract class
+   74 |   const TestValue tv("big");
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:82:23: error: variable has incomplete type 'const Exiv2::XmpKey'
+   82 |   const Exiv2::XmpKey key = MakeKey();
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:19:7: note: forward declaration of 'Exiv2::XmpKey'
+   19 | class XmpKey;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:84:19: error: variable type 'const TestValue' is an abstract class
+   84 |   const TestValue tvA("A");
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp:85:19: error: variable type 'const TestValue' is an abstract class
+   85 |   const TestValue tvB("B");
+      |                   ^
+1 warning and 16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1292.dir/build.make:79: generated_build/CMakeFiles/test_1292.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1292.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:37257: generated_build/CMakeFiles/test_1292.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:37264: generated_build/CMakeFiles/test_1292.dir/rule] Error 2
+gmake: *** [Makefile:11840: test_1292] Error 2

@@ -1,0 +1,40 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from ApproxMarginTest_702
+[ RUN      ] ApproxMarginTest_702.ReturnsSelfReference_702
+[       OK ] ApproxMarginTest_702.ReturnsSelfReference_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.FluentChainingReturnsSelf_702
+[       OK ] ApproxMarginTest_702.FluentChainingReturnsSelf_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.AcceptsArithmeticTypes_702
+[       OK ] ApproxMarginTest_702.AcceptsArithmeticTypes_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.AcceptsCustomTypeConvertibleToDouble_702
+[       OK ] ApproxMarginTest_702.AcceptsCustomTypeConvertibleToDouble_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.InvocabilityMatchesIsConstructibleToDouble_702
+[       OK ] ApproxMarginTest_702.InvocabilityMatchesIsConstructibleToDouble_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.HandlesZeroMargin_702
+[       OK ] ApproxMarginTest_702.HandlesZeroMargin_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.HandlesLargeMargin_702
+[       OK ] ApproxMarginTest_702.HandlesLargeMargin_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.HandlesInfinityMargin_702
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_702.cpp:235: Failure
+Expected: { auto& r1 = a.margin(inf); switch (0) case 0: default: if (const ::testing::AssertionResult gtest_ar = (::testing::internal::EqHelper::Compare("&r1", "&a", &r1, &a))) ; else ::testing::internal::AssertHelper(::testing::TestPartResult::kNonFatalFailure, "/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_702.cpp", 229, gtest_ar.failure_message()) = ::testing::Message(); auto& r2 = a.margin(-inf); switch (0) case 0: default: if (const ::testing::AssertionResult gtest_ar = (::testing::internal::EqHelper::Compare("&r2", "&a", &r2, &a))) ; else ::testing::internal::AssertHelper(::testing::TestPartResult::kNonFatalFailure, "/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_702.cpp", 233, gtest_ar.failure_message()) = ::testing::Message(); } doesn't throw an exception.
+  Actual: it throws std::domain_error with description "Invalid Approx::margin: -inf. Approx::Margin has to be non-negative.".
+
+[  FAILED  ] ApproxMarginTest_702.HandlesInfinityMargin_702 (0 ms)
+[ RUN      ] ApproxMarginTest_702.HandlesNaNMargin_702
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_702.cpp:253: Failure
+Expected: { auto& r = a.margin(nan); switch (0) case 0: default: if (const ::testing::AssertionResult gtest_ar = (::testing::internal::EqHelper::Compare("&r", "&a", &r, &a))) ; else ::testing::internal::AssertHelper(::testing::TestPartResult::kNonFatalFailure, "/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_702.cpp", 251, gtest_ar.failure_message()) = ::testing::Message(); } doesn't throw an exception.
+  Actual: it throws std::domain_error with description "Invalid Approx::margin: nan. Approx::Margin has to be non-negative.".
+
+[  FAILED  ] ApproxMarginTest_702.HandlesNaNMargin_702 (0 ms)
+[----------] 9 tests from ApproxMarginTest_702 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 7 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] ApproxMarginTest_702.HandlesInfinityMargin_702
+[  FAILED  ] ApproxMarginTest_702.HandlesNaNMargin_702
+
+ 2 FAILED TESTS

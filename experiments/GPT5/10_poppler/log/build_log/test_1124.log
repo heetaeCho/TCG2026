@@ -1,0 +1,88 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1124.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp.o
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:13:49: error: no member named 'splashModeRGB' in 'SplashColorMode'; did you mean 'splashModeRGB8'?
+   13 |         SplashColorMode mode = SplashColorMode::splashModeRGB;  // example, adjust as needed
+      |                                ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+      |                                                 splashModeRGB8
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/splash/SplashTypes.h:58:5: note: 'splashModeRGB8' declared here
+   58 |     splashModeRGB8, // 1 byte per component, 3 bytes per pixel:
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:34:92: error: no member named 'splashModeRGB' in 'SplashColorMode'; did you mean 'splashModeRGB8'?
+   34 |     auto bitmapWithoutAlpha = std::make_unique<SplashBitmap>(100, 100, 4, SplashColorMode::splashModeRGB, false, false, &separationList);
+      |                                                                           ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+      |                                                                                            splashModeRGB8
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/splash/SplashTypes.h:58:5: note: 'splashModeRGB8' declared here
+   58 |     splashModeRGB8, // 1 byte per component, 3 bytes per pixel:
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:56:23: warning: unused variable 'alpha' [-Wunused-variable]
+   56 |         unsigned char alpha = bitmap->getAlpha(999, 999);  // Invalid coordinates
+      |                       ^~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:55:5: error: cannot use 'try' with exceptions disabled
+   55 |     try {
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:72:30: error: base class has incomplete type
+   72 | class MockImgWriter : public ImgWriter {
+      |                       ~~~~~~~^~~~~~~~~
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/splash/SplashBitmap.h:44:7: note: forward declaration of 'ImgWriter'
+   44 | class ImgWriter;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:74:5: error: only virtual member functions can be marked 'override'
+   74 |     MOCK_METHOD(void, writeToFile, (const char* fileName), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:16:1: note: expanded from here
+   16 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:82:49: error: no member named 'splashImgFilePNM' in 'SplashImageFileFormat'
+   82 |     bitmap->writeImgFile(SplashImageFileFormat::splashImgFilePNM, &mockWriter, nullptr, nullptr);
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:5:7: warning: 'SplashBitmapTest_1124' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class SplashBitmapTest_1124 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'GfxSeparationColorSpace'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<GfxSeparationColorSpace>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:151:19: note: in instantiation of member function 'std::unique_ptr<GfxSeparationColorSpace>::~unique_ptr' requested here
+  151 |       __pointer->~_Tp();
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:196:2: note: in instantiation of function template specialization 'std::_Destroy_aux<false>::__destroy<std::unique_ptr<GfxSeparationColorSpace> *>' requested here
+  196 |         __destroy(__first, __last);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:947:7: note: in instantiation of function template specialization 'std::_Destroy<std::unique_ptr<GfxSeparationColorSpace> *>' requested here
+  947 |       _Destroy(__first, __last);
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:732:7: note: in instantiation of function template specialization 'std::_Destroy<std::unique_ptr<GfxSeparationColorSpace> *, std::unique_ptr<GfxSeparationColorSpace>>' requested here
+  732 |         std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |              ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp:16:63: note: in instantiation of member function 'std::vector<std::unique_ptr<GfxSeparationColorSpace>>::~vector' requested here
+   16 |         std::vector<std::unique_ptr<GfxSeparationColorSpace>> separationList;
+      |                                                               ^
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/splash/SplashBitmap.h:45:7: note: forward declaration of 'GfxSeparationColorSpace'
+   45 | class GfxSeparationColorSpace;
+      |       ^
+2 warnings and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1124.dir/build.make:79: generated_build/CMakeFiles/test_1124.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1124.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:100905: generated_build/CMakeFiles/test_1124.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:100912: generated_build/CMakeFiles/test_1124.dir/rule] Error 2
+gmake: *** [Makefile:37489: test_1124] Error 2

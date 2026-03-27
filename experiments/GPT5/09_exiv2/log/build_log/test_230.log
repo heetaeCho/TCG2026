@@ -1,0 +1,152 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_230.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:12:32: error: base class has incomplete type
+   12 | class MockTiffVisitor : public TiffVisitor {
+      |                         ~~~~~~~^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:38:7: note: forward declaration of 'Exiv2::Internal::TiffVisitor'
+   38 | class TiffVisitor;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:23:29: error: allocating an object of abstract class type 'TiffComponent'
+   23 |         tiffComponent = new TiffComponent(1, 2);  // Example initialization with arbitrary tag and group
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffComponent'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:312:18: note: unimplemented pure virtual method 'doWrite' in 'TiffComponent'
+  312 |   virtual size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffComponent'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:321:18: note: unimplemented pure virtual method 'doWriteData' in 'TiffComponent'
+  321 |   virtual size_t doWriteData(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t dataIdx,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:324:18: note: unimplemented pure virtual method 'doWriteImage' in 'TiffComponent'
+  324 |   virtual size_t doWriteImage(IoWrapper& ioWrapper, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:326:32: note: unimplemented pure virtual method 'doSize' in 'TiffComponent'
+  326 |   [[nodiscard]] virtual size_t doSize() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:328:32: note: unimplemented pure virtual method 'doCount' in 'TiffComponent'
+  328 |   [[nodiscard]] virtual size_t doCount() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:330:32: note: unimplemented pure virtual method 'doSizeData' in 'TiffComponent'
+  330 |   [[nodiscard]] virtual size_t doSizeData() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:332:32: note: unimplemented pure virtual method 'doSizeImage' in 'TiffComponent'
+  332 |   [[nodiscard]] virtual size_t doSizeImage() const = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:53:19: error: call to implicitly-deleted default constructor of 'MockIoWrapper'
+   53 |     MockIoWrapper mockIoWrapper;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:8:23: note: default constructor of 'MockIoWrapper' is implicitly deleted because base class 'IoWrapper' has no default constructor
+    8 | class MockIoWrapper : public IoWrapper {
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:55:63: error: use of undeclared identifier 'ByteOrder'; did you mean 'Exiv2::ByteOrder'?
+   55 |     size_t bytesWritten = tiffComponent->write(mockIoWrapper, ByteOrder::BigEndian, 0, 0, 0, imageIdx);
+      |                                                               ^~~~~~~~~
+      |                                                               Exiv2::ByteOrder
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:32:6: note: 'Exiv2::ByteOrder' declared here
+   32 | enum ByteOrder {
+      |      ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:55:74: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   55 |     size_t bytesWritten = tiffComponent->write(mockIoWrapper, ByteOrder::BigEndian, 0, 0, 0, imageIdx);
+      |                                                               ~~~~~~~~~~~^~~~~~~~~
+      |                                                                          bigEndian
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:61:40: error: allocating an object of abstract class type 'TiffComponent'
+   61 |     TiffComponent::SharedPtr child(new TiffComponent(2, 3));  // Example child
+      |                                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:69:49: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   69 |     TiffComponent* testDoAddChild(uint16_t tag, IfdId group) {
+      |                                                 ^~~~~
+      |                                                 Exiv2::IfdId
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:70:31: error: 'doAddChild' is a protected member of 'Exiv2::Internal::TiffComponent'
+   70 |         return tiffComponent->doAddChild(std::make_shared<TiffComponent>(tag, group));
+      |                               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:306:26: note: declared protected here
+  306 |   virtual TiffComponent* doAddChild(SharedPtr tiffComponent);
+      |                          ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:75:37: error: cannot initialize a parameter of type 'Exiv2::IfdId' with an rvalue of type 'int'
+   75 |     auto result = testDoAddChild(3, 4);
+      |                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:69:55: note: passing argument to parameter 'group' here
+   69 |     TiffComponent* testDoAddChild(uint16_t tag, IfdId group) {
+      |                                                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:95:5: error: no member named 'gmock_visit' in 'MockTiffVisitor'
+   95 |     EXPECT_CALL(mockVisitor, visit(::testing::_)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:40:1: note: expanded from here
+   40 | gmock_visit
+      | ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:96:27: error: non-const lvalue reference to type 'TiffVisitor' cannot bind to a value of unrelated type 'MockTiffVisitor'
+   96 |     tiffComponent->accept(mockVisitor);  // Ensure that the visitor is called
+      |                           ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:210:28: note: passing argument to parameter 'visitor' here
+  210 |   void accept(TiffVisitor& visitor);
+      |                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:107:5: error: unknown type name 'byte'
+  107 |     byte* startPtr = tiffComponent->start();
+      |     ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const Exiv2::IfdId' and 'const int')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Exiv2::IfdId, int>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:33:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Exiv2::IfdId, int, nullptr>' requested here
+   33 |     ASSERT_EQ(tiffComponent->group(), 2);  // Ensure it returns the expected group
+      |     ^
+/usr/local/include/gtest/gtest.h:1914:31: note: expanded from macro 'ASSERT_EQ'
+ 1914 | #define ASSERT_EQ(val1, val2) GTEST_ASSERT_EQ(val1, val2)
+      |                               ^
+/usr/local/include/gtest/gtest.h:1898:54: note: expanded from macro 'GTEST_ASSERT_EQ'
+ 1898 |   ASSERT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:66:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_tempbuf.h:61:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:119:25: error: allocating an object of abstract class type 'Exiv2::Internal::TiffComponent'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:660:9: note: in instantiation of function template specialization 'std::_Construct<Exiv2::Internal::TiffComponent, unsigned short &, Exiv2::IfdId &>' requested here
+  660 |         { std::_Construct(__p, std::forward<_Args>(__args)...); }
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:604:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<void>>::construct<Exiv2::Internal::TiffComponent, unsigned short &, Exiv2::IfdId &>' requested here
+  604 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:972:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<Exiv2::Internal::TiffComponent, std::allocator<void>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<unsigned short &, Exiv2::IfdId &>' requested here
+  972 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1712:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<Exiv2::Internal::TiffComponent, std::allocator<void>, unsigned short &, Exiv2::IfdId &>' requested here
+ 1712 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:464:4: note: in instantiation of function template specialization 'std::__shared_ptr<Exiv2::Internal::TiffComponent>::__shared_ptr<std::allocator<void>, unsigned short &, Exiv2::IfdId &>' requested here
+  464 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:1009:14: note: in instantiation of function template specialization 'std::shared_ptr<Exiv2::Internal::TiffComponent>::shared_ptr<std::allocator<void>, unsigned short &, Exiv2::IfdId &>' requested here
+ 1009 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp:70:47: note: in instantiation of function template specialization 'std::make_shared<Exiv2::Internal::TiffComponent, unsigned short &, Exiv2::IfdId &>' requested here
+   70 |         return tiffComponent->doAddChild(std::make_shared<TiffComponent>(tag, group));
+      |                                               ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_230.dir/build.make:79: generated_build/CMakeFiles/test_230.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_230.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:43955: generated_build/CMakeFiles/test_230.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:43962: generated_build/CMakeFiles/test_230.dir/rule] Error 2
+gmake: *** [Makefile:14401: test_230] Error 2

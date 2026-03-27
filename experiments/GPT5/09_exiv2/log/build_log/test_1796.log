@@ -1,0 +1,134 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1796.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:18:5: error: only virtual member functions can be marked 'override'
+   18 |     MOCK_METHOD(ByteOrder, byteOrder, (), (const, override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:125:1: note: expanded from here
+  125 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:22:30: error: base specifier must name a class
+   22 | class MockByteOrder : public ByteOrder {
+      |                       ~~~~~~~^~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:28:8: error: expected class name
+   28 | TEST_F(CrwMapTest_1796, Decode_CorrectComponent_ValidMapping) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:28:1: error: only virtual member functions can be marked 'override'
+   28 | TEST_F(CrwMapTest_1796, Decode_CorrectComponent_ValidMapping) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1490:59: note: expanded from macro 'GTEST_TEST_'
+ 1490 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:28:1: error: only virtual member functions can be marked 'override'
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1503:21: note: expanded from macro 'GTEST_TEST_'
+ 1503 |     void TestBody() override;                                                  \
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:28:8: error: use of undeclared identifier 'CrwMapTest_1796'
+   28 | TEST_F(CrwMapTest_1796, Decode_CorrectComponent_ValidMapping) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:28:8: error: use of undeclared identifier 'CrwMapTest_1796'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:28:8: error: use of undeclared identifier 'CrwMapTest_1796'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:29:19: error: variable type 'CiffComponent' is an abstract class
+   29 |     CiffComponent ciffComponent(0x0805, 0x01);  // Example values for testing
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:30:15: error: variable type 'MockImage' is an abstract class
+   30 |     MockImage image;
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'MockImage'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'MockImage'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'MockImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:45:8: error: expected class name
+   45 | TEST_F(CrwMapTest_1796, Decode_InvalidComponent_ThrowsError) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:45:1: error: only virtual member functions can be marked 'override'
+   45 | TEST_F(CrwMapTest_1796, Decode_InvalidComponent_ThrowsError) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1490:59: note: expanded from macro 'GTEST_TEST_'
+ 1490 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:45:1: error: only virtual member functions can be marked 'override'
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1503:21: note: expanded from macro 'GTEST_TEST_'
+ 1503 |     void TestBody() override;                                                  \
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:45:8: error: use of undeclared identifier 'CrwMapTest_1796'
+   45 | TEST_F(CrwMapTest_1796, Decode_InvalidComponent_ThrowsError) {
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:45:8: error: use of undeclared identifier 'CrwMapTest_1796'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:45:8: error: use of undeclared identifier 'CrwMapTest_1796'
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:46:19: error: variable type 'CiffComponent' is an abstract class
+   46 |     CiffComponent ciffComponent(0xFFFF, 0xFF);  // Invalid component values
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:47:15: error: variable type 'MockImage' is an abstract class
+   47 |     MockImage image;
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:22:7: error: call to deleted constructor of '::testing::FunctionMocker< ::testing::internal::identity_t<bool> ()>' (aka 'FunctionMocker<bool ()>')
+   22 | class MockByteOrder : public ByteOrder {
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp:51:62: note: in implicit copy constructor for 'Exiv2::Internal::MockByteOrder' first required here
+   51 |     EXPECT_CALL(image, byteOrder()).WillOnce(testing::Return(byteOrder));
+      |                                                              ^
+/usr/local/include/gmock/gmock-spec-builders.h:1463:3: note: 'FunctionMocker' has been explicitly marked deleted here
+ 1463 |   FunctionMocker(const FunctionMocker&) = delete;
+      |   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1796.dir/build.make:79: generated_build/CMakeFiles/test_1796.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1796.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14885: generated_build/CMakeFiles/test_1796.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14892: generated_build/CMakeFiles/test_1796.dir/rule] Error 2
+gmake: *** [Makefile:3286: test_1796] Error 2

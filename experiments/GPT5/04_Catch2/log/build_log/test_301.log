@@ -1,0 +1,35 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_301.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_301.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_301.cpp:45:30: error: no matching constructor for initialization of 'Catch::AssertionInfo'
+   45 |         Catch::AssertionInfo info(
+      |                              ^
+   46 | 
+   47 |             StringRef("TEST_MACRO"),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~
+   48 | 
+   49 |             src,
+      |             ~~~~
+   50 | 
+   51 |             StringRef("1 == 1"),
+      |             ~~~~~~~~~~~~~~~~~~~~
+   52 | 
+   53 |             Catch::ResultDisposition::Normal
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_301.cpp:61:36: error: call to deleted constructor of 'Catch::AssertionResultData'
+   61 |         Catch::AssertionResultData data{};
+      |                                    ^   ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_301.dir/build.make:79: generated_build/CMakeFiles/test_301.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_301.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:18002: generated_build/CMakeFiles/test_301.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:18009: generated_build/CMakeFiles/test_301.dir/rule] Error 2
+gmake: *** [Makefile:6091: test_301] Error 2

@@ -1,0 +1,105 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1679.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:28:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   28 | class ObservingEntry final : public Exiv2::Internal::TiffEntryBase {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'ObservingEntry'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'ObservingEntry'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:63:17: error: no type named 'EncoderFct' in 'Exiv2::Internal::TiffEncoder'; did you mean 'Exiv2::Internal::EncoderFct'?
+   63 |              -> Exiv2::Internal::TiffEncoder::EncoderFct {
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                 Exiv2::Internal::EncoderFct
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:63:7: note: 'Exiv2::Internal::EncoderFct' declared here
+   63 | using EncoderFct = void (TiffEncoder::*)(TiffEntryBase*, const Exifdatum*);
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:62:10: error: no viable conversion from returned value of type '(lambda at /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:62:10)' to function return type 'Exiv2::Internal::FindEncoderFct' (aka 'void (Exiv2::Internal::TiffEncoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(TiffEntryBase *, const Exifdatum *)')
+   62 |   return [](const std::string& /*make*/, uint16_t /*tag*/, Exiv2::IfdId /*group*/)
+      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   63 |              -> Exiv2::Internal::TiffEncoder::EncoderFct {
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   64 |     return nullptr;
+      |     ~~~~~~~~~~~~~~~
+   65 |   };
+      |   ~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:62:10: note: candidate function
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:74:37: error: base class has incomplete type
+   74 | class StubTiffHeader final : public Exiv2::Internal::TiffHeaderBase {
+      |                              ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tifffwd_int.hpp:21:7: note: forward declaration of 'Exiv2::Internal::TiffHeaderBase'
+   21 | class TiffHeaderBase;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:77:38: error: only virtual member functions can be marked 'override'
+   77 |   Exiv2::ByteOrder byteOrder() const override { return bo_; }
+      |                                      ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:88:34: error: variable has incomplete type 'const Exiv2::IptcData'
+   88 |     static const Exiv2::IptcData kEmptyIptc;
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:89:33: error: variable has incomplete type 'const Exiv2::XmpData'
+   89 |     static const Exiv2::XmpData kEmptyXmp;
+      |                                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:115:29: error: no member named 'ifdExif' in namespace 'Exiv2'; did you mean 'mdExif'?
+  115 |   const auto group = Exiv2::ifdExif;
+      |                      ~~~~~~~^~~~~~~
+      |                             mdExif
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:47:3: note: 'mdExif' declared here
+   47 |   mdExif = 1,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:116:40: error: no member named 'groupName' in namespace 'Exiv2'
+  116 |   const std::string groupName = Exiv2::groupName(group);
+      |                                 ~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:119:18: error: variable type 'ObservingEntry' is an abstract class
+  119 |   ObservingEntry entry(kTag, group, Exiv2::Internal::ttUndefined);
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:135:29: error: no member named 'ifdExif' in namespace 'Exiv2'; did you mean 'mdExif'?
+  135 |   const auto group = Exiv2::ifdExif;
+      |                      ~~~~~~~^~~~~~~
+      |                             mdExif
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:47:3: note: 'mdExif' declared here
+   47 |   mdExif = 1,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:138:18: error: variable type 'ObservingEntry' is an abstract class
+  138 |   ObservingEntry entry(kTag, group, Exiv2::Internal::ttUndefined);
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:151:29: error: no member named 'ifdExif' in namespace 'Exiv2'; did you mean 'mdExif'?
+  151 |   const auto group = Exiv2::ifdExif;
+      |                      ~~~~~~~^~~~~~~
+      |                             mdExif
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:47:3: note: 'mdExif' declared here
+   47 |   mdExif = 1,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:152:40: error: no member named 'groupName' in namespace 'Exiv2'
+  152 |   const std::string groupName = Exiv2::groupName(group);
+      |                                 ~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:162:18: error: variable type 'ObservingEntry' is an abstract class
+  162 |   ObservingEntry entry(kTag, group, Exiv2::Internal::ttUndefined);
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:177:29: error: no member named 'ifdExif' in namespace 'Exiv2'; did you mean 'mdExif'?
+  177 |   const auto group = Exiv2::ifdExif;
+      |                      ~~~~~~~^~~~~~~
+      |                             mdExif
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/types.hpp:47:3: note: 'mdExif' declared here
+   47 |   mdExif = 1,
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:178:40: error: no member named 'groupName' in namespace 'Exiv2'
+  178 |   const std::string groupName = Exiv2::groupName(group);
+      |                                 ~~~~~~~^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp:191:18: error: variable type 'ObservingEntry' is an abstract class
+  191 |   ObservingEntry entry(kTag, group, Exiv2::Internal::ttUndefined);
+      |                  ^
+1 warning and 17 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1679.dir/build.make:79: generated_build/CMakeFiles/test_1679.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1679.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:54019: generated_build/CMakeFiles/test_1679.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:54026: generated_build/CMakeFiles/test_1679.dir/rule] Error 2
+gmake: *** [Makefile:18249: test_1679] Error 2

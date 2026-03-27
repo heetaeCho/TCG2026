@@ -1,0 +1,121 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+Consolidate compiler generated dependencies of target test_319
+[100%] Building CXX object generated_build/CMakeFiles/test_319.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp.o
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:47:8: error: redefinition of 'FileLock'
+   47 | struct FileLock { virtual ~FileLock() = default; };
+      |        ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:307:22: note: previous definition is here
+  307 | class LEVELDB_EXPORT FileLock {
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:107:23: error: field type 'StrictMock<MockEnv>' is an abstract class
+  107 |   StrictMock<MockEnv> env_;  // strict to ensure only expected calls happen
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'StrictMock'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'StrictMock'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'StrictMock'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:114:16: note: unimplemented pure virtual method 'FileExists' in 'StrictMock'
+  114 |   virtual bool FileExists(const std::string& fname) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'StrictMock'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'StrictMock'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'StrictMock'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'StrictMock'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'StrictMock'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'StrictMock'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'StrictMock'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'StrictMock'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'StrictMock'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:147:14: error: use of undeclared identifier 'DestroyDB'
+  147 |   Status s = DestroyDB(db, opts_);
+      |              ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:185:14: error: use of undeclared identifier 'DestroyDB'
+  185 |   Status s = DestroyDB(db, opts_);
+      |              ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:247:14: error: use of undeclared identifier 'DestroyDB'
+  247 |   Status s = DestroyDB(db, opts_);
+      |              ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:345:14: error: use of undeclared identifier 'DestroyDB'
+  345 |   Status s = DestroyDB(db, opts_);
+      |              ^
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:5:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:62:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::DestroyDBTest_319_EarlyReturnWhenGetChildrenFails_319_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:127:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::DestroyDBTest_319_EarlyReturnWhenGetChildrenFails_319_Test>::CreateTest' requested here
+  127 | TEST_F(DestroyDBTest_319, EarlyReturnWhenGetChildrenFails_319) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::DestroyDBTest_319_ReturnsLockErrorWhenCannotLock_319_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:157:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::DestroyDBTest_319_ReturnsLockErrorWhenCannotLock_319_Test>::CreateTest' requested here
+  157 | TEST_F(DestroyDBTest_319, ReturnsLockErrorWhenCannotLock_319) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::DestroyDBTest_319_SuccessUnlocksRemovesLockAndDir_319_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:197:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::DestroyDBTest_319_SuccessUnlocksRemovesLockAndDir_319_Test>::CreateTest' requested here
+  197 | TEST_F(DestroyDBTest_319, SuccessUnlocksRemovesLockAndDir_319) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::DestroyDBTest_319_PerFileDeleteErrorIsReturned_319_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp:257:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::DestroyDBTest_319_PerFileDeleteErrorIsReturned_319_Test>::CreateTest' requested here
+  257 | TEST_F(DestroyDBTest_319, PerFileDeleteErrorIsReturned_319) {
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_319.dir/build.make:76: generated_build/CMakeFiles/test_319.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_319.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14826: generated_build/CMakeFiles/test_319.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14833: generated_build/CMakeFiles/test_319.dir/rule] Error 2
+gmake: *** [Makefile:6302: test_319] Error 2

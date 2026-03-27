@@ -1,0 +1,24 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1068.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1068.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1068.cpp:14:23: error: return type 'Exiv2::Image' is an abstract class
+   14 |   static Exiv2::Image makeImage() {
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1068.cpp:17:12: error: allocating an object of abstract class type 'Exiv2::Image'
+   17 |     return Exiv2::Image(static_cast<Exiv2::ImageType>(0), static_cast<uint16_t>(0), std::move(io));
+      |            ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1068.dir/build.make:79: generated_build/CMakeFiles/test_1068.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1068.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:47321: generated_build/CMakeFiles/test_1068.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:47328: generated_build/CMakeFiles/test_1068.dir/rule] Error 2
+gmake: *** [Makefile:15688: test_1068] Error 2

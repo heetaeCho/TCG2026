@@ -1,0 +1,28 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1248.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1248.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1248.cpp:45:34: error: unknown type name 'MockXmpProperties'; did you mean 'XmpProperties'?
+   45 |     auto mock = std::make_unique<MockXmpProperties>();
+      |                                  ^~~~~~~~~~~~~~~~~
+      |                                  XmpProperties
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/properties.hpp:64:16: note: 'XmpProperties' declared here
+   64 | class EXIV2API XmpProperties {
+      |                ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1248.cpp:46:5: error: no member named 'gmock_lookupNsRegistryUnsafe' in 'Exiv2::XmpProperties'
+   46 |     EXPECT_CALL(*mock, lookupNsRegistryUnsafe(::testing::_))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:77:1: note: expanded from here
+   77 | gmock_lookupNsRegistryUnsafe
+      | ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1248.dir/build.make:79: generated_build/CMakeFiles/test_1248.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1248.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:32905: generated_build/CMakeFiles/test_1248.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:32912: generated_build/CMakeFiles/test_1248.dir/rule] Error 2
+gmake: *** [Makefile:10176: test_1248] Error 2

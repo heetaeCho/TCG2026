@@ -1,0 +1,70 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+Consolidate compiler generated dependencies of target test_400
+[100%] Building CXX object generated_build/CMakeFiles/test_400.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:23:
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./table/format.cc:122:12: error: use of undeclared identifier 'port'
+  122 |       if (!port::Snappy_GetUncompressedLength(data, n, &ulength)) {
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./table/format.cc:127:12: error: use of undeclared identifier 'port'
+  127 |       if (!port::Snappy_Uncompress(data, n, ubuf)) {
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./table/format.cc:140:12: error: use of undeclared identifier 'port'
+  140 |       if (!port::Zstd_GetUncompressedLength(data, n, &ulength)) {
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/./table/format.cc:145:12: error: use of undeclared identifier 'port'
+  145 |       if (!port::Zstd_Uncompress(data, n, ubuf)) {
+      |            ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:47:3: error: non-virtual member function marked 'override' hides virtual member function
+   47 |   MOCK_METHOD(Status, Read,
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:197:1: note: expanded from here
+  197 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:270:18: note: hidden overloaded virtual function 'leveldb::RandomAccessFile::Read' declared here: different qualifiers ('const' vs unqualified)
+  270 |   virtual Status Read(uint64_t offset, size_t n, Slice* result,
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:109:24: error: variable type 'MockRandomAccessFile' is an abstract class
+  109 |   MockRandomAccessFile file;
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/env.h:270:18: note: unimplemented pure virtual method 'Read' in 'MockRandomAccessFile'
+  270 |   virtual Status Read(uint64_t offset, size_t n, Slice* result,
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:175:24: error: variable type 'MockRandomAccessFile' is an abstract class
+  175 |   MockRandomAccessFile file;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:239:24: error: variable type 'MockRandomAccessFile' is an abstract class
+  239 |   MockRandomAccessFile file;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:279:24: error: variable type 'MockRandomAccessFile' is an abstract class
+  279 |   MockRandomAccessFile file;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:341:24: error: variable type 'MockRandomAccessFile' is an abstract class
+  341 |   MockRandomAccessFile file;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp:399:24: error: variable type 'MockRandomAccessFile' is an abstract class
+  399 |   MockRandomAccessFile file;
+      |                        ^
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_400.dir/build.make:76: generated_build/CMakeFiles/test_400.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_400.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14710: generated_build/CMakeFiles/test_400.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14717: generated_build/CMakeFiles/test_400.dir/rule] Error 2
+gmake: *** [Makefile:6250: test_400] Error 2

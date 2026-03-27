@@ -1,0 +1,36 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1514.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp:37:49: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   37 |   static constexpr Exiv2::IfdId kGroup = Exiv2::IfdId::ifd0Id;
+      |                                          ~~~~~~~^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp:37:33: error: constexpr variable 'kGroup' must be initialized by a constant expression
+   37 |   static constexpr Exiv2::IfdId kGroup = Exiv2::IfdId::ifd0Id;
+      |                                 ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp:38:51: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   38 |   static constexpr Exiv2::IfdId kMnGroup = Exiv2::IfdId::ifd0Id;
+      |                                            ~~~~~~~^~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp:38:33: error: constexpr variable 'kMnGroup' must be initialized by a constant expression
+   38 |   static constexpr Exiv2::IfdId kMnGroup = Exiv2::IfdId::ifd0Id;
+      |                                 ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp:11:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Internal::TiffIfdMakernote'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::Internal::TiffIfdMakernote>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp:49:13: note: in instantiation of member function 'std::unique_ptr<Exiv2::Internal::TiffIfdMakernote>::~unique_ptr' requested here
+   49 |   auto mn = newOMSystemMn(kTag, kGroup, kMnGroup, ptrOrNull(buf), /*size=*/0, kAnyByteOrder);
+      |             ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/makernote_int.hpp:22:7: note: forward declaration of 'Exiv2::Internal::TiffIfdMakernote'
+   22 | class TiffIfdMakernote;
+      |       ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1514.dir/build.make:79: generated_build/CMakeFiles/test_1514.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1514.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:71597: generated_build/CMakeFiles/test_1514.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:71604: generated_build/CMakeFiles/test_1514.dir/rule] Error 2
+gmake: *** [Makefile:24970: test_1514] Error 2

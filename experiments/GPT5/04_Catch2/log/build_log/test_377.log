@@ -1,0 +1,25 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_377.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_377.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_377.cpp:31:24: error: no matching constructor for initialization of 'BoundValueRef<int>'
+   31 |     BoundValueRef<int> bound_vec(vec);
+      |                        ^         ~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:360:42: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::vector<int>' to 'const BoundValueRef<int>' for 1st argument
+  360 |             template <typename T> struct BoundValueRef : BoundValueRefBase {
+      |                                          ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:363:26: note: candidate constructor not viable: no known conversion from 'std::vector<int>' to 'int &' for 1st argument
+  363 |                 explicit BoundValueRef( T& ref ): m_ref( ref ) {}
+      |                          ^              ~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_377.cpp:47:32: error: no matching constructor for initialization of 'BoundValueRef<std::string>' (aka 'BoundValueRef<basic_string<char>>')
+   47 |     BoundValueRef<std::string> bound_vec(vec);
+      |                                ^         ~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:360:42: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::vector<std::string>' (aka 'vector<basic_string<char>>') to 'const BoundValueRef<basic_string<char>>' for 1st argument
+  360 |             template <typename T> struct BoundValueRef : BoundValueRefBase {
+      |                                          ^~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:363:26: note: candidate constructor not viable: no known conversion from 'std::vector<std::string>' (aka 'vector<basic_string<char>>') to 'std::basic_string<char> &' for 1st argument
+  363 |                 explicit BoundValueRef( T& ref ): m_ref( ref ) {}
+      |                          ^              ~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_377.dir/build.make:79: generated_build/CMakeFiles/test_377.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_377.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23922: generated_build/CMakeFiles/test_377.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23929: generated_build/CMakeFiles/test_377.dir/rule] Error 2
+gmake: *** [Makefile:8496: test_377] Error 2

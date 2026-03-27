@@ -1,0 +1,59 @@
+[ 50%] Built target re2
+[ 50%] Building CXX object generated_build/CMakeFiles/test_580.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp:13:
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/bitstate.cc:239:9: warning: unsupported MC/DC boolean expression; contains an operation with a nested boolean expression. Expression will not be covered
+  239 |         ABSL_DCHECK(id == 0 || prog_->inst(id-1)->last());
+      |         ^
+/usr/local/include/absl/log/absl_check.h:47:3: note: expanded from macro 'ABSL_DCHECK'
+   47 |   ABSL_LOG_INTERNAL_DCHECK_IMPL((condition), #condition)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:40:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_IMPL'
+   40 |   ABSL_LOG_INTERNAL_CHECK_IMPL(condition, condition_text)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:27:37: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_IMPL'
+   27 |                                     ABSL_PREDICT_FALSE(!(condition))) \
+      |                                     ^
+/usr/local/include/absl/base/optimization.h:191:49: note: expanded from macro 'ABSL_PREDICT_FALSE'
+  191 | #define ABSL_PREDICT_FALSE(x) (__builtin_expect(false || (x), false))
+      |                                                 ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp:55:12: error: redefinition of 'anchor_start'
+   55 | bool Prog::anchor_start() { return g_anchor_start; }
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:239:8: note: previous definition is here
+  239 |   bool anchor_start() { return anchor_start_; }
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp:57:12: error: redefinition of 'anchor_end'
+   57 | bool Prog::anchor_end()   { return g_anchor_end; }
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:241:8: note: previous definition is here
+  241 |   bool anchor_end() { return anchor_end_; }
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp:59:12: error: redefinition of 'can_prefix_accel'
+   59 | bool Prog::can_prefix_accel() { return g_can_prefix; }
+      |            ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:245:8: note: previous definition is here
+  245 |   bool can_prefix_accel() { return prefix_size_ != 0; }
+      |        ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp:61:19: error: redefinition of 'PrefixAccel'
+   61 | const void* Prog::PrefixAccel(const void* /*data*/, size_t /*size*/) {
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:249:15: note: previous definition is here
+  249 |   const void* PrefixAccel(const void* data, size_t size) {
+      |               ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp:67:11: error: redefinition of 'start'
+   67 | int Prog::start()       { return g_start_state; }
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:226:7: note: previous definition is here
+  226 |   int start() { return start_; }
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp:69:11: error: redefinition of 'list_count'
+   69 | int Prog::list_count()  { return g_list_count; }
+      |           ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prog.h:233:7: note: previous definition is here
+  233 |   int list_count() { return list_count_; }
+      |       ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_580.dir/build.make:79: generated_build/CMakeFiles/test_580.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_580.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:8169: generated_build/CMakeFiles/test_580.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:8176: generated_build/CMakeFiles/test_580.dir/rule] Error 2
+gmake: *** [Makefile:2701: test_580] Error 2

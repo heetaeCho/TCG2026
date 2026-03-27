@@ -1,0 +1,72 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1691.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:28:5: error: constructor for 'Exiv2::Internal::TiffReaderTest' must explicitly initialize the member 'state' which does not have a default constructor
+   28 |     TiffReaderTest() : tiffReader(pData, size, pRoot, state) {}
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:23:17: note: member is declared here
+   23 |     TiffRwState state;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:533:7: note: 'Exiv2::Internal::TiffRwState' declared here
+  533 | class TiffRwState {
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:28:55: warning: field 'state' is uninitialized when used here [-Wuninitialized]
+   28 |     TiffReaderTest() : tiffReader(pData, size, pRoot, state) {}
+      |                                                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:42:17: error: no matching constructor for initialization of 'TiffRwState'
+   42 |     TiffRwState originalState;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:533:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  533 | class TiffRwState {
+      |       ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:533:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  533 | class TiffRwState {
+      |       ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffvisitor_int.hpp:538:13: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  538 |   constexpr TiffRwState(ByteOrder byteOrder, size_t baseOffset) : byteOrder_(byteOrder), baseOffset_(baseOffset) {
+      |             ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:54:19: error: call to implicitly-deleted default constructor of 'MockTiffEntry'
+   54 |     MockTiffEntry entry;
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:9:23: note: default constructor of 'MockTiffEntry' is implicitly deleted because base class 'TiffEntry' has a deleted default constructor
+    9 | class MockTiffEntry : public TiffEntry {};
+      |                       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:571:19: note: default constructor of 'TiffEntry' is implicitly deleted because base class 'TiffEntryBase' has no default constructor
+  571 | class TiffEntry : public TiffEntryBase {
+      |                   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:66:23: error: call to implicitly-deleted default constructor of 'MockTiffDataEntry'
+   66 |     MockTiffDataEntry entry;
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:10:27: note: default constructor of 'MockTiffDataEntry' is implicitly deleted because base class 'TiffDataEntry' has a deleted default constructor
+   10 | class MockTiffDataEntry : public TiffDataEntry {};
+      |                           ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:649:23: note: default constructor of 'TiffDataEntry' is implicitly deleted because base class 'TiffDataEntryBase' has no default constructor
+  649 | class TiffDataEntry : public TiffDataEntryBase {
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:78:24: error: call to implicitly-deleted default constructor of 'MockTiffImageEntry'
+   78 |     MockTiffImageEntry entry;
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:11:28: note: default constructor of 'MockTiffImageEntry' is implicitly deleted because base class 'TiffImageEntry' has a deleted default constructor
+   11 | class MockTiffImageEntry : public TiffImageEntry {};
+      |                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/src/tiffcomposite_int.hpp:714:24: note: default constructor of 'TiffImageEntry' is implicitly deleted because base class 'TiffDataEntryBase' has no default constructor
+  714 | class TiffImageEntry : public TiffDataEntryBase {
+      |                        ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:91:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+   91 |     IfdId group = 0;
+      |           ^       ~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:104:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+  104 |     IfdId group = 0;
+      |           ^       ~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:126:25: error: call to implicitly-deleted default constructor of 'MockTiffBinaryArray'
+  126 |     MockTiffBinaryArray binaryArray;
+      |                         ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp:15:29: note: default constructor of 'MockTiffBinaryArray' is implicitly deleted because base class 'TiffBinaryArray' has no default constructor
+   15 | class MockTiffBinaryArray : public TiffBinaryArray {};
+      |                             ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1691.dir/build.make:79: generated_build/CMakeFiles/test_1691.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1691.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9003: generated_build/CMakeFiles/test_1691.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9010: generated_build/CMakeFiles/test_1691.dir/rule] Error 2
+gmake: *** [Makefile:1037: test_1691] Error 2

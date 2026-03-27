@@ -1,0 +1,109 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1122.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp.o
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:6:44: error: base class has incomplete type
+    6 | class MockGfxSeparationColorSpace : public GfxSeparationColorSpace {
+      |                                     ~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/splash/SplashBitmap.h:45:7: note: forward declaration of 'GfxSeparationColorSpace'
+   45 | class GfxSeparationColorSpace;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:8:5: error: only virtual member functions can be marked 'override'
+    8 |     MOCK_METHOD(void, someFunction, (), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:131:1: note: expanded from here
+  131 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:18:45: error: no member named 'splashModeRGB' in 'SplashColorMode'; did you mean 'splashModeRGB8'?
+   18 |     SplashColorMode mode = SplashColorMode::splashModeRGB;  // Example, adjust based on actual enum values
+      |                            ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+      |                                             splashModeRGB8
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/splash/SplashTypes.h:58:5: note: 'splashModeRGB8' declared here
+   58 |     splashModeRGB8, // 1 byte per component, 3 bytes per pixel:
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:69:5: error: cannot use 'try' with exceptions disabled
+   69 |     EXPECT_NO_THROW(bitmap->getPixel(width + 1, height + 1, pixel));  // Ensure no crash (behaviour to check)
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:84:60: error: no member named 'SplashNoError' in 'SplashError'
+   84 |     EXPECT_EQ(bitmap->writePNMFile(fileName), SplashError::SplashNoError);
+      |                                               ~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:92:98: error: no member named 'SplashUnknownError' in 'SplashError'
+   92 |     EXPECT_EQ(bitmap->writeImgFile(invalidFormat, fileName, 300.0, 300.0, nullptr), SplashError::SplashUnknownError);
+      |                                                                                     ~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:99:79: error: no member named 'splashModeRGB' in 'SplashColorMode'; did you mean 'splashModeRGB8'?
+   99 |     EXPECT_THROW(new SplashBitmap(1000000000, 1000000000, 4, SplashColorMode::splashModeRGB, true, false, nullptr), std::bad_alloc);
+      |                                                              ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+      |                                                                               splashModeRGB8
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/NewTCG/./TestProjects/poppler/splash/SplashTypes.h:58:5: note: 'splashModeRGB8' declared here
+   58 |     splashModeRGB8, // 1 byte per component, 3 bytes per pixel:
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:99:5: error: cannot use 'try' with exceptions disabled
+   99 |     EXPECT_THROW(new SplashBitmap(1000000000, 1000000000, 4, SplashColorMode::splashModeRGB, true, false, nullptr), std::bad_alloc);
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp:12:7: warning: 'SplashBitmapTest_1122' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class SplashBitmapTest_1122 : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1122.dir/build.make:79: generated_build/CMakeFiles/test_1122.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1122.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:72265: generated_build/CMakeFiles/test_1122.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:72272: generated_build/CMakeFiles/test_1122.dir/rule] Error 2
+gmake: *** [Makefile:25854: test_1122] Error 2

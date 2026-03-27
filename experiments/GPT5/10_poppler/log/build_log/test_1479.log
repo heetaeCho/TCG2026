@@ -1,0 +1,47 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1479.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1479.cpp.o
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1479.cpp:64:27: error: base class has incomplete type
+   64 | class MockStream : public Stream {
+      |                    ~~~~~~~^~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JArithmeticDecoder.h:30:7: note: forward declaration of 'Stream'
+   30 | class Stream;
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1479.cpp:66:5: error: only virtual member functions can be marked 'override'
+   66 |     MOCK_METHOD(void, someStreamMethod, (), (override));  // Mock the necessary stream methods
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:23:1: note: expanded from here
+   23 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1479.cpp:75:13: error: no matching member function for call to 'setStream'
+   75 |     decoder.setStream(&mockStream);  // Set the mock stream
+      |     ~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JArithmeticDecoder.h:69:10: note: candidate function not viable: no known conversion from 'MockStream *' to 'Stream *' for 1st argument
+   69 |     void setStream(Stream *strA)
+      |          ^         ~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/JArithmeticDecoder.h:75:10: note: candidate function not viable: requires 2 arguments, but 1 was provided
+   75 |     void setStream(Stream *strA, int dataLenA)
+      |          ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1479.cpp:6:7: warning: 'JArithmeticDecoderTest_1479' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    6 | class JArithmeticDecoderTest_1479 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1479.dir/build.make:79: generated_build/CMakeFiles/test_1479.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_1479.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:92745: generated_build/CMakeFiles/test_1479.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:92752: generated_build/CMakeFiles/test_1479.dir/rule] Error 2
+gmake: *** [Makefile:34174: test_1479] Error 2

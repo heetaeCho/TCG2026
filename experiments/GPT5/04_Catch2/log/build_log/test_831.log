@@ -1,0 +1,191 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_831.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:47:38: error: base 'SonarQubeReporter' is marked 'final'
+   47 | class MockSonarQubeReporter : public SonarQubeReporter {
+      |                                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/reporters/catch_reporter_sonarqube.hpp:18:11: note: 'SonarQubeReporter' declared here
+   18 |     class SonarQubeReporter final : public CumulativeReporterBase {
+      |           ^                 ~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:63:5: error: only virtual member functions can be marked 'override'
+   63 |     MOCK_METHOD(void, writeAssertion, (const Catch::AssertionStats& stats, bool okToFail), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:167:1: note: expanded from here
+  167 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:57:11: error: type 'SonarQubeReporter' is not a direct or virtual base of 'MockSonarQubeReporter'
+   57 |         : SonarQubeReporter(std::move(cfg)) {}
+      |           ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:79:40: error: no matching constructor for initialization of 'Catch::SectionStats'
+   79 |     const Catch::SectionStats& stats = Catch::SectionStats{}
+      |                                        ^                  ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:73:9: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+   73 |         SectionStats(   SectionInfo&& _sectionInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   74 |                         Counts const& _assertions,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   75 |                         double _durationInSeconds,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   76 |                         bool _missingAssertions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:125:26: error: base class has incomplete type
+  125 |     struct DummyConfig : Catch::IConfig {
+      |                          ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:31:11: note: forward declaration of 'Catch::IConfig'
+   31 |     class IConfig;
+      |           ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:131:34: error: only virtual member functions can be marked 'override'
+  131 |         bool allowThrows() const override { return true; }
+      |                                  ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:139:12: error: no matching constructor for initialization of 'Catch::ReporterConfig'
+  139 |     return Catch::ReporterConfig(dummyCfg, os);
+      |            ^                     ~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 2 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:163:9: error: no member named 'writeAssertions' in 'MockSonarQubeReporter'; did you mean 'writeAssertion'?
+  163 |     rep.writeAssertions(section, /*okToFail=*/false);
+      |         ^~~~~~~~~~~~~~~
+      |         writeAssertion
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:63:23: note: 'writeAssertion' declared here
+   63 |     MOCK_METHOD(void, writeAssertion, (const Catch::AssertionStats& stats, bool okToFail), (override));
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:185:9: error: no member named 'writeAssertions' in 'MockSonarQubeReporter'; did you mean 'writeAssertion'?
+  185 |     rep.writeAssertions(section, /*okToFail=*/true);
+      |         ^~~~~~~~~~~~~~~
+      |         writeAssertion
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:63:23: note: 'writeAssertion' declared here
+   63 |     MOCK_METHOD(void, writeAssertion, (const Catch::AssertionStats& stats, bool okToFail), (override));
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:199:27: error: no matching constructor for initialization of 'Catch::AssertionStats'
+  199 |     Catch::AssertionStats a1{}, a2{}, a3{};
+      |                           ^ ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:199:33: error: no matching constructor for initialization of 'Catch::AssertionStats'
+  199 |     Catch::AssertionStats a1{}, a2{}, a3{};
+      |                                 ^ ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:199:39: error: no matching constructor for initialization of 'Catch::AssertionStats'
+  199 |     Catch::AssertionStats a1{}, a2{}, a3{};
+      |                                       ^ ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:209:9: error: no member named 'writeAssertions' in 'MockSonarQubeReporter'; did you mean 'writeAssertion'?
+  209 |     rep.writeAssertions(section, /*okToFail=*/true);
+      |         ^~~~~~~~~~~~~~~
+      |         writeAssertion
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:63:23: note: 'writeAssertion' declared here
+   63 |     MOCK_METHOD(void, writeAssertion, (const Catch::AssertionStats& stats, bool okToFail), (override));
+      |                       ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:223:27: error: no matching constructor for initialization of 'Catch::AssertionStats'
+  223 |     Catch::AssertionStats a1{}, a2{};
+      |                           ^ ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:223:33: error: no matching constructor for initialization of 'Catch::AssertionStats'
+  223 |     Catch::AssertionStats a1{}, a2{};
+      |                                 ^ ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:243:9: error: no member named 'writeAssertions' in 'MockSonarQubeReporter'; did you mean 'writeAssertion'?
+  243 |     rep.writeAssertions(section, /*okToFail=*/false);
+      |         ^~~~~~~~~~~~~~~
+      |         writeAssertion
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp:63:23: note: 'writeAssertion' declared here
+   63 |     MOCK_METHOD(void, writeAssertion, (const Catch::AssertionStats& stats, bool okToFail), (override));
+      |                       ^
+16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_831.dir/build.make:79: generated_build/CMakeFiles/test_831.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_831.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:38098: generated_build/CMakeFiles/test_831.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:38105: generated_build/CMakeFiles/test_831.dir/rule] Error 2
+gmake: *** [Makefile:14255: test_831] Error 2

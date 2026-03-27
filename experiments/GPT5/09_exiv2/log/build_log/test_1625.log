@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1625.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp:16:71: error: unknown type name 'TiffComponent'
+   16 | DataBuf sonyTagDecipher(uint16_t tag, const byte* bytes, size_t size, TiffComponent* object);
+      |                                                                       ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp:17:69: error: unknown type name 'TiffComponent'
+   17 | DataBuf sonyTagCipher(uint16_t tag, const byte* bytes, size_t size, TiffComponent* object, bool decode);
+      |                                                                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp:45:10: error: no matching function for call to 'DataBufDataImpl'
+   45 |   return DataBufDataImpl(b, 0);
+      |          ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp:37:6: note: candidate template ignored: substitution failure [with T = Exiv2::DataBuf]: 'this' argument to member function 'data' has type 'const Exiv2::DataBuf', but function is not marked const
+   37 | auto DataBufDataImpl(const T& b, int) -> decltype(b.data(), (const Exiv2::byte*)nullptr) {
+      |      ^                                            ~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp:41:6: note: candidate template ignored: substitution failure [with T = Exiv2::DataBuf]: 'pData_' is a private member of 'Exiv2::DataBuf'
+   41 | auto DataBufDataImpl(const T& b, long) -> decltype(b.pData_, (const Exiv2::byte*)nullptr) {
+      |      ^                                               ~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp:54:58: error: no type named 'TiffComponent' in namespace 'Exiv2::Internal'
+   54 |                                         Exiv2::Internal::TiffComponent* object) {
+      |                                         ~~~~~~~~~~~~~~~~~^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1625.dir/build.make:79: generated_build/CMakeFiles/test_1625.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1625.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:59935: generated_build/CMakeFiles/test_1625.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:59942: generated_build/CMakeFiles/test_1625.dir/rule] Error 2
+gmake: *** [Makefile:20511: test_1625] Error 2

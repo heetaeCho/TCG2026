@@ -1,0 +1,61 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_442.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:59:20: error: no matching constructor for initialization of 'NameAndLocation' (aka 'const Catch::TestCaseTracking::NameAndLocation &')
+   59 |             return NameAndLocation{};
+      |                    ^              ~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:21:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   21 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:21:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   21 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:9: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+   25 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:67:76: error: call to deleted constructor of 'const SourceLineInfo &'
+   67 |             return NameAndLocation{"ITracker_isSuccessfullyCompleted_442", {}};
+      |                                                                            ^~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:69: note: passing argument to parameter '_location' here
+   25 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |                                                                     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:77:7: error: no matching constructor for initialization of 'Catch::TestCaseTracking::ITracker'
+   77 |     : Base( std::move(MakeNameAndLocation_442()), parent ) {}
+      |       ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:95:9: note: candidate constructor not viable: 1st argument ('typename std::remove_reference<const NameAndLocation &>::type' (aka 'const Catch::TestCaseTracking::NameAndLocation')) would lose const qualifier
+   95 |         ITracker( NameAndLocation&& nameAndLoc, ITracker* parent ):
+      |         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:75:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   75 |     class ITracker {
+      |           ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:103:21: error: variable type 'TestTracker_442' is an abstract class
+  103 |     TestTracker_442 t{};
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:115:22: note: unimplemented pure virtual method 'isComplete' in 'TestTracker_442'
+  115 |         virtual bool isComplete() const = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:126:22: note: unimplemented pure virtual method 'close' in 'TestTracker_442'
+  126 |         virtual void close() = 0; // Successfully complete
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:127:22: note: unimplemented pure virtual method 'fail' in 'TestTracker_442'
+  127 |         virtual void fail() = 0;
+      |                      ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:115:21: error: variable type 'TestTracker_442' is an abstract class
+  115 |     TestTracker_442 t{};
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:129:21: error: variable type 'TestTracker_442' is an abstract class
+  129 |     TestTracker_442 t{};
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:145:21: error: variable type 'TestTracker_442' is an abstract class
+  145 |     TestTracker_442 t{};
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp:159:21: error: variable type 'TestTracker_442' is an abstract class
+  159 |     TestTracker_442 t{};
+      |                     ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_442.dir/build.make:79: generated_build/CMakeFiles/test_442.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_442.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:26482: generated_build/CMakeFiles/test_442.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:26489: generated_build/CMakeFiles/test_442.dir/rule] Error 2
+gmake: *** [Makefile:9536: test_442] Error 2

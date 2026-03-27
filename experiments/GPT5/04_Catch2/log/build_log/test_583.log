@@ -1,0 +1,22 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_583.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_583.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_583.cpp:43:25: error: no matching constructor for initialization of 'Detail::TokenStream'
+   43 |     return p.parse(exe, Detail::TokenStream{ args });
+      |                         ^                  ~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:110:19: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const std::vector<std::string>' (aka 'const vector<basic_string<char>>') to 'const TokenStream' for 1st argument
+  110 |             class TokenStream {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:110:19: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const std::vector<std::string>' (aka 'const vector<basic_string<char>>') to 'TokenStream' for 1st argument
+  110 |             class TokenStream {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:118:26: note: candidate constructor not viable: no known conversion from 'const std::vector<std::string>' (aka 'const vector<basic_string<char>>') to 'const Args' for 1st argument
+  118 |                 explicit TokenStream( Args const& args );
+      |                          ^            ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:119:17: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  119 |                 TokenStream( Iterator it, Iterator itEnd );
+      |                 ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_583.dir/build.make:79: generated_build/CMakeFiles/test_583.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_583.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11154: generated_build/CMakeFiles/test_583.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11161: generated_build/CMakeFiles/test_583.dir/rule] Error 2
+gmake: *** [Makefile:3309: test_583] Error 2

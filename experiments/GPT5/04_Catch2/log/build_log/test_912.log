@@ -1,0 +1,55 @@
+[100%] Built target Catch2
+[100%] Building CXX object generated_build/CMakeFiles/test_912.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp.o
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp:391:5: error: unknown type name 'MockConfig'; did you mean 'Catch::Benchmark::MockConfig'?
+  391 |     MockConfig cfg;
+      |     ^~~~~~~~~~
+      |     Catch::Benchmark::MockConfig
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp:249:7: note: 'Catch::Benchmark::MockConfig' declared here
+  249 | class MockConfig : public IConfig {
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp:403:25: error: no viable conversion from 'internal::ReturnAction<duration<long, ratio<1, 1000000>>>' to 'const Action<F>' (aka 'const Action<std::chrono::duration<long, std::ratio<1, 1000>> ()>')
+  403 |         .WillRepeatedly(Return(std::chrono::microseconds(100))); // 100us < 1ms
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::ReturnAction<duration<long, ratio<1, 1000000>>>' to 'const Action<duration<long, ratio<1, 1000>> ()> &' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:724:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::ReturnAction<duration<long, ratio<1, 1000000>>>' to 'Action<duration<long, ratio<1, 1000>> ()> &&' for 1st argument
+  724 | class Action;
+      |       ^~~~~~
+/usr/local/include/gmock/gmock-actions.h:769:3: note: candidate template ignored: requirement 'internal::disjunction<std::is_constructible<std::function<std::chrono::duration<long, std::ratio<1, 1000>> ()>, testing::internal::ReturnAction<std::chrono::duration<long, std::ratio<1, 1000000>>>>, std::is_constructible<std::function<std::chrono::duration<long, std::ratio<1, 1000>> ()>, testing::internal::ReturnAction<std::chrono::duration<long, std::ratio<1, 1000000>>>>>::value' was not satisfied [with G = internal::ReturnAction<duration<long, ratio<1, 1000000>>>]
+  769 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:781:3: note: candidate template ignored: could not match 'Action' against 'ReturnAction'
+  781 |   Action(const Action<Func>& action)  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:774:12: note: explicit constructor is not a candidate
+  774 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/local/include/gmock/gmock-actions.h:939:3: note: candidate template ignored: could not match 'OnceAction' against 'Action'
+  939 |   operator OnceAction<U(Args...)>() && {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-actions.h:950:3: note: candidate template ignored: requirement 'conjunction<testing::internal::negation<std::is_same<void, std::chrono::duration<long, std::ratio<1, 1000>>>>, testing::internal::negation<std::is_reference<std::chrono::duration<long, std::ratio<1, 1000>>>>, std::is_convertible<const std::chrono::duration<long, std::ratio<1, 1000000>> &, std::chrono::duration<long, std::ratio<1, 1000>>>, std::is_copy_constructible<std::chrono::duration<long, std::ratio<1, 1000>>>>::value' was not satisfied [with U = std::chrono::duration<long, std::ratio<1, 1000>>, Args = <>]
+  950 |   operator Action<U(Args...)>() const {  // NOLINT
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:1033:53: note: passing argument to parameter 'action' here
+ 1033 |   TypedExpectation& WillRepeatedly(const Action<F>& action) {
+      |                                                     ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp:487:5: error: unknown type name 'MockConfig'; did you mean 'Catch::Benchmark::MockConfig'?
+  487 |     MockConfig cfg;
+      |     ^~~~~~~~~~
+      |     Catch::Benchmark::MockConfig
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp:249:7: note: 'Catch::Benchmark::MockConfig' declared here
+  249 | class MockConfig : public IConfig {
+      |       ^
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp:569:5: error: unknown type name 'MockConfig'; did you mean 'Catch::Benchmark::MockConfig'?
+  569 |     MockConfig cfg;
+      |     ^~~~~~~~~~
+      |     Catch::Benchmark::MockConfig
+/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp:249:7: note: 'Catch::Benchmark::MockConfig' declared here
+  249 | class MockConfig : public IConfig {
+      |       ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_912.dir/build.make:79: generated_build/CMakeFiles/test_912.dir/home/user/MyProjects/NewTCG/experiments/04_Catch2/test_files/test_912.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:36050: generated_build/CMakeFiles/test_912.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:36057: generated_build/CMakeFiles/test_912.dir/rule] Error 2
+gmake: *** [Makefile:13423: test_912] Error 2

@@ -1,0 +1,50 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_842.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_842.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_842.cpp:38:15: error: no viable conversion from 'UniquePtr' (aka 'unique_ptr<Value>') to 'pointer' (aka 'Exiv2::Value *')
+   38 |   owner.reset(Exiv2::Value::create(Exiv2::xmpText));
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:505:21: note: passing argument to parameter '__p' here
+  505 |       reset(pointer __p = pointer()) noexcept
+      |                     ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_842.cpp:41:5: error: cannot initialize return object of type 'Exiv2::XmpTextValue *' with an rvalue of type 'void'
+   41 |     GTEST_SKIP() << "Value::create(xmpText) returned nullptr; cannot construct XmpTextValue.";
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_842.cpp:51:28: warning: expression with side effects will be evaluated despite being used as an operand to 'typeid' [-Wpotentially-evaluated-expression]
+   51 |                  << typeid(*owner).name() << ").";
+      |                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_842.cpp:50:5: error: cannot initialize return object of type 'Exiv2::XmpTextValue *' with an rvalue of type 'void'
+   50 |     GTEST_SKIP() << "Value::create(xmpText) did not yield Exiv2::XmpTextValue in this build (got "
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   51 |                  << typeid(*owner).name() << ").";
+      |                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_842.dir/build.make:79: generated_build/CMakeFiles/test_842.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_842.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:53543: generated_build/CMakeFiles/test_842.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:53550: generated_build/CMakeFiles/test_842.dir/rule] Error 2
+gmake: *** [Makefile:18067: test_842] Error 2

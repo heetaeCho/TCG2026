@@ -1,0 +1,128 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_199.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:57:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:47:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:172:24: error: no member named 'starts_with' in 'std::basic_string<char>'
+  172 |     using std::string::starts_with;
+      |           ~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:175:24: error: no member named 'ends_with' in 'std::basic_string<char>'
+  175 |     using std::string::ends_with;
+      |           ~~~~~~~~~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:3:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:57:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:99:47: warning: designated initializers are a C++20 extension [-Wc++20-designator]
+   99 |     static constexpr Ref INVALID() { return { .num = -1, .gen = -1 }; };
+      |                                               ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:18: error: expected parameter declarator
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:9: error: a type specifier is required for all declarations
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:56: error: expected ';' at end of declaration list
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                                                        ^
+      |                                                        ;
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:3:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:315:31: error: no template named 'span' in namespace 'std'
+  315 |     virtual size_t write(std::span<const unsigned char> data) = 0;
+      |                          ~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:336:23: error: no template named 'span' in namespace 'std'
+  336 |     size_t write(std::span<const unsigned char> data) override;
+      |                  ~~~~~^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:40:46: error: no member named 'EOFStream' in 'StreamKind'
+   40 |     EXPECT_EQ(stream->getKind(), StreamKind::EOFStream);  // Assuming the StreamKind for EOFStream is EOFStream
+      |                                  ~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:65:5: error: cannot use 'try' with exceptions disabled
+   65 |     EXPECT_THROW(createEOFStreamWithInt(-1), std::invalid_argument);  // Assuming this is an invalid case
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:6:7: warning: 'EOFStreamTest_199' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    6 | class EOFStreamTest_199 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'Stream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:10:49: note: in instantiation of function template specialization 'std::make_unique<Stream>' requested here
+   10 |         return std::make_unique<EOFStream>(std::make_unique<Stream>());
+      |                                                 ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'Stream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'Stream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'Stream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'Stream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'Stream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'Stream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'Stream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'Stream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'Stream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'Stream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'Stream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'Stream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'Stream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'EOFStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp:15:21: note: in instantiation of function template specialization 'std::make_unique<EOFStream, int &>' requested here
+   15 |         return std::make_unique<EOFStream>(value);
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:1270:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const EOFStream' for 1st argument
+ 1270 | class EOFStream : public OwnedFilterStream
+      |       ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:1273:14: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<Stream>' for 1st argument
+ 1273 |     explicit EOFStream(std::unique_ptr<Stream> strA);
+      |              ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings and 11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_199.dir/build.make:79: generated_build/CMakeFiles/test_199.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_199.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:94601: generated_build/CMakeFiles/test_199.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:94608: generated_build/CMakeFiles/test_199.dir/rule] Error 2
+gmake: *** [Makefile:34928: test_199] Error 2

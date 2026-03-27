@@ -1,0 +1,70 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_511.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp.o
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp:6:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:45:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:47:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:172:24: error: no member named 'starts_with' in 'std::basic_string<char>'
+  172 |     using std::string::starts_with;
+      |           ~~~~~~~~~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/goo/GooString.h:175:24: error: no member named 'ends_with' in 'std::basic_string<char>'
+  175 |     using std::string::ends_with;
+      |           ~~~~~~~~~~~~~^
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp:6:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:45:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:99:47: warning: designated initializers are a C++20 extension [-Wc++20-designator]
+   99 |     static constexpr Ref INVALID() { return { .num = -1, .gen = -1 }; };
+      |                                               ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:18: error: expected parameter declarator
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:9: error: a type specifier is required for all declarations
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |         ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:279:56: error: expected ';' at end of declaration list
+  279 |         requires(std::is_base_of_v<Stream, StreamType>)
+      |                                                        ^
+      |                                                        ;
+In file included from /home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp:6:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:45:
+In file included from /home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Object.h:621:
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:315:31: error: no template named 'span' in namespace 'std'
+  315 |     virtual size_t write(std::span<const unsigned char> data) = 0;
+      |                          ~~~~~^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/Stream.h:336:23: error: no template named 'span' in namespace 'std'
+  336 |     size_t write(std::span<const unsigned char> data) override;
+      |                  ~~~~~^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp:15:31: error: return type 'GfxUnivariateShading' is an abstract class
+   15 |   static GfxUnivariateShading MakeShading(bool extend0, bool extend1) {
+      |                               ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'GfxUnivariateShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:968:18: note: unimplemented pure virtual method 'getParameterRange' in 'GfxUnivariateShading'
+  968 |     virtual void getParameterRange(double *lower, double *upper, double xMin, double yMin, double xMax, double yMax) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:970:20: note: unimplemented pure virtual method 'getDistance' in 'GfxUnivariateShading'
+  970 |     virtual double getDistance(double sMin, double sMax) const = 0;
+      |                    ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp:19:12: error: no matching constructor for initialization of 'GfxUnivariateShading'
+   19 |     return GfxUnivariateShading(/*typeA=*/1, /*t0A=*/0.0, /*t1A=*/1.0, std::move(funcs), extend0, extend1);
+      |            ^                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:952:5: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<int &>::type' (aka 'int') to 'std::vector<std::unique_ptr<Function>>' for 4th argument
+  952 |     GfxUnivariateShading(int typeA, double t0A, double t1A, std::vector<std::unique_ptr<Function>> &&funcsA, bool extend0A, bool extend1A);
+      |     ^                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:953:14: note: candidate constructor not viable: requires single argument 'shading', but 6 arguments were provided
+  953 |     explicit GfxUnivariateShading(const GfxUnivariateShading *shading);
+      |              ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/poppler/poppler/GfxState.h:949:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+  949 | class POPPLER_PRIVATE_EXPORT GfxUnivariateShading : public GfxShading
+      |                              ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp:48:30: error: variable type 'const GfxUnivariateShading' is an abstract class
+   48 |   const GfxUnivariateShading copied(&original);
+      |                              ^
+/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp:55:30: error: variable type 'const GfxUnivariateShading' is an abstract class
+   55 |   const GfxUnivariateShading copied(&original);
+      |                              ^
+1 warning and 11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_511.dir/build.make:79: generated_build/CMakeFiles/test_511.dir/home/user/MyProjects/NewTCG/experiments/10_poppler/test_files/test_511.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:96969: generated_build/CMakeFiles/test_511.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:96976: generated_build/CMakeFiles/test_511.dir/rule] Error 2
+gmake: *** [Makefile:35890: test_511] Error 2

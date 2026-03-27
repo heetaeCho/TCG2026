@@ -1,0 +1,23 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+Consolidate compiler generated dependencies of target test_351
+[100%] Building CXX object generated_build/CMakeFiles/test_351.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_351.cpp.o
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_351.cpp:173:30: error: non-virtual member function marked 'override' hides virtual member function
+  173 |   const size_t TotalCharge() override { return 0; }
+      |                              ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/cache.h:98:18: note: hidden overloaded virtual function 'leveldb::Cache::TotalCharge' declared here: different return type ('size_t' (aka 'unsigned long') vs 'const size_t' (aka 'const unsigned long'))
+   98 |   virtual size_t TotalCharge() const = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_351.cpp:181:21: error: variable type 'TestCache351' is an abstract class
+  181 | static TestCache351 g_test_cache_351;
+      |                     ^
+/home/user/MyProjects/NewTCG/TestProjects/leveldb/include/leveldb/cache.h:98:18: note: unimplemented pure virtual method 'TotalCharge' in 'TestCache351'
+   98 |   virtual size_t TotalCharge() const = 0;
+      |                  ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_351.dir/build.make:76: generated_build/CMakeFiles/test_351.dir/home/user/MyProjects/NewTCG/experiments/03_leveldb/test_files/test_351.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:3922: generated_build/CMakeFiles/test_351.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:3929: generated_build/CMakeFiles/test_351.dir/rule] Error 2
+gmake: *** [Makefile:1414: test_351] Error 2

@@ -1,0 +1,96 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1041.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp.o
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:29:43: error: only virtual member functions can be marked 'override'
+   29 |   Exiv2::BasicIo::UniquePtr clone() const override { return std::make_unique<DummyBasicIo>(); }
+      |                                           ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:36:15: error: virtual function 'path' has a different return type ('std::string' (aka 'basic_string<char>')) than the function it overrides (which has return type 'const std::string &' (aka 'const basic_string<char> &'))
+   36 |   std::string path() const override { return std::string(); }
+      |   ~~~~~~~~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                               ~~~~~~~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:36:15: error: exception specification of overriding function is more lax than base version
+   36 |   std::string path() const override { return std::string(); }
+      |               ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:38:60: error: non-virtual member function marked 'override' hides virtual member functions
+   38 |   long write(const Exiv2::byte* /*data*/, long /*wcount*/) override { return 0; }
+      |                                                            ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:80:18: note: hidden overloaded virtual function 'Exiv2::BasicIo::write' declared here: type mismatch at 2nd parameter ('size_t' (aka 'unsigned long') vs 'long')
+   80 |   virtual size_t write(const byte* data, size_t wcount) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: hidden overloaded virtual function 'Exiv2::BasicIo::write' declared here: different number of parameters (1 vs 2)
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:39:8: error: virtual function 'write' has a different return type ('long') than the function it overrides (which has return type 'size_t' (aka 'unsigned long'))
+   39 |   long write(Exiv2::BasicIo& /*src*/) override { return 0; }
+      |   ~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: overridden virtual function is here
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |           ~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:40:52: error: non-virtual member function marked 'override' hides virtual member functions
+   40 |   long read(Exiv2::byte* /*buf*/, long /*rcount*/) override { return 0; }
+      |                                                    ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: hidden overloaded virtual function 'Exiv2::BasicIo::read' declared here: different number of parameters (1 vs 2)
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:122:18: note: hidden overloaded virtual function 'Exiv2::BasicIo::read' declared here: type mismatch at 2nd parameter ('size_t' (aka 'unsigned long') vs 'long')
+  122 |   virtual size_t read(byte* buf, size_t rcount) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:48:8: error: virtual function 'tell' has a different return type ('long') than the function it overrides (which has return type 'size_t' (aka 'unsigned long'))
+   48 |   long tell() const override { return 0; }
+      |   ~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:201:32: note: overridden virtual function is here
+  201 |   [[nodiscard]] virtual size_t tell() const = 0;
+      |                         ~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:51:8: error: virtual function 'size' has a different return type ('long') than the function it overrides (which has return type 'size_t' (aka 'unsigned long'))
+   51 |   long size() const override { return 0; }
+      |   ~~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:207:32: note: overridden virtual function is here
+  207 |   [[nodiscard]] virtual size_t size() const = 0;
+      |                         ~~~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:53:7: error: virtual function 'transfer' has a different return type ('int') than the function it overrides (which has return type 'void')
+   53 |   int transfer(Exiv2::BasicIo& /*src*/) override { return 0; }
+      |   ~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:154:16: note: overridden virtual function is here
+  154 |   virtual void transfer(BasicIo& src) = 0;
+      |           ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:54:7: error: virtual function 'populateFakeData' has a different return type ('int') than the function it overrides (which has return type 'void')
+   54 |   int populateFakeData() override { return 0; }
+      |   ~~~ ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: overridden virtual function is here
+  228 |   virtual void populateFakeData() = 0;
+      |           ~~~~ ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:55:25: error: only virtual member functions can be marked 'override'
+   55 |   int temporary() const override { return 0; }
+      |                         ^~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:23:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   23 | class DummyBasicIo final : public Exiv2::BasicIo {
+      |       ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:80:18: note: unimplemented pure virtual method 'write' in 'DummyBasicIo'
+   80 |   virtual size_t write(const byte* data, size_t wcount) = 0;
+      |                  ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: unimplemented pure virtual method 'read' in 'DummyBasicIo'
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |                   ^
+/home/user/MyProjects/NewTCG/TestProjects/exiv2/include/exiv2/basicio.hpp:122:18: note: unimplemented pure virtual method 'read' in 'DummyBasicIo'
+  122 |   virtual size_t read(byte* buf, size_t rcount) = 0;
+      |                  ^
+In file included from /home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:7:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::DummyBasicIo'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp:29:66: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::DummyBasicIo>' requested here
+   29 |   Exiv2::BasicIo::UniquePtr clone() const override { return std::make_unique<DummyBasicIo>(); }
+      |                                                                  ^
+1 warning and 12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1041.dir/build.make:79: generated_build/CMakeFiles/test_1041.dir/home/user/MyProjects/NewTCG/experiments/09_exiv2/test_files/test_1041.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11927: generated_build/CMakeFiles/test_1041.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11934: generated_build/CMakeFiles/test_1041.dir/rule] Error 2
+gmake: *** [Makefile:2155: test_1041] Error 2

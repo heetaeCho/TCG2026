@@ -1,0 +1,153 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_549.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp.o
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:29:30: error: 'Info' is a private member of 're2::Prefilter'
+   29 |   void operator()(Prefilter::Info* p) const { delete p; }
+      |                              ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:29:47: warning: deleting pointer to incomplete type 'Prefilter::Info' may cause undefined behavior [-Wdelete-incomplete]
+   29 |   void operator()(Prefilter::Info* p) const { delete p; }
+      |                                               ^      ~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:33:44: error: 'Info' is a private member of 're2::Prefilter'
+   33 | using InfoPtr = std::unique_ptr<Prefilter::Info, InfoDeleter>;
+      |                                            ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:47:24: error: incomplete type 're2::Prefilter::Info' named in nested name specifier
+   47 |   InfoPtr a(Prefilter::Info::AnyMatch());
+      |             ~~~~~~~~~~~^~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:47:12: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   47 |   InfoPtr a(Prefilter::Info::AnyMatch());
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:47:13: note: add a pair of parentheses to declare a variable
+   47 |   InfoPtr a(Prefilter::Info::AnyMatch());
+      |             ^                          
+      |             (                          )
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:47:24: error: 'Info' is a private member of 're2::Prefilter'
+   47 |   InfoPtr a(Prefilter::Info::AnyMatch());
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:53:29: error: incomplete type 're2::Prefilter::Info' named in nested name specifier
+   53 |   InfoPtr result(Prefilter::Info::Plus(a.release()));
+      |                  ~~~~~~~~~~~^~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:53:29: error: 'Info' is a private member of 're2::Prefilter'
+   53 |   InfoPtr result(Prefilter::Info::Plus(a.release()));
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:57:22: error: member access into incomplete type 're2::Prefilter::Info'
+   57 |   EXPECT_FALSE(result->is_exact()) << "Plus(*) should not be exact per interface";
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:69:24: error: incomplete type 're2::Prefilter::Info' named in nested name specifier
+   69 |   InfoPtr a(Prefilter::Info::EmptyString());
+      |             ~~~~~~~~~~~^~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:69:12: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   69 |   InfoPtr a(Prefilter::Info::EmptyString());
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:69:13: note: add a pair of parentheses to declare a variable
+   69 |   InfoPtr a(Prefilter::Info::EmptyString());
+      |             ^                             
+      |             (                             )
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:69:24: error: 'Info' is a private member of 're2::Prefilter'
+   69 |   InfoPtr a(Prefilter::Info::EmptyString());
+      |                        ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:75:29: error: incomplete type 're2::Prefilter::Info' named in nested name specifier
+   75 |   InfoPtr result(Prefilter::Info::Plus(a.release()));
+      |                  ~~~~~~~~~~~^~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:75:29: error: 'Info' is a private member of 're2::Prefilter'
+   75 |   InfoPtr result(Prefilter::Info::Plus(a.release()));
+      |                             ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:79:22: error: member access into incomplete type 're2::Prefilter::Info'
+   79 |   EXPECT_FALSE(result->is_exact());
+      |                      ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:99:20: error: 'Info' is a private member of 're2::Prefilter'
+   99 |         Prefilter::Info* res = Prefilter::Info::Plus(nullptr);
+      |                    ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:99:43: error: incomplete type 're2::Prefilter::Info' named in nested name specifier
+   99 |         Prefilter::Info* res = Prefilter::Info::Plus(nullptr);
+      |                                ~~~~~~~~~~~^~~~~~
+/usr/local/include/gtest/gtest-death-test.h:190:15: note: expanded from macro 'EXPECT_DEATH'
+  190 |   EXPECT_EXIT(statement, ::testing::internal::ExitedUnsuccessfully, matcher)
+      |               ^~~~~~~~~
+/usr/local/include/gtest/gtest-death-test.h:179:21: note: expanded from macro 'EXPECT_EXIT'
+  179 |   GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:242:47: note: expanded from macro 'GTEST_DEATH_TEST_'
+  242 |           GTEST_EXECUTE_DEATH_TEST_STATEMENT_(statement, gtest_dt);            \
+      |                                               ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:199:52: note: expanded from macro 'GTEST_EXECUTE_DEATH_TEST_STATEMENT_'
+  199 |     GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);               \
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:99:43: error: 'Info' is a private member of 're2::Prefilter'
+   99 |         Prefilter::Info* res = Prefilter::Info::Plus(nullptr);
+      |                                           ^
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: declared private here
+  110 |   class Info;
+      |         ^
+/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp:103:9: warning: deleting pointer to incomplete type 'Prefilter::Info' may cause undefined behavior [-Wdelete-incomplete]
+  103 |         delete res;
+      |         ^      ~~~
+/usr/local/include/gtest/gtest-death-test.h:190:15: note: expanded from macro 'EXPECT_DEATH'
+  190 |   EXPECT_EXIT(statement, ::testing::internal::ExitedUnsuccessfully, matcher)
+      |               ^~~~~~~~~
+/usr/local/include/gtest/gtest-death-test.h:179:21: note: expanded from macro 'EXPECT_EXIT'
+  179 |   GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:242:47: note: expanded from macro 'GTEST_DEATH_TEST_'
+  242 |           GTEST_EXECUTE_DEATH_TEST_STATEMENT_(statement, gtest_dt);            \
+      |                                               ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:199:52: note: expanded from macro 'GTEST_EXECUTE_DEATH_TEST_STATEMENT_'
+  199 |     GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);               \
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/NewTCG/TestProjects/re2/re2/prefilter.h:110:9: note: forward declaration of 're2::Prefilter::Info'
+  110 |   class Info;
+      |         ^
+4 warnings and 15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_549.dir/build.make:79: generated_build/CMakeFiles/test_549.dir/home/user/MyProjects/NewTCG/experiments/02_re2/test_files/test_549.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21961: generated_build/CMakeFiles/test_549.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21968: generated_build/CMakeFiles/test_549.dir/rule] Error 2
+gmake: *** [Makefile:8304: test_549] Error 2
