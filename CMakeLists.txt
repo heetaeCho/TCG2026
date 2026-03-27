@@ -17,8 +17,8 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # set(CMAKE_C_COMPILER /usr/local/Cellar/llvm/19.1.4/bin/clang)
 # set(CMAKE_CXX_COMPILER /usr/local/Cellar/llvm/19.1.4/bin/clang++)
 # else()
-set(CMAKE_C_COMPILER /usr/lib/llvm-18/bin/clang)
-set(CMAKE_CXX_COMPILER /usr/lib/llvm-18/bin/clang++)
+set(CMAKE_C_COMPILER /usr/lib/llvm-20/bin/clang)
+set(CMAKE_CXX_COMPILER /usr/lib/llvm-20/bin/clang++)
 # endif()
 
 # LLVM과 Clang 찾기

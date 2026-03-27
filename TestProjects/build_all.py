@@ -24,8 +24,8 @@ class ProjectBuilder(Builder):
         print(f"-"*50)
         print(f"Project {self.project} build start")
         command = [
-            "-DCMAKE_C_COMPILER=/usr/lib/llvm-18/bin/clang",
-            "-DCMAKE_CXX_COMPILER=/usr/lib/llvm-18/bin/clang++",
+            "-DCMAKE_C_COMPILER=/usr/lib/llvm-20/bin/clang",
+            "-DCMAKE_CXX_COMPILER=/usr/lib/llvm-20/bin/clang++",
             "-DCMAKE_C_FLAGS=-fprofile-instr-generate -fcoverage-mapping",
             "-DCMAKE_CXX_FLAGS=-fprofile-instr-generate -fcoverage-mapping",
             "-DCMAKE_EXE_LINKER_FLAGS=-fprofile-instr-generate",
