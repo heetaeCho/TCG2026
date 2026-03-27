@@ -1,0 +1,24 @@
+#pragma once
+
+#include "AbsModel.hpp"
+
+namespace NewTCG::domain::code_analyzer {
+    class MacroModel : public AbsModel {
+        public:
+        ~MacroModel() = default;
+        std::vector<std::string> macros;
+
+        std::vector<std::string> get_data() {
+            return macros;
+        }
+
+        void set_current_file_id(int file_id) { AbsModel::set_current_file_id(file_id); }
+        int get_current_file_id() { return AbsModel::get_current_file_id(); }
+
+        void set_current_namespace_id(int namespace_id) { AbsModel::set_current_namespace_id(namespace_id); }
+        int get_current_namespace_id() { return AbsModel::get_current_namespace_id(); }
+
+        void set_current_cxxrecord_id(int cxxrecord_id) { AbsModel::set_current_cxxrecord_id(cxxrecord_id); }
+        int get_current_cxxrecord_id() { return AbsModel::get_current_cxxrecord_id(); }
+    };
+}

@@ -1,0 +1,3 @@
+add_subdirectory(configurator)
+add_subdirectory(code_analyzer)
+add_subdirectory(dependency_tracer)
