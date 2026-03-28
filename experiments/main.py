@@ -18,10 +18,12 @@ from builder import ProjectBuilder, TestBuilder
 from statistic import Statistic
 from coverage import CoverageChecker
 from error_analyzer import ErrorAnalyzer
+import error_category
 from function_analyzer import StructureMetric, LogisticAnalyzer
 
 class Main:
-    def __init__(self):
+    def __init__(self, llm):
+        self.llm = llm
         self.project_list = ["JsonBox", "re2", "leveldb", "Catch2", "glomap",
                              "ninja", "tinyxml2", "yaml-cpp", "exiv2", "poppler"]
 
@@ -35,10 +37,10 @@ class Main:
             if skip != 0:
                 if project_id <= skip:
                     continue
-            pb = ProjectBuilder(cwd, project_id, project)
+            pb = ProjectBuilder(cwd, project_id, project, self.llm)
             pb.build()
 
-            tb = TestBuilder(cwd, project_id, project)
+            tb = TestBuilder(cwd, project_id, project, self.llm)
             tb.build()
             tb.execute()
 
@@ -72,7 +74,7 @@ class Main:
             if skip != 0:
                 if project_id <= skip:
                     continue
-            statistic = Statistic(cwd, project_id, project)
+            statistic = Statistic(cwd, project_id, project, self.llm)
             num_function_under_test = statistic.get_num_function_under_tests()
             num_generated_test_cases = statistic.get_num_generated_test_cases()
             num_build_success = statistic.get_num_build_success()
@@ -119,7 +121,7 @@ class Main:
             if skip != 0:
                 if project_id <= skip:
                     continue
-            cov_checker = CoverageChecker(cwd, project_id, project)
+            cov_checker = CoverageChecker(cwd, project_id, project, self.llm)
             cov_checker.check()
             line_coverage = cov_checker.get_line_coverage()
             branch_coverage = cov_checker.get_branch_coverage()
@@ -132,9 +134,58 @@ class Main:
         post_csv(csv)
 
     def analyze_error(self, csv, specific=0, skip=0):
+        def prepare_csv(csv):
+            with open(csv, 'w', encoding='utf-8') as f:
+                text = 'index,Category,#Error,%Error\n'
+                f.write(text)
+
+        def post_csv(csv, type4_count, type19_count, type4_rate, type19_rate):
+            with open(csv, 'a', encoding='utf-8') as f:
+                for category, value in type4_count.items():
+                    rate = type4_rate[category]
+                    text = f',{category},{value},{rate}%\n'
+                    f.write(text)
+
+                for category, value in type19_count["Semantic"].items():
+                    # print(value)
+                    rate = type19_rate["Semantic"][category]
+                    text = f',{category},{value},{rate}%\n'
+                    f.write(text)
+
+        def type_4(_error_count):
+            count = {"Lexical": 0,
+                     "Syntactic": 0,
+                     "Linker": 0,
+                     "Semantic": 0}
+            for category in _error_count:
+                if category != "Semantic":
+                    count[category] = _error_count[category]
+                else:
+                    for subtype in project_error_count[category]:
+                        count[category] += _error_count[category][subtype]
+            return count
+
+        def type_4_rate(total, _error_count):
+            rate = _error_count.copy()
+            for category in _error_count.keys():
+                rate[category] = (_error_count[category] / total) * 100
+            return rate
+
+        def type_19_rate(total, _error_count):
+            rate = _error_count.copy()
+            for category in _error_count.keys():
+                if category != "Semantic":
+                    rate[category] = (_error_count[category] / total) * 100
+                else:
+                    for subtype in _error_count[category]:
+                        rate[category][subtype] = (_error_count[category][subtype] / total) * 100
+            return rate
+
+        prepare_csv(csv)
         cwd = os.getcwd()
-        frequency = []
-        unique = set()
+        error_count = error_category.COUNT_CATEGORIES.copy()
+        # frequency = []
+        # unique = set()
         for ix, project in enumerate(self.project_list):
             project_id = ix + 1
             if specific != 0:
@@ -144,11 +195,30 @@ class Main:
                 if project_id <= skip:
                     continue
             
-            print("PROJECT: ", project)
-            error_analyzer = ErrorAnalyzer(cwd, project_id, project)
-            # if print_old then print error already assigned as error type;
-            # if print_new then print new error not yet assigned as log; 
-            f, u = error_analyzer.analyze(print_old=True, print_new=True) 
+            # print("PROJECT: ", project)
+            error_analyzer = ErrorAnalyzer(cwd, project_id, project, self.llm)
+            project_error_count = error_analyzer.analyze()
+            for category in project_error_count:
+                if category != "Semantic":
+                    error_count[category] += project_error_count[category]
+                else:
+                    for subtype in project_error_count[category]:
+                        error_count[category][subtype] += project_error_count[category][subtype]
+
+        type4_count = type_4(error_count)
+        type19_count = copy.deepcopy(error_count)
+        total = sum(type4_count.values())
+        # print(total)
+        # print(type4_count)
+        # print(error_count)
+        
+        type4_rate = type_4_rate(total, type4_count)
+        type19_rate = type_19_rate(total, error_count)
+        # print(type4_rate)
+        # print(type19_rate)
+        post_csv(csv, type4_count, type19_count, type4_rate, type19_rate)
+        '''
+            f, u = error_analyzer._pre_analyze() 
             frequency.extend(f)
             unique.update(u)
 
@@ -156,6 +226,7 @@ class Main:
         print(len(unique))
         for line in unique:
             print(line)
+        '''
 
         # sm = StructureMetric(project_id, project)
         # sm.calculate()
@@ -166,21 +237,24 @@ class Main:
 
 
 
+
 if __name__ == "__main__":
     print("Experiments Main")
-    main = Main()
-    # main.run_build()
-    # main.get_statistics('./experiments/statistic.csv')
-    main.coverage_check('./experiments/coverage.csv')
-    # main.analyze_error('./experiments/error.csv')
+    llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+    for llm in llms:
+        main = Main(llm)
+        main.run_build()
+        main.get_statistics(f'./experiments/{llm}/statistic.csv')
+        main.coverage_check(f'./experiments/{llm}/coverage.csv')
+        main.analyze_error(f'./experiments/{llm}/error.csv')
 
-    # specific is project id
-    # main.run_build(specific=0, skip=4)
-    # 일단 ninja 실패 specific = 6
-    # main.run_build(specific=6)
-    # main.coverage_check('./experiments/coverage.csv', specific=6)
+        # specific is project id
+        # main.run_build(specific=0, skip=4)
+        # 일단 ninja 실패 specific = 6
+        # main.run_build(specific=6)
+        # main.coverage_check('./experiments/coverage.csv', specific=6)
 
-    # main.run_build(specific=2)
-    # main.coverage_check(specific=2)
-    # main.run_build(specific=4)
-    # main.coverage_check(specific=4)
+        # main.run_build(specific=2)
+        # main.coverage_check(specific=2)
+        # main.run_build(specific=4)
+        # main.coverage_check(specific=4)

@@ -10,13 +10,14 @@ class Statistic:
     total_run_success_rate = []
     total_loc = []
     total_code_files = []
-    def __init__(self, cwd, project_id, project):
+    def __init__(self, cwd, project_id, project, llm):
         self.cwd = cwd
+        self.llm = llm
         self.project = project
         self.project_id = f"{project_id:02d}"
         self.real_project_base = "TestProjects"
         self.real_project_path = os.path.join(self.cwd, self.real_project_base, self.project)
-        self.project_path = os.path.join("experiments", self.project_id + '_' + self.project)
+        self.project_path = os.path.join("experiments", f"LLM/{self.llm}", self.project_id + '_' + self.project)
         self.TEST_FILES_PATH = os.path.join(self.project_path, "test_files")
         self.BUILD_DIR = os.path.join(self.project_path, "build")
         self.LOG_DIR = os.path.join(self.project_path, "log")
