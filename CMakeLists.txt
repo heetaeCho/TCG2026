@@ -6,20 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# temp - for debug
-# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
-
-# add_compile_options(-fprofile-instr-generate -fcoverage-mapping)
-# add_link_options(-fprofile-instr-generate)
-
-# Clang 컴파일러 설정
-# if (${CMAKE_SYSTEM_NAME} STREQUAL "Darwin")
-# set(CMAKE_C_COMPILER /usr/local/Cellar/llvm/19.1.4/bin/clang)
-# set(CMAKE_CXX_COMPILER /usr/local/Cellar/llvm/19.1.4/bin/clang++)
-# else()
 set(CMAKE_C_COMPILER /usr/lib/llvm-20/bin/clang)
 set(CMAKE_CXX_COMPILER /usr/lib/llvm-20/bin/clang++)
-# endif()
 
 # LLVM과 Clang 찾기
 find_package(LLVM REQUIRED CONFIG)

@@ -21,6 +21,24 @@ sudo apt install libbrotli-dev
 cmake -S . -B build
 cmake --build build
 
+abseil
+sudo rm -rf /usr/local/include/absl
+sudo rm -rf /usr/local/lib/libabsl*
+sudo rm -rf /usr/local/lib/cmake/absl
+git clone https://github.com/abseil/abseil-cpp.git
+cd abseil-cpp
+mkdir build && cd build
+
+cmake .. \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=/usr/local \
+  -DABSL_ENABLE_INSTALL=ON \
+  -DCMAKE_CXX_STANDARD=17
+
+make -j$(nproc)
+sudo make install
+
+
 re2
 (install abseil first)
 sudo apt install libicu-dev

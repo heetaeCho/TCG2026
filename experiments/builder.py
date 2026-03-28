@@ -3,8 +3,9 @@ import re
 import subprocess
 
 class Builder:
-    def __init__(self, cwd, project_id, project):
+    def __init__(self, cwd, project_id, project, llm):
         self.cwd = cwd
+        self.llm = llm
         self.project = project
         self.project_id = f"{project_id:02d}"
         self.project_base = "TestProjects"
@@ -16,16 +17,16 @@ class Builder:
             }
 
 class ProjectBuilder(Builder):
-    def __init__(self, cwd, project_id, project):
-        super().__init__(cwd, int(project_id), project)
+    def __init__(self, cwd, project_id, project, llm):
+        super().__init__(cwd, int(project_id), project, llm)
         self.cmake_lists = os.path.join(self.real_project_path, "CMakeLists.txt")
 
     def build(self, update=False):
         print(f"-"*50)
         print(f"Project {self.project} build start")
         command = [
-            "-DCMAKE_C_COMPILER=/usr/lib/llvm-18/bin/clang",
-            "-DCMAKE_CXX_COMPILER=/usr/lib/llvm-18/bin/clang++",
+            "-DCMAKE_C_COMPILER=/usr/lib/llvm-20/bin/clang",
+            "-DCMAKE_CXX_COMPILER=/usr/lib/llvm-20/bin/clang++",
             "-DCMAKE_C_FLAGS=-fprofile-instr-generate -fcoverage-mapping",
             "-DCMAKE_CXX_FLAGS=-fprofile-instr-generate -fcoverage-mapping",
             "-DCMAKE_EXE_LINKER_FLAGS=-fprofile-instr-generate",
@@ -54,22 +55,22 @@ class ProjectBuilder(Builder):
     def modify_cmake_lists(self):
         path = self.project_id + '_' + self.project
         with open(self.cmake_lists, 'a', encoding='utf-8') as cmake_list:
-            cmake_list.write(f"add_subdirectory(../../experiments/{path}/build generated_build)")
+            cmake_list.write(f"add_subdirectory(../../experiments/LLM/{self.llm}/{path}/build generated_build)")
 
 class TestBuilder(Builder):
     cmake_template = \
     """
-    set(CMAKE_CXX_STANDARD 20)
+    set(CMAKE_CXX_STANDARD 17)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
     set(CMAKE_CXX_EXTENSIONS OFF)
 
-    set(CMAKE_C_COMPILER /usr/lib/llvm-18/bin/clang)
-    set(CMAKE_CXX_COMPILER /usr/lib/llvm-18/bin/clang++)
+    set(CMAKE_C_COMPILER /usr/lib/llvm-20/bin/clang)
+    set(CMAKE_CXX_COMPILER /usr/lib/llvm-20/bin/clang++)
     """
 
-    def __init__(self, cwd, project_id, project):
-        super().__init__(cwd, int(project_id), project)
-        self.project_path = os.path.join("experiments", self.project_id + '_' + self.project)
+    def __init__(self, cwd, project_id, project, llm):
+        super().__init__(cwd, int(project_id), project, llm)
+        self.project_path = os.path.join("experiments", f"LLM/{self.llm}", self.project_id + '_' + self.project)
         self.TEST_FILES_PATH = os.path.join(self.project_path, "test_files")
         self.BUILD_DIR = os.path.join(self.project_path, "build")
         self.LOG_DIR = os.path.join(self.project_path, "log")
@@ -354,7 +355,7 @@ class TestBuilder(Builder):
     def __rebuild(self, test_files):
         import shutil
         try:
-            pb = ProjectBuilder(self.cwd, int(self.project_id), self.project)
+            pb = ProjectBuilder(self.cwd, int(self.project_id), self.project, self.llm)
             pb.modify_cmake_lists()
             pb.build(update=True)
             for test_file in test_files:

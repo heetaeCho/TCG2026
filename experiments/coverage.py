@@ -5,8 +5,9 @@ import glob
 class CoverageChecker:
     line_coverage = []
     branch_coverage = []
-    def __init__(self, cwd, project_id, project):
+    def __init__(self, cwd, project_id, project, llm):
         self.cwd = cwd
+        self.llm = llm
         self.project = project
         self.project_id = f"{project_id:02d}"
         self.real_project_base = "TestProjects"
@@ -28,7 +29,7 @@ class CoverageChecker:
                         'utils/pdfattach', 'utils/pdffonts', 'utils/pdfunite', 
                         'utils/pdftotext', 'utils/pdftocairo', 'utils/pdftops', 'utils/pdfdetach']
         }
-        self.project_path = os.path.join("experiments", self.project_id + '_' + self.project)
+        self.project_path = os.path.join("experiments", f"LLM/{self.llm}", self.project_id + '_' + self.project)
         self.coverage_dir = os.path.join(self.project_path, "coverage")
         os.makedirs(self.coverage_dir, exist_ok=True)
     
@@ -55,7 +56,7 @@ class CoverageChecker:
                     prof_files.append(in_dir_file)
 
         profdata = os.path.join(coverage_dir, "merged.profdata")
-        command = ["/usr/lib/llvm-18/bin/llvm-profdata", "merge", "-sparse", *map(str, prof_files), "-o", str(profdata)]
+        command = ["/usr/lib/llvm-20/bin/llvm-profdata", "merge", "-sparse", *map(str, prof_files), "-o", str(profdata)]
         result = subprocess.run(command, capture_output=True, text=True)
         if result.returncode == 0:
             print(f"✅ Merge 완료")
@@ -71,7 +72,7 @@ class CoverageChecker:
 
         bin_path = [os.path.join(bin_base, bin) for bin in bins]
 
-        command = ["/usr/lib/llvm-18/bin/llvm-cov", "report", f"-instr-profile=./{profdata}", '-ignore-filename-regex=tests?/.*\.cpp$|.*third_party/.*|.*benchmarks?/.*|.*test\.cc']
+        command = ["/usr/lib/llvm-20/bin/llvm-cov", "report", f"-instr-profile=./{profdata}", '-ignore-filename-regex=tests?/.*\.cpp$|.*third_party/.*|.*benchmarks?/.*|.*test\.cc']
 
         for b in bin_path:
             command.extend(['-object', str(b)])
@@ -87,7 +88,7 @@ class CoverageChecker:
                 obj_files = glob.glob(f"{bin_base}/**/*.o", recursive=True)
                 filtered_files = [f for f in obj_files if "/experiments/" not in f]
                 filtered_files = [f for f in filtered_files if "/generated_build/" not in f]
-                command = ["/usr/lib/llvm-18/bin/llvm-cov", "report", f"-instr-profile=./{profdata}", '-ignore-filename-regex=tests?/.*\.cpp$|.*third_party/.*|.*benchmarks?/.*|.*test\.cc?']
+                command = ["/usr/lib/llvm-20/bin/llvm-cov", "report", f"-instr-profile=./{profdata}", '-ignore-filename-regex=tests?/.*\.cpp$|.*third_party/.*|.*benchmarks?/.*|.*test\.cc?']
                 for obj in filtered_files:
                     command.extend(['-object', str(obj)])
 
