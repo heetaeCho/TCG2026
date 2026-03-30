@@ -1,0 +1,55 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1159.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp:16:74: error: no member named 'Type1' in 'GfxFontType'
+   16 |         font = std::make_unique<GfxFont>("tag", 1, nullptr, GfxFontType::Type1, 2);
+      |                                                             ~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp:34:70: error: no member named 'Type1' in 'GfxFontType'
+   34 |     font = std::make_unique<GfxFont>("tag", 1, nullptr, GfxFontType::Type1, 2); // Boundary input
+      |                                                         ~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp:44:5: error: cannot use 'try' with exceptions disabled
+   44 |     EXPECT_THROW(font->getDescent(), std::runtime_error); // Assuming a runtime error is thrown
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp:51:11: error: 'family' is a protected member of 'GfxFont'
+   51 |     font->family = std::move(mockFamily);
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxFont.h:317:32: note: declared protected here
+  317 |     std::unique_ptr<GooString> family; // font family
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp:53:34: error: no member named 'getCString' in 'GooString'
+   53 |     EXPECT_EQ(font->getFamily()->getCString(), "Arial");
+      |               ~~~~~~~~~~~~~~~~~  ^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp:85:5: error: cannot use 'try' with exceptions disabled
+   85 |     EXPECT_THROW(font->locateFont(xref, ps, substituteFontName), std::runtime_error); // Assuming exception is thrown
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp:9:7: warning: 'GfxFontTest_1159' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxFontTest_1159 : public ::testing::Test {
+      |       ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1159.dir/build.make:79: generated_build/CMakeFiles/test_1159.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1159.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:78599: generated_build/CMakeFiles/test_1159.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:78606: generated_build/CMakeFiles/test_1159.dir/rule] Error 2
+gmake: *** [Makefile:28402: test_1159] Error 2

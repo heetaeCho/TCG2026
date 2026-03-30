@@ -1,0 +1,49 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_138.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp:24:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   24 | class TestBaseSeekInputStream final : public BaseSeekInputStream {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'TestBaseSeekInputStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'TestBaseSeekInputStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:417:21: note: unimplemented pure virtual method 'currentPos' in 'TestBaseSeekInputStream'
+  417 |     virtual Goffset currentPos() const = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:418:18: note: unimplemented pure virtual method 'setCurrentPos' in 'TestBaseSeekInputStream'
+  418 |     virtual void setCurrentPos(Goffset offset) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:419:21: note: unimplemented pure virtual method 'read' in 'TestBaseSeekInputStream'
+  419 |     virtual Goffset read(char *buf, Goffset size) = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp:37:7: error: cannot use 'throw' with exceptions disabled
+   37 |       throw std::runtime_error("rewind failed");
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp:66:27: error: variable type 'TestBaseSeekInputStream' is an abstract class
+   66 |   TestBaseSeekInputStream s(/*rewindReturn=*/true);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp:73:27: error: variable type 'TestBaseSeekInputStream' is an abstract class
+   73 |   TestBaseSeekInputStream s(/*rewindReturn=*/false);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp:80:27: error: variable type 'TestBaseSeekInputStream' is an abstract class
+   80 |   TestBaseSeekInputStream s(/*rewindReturn=*/true);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp:90:27: error: variable type 'TestBaseSeekInputStream' is an abstract class
+   90 |   TestBaseSeekInputStream s(/*rewindReturn=*/true, /*throwOnRewind=*/true);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp:92:3: error: cannot use 'try' with exceptions disabled
+   92 |   EXPECT_THROW({ (void)s.unfilteredRewind(); }, std::runtime_error);
+      |   ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_138.dir/build.make:79: generated_build/CMakeFiles/test_138.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_138.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19463: generated_build/CMakeFiles/test_138.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19470: generated_build/CMakeFiles/test_138.dir/rule] Error 2
+gmake: *** [Makefile:4378: test_138] Error 2

@@ -1,0 +1,69 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_673.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:12:19: error: allocation of incomplete type 'PDFDoc'
+   12 |         doc = new PDFDoc(); // Assume PDFDoc has a default constructor for the test
+      |                   ^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:58:7: note: forward declaration of 'PDFDoc'
+   58 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:17:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   17 |         delete doc;
+      |         ^      ~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:58:7: note: forward declaration of 'PDFDoc'
+   58 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:26:14: error: no member named 'addName' in 'NameTree'
+   26 |     nameTree.addName(name); // Assume NameTree has a method to add names
+      |     ~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:30:13: error: no member named 'setDestNameTree' in 'Catalog'
+   30 |     catalog.setDestNameTree(&nameTree); // Assume setter exists for test
+      |     ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:45:13: error: no member named 'setDestNameTree' in 'Catalog'
+   45 |     catalog.setDestNameTree(&nameTree); // Assume setter exists for test
+      |     ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:67:5: error: unknown type name 'MockNameTree'; did you mean 'NameTree'?
+   67 |     MockNameTree mockNameTree;
+      |     ^~~~~~~~~~~~
+      |     NameTree
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:75:30: note: 'NameTree' declared here
+   75 | class POPPLER_PRIVATE_EXPORT NameTree
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:70:5: error: no member named 'gmock_getName' in 'NameTree'
+   70 |     EXPECT_CALL(mockNameTree, getName(0))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:46:1: note: expanded from here
+   46 | gmock_getName
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:74:13: error: no member named 'setDestNameTree' in 'Catalog'
+   74 |     catalog.setDestNameTree(&mockNameTree); // Assume setter exists for test
+      |     ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:5:7: warning: 'CatalogTest_673' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class CatalogTest_673 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:7: error: cannot cast 'const GooString' to its private base class 'const basic_string<char, char_traits<char>, allocator<char>>'
+ 1394 |   if (lhs == rhs) {
+      |       ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<GooString, GooString>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp:35:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<GooString, GooString, nullptr>' requested here
+   35 |     EXPECT_EQ(*result, name);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:56:19: note: declared private here
+   56 | class GooString : private std::string
+      |                   ^~~~~~~~~~~~~~~~~~~
+2 warnings and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_673.dir/build.make:79: generated_build/CMakeFiles/test_673.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_673.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:61383: generated_build/CMakeFiles/test_673.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:61390: generated_build/CMakeFiles/test_673.dir/rule] Error 2
+gmake: *** [Makefile:21408: test_673] Error 2

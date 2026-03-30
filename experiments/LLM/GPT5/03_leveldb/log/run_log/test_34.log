@@ -1,0 +1,48 @@
+Running main() from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from CondVarSignalTest_34
+[ RUN      ] CondVarSignalTest_34.SignalWakesExactlyOneOfTwo_34
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_34.cpp:115: Failure
+Expected equality of these values:
+  woken.load(std::memory_order_acquire)
+    Which is: 0
+  1
+
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_34.cpp:131: Failure
+Expected equality of these values:
+  woken.load(std::memory_order_acquire)
+    Which is: 0
+  2
+
+[  FAILED  ] CondVarSignalTest_34.SignalWakesExactlyOneOfTwo_34 (21 ms)
+[ RUN      ] CondVarSignalTest_34.SignalWithNoWaitersDoesNotWakeFutureWaiter_34
+[       OK ] CondVarSignalTest_34.SignalWithNoWaitersDoesNotWakeFutureWaiter_34 (11 ms)
+[ RUN      ] CondVarSignalTest_34.MultipleSignalsWakeAtMostNumWaiters_34
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_34.cpp:289: Failure
+Expected equality of these values:
+  woken.load(std::memory_order_acquire)
+    Which is: 0
+  kSignals
+    Which is: 3
+
+[  FAILED  ] CondVarSignalTest_34.MultipleSignalsWakeAtMostNumWaiters_34 (17 ms)
+[ RUN      ] CondVarSignalTest_34.SignalWakesBlockedWaiter_Sanity_34
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_34.cpp:351: Failure
+Expected equality of these values:
+  woken.load(std::memory_order_acquire)
+    Which is: 0
+  1
+
+[  FAILED  ] CondVarSignalTest_34.SignalWakesBlockedWaiter_Sanity_34 (11 ms)
+[----------] 4 tests from CondVarSignalTest_34 (62 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (62 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] CondVarSignalTest_34.SignalWakesExactlyOneOfTwo_34
+[  FAILED  ] CondVarSignalTest_34.MultipleSignalsWakeAtMostNumWaiters_34
+[  FAILED  ] CondVarSignalTest_34.SignalWakesBlockedWaiter_Sanity_34
+
+ 3 FAILED TESTS

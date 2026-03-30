@@ -1,0 +1,43 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_327.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:171:20: error: constexpr variable 'got' must be initialized by a constant expression
+  171 |     constexpr auto got =
+      |                    ^
+  172 |         YAML::jkj::dragonbox::detail::div::divide_by_pow10<1, UInt32, n_max32>(n);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:172:9: note: non-constexpr function 'divide_by_pow10<1, unsigned int, 1073741828U>' cannot be used in a constant expression
+  172 |         YAML::jkj::dragonbox::detail::div::divide_by_pow10<1, UInt32, n_max32>(n);
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:1223:38: note: declared here
+ 1223 |                 JKJ_CONSTEXPR20 UInt divide_by_pow10(UInt n) noexcept {
+      |                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:173:19: error: static assertion expression is not an integral constant expression
+  173 |     static_assert(got == Expected<1>(n), "constexpr divide_by_pow10 failed for UInt32 N=1");
+      |                   ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:173:19: note: initializer of 'got' is not a constant expression
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:171:20: note: declared here
+  171 |     constexpr auto got =
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:178:20: error: constexpr variable 'got' must be initialized by a constant expression
+  178 |     constexpr auto got =
+      |                    ^
+  179 |         YAML::jkj::dragonbox::detail::div::divide_by_pow10<1, UInt64, n_max64>(n);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:179:9: note: non-constexpr function 'divide_by_pow10<1, unsigned long, 4611686018427387908UL>' cannot be used in a constant expression
+  179 |         YAML::jkj::dragonbox::detail::div::divide_by_pow10<1, UInt64, n_max64>(n);
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:1223:38: note: declared here
+ 1223 |                 JKJ_CONSTEXPR20 UInt divide_by_pow10(UInt n) noexcept {
+      |                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:180:19: error: static assertion expression is not an integral constant expression
+  180 |     static_assert(got == Expected<1>(n), "constexpr divide_by_pow10 failed for UInt64 N=1");
+      |                   ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:180:19: note: initializer of 'got' is not a constant expression
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp:178:20: note: declared here
+  178 |     constexpr auto got =
+      |                    ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_327.dir/build.make:79: generated_build/CMakeFiles/test_327.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_327.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14027: generated_build/CMakeFiles/test_327.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14034: generated_build/CMakeFiles/test_327.dir/rule] Error 2
+gmake: *** [Makefile:4977: test_327] Error 2

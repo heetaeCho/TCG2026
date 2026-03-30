@@ -1,0 +1,91 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1208.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:12:24: error: no matching constructor for initialization of 'TextPage'
+   12 |         mockPage = new TextPage();
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:558:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  558 |     TextPage(const TextPage &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:556:14: note: candidate constructor not viable: requires at least argument 'rawOrderA', but no arguments were provided
+  556 |     explicit TextPage(bool rawOrderA, bool discardDiagA = false);
+      |              ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:38:26: error: no matching constructor for initialization of 'TextWord'
+   38 |     TextWord* word = new TextWord("Hello");
+      |                          ^        ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:144:5: note: candidate constructor not viable: no known conversion from 'const char[6]' to 'const TextWord' for 1st argument
+  144 |     TextWord(const TextWord &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:139:5: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+  139 |     TextWord(const GfxState *state, int rotA, double fontSize);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:49:31: error: allocation of incomplete type 'UnicodeMap'
+   49 |     UnicodeMap* mockMap = new UnicodeMap();
+      |                               ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:52:7: note: forward declaration of 'UnicodeMap'
+   52 | class UnicodeMap;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:56:5: error: cannot use 'try' with exceptions disabled
+   56 |     EXPECT_NO_THROW(textBlock->coalesce(mockMap, fixedPitch));
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:58:5: warning: deleting pointer to incomplete type 'UnicodeMap' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   58 |     delete mockMap;
+      |     ^      ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:52:7: note: forward declaration of 'UnicodeMap'
+   52 | class UnicodeMap;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:68:5: error: cannot use 'try' with exceptions disabled
+   68 |     EXPECT_NO_THROW(textBlock->updatePriMinMax(otherBlock));
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:91:5: error: cannot use 'try' with exceptions disabled
+   91 |     EXPECT_NO_THROW(TextBlock::cmpXYPrimaryRot(textBlock, otherBlock));
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:119:45: error: allocation of incomplete type 'TextSelectionVisitor'
+  119 |     TextSelectionVisitor* mockVisitor = new TextSelectionVisitor();
+      |                                             ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:65:7: note: forward declaration of 'TextSelectionVisitor'
+   65 | class TextSelectionVisitor;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:121:44: error: no member named 'Highlight' in 'SelectionStyle'
+  121 |     SelectionStyle style = SelectionStyle::Highlight;
+      |                            ~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:124:5: error: cannot use 'try' with exceptions disabled
+  124 |     EXPECT_NO_THROW(textBlock->visitSelection(mockVisitor, &selection, style));
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:126:5: warning: deleting pointer to incomplete type 'TextSelectionVisitor' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+  126 |     delete mockVisitor;
+      |     ^      ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:65:7: note: forward declaration of 'TextSelectionVisitor'
+   65 | class TextSelectionVisitor;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp:5:7: warning: 'TextBlockTest_1208' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class TextBlockTest_1208 : public ::testing::Test {
+      |       ^
+3 warnings and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1208.dir/build.make:79: generated_build/CMakeFiles/test_1208.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1208.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:49575: generated_build/CMakeFiles/test_1208.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:49582: generated_build/CMakeFiles/test_1208.dir/rule] Error 2
+gmake: *** [Makefile:16611: test_1208] Error 2

@@ -1,0 +1,32 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_191.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_191.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_191.cpp:71:17: error: static assertion failed due to requirement 'std::is_copy_assignable<Catch::Matchers::NoneTrueMatcher>::value': NoneTrueMatcher should be copy-assignable
+   71 |   static_assert(std::is_copy_assignable<NoneTrueMatcher>::value,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_191.cpp:79:17: error: static assertion failed due to requirement 'std::is_move_assignable<Catch::Matchers::NoneTrueMatcher>::value': NoneTrueMatcher should be move-assignable
+   79 |   static_assert(std::is_move_assignable<NoneTrueMatcher>::value,
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_191.cpp:93:5: error: object of type 'NoneTrueMatcher' cannot be assigned because its copy assignment operator is implicitly deleted
+   93 |   c = a;                       // copy-assign
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_quantifiers.hpp:105:39: note: copy assignment operator of 'NoneTrueMatcher' is implicitly deleted because base class 'MatcherGenericBase' has a deleted copy assignment operator
+  105 |         class NoneTrueMatcher final : public MatcherGenericBase {
+      |                                       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:32:29: note: 'operator=' has been explicitly marked deleted here
+   32 |         MatcherGenericBase& operator=(MatcherGenericBase const&) = delete;
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_191.cpp:97:5: error: object of type 'NoneTrueMatcher' cannot be assigned because its copy assignment operator is implicitly deleted
+   97 |   b = std::move(c);                 // move-assign
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_quantifiers.hpp:105:39: note: copy assignment operator of 'NoneTrueMatcher' is implicitly deleted because base class 'MatcherGenericBase' has a deleted copy assignment operator
+  105 |         class NoneTrueMatcher final : public MatcherGenericBase {
+      |                                       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:32:29: note: 'operator=' has been explicitly marked deleted here
+   32 |         MatcherGenericBase& operator=(MatcherGenericBase const&) = delete;
+      |                             ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_191.dir/build.make:79: generated_build/CMakeFiles/test_191.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_191.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:35219: generated_build/CMakeFiles/test_191.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:35226: generated_build/CMakeFiles/test_191.dir/rule] Error 2
+gmake: *** [Makefile:12695: test_191] Error 2

@@ -1,0 +1,108 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_251.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:37:3: error: only virtual member functions can be marked 'override'
+   37 |   MOCK_METHOD(void, pushScopedMessage, (const MessageInfo& message), (override));
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:193:1: note: expanded from here
+  193 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:45:46: error: only virtual member functions can be marked 'override'
+   45 |   void popScopedMessage (const MessageInfo&) override {}
+      |                                              ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:67:50: error: only virtual member functions can be marked 'override'
+   67 |   void emplaceUnscopedMessage (MessageBuilder&&) override {}
+      |                                                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:85:27: error: only virtual member functions can be marked 'override'
+   85 |   void assertionPassed () override {}
+      |                           ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:87:43: error: non-virtual member function marked 'override' hides virtual member function
+   87 |   const std::string getCurrentTestName () override { return "test"; }
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:100:29: note: hidden overloaded virtual function 'Catch::IResultCapture::getCurrentTestName' declared here: different return type ('basic_string<...>' vs 'const basic_string<...>')
+  100 |         virtual std::string getCurrentTestName() const = 0;
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:89:43: error: non-virtual member function marked 'override' hides virtual member function
+   89 |   const AssertionResult* getLastResult () override { return nullptr; }
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:101:40: note: hidden overloaded virtual function 'Catch::IResultCapture::getLastResult' declared here: different qualifiers ('const' vs unqualified)
+  101 |         virtual const AssertionResult* getLastResult() const = 0;
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:107:17: error: redefinition of 'getResultCapture'
+  107 | IResultCapture& getResultCapture() {
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:109:28: note: previous definition is here
+  109 |     inline IResultCapture& getResultCapture() {
+      |                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:175:12: error: no matching constructor for initialization of 'Capturer'
+  175 |   Capturer cap(Str("MACRO"), Line("file.cpp", 123), ResultWas::OfType::Info, Str("a,b"));
+      |            ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:69:9: note: candidate constructor not viable: requires 5 arguments, but 4 were provided
+   69 |         Capturer( StringRef macroName, SourceLineInfo const& lineInfo, ResultWas::OfType resultType, StringRef names, bool isScoped );
+      |         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:71:9: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   71 |         Capturer(Capturer const&) = delete;
+      |         ^        ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:199:12: error: no matching constructor for initialization of 'Capturer'
+  199 |   Capturer cap(Str("MACRO"), Line("file.cpp", 10), ResultWas::OfType::Info, Str("x"));
+      |            ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:69:9: note: candidate constructor not viable: requires 5 arguments, but 4 were provided
+   69 |         Capturer( StringRef macroName, SourceLineInfo const& lineInfo, ResultWas::OfType resultType, StringRef names, bool isScoped );
+      |         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:71:9: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   71 |         Capturer(Capturer const&) = delete;
+      |         ^        ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:225:12: error: no matching constructor for initialization of 'Capturer'
+  225 |   Capturer cap(Str("MACRO"), Line("file.cpp", 77), ResultWas::OfType::Info, Str("left,right"));
+      |            ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:69:9: note: candidate constructor not viable: requires 5 arguments, but 4 were provided
+   69 |         Capturer( StringRef macroName, SourceLineInfo const& lineInfo, ResultWas::OfType resultType, StringRef names, bool isScoped );
+      |         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:71:9: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   71 |         Capturer(Capturer const&) = delete;
+      |         ^        ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:249:12: error: no matching constructor for initialization of 'Capturer'
+  249 |   Capturer cap(Str("MACRO"), Line("t.cpp", 1), ResultWas::OfType::Info, Str("only"));
+      |            ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:69:9: note: candidate constructor not viable: requires 5 arguments, but 4 were provided
+   69 |         Capturer( StringRef macroName, SourceLineInfo const& lineInfo, ResultWas::OfType resultType, StringRef names, bool isScoped );
+      |         ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_message.hpp:71:9: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   71 |         Capturer(Capturer const&) = delete;
+      |         ^        ~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'testing::StrictMock<Catch::MockResultCapture>'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp:131:25: note: in instantiation of function template specialization 'std::make_unique<testing::StrictMock<Catch::MockResultCapture>>' requested here
+  131 |     mockInstance = std::make_unique<::testing::StrictMock<Catch::MockResultCapture>>();
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:100:29: note: unimplemented pure virtual method 'getCurrentTestName' in 'StrictMock'
+  100 |         virtual std::string getCurrentTestName() const = 0;
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:101:40: note: unimplemented pure virtual method 'getLastResult' in 'StrictMock'
+  101 |         virtual const AssertionResult* getLastResult() const = 0;
+      |                                        ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_251.dir/build.make:79: generated_build/CMakeFiles/test_251.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_251.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:18026: generated_build/CMakeFiles/test_251.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:18033: generated_build/CMakeFiles/test_251.dir/rule] Error 2
+gmake: *** [Makefile:5922: test_251] Error 2

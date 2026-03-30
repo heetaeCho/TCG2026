@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1061.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1061.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1061.cpp:39:5: error: cannot use 'try' with exceptions disabled
+   39 |     try {
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1061.cpp:8:7: warning: 'OutputDevTest_1061' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    8 | class OutputDevTest_1061 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1061.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'OutputDev'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1061.cpp:12:26: note: in instantiation of function template specialization 'std::make_unique<OutputDev>' requested here
+   12 |         outputDev = std::make_unique<OutputDev>();
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/OutputDev.h:79:18: note: unimplemented pure virtual method 'upsideDown' in 'OutputDev'
+   79 |     virtual bool upsideDown() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/OutputDev.h:82:18: note: unimplemented pure virtual method 'useDrawChar' in 'OutputDev'
+   82 |     virtual bool useDrawChar() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/OutputDev.h:102:18: note: unimplemented pure virtual method 'interpretType3Chars' in 'OutputDev'
+  102 |     virtual bool interpretType3Chars() = 0;
+      |                  ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1061.dir/build.make:79: generated_build/CMakeFiles/test_1061.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1061.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:20935: generated_build/CMakeFiles/test_1061.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:20942: generated_build/CMakeFiles/test_1061.dir/rule] Error 2
+gmake: *** [Makefile:4976: test_1061] Error 2

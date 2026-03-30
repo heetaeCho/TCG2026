@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_530.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_530.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_530.cpp:28:12: error: calling a private constructor of class 'Object'
+   28 |     return Object(objNull);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_530.cpp:45:1: error: unterminated function-like macro invocation
+   45 | TEST_F(GfxImage
+      | ^
+/usr/local/include/gtest/gtest.h:2224:9: note: macro 'TEST_F' defined here
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |         ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_530.cpp:6:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'GfxImageColorMap'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_530.cpp:22:17: note: in instantiation of function template specialization 'std::make_unique<GfxImageColorMap, int &, Object *&, int>' requested here
+   22 |     return std::make_unique<GfxImageColorMap>(bits, decode, std::move(cs));
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1241:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<GfxColorSpace>' for 3rd argument
+ 1241 |     GfxImageColorMap(int bitsA, Object *decode, std::unique_ptr<GfxColorSpace> &&colorSpaceA);
+      |     ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1246:5: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+ 1246 |     GfxImageColorMap(const GfxImageColorMap &) = delete;
+      |     ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1292:14: note: candidate constructor not viable: requires single argument 'colorMap', but 3 arguments were provided
+ 1292 |     explicit GfxImageColorMap(const GfxImageColorMap *colorMap);
+      |              ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_530.dir/build.make:79: generated_build/CMakeFiles/test_530.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_530.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:18471: generated_build/CMakeFiles/test_530.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:18478: generated_build/CMakeFiles/test_530.dir/rule] Error 2
+gmake: *** [Makefile:3975: test_530] Error 2

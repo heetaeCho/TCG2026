@@ -1,0 +1,53 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_601.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_601.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_601.cpp:71:70: error: unknown type name 'GfxColorSpaceMock'; did you mean 'GfxColorSpaceMode'?
+   71 |     std::unique_ptr<GfxColorSpace> mockColorSpace = std::make_unique<GfxColorSpaceMock>();
+      |                                                                      ^~~~~~~~~~~~~~~~~
+      |                                                                      GfxColorSpaceMode
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:207:6: note: 'GfxColorSpaceMode' declared here
+  207 | enum GfxColorSpaceMode
+      |      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_601.cpp:71:36: error: no viable conversion from 'unique_ptr<GfxColorSpaceMode>' to 'unique_ptr<GfxColorSpace>'
+   71 |     std::unique_ptr<GfxColorSpace> mockColorSpace = std::make_unique<GfxColorSpaceMock>();
+      |                                    ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:359:12: note: candidate constructor template not viable: no known conversion from '__detail::__unique_ptr_t<GfxColorSpaceMode>' (aka 'unique_ptr<GfxColorSpaceMode>') to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  359 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:366:7: note: candidate constructor not viable: no known conversion from '__detail::__unique_ptr_t<GfxColorSpaceMode>' (aka 'unique_ptr<GfxColorSpaceMode>') to 'unique_ptr<GfxColorSpace> &&' for 1st argument
+  366 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: candidate constructor not viable: no known conversion from '__detail::__unique_ptr_t<GfxColorSpaceMode>' (aka 'unique_ptr<GfxColorSpaceMode>') to 'const unique_ptr<GfxColorSpace> &' for 1st argument
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:380:2: note: candidate template ignored: requirement '__and_<std::__and_<std::is_convertible<GfxColorSpaceMode *, GfxColorSpace *>, std::__not_<std::is_array<GfxColorSpaceMode>>>, std::is_convertible<std::default_delete<GfxColorSpaceMode>, std::default_delete<GfxColorSpace>>>::value' was not satisfied [with _Up = GfxColorSpaceMode, _Ep = std::default_delete<GfxColorSpaceMode>]
+  380 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:390:2: note: candidate template ignored: could not match 'auto_ptr' against '__detail::unique_ptr'
+  390 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:317:2: note: explicit constructor is not a candidate
+  317 |         unique_ptr(pointer __p) noexcept
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_601.cpp:74:5: error: use of undeclared identifier 'gfxState'
+   74 |     gfxState.setFillColorSpace(std::move(mockColorSpace));
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_601.cpp:77:5: error: no member named 'gmock_someExpectedMethod' in 'GfxColorSpace'
+   77 |     EXPECT_CALL(*mockColorSpace, someExpectedMethod()).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:26:1: note: expanded from here
+   26 | gmock_someExpectedMethod
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_601.cpp:5:7: warning: 'GfxStateTest_601' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class GfxStateTest_601 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_601.dir/build.make:79: generated_build/CMakeFiles/test_601.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_601.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:51335: generated_build/CMakeFiles/test_601.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:51342: generated_build/CMakeFiles/test_601.dir/rule] Error 2
+gmake: *** [Makefile:17326: test_601] Error 2

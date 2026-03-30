@@ -1,0 +1,27 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_432.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_432.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_432.cpp:3:
+/usr/local/include/gtest/gtest.h:1472:28: error: invalid operands to binary expression ('const Catch::Detail::unique_ptr<Catch::ITestInvoker>' and 'const std::nullptr_t')
+ 1472 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/include/gtest/gtest.h:1462:14: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1462 |     if (val1 op val2) {                                                    \
+      |         ~~~~ ^  ~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_432.cpp:75:5: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<Catch::Detail::unique_ptr<Catch::ITestInvoker>, std::nullptr_t>' requested here
+   75 |     ASSERT_NE(invoker, nullptr);  // Should create a valid invoker
+      |     ^
+/usr/local/include/gtest/gtest.h:1918:31: note: expanded from macro 'ASSERT_NE'
+ 1918 | #define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+      |                               ^
+/usr/local/include/gtest/gtest.h:1900:44: note: expanded from macro 'GTEST_ASSERT_NE'
+ 1900 |   ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/local/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const Catch::Detail::unique_ptr<Catch::ITestInvoker>' to 'faketype' for 1st argument
+ 1387 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_432.dir/build.make:79: generated_build/CMakeFiles/test_432.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_432.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:8918: generated_build/CMakeFiles/test_432.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:8925: generated_build/CMakeFiles/test_432.dir/rule] Error 2
+gmake: *** [Makefile:2334: test_432] Error 2

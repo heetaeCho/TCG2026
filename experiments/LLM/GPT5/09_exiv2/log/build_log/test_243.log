@@ -1,0 +1,83 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_243.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp:12:19: error: cannot initialize a member subobject of type 'IfdId' with an rvalue of type 'int'
+   12 |     IfdId group = 2;
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp:14:21: error: cannot initialize a member subobject of type 'IfdId' with an rvalue of type 'int'
+   14 |     IfdId dtGroup = 4;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp:39:19: error: no matching constructor for initialization of 'TiffSizeEntry'
+   39 |     TiffSizeEntry uninitializedEntry(0, 0, 0, 0);
+      |                   ^                  ~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:783:3: note: candidate constructor not viable: no known conversion from 'int' to 'IfdId' for 2nd argument
+  783 |   TiffSizeEntry(uint16_t tag, IfdId group, uint16_t dtTag, IfdId dtGroup);
+      |   ^                           ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:778:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+  778 | class TiffSizeEntry : public TiffEntryBase {
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:778:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+  778 | class TiffSizeEntry : public TiffEntryBase {
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp:47:32: error: base class has incomplete type
+   47 | class MockTiffVisitor : public TiffVisitor {
+      |                         ~~~~~~~^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:38:7: note: forward declaration of 'Exiv2::Internal::TiffVisitor'
+   38 | class TiffVisitor;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp:49:5: error: only virtual member functions can be marked 'override'
+   49 |     MOCK_METHOD(void, visit, (const TiffSizeEntry& entry), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:20:1: note: expanded from here
+   20 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp:52:32: error: base class has incomplete type
+   52 | class MockTiffEncoder : public TiffEncoder {
+      |                         ~~~~~~~^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:41:7: note: forward declaration of 'Exiv2::Internal::TiffEncoder'
+   41 | class TiffEncoder;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp:54:5: error: only virtual member functions can be marked 'override'
+   54 |     MOCK_METHOD(void, encode, (const TiffSizeEntry& entry, const Exifdatum* datum), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:84:1: note: expanded from here
+   84 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_243.dir/build.make:79: generated_build/CMakeFiles/test_243.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_243.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:69795: generated_build/CMakeFiles/test_243.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:69802: generated_build/CMakeFiles/test_243.dir/rule] Error 2
+gmake: *** [Makefile:24281: test_243] Error 2

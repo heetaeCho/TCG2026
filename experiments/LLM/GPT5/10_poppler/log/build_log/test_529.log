@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_529.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_529.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_529.cpp:31:7: warning: 'GfxImageColorMapTest_529' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   31 | class GfxImageColorMapTest_529 : public ::testing::Test {};
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_529.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'GfxImageColorMap'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_529.cpp:20:15: note: in instantiation of function template specialization 'std::make_unique<GfxImageColorMap, int &, Object *&, int>' requested here
+   20 |   return std::make_unique<GfxImageColorMap>(bits, decode, std::move(cs));
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1241:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<GfxColorSpace>' for 3rd argument
+ 1241 |     GfxImageColorMap(int bitsA, Object *decode, std::unique_ptr<GfxColorSpace> &&colorSpaceA);
+      |     ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1246:5: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+ 1246 |     GfxImageColorMap(const GfxImageColorMap &) = delete;
+      |     ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1292:14: note: candidate constructor not viable: requires single argument 'colorMap', but 3 arguments were provided
+ 1292 |     explicit GfxImageColorMap(const GfxImageColorMap *colorMap);
+      |              ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_529.dir/build.make:79: generated_build/CMakeFiles/test_529.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_529.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:90471: generated_build/CMakeFiles/test_529.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:90478: generated_build/CMakeFiles/test_529.dir/rule] Error 2
+gmake: *** [Makefile:33225: test_529] Error 2

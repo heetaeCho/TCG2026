@@ -1,0 +1,138 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1498.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:23:46: error: no member named 'someKind' in 'StreamKind'
+   23 |     EXPECT_EQ(stream->getKind(), StreamKind::someKind);  // replace with actual expected behavior
+      |                                  ~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:47:5: error: no matching function for call to 'Compare'
+   47 |     EXPECT_EQ(stream->getRawChars(10, buffer), 10);  // Test for buffer boundary conditions
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1885:23: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:23: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                       ^~~~~~~~~~~
+/usr/local/include/gtest/gtest_pred_impl.h:134:17: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                 ^~~~~~~~~~~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1422:26: note: candidate function not viable: cannot convert argument of incomplete type 'void' to 'BiggestInt' (aka 'long long') for 3rd argument
+ 1422 |   static AssertionResult Compare(const char* lhs_expression,
+      |                          ^
+ 1423 |                                  const char* rhs_expression, BiggestInt lhs,
+      |                                                              ~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1410:26: note: candidate template ignored: substitution failure [with T1 = void, T2 = int, $2 = nullptr]: cannot form a reference to 'void'
+ 1410 |   static AssertionResult Compare(const char* lhs_expression,
+      |                          ^
+ 1411 |                                  const char* rhs_expression, const T1& lhs,
+      |                                                                      ~
+/usr/local/include/gtest/gtest.h:1429:26: note: candidate template ignored: could not match 'T *' against 'int'
+ 1429 |   static AssertionResult Compare(
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:62:5: error: only virtual member functions can be marked 'override'
+   62 |     MOCK_METHOD(Dict*, getDict, (), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:82:1: note: expanded from here
+   82 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:66:14: error: call to implicitly-deleted default constructor of 'MockDict'
+   66 |     MockDict mockDict;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:60:18: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+   60 | class MockDict : public Dict {
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:98:5: error: cannot use 'try' with exceptions disabled
+   98 |     EXPECT_THROW(baseStream->setPos(invalidPos, 0), std::out_of_range);
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:6:7: warning: 'StreamTest_1498' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    6 | class StreamTest_1498 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:75:7: warning: 'BaseStreamTest_1498' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   75 | class BaseStreamTest_1498 : public StreamTest_1498 {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'BaseStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp:13:23: note: in instantiation of function template specialization 'std::make_unique<BaseStream>' requested here
+   13 |         stream = std::make_unique<BaseStream>(/*parameters if any*/);
+      |                       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'BaseStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'BaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'BaseStream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'BaseStream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'BaseStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'BaseStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'BaseStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:358:10: note: unimplemented pure virtual method 'setPos' in 'BaseStream'
+  358 |     void setPos(Goffset pos, int dir = 0) override = 0;
+      |          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'BaseStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'BaseStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:368:21: note: unimplemented pure virtual method 'getStart' in 'BaseStream'
+  368 |     virtual Goffset getStart() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:369:18: note: unimplemented pure virtual method 'moveStart' in 'BaseStream'
+  369 |     virtual void moveStart(Goffset delta) = 0;
+      |                  ^
+2 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1498.dir/build.make:79: generated_build/CMakeFiles/test_1498.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1498.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:85735: generated_build/CMakeFiles/test_1498.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:85742: generated_build/CMakeFiles/test_1498.dir/rule] Error 2
+gmake: *** [Makefile:31301: test_1498] Error 2

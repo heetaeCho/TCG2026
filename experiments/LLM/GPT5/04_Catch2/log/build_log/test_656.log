@@ -1,0 +1,329 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_656.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:39:7: error: definition of type 'InternalParseResult' conflicts with type alias of the same name
+   39 | class InternalParseResult;   // expected to be declared in clara internals
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:308:19: note: 'InternalParseResult' declared here
+  308 |             using InternalParseResult = BasicResult<ParseState>;
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:53:5: error: non-virtual member function marked 'override' hides virtual member function
+   53 |     MOCK_METHOD(InternalParseResult, parse,
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:200:1: note: expanded from here
+  200 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:471:30: note: hidden overloaded virtual function 'Catch::Clara::Detail::ParserBase::parse' declared here: different qualifiers ('const' vs unqualified)
+  471 |                 virtual auto parse( std::string const& exeName,
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:101:16: error: variable type 'MockParser' is an abstract class
+  101 |     MockParser parser;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:471:30: note: unimplemented pure virtual method 'parse' in 'MockParser'
+  471 |                 virtual auto parse( std::string const& exeName,
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:113:25: error: no matching constructor for initialization of 'InternalParseResult' (aka 'BasicResult<ParseState>')
+  113 |     InternalParseResult dummy{};
+      |                         ^    ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:119:19: error: use of undeclared identifier 'DoAll'
+  119 |         .WillOnce(DoAll(SaveArg<0>(&capturedExe), Return(dummy)));
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:141:16: error: variable type 'MockParser' is an abstract class
+  141 |     MockParser parser;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:145:25: error: no matching constructor for initialization of 'InternalParseResult' (aka 'BasicResult<ParseState>')
+  145 |     InternalParseResult sentinel{}; // distinct object we expect to be returned
+      |                         ^       ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:175:16: error: variable type 'MockParser' is an abstract class
+  175 |     MockParser parser;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:181:25: error: no matching constructor for initialization of 'InternalParseResult' (aka 'BasicResult<ParseState>')
+  181 |     InternalParseResult dummy{};
+      |                         ^    ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:187:19: error: use of undeclared identifier 'DoAll'
+  187 |         .WillOnce(DoAll(SaveArg<0>(&capturedExe), Return(dummy)));
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:207:16: error: variable type 'MockParser' is an abstract class
+  207 |     MockParser parser;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:213:25: error: no matching constructor for initialization of 'InternalParseResult' (aka 'BasicResult<ParseState>')
+  213 |     InternalParseResult dummy{};
+      |                         ^    ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:219:19: error: use of undeclared identifier 'DoAll'
+  219 |         .WillOnce(DoAll(SaveArg<0>(&capturedExe), Return(dummy)));
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:243:9: error: non-virtual member function marked 'override' hides virtual member function
+  243 |         MOCK_METHOD(InternalParseResult, parse,
+      |         ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:95:1: note: expanded from here
+   95 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:471:30: note: hidden overloaded virtual function 'Catch::Clara::Detail::ParserBase::parse' declared here: different qualifiers ('const' vs unqualified)
+  471 |                 virtual auto parse( std::string const& exeName,
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:249:7: error: variable type 'struct LocalMock' is an abstract class
+  249 |     } mock;
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:471:30: note: unimplemented pure virtual method 'parse' in 'LocalMock'
+  471 |                 virtual auto parse( std::string const& exeName,
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp:257:25: error: no matching constructor for initialization of 'InternalParseResult' (aka 'BasicResult<ParseState>')
+  257 |     InternalParseResult dummy{};
+      |                         ^    ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_656.dir/build.make:79: generated_build/CMakeFiles/test_656.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_656.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:35714: generated_build/CMakeFiles/test_656.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:35721: generated_build/CMakeFiles/test_656.dir/rule] Error 2
+gmake: *** [Makefile:12890: test_656] Error 2

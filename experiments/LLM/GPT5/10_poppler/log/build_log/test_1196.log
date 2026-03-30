@@ -1,0 +1,70 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1196.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:25:11: error: 'spaceAfter' is a private member of 'TextWord'
+   25 |     word->spaceAfter = true; // Assuming direct assignment or via a setter
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:235:10: note: declared private here
+  235 |     bool spaceAfter; // set if there is a space between this
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:41:9: error: cannot use 'try' with exceptions disabled
+   41 |         ASSERT_THROW(word->getCharPos(), std::out_of_range); // Expected exception
+      |         ^
+/usr/local/include/gtest/gtest.h:1798:3: note: expanded from macro 'ASSERT_THROW'
+ 1798 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:38:5: error: cannot use 'try' with exceptions disabled
+   38 |     try {
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:52:17: error: expression is not assignable
+   52 |     word->len() = expectedLength;
+      |     ~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:59:5: error: cannot use 'try' with exceptions disabled
+   59 |     ASSERT_NO_THROW(word->getChar(maxIdx)); // Edge test, expecting no errors
+      |     ^
+/usr/local/include/gtest/gtest.h:1800:3: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:65:5: error: no member named 'gmock_nextWord' in 'TextWord'
+   65 |     EXPECT_CALL(*word, nextWord()).WillOnce(testing::Return(next)); // Mocked behavior
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:51:1: note: expanded from here
+   51 | gmock_nextWord
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:71:11: error: 'spaceAfter' is a private member of 'TextWord'
+   71 |     word->spaceAfter = true;  // Simulating that spaceAfter is true
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:235:10: note: declared private here
+  235 |     bool spaceAfter; // set if there is a space between this
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:73:5: error: no member named 'gmock_nextWord' in 'TextWord'
+   73 |     EXPECT_CALL(*word, nextWord()).WillOnce(testing::Return(next));  // Mocking nextWord call
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:18:1: note: expanded from here
+   18 | gmock_nextWord
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp:5:7: warning: 'TextWordTest_1196' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class TextWordTest_1196 : public testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1196.dir/build.make:79: generated_build/CMakeFiles/test_1196.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1196.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:58823: generated_build/CMakeFiles/test_1196.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:58830: generated_build/CMakeFiles/test_1196.dir/rule] Error 2
+gmake: *** [Makefile:20368: test_1196] Error 2

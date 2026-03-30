@@ -1,0 +1,43 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_194.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:149:9: error: return type 'bool' must match previous return type 'GoogleTest_NotSupported_OnFunctionReturningNonVoid' (aka 'void') when lambda expression has unspecified explicit return type
+  149 |         return true;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:17: error: 'Invoke<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:24)>' is deprecated: Actions can now be implicitly constructed from callables. No need to create wrapper objects using Invoke(). [-Werror,-Wdeprecated-declarations]
+  135 |       .WillOnce(Invoke([&](const Slice& forwarded_key, const Slice& forwarded_filter) {
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:2056:1: note: 'Invoke<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:24)>' has been explicitly marked deprecated here
+ 2056 | GTEST_INTERNAL_DEPRECATE_AND_INLINE(
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-port.h:2337:5: note: expanded from macro 'GTEST_INTERNAL_DEPRECATE_AND_INLINE'
+ 2337 |   [[deprecated(msg), clang::annotate("inline-me")]]
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:8: error: no matching member function for call to 'WillOnce'
+  133 |   EXPECT_CALL(mock_user_, KeyMayMatch(_, _))
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  134 | 
+  135 |       .WillOnce(Invoke([&](const Slice& forwarded_key, const Slice& forwarded_filter) {
+      |       ~^~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:1003:21: note: candidate function not viable: no known conversion from 'typename std::decay<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:24)>::type' (aka '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:24)') to 'OnceAction<F>' (aka 'OnceAction<bool (const leveldb::Slice &, const leveldb::Slice &)>') for 1st argument
+ 1003 |   TypedExpectation& WillOnce(OnceAction<F> once_action) {
+      |                     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:1018:21: note: candidate function template not viable: no known conversion from 'typename std::decay<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:24)>::type' (aka '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:135:24)') to 'Action<F>' (aka 'Action<bool (const leveldb::Slice &, const leveldb::Slice &)>') for 1st argument
+ 1018 |   TypedExpectation& WillOnce(Action<F> action) {
+      |                     ^        ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:203:17: error: 'Invoke<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:203:24)>' is deprecated: Actions can now be implicitly constructed from callables. No need to create wrapper objects using Invoke(). [-Werror,-Wdeprecated-declarations]
+  203 |       .WillOnce(Invoke([&](const Slice& forwarded_key, const Slice& forwarded_filter) {
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:2056:1: note: 'Invoke<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp:203:24)>' has been explicitly marked deprecated here
+ 2056 | GTEST_INTERNAL_DEPRECATE_AND_INLINE(
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-port.h:2337:5: note: expanded from macro 'GTEST_INTERNAL_DEPRECATE_AND_INLINE'
+ 2337 |   [[deprecated(msg), clang::annotate("inline-me")]]
+      |     ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_194.dir/build.make:76: generated_build/CMakeFiles/test_194.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_194.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5923: generated_build/CMakeFiles/test_194.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5930: generated_build/CMakeFiles/test_194.dir/rule] Error 2
+gmake: *** [Makefile:2311: test_194] Error 2

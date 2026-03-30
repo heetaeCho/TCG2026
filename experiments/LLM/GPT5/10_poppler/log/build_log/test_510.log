@@ -1,0 +1,34 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_510.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_510.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_510.cpp:52:24: error: variable type 'GfxUnivariateShading' is an abstract class
+   52 |   GfxUnivariateShading copy(original.get());
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'GfxUnivariateShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:968:18: note: unimplemented pure virtual method 'getParameterRange' in 'GfxUnivariateShading'
+  968 |     virtual void getParameterRange(double *lower, double *upper, double xMin, double yMin, double xMax, double yMax) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:970:20: note: unimplemented pure virtual method 'getDistance' in 'GfxUnivariateShading'
+  970 |     virtual double getDistance(double sMin, double sMax) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_510.cpp:60:24: error: variable type 'GfxUnivariateShading' is an abstract class
+   60 |   GfxUnivariateShading copy(original.get());
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_510.cpp:13:7: warning: 'GfxUnivariateShadingTest_510' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class GfxUnivariateShadingTest_510 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_510.cpp:2:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'GfxUnivariateShading'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_510.cpp:20:17: note: in instantiation of function template specialization 'std::make_unique<GfxUnivariateShading, int, double, double, std::vector<std::unique_ptr<Function>>, bool &, bool &>' requested here
+   20 |     return std::make_unique<GfxUnivariateShading>(
+      |                 ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_510.dir/build.make:79: generated_build/CMakeFiles/test_510.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_510.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:45703: generated_build/CMakeFiles/test_510.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:45710: generated_build/CMakeFiles/test_510.dir/rule] Error 2
+gmake: *** [Makefile:15038: test_510] Error 2

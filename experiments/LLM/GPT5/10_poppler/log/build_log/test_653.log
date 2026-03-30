@@ -1,0 +1,61 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_653.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp:94:14: error: call to deleted constructor of 'GfxState'
+   94 |     GfxState gfxState2(gfxState1);
+      |              ^         ~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1545:5: note: 'GfxState' has been explicitly marked deleted here
+ 1545 |     GfxState(const GfxState &) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp:6:7: warning: 'GfxStateTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    6 | class GfxStateTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'GfxColorSpace'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp:38:54: note: in instantiation of function template specialization 'std::make_unique<GfxColorSpace>' requested here
+   38 |     std::unique_ptr<GfxColorSpace> colorSpace = std::make_unique<GfxColorSpace>();
+      |                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:263:44: note: unimplemented pure virtual method 'copy' in 'GfxColorSpace'
+  263 |     virtual std::unique_ptr<GfxColorSpace> copy() const = 0;
+      |                                            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:264:31: note: unimplemented pure virtual method 'getMode' in 'GfxColorSpace'
+  264 |     virtual GfxColorSpaceMode getMode() const = 0;
+      |                               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:270:18: note: unimplemented pure virtual method 'getGray' in 'GfxColorSpace'
+  270 |     virtual void getGray(const GfxColor *color, GfxGray *gray) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:271:18: note: unimplemented pure virtual method 'getRGB' in 'GfxColorSpace'
+  271 |     virtual void getRGB(const GfxColor *color, GfxRGB *rgb) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:272:18: note: unimplemented pure virtual method 'getCMYK' in 'GfxColorSpace'
+  272 |     virtual void getCMYK(const GfxColor *color, GfxCMYK *cmyk) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: unimplemented pure virtual method 'getDeviceN' in 'GfxColorSpace'
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:295:17: note: unimplemented pure virtual method 'getNComps' in 'GfxColorSpace'
+  295 |     virtual int getNComps() const = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:298:18: note: unimplemented pure virtual method 'getDefaultColor' in 'GfxColorSpace'
+  298 |     virtual void getDefaultColor(GfxColor *color) const = 0;
+      |                  ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'GfxPattern'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp:49:48: note: in instantiation of function template specialization 'std::make_unique<GfxPattern>' requested here
+   49 |     std::unique_ptr<GfxPattern> pattern = std::make_unique<GfxPattern>();
+      |                                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:826:41: note: unimplemented pure virtual method 'copy' in 'GfxPattern'
+  826 |     virtual std::unique_ptr<GfxPattern> copy() const = 0;
+      |                                         ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_653.dir/build.make:79: generated_build/CMakeFiles/test_653.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_653.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:63495: generated_build/CMakeFiles/test_653.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:63502: generated_build/CMakeFiles/test_653.dir/rule] Error 2
+gmake: *** [Makefile:22266: test_653] Error 2

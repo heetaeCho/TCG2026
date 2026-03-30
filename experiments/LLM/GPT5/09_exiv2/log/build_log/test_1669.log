@@ -1,0 +1,24 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1669.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1669.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1669.cpp:115:34: error: call to implicitly-deleted default constructor of 'Exiv2::Internal::TiffDataEntry'
+  115 |   Exiv2::Internal::TiffDataEntry entry;
+      |                                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:649:23: note: default constructor of 'TiffDataEntry' is implicitly deleted because base class 'TiffDataEntryBase' has no default constructor
+  649 | class TiffDataEntry : public TiffDataEntryBase {
+      |                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1669.cpp:126:22: error: call to implicitly-deleted default constructor of 'ProbeTiffDataEntry'
+  126 |   ProbeTiffDataEntry probe;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1669.cpp:45:28: note: default constructor of 'ProbeTiffDataEntry' is implicitly deleted because base class 'Exiv2::Internal::TiffDataEntry' has a deleted default constructor
+   45 | class ProbeTiffDataEntry : public Exiv2::Internal::TiffDataEntry {
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:649:23: note: default constructor of 'TiffDataEntry' is implicitly deleted because base class 'TiffDataEntryBase' has no default constructor
+  649 | class TiffDataEntry : public TiffDataEntryBase {
+      |                       ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1669.dir/build.make:79: generated_build/CMakeFiles/test_1669.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1669.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:79587: generated_build/CMakeFiles/test_1669.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:79594: generated_build/CMakeFiles/test_1669.dir/rule] Error 2
+gmake: *** [Makefile:28025: test_1669] Error 2

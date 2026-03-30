@@ -1,0 +1,129 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_837.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:6:24: error: base class has incomplete type
+    6 | class MockGfx : public Gfx {
+      |                 ~~~~~~~^~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:69:7: note: forward declaration of 'Gfx'
+   69 | class Gfx;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:10:27: error: base class has incomplete type
+   10 | class MockPDFDoc : public PDFDoc {
+      |                    ~~~~~~~^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:65:42: error: no member named '_' in namespace 'testing'
+   65 |     EXPECT_CALL(gfx, drawLine(::testing::_)).Times(1); // Expect that drawLine is called once
+      |                               ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:67:21: error: cannot initialize a parameter of type 'Gfx *' with an rvalue of type 'MockGfx *'
+   67 |     annotLine->draw(&gfx, false); // Call the draw function
+      |                     ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1134:20: note: passing argument to parameter 'gfx' here
+ 1134 |     void draw(Gfx *gfx, bool printing) override;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:89:55: error: no member named 'Arrow' in 'AnnotLineEndingStyle'
+   89 |     annotLine->setStartEndStyle(AnnotLineEndingStyle::Arrow, AnnotLineEndingStyle::None);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:89:84: error: no member named 'None' in 'AnnotLineEndingStyle'
+   89 |     annotLine->setStartEndStyle(AnnotLineEndingStyle::Arrow, AnnotLineEndingStyle::None);
+      |                                                              ~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:92:65: error: no member named 'Arrow' in 'AnnotLineEndingStyle'
+   92 |     EXPECT_EQ(annotLine->getStartStyle(), AnnotLineEndingStyle::Arrow);
+      |                                           ~~~~~~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:93:41: error: no member named 'None' in 'AnnotLineEndingStyle'; did you mean 'clone'?
+   93 |     EXPECT_EQ(annotLine->getEndStyle(), AnnotLineEndingStyle::None);
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                         clone
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/usr/include/x86_64-linux-gnu/bits/sched.h:82:12: note: 'clone' declared here
+   82 | extern int clone (int (*__fn) (void *__arg), void *__child_stack,
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:99:26: error: no matching constructor for initialization of 'Dict'
+   99 |     Dict* mockDict = new Dict();
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:100:16: error: no member named 'setMeasure' in 'AnnotLine'
+  100 |     annotLine->setMeasure(mockDict);  // Assuming there's a setter for measure
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:14:7: warning: 'AnnotLineTest_837' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   14 | class AnnotLineTest_837 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'AnnotLine'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:21:26: note: in instantiation of function template specialization 'std::make_unique<AnnotLine, MockPDFDoc *, std::nullptr_t>' requested here
+   21 |         annotLine = std::make_unique<AnnotLine>(doc.get(), nullptr);  // Construct with necessary dependencies
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1130:5: note: candidate constructor not viable: no known conversion from 'MockPDFDoc *' to 'PDFDoc *' for 1st argument
+ 1130 |     AnnotLine(PDFDoc *docA, PDFRectangle *rect);
+      |     ^         ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1115:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+ 1115 | class POPPLER_PRIVATE_EXPORT AnnotLine : public AnnotMarkup
+      |                              ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1131:5: note: candidate constructor not viable: requires 3 arguments, but 2 were provided
+ 1131 |     AnnotLine(PDFDoc *docA, Object &&dictObject, const Object *obj);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: comparison between pointer and integer ('AnnotLineEndingStyle' and 'void (*)(ErrorCategory, long long, const char *, ...)')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<AnnotLineEndingStyle, void (ErrorCategory, long long, const char *, ...)>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:92:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<AnnotLineEndingStyle, void (ErrorCategory, long long, const char *, ...), nullptr>' requested here
+   92 |     EXPECT_EQ(annotLine->getStartStyle(), AnnotLineEndingStyle::Arrow);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:1394:11: error: comparison between pointer and integer ('AnnotLineEndingStyle' and 'int (*)(int (*)(void *), void *, int, void *, ...) noexcept')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<AnnotLineEndingStyle, int (int (*)(void *), void *, int, void *, ...) noexcept>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp:93:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<AnnotLineEndingStyle, int (int (*)(void *), void *, int, void *, ...) noexcept, nullptr>' requested here
+   93 |     EXPECT_EQ(annotLine->getEndStyle(), AnnotLineEndingStyle::None);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+1 warning and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_837.dir/build.make:79: generated_build/CMakeFiles/test_837.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_837.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:70695: generated_build/CMakeFiles/test_837.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:70702: generated_build/CMakeFiles/test_837.dir/rule] Error 2
+gmake: *** [Makefile:25191: test_837] Error 2

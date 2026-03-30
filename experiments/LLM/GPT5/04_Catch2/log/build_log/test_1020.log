@@ -1,0 +1,115 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1020.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp:45:12: error: no matching constructor for initialization of 'NameAndLocation'
+   45 |     return NameAndLocation{name, SourceLineInfo{__FILE__, static_cast<std::size_t>(__LINE__)}};
+      |            ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:29:9: note: candidate constructor not viable: 1st argument ('const std::string' (aka 'const basic_string<char>')) would lose const qualifier
+   29 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |         ^                ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp:57:42: error: allocating an object of abstract class type 'ITracker'
+   57 |     return std::unique_ptr<ITracker>(new ITracker(makeNameAndLocation(name), parent));
+      |                                          ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:130:22: note: unimplemented pure virtual method 'isComplete' in 'ITracker'
+  130 |         virtual bool isComplete() const = 0;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:146:22: note: unimplemented pure virtual method 'close' in 'ITracker'
+  146 |         virtual void close() = 0; // Successfully complete
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:147:22: note: unimplemented pure virtual method 'fail' in 'ITracker'
+  147 |         virtual void fail() = 0;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp:67:48: error: allocating an object of abstract class type 'ITracker'
+   67 |     auto child = std::unique_ptr<ITracker>(new ITracker(makeNameAndLocation(childName), &parent));
+      |                                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp:173:36: error: no matching constructor for initialization of 'NameAndLocationRef'
+  173 |     auto* childA = root->findChild(NameAndLocationRef{makeNameAndLocation("childA")});
+      |                                    ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'NameAndLocation' to 'const NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'NameAndLocation' to 'NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:55:19: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   55 |         constexpr NameAndLocationRef( StringRef name_ CATCH_ATTR_LIFETIMEBOUND,
+      |                   ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                       SourceLineInfo location_ ):
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp:175:36: error: no matching constructor for initialization of 'NameAndLocationRef'
+  175 |     auto* childB = root->findChild(NameAndLocationRef{makeNameAndLocation("childB")});
+      |                                    ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'NameAndLocation' to 'const NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'NameAndLocation' to 'NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:55:19: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   55 |         constexpr NameAndLocationRef( StringRef name_ CATCH_ATTR_LIFETIMEBOUND,
+      |                   ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                       SourceLineInfo location_ ):
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp:193:31: error: no matching constructor for initialization of 'NameAndLocationRef'
+  193 |     EXPECT_NE(root->findChild(NameAndLocationRef{makeNameAndLocation("childA")}), nullptr);
+      |                               ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1887:57: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'NameAndLocation' to 'const NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'NameAndLocation' to 'NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:55:19: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   55 |         constexpr NameAndLocationRef( StringRef name_ CATCH_ATTR_LIFETIMEBOUND,
+      |                   ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                       SourceLineInfo location_ ):
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp:195:31: error: no matching constructor for initialization of 'NameAndLocationRef'
+  195 |     EXPECT_NE(root->findChild(NameAndLocationRef{makeNameAndLocation("childB")}), nullptr);
+      |                               ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1887:57: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'NameAndLocation' to 'const NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'NameAndLocation' to 'NameAndLocationRef' for 1st argument
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:55:19: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   55 |         constexpr NameAndLocationRef( StringRef name_ CATCH_ATTR_LIFETIMEBOUND,
+      |                   ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                       SourceLineInfo location_ ):
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1020.dir/build.make:79: generated_build/CMakeFiles/test_1020.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1020.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:8423: generated_build/CMakeFiles/test_1020.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:8430: generated_build/CMakeFiles/test_1020.dir/rule] Error 2
+gmake: *** [Makefile:2139: test_1020] Error 2

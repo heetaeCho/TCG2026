@@ -1,0 +1,78 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_50.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:53:11: error: variable has incomplete type 'Value'
+   53 |     Value value;  // Assuming Value is default constructible
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:60:14: error: no matching constructor for initialization of 'Xmpdatum'
+   60 |     Xmpdatum xmpDatum;
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:49:3: note: candidate constructor not viable: requires single argument 'rhs', but no arguments were provided
+   49 |   Xmpdatum(const Xmpdatum& rhs);
+      |   ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:47:12: note: candidate constructor not viable: requires at least argument 'key', but no arguments were provided
+   47 |   explicit Xmpdatum(const XmpKey& key, const Value* pValue = nullptr);
+      |            ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:69:11: error: variable has incomplete type 'Value'
+   69 |     Value value;
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:77:11: error: variable has incomplete type 'Value'
+   77 |     Value value;
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:81:25: error: no matching member function for call to 'findKey'
+   81 |     auto iter = xmpData.findKey(key);
+      |                 ~~~~~~~~^~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:195:12: note: candidate function not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'const XmpKey' for 1st argument
+  195 |   iterator findKey(const XmpKey& key);
+      |            ^       ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:208:32: note: candidate function not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'const XmpKey' for 1st argument
+  208 |   [[nodiscard]] const_iterator findKey(const XmpKey& key) const;
+      |                                ^       ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:88:13: error: no matching member function for call to 'add'
+   88 |     xmpData.add("keyB", nullptr);
+      |     ~~~~~~~~^~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:162:7: note: candidate function not viable: no known conversion from 'const char[5]' to 'const XmpKey' for 1st argument
+  162 |   int add(const XmpKey& key, const Value* value);
+      |       ^   ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:167:7: note: candidate function not viable: requires single argument 'xmpDatum', but 2 arguments were provided
+  167 |   int add(const Xmpdatum& xmpDatum);
+      |       ^   ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:89:13: error: no matching member function for call to 'add'
+   89 |     xmpData.add("keyA", nullptr);
+      |     ~~~~~~~~^~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:162:7: note: candidate function not viable: no known conversion from 'const char[5]' to 'const XmpKey' for 1st argument
+  162 |   int add(const XmpKey& key, const Value* value);
+      |       ^   ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/xmp_exiv2.hpp:167:7: note: candidate function not viable: requires single argument 'xmpDatum', but 2 arguments were provided
+  167 |   int add(const Xmpdatum& xmpDatum);
+      |       ^   ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp:92:21: error: no member named 'first' in 'Exiv2::Xmpdatum'
+   92 |     EXPECT_EQ(iter->first, "keyA");  // First element after sort should be "keyA"
+      |               ~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_50.dir/build.make:79: generated_build/CMakeFiles/test_50.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_50.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:82137: generated_build/CMakeFiles/test_50.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:82144: generated_build/CMakeFiles/test_50.dir/rule] Error 2
+gmake: *** [Makefile:29000: test_50] Error 2

@@ -1,0 +1,53 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1348.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1348.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1348.cpp:10:5: error: static assertion failed: MOCK_METHOD must be called with 3 or 4 arguments. _Ret, _MethodName, _Args and optionally _Spec. _Args and _Spec must be enclosed in parentheses. If _Ret is a type with unprotected commas, it must also be enclosed in parentheses.
+   10 |     MOCK_METHOD(std::vector<std::pair<int, int>>, getPrintRange, (), ());
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 2 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/local/include/gmock/gmock-function-mocker.h:142:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_5'
+  142 |   GMOCK_INTERNAL_WRONG_ARITY(__VA_ARGS__)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:152:7: note: expanded from macro 'GMOCK_INTERNAL_WRONG_ARITY'
+  152 |       false,                                                                 \
+      |       ^~~~~
+/usr/local/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1348.cpp:17:16: error: no matching conversion for functional-style cast from 'MockDict' to 'ViewerPreferences'
+   17 |         return ViewerPreferences(mockDict);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/ViewerPreferences.h:26:30: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'MockDict' to 'const ViewerPreferences' for 1st argument
+   26 | class POPPLER_PRIVATE_EXPORT ViewerPreferences
+      |                              ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/ViewerPreferences.h:54:14: note: candidate constructor not viable: no known conversion from 'MockDict' to 'const Dict' for 1st argument
+   54 |     explicit ViewerPreferences(const Dict &prefDict);
+      |              ^                 ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1348.cpp:77:5: error: no member named 'gmock_getPrintRange' in 'MockDict'
+   77 |     EXPECT_CALL(mockDict, getPrintRange()).WillOnce(testing::Return(expectedPageRange));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:25:1: note: expanded from here
+   25 | gmock_getPrintRange
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1348.cpp:13:7: warning: 'ViewerPreferencesTest_1348' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class ViewerPreferencesTest_1348 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1348.dir/build.make:79: generated_build/CMakeFiles/test_1348.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1348.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:83015: generated_build/CMakeFiles/test_1348.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:83022: generated_build/CMakeFiles/test_1348.dir/rule] Error 2
+gmake: *** [Makefile:30196: test_1348] Error 2

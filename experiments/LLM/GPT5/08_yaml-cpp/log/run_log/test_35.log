@@ -1,0 +1,41 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from WriteStreamableTest_35
+[ RUN      ] WriteStreamableTest_35.ReturnsSelfReferenceForChaining_35
+[       OK ] WriteStreamableTest_35.ReturnsSelfReferenceForChaining_35 (0 ms)
+[ RUN      ] WriteStreamableTest_35.WritesQuietNaNAsDotNan_Float_35
+[       OK ] WriteStreamableTest_35.WritesQuietNaNAsDotNan_Float_35 (0 ms)
+[ RUN      ] WriteStreamableTest_35.WritesPositiveInfinityAsDotInf_Double_35
+[       OK ] WriteStreamableTest_35.WritesPositiveInfinityAsDotInf_Double_35 (0 ms)
+[ RUN      ] WriteStreamableTest_35.WritesNegativeInfinityAsMinusDotInf_LongDouble_35
+[       OK ] WriteStreamableTest_35.WritesNegativeInfinityAsMinusDotInf_LongDouble_35 (0 ms)
+[ RUN      ] WriteStreamableTest_35.AppendsMultipleSpecialValuesInOrder_35
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_35.cpp:85: Failure
+Expected equality of these values:
+  Out()
+    Which is: ".inf\n---\n.nan\n---\n-.inf"
+  expected
+    Which is: ".inf.nan-.inf"
+With diff:
+@@ -1,5 +1,1 @@
+-.inf
+----
+-.nan
+----
+--.inf
++.inf.nan-.inf
+
+
+[  FAILED  ] WriteStreamableTest_35.AppendsMultipleSpecialValuesInOrder_35 (0 ms)
+[ RUN      ] WriteStreamableTest_35.IfEmitterNotGood_DoesNotModifyOutput_35
+[       OK ] WriteStreamableTest_35.IfEmitterNotGood_DoesNotModifyOutput_35 (0 ms)
+[----------] 6 tests from WriteStreamableTest_35 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 5 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] WriteStreamableTest_35.AppendsMultipleSpecialValuesInOrder_35
+
+ 1 FAILED TEST

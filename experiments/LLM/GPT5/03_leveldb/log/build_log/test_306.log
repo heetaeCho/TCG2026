@@ -1,0 +1,68 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[ 80%] Building CXX object generated_build/CMakeFiles/test_306.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:19:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/db_impl.h:174:3: error: use of undeclared identifier 'port'
+  174 |   port::Mutex mutex_;
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/db_impl.h:176:3: error: use of undeclared identifier 'port'
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:33:7: error: redefinition of 'Slice'
+   33 | class Slice {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/slice.h:27:22: note: previous definition is here
+   27 | class LEVELDB_EXPORT Slice {
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:61:7: error: redefinition of 'Status'
+   61 | class Status {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/status.h:24:22: note: previous definition is here
+   24 | class LEVELDB_EXPORT Status {
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:91:7: error: redefinition of 'Snapshot'
+   91 | class Snapshot { public: virtual ~Snapshot() = default; };
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/db.h:29:22: note: previous definition is here
+   29 | class LEVELDB_EXPORT Snapshot {
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:97:7: error: redefinition of 'SnapshotImpl'
+   97 | class SnapshotImpl : public Snapshot {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/snapshot.h:17:7: note: previous definition is here
+   17 | class SnapshotImpl : public Snapshot {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:115:8: error: redefinition of 'ReadOptions'
+  115 | struct ReadOptions {
+      |        ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/options.h:151:23: note: previous definition is here
+  151 | struct LEVELDB_EXPORT ReadOptions {
+      |                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:129:7: error: redefinition of 'LookupKey'
+  129 | class LookupKey {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/dbformat.h:184:7: note: previous definition is here
+  184 | class LookupKey {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:367:14: error: no matching constructor for initialization of 'DBImpl'
+  367 |     db = new DBImpl(opts, "testdb");
+      |              ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/db_impl.h:31:3: note: candidate constructor not viable: no known conversion from 'Options' to 'const Options' for 1st argument
+   31 |   DBImpl(const Options& options, const std::string& dbname);
+      |   ^      ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/db_impl.h:33:3: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   33 |   DBImpl(const DBImpl&) = delete;
+      |   ^      ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp:389:19: error: cannot assign to non-static data member 'versions_' with const-qualified type 'VersionSet *const'
+  389 |     db->versions_ = &fake_versions;
+      |     ~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: non-static data member 'versions_' declared const here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |   ~~~~~~~~~~~~~~~~~~^~~~~~~~~
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_306.dir/build.make:76: generated_build/CMakeFiles/test_306.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_306.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:10911: generated_build/CMakeFiles/test_306.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:10918: generated_build/CMakeFiles/test_306.dir/rule] Error 2
+gmake: *** [Makefile:4547: test_306] Error 2

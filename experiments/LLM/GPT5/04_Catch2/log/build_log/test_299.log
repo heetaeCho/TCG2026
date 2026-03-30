@@ -1,0 +1,26 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_299.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_299.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_299.cpp:29:20: error: no matching constructor for initialization of 'LazyExpression'
+   29 |     LazyExpression lazy{}; // assume default constructible in the provided interface
+      |                    ^   ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:25:19: note: candidate constructor not viable: requires single argument 'isNegated', but no arguments were provided
+   25 |         constexpr LazyExpression( bool isNegated ):
+      |                   ^               ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:28:19: note: candidate constructor not viable: requires single argument 'other', but no arguments were provided
+   28 |         constexpr LazyExpression(LazyExpression const& other) = default;
+      |                   ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_299.cpp:35:24: error: call to deleted constructor of 'SourceLineInfo'
+   35 |     AssertionInfo info{}; // assume default constructible in the provided interface
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: in implicit initialization of field 'lineInfo' with omitted initializer
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_299.dir/build.make:79: generated_build/CMakeFiles/test_299.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_299.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:37991: generated_build/CMakeFiles/test_299.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:37998: generated_build/CMakeFiles/test_299.dir/rule] Error 2
+gmake: *** [Makefile:13787: test_299] Error 2

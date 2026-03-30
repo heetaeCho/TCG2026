@@ -1,0 +1,25 @@
+[ 66%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_308.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_308.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_308.cpp:48:17: error: constexpr variable 'v1' must be initialized by a constant expression
+   48 |   constexpr u64 v1 = umul128_upper64(u64{0}, u64{123});
+      |                 ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_308.cpp:48:22: note: non-constexpr function 'umul128_upper64' cannot be used in a constant expression
+   48 |   constexpr u64 v1 = umul128_upper64(u64{0}, u64{123});
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:778:17: note: declared here
+  778 |                 umul128_upper64(stdr::uint_least64_t x, stdr::uint_least64_t y) noexcept {
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_308.cpp:49:17: error: constexpr variable 'v2' must be initialized by a constant expression
+   49 |   constexpr u64 v2 = umul128_upper64(u64{1}, u64{std::numeric_limits<u64>::max()});
+      |                 ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_308.cpp:49:22: note: non-constexpr function 'umul128_upper64' cannot be used in a constant expression
+   49 |   constexpr u64 v2 = umul128_upper64(u64{1}, u64{std::numeric_limits<u64>::max()});
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:778:17: note: declared here
+  778 |                 umul128_upper64(stdr::uint_least64_t x, stdr::uint_least64_t y) noexcept {
+      |                 ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_308.dir/build.make:79: generated_build/CMakeFiles/test_308.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_308.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21739: generated_build/CMakeFiles/test_308.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21746: generated_build/CMakeFiles/test_308.dir/rule] Error 2
+gmake: *** [Makefile:8110: test_308] Error 2

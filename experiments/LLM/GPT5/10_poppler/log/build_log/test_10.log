@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_10.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_10.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_10.cpp:45:7: error: redefinition of 'gmalloc'
+   45 | void* gmalloc(size_t size, bool checkoverflow) {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/gmem.h:38:14: note: previous definition is here
+   38 | inline void *gmalloc(size_t size, bool checkoverflow = false)
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_10.cpp:52:7: error: cannot use 'throw' with exceptions disabled
+   52 |       throw std::bad_alloc{};
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_10.cpp:54:5: error: cannot use 'throw' with exceptions disabled
+   54 |     throw std::runtime_error("gmalloc test exception");
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_10.cpp:109:3: error: cannot use 'try' with exceptions disabled
+  109 |   EXPECT_THROW({ (void)gmalloc_checkoverflow(static_cast<size_t>(16)); }, std::bad_alloc);
+      |   ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_10.cpp:59:7: warning: 'GmallocCheckOverflowTest_10' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   59 | class GmallocCheckOverflowTest_10 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_10.dir/build.make:79: generated_build/CMakeFiles/test_10.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_10.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14471: generated_build/CMakeFiles/test_10.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14478: generated_build/CMakeFiles/test_10.dir/rule] Error 2
+gmake: *** [Makefile:2350: test_10] Error 2

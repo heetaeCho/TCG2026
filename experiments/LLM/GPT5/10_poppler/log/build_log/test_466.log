@@ -1,0 +1,38 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_466.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_466.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_466.cpp:24:12: error: no matching constructor for initialization of 'GfxIndexedColorSpace'
+   24 |     return GfxIndexedColorSpace(static_cast<GfxColorSpace*>(nullptr), indexHigh);
+      |            ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:644:5: note: candidate constructor not viable: no known conversion from 'GfxColorSpace *' to 'std::unique_ptr<GfxColorSpace>' for 1st argument
+  644 |     GfxIndexedColorSpace(std::unique_ptr<GfxColorSpace> &&baseA, int indexHighA);
+      |     ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:641:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  641 | class GfxIndexedColorSpace : public GfxColorSpace
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_466.cpp:29:12: error: no matching constructor for initialization of 'GfxIndexedColorSpace'
+   29 |     return GfxIndexedColorSpace(std::move(baseA), indexHigh);
+      |            ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:644:5: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<int &>::type' (aka 'int') to 'std::unique_ptr<GfxColorSpace>' for 1st argument
+  644 |     GfxIndexedColorSpace(std::unique_ptr<GfxColorSpace> &&baseA, int indexHighA);
+      |     ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:641:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  641 | class GfxIndexedColorSpace : public GfxColorSpace
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_466.cpp:31:33: warning: zero as null pointer constant [-Wzero-as-null-pointer-constant]
+   31 |     return GfxIndexedColorSpace(0, indexHigh);
+      |                                 ^
+      |                                 nullptr
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_466.cpp:40:12: error: call to implicitly-deleted copy constructor of 'GfxIndexedColorSpace'
+   40 |     return *static_cast<GfxIndexedColorSpace*>(nullptr);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:641:30: note: copy constructor of 'GfxIndexedColorSpace' is implicitly deleted because base class 'GfxColorSpace' has a deleted copy constructor
+  641 | class GfxIndexedColorSpace : public GfxColorSpace
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:260:5: note: 'GfxColorSpace' has been explicitly marked deleted here
+  260 |     GfxColorSpace(const GfxColorSpace &) = delete;
+      |     ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_466.dir/build.make:79: generated_build/CMakeFiles/test_466.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_466.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29095: generated_build/CMakeFiles/test_466.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29102: generated_build/CMakeFiles/test_466.dir/rule] Error 2
+gmake: *** [Makefile:8291: test_466] Error 2

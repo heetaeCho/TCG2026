@@ -1,0 +1,62 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1211.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp:21:35: error: field of type 'Exiv2::PreviewImage' has private constructor
+   21 |         : properties_(), data_(), previewImage_(properties_, std::move(data_)) {}
+      |                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/preview.hpp:116:3: note: declared private here
+  116 |   PreviewImage(PreviewProperties properties, DataBuf&& data);
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp:52:32: error: no member named 'pData' in 'Exiv2::DataBuf'; did you mean 'data'?
+   52 |     EXPECT_EQ(memcmp(copy_data.pData(), previewImage_.pData(), previewImage_.size()), 0);
+      |                                ^~~~~
+      |                                data
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:186:23: note: 'data' declared here
+  186 |   [[nodiscard]] byte* data(size_t offset = 0);
+      |                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp:60:25: error: calling a private constructor of class 'Exiv2::PreviewImage'
+   60 |     Exiv2::PreviewImage empty_preview(empty_properties, std::move(empty_data));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/preview.hpp:116:3: note: declared private here
+  116 |   PreviewImage(PreviewProperties properties, DataBuf&& data);
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp:73:9: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   73 |         previewImage_.extension();
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp:85:25: error: calling a private constructor of class 'Exiv2::PreviewImage'
+   85 |     Exiv2::PreviewImage zero_size_preview(properties_, std::move(zero_data));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/preview.hpp:116:3: note: declared private here
+  116 |   PreviewImage(PreviewProperties properties, DataBuf&& data);
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp:92:5: error: unknown type name 'PreviewId'; did you mean 'Exiv2::PreviewId'?
+   92 |     PreviewId expected_id = PreviewId(12345);  // Assuming PreviewId can be directly assigned or constructed
+      |     ^~~~~~~~~
+      |     Exiv2::PreviewId
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/preview.hpp:24:7: note: 'Exiv2::PreviewId' declared here
+   24 | using PreviewId = int;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp:92:29: error: use of undeclared identifier 'PreviewId'; did you mean 'Exiv2::PreviewId'?
+   92 |     PreviewId expected_id = PreviewId(12345);  // Assuming PreviewId can be directly assigned or constructed
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/preview.hpp:24:7: note: 'Exiv2::PreviewId' declared here
+   24 | using PreviewId = int;
+      |       ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1211.dir/build.make:79: generated_build/CMakeFiles/test_1211.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1211.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11111: generated_build/CMakeFiles/test_1211.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11118: generated_build/CMakeFiles/test_1211.dir/rule] Error 2
+gmake: *** [Makefile:1843: test_1211] Error 2

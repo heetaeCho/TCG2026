@@ -1,0 +1,44 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1136.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1136.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1136.cpp:50:5: error: cannot use 'try' with exceptions disabled
+   50 |     EXPECT_THROW(fileSpec.getDescription(), std::runtime_error);  // Replace with actual exception type if known
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1136.cpp:59:5: error: no member named 'gmock_getFileNameForPlatform' in 'FileSpec'
+   59 |     EXPECT_CALL(fileSpec, getFileNameForPlatform())
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:29:1: note: expanded from here
+   29 | gmock_getFileNameForPlatform
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1136.cpp:12:7: warning: 'FileSpecTest_1136' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class FileSpecTest_1136 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1136.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: comparison of distinct pointer types ('GooString *' and 'const char *')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<GooString *, char[17]>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1136.cpp:62:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<GooString *, char[17], nullptr>' requested here
+   62 |     EXPECT_EQ(fileSpec.getFileNameForPlatform(), "PlatformFileName");
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1136.dir/build.make:79: generated_build/CMakeFiles/test_1136.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1136.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:36743: generated_build/CMakeFiles/test_1136.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:36750: generated_build/CMakeFiles/test_1136.dir/rule] Error 2
+gmake: *** [Makefile:11398: test_1136] Error 2

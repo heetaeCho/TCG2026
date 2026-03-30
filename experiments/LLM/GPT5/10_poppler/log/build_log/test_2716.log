@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2716.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2716.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2716.cpp:2:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: call to constructor of 'Dict' is ambiguous
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2716.cpp:24:17: note: in instantiation of function template specialization 'std::make_unique<Dict, std::nullptr_t>' requested here
+   24 |     return std::make_unique<Dict>(nullptr);
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2716.dir/build.make:79: generated_build/CMakeFiles/test_2716.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2716.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:101383: generated_build/CMakeFiles/test_2716.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:101390: generated_build/CMakeFiles/test_2716.dir/rule] Error 2
+gmake: *** [Makefile:37658: test_2716] Error 2

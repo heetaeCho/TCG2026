@@ -1,0 +1,23 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_307.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_307.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_307.cpp:42:16: error: constexpr variable 'kR1' must be initialized by a constant expression
+   42 | constexpr auto kR1 = umul128(3, 5);
+      |                ^     ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_307.cpp:42:22: note: non-constexpr function 'umul128' cannot be used in a constant expression
+   42 | constexpr auto kR1 = umul128(3, 5);
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:732:17: note: declared here
+  732 |                 umul128(stdr::uint_least64_t x, stdr::uint_least64_t y) noexcept {
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_307.cpp:43:15: error: static assertion expression is not an integral constant expression
+   43 | static_assert(kR1.high_ == 0 && kR1.low_ == 15, "umul128 constexpr check failed");
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_307.cpp:43:15: note: initializer of 'kR1' is not a constant expression
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_307.cpp:42:16: note: declared here
+   42 | constexpr auto kR1 = umul128(3, 5);
+      |                ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_307.dir/build.make:79: generated_build/CMakeFiles/test_307.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_307.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:13291: generated_build/CMakeFiles/test_307.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:13298: generated_build/CMakeFiles/test_307.dir/rule] Error 2
+gmake: *** [Makefile:4678: test_307] Error 2

@@ -1,0 +1,38 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1487.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp:44:80: error: no member named 'kind1' in 'StreamKind'
+   44 |     EXPECT_CALL(*mockStream, getKind()).WillOnce(::testing::Return(StreamKind::kind1)); // Modify as per actual enum
+      |                                                                    ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp:50:21: error: no member named 'kind1' in 'StreamKind'; did you mean 'kind'?
+   50 |     EXPECT_EQ(kind, StreamKind::kind1);  // Modify as per expected value
+      |                     ^~~~~~~~~~~~~~~~~
+      |                     kind
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp:47:16: note: 'kind' declared here
+   47 |     StreamKind kind = baseStreamStream->getKind();
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp:30:7: warning: 'BaseStreamStreamTest_1487' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   30 | class BaseStreamStreamTest_1487 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp:7:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class MockStream : public Stream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp:36:27: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+   36 |         mockStream = std::make_unique<MockStream>();
+      |                           ^
+2 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1487.dir/build.make:79: generated_build/CMakeFiles/test_1487.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1487.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:72967: generated_build/CMakeFiles/test_1487.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:72974: generated_build/CMakeFiles/test_1487.dir/rule] Error 2
+gmake: *** [Makefile:26114: test_1487] Error 2

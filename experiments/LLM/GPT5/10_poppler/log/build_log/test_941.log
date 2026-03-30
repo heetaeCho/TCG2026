@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_941.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_941.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_941.cpp:27:22: error: call to constructor of 'Dict' is ambiguous
+   27 |     auto* dict = new Dict(/*xref=*/nullptr);
+      |                      ^             ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_941.cpp:33:12: error: call to deleted constructor of 'Object'
+   33 |     Object arrObj(arr);
+      |            ^      ~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_941.cpp:37:12: error: call to deleted constructor of 'Object'
+   37 |     return arrObj;
+      |            ^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_941.dir/build.make:79: generated_build/CMakeFiles/test_941.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_941.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:53127: generated_build/CMakeFiles/test_941.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:53134: generated_build/CMakeFiles/test_941.dir/rule] Error 2
+gmake: *** [Makefile:18054: test_941] Error 2

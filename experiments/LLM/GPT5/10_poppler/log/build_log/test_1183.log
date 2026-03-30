@@ -1,0 +1,62 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1183.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:33:22: error: call to implicitly-deleted default constructor of 'MockTextFontInfo'
+   33 |     MockTextFontInfo mockFontInfo;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:6:26: note: default constructor of 'MockTextFontInfo' is implicitly deleted because base class 'TextFontInfo' has no default constructor
+    6 | class MockTextFontInfo : public TextFontInfo {
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:48:22: error: call to implicitly-deleted default constructor of 'MockTextFontInfo'
+   48 |     MockTextFontInfo mockFontInfo;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:6:26: note: default constructor of 'MockTextFontInfo' is implicitly deleted because base class 'TextFontInfo' has no default constructor
+    6 | class MockTextFontInfo : public TextFontInfo {
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:70:15: error: 'setInitialBounds' is a private member of 'TextWord'
+   70 |     textWord->setInitialBounds(nullptr, 0.0, 0.0);  // Initialize with dummy data
+      |               ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/TextOutputDev.h:211:10: note: declared private here
+  211 |     void setInitialBounds(TextFontInfo *fontA, double x, double y);
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:71:15: error: 'invisible' is a private member of 'TextWord'
+   71 |     textWord->invisible = true;  // Simulate the TextWord being invisible
+      |               ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/TextOutputDev.h:238:10: note: declared private here
+  238 |     bool invisible; // whether we are invisible (glyphless)
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:77:22: error: call to implicitly-deleted default constructor of 'MockTextFontInfo'
+   77 |     MockTextFontInfo mockFontInfo;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:6:26: note: default constructor of 'MockTextFontInfo' is implicitly deleted because base class 'TextFontInfo' has no default constructor
+    6 | class MockTextFontInfo : public TextFontInfo {
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:110:26: error: variable has incomplete type 'TextSelectionVisitor'
+  110 |     TextSelectionVisitor mockVisitor;
+      |                          ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/TextOutputDev.h:65:7: note: forward declaration of 'TextSelectionVisitor'
+   65 | class TextSelectionVisitor;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:16:7: warning: 'TextWordTest_1183' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   16 | class TextWordTest_1183 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:7: error: cannot cast 'const GooString' to its private base class 'const basic_string<char, char_traits<char>, allocator<char>>'
+ 1394 |   if (lhs == rhs) {
+      |       ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<GooString, GooString>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp:43:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<GooString, GooString, nullptr>' requested here
+   43 |     EXPECT_EQ(*fontName, expectedFontName);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:56:19: note: declared private here
+   56 | class GooString : private std::string
+      |                   ^~~~~~~~~~~~~~~~~~~
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1183.dir/build.make:79: generated_build/CMakeFiles/test_1183.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1183.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:60903: generated_build/CMakeFiles/test_1183.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:60910: generated_build/CMakeFiles/test_1183.dir/rule] Error 2
+gmake: *** [Makefile:21213: test_1183] Error 2

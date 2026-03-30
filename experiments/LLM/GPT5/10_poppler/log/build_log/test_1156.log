@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1156.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1156.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1156.cpp:24:62: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+   24 |         return GfxFont::makeFont(xref, "TestTag", Ref(1, 0), fontDict);
+      |                                                              ^~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1156.cpp:63:67: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+   63 |         auto font = GfxFont::makeFont(xref, "TestTag", Ref(1, 0), fontDict);
+      |                                                                   ^~~~~~~~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1156.cpp:62:5: error: cannot use 'try' with exceptions disabled
+   62 |     EXPECT_THROW({
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1156.cpp:8:7: warning: 'GfxFontTest_1156' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    8 | class GfxFontTest_1156 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1156.dir/build.make:79: generated_build/CMakeFiles/test_1156.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1156.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:80839: generated_build/CMakeFiles/test_1156.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:80846: generated_build/CMakeFiles/test_1156.dir/rule] Error 2
+gmake: *** [Makefile:29312: test_1156] Error 2

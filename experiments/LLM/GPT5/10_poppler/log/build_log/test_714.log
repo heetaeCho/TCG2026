@@ -1,0 +1,97 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_714.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:20:22: error: redeclaration of 'globalParams' with a different type: 'GlobalParams *' vs 'std::unique_ptr<GlobalParams>'
+   20 | extern GlobalParams *globalParams;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GlobalParams.h:72:61: note: previous declaration is here
+   72 | extern std::unique_ptr<GlobalParams> POPPLER_PRIVATE_EXPORT globalParams;
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:116:20: error: no viable overloaded '='
+  116 |       globalParams = new GlobalParams(nullptr);
+      |       ~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:414:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'unique_ptr<GlobalParams>' for 1st argument
+  414 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:430:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'GlobalParams *'
+  430 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:440:7: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  440 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:523:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'const unique_ptr<GlobalParams>' for 1st argument
+  523 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:121:5: error: cannot delete expression of type 'std::unique_ptr<GlobalParams>'
+  121 |     delete globalParams;
+      |     ^      ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:111:7: warning: 'PageGetLastModifiedTest_714' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+  111 | class PageGetLastModifiedTest_714 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'GooString'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:99:18: note: in instantiation of function template specialization 'std::make_unique<GooString, const char8_t *>' requested here
+   99 |   auto gs = std::make_unique<GooString>(path.u8string().c_str());
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:65:5: note: candidate constructor not viable: no known conversion from 'const char8_t *' to 'GooString' for 1st argument
+   65 |     GooString(GooString &&other) = default;
+      |     ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:68:5: note: candidate constructor not viable: no known conversion from 'const char8_t *' to 'const GooString' for 1st argument
+   68 |     GooString(const GooString &other) = delete;
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:72:14: note: candidate constructor not viable: no known conversion from 'const char8_t *' to 'const char *' for 1st argument
+   72 |     explicit GooString(const char *sA) : std::string(sA ? sA : "") { }
+      |              ^         ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:78:14: note: candidate constructor not viable: no known conversion from 'const char8_t *' to 'std::nullptr_t' for 1st argument
+   78 |     explicit GooString(std::nullptr_t) = delete;
+      |              ^         ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:81:14: note: candidate constructor not viable: no known conversion from 'const char8_t *' to 'const std::string' (aka 'const basic_string<char>') for 1st argument
+   81 |     explicit GooString(const std::string &str) : std::string(str) { }
+      |              ^         ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:82:14: note: candidate constructor not viable: no known conversion from 'const char8_t *' to 'std::string' (aka 'basic_string<char>') for 1st argument
+   82 |     explicit GooString(std::string &&str) : std::string(std::move(str)) { }
+      |              ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:90:14: note: candidate constructor not viable: no known conversion from 'const char8_t *' to 'std::string_view' (aka 'basic_string_view<char>') for 1st argument
+   90 |     explicit GooString(std::string_view str) : std::string(str) { }
+      |              ^         ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:60:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   60 |     GooString() = default;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:89:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   89 |     GooString(const char *sA, size_t lengthA) : std::string(sA ? sA : "", sA ? lengthA : 0) { }
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:93:5: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+   93 |     GooString(const GooString *str, int idx, size_t lengthA) : std::string(*str, idx, lengthA) { }
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:94:5: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+   94 |     GooString(const std::string &str, int idx, size_t lengthA) : std::string(str, idx, lengthA) { }
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp:106:15: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, GooString *, std::nullptr_t, std::nullptr_t>' requested here
+  106 |   return std::make_unique<PDFDoc>(gs.release(), nullptr, nullptr);
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 3 were provided
+  388 |     PDFDoc();
+      |     ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_714.dir/build.make:79: generated_build/CMakeFiles/test_714.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_714.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:53831: generated_build/CMakeFiles/test_714.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:53838: generated_build/CMakeFiles/test_714.dir/rule] Error 2
+gmake: *** [Makefile:18340: test_714] Error 2

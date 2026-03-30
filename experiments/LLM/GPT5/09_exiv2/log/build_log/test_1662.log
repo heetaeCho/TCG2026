@@ -1,0 +1,84 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1662.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:47:24: error: return type 'TiffEntryBase' is an abstract class
+   47 |   static TiffEntryBase makeEntry(uint16_t tag, Exiv2::IfdId group) {
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffEntryBase'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffEntryBase'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:495:16: note: unimplemented pure virtual method 'doEncode' in 'TiffEntryBase'
+  495 |   virtual void doEncode(TiffEncoder& encoder, const Exifdatum* datum) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:50:12: error: allocating an object of abstract class type 'TiffEntryBase'
+   50 |     return TiffEntryBase(tag, group, tiffType);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:57:18: error: no viable conversion from '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:57:25)' to 'FindDecoderFct' (aka 'void (TiffDecoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(const TiffEntryBase *)')
+   57 |   FindDecoderFct find = [&](const std::string& /*make*/, uint16_t /*tag*/, Exiv2::IfdId /*group*/) {
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   58 |     ++find_calls;
+      |     ~~~~~~~~~~~~~
+   59 | 
+   60 |     // Return "no decoder". We deliberately do not assume the exact return type;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   61 |     // default construction should represent "empty"/null in typical implementations.
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   62 |     using Ret = std::invoke_result_t<FindDecoderFct, const std::string&, uint16_t, Exiv2::IfdId>;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   63 |     return Ret{};
+      |     ~~~~~~~~~~~~~
+   64 |   };
+      |   ~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:82:18: error: no viable conversion from '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:82:25)' to 'FindDecoderFct' (aka 'void (TiffDecoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(const TiffEntryBase *)')
+   82 |   FindDecoderFct find = [&](const std::string& make, uint16_t tag, Exiv2::IfdId group) {
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   83 |     ++find_calls;
+      |     ~~~~~~~~~~~~~
+   84 |     // make_ is an internal detail, but it's observable here as a parameter.
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   85 |     // In typical flows, make_ may be empty unless set elsewhere; this test only checks consistency.
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |     EXPECT_THAT(tag, Eq(kTag));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   87 |     EXPECT_THAT(group, Eq(kGroup));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   88 |     EXPECT_THAT(make, StrEq(""));  // best-effort expectation for a fresh decoder
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   89 | 
+   90 |     using Ret = std::invoke_result_t<FindDecoderFct, const std::string&, uint16_t, Exiv2::IfdId>;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   91 |     return Ret{};  // "no decoder": we only verify the external interaction
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   92 |   };
+      |   ~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:112:18: error: no viable conversion from '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:112:25)' to 'FindDecoderFct' (aka 'void (TiffDecoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(const TiffEntryBase *)')
+  112 |   FindDecoderFct find = [&](const std::string& make, uint16_t tag, Exiv2::IfdId group) {
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  113 |     calls.push_back(Call{tag, group, make});
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  114 |     using Ret = std::invoke_result_t<FindDecoderFct, const std::string&, uint16_t, Exiv2::IfdId>;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  115 |     return Ret{};
+      |     ~~~~~~~~~~~~~
+  116 |   };
+      |   ~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:136:18: error: no viable conversion from '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp:136:25)' to 'FindDecoderFct' (aka 'void (TiffDecoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(const TiffEntryBase *)')
+  136 |   FindDecoderFct find = [&](const std::string& /*make*/, uint16_t /*tag*/, Exiv2::IfdId /*group*/) {
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  137 |     throw std::runtime_error("findDecoderFct failure");
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  138 |     using Ret = std::invoke_result_t<FindDecoderFct, const std::string&, uint16_t, Exiv2::IfdId>;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  139 |     return Ret{};
+      |     ~~~~~~~~~~~~~
+  140 |   };
+      |   ~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1662.dir/build.make:79: generated_build/CMakeFiles/test_1662.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1662.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:8799: generated_build/CMakeFiles/test_1662.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:8806: generated_build/CMakeFiles/test_1662.dir/rule] Error 2
+gmake: *** [Makefile:959: test_1662] Error 2

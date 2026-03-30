@@ -1,0 +1,50 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_302.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_302.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_302.cpp:43:24: error: call to deleted constructor of 'SourceLineInfo'
+   43 |     AssertionInfo info{};
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: in implicit initialization of field 'lineInfo' with omitted initializer
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_302.cpp:49:25: error: call to deleted constructor of 'AssertionResultData'
+   49 |     AssertionResultData data{}; // Treat as opaque; default-construct and move.
+      |                         ^   ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_302.cpp:61:27: error: no member named 'c_str' in 'Catch::StringRef'
+   61 |     return std::string(sr.c_str(), sr.size());
+      |                        ~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_302.cpp:135:25: error: call to deleted constructor of 'SourceLineInfo'
+  135 |     AssertionInfo other{};
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: in implicit initialization of field 'lineInfo' with omitted initializer
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_302.cpp:145:43: error: no member named 'c_str' in 'Catch::StringRef'
+  145 |     EXPECT_EQ(std::string(other.macroName.c_str(), other.macroName.size()), "REQUIRE");
+      |                           ~~~~~~~~~~~~~~~ ^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_302.dir/build.make:79: generated_build/CMakeFiles/test_302.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_302.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24098: generated_build/CMakeFiles/test_302.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24105: generated_build/CMakeFiles/test_302.dir/rule] Error 2
+gmake: *** [Makefile:8314: test_302] Error 2

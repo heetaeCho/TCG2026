@@ -1,0 +1,58 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_497.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp:21:20: error: call to constructor of 'Dict' is ambiguous
+   21 |   auto *dict = new Dict(nullptr);
+      |                    ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp:32:10: error: call to deleted constructor of 'Object'
+   32 |   Object bboxObj(bboxArr);
+      |          ^       ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp:44:10: error: call to deleted constructor of 'Object'
+   44 |   Object mObj(mArr);
+      |          ^    ~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp:53:10: error: call to deleted constructor of 'Object'
+   53 |   return pat; // Object owns the Dict* internally per Poppler's Object semantics.
+      |          ^~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp:58:19: error: call to constructor of 'Dict' is ambiguous
+   58 |   auto *res = new Dict(nullptr);
+      |                   ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp:61:10: error: call to deleted constructor of 'Object'
+   61 |   return resObj;
+      |          ^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp:160:24: error: call to constructor of 'Dict' is ambiguous
+  160 |   auto *emptyRes = new Dict(nullptr);
+      |                        ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_497.dir/build.make:79: generated_build/CMakeFiles/test_497.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_497.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:73479: generated_build/CMakeFiles/test_497.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:73486: generated_build/CMakeFiles/test_497.dir/rule] Error 2
+gmake: *** [Makefile:26322: test_497] Error 2

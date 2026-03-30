@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_155.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_155.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_155.cpp:46:12: error: no viable conversion from returned value of type 'std::unique_ptr<GooFile>' to function return type 'GooFile *'
+   46 |     return GooFile::open(path);
+      |            ^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_155.cpp:48:12: error: no viable conversion from returned value of type 'std::unique_ptr<GooFile>' to function return type 'GooFile *'
+   48 |     return GooFile::open(path.c_str());
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_155.cpp:51:12: error: no matching function for call to 'open'
+   51 |     return GooFile::open(&gs);
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/gfile.h:108:37: note: candidate function not viable: no known conversion from 'GooString *' to 'const std::string' (aka 'const basic_string<char>') for 1st argument; remove &
+  108 |     static std::unique_ptr<GooFile> open(const std::string &fileName);
+      |                                     ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/gfile.h:110:37: note: candidate function not viable: no known conversion from 'GooString *' to 'int' for 1st argument
+  110 |     static std::unique_ptr<GooFile> open(int fdA);
+      |                                     ^    ~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_155.dir/build.make:79: generated_build/CMakeFiles/test_155.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_155.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:28359: generated_build/CMakeFiles/test_155.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:28366: generated_build/CMakeFiles/test_155.dir/rule] Error 2
+gmake: *** [Makefile:7992: test_155] Error 2

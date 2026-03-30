@@ -1,0 +1,39 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from XPathIoTest_595
+[ RUN      ] XPathIoTest_595.DestructorRemovesTempFile_595
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_595.cpp:66: Failure
+Value of: fs::exists(tempPath)
+  Actual: false
+Expected: true
+Expected XPathIo backing path to exist while object is alive: 1774686841.exiv2_temp
+
+[  FAILED  ] XPathIoTest_595.DestructorRemovesTempFile_595 (0 ms)
+[ RUN      ] XPathIoTest_595.DestructorDoesNotThrowIfTempAlreadyRemoved_595
+[       OK ] XPathIoTest_595.DestructorDoesNotThrowIfTempAlreadyRemoved_595 (0 ms)
+[ RUN      ] XPathIoTest_595.MultipleInstancesCleanUpTheirTempFiles_595
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_595.cpp:113: Failure
+Value of: fs::exists(p1)
+  Actual: false
+Expected: true
+
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_595.cpp:118: Failure
+Value of: fs::exists(p2)
+  Actual: false
+Expected: true
+
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_595.cpp:122: Failure
+Expected: (p1) != (p2), actual: "1774686841.exiv2_temp" vs "1774686841.exiv2_temp"
+
+[  FAILED  ] XPathIoTest_595.MultipleInstancesCleanUpTheirTempFiles_595 (0 ms)
+[----------] 3 tests from XPathIoTest_595 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] XPathIoTest_595.DestructorRemovesTempFile_595
+[  FAILED  ] XPathIoTest_595.MultipleInstancesCleanUpTheirTempFiles_595
+
+ 2 FAILED TESTS

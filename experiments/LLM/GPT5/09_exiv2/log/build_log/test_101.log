@@ -1,0 +1,123 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_101.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:11:5: error: constructor for 'MatroskaVideoTest_101' must explicitly initialize the member 'tag_' which does not have a default constructor
+   11 |     MatroskaVideoTest_101() : video_(std::make_unique<BasicIo>()) {}
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:14:17: note: member is declared here
+   14 |     MatroskaTag tag_;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:62:8: note: 'Exiv2::Internal::MatroskaTag' declared here
+   62 | struct MatroskaTag {
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:19:28: error: use of undeclared identifier 'TrackType'
+   19 |         tag_ = MatroskaTag(TrackType, "Video", matroskaTypeEnum::UndefinedType, matroskaProcessEnum::Undefined);
+      |                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:29:12: error: 'decodeBooleanTags' is a protected member of 'Exiv2::MatroskaVideo'
+   29 |     video_.decodeBooleanTags(&tag_, buf_);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:156:8: note: declared protected here
+  156 |   void decodeBooleanTags(const Internal::MatroskaTag* tag, const byte* buf);
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:32:22: error: 'stream_' is a private member of 'Exiv2::MatroskaVideo'
+   32 |     EXPECT_EQ(video_.stream_, 1);  // Assuming that the corresponding stream ID is set to 1.
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:167:12: note: declared private here
+  167 |   uint64_t stream_{};
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:40:12: error: 'decodeBooleanTags' is a protected member of 'Exiv2::MatroskaVideo'
+   40 |     video_.decodeBooleanTags(&tag_, buf_);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:156:8: note: declared protected here
+  156 |   void decodeBooleanTags(const Internal::MatroskaTag* tag, const byte* buf);
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:43:22: error: 'stream_' is a private member of 'Exiv2::MatroskaVideo'
+   43 |     EXPECT_EQ(video_.stream_, 0);
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:167:12: note: declared private here
+  167 |   uint64_t stream_{};
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:54:12: error: 'decodeBooleanTags' is a protected member of 'Exiv2::MatroskaVideo'
+   54 |     video_.decodeBooleanTags(&invalidTag, buf_);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:156:8: note: declared protected here
+  156 |   void decodeBooleanTags(const Internal::MatroskaTag* tag, const byte* buf);
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:57:22: error: 'stream_' is a private member of 'Exiv2::MatroskaVideo'
+   57 |     EXPECT_EQ(video_.stream_, 0);
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:167:12: note: declared private here
+  167 |   uint64_t stream_{};
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:66:5: error: use of undeclared identifier 'gmock_Exiv2'
+   66 |     EXPECT_CALL(*this, Exiv2::find(matroskaTrackType, key)).WillOnce(testing::Return(&tag_));
+      |     ^
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                ^
+<scratch space>:82:1: note: expanded from here
+   82 | gmock_Exiv2
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:66:36: error: use of undeclared identifier 'matroskaTrackType'
+   66 |     EXPECT_CALL(*this, Exiv2::find(matroskaTrackType, key)).WillOnce(testing::Return(&tag_));
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:68:12: error: 'decodeBooleanTags' is a protected member of 'Exiv2::MatroskaVideo'
+   68 |     video_.decodeBooleanTags(&tag_, buf_);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:156:8: note: declared protected here
+  156 |   void decodeBooleanTags(const Internal::MatroskaTag* tag, const byte* buf);
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:71:22: error: 'stream_' is a private member of 'Exiv2::MatroskaVideo'
+   71 |     EXPECT_EQ(video_.stream_, 1);  // Assuming the find function alters the stream ID to 1
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:167:12: note: declared private here
+  167 |   uint64_t stream_{};
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:79:12: error: 'decodeBooleanTags' is a protected member of 'Exiv2::MatroskaVideo'
+   79 |     video_.decodeBooleanTags(&tag_, buf_);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:156:8: note: declared protected here
+  156 |   void decodeBooleanTags(const Internal::MatroskaTag* tag, const byte* buf);
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:82:22: error: 'stream_' is a private member of 'Exiv2::MatroskaVideo'
+   82 |     EXPECT_EQ(video_.stream_, 0);
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/matroskavideo.hpp:167:12: note: declared private here
+  167 |   uint64_t stream_{};
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:11:43: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   11 |     MatroskaVideoTest_101() : video_(std::make_unique<BasicIo>()) {}
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp:11:38: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   11 |     MatroskaVideoTest_101() : video_(std::make_unique<BasicIo>()) {}
+      |                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_101.dir/build.make:79: generated_build/CMakeFiles/test_101.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_101.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21243: generated_build/CMakeFiles/test_101.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21250: generated_build/CMakeFiles/test_101.dir/rule] Error 2
+gmake: *** [Makefile:5717: test_101] Error 2

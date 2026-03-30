@@ -1,0 +1,161 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_520.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:61:13: error: constructor for 'Catch::RunContext' must explicitly initialize the member 'm_runInfo' which does not have a default constructor
+   61 | RunContext::RunContext(IConfig const* /*_config*/, IEventListenerPtr&& /*reporter*/) {}
+      |             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:139:21: note: member is declared here
+  139 |         TestRunInfo m_runInfo;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: 'Catch::TestRunInfo' declared here
+   15 |     struct TestRunInfo {
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:81:18: error: out-of-line definition of 'resetAssertionInfo' does not match any declaration in 'Catch::RunContext'
+   81 | void RunContext::resetAssertionInfo() {}
+      |                  ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:37:11: note: RunContext defined here
+   37 |     class RunContext final : public IResultCapture {
+      |           ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:87:18: error: out-of-line definition of 'populateReaction' does not match any declaration in 'Catch::RunContext'
+   87 | void RunContext::populateReaction(AssertionReaction& reaction) {
+      |                  ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:37:11: note: RunContext defined here
+   37 |     class RunContext final : public IResultCapture {
+      |           ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:123:35: error: call to deleted constructor of 'SourceLineInfo'
+  123 |         Catch::AssertionInfo info{};
+      |                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: in implicit initialization of field 'lineInfo' with omitted initializer
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:267:31: error: call to deleted constructor of 'SourceLineInfo'
+  267 |     Catch::AssertionInfo info{}; // empty/neutral
+      |                               ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: in implicit initialization of field 'lineInfo' with omitted initializer
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:3:
+In file included from /usr/local/include/gtest/gtest.h:61:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/vector:66:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:367:35: error: arithmetic on a pointer to an incomplete type 'Catch::SectionEndInfo'
+  367 |                       _M_impl._M_end_of_storage - _M_impl._M_start);
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:528:7: note: in instantiation of member function 'std::_Vector_base<Catch::SectionEndInfo, std::allocator<Catch::SectionEndInfo>>::~_Vector_base' requested here
+  528 |       vector() = default;
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:24:12: note: forward declaration of 'Catch::SectionEndInfo'
+   24 |     struct SectionEndInfo;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:3:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:65:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/allocator.h:46:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:33:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:161:6: error: invalid application of 'alignof' to an incomplete type 'Catch::SectionEndInfo'
+  161 |         if (alignof(_Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__)
+      |             ^~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:516:13: note: in instantiation of member function 'std::__new_allocator<Catch::SectionEndInfo>::deallocate' requested here
+  516 |       { __a.deallocate(__p, __n); }
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:387:9: note: in instantiation of member function 'std::allocator_traits<std::allocator<Catch::SectionEndInfo>>::deallocate' requested here
+  387 |           _Tr::deallocate(_M_impl, __p, __n);
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:366:2: note: in instantiation of member function 'std::_Vector_base<Catch::SectionEndInfo, std::allocator<Catch::SectionEndInfo>>::_M_deallocate' requested here
+  366 |         _M_deallocate(_M_impl._M_start,
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:528:7: note: in instantiation of member function 'std::_Vector_base<Catch::SectionEndInfo, std::allocator<Catch::SectionEndInfo>>::~_Vector_base' requested here
+  528 |       vector() = default;
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:24:12: note: forward declaration of 'Catch::SectionEndInfo'
+   24 |     struct SectionEndInfo;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:3:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:65:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/allocator.h:46:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:33:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:168:27: error: invalid application of 'sizeof' to an incomplete type 'Catch::SectionEndInfo'
+  168 |         _GLIBCXX_OPERATOR_DELETE(_GLIBCXX_SIZED_DEALLOC(__p, __n));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:155:50: note: expanded from macro '_GLIBCXX_SIZED_DEALLOC'
+  155 | # define _GLIBCXX_SIZED_DEALLOC(p, n) (p), (n) * sizeof(_Tp)
+      |                                                  ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:24:12: note: forward declaration of 'Catch::SectionEndInfo'
+   24 |     struct SectionEndInfo;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:16:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IEventListener' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:61:13: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IEventListener>::~unique_ptr' requested here
+   61 | RunContext::RunContext(IConfig const* /*_config*/, IEventListenerPtr&& /*reporter*/) {}
+      |             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:3:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:65:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/allocator.h:46:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:33:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:36:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/move.h:37:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/type_traits:979:21: error: static assertion failed due to requirement 'std::__is_complete_or_unbounded(std::__type_identity<Catch::SectionEndInfo>{})': template argument must be a complete class or an unbounded array
+  979 |       static_assert(std::__is_complete_or_unbounded(__type_identity<_Tp>{}),
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:188:21: note: in instantiation of template class 'std::is_destructible<Catch::SectionEndInfo>' requested here
+  188 |       static_assert(is_destructible<_Value_type>::value,
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:947:7: note: in instantiation of function template specialization 'std::_Destroy<Catch::SectionEndInfo *>' requested here
+  947 |       _Destroy(__first, __last);
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:732:7: note: in instantiation of function template specialization 'std::_Destroy<Catch::SectionEndInfo *, Catch::SectionEndInfo>' requested here
+  732 |         std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:61:13: note: in instantiation of member function 'std::vector<Catch::SectionEndInfo>::~vector' requested here
+   61 | RunContext::RunContext(IConfig const* /*_config*/, IEventListenerPtr&& /*reporter*/) {}
+      |             ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:3:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:66:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_tempbuf.h:61:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:195:25: error: incomplete type '_Value_type' (aka 'Catch::SectionEndInfo') used in type trait expression
+  195 |       std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
+      |                         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:947:7: note: in instantiation of function template specialization 'std::_Destroy<Catch::SectionEndInfo *>' requested here
+  947 |       _Destroy(__first, __last);
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_vector.h:732:7: note: in instantiation of function template specialization 'std::_Destroy<Catch::SectionEndInfo *, Catch::SectionEndInfo>' requested here
+  732 |         std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:61:13: note: in instantiation of member function 'std::vector<Catch::SectionEndInfo>::~vector' requested here
+   61 | RunContext::RunContext(IConfig const* /*_config*/, IEventListenerPtr&& /*reporter*/) {}
+      |             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:24:12: note: forward declaration of 'Catch::SectionEndInfo'
+   24 |     struct SectionEndInfo;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_capture.hpp:16:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::OutputRedirect' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp:61:13: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::OutputRedirect>::~unique_ptr' requested here
+   61 | RunContext::RunContext(IConfig const* /*_config*/, IEventListenerPtr&& /*reporter*/) {}
+      |             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:33:11: note: forward declaration of 'Catch::OutputRedirect'
+   33 |     class OutputRedirect;
+      |           ^
+2 warnings and 10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_520.dir/build.make:79: generated_build/CMakeFiles/test_520.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_520.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9149: generated_build/CMakeFiles/test_520.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9156: generated_build/CMakeFiles/test_520.dir/rule] Error 2
+gmake: *** [Makefile:2425: test_520] Error 2

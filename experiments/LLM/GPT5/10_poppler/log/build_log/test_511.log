@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_511.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_511.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_511.cpp:15:31: error: return type 'GfxUnivariateShading' is an abstract class
+   15 |   static GfxUnivariateShading MakeShading(bool extend0, bool extend1) {
+      |                               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'GfxUnivariateShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:968:18: note: unimplemented pure virtual method 'getParameterRange' in 'GfxUnivariateShading'
+  968 |     virtual void getParameterRange(double *lower, double *upper, double xMin, double yMin, double xMax, double yMax) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:970:20: note: unimplemented pure virtual method 'getDistance' in 'GfxUnivariateShading'
+  970 |     virtual double getDistance(double sMin, double sMax) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_511.cpp:19:12: error: no matching constructor for initialization of 'GfxUnivariateShading'
+   19 |     return GfxUnivariateShading(/*typeA=*/1, /*t0A=*/0.0, /*t1A=*/1.0, std::move(funcs), extend0, extend1);
+      |            ^                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:952:5: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<int &>::type' (aka 'int') to 'std::vector<std::unique_ptr<Function>>' for 4th argument
+  952 |     GfxUnivariateShading(int typeA, double t0A, double t1A, std::vector<std::unique_ptr<Function>> &&funcsA, bool extend0A, bool extend1A);
+      |     ^                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:953:14: note: candidate constructor not viable: requires single argument 'shading', but 6 arguments were provided
+  953 |     explicit GfxUnivariateShading(const GfxUnivariateShading *shading);
+      |              ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:949:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+  949 | class POPPLER_PRIVATE_EXPORT GfxUnivariateShading : public GfxShading
+      |                              ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_511.cpp:48:30: error: variable type 'const GfxUnivariateShading' is an abstract class
+   48 |   const GfxUnivariateShading copied(&original);
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_511.cpp:55:30: error: variable type 'const GfxUnivariateShading' is an abstract class
+   55 |   const GfxUnivariateShading copied(&original);
+      |                              ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_511.dir/build.make:79: generated_build/CMakeFiles/test_511.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_511.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:97223: generated_build/CMakeFiles/test_511.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:97230: generated_build/CMakeFiles/test_511.dir/rule] Error 2
+gmake: *** [Makefile:35968: test_511] Error 2

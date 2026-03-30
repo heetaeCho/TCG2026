@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_989.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_989.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_989.cpp:8:7: warning: 'PDFDocTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    8 | class PDFDocTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_989.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: calling a private constructor of class 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_989.cpp:24:24: note: in instantiation of function template specialization 'std::make_unique<PDFDoc>' requested here
+   24 |     auto pdfDoc = std::make_unique<PDFDoc>(/* parameters */);
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_989.dir/build.make:79: generated_build/CMakeFiles/test_989.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_989.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:72743: generated_build/CMakeFiles/test_989.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:72750: generated_build/CMakeFiles/test_989.dir/rule] Error 2
+gmake: *** [Makefile:26023: test_989] Error 2

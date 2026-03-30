@@ -1,0 +1,67 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_459.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:29:59: error: non-virtual member function marked 'override' hides virtual member function
+   29 |   void getGray(const GfxColor * /*color*/, GfxGray *gray) override {
+      |                                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:270:18: note: hidden overloaded virtual function 'GfxColorSpace::getGray' declared here: different qualifiers ('const' vs unqualified)
+  270 |     virtual void getGray(const GfxColor *color, GfxGray *gray) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:34:56: error: non-virtual member function marked 'override' hides virtual member function
+   34 |   void getRGB(const GfxColor * /*color*/, GfxRGB *rgb) override {
+      |                                                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:271:18: note: hidden overloaded virtual function 'GfxColorSpace::getRGB' declared here: different qualifiers ('const' vs unqualified)
+  271 |     virtual void getRGB(const GfxColor *color, GfxRGB *rgb) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:41:59: error: non-virtual member function marked 'override' hides virtual member function
+   41 |   void getCMYK(const GfxColor * /*color*/, GfxCMYK *cmyk) override {
+      |                                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:272:18: note: hidden overloaded virtual function 'GfxColorSpace::getCMYK' declared here: different qualifiers ('const' vs unqualified)
+  272 |     virtual void getCMYK(const GfxColor *color, GfxCMYK *cmyk) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:49:61: error: non-virtual member function marked 'override' hides virtual member function
+   49 |   void getDeviceN(const GfxColor *color, GfxColor *deviceN) override {
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: hidden overloaded virtual function 'GfxColorSpace::getDeviceN' declared here: different qualifiers ('const' vs unqualified)
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:17:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   17 | class DummyAltColorSpace final : public GfxColorSpace {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:270:18: note: unimplemented pure virtual method 'getGray' in 'DummyAltColorSpace'
+  270 |     virtual void getGray(const GfxColor *color, GfxGray *gray) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:271:18: note: unimplemented pure virtual method 'getRGB' in 'DummyAltColorSpace'
+  271 |     virtual void getRGB(const GfxColor *color, GfxRGB *rgb) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:272:18: note: unimplemented pure virtual method 'getCMYK' in 'DummyAltColorSpace'
+  272 |     virtual void getCMYK(const GfxColor *color, GfxCMYK *cmyk) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: unimplemented pure virtual method 'getDeviceN' in 'DummyAltColorSpace'
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:125:7: warning: 'GfxICCBasedColorSpaceTest_459' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+  125 | class GfxICCBasedColorSpaceTest_459 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:7:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'DummyAltColorSpace'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:26:17: note: in instantiation of function template specialization 'std::make_unique<DummyAltColorSpace>' requested here
+   26 |     return std::make_unique<DummyAltColorSpace>();
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:17:7: warning: 'DummyAltColorSpace' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class DummyAltColorSpace final : public GfxColorSpace {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<DummyAltColorSpace>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp:26:12: note: in instantiation of member function 'std::unique_ptr<DummyAltColorSpace>::~unique_ptr' requested here
+   26 |     return std::make_unique<DummyAltColorSpace>();
+      |            ^
+3 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_459.dir/build.make:79: generated_build/CMakeFiles/test_459.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_459.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21191: generated_build/CMakeFiles/test_459.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21198: generated_build/CMakeFiles/test_459.dir/rule] Error 2
+gmake: *** [Makefile:5080: test_459] Error 2

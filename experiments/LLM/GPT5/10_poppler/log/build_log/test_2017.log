@@ -1,0 +1,210 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2017.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:9:5: error: only virtual member functions can be marked 'override'
+    9 |     MOCK_METHOD(Object, lookup, (std::string_view key, int recursion), (const, override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:287:1: note: expanded from here
+  287 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:27:14: error: call to implicitly-deleted default constructor of 'MockDict'
+   27 |     MockDict dict;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:7:18: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+    7 | class MockDict : public Dict {
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:28:19: error: functional-style cast from 'const char[8]' to 'Object' uses deleted function
+   28 |     Object obj1 = Object("Subtype");
+      |                   ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = const char *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor
+  239 |     explicit Object(std::string &&stringA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:29:70: error: call to deleted constructor of 'Object'
+   29 |     EXPECT_CALL(dict, lookup("Subtype", 0)).WillOnce(testing::Return(obj1));
+      |                                                                      ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/local/include/gmock/gmock-actions.h:1898:36: note: passing argument to parameter 'value' here
+ 1898 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:32:12: error: functional-style cast from 'const char[9]' to 'Object' uses deleted function
+   32 |     obj1 = Object("Markup3D");
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = const char *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor
+  239 |     explicit Object(std::string &&stringA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:35:36: error: use of undeclared identifier 'parseAnnotExternalData'
+   35 |     AnnotExternalDataType result = parseAnnotExternalData(&dict);
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:44:14: error: call to implicitly-deleted default constructor of 'MockDict'
+   44 |     MockDict dict;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:7:18: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+    7 | class MockDict : public Dict {
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:45:19: error: functional-style cast from 'const char[8]' to 'Object' uses deleted function
+   45 |     Object obj1 = Object("Subtype");
+      |                   ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = const char *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor
+  239 |     explicit Object(std::string &&stringA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:46:70: error: call to deleted constructor of 'Object'
+   46 |     EXPECT_CALL(dict, lookup("Subtype", 0)).WillOnce(testing::Return(obj1));
+      |                                                                      ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/local/include/gmock/gmock-actions.h:1898:36: note: passing argument to parameter 'value' here
+ 1898 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:49:12: error: functional-style cast from 'const char[12]' to 'Object' uses deleted function
+   49 |     obj1 = Object("UnknownType");
+      |            ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = const char *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor
+  239 |     explicit Object(std::string &&stringA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:52:36: error: use of undeclared identifier 'parseAnnotExternalData'
+   52 |     AnnotExternalDataType result = parseAnnotExternalData(&dict);
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:61:14: error: call to implicitly-deleted default constructor of 'MockDict'
+   61 |     MockDict dict;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:7:18: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+    7 | class MockDict : public Dict {
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:65:70: error: call to deleted constructor of 'Object'
+   65 |     EXPECT_CALL(dict, lookup("Subtype", 0)).WillOnce(testing::Return(obj1));
+      |                                                                      ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/local/include/gmock/gmock-actions.h:1898:36: note: passing argument to parameter 'value' here
+ 1898 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:68:36: error: use of undeclared identifier 'parseAnnotExternalData'
+   68 |     AnnotExternalDataType result = parseAnnotExternalData(&dict);
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:77:14: error: call to implicitly-deleted default constructor of 'MockDict'
+   77 |     MockDict dict;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:7:18: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+    7 | class MockDict : public Dict {
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:78:19: error: functional-style cast from 'const char[8]' to 'Object' uses deleted function
+   78 |     Object obj1 = Object("Subtype");
+      |                   ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = const char *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor
+  239 |     explicit Object(std::string &&stringA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:79:70: error: call to deleted constructor of 'Object'
+   79 |     EXPECT_CALL(dict, lookup("Subtype", 0)).WillOnce(testing::Return(obj1));
+      |                                                                      ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/local/include/gmock/gmock-actions.h:1898:36: note: passing argument to parameter 'value' here
+ 1898 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:82:12: error: functional-style cast from 'const char[15]' to 'Object' uses deleted function
+   82 |     obj1 = Object("InvalidSubtype");
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = const char *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor
+  239 |     explicit Object(std::string &&stringA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp:85:36: error: use of undeclared identifier 'parseAnnotExternalData'
+   85 |     AnnotExternalDataType result = parseAnnotExternalData(&dict);
+      |                                    ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2017.dir/build.make:79: generated_build/CMakeFiles/test_2017.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2017.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:30087: generated_build/CMakeFiles/test_2017.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:30094: generated_build/CMakeFiles/test_2017.dir/rule] Error 2
+gmake: *** [Makefile:8694: test_2017] Error 2

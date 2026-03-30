@@ -1,0 +1,219 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1762.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:13:19: error: field type 'CiffComponent' is an abstract class
+   13 |     CiffComponent component;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:24:19: error: variable type 'CiffComponent' is an abstract class
+   24 |     CiffComponent defaultComponent;
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:61:19: error: variable type 'CiffComponent' is an abstract class
+   61 |     CiffComponent emptyComponent;
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:68:62: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+   68 |     component.read(mockData, sizeof(mockData), 0, ByteOrder::LittleEndian);
+      |                                                   ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                                              littleEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:76:54: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+   76 |     size_t result = component.write(blob, ByteOrder::LittleEndian, 0);
+      |                                           ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                                      littleEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:83:61: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+   83 |     size_t result = component.write(invalidBlob, ByteOrder::LittleEndian, 0);
+      |                                                  ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                                             littleEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:89:11: error: variable has incomplete type 'Image'
+   89 |     Image mockImage;
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:24:7: note: forward declaration of 'Exiv2::Image'
+   24 | class Image;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:90:44: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   90 |     component.decode(mockImage, ByteOrder::BigEndian);
+      |                                 ~~~~~~~~~~~^~~~~~~~~
+      |                                            bigEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:98:36: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+   98 |     component.print(os, ByteOrder::LittleEndian, "Prefix_");
+      |                         ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                    littleEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:112:31: error: no member named 'Invalid' in 'Exiv2::TypeId'
+  112 |     EXPECT_NE(result, TypeId::Invalid);  // Assuming TypeId::Invalid is an invalid return value
+      |                       ~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1887:63: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:118:34: error: no member named 'Invalid' in 'Exiv2::Internal::DataLocId'
+  118 |     EXPECT_NE(result, DataLocId::Invalid);  // Assuming DataLocId::Invalid is an invalid return value
+      |                       ~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1887:63: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'Exiv2::Internal::CiffComponent'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:50:51: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::CiffComponent, int, int>' requested here
+   50 |     CiffComponent::UniquePtr mockComponent = std::make_unique<CiffComponent>(1, 2);
+      |                                                   ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_pData_1762_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:17:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_pData_1762_Test>::CreateTest' requested here
+   17 | TEST_F(CiffComponentTest, pData_1762) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_DefaultConstructor_1763_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:23:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_DefaultConstructor_1763_Test>::CreateTest' requested here
+   23 | TEST_F(CiffComponentTest, DefaultConstructor_1763) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetAndGetDir_1764_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:30:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetAndGetDir_1764_Test>::CreateTest' requested here
+   30 | TEST_F(CiffComponentTest, SetAndGetDir_1764) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetAndGetSize_1765_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:36:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetAndGetSize_1765_Test>::CreateTest' requested here
+   36 | TEST_F(CiffComponentTest, SetAndGetSize_1765) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_SetAndGetOffset_1766_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:42:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_SetAndGetOffset_1766_Test>::CreateTest' requested here
+   42 | TEST_F(CiffComponentTest, SetAndGetOffset_1766) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_AddComponent_1767_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:48:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_AddComponent_1767_Test>::CreateTest' requested here
+   48 | TEST_F(CiffComponentTest, AddComponent_1767) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_EmptyNonEmpty_1768_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp:55:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_EmptyNonEmpty_1768_Test>::CreateTest' requested here
+   55 | TEST_F(CiffComponentTest, EmptyNonEmpty_1768) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1762.dir/build.make:79: generated_build/CMakeFiles/test_1762.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1762.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:62281: generated_build/CMakeFiles/test_1762.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:62288: generated_build/CMakeFiles/test_1762.dir/rule] Error 2
+gmake: *** [Makefile:21408: test_1762] Error 2

@@ -1,0 +1,34 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_895.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_895.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_895.cpp:6:27: error: base class has incomplete type
+    6 | class MockPDFDoc : public PDFDoc {
+      |                    ~~~~~~~^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_895.cpp:18:31: error: no matching constructor for initialization of 'FormFieldButton'
+   18 |         formFieldButton = new FormFieldButton(doc, Object(), Ref(), nullptr, usedParents);
+      |                               ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Form.h:443:5: note: candidate constructor not viable: no known conversion from 'MockPDFDoc *' to 'PDFDoc *' for 1st argument
+  443 |     FormFieldButton(PDFDoc *docA, Object &&dict, Ref ref, FormField *parent, std::set<int> *usedParents);
+      |     ^               ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Form.h:440:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 5 were provided
+  440 | class FormFieldButton : public FormField
+      |       ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_895.cpp:61:36: error: no matching constructor for initialization of 'FormFieldButton'
+   61 |     FormFieldButton *sibling = new FormFieldButton(doc, Object(), Ref(), nullptr, usedParents);
+      |                                    ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Form.h:443:5: note: candidate constructor not viable: no known conversion from 'MockPDFDoc *' to 'PDFDoc *' for 1st argument
+  443 |     FormFieldButton(PDFDoc *docA, Object &&dict, Ref ref, FormField *parent, std::set<int> *usedParents);
+      |     ^               ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Form.h:440:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 5 were provided
+  440 | class FormFieldButton : public FormField
+      |       ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_895.cpp:12:7: warning: 'FormFieldButtonTest_895' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class FormFieldButtonTest_895 : public testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_895.dir/build.make:79: generated_build/CMakeFiles/test_895.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_895.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:41543: generated_build/CMakeFiles/test_895.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:41550: generated_build/CMakeFiles/test_895.dir/rule] Error 2
+gmake: *** [Makefile:13348: test_895] Error 2

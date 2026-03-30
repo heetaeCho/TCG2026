@@ -1,0 +1,42 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_93.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:17:16: error: use of class template 'SkipList' requires template arguments
+   17 |   using Node = SkipList::Node;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/skiplist.h:40:7: note: template is declared here
+   39 | template <typename Key, class Comparator>
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   40 | class SkipList {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:25:3: error: unknown type name 'Node'
+   25 |   Node* MakeNode(int v) {
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:29:16: error: unknown type name 'Node'
+   29 |     return new Node(static_cast<typename std::remove_cv<
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:51:40: error: no member named 'Node' in 'leveldb::SkipListNodeTest_93'
+   51 |   std::unique_ptr<SkipListNodeTest_93::Node> a(MakeNode(1));
+      |                   ~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:53:40: error: no member named 'Node' in 'leveldb::SkipListNodeTest_93'
+   53 |   std::unique_ptr<SkipListNodeTest_93::Node> b(MakeNode(2));
+      |                   ~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:69:40: error: no member named 'Node' in 'leveldb::SkipListNodeTest_93'
+   69 |   std::unique_ptr<SkipListNodeTest_93::Node> a(MakeNode(10));
+      |                   ~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:85:40: error: no member named 'Node' in 'leveldb::SkipListNodeTest_93'
+   85 |   std::unique_ptr<SkipListNodeTest_93::Node> a(MakeNode(7));
+      |                   ~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:105:40: error: no member named 'Node' in 'leveldb::SkipListNodeTest_93'
+  105 |   std::unique_ptr<SkipListNodeTest_93::Node> a(MakeNode(3));
+      |                   ~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp:107:40: error: no member named 'Node' in 'leveldb::SkipListNodeTest_93'
+  107 |   std::unique_ptr<SkipListNodeTest_93::Node> b(MakeNode(4));
+      |                   ~~~~~~~~~~~~~~~~~~~~~^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_93.dir/build.make:76: generated_build/CMakeFiles/test_93.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_93.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:7692: generated_build/CMakeFiles/test_93.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:7699: generated_build/CMakeFiles/test_93.dir/rule] Error 2
+gmake: *** [Makefile:3104: test_93] Error 2

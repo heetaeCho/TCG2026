@@ -1,0 +1,158 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_830.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:9:5: error: only virtual member functions can be marked 'override'
+    9 |     MOCK_METHOD(void, someMethod, (), (override));  // Example mock method
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:287:1: note: expanded from here
+  287 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:33:5: error: unknown type name 'AnnotLineIntent'; did you mean 'AnnotLine::AnnotLineIntent'?
+   33 |     AnnotLineIntent expectedIntent = AnnotLineIntent::SomeIntent;
+      |     ^~~~~~~~~~~~~~~
+      |     AnnotLine::AnnotLineIntent
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1118:10: note: 'AnnotLine::AnnotLineIntent' declared here
+ 1118 |     enum AnnotLineIntent
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:33:38: error: use of undeclared identifier 'AnnotLineIntent'; did you mean 'AnnotLine::AnnotLineIntent'?
+   33 |     AnnotLineIntent expectedIntent = AnnotLineIntent::SomeIntent;
+      |                                      ^~~~~~~~~~~~~~~
+      |                                      AnnotLine::AnnotLineIntent
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1118:10: note: 'AnnotLine::AnnotLineIntent' declared here
+ 1118 |     enum AnnotLineIntent
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:33:55: error: no member named 'SomeIntent' in 'AnnotLine::AnnotLineIntent'
+   33 |     AnnotLineIntent expectedIntent = AnnotLineIntent::SomeIntent;
+      |                                      ~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:37:5: error: unknown type name 'AnnotLineIntent'; did you mean 'AnnotLine::AnnotLineIntent'?
+   37 |     AnnotLineIntent actualIntent = annotLine->getIntent();
+      |     ^~~~~~~~~~~~~~~
+      |     AnnotLine::AnnotLineIntent
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1118:10: note: 'AnnotLine::AnnotLineIntent' declared here
+ 1118 |     enum AnnotLineIntent
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:71:16: error: no member named 'setMeasure' in 'AnnotLine'
+   71 |     annotLine->setMeasure(mockDict.get());
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:74:16: error: no member named 'someMethod' in 'AnnotLine'
+   74 |     annotLine->someMethod();  // Suppose we invoke a method that triggers Dict interaction
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:122:33: error: reference to type 'std::unique_ptr<AnnotColor>' could not bind to an lvalue of type 'int'
+  122 |     annotLine->setInteriorColor(invalidColor);
+      |                                 ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1140:57: note: passing argument to parameter 'new_color' here
+ 1140 |     void setInteriorColor(std::unique_ptr<AnnotColor> &&new_color);
+      |                                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:132:69: error: no member named 'Arrow' in 'AnnotLineEndingStyle'
+  132 |     AnnotLineEndingStyle expectedStartStyle = AnnotLineEndingStyle::Arrow;
+      |                                               ~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:133:75: error: no member named 'None' in 'AnnotLineEndingStyle'
+  133 |     annotLine->setStartEndStyle(expectedStartStyle, AnnotLineEndingStyle::None);
+      |                                                     ~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:13:7: warning: 'AnnotLineTest_830' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class AnnotLineTest_830 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: call to implicitly-deleted default constructor of 'MockDict'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:17:25: note: in instantiation of function template specialization 'std::make_unique<MockDict>' requested here
+   17 |         mockDict = std::make_unique<MockDict>();
+      |                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:7:18: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+    7 | class MockDict : public Dict {
+      |                  ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:18:21: note: in instantiation of function template specialization 'std::make_unique<PDFDoc>' requested here
+   18 |         docA = std::make_unique<PDFDoc>();
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'PDFDoc'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<PDFDoc>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:18:16: note: in instantiation of member function 'std::unique_ptr<PDFDoc>::~unique_ptr' requested here
+   18 |         docA = std::make_unique<PDFDoc>();
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'PDFRectangle'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:19:21: note: in instantiation of function template specialization 'std::make_unique<PDFRectangle>' requested here
+   19 |         rect = std::make_unique<PDFRectangle>();
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'PDFRectangle'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<PDFRectangle>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:19:16: note: in instantiation of member function 'std::unique_ptr<PDFRectangle>::~unique_ptr' requested here
+   19 |         rect = std::make_unique<PDFRectangle>();
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'AnnotLine'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp:20:26: note: in instantiation of function template specialization 'std::make_unique<AnnotLine, PDFDoc &, PDFRectangle &>' requested here
+   20 |         annotLine = std::make_unique<AnnotLine>(*docA, *rect);
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1130:5: note: candidate constructor not viable: cannot convert argument of incomplete type 'PDFDoc' to 'PDFDoc *' for 1st argument; take the address of the argument with &
+ 1130 |     AnnotLine(PDFDoc *docA, PDFRectangle *rect);
+      |     ^         ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1115:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+ 1115 | class POPPLER_PRIVATE_EXPORT AnnotLine : public AnnotMarkup
+      |                              ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1131:5: note: candidate constructor not viable: requires 3 arguments, but 2 were provided
+ 1131 |     AnnotLine(PDFDoc *docA, Object &&dictObject, const Object *obj);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_830.dir/build.make:79: generated_build/CMakeFiles/test_830.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_830.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:32743: generated_build/CMakeFiles/test_830.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:32750: generated_build/CMakeFiles/test_830.dir/rule] Error 2
+gmake: *** [Makefile:9773: test_830] Error 2

@@ -1,0 +1,285 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1668.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:37:18: error: no viable conversion from '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:37:35)' to 'FindEncoderFct' (aka 'void (TiffEncoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(TiffEntryBase *, const Exifdatum *)')
+   37 |   FindEncoderFct findEncoderFct = [&b](const std::string&, uint32_t, IfdId) -> EncoderFct {
+      |                  ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |     ++b.find_calls;
+      |     ~~~~~~~~~~~~~~~
+   39 |     return nullptr;
+      |     ~~~~~~~~~~~~~~~
+   40 |   };
+      |   ~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:53:9: error: invalid use of incomplete type 'IptcData'
+   53 |         IptcData{},      // const ref - temporary ok for this scope? no: must outlive encoder => store local below
+      |         ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:54:9: error: invalid use of incomplete type 'XmpData'
+   54 |         XmpData{},       // const ref - temporary ok for this scope? no: must outlive encoder => store local below
+      |         ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:61:5: error: no viable conversion from returned value of type 'void' to function return type 'EncoderBundle'
+   61 |     GTEST_SKIP() << "Unable to construct TiffEncoder in this build/config: " << e.what();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:23:8: note: candidate constructor (the implicit copy constructor) not viable: cannot convert argument of incomplete type 'void' to 'const EncoderBundle &' for 1st argument
+   23 | struct EncoderBundle {
+      |        ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:63:5: error: no viable conversion from returned value of type 'void' to function return type 'EncoderBundle'
+   63 |     GTEST_SKIP() << "Unable to construct TiffEncoder in this build/config (unknown exception).";
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:23:8: note: candidate constructor (the implicit copy constructor) not viable: cannot convert argument of incomplete type 'void' to 'const EncoderBundle &' for 1st argument
+   23 | struct EncoderBundle {
+      |        ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:66:10: error: call to implicitly-deleted copy constructor of 'EncoderBundle'
+   66 |   return b;
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:24:31: note: copy constructor of 'EncoderBundle' is implicitly deleted because field 'header' has a deleted copy constructor
+   24 |   std::unique_ptr<TiffHeader> header;
+      |                               ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: 'unique_ptr' has been explicitly marked deleted here
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:73:12: error: field has incomplete type 'IptcData'
+   73 |   IptcData iptc;
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:74:11: error: field has incomplete type 'XmpData'
+   74 |   XmpData xmp;
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:84:18: error: no viable conversion from '(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:84:35)' to 'FindEncoderFct' (aka 'void (TiffEncoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(TiffEntryBase *, const Exifdatum *)')
+   84 |   FindEncoderFct findEncoderFct = [&b](const std::string&, uint32_t, IfdId) -> EncoderFct {
+      |                  ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   85 |     ++b.find_calls;
+      |     ~~~~~~~~~~~~~~~
+   86 |     return nullptr;
+      |     ~~~~~~~~~~~~~~~
+   87 |   };
+      |   ~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:96:5: error: no viable conversion from returned value of type 'void' to function return type 'EncoderWithBacking'
+   96 |     GTEST_SKIP() << "Unable to construct TiffEncoder in this build/config: " << e.what();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:72:8: note: candidate constructor (the implicit copy constructor) not viable: cannot convert argument of incomplete type 'void' to 'const EncoderWithBacking &' for 1st argument
+   72 | struct EncoderWithBacking {
+      |        ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:72:8: note: candidate constructor (the implicit move constructor) not viable: cannot convert argument of incomplete type 'void' to 'EncoderWithBacking &&' for 1st argument
+   72 | struct EncoderWithBacking {
+      |        ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:98:5: error: no viable conversion from returned value of type 'void' to function return type 'EncoderWithBacking'
+   98 |     GTEST_SKIP() << "Unable to construct TiffEncoder in this build/config (unknown exception).";
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:72:8: note: candidate constructor (the implicit copy constructor) not viable: cannot convert argument of incomplete type 'void' to 'const EncoderWithBacking &' for 1st argument
+   72 | struct EncoderWithBacking {
+      |        ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:72:8: note: candidate constructor (the implicit move constructor) not viable: cannot convert argument of incomplete type 'void' to 'EncoderWithBacking &&' for 1st argument
+   72 | struct EncoderWithBacking {
+      |        ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:72:8: error: call to deleted constructor of 'std::atomic<int>'
+   72 | struct EncoderWithBacking {
+      |        ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:101:10: note: in implicit move constructor for '(anonymous namespace)::EncoderWithBacking' first required here
+  101 |   return b;
+      |          ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/atomic:829:7: note: 'atomic' has been explicitly marked deleted here
+  829 |       atomic(const atomic&) = delete;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:111:5: error: no viable conversion from returned value of type 'void' to function return type 'std::unique_ptr<TiffEntry>'
+  111 |     GTEST_SKIP() << "TiffCreator::create threw in this build/config: " << e.what();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:359:12: note: candidate constructor template not viable: cannot convert argument of incomplete type 'void' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  359 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:366:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'unique_ptr<TiffEntry> &&' for 1st argument
+  366 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'const unique_ptr<TiffEntry> &' for 1st argument
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:380:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'void'
+  380 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:390:2: note: candidate template ignored: could not match 'auto_ptr<_Up>' against 'void'
+  390 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:317:2: note: explicit constructor is not a candidate
+  317 |         unique_ptr(pointer __p) noexcept
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:113:5: error: no viable conversion from returned value of type 'void' to function return type 'std::unique_ptr<TiffEntry>'
+  113 |     GTEST_SKIP() << "TiffCreator::create threw in this build/config (unknown exception).";
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:359:12: note: candidate constructor template not viable: cannot convert argument of incomplete type 'void' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  359 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:366:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'unique_ptr<TiffEntry> &&' for 1st argument
+  366 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'const unique_ptr<TiffEntry> &' for 1st argument
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:380:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'void'
+  380 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:390:2: note: candidate template ignored: could not match 'auto_ptr<_Up>' against 'void'
+  390 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:317:2: note: explicit constructor is not a candidate
+  317 |         unique_ptr(pointer __p) noexcept
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:117:5: error: no viable conversion from returned value of type 'void' to function return type 'std::unique_ptr<TiffEntry>'
+  117 |     GTEST_SKIP() << "TiffCreator::create returned null for tag/group in this build/config.";
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:359:12: note: candidate constructor template not viable: cannot convert argument of incomplete type 'void' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  359 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:366:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'unique_ptr<TiffEntry> &&' for 1st argument
+  366 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'const unique_ptr<TiffEntry> &' for 1st argument
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:380:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'void'
+  380 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:390:2: note: candidate template ignored: could not match 'auto_ptr<_Up>' against 'void'
+  390 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:317:2: note: explicit constructor is not a candidate
+  317 |         unique_ptr(pointer __p) noexcept
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:124:5: error: no viable conversion from returned value of type 'void' to function return type 'std::unique_ptr<TiffEntry>'
+  124 |     GTEST_SKIP() << "Factory did not produce a TiffEntry for the requested tag/group.";
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1730:22: note: expanded from macro 'GTEST_SKIP'
+ 1730 | #define GTEST_SKIP() GTEST_SKIP_("")
+      |                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1305:10: note: expanded from macro 'GTEST_SKIP_'
+ 1305 |   return GTEST_MESSAGE_(message, ::testing::TestPartResult::kSkip)
+      |          ^
+/usr/local/include/gtest/internal/gtest-internal.h:1293:3: note: expanded from macro 'GTEST_MESSAGE_'
+ 1293 |   GTEST_MESSAGE_AT_(__FILE__, __LINE__, message, result_type)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1289:3: note: expanded from macro 'GTEST_MESSAGE_AT_'
+ 1289 |   ::testing::internal::AssertHelper(result_type, file, line, message) = \
+      |   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:359:12: note: candidate constructor template not viable: cannot convert argument of incomplete type 'void' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  359 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:366:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'unique_ptr<TiffEntry> &&' for 1st argument
+  366 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: candidate constructor not viable: cannot convert argument of incomplete type 'void' to 'const unique_ptr<TiffEntry> &' for 1st argument
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:380:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'void'
+  380 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:390:2: note: candidate template ignored: could not match 'auto_ptr<_Up>' against 'void'
+  390 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:317:2: note: explicit constructor is not a candidate
+  317 |         unique_ptr(pointer __p) noexcept
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:151:73: error: use of undeclared identifier 'ifd0Id'
+  151 |   auto entry = MakeTiffEntryViaCreatorOrSkip(/*tag=*/0x010Eu, /*group=*/ifd0Id);
+      |                                                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp:165:73: error: use of undeclared identifier 'ifd0Id'
+  165 |   auto entry = MakeTiffEntryViaCreatorOrSkip(/*tag=*/0x010Eu, /*group=*/ifd0Id);
+      |                                                                         ^
+18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1668.dir/build.make:79: generated_build/CMakeFiles/test_1668.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1668.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:47695: generated_build/CMakeFiles/test_1668.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:47702: generated_build/CMakeFiles/test_1668.dir/rule] Error 2
+gmake: *** [Makefile:15831: test_1668] Error 2

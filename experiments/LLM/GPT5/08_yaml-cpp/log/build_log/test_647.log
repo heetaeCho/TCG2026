@@ -1,0 +1,16 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_647.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_647.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_647.cpp:26:10: error: no matching conversion for functional-style cast from 'const shared_memory_holder' (aka 'const shared_ptr<memory_holder>') to 'node'
+   26 |   return node(mem);
+      |          ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: candidate constructor not viable: no known conversion from 'const shared_memory_holder' (aka 'const shared_ptr<memory_holder>') to 'const node' for 1st argument
+   28 |   node(const node&) = delete;
+      |   ^    ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:27:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   27 |   node() : m_pRef(std::make_shared<node_ref>()), m_dependencies{}, m_index{} {}
+      |   ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_647.dir/build.make:79: generated_build/CMakeFiles/test_647.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_647.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:7211: generated_build/CMakeFiles/test_647.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:7218: generated_build/CMakeFiles/test_647.dir/rule] Error 2
+gmake: *** [Makefile:2208: test_647] Error 2

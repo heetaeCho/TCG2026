@@ -1,0 +1,128 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_191.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:11:5: error: non-virtual member function marked 'override' hides virtual member function
+   11 |     MOCK_METHOD(bool, isBinary, (bool last), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:102:1: note: expanded from here
+  102 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different qualifiers ('const' vs unqualified)
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:91:49: error: no member named 'kUnknown' in 'StreamKind'
+   91 |     ASSERT_EQ(faxStream->getKind(), StreamKind::kUnknown);
+      |                                     ~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1914:53: note: expanded from macro 'ASSERT_EQ'
+ 1914 | #define ASSERT_EQ(val1, val2) GTEST_ASSERT_EQ(val1, val2)
+      |                                                     ^~~~
+/usr/local/include/gtest/gtest.h:1898:69: note: expanded from macro 'GTEST_ASSERT_EQ'
+ 1898 |   ASSERT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:148:40: note: expanded from macro 'ASSERT_PRED_FORMAT2'
+  148 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:104:32: error: 'addPixels' is a private member of 'CCITTFaxStream'
+  104 |     ASSERT_NO_THROW(faxStream->addPixels(10, 20));  // example values
+      |                                ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:1042:10: note: declared private here
+ 1042 |     void addPixels(int a1, int blackPixels);
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:104:5: error: cannot use 'try' with exceptions disabled
+  104 |     ASSERT_NO_THROW(faxStream->addPixels(10, 20));  // example values
+      |     ^
+/usr/local/include/gtest/gtest.h:1800:3: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:105:32: error: 'addPixelsNeg' is a private member of 'CCITTFaxStream'
+  105 |     ASSERT_NO_THROW(faxStream->addPixelsNeg(10, 20));  // example values
+      |                                ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:1043:10: note: declared private here
+ 1043 |     void addPixelsNeg(int a1, int blackPixels);
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:105:5: error: cannot use 'try' with exceptions disabled
+  105 |     ASSERT_NO_THROW(faxStream->addPixelsNeg(10, 20));  // example values
+      |     ^
+/usr/local/include/gtest/gtest.h:1800:3: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:17:7: warning: 'CCITTFaxStreamTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class CCITTFaxStreamTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'MockStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:23:27: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+   23 |         mockStream = std::make_unique<MockStream>();
+      |                           ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'MockStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'MockStream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'MockStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'MockStream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'MockStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'MockStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'MockStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:6:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    6 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<MockStream>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp:23:22: note: in instantiation of member function 'std::unique_ptr<MockStream>::~unique_ptr' requested here
+   23 |         mockStream = std::make_unique<MockStream>();
+      |                      ^
+2 warnings and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_191.dir/build.make:79: generated_build/CMakeFiles/test_191.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_191.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:91495: generated_build/CMakeFiles/test_191.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:91502: generated_build/CMakeFiles/test_191.dir/rule] Error 2
+gmake: *** [Makefile:33641: test_191] Error 2

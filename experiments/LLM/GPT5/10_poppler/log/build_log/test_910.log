@@ -1,0 +1,38 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_910.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_910.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_910.cpp:26:20: error: no viable overloaded '='
+   26 |       globalParams = new GlobalParams();
+      |       ~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:414:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'unique_ptr<GlobalParams>' for 1st argument
+  414 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:430:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'GlobalParams *'
+  430 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:440:7: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  440 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:523:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'const unique_ptr<GlobalParams>' for 1st argument
+  523 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_910.cpp:34:7: error: cannot delete expression of type 'std::unique_ptr<GlobalParams>'
+   34 |       delete globalParams;
+      |       ^      ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_910.cpp:136:35: error: unknown type name 'Guint'; did you mean 'uint'?
+  136 |                       static_cast<Guint>(buffer_.size()),
+      |                                   ^~~~~
+      |                                   uint
+/usr/include/x86_64-linux-gnu/sys/types.h:150:22: note: 'uint' declared here
+  150 | typedef unsigned int uint;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_910.cpp:137:23: error: calling a private constructor of class 'Object'
+  137 |                       Object(objNull)));
+      |                       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_910.dir/build.make:79: generated_build/CMakeFiles/test_910.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_910.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:30247: generated_build/CMakeFiles/test_910.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:30254: generated_build/CMakeFiles/test_910.dir/rule] Error 2
+gmake: *** [Makefile:8759: test_910] Error 2

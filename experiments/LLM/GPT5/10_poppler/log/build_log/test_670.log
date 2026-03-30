@@ -1,0 +1,53 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_670.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_670.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_670.cpp:6:27: error: base class has incomplete type
+    6 | class MockPDFDoc : public PDFDoc {
+      |                    ~~~~~~~^~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Catalog.h:58:7: note: forward declaration of 'PDFDoc'
+   58 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_670.cpp:8:5: error: only virtual member functions can be marked 'override'
+    8 |     MOCK_METHOD(void, someMethod, (), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:19:1: note: expanded from here
+   19 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_670.cpp:19:23: error: no matching constructor for initialization of 'Catalog'
+   19 |         catalog = new Catalog(mockDoc);
+      |                       ^       ~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Catalog.h:114:14: note: candidate constructor not viable: no known conversion from 'MockPDFDoc *' to 'PDFDoc *' for 1st argument
+  114 |     explicit Catalog(PDFDoc *docA);
+      |              ^       ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Catalog.h:119:5: note: candidate constructor not viable: no known conversion from 'MockPDFDoc *' to 'const Catalog' for 1st argument
+  119 |     Catalog(const Catalog &) = delete;
+      |     ^       ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_670.cpp:79:24: error: 'cachePageTreeForRef' is a private member of 'Catalog'
+   79 |     EXPECT_GT(catalog->cachePageTreeForRef(validPageRef), 0);  // Assuming positive return for valid ref
+      |                        ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Catalog.h:316:17: note: declared private here
+  316 |     std::size_t cachePageTreeForRef(Ref pageRef); // Cache until <pageRef>.
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_670.cpp:12:7: warning: 'CatalogTest_670' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class CatalogTest_670 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_670.dir/build.make:79: generated_build/CMakeFiles/test_670.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_670.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:53223: generated_build/CMakeFiles/test_670.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:53230: generated_build/CMakeFiles/test_670.dir/rule] Error 2
+gmake: *** [Makefile:18093: test_670] Error 2

@@ -1,0 +1,84 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_163.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:17:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:87:63: error: no matching constructor for initialization of 'InternalKeyComparator'
+   87 |   explicit SimpleInternalKeyComparator(const Comparator* c) : InternalKeyComparator(*c) {}
+      |                                                               ^                     ~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/dbformat.h:107:12: note: candidate constructor not viable: no known conversion from 'const Comparator' to 'const Comparator *' for 1st argument; remove *
+  107 |   explicit InternalKeyComparator(const Comparator* c) : user_comparator_(c) {}
+      |            ^                     ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/dbformat.h:102:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const Comparator' to 'const InternalKeyComparator' for 1st argument
+  102 | class InternalKeyComparator : public Comparator {
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/dbformat.h:102:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const Comparator' to 'InternalKeyComparator' for 1st argument
+  102 | class InternalKeyComparator : public Comparator {
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:181:3: error: only virtual member functions can be marked 'override'
+  181 |   MOCK_METHOD(Status, GetChildren, (const std::string& dir, int* result), (override));
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:72:1: note: expanded from here
+   72 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:279:25: error: 'Invoke<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:279:32)>' is deprecated: Actions can now be implicitly constructed from callables. No need to create wrapper objects using Invoke(). [-Werror,-Wdeprecated-declarations]
+  279 |         .WillOnce(DoAll(Invoke([&](const std::string& fname, WritableFile** result) {
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:2056:1: note: 'Invoke<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:279:32)>' has been explicitly marked deprecated here
+ 2056 | GTEST_INTERNAL_DEPRECATE_AND_INLINE(
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-port.h:2337:5: note: expanded from macro 'GTEST_INTERNAL_DEPRECATE_AND_INLINE'
+ 2337 |   [[deprecated(msg), clang::annotate("inline-me")]]
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:279:19: error: 'DoAll<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:279:32)>' is deprecated: Avoid using DoAll() for single actions [-Werror,-Wdeprecated-declarations]
+  279 |         .WillOnce(DoAll(Invoke([&](const std::string& fname, WritableFile** result) {
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:1884:1: note: 'DoAll<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:279:32)>' has been explicitly marked deprecated here
+ 1884 | GTEST_INTERNAL_DEPRECATE_AND_INLINE("Avoid using DoAll() for single actions")
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-port.h:2337:5: note: expanded from macro 'GTEST_INTERNAL_DEPRECATE_AND_INLINE'
+ 2337 |   [[deprecated(msg), clang::annotate("inline-me")]]
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:321:26: error: cannot initialize a parameter of type 'MockWritableFile **' with an rvalue of type 'NiceMock<MockWritableFile> **'
+  321 |   ExpectCreateManifestOK(&wf /*out*/);
+      |                          ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:251:50: note: passing argument to parameter 'out_file' here
+  251 |   void ExpectCreateManifestOK(MockWritableFile** out_file,
+      |                                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:381:26: error: cannot initialize a parameter of type 'MockWritableFile **' with an rvalue of type 'NiceMock<MockWritableFile> **'
+  381 |   ExpectCreateManifestOK(&wf);
+      |                          ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:251:50: note: passing argument to parameter 'out_file' here
+  251 |   void ExpectCreateManifestOK(MockWritableFile** out_file,
+      |                                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:479:26: error: cannot initialize a parameter of type 'MockWritableFile **' with an rvalue of type 'NiceMock<MockWritableFile> **'
+  479 |   ExpectCreateManifestOK(&wf);
+      |                          ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp:251:50: note: passing argument to parameter 'out_file' here
+  251 |   void ExpectCreateManifestOK(MockWritableFile** out_file,
+      |                                                  ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_163.dir/build.make:76: generated_build/CMakeFiles/test_163.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_163.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9925: generated_build/CMakeFiles/test_163.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9932: generated_build/CMakeFiles/test_163.dir/rule] Error 2
+gmake: *** [Makefile:4105: test_163] Error 2

@@ -1,0 +1,88 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_448.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp:33:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:49:
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/prog.h:59:7: error: redefinition of 'Prog'
+   59 | class Prog {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp:15:8: note: previous definition is here
+   15 | struct Prog {
+      |        ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp:33:
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:64:12: error: out-of-line definition of 'TESTING_ONLY_set_dfa_should_bail_when_slow' does not match any declaration in 're2::Prog'
+   64 | void Prog::TESTING_ONLY_set_dfa_should_bail_when_slow(bool b) {
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp:15:8: note: Prog defined here
+   15 | struct Prog {
+      |        ^~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp:33:
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:104:34: error: no type named 'DFAStateCallback' in 're2::Prog'
+  104 |   int BuildAllStates(const Prog::DFAStateCallback& cb);
+      |                            ~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:316:21: error: no member named 'bytemap_range' in 're2::Prog'
+  316 |       return prog_->bytemap_range();
+      |              ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:317:19: error: no member named 'bytemap' in 're2::Prog'
+  317 |     return prog_->bytemap()[c];
+      |            ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:428:60: error: no member named 'DumpUnanchored' in 're2::Prog'
+  428 |     absl::FPrintF(stderr, "\nkind %d\n%s\n", kind_, prog_->DumpUnanchored());
+      |                                                     ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:430:16: error: no member named 'kLongestMatch' in 're2::Prog'; did you mean 'kInstMatch'?
+  430 |   if (kind_ == Prog::kLongestMatch)
+      |                ^~~~~~~~~~~~~~~~~~~
+      |                kInstMatch
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/prog.h:38:3: note: 'kInstMatch' declared here
+   38 |   kInstMatch,        // found a match!
+      |   ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp:33:
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:431:20: error: no member named 'size' in 're2::Prog'
+  431 |     nmark = prog_->size();
+      |             ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:433:23: error: no member named 'inst_count' in 're2::Prog'
+  433 |   int nstack = prog_->inst_count(kInstCapture) +
+      |                ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:434:23: error: no member named 'inst_count' in 're2::Prog'
+  434 |                prog_->inst_count(kInstEmptyWidth) +
+      |                ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:435:23: error: no member named 'inst_count' in 're2::Prog'
+  435 |                prog_->inst_count(kInstNop) +
+      |                ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:440:26: error: no member named 'size' in 're2::Prog'
+  440 |   mem_budget_ -= (prog_->size() + nmark) *
+      |                   ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:456:22: error: no member named 'bytemap_range' in 're2::Prog'
+  456 |   int nnext = prog_->bytemap_range() + 1;  // + 1 for kByteEndText slot
+      |               ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:458:31: error: no member named 'list_count' in 're2::Prog'
+  458 |                       (prog_->list_count()+nmark)*sizeof(int);
+      |                        ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:464:26: error: no member named 'size' in 're2::Prog'
+  464 |   q0_ = new Workq(prog_->size(), nmark);
+      |                   ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:465:26: error: no member named 'size' in 're2::Prog'
+  465 |   q1_ = new Workq(prog_->size(), nmark);
+      |                   ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:430:13: warning: result of comparison of constant 'kInstMatch' (5) with expression of type 'Prog::MatchKind' is always false [-Wtautological-constant-out-of-range-compare]
+  430 |   if (kind_ == Prog::kLongestMatch)
+      |       ~~~~~ ^        ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:627:31: error: no member named 'kFirstMatch' in 're2::Prog'; did you mean 'kInstMatch'?
+  627 |     if (sawmatch && (kind_ == Prog::kFirstMatch || q->is_mark(id)))
+      |                               ^~~~~~~~~~~~~~~~~
+      |                               kInstMatch
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/prog.h:38:3: note: 'kInstMatch' declared here
+   38 |   kInstMatch,        // found a match!
+      |   ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp:33:
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:636:11: error: no type named 'Inst' in 're2::Prog'
+  636 |     Prog::Inst* ip = prog_->inst(id);
+      |     ~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/dfa.cc:636:29: error: no member named 'inst' in 're2::Prog'
+  636 |     Prog::Inst* ip = prog_->inst(id);
+      |                      ~~~~~  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_448.dir/build.make:79: generated_build/CMakeFiles/test_448.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_448.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4617: generated_build/CMakeFiles/test_448.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4624: generated_build/CMakeFiles/test_448.dir/rule] Error 2
+gmake: *** [Makefile:1258: test_448] Error 2

@@ -1,0 +1,25 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_518.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_518.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_518.cpp:14:12: error: no matching constructor for initialization of 'GfxAxialShading'
+   14 |     return GfxAxialShading(x0, y0, x1, y1,
+      |            ^               ~~~~~~~~~~~~~~~
+   15 |                            /*t0A=*/0.0, /*t1A=*/1.0,
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~
+   16 |                            std::move(funcs),
+      |                            ~~~~~~~~~~~~~~~~~
+   17 |                            /*extend0A=*/false, /*extend1A=*/false);
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1029:5: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<int &>::type' (aka 'int') to 'std::vector<std::unique_ptr<Function>>' for 7th argument
+ 1029 |     GfxAxialShading(double x0A, double y0A, double x1A, double y1A, double t0A, double t1A, std::vector<std::unique_ptr<Function>> &&funcsA, bool extend0A, bool extend1A);
+      |     ^                                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1030:14: note: candidate constructor not viable: requires single argument 'shading', but 9 arguments were provided
+ 1030 |     explicit GfxAxialShading(const GfxAxialShading *shading);
+      |              ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1026:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 9 were provided
+ 1026 | class GfxAxialShading : public GfxUnivariateShading
+      |       ^~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_518.dir/build.make:79: generated_build/CMakeFiles/test_518.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_518.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:46567: generated_build/CMakeFiles/test_518.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:46574: generated_build/CMakeFiles/test_518.dir/rule] Error 2
+gmake: *** [Makefile:15389: test_518] Error 2

@@ -1,0 +1,44 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1089.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp:195:63: error: no viable conversion from 'std::string' (aka 'basic_string<char>') to 'StringRef'
+  195 |           m_sectionIncluded(getResultCapture().sectionStarted(m_info.name,
+      |                                                               ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp:49:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'const StringRef &' for 1st argument
+   49 | class StringRef {
+      |       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp:49:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'StringRef &&' for 1st argument
+   49 | class StringRef {
+      |       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp:53:5: note: candidate constructor not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'const char *' for 1st argument
+   53 |     StringRef(const char* s) : str_(s ? s : "") {}
+      |     ^         ~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:932:7: note: candidate function
+  932 |       operator __sv_type() const noexcept
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp:97:43: note: passing argument to parameter 'sectionName' here
+   97 |     virtual bool sectionStarted(StringRef sectionName,
+      |                                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp:297:54: error: expected '(' for function-style cast or type construction
+  297 |         sectionStarted(testing::Property(&std::string, std::string("alpha")),
+      |                                           ~~~~~~~~~~~^
+/usr/local/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp:353:54: error: expected '(' for function-style cast or type construction
+  353 |         sectionStarted(testing::Property(&std::string, std::string("")),
+      |                                           ~~~~~~~~~~~^
+/usr/local/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1089.dir/build.make:79: generated_build/CMakeFiles/test_1089.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1089.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5189: generated_build/CMakeFiles/test_1089.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5196: generated_build/CMakeFiles/test_1089.dir/rule] Error 2
+gmake: *** [Makefile:865: test_1089] Error 2

@@ -1,0 +1,24 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1080.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1080.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1080.cpp:23:23: error: return type 'Exiv2::Image' is an abstract class
+   23 |   static Exiv2::Image makeImage() {
+      |                       ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1080.cpp:26:12: error: allocating an object of abstract class type 'Exiv2::Image'
+   26 |     return Exiv2::Image(Exiv2::ImageType::none, /*supportedMetadata=*/0, makeIo());
+      |            ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1080.dir/build.make:79: generated_build/CMakeFiles/test_1080.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1080.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:55379: generated_build/CMakeFiles/test_1080.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:55386: generated_build/CMakeFiles/test_1080.dir/rule] Error 2
+gmake: *** [Makefile:18769: test_1080] Error 2

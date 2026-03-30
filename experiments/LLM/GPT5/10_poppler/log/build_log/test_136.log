@@ -1,0 +1,49 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_136.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:29:3: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   29 |   const Goffset currentPos() override { return curPos_; }
+      |   ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:29:30: error: non-virtual member function marked 'override' hides virtual member function
+   29 |   const Goffset currentPos() override { return curPos_; }
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:417:21: note: hidden overloaded virtual function 'BaseSeekInputStream::currentPos' declared here: different return type ('Goffset' (aka 'long long') vs 'const Goffset' (aka 'const long long'))
+  417 |     virtual Goffset currentPos() const = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:19:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   19 | class TestSeekInputStreamBackend final : public BaseSeekInputStream {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'TestSeekInputStreamBackend'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'TestSeekInputStreamBackend'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:417:21: note: unimplemented pure virtual method 'currentPos' in 'TestSeekInputStreamBackend'
+  417 |     virtual Goffset currentPos() const = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:71:30: error: variable type 'TestSeekInputStreamBackend' is an abstract class
+   71 |   TestSeekInputStreamBackend s(start, /*limitedA=*/false, /*lengthA=*/0, std::move(dict), "");
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:79:30: error: variable type 'TestSeekInputStreamBackend' is an abstract class
+   79 |   TestSeekInputStreamBackend s(start, /*limitedA=*/false, /*lengthA=*/0, std::move(dict), "abc");
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:87:30: error: variable type 'TestSeekInputStreamBackend' is an abstract class
+   87 |   TestSeekInputStreamBackend s(start, /*limitedA=*/false, /*lengthA=*/0, std::move(dict), "x");
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:95:30: error: variable type 'TestSeekInputStreamBackend' is an abstract class
+   95 |   TestSeekInputStreamBackend s(start, /*limitedA=*/false, /*lengthA=*/0, std::move(dict), "hi");
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:113:30: error: variable type 'TestSeekInputStreamBackend' is an abstract class
+  113 |   TestSeekInputStreamBackend s(start, /*limitedA=*/false, /*lengthA=*/0, std::move(dict), "data");
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:19:7: warning: 'TestSeekInputStreamBackend' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   19 | class TestSeekInputStreamBackend final : public BaseSeekInputStream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp:58:7: warning: 'BaseSeekInputStreamGetStartTest_136' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   58 | class BaseSeekInputStreamGetStartTest_136 : public ::testing::Test {
+      |       ^
+4 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_136.dir/build.make:79: generated_build/CMakeFiles/test_136.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_136.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:32071: generated_build/CMakeFiles/test_136.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:32078: generated_build/CMakeFiles/test_136.dir/rule] Error 2
+gmake: *** [Makefile:9500: test_136] Error 2

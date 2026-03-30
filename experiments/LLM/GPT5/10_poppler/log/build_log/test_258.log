@@ -1,0 +1,68 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_258.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_258.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_258.cpp:18:3: error: cannot use 'try' with exceptions disabled
+   18 |   EXPECT_NO_THROW({
+      |   ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_258.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:66:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_tempbuf.h:61:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:115:4: error: no matching function for call to 'construct_at'
+  115 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:120:11: note: in instantiation of function template specialization 'std::_Construct<XRef, XRef>' requested here
+  120 |             std::_Construct(std::__addressof(*__cur), *__first);
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:371:14: note: in instantiation of function template specialization 'std::__do_uninit_copy<std::move_iterator<XRef *>, XRef *>' requested here
+  371 |         return std::__do_uninit_copy(__first, __last, __result);
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:398:19: note: in instantiation of function template specialization 'std::__uninitialized_copy_a<std::move_iterator<XRef *>, XRef *, XRef>' requested here
+  398 |       return std::__uninitialized_copy_a
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:492:10: note: in instantiation of function template specialization 'std::__uninitialized_move_if_noexcept_a<XRef *, XRef *, std::allocator<XRef>>' requested here
+  492 |                 = std::__uninitialized_move_if_noexcept_a
+      |                        ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/vector.tcc:123:4: note: in instantiation of function template specialization 'std::vector<XRef>::_M_realloc_insert<>' requested here
+  123 |           _M_realloc_insert(end(), std::forward<_Args>(__args)...);
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_258.cpp:67:5: note: in instantiation of function template specialization 'std::vector<XRef>::emplace_back<>' requested here
+   67 |   v.emplace_back();
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = XRef, _Args = <XRef>]: call to deleted constructor of 'XRef'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:119:25: error: call to deleted constructor of 'XRef'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/XRef.h:121:5: note: 'XRef' has been explicitly marked deleted here
+  121 |     XRef(const XRef &) = delete;
+      |     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_258.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:69:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:90:21: error: static assertion failed due to requirement 'is_constructible<XRef, XRef &&>::value': result type must be constructible from input type
+   90 |       static_assert(is_constructible<_ValueType, _Tp>::value,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:182:4: note: in instantiation of function template specialization 'std::__check_constructible<XRef, XRef &&>' requested here
+  182 |         = _GLIBCXX_USE_ASSIGN_FOR_INIT(_ValueType2, _From);
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:101:13: note: expanded from macro '_GLIBCXX_USE_ASSIGN_FOR_INIT'
+  101 |     && std::__check_constructible<T, U>()
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:373:19: note: in instantiation of function template specialization 'std::uninitialized_copy<std::move_iterator<XRef *>, XRef *>' requested here
+  373 |       return std::uninitialized_copy(__first, __last, __result);
+      |                   ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_258.dir/build.make:79: generated_build/CMakeFiles/test_258.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_258.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:51783: generated_build/CMakeFiles/test_258.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:51790: generated_build/CMakeFiles/test_258.dir/rule] Error 2
+gmake: *** [Makefile:17508: test_258] Error 2

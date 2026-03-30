@@ -1,0 +1,119 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_160.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:54:66: error: no member named 'decRefCnt' in 'CachedFile'
+   54 |     return std::shared_ptr<CachedFile>(p, [](CachedFile* x) { x->decRefCnt(); });
+      |                                                               ~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:66:63: error: non-virtual member function marked 'override' hides virtual member function
+   66 |   size_t init(GooString* /*uri*/, CachedFile* /*cachedFile*/) override {
+      |                                                               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: hidden overloaded virtual function 'CachedFileLoader::init' declared here: different number of parameters (1 vs 2)
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:62:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   62 | class InMemoryCachedFileLoader final : public CachedFileLoader {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: unimplemented pure virtual method 'init' in 'InMemoryCachedFileLoader'
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:101:27: error: no matching constructor for initialization of 'CachedFile'
+  101 |     CachedFile* raw = new CachedFile(loader.get(), uri);
+      |                           ^          ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:47:14: note: candidate constructor not viable: requires single argument 'cacheLoader', but 2 arguments were provided
+   47 |     explicit CachedFile(std::unique_ptr<CachedFileLoader> &&cacheLoader);
+      |              ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:49:5: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   49 |     CachedFile(const CachedFile &) = delete;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:134:12: error: calling a private constructor of class 'Object'
+  134 |     return Object(objNull);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:138:43: error: no member named 'initNull' in 'Object'
+  138 |     if constexpr (requires(Object& x) { x.initNull(); }) {
+      |                                         ~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:139:9: error: no member named 'initNull' in 'Object'
+  139 |       o.initNull();
+      |       ~ ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:11:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:66:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_tempbuf.h:61:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:115:4: error: no matching function for call to 'construct_at'
+  115 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:660:9: note: in instantiation of function template specialization 'std::_Construct<(anonymous namespace)::InMemoryCachedFileLoader, std::basic_string<char>>' requested here
+  660 |         { std::_Construct(__p, std::forward<_Args>(__args)...); }
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:604:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<void>>::construct<(anonymous namespace)::InMemoryCachedFileLoader, std::basic_string<char>>' requested here
+  604 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:972:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<(anonymous namespace)::InMemoryCachedFileLoader, std::allocator<void>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<std::basic_string<char>>' requested here
+  972 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1712:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<(anonymous namespace)::InMemoryCachedFileLoader, std::allocator<void>, std::basic_string<char>>' requested here
+ 1712 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:464:4: note: in instantiation of function template specialization 'std::__shared_ptr<(anonymous namespace)::InMemoryCachedFileLoader>::__shared_ptr<std::allocator<void>, std::basic_string<char>>' requested here
+  464 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:1009:14: note: in instantiation of function template specialization 'std::shared_ptr<(anonymous namespace)::InMemoryCachedFileLoader>::shared_ptr<std::allocator<void>, std::basic_string<char>>' requested here
+ 1009 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:95:22: note: in instantiation of function template specialization 'std::make_shared<(anonymous namespace)::InMemoryCachedFileLoader, std::basic_string<char>>' requested here
+   95 |   auto loader = std::make_shared<InMemoryCachedFileLoader>(std::move(bytes));
+      |                      ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = (anonymous namespace)::InMemoryCachedFileLoader, _Args = <std::basic_string<char>>]: allocating an object of abstract class type '(anonymous namespace)::InMemoryCachedFileLoader'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:119:25: error: allocating an object of abstract class type '(anonymous namespace)::InMemoryCachedFileLoader'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:115:4: error: no matching function for call to 'construct_at'
+  115 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:660:9: note: in instantiation of function template specialization 'std::_Construct<CachedFile, (anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>' requested here
+  660 |         { std::_Construct(__p, std::forward<_Args>(__args)...); }
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:604:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<void>>::construct<CachedFile, (anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>' requested here
+  604 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:972:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<CachedFile, std::allocator<void>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<(anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>' requested here
+  972 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1712:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<CachedFile, std::allocator<void>, (anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>' requested here
+ 1712 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:464:4: note: in instantiation of function template specialization 'std::__shared_ptr<CachedFile>::__shared_ptr<std::allocator<void>, (anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>' requested here
+  464 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:1009:14: note: in instantiation of function template specialization 'std::shared_ptr<CachedFile>::shared_ptr<std::allocator<void>, (anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>' requested here
+ 1009 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp:115:20: note: in instantiation of function template specialization 'std::make_shared<CachedFile, (anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>' requested here
+  115 |     auto cf = std::make_shared<CachedFile>(loader.get(), std::move(uri));
+      |                    ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = CachedFile, _Args = <(anonymous namespace)::InMemoryCachedFileLoader *, std::unique_ptr<GooString>>]: no matching constructor for initialization of 'CachedFile'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:119:25: error: no matching constructor for initialization of 'CachedFile'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:47:14: note: candidate constructor not viable: requires single argument 'cacheLoader', but 2 arguments were provided
+   47 |     explicit CachedFile(std::unique_ptr<CachedFileLoader> &&cacheLoader);
+      |              ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:49:5: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   49 |     CachedFile(const CachedFile &) = delete;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+1 warning and 10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_160.dir/build.make:79: generated_build/CMakeFiles/test_160.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_160.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21607: generated_build/CMakeFiles/test_160.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21614: generated_build/CMakeFiles/test_160.dir/rule] Error 2
+gmake: *** [Makefile:5249: test_160] Error 2

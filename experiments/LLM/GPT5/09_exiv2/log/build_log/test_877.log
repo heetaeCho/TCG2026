@@ -1,0 +1,33 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[ 50%] Building CXX object generated_build/CMakeFiles/test_877.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_877.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_877.cpp:75:12: error: no viable overloaded '='
+   75 |         tv = s;
+      |         ~~ ^ ~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:990:16: note: candidate function (the implicit copy assignment operator) not viable: no known conversion from 'const value_type' (aka 'const std::basic_string<char>') to 'const TimeValue' for 1st argument
+  990 | class EXIV2API TimeValue : public Value {
+      |                ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:990:16: note: candidate function (the implicit move assignment operator) not viable: no known conversion from 'const value_type' (aka 'const std::basic_string<char>') to 'TimeValue' for 1st argument
+  990 | class EXIV2API TimeValue : public Value {
+      |                ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_877.cpp:77:14: error: no matching conversion for functional-style cast from 'const value_type' (aka 'const std::basic_string<char>') to 'Exiv2::TimeValue'
+   77 |         tv = Exiv2::TimeValue(s);
+      |              ^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:990:16: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const value_type' (aka 'const std::basic_string<char>') to 'const TimeValue' for 1st argument
+  990 | class EXIV2API TimeValue : public Value {
+      |                ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:990:16: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const value_type' (aka 'const std::basic_string<char>') to 'TimeValue' for 1st argument
+  990 | class EXIV2API TimeValue : public Value {
+      |                ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:998:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  998 |   TimeValue();
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1000:3: note: candidate constructor not viable: requires at least 2 arguments, but 1 was provided
+ 1000 |   TimeValue(int32_t hour, int32_t minute, int32_t second = 0, int32_t tzHour = 0, int32_t tzMinute = 0);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_877.dir/build.make:79: generated_build/CMakeFiles/test_877.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_877.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:53509: generated_build/CMakeFiles/test_877.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:53516: generated_build/CMakeFiles/test_877.dir/rule] Error 2
+gmake: *** [Makefile:18054: test_877] Error 2

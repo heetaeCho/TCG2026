@@ -1,0 +1,110 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1651.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:22:19: error: field has incomplete type 'Exiv2::IptcData'
+   22 |   Exiv2::IptcData iptc_;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:23:18: error: field has incomplete type 'Exiv2::XmpData'
+   23 |   Exiv2::XmpData xmp_;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:67:7: error: type 'internal::AnyOfMatcher<typename std::decay<const ExitedWithCode &>::type, typename std::decay<const KilledBySignal &>::type, typename std::decay<const KilledBySignal &>::type, typename std::decay<const KilledBySignal &>::type, typename std::decay<const KilledBySignal &>::type>' (aka 'VariadicMatcher<AnyOfMatcherImpl, testing::ExitedWithCode, testing::KilledBySignal, testing::KilledBySignal, testing::KilledBySignal, testing::KilledBySignal>') does not provide a call operator
+   50 |         TiffComponent* root = nullptr;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   51 | 
+   52 |         TiffDecoder decoder(exif, iptc, xmp, root, fct);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   53 |         try {
+      |         ~~~~~
+   54 |           decoder.visitEntry(nullptr);  // boundary: null entry
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   55 |           std::exit(0);
+      |           ~~~~~~~~~~~~~
+   56 |         } catch (...) {
+      |         ~~~~~~~~~~~~~~~
+   57 |           // Throwing is considered an observable, acceptable outcome for this boundary input.
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   58 |           std::exit(0);
+      |           ~~~~~~~~~~~~~
+   59 |         }
+      |         ~
+   60 |       },
+      |       ~~
+   61 |       AnyOf(ExitedWithCode(0),
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~
+   62 |             // Accept common termination modes without assuming which one is used internally.
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   63 |             KilledBySignal(SIGSEGV), KilledBySignal(SIGABRT), KilledBySignal(SIGILL),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   64 |             KilledBySignal(SIGBUS)),
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~
+   65 |       "");
+      |       ~~~
+/usr/local/include/gtest/gtest-death-test.h:179:32: note: expanded from macro 'EXPECT_EXIT'
+  179 |   GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:235:33: note: expanded from macro 'GTEST_DEATH_TEST_'
+  235 |           if (!gtest_dt->Passed(predicate(gtest_dt->Wait()))) {                \
+      |                                 ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:53:25: error: variable has incomplete type 'Exiv2::IptcData'
+   53 |         Exiv2::IptcData iptc;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:54:24: error: variable has incomplete type 'Exiv2::XmpData'
+   54 |         Exiv2::XmpData xmp;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:4:
+In file included from /usr/local/include/gmock/gmock.h:56:
+In file included from /usr/local/include/gmock/gmock-actions.h:146:
+In file included from /usr/local/include/gmock/internal/gmock-internal-utils.h:51:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type '(anonymous namespace)::TiffDecoderTest_1651_ConstructWithNullRootAndDefaultCallback_1651_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:26:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<(anonymous namespace)::TiffDecoderTest_1651_ConstructWithNullRootAndDefaultCallback_1651_Test>::CreateTest' requested here
+   26 | TEST_F(TiffDecoderTest_1651, ConstructWithNullRootAndDefaultCallback_1651) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type '(anonymous namespace)::TiffDecoderTest_1651_VisitEntryWithNullptrDoesNotHang_1651_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp:40:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<(anonymous namespace)::TiffDecoderTest_1651_VisitEntryWithNullptrDoesNotHang_1651_Test>::CreateTest' requested here
+   40 | TEST_F(TiffDecoderTest_1651, VisitEntryWithNullptrDoesNotHang_1651) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1651.dir/build.make:79: generated_build/CMakeFiles/test_1651.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1651.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:71529: generated_build/CMakeFiles/test_1651.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:71536: generated_build/CMakeFiles/test_1651.dir/rule] Error 2
+gmake: *** [Makefile:24944: test_1651] Error 2

@@ -1,0 +1,83 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1283.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:28:17: error: indirection requires pointer operand ('std::string' (aka 'basic_string<char>') invalid)
+   28 |     EXPECT_CALL(*mockXmpdatum->key(), tagLabel()).WillOnce(::testing::Return("TestTagLabel"));
+      |                 ^~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:23: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:57:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   57 |     EXPECT_THROW(mockXmpdatum->tagLabel(), std::runtime_error);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'Exiv2::MockXmpKey'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:18:29: note: in instantiation of function template specialization 'std::make_unique<Exiv2::MockXmpKey, const char (&)[7], const char (&)[9]>' requested here
+   18 |         auto mockKey = std::make_unique<MockXmpKey>("prefix", "property");
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:8:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+    8 | class MockXmpKey : public XmpKey {
+      |       ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:8:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 2 were provided
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'Exiv2::Value'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:19:31: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Value>' requested here
+   19 |         auto mockValue = std::make_unique<Value>(); // Mock or set a proper value if needed
+      |                               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:19:26: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::~unique_ptr' requested here
+   19 |         auto mockValue = std::make_unique<Value>(); // Mock or set a proper value if needed
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'Exiv2::MockXmpKey'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:40:25: note: in instantiation of function template specialization 'std::make_unique<Exiv2::MockXmpKey, const char (&)[1], const char (&)[1]>' requested here
+   40 |     auto mockKey = std::make_unique<MockXmpKey>("", "");
+      |                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:8:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+    8 | class MockXmpKey : public XmpKey {
+      |       ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp:8:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 2 were provided
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1283.dir/build.make:79: generated_build/CMakeFiles/test_1283.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1283.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:81899: generated_build/CMakeFiles/test_1283.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:81906: generated_build/CMakeFiles/test_1283.dir/rule] Error 2
+gmake: *** [Makefile:28909: test_1283] Error 2

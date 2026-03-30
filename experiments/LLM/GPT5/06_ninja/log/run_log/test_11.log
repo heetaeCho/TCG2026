@@ -1,0 +1,62 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from ManifestParserParseTest_11
+[ RUN      ] ManifestParserParseTest_11.ParseValidSimpleManifest_11
+[       OK ] ManifestParserParseTest_11.ParseValidSimpleManifest_11 (0 ms)
+[ RUN      ] ManifestParserParseTest_11.ErrorMissingEqualsAtTopLevel_11
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/06_ninja/test_files/test_11.cpp:75: Failure
+Expected equality of these values:
+  "input:1: expected '=', got eof\n"
+  err
+    Which is: "input:1: expected '=', got eof\nfoobar\n      ^ near here"
+With diff:
+@@ -1,1 +1,3 @@
+-input:1: expected '=', got eof\n
++input:1: expected '=', got eof
++foobar
++      ^ near here
+
+
+[  FAILED  ] ManifestParserParseTest_11.ErrorMissingEqualsAtTopLevel_11 (0 ms)
+[ RUN      ] ManifestParserParseTest_11.ErrorUnexpectedEOFInAssignment_11
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/06_ninja/test_files/test_11.cpp:95: Failure
+Expected equality of these values:
+  "input:1: unexpected EOF\n"
+  err
+    Which is: "input:1: unexpected EOF\nx = 3\n     ^ near here"
+With diff:
+@@ -1,1 +1,3 @@
+-input:1: unexpected EOF\n
++input:1: unexpected EOF
++x = 3
++     ^ near here
+
+
+[  FAILED  ] ManifestParserParseTest_11.ErrorUnexpectedEOFInAssignment_11 (0 ms)
+[ RUN      ] ManifestParserParseTest_11.ErrorUnknownBuildRule_11
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/06_ninja/test_files/test_11.cpp:115: Failure
+Expected equality of these values:
+  "input:1: unknown build rule 'y'\n"
+  err
+    Which is: "input:1: unknown build rule 'y'\nbuild x: y z\n         ^ near here"
+With diff:
+@@ -1,1 +1,3 @@
+-input:1: unknown build rule 'y'\n
++input:1: unknown build rule 'y'
++build x: y z
++         ^ near here
+
+
+[  FAILED  ] ManifestParserParseTest_11.ErrorUnknownBuildRule_11 (0 ms)
+[----------] 4 tests from ManifestParserParseTest_11 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] ManifestParserParseTest_11.ErrorMissingEqualsAtTopLevel_11
+[  FAILED  ] ManifestParserParseTest_11.ErrorUnexpectedEOFInAssignment_11
+[  FAILED  ] ManifestParserParseTest_11.ErrorUnknownBuildRule_11
+
+ 3 FAILED TESTS

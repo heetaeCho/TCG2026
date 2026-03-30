@@ -1,0 +1,65 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_390.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:12:44: error: no member named 'cache_holder_type' in namespace 'YAML::jkj::dragonbox::policy::cache'
+   12 | using YAML::jkj::dragonbox::policy::cache::cache_holder_type;
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:15:16: error: no template named 'cache_holder_type'
+   15 | using Holder = cache_holder_type<FloatT>;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:18:24: error: no template named 'Holder'
+   18 | using KType = decltype(Holder<FloatT>::min_k);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:21:13: error: no template named 'KType'
+   21 | void CallAt(KType<FloatT> k) {
+      |             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:22:40: error: use of undeclared identifier 'KType'
+   22 |   (void)full_t::get_cache<FloatT, int, KType<FloatT>>(k);
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:26:32: error: no template named 'KType'
+   26 | void CallAndCheckRepeatability(KType<FloatT> k) {
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:27:49: error: use of undeclared identifier 'KType'
+   27 |   const auto a = full_t::get_cache<FloatT, int, KType<FloatT>>(k);
+      |                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:28:49: error: use of undeclared identifier 'KType'
+   28 |   const auto b = full_t::get_cache<FloatT, int, KType<FloatT>>(k);
+      |                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:36:17: error: no template named 'Holder'
+   36 |   CallAt<float>(Holder<float>::min_k);
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:37:17: error: no template named 'Holder'
+   37 |   CallAt<float>(Holder<float>::max_k);
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:39:18: error: no template named 'Holder'
+   39 |   CallAt<double>(Holder<double>::min_k);
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:40:18: error: no template named 'Holder'
+   40 |   CallAt<double>(Holder<double>::max_k);
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:44:36: error: no template named 'Holder'
+   44 |   CallAndCheckRepeatability<float>(Holder<float>::min_k);
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:45:36: error: no template named 'Holder'
+   45 |   CallAndCheckRepeatability<float>(Holder<float>::max_k);
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:47:37: error: no template named 'Holder'
+   47 |   CallAndCheckRepeatability<double>(Holder<double>::min_k);
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:48:37: error: no template named 'Holder'
+   48 |   CallAndCheckRepeatability<double>(Holder<double>::max_k);
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:55:54: error: use of undeclared identifier 'KType'
+   55 |     constexpr auto v = full_t::get_cache<float, int, KType<float>>(Holder<float>::min_k);
+      |                                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:55:68: error: no template named 'Holder'
+   55 |     constexpr auto v = full_t::get_cache<float, int, KType<float>>(Holder<float>::min_k);
+      |                                                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp:59:55: error: use of undeclared identifier 'KType'
+   59 |     constexpr auto v = full_t::get_cache<double, int, KType<double>>(Holder<double>::min_k);
+      |                                                       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_390.dir/build.make:79: generated_build/CMakeFiles/test_390.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_390.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23339: generated_build/CMakeFiles/test_390.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23346: generated_build/CMakeFiles/test_390.dir/rule] Error 2
+gmake: *** [Makefile:8760: test_390] Error 2

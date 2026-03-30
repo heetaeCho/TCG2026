@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1218.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1218.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1218.cpp:56:32: error: no member named 'getTextPageBreaks' in 'TextOutputDev'
+   56 |     EXPECT_TRUE(textOutputDev->getTextPageBreaks());
+      |                 ~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1218.cpp:68:19: error: variable type 'MockOutputDev' is an abstract class
+   68 |     MockOutputDev mockDev;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/OutputDev.h:79:18: note: unimplemented pure virtual method 'upsideDown' in 'MockOutputDev'
+   79 |     virtual bool upsideDown() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/OutputDev.h:82:18: note: unimplemented pure virtual method 'useDrawChar' in 'MockOutputDev'
+   82 |     virtual bool useDrawChar() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/OutputDev.h:102:18: note: unimplemented pure virtual method 'interpretType3Chars' in 'MockOutputDev'
+  102 |     virtual bool interpretType3Chars() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1218.cpp:70:28: error: no member named 'Throw' in namespace 'testing'
+   70 |         .WillOnce(testing::Throw(std::runtime_error("Error starting page")));
+      |                   ~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1218.cpp:72:5: error: cannot use 'try' with exceptions disabled
+   72 |     try {
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1218.cpp:25:7: warning: 'TextOutputDevTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   25 | class TextOutputDevTest : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1218.dir/build.make:79: generated_build/CMakeFiles/test_1218.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1218.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:31687: generated_build/CMakeFiles/test_1218.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:31694: generated_build/CMakeFiles/test_1218.dir/rule] Error 2
+gmake: *** [Makefile:9344: test_1218] Error 2

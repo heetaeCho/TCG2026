@@ -1,0 +1,308 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1733.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:17:37: error: exception specification of overriding function is more lax than base version
+   17 |     MOCK_METHOD(const std::string&, path, (), (const, override));
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:27:22: error: allocating an object of abstract class type 'MockBasicIo'
+   27 |         mockIo = new MockBasicIo();
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:98:15: note: unimplemented pure virtual method 'putb' in 'MockBasicIo'
+   98 |   virtual int putb(byte data) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:122:18: note: unimplemented pure virtual method 'read' in 'MockBasicIo'
+  122 |   virtual size_t read(byte* buf, size_t rcount) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:140:15: note: unimplemented pure virtual method 'getb' in 'MockBasicIo'
+  140 |   virtual int getb() = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:154:16: note: unimplemented pure virtual method 'transfer' in 'MockBasicIo'
+  154 |   virtual void transfer(BasicIo& src) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:163:15: note: unimplemented pure virtual method 'seek' in 'MockBasicIo'
+  163 |   virtual int seek(int64_t offset, Position pos) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:184:17: note: unimplemented pure virtual method 'mmap' in 'MockBasicIo'
+  184 |   virtual byte* mmap(bool isWriteable = false) = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:191:15: note: unimplemented pure virtual method 'munmap' in 'MockBasicIo'
+  191 |   virtual int munmap() = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:201:32: note: unimplemented pure virtual method 'tell' in 'MockBasicIo'
+  201 |   [[nodiscard]] virtual size_t tell() const = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:209:30: note: unimplemented pure virtual method 'isopen' in 'MockBasicIo'
+  209 |   [[nodiscard]] virtual bool isopen() const = 0;
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:211:29: note: unimplemented pure virtual method 'error' in 'MockBasicIo'
+  211 |   [[nodiscard]] virtual int error() const = 0;
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:213:30: note: unimplemented pure virtual method 'eof' in 'MockBasicIo'
+  213 |   [[nodiscard]] virtual bool eof() const = 0;
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MockBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:45:13: error: variable has incomplete type 'ExifKey'
+   45 |     ExifKey key("Exif.Image.InterColorProfile");
+      |             ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:46:5: error: no member named 'gmock_mmap' in 'MockBasicIo'
+   46 |     EXPECT_CALL(*mockIo, mmap(true))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:37:1: note: expanded from here
+   37 | gmock_mmap
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:54:8: error: unknown class name 'TiffImageTest_1734'; did you mean 'TiffImageTest_1733'?
+   54 | TEST_F(TiffImageTest_1734, WriteMetadataIoFailure_1734) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1487:16: note: expanded from macro 'GTEST_TEST_'
+ 1487 |       : public parent_class {                                                  \
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:54:8: error: unknown type name 'TiffImageTest_1734'; did you mean 'TiffImageTest_1733'?
+   54 | TEST_F(TiffImageTest_1734, WriteMetadataIoFailure_1734) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2222:46: note: expanded from macro 'GTEST_TEST_F'
+ 2222 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/local/include/gtest/internal/gtest-internal.h:1512:67: note: expanded from macro 'GTEST_TEST_'
+ 1512 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id),  \
+      |                                                                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:54:8: error: unknown type name 'TiffImageTest_1734'; did you mean 'TiffImageTest_1733'?
+   54 | TEST_F(TiffImageTest_1734, WriteMetadataIoFailure_1734) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1514:15: note: expanded from macro 'GTEST_TEST_'
+ 1514 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:54:8: error: unknown type name 'TiffImageTest_1734'; did you mean 'TiffImageTest_1733'?
+   54 | TEST_F(TiffImageTest_1734, WriteMetadataIoFailure_1734) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1516:15: note: expanded from macro 'GTEST_TEST_'
+ 1516 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),       \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:64:8: error: unknown class name 'TiffImageTest_1735'; did you mean 'TiffImageTest_1733'?
+   64 | TEST_F(TiffImageTest_1735, WriteMetadataInvalidByteOrder_1735) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1487:16: note: expanded from macro 'GTEST_TEST_'
+ 1487 |       : public parent_class {                                                  \
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:64:8: error: unknown type name 'TiffImageTest_1735'; did you mean 'TiffImageTest_1733'?
+   64 | TEST_F(TiffImageTest_1735, WriteMetadataInvalidByteOrder_1735) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2222:46: note: expanded from macro 'GTEST_TEST_F'
+ 2222 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/local/include/gtest/internal/gtest-internal.h:1512:67: note: expanded from macro 'GTEST_TEST_'
+ 1512 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id),  \
+      |                                                                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:64:8: error: unknown type name 'TiffImageTest_1735'; did you mean 'TiffImageTest_1733'?
+   64 | TEST_F(TiffImageTest_1735, WriteMetadataInvalidByteOrder_1735) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1514:15: note: expanded from macro 'GTEST_TEST_'
+ 1514 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:64:8: error: unknown type name 'TiffImageTest_1735'; did you mean 'TiffImageTest_1733'?
+   64 | TEST_F(TiffImageTest_1735, WriteMetadataInvalidByteOrder_1735) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1516:15: note: expanded from macro 'GTEST_TEST_'
+ 1516 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),       \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:72:5: error: no member named 'gmock_mmap' in 'MockBasicIo'
+   72 |     EXPECT_CALL(*mockIo, mmap(true))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:68:1: note: expanded from here
+   68 | gmock_mmap
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:80:8: error: unknown class name 'TiffImageTest_1736'; did you mean 'TiffImageTest_1733'?
+   80 | TEST_F(TiffImageTest_1736, WriteMetadataMissingIccProfile_1736) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1487:16: note: expanded from macro 'GTEST_TEST_'
+ 1487 |       : public parent_class {                                                  \
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:80:8: error: unknown type name 'TiffImageTest_1736'; did you mean 'TiffImageTest_1733'?
+   80 | TEST_F(TiffImageTest_1736, WriteMetadataMissingIccProfile_1736) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2222:46: note: expanded from macro 'GTEST_TEST_F'
+ 2222 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/local/include/gtest/internal/gtest-internal.h:1512:67: note: expanded from macro 'GTEST_TEST_'
+ 1512 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id),  \
+      |                                                                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:80:8: error: unknown type name 'TiffImageTest_1736'; did you mean 'TiffImageTest_1733'?
+   80 | TEST_F(TiffImageTest_1736, WriteMetadataMissingIccProfile_1736) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1514:15: note: expanded from macro 'GTEST_TEST_'
+ 1514 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:80:8: error: unknown type name 'TiffImageTest_1736'; did you mean 'TiffImageTest_1733'?
+   80 | TEST_F(TiffImageTest_1736, WriteMetadataMissingIccProfile_1736) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1516:15: note: expanded from macro 'GTEST_TEST_'
+ 1516 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),       \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:88:5: error: no member named 'gmock_mmap' in 'MockBasicIo'
+   88 |     EXPECT_CALL(*mockIo, mmap(true))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:42:1: note: expanded from here
+   42 | gmock_mmap
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:96:8: error: unknown class name 'TiffImageTest_1737'; did you mean 'TiffImageTest_1733'?
+   96 | TEST_F(TiffImageTest_1737, WriteMetadataExifDataInteraction_1737) {
+      |        ^~~~~~~~~~~~~~~~~~
+      |        TiffImageTest_1733
+/usr/local/include/gtest/gtest.h:2224:54: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:2221:40: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/local/include/gtest/internal/gtest-internal.h:1487:16: note: expanded from macro 'GTEST_TEST_'
+ 1487 |       : public parent_class {                                                  \
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp:21:7: note: 'TiffImageTest_1733' declared here
+   21 | class TiffImageTest_1733 : public testing::Test {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1733.dir/build.make:79: generated_build/CMakeFiles/test_1733.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1733.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:75915: generated_build/CMakeFiles/test_1733.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:75922: generated_build/CMakeFiles/test_1733.dir/rule] Error 2
+gmake: *** [Makefile:26621: test_1733] Error 2

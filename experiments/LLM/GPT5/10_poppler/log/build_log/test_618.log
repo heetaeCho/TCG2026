@@ -1,0 +1,101 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_618.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:5:34: error: unknown class name 'GfxColorSpace'; did you mean 'MockGfxColorSpace'?
+    5 | class MockGfxColorSpace : public GfxColorSpace {};
+      |                                  ^~~~~~~~~~~~~
+      |                                  MockGfxColorSpace
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:5:7: note: 'MockGfxColorSpace' declared here
+    5 | class MockGfxColorSpace : public GfxColorSpace {};
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:5:34: error: base class has incomplete type
+    5 | class MockGfxColorSpace : public GfxColorSpace {};
+      |                           ~~~~~~~^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:5:7: note: definition of 'MockGfxColorSpace' is not complete until the closing '}'
+    5 | class MockGfxColorSpace : public GfxColorSpace {};
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:6:28: error: expected class name
+    6 | class MockGfxFont : public GfxFont {};
+      |                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:12:5: error: unknown type name 'GfxState'
+   12 |     GfxState* gfxState;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:16:24: error: unknown type name 'GfxState'
+   16 |         gfxState = new GfxState(300.0, 300.0, nullptr, 0, false); // Example parameters
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:36:5: error: use of undeclared identifier 'GfxState'; did you mean 'gfxState'?
+   36 |     GfxState largeValueState(300.0, 300.0, nullptr, 0, false); // Same params but change curTextX accordingly
+      |     ^~~~~~~~
+      |     gfxState
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:12:15: note: 'gfxState' declared here
+   12 |     GfxState* gfxState;
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:37:5: error: use of undeclared identifier 'largeValueState'
+   37 |     largeValueState.curTextX = 1e6;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:39:23: error: use of undeclared identifier 'largeValueState'
+   39 |     double curTextX = largeValueState.getCurTextX();
+      |                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:47:5: error: use of undeclared identifier 'GfxState'; did you mean 'gfxState'?
+   47 |     GfxState uninitializedState(300.0, 300.0, nullptr, 0, false);
+      |     ^~~~~~~~
+      |     gfxState
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:12:15: note: 'gfxState' declared here
+   12 |     GfxState* gfxState;
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:48:5: error: use of undeclared identifier 'uninitializedState'; did you mean 'std::uninitialized_move'?
+   48 |     uninitializedState.curTextX = std::nan("");  // Uninitialized value (NaN)
+      |     ^~~~~~~~~~~~~~~~~~
+      |     std::uninitialized_move
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:1030:5: note: 'std::uninitialized_move' declared here
+ 1030 |     uninitialized_move(_InputIterator __first, _InputIterator __last,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:48:5: error: reference to overloaded function could not be resolved; did you mean to call it?
+   48 |     uninitializedState.curTextX = std::nan("");  // Uninitialized value (NaN)
+      |     ^~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_uninitialized.h:1030:5: note: possible target for call
+ 1030 |     uninitialized_move(_InputIterator __first, _InputIterator __last,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:50:23: error: use of undeclared identifier 'uninitializedState'
+   50 |     double curTextX = uninitializedState.getCurTextX();
+      |                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp:53:22: error: no member named 'isnan' in namespace 'std'
+   53 |     ASSERT_TRUE(std::isnan(curTextX));
+      |                 ~~~~~^
+/usr/local/include/gtest/gtest.h:1831:50: note: expanded from macro 'ASSERT_TRUE'
+ 1831 | #define ASSERT_TRUE(condition) GTEST_ASSERT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1814:23: note: expanded from macro 'GTEST_ASSERT_TRUE'
+ 1814 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, GTEST_FATAL_FAILURE_)
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'GfxStateTest_618_GetCurTextX_NormalOperation_618_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxStateTest_618_GetCurTextX_NormalOperation_618_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'GfxStateTest_618_GetCurTextX_Boundary_618_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxStateTest_618_GetCurTextX_Boundary_618_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'GfxStateTest_618_GetCurTextX_Uninitialized_618_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxStateTest_618_GetCurTextX_Uninitialized_618_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'GfxStateTest_618_ExternalInteraction_MockHandler_618_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxStateTest_618_ExternalInteraction_MockHandler_618_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+17 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_618.dir/build.make:79: generated_build/CMakeFiles/test_618.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_618.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:81799: generated_build/CMakeFiles/test_618.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:81806: generated_build/CMakeFiles/test_618.dir/rule] Error 2
+gmake: *** [Makefile:29702: test_618] Error 2

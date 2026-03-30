@@ -1,0 +1,80 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_159.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:40:3: error: non-virtual member function marked 'override' hides virtual member function
+   40 |   MOCK_METHOD(size_t, init, (GooString * uri, CachedFile * cachedFile), (override));
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:275:1: note: expanded from here
+  275 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: hidden overloaded virtual function 'CachedFileLoader::init' declared here: different number of parameters (1 vs 2)
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:49:63: error: non-virtual member function marked 'override' hides virtual member function
+   49 |   size_t init(GooString* /*uri*/, CachedFile* /*cachedFile*/) override { return data_.size(); }
+      |                                                               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: hidden overloaded virtual function 'CachedFileLoader::init' declared here: different number of parameters (1 vs 2)
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:79:10: error: no member named 'decRefCnt' in 'CachedFile'
+   79 |       p->decRefCnt();
+      |       ~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:100:19: error: no matching constructor for initialization of 'CachedFile'
+  100 |   auto* raw = new CachedFile(holder->loader.get(), uri);
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:47:14: note: candidate constructor not viable: requires single argument 'cacheLoader', but 2 arguments were provided
+   47 |     explicit CachedFile(std::unique_ptr<CachedFileLoader> &&cacheLoader);
+      |              ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:49:5: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   49 |     CachedFile(const CachedFile &) = delete;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:112:10: error: calling a private constructor of class 'Object'
+  112 |   return Object(objNull);
+      |          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:8:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::InMemoryCachedFileLoader'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:122:24: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::InMemoryCachedFileLoader, std::vector<unsigned char> &>' requested here
+  122 |     auto loader = std::make_unique<InMemoryCachedFileLoader>(bytes_);
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: unimplemented pure virtual method 'init' in 'InMemoryCachedFileLoader'
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:8:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::MockCachedFileLoader'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp:226:26: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::MockCachedFileLoader>' requested here
+  226 |   auto mockLoader = std::make_unique<MockCachedFileLoader>();
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: unimplemented pure virtual method 'init' in 'MockCachedFileLoader'
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_159.dir/build.make:79: generated_build/CMakeFiles/test_159.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_159.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:43655: generated_build/CMakeFiles/test_159.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:43662: generated_build/CMakeFiles/test_159.dir/rule] Error 2
+gmake: *** [Makefile:14206: test_159] Error 2

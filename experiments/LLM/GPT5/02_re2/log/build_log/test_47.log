@@ -1,0 +1,16 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_47.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_47.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_47.cpp:29:12: error: call to implicitly-deleted copy constructor of 'LazyRE2'
+   29 |     return lazy;
+      |            ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/re2.h:1011:27: note: copy constructor of 'LazyRE2' is implicitly deleted because field 'once_' has a deleted copy constructor
+ 1011 |   mutable absl::once_flag once_;
+      |                           ^
+/usr/local/include/absl/base/call_once.h:92:3: note: 'once_flag' has been explicitly marked deleted here
+   92 |   once_flag(const once_flag&) = delete;
+      |   ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_47.dir/build.make:79: generated_build/CMakeFiles/test_47.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_47.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5417: generated_build/CMakeFiles/test_47.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5424: generated_build/CMakeFiles/test_47.dir/rule] Error 2
+gmake: *** [Makefile:1583: test_47] Error 2
