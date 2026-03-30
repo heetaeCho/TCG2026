@@ -1,0 +1,228 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1087.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:13:11: error: field type 'Image' is an abstract class
+   13 |     Image image_;
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:11:42: error: no member named 'JPEG' in 'Exiv2::ImageType'
+   11 |     ImageTest_1087() : image_(ImageType::JPEG, 0, std::make_unique<BasicIo>()) {}
+      |                               ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:119:11: error: variable type 'Image' is an abstract class
+  119 |     Image anotherImage(ImageType::JPEG, 0, std::make_unique<BasicIo>());
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:119:35: error: no member named 'JPEG' in 'Exiv2::ImageType'
+  119 |     Image anotherImage(ImageType::JPEG, 0, std::make_unique<BasicIo>());
+      |                        ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:129:46: error: no member named 'JPEG' in 'Exiv2::ImageType'
+  129 |     EXPECT_EQ(image_.imageType(), ImageType::JPEG);  // Default value, depending on actual implementation
+      |                                   ~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:11:56: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   11 |     ImageTest_1087() : image_(ImageType::JPEG, 0, std::make_unique<BasicIo>()) {}
+      |                                                        ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:11:51: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   11 |     ImageTest_1087() : image_(ImageType::JPEG, 0, std::make_unique<BasicIo>()) {}
+      |                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_ClearIccProfile_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:17:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_ClearIccProfile_1087_Test>::CreateTest' requested here
+   17 | TEST_F(ImageTest_1087, ClearIccProfile_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_SetComment_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:30:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_SetComment_1087_Test>::CreateTest' requested here
+   30 | TEST_F(ImageTest_1087, SetComment_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_ClearComment_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:40:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_ClearComment_1087_Test>::CreateTest' requested here
+   40 | TEST_F(ImageTest_1087, ClearComment_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_SetAndClearExifData_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_SetAndClearExifData_1087_Test>::CreateTest' requested here
+   53 | TEST_F(ImageTest_1087, SetAndClearExifData_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_SetAndClearIptcData_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:69:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_SetAndClearIptcData_1087_Test>::CreateTest' requested here
+   69 | TEST_F(ImageTest_1087, SetAndClearIptcData_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_SetAndClearXmpData_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:85:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_SetAndClearXmpData_1087_Test>::CreateTest' requested here
+   85 | TEST_F(ImageTest_1087, SetAndClearXmpData_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_SetAndClearXmpPacket_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:101:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_SetAndClearXmpPacket_1087_Test>::CreateTest' requested here
+  101 | TEST_F(ImageTest_1087, SetAndClearXmpPacket_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_SetAndClearMetadata_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:117:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_SetAndClearMetadata_1087_Test>::CreateTest' requested here
+  117 | TEST_F(ImageTest_1087, SetAndClearMetadata_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_WriteXmpFromPacket_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:133:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_WriteXmpFromPacket_1087_Test>::CreateTest' requested here
+  133 | TEST_F(ImageTest_1087, WriteXmpFromPacket_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1087_Good_1087_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp:142:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1087_Good_1087_Test>::CreateTest' requested here
+  142 | TEST_F(ImageTest_1087, Good_1087) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+17 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1087.dir/build.make:79: generated_build/CMakeFiles/test_1087.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1087.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:67381: generated_build/CMakeFiles/test_1087.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:67388: generated_build/CMakeFiles/test_1087.dir/rule] Error 2
+gmake: *** [Makefile:23358: test_1087] Error 2

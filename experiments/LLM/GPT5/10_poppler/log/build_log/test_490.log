@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_490.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:16:14: error: variable type 'GfxPattern' is an abstract class
+   16 |   GfxPattern p(type, refNum);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:826:41: note: unimplemented pure virtual method 'copy' in 'GfxPattern'
+  826 |     virtual std::unique_ptr<GfxPattern> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:26:14: error: variable type 'GfxPattern' is an abstract class
+   26 |   GfxPattern p(type, refNum);
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:33:14: error: variable type 'GfxPattern' is an abstract class
+   33 |   GfxPattern p(0, 0);
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:41:14: error: variable type 'GfxPattern' is an abstract class
+   41 |   GfxPattern p(-7, -123);
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:52:14: error: variable type 'GfxPattern' is an abstract class
+   52 |   GfxPattern p(minI, maxI);
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:65:14: error: variable type 'GfxPattern' is an abstract class
+   65 |   GfxPattern p(type, refNum);
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:9:7: warning: 'GfxPatternTest_490' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxPatternTest_490 : public ::testing::Test {};
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:2:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'GfxPattern'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp:84:40: note: in instantiation of function template specialization 'std::make_unique<GfxPattern, int, int>' requested here
+   84 |   std::unique_ptr<GfxPattern> p = std::make_unique<GfxPattern>(2, 10);
+      |                                        ^
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_490.dir/build.make:79: generated_build/CMakeFiles/test_490.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_490.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:40999: generated_build/CMakeFiles/test_490.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:41006: generated_build/CMakeFiles/test_490.dir/rule] Error 2
+gmake: *** [Makefile:13127: test_490] Error 2

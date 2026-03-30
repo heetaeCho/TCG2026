@@ -1,0 +1,47 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_262.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_262.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_262.cpp:23:12: error: call to deleted constructor of 'node'
+   23 |     return n;  // Note: node is non-copyable; RVO/move elision applies.
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: 'node' has been explicitly marked deleted here
+   28 |   node(const node&) = delete;
+      |   ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_262.cpp:2:
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const YAML::detail::node' and 'const std::nullptr_t')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<YAML::detail::node, std::nullptr_t>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_262.cpp:41:3: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<YAML::detail::node, std::nullptr_t, nullptr>' requested here
+   41 |   EXPECT_EQ(map.get(key, mem_), nullptr);
+      |   ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:1386:13: note: candidate function not viable: no known conversion from 'const YAML::detail::node' to 'faketype' for 1st argument
+ 1386 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/usr/local/include/gtest/gtest.h:1472:28: error: invalid operands to binary expression ('const YAML::detail::node' and 'const std::nullptr_t')
+ 1472 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/include/gtest/gtest.h:1462:14: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1462 |     if (val1 op val2) {                                                    \
+      |         ~~~~ ^  ~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_262.cpp:55:3: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<YAML::detail::node, std::nullptr_t>' requested here
+   55 |   ASSERT_NE(map.get(key, mem_), nullptr);
+      |   ^
+/usr/local/include/gtest/gtest.h:1918:31: note: expanded from macro 'ASSERT_NE'
+ 1918 | #define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+      |                               ^
+/usr/local/include/gtest/gtest.h:1900:44: note: expanded from macro 'GTEST_ASSERT_NE'
+ 1900 |   ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/local/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const YAML::detail::node' to 'faketype' for 1st argument
+ 1387 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_262.dir/build.make:79: generated_build/CMakeFiles/test_262.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_262.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21131: generated_build/CMakeFiles/test_262.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21138: generated_build/CMakeFiles/test_262.dir/rule] Error 2
+gmake: *** [Makefile:7863: test_262] Error 2

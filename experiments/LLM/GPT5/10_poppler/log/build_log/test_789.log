@@ -1,0 +1,88 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_789.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:13:19: error: allocation of incomplete type 'PDFDoc'
+   13 |         doc = new PDFDoc();
+      |                   ^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:19:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   19 |         delete doc;
+      |         ^      ~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:8:7: warning: 'AnnotTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    8 | class AnnotTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'AnnotBorder'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:55:48: note: in instantiation of function template specialization 'std::make_unique<AnnotBorder>' requested here
+   55 |     std::unique_ptr<AnnotBorder> border = std::make_unique<AnnotBorder>();
+      |                                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:286:29: note: unimplemented pure virtual method 'getType' in 'AnnotBorder'
+  286 |     virtual AnnotBorderType getType() const = 0;
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:291:20: note: unimplemented pure virtual method 'writeToObject' in 'AnnotBorder'
+  291 |     virtual Object writeToObject(XRef *xref) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:292:42: note: unimplemented pure virtual method 'copy' in 'AnnotBorder'
+  292 |     virtual std::unique_ptr<AnnotBorder> copy() const = 0;
+      |                                          ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:7: error: cannot cast 'const GooString' to its private base class 'const basic_string<char, char_traits<char>, allocator<char>>'
+ 1394 |   if (lhs == rhs) {
+      |       ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<GooString, char[12]>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:93:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<GooString, char[12], nullptr>' requested here
+   93 |     EXPECT_EQ(*annot->getContents(), "New Content");
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:56:19: note: declared private here
+   56 | class GooString : private std::string
+      |                   ^~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:7: error: cannot cast 'const GooString' to its private base class 'const basic_string<char, char_traits<char>, allocator<char>>'
+ 1394 |   if (lhs == rhs) {
+      |       ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<GooString, char[1]>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:119:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<GooString, char[1], nullptr>' requested here
+  119 |     EXPECT_EQ(*appearState, "");
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:56:19: note: declared private here
+   56 | class GooString : private std::string
+      |                   ^~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:7: error: cannot cast 'const GooString' to its private base class 'const basic_string<char, char_traits<char>, allocator<char>>'
+ 1394 |   if (lhs == rhs) {
+      |       ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<GooString, char[11]>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp:126:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<GooString, char[11], nullptr>' requested here
+  126 |     EXPECT_EQ(*annot->getModified(), "2026-02-15");
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:56:19: note: declared private here
+   56 | class GooString : private std::string
+      |                   ^~~~~~~~~~~~~~~~~~~
+2 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_789.dir/build.make:79: generated_build/CMakeFiles/test_789.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_789.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:100167: generated_build/CMakeFiles/test_789.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:100174: generated_build/CMakeFiles/test_789.dir/rule] Error 2
+gmake: *** [Makefile:37164: test_789] Error 2

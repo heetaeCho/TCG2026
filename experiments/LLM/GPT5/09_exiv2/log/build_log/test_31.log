@@ -1,0 +1,36 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_31.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_31.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_31.cpp:32:25: error: no matching function for call to 'find'
+   32 |     const int* result = Exiv2::find(arr, key);
+      |                         ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_31.cpp:7:14: note: candidate template ignored: substitution failure [with T = int, K = int, N = 0]: zero-length arrays are not permitted in C++
+    7 |     const T* find(T (&src)[N], const K& key) {
+      |              ^             ~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_31.cpp:56:18: error: no matching function for call to 'find'
+   56 |     EXPECT_DEATH(Exiv2::find(arr, key), "Passed zero length find");
+      |                  ^~~~~~~~~~~
+/usr/local/include/gtest/gtest-death-test.h:190:15: note: expanded from macro 'EXPECT_DEATH'
+  190 |   EXPECT_EXIT(statement, ::testing::internal::ExitedUnsuccessfully, matcher)
+      |               ^~~~~~~~~
+/usr/local/include/gtest/gtest-death-test.h:179:21: note: expanded from macro 'EXPECT_EXIT'
+  179 |   GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:242:47: note: expanded from macro 'GTEST_DEATH_TEST_'
+  242 |           GTEST_EXECUTE_DEATH_TEST_STATEMENT_(statement, gtest_dt);            \
+      |                                               ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:199:52: note: expanded from macro 'GTEST_EXECUTE_DEATH_TEST_STATEMENT_'
+  199 |     GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);               \
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_31.cpp:7:14: note: candidate template ignored: substitution failure [with T = int, K = int, N = 0]
+    7 |     const T* find(T (&src)[N], const K& key) {
+      |              ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_31.dir/build.make:79: generated_build/CMakeFiles/test_31.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_31.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:80165: generated_build/CMakeFiles/test_31.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:80172: generated_build/CMakeFiles/test_31.dir/rule] Error 2
+gmake: *** [Makefile:28246: test_31] Error 2

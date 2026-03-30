@@ -1,0 +1,128 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1540.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:6:34: error: base class has incomplete type
+    6 | class MockSplashPattern : public SplashPattern {};
+      |                           ~~~~~~~^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:31:7: note: forward declaration of 'SplashPattern'
+   31 | class SplashPattern;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:7:33: error: base class has incomplete type
+    7 | class MockSplashScreen : public SplashScreen {};
+      |                          ~~~~~~~^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:32:7: note: forward declaration of 'SplashScreen'
+   32 | class SplashScreen;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:8:33: error: base class has incomplete type
+    8 | class MockSplashBitmap : public SplashBitmap {};
+      |                          ~~~~~~~^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:34:7: note: forward declaration of 'SplashBitmap'
+   34 | class SplashBitmap;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:9:31: error: base class has incomplete type
+    9 | class MockSplashClip : public SplashClip {};
+      |                        ~~~~~~~^~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:33:7: note: forward declaration of 'SplashClip'
+   33 | class SplashClip;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:38:28: error: cannot initialize a parameter of type 'SplashPattern *' with an rvalue of type 'MockSplashPattern *'
+   38 |     state.setStrokePattern(&strokePattern);
+      |                            ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:56:42: note: passing argument to parameter 'strokePatternA' here
+   56 |     void setStrokePattern(SplashPattern *strokePatternA);
+      |                                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:49:26: error: cannot initialize a parameter of type 'SplashPattern *' with an rvalue of type 'MockSplashPattern *'
+   49 |     state.setFillPattern(&fillPattern);
+      |                          ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:59:40: note: passing argument to parameter 'fillPatternA' here
+   59 |     void setFillPattern(SplashPattern *fillPatternA);
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:73:23: error: reference to type 'std::vector<SplashCoord>' (aka 'vector<double>') could not bind to an rvalue of type 'typename std::remove_reference<int &>::type' (aka 'int')
+   73 |     state.setLineDash(std::move(lineDashA), lineDashPhaseA);
+      |                       ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:62:49: note: passing argument to parameter 'lineDashA' here
+   62 |     void setLineDash(std::vector<SplashCoord> &&lineDashA, SplashCoord lineDashPhaseA);
+      |                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:83:5: error: cannot use 'try' with exceptions disabled
+   83 |     ASSERT_NO_THROW(state.setStrokePattern(nullptr));  // Ensure no exception is thrown
+      |     ^
+/usr/local/include/gtest/gtest.h:1800:3: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:90:5: error: cannot use 'try' with exceptions disabled
+   90 |     ASSERT_NO_THROW(state.setFillPattern(nullptr));  // Ensure no exception is thrown
+      |     ^
+/usr/local/include/gtest/gtest.h:1800:3: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:99:5: error: no member named 'gmock_someMethod' in 'MockSplashPattern'
+   99 |     EXPECT_CALL(mockPattern, someMethod())  // Replace with actual method to mock
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:100:1: note: expanded from here
+  100 | gmock_someMethod
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:102:28: error: cannot initialize a parameter of type 'SplashPattern *' with an rvalue of type 'MockSplashPattern *'
+  102 |     state.setStrokePattern(&mockPattern);
+      |                            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:56:42: note: passing argument to parameter 'strokePatternA' here
+   56 |     void setStrokePattern(SplashPattern *strokePatternA);
+      |                                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:110:5: error: no member named 'gmock_someMethod' in 'MockSplashPattern'
+  110 |     EXPECT_CALL(mockPattern, someMethod())  // Replace with actual method to mock
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:56:1: note: expanded from here
+   56 | gmock_someMethod
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:113:26: error: cannot initialize a parameter of type 'SplashPattern *' with an rvalue of type 'MockSplashPattern *'
+  113 |     state.setFillPattern(&mockPattern);
+      |                          ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/splash/SplashState.h:59:40: note: passing argument to parameter 'fillPatternA' here
+   59 |     void setFillPattern(SplashPattern *fillPatternA);
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:13:7: warning: 'SplashStateTest_1540' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class SplashStateTest_1540 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:1:
+/usr/local/include/gtest/gtest.h:1472:28: error: invalid operands to binary expression ('const SplashState' and 'SplashState *const')
+ 1472 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/include/gtest/gtest.h:1462:14: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1462 |     if (val1 op val2) {                                                    \
+      |         ~~~~ ^  ~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp:29:5: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<SplashState, SplashState *>' requested here
+   29 |     ASSERT_NE(state1, state2);  // Ensure they are different instances
+      |     ^
+/usr/local/include/gtest/gtest.h:1918:31: note: expanded from macro 'ASSERT_NE'
+ 1918 | #define ASSERT_NE(val1, val2) GTEST_ASSERT_NE(val1, val2)
+      |                               ^
+/usr/local/include/gtest/gtest.h:1900:44: note: expanded from macro 'GTEST_ASSERT_NE'
+ 1900 |   ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/local/include/gtest/gtest.h:1386:13: note: candidate function not viable: no known conversion from 'const SplashState' to 'faketype' for 1st argument
+ 1386 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/usr/local/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const SplashState' to 'faketype' for 1st argument
+ 1387 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+1 warning and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1540.dir/build.make:79: generated_build/CMakeFiles/test_1540.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1540.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23303: generated_build/CMakeFiles/test_1540.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23310: generated_build/CMakeFiles/test_1540.dir/rule] Error 2
+gmake: *** [Makefile:5938: test_1540] Error 2

@@ -1,0 +1,42 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_320.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_320.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_320.cpp:9:
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/compile.cc:528:3: warning: unsupported MC/DC boolean expression; contains an operation with a nested boolean expression. Expression will not be covered
+  528 |   ABSL_DCHECK(inst_[root].opcode() == kInstAlt ||
+      |   ^
+/usr/local/include/absl/log/absl_check.h:47:3: note: expanded from macro 'ABSL_DCHECK'
+   47 |   ABSL_LOG_INTERNAL_DCHECK_IMPL((condition), #condition)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:41:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_IMPL'
+   41 |   ABSL_LOG_INTERNAL_CHECK_IMPL(condition, condition_text)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:28:37: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_IMPL'
+   28 |                                     ABSL_PREDICT_FALSE(!(condition))) \
+      |                                     ^
+/usr/local/include/absl/base/optimization.h:189:49: note: expanded from macro 'ABSL_PREDICT_FALSE'
+  189 | #define ABSL_PREDICT_FALSE(x) (__builtin_expect(false || (x), false))
+      |                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_320.cpp:237:59: error: invalid operands to binary expression ('PatchList' and 'PatchList')
+  237 |   bool clearly_different = (a.begin != b.begin) || (a.end != b.end) || (a.nullable != b.nullable);
+      |                                                     ~~~~~ ^  ~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_320.cpp:3:
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const re2::PatchList' and 'const re2::PatchList')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<re2::PatchList, re2::PatchList>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_320.cpp:31:3: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<re2::PatchList, re2::PatchList, nullptr>' requested here
+   31 |   EXPECT_EQ(a.end, b.end);
+      |   ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:1386:13: note: candidate function not viable: no known conversion from 'const re2::PatchList' to 'faketype' for 1st argument
+ 1386 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_320.dir/build.make:79: generated_build/CMakeFiles/test_320.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/02_re2/test_files/test_320.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21769: generated_build/CMakeFiles/test_320.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21776: generated_build/CMakeFiles/test_320.dir/rule] Error 2
+gmake: *** [Makefile:8226: test_320] Error 2

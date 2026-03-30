@@ -1,0 +1,67 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_721.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp:36:26: error: no viable overloaded '='
+   36 |             globalParams = new GlobalParams(nullptr);
+      |             ~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:414:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'unique_ptr<GlobalParams>' for 1st argument
+  414 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:430:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'GlobalParams *'
+  430 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:440:7: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  440 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:523:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'const unique_ptr<GlobalParams>' for 1st argument
+  523 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp:243:37: error: use of undeclared identifier 'gmalloc'; did you mean 'malloc'?
+  243 |     auto *buf = static_cast<char *>(gmalloc(pdfBytes.size()));
+      |                                     ^~~~~~~
+      |                                     malloc
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:68:12: note: 'malloc' declared here
+   68 | using std::malloc;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp:249:13: error: no member named 'setNull' in 'Object'; did you mean 'setToNull'?
+  249 |     dictObj.setNull();
+      |             ^~~~~~~
+      |             setToNull
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:315:10: note: 'setToNull' declared here
+  315 |     void setToNull()
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp:251:54: error: unknown type name 'Guint'; did you mean 'uint'?
+  251 |     auto *stream = new MemStream(buf, 0, static_cast<Guint>(pdfBytes.size()), std::move(dictObj));
+      |                                                      ^~~~~
+      |                                                      uint
+/usr/include/x86_64-linux-gnu/sys/types.h:150:22: note: 'uint' declared here
+  150 | typedef unsigned int uint;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp:268:7: warning: 'PageGetRefTest_721' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+  268 | class PageGetRefTest_721 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp:252:21: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, MemStream *&>' requested here
+  252 |     auto doc = std::make_unique<PDFDoc>(stream);
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_721.dir/build.make:79: generated_build/CMakeFiles/test_721.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_721.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:44967: generated_build/CMakeFiles/test_721.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:44974: generated_build/CMakeFiles/test_721.dir/rule] Error 2
+gmake: *** [Makefile:14739: test_721] Error 2

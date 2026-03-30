@@ -1,0 +1,16 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_444.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_444.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_444.cpp:40:22: error: call to implicitly-deleted copy constructor of 'YAML::EmitterState'
+   40 |   YAML::EmitterState copy = original;
+      |                      ^      ~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/emitterstate.h:153:18: note: copy constructor of 'EmitterState' is implicitly deleted because field 'm_modifiedSettings' has a deleted copy constructor
+  153 |   SettingChanges m_modifiedSettings;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/setting.h:66:3: note: 'SettingChanges' has been explicitly marked deleted here
+   66 |   SettingChanges(const SettingChanges&) = delete;
+      |   ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_444.dir/build.make:79: generated_build/CMakeFiles/test_444.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/08_yaml-cpp/test_files/test_444.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5451: generated_build/CMakeFiles/test_444.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5458: generated_build/CMakeFiles/test_444.dir/rule] Error 2
+gmake: *** [Makefile:1493: test_444] Error 2

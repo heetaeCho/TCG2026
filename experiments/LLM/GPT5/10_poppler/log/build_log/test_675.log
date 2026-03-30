@@ -1,0 +1,86 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_675.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:8:5: error: only virtual member functions can be marked 'override'
+    8 |     MOCK_METHOD(int, numEntries, (), (const, override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:18:1: note: expanded from here
+   18 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:19:23: error: allocation of incomplete type 'PDFDoc'
+   19 |         mockDoc = new PDFDoc();  // Replace with actual setup for mockDoc
+      |                       ^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:58:7: note: forward declaration of 'PDFDoc'
+   58 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:24:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   24 |         delete mockDoc;
+      |         ^      ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:58:7: note: forward declaration of 'PDFDoc'
+   58 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:35:14: error: 'jsNameTree' is a private member of 'Catalog'
+   35 |     catalog->jsNameTree = &mockJSNameTree;
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:298:15: note: declared private here
+  298 |     NameTree *jsNameTree; // Java Script name-tree
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:44:5: error: member access into incomplete type 'PDFDoc'
+   44 |     EXPECT_CALL(*mockDoc, getNumPages()).WillOnce(testing::Return(10));
+      |     ^
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:2136:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:58:7: note: forward declaration of 'PDFDoc'
+   58 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:56:14: error: 'jsNameTree' is a private member of 'Catalog'
+   56 |     catalog->jsNameTree = &mockJSNameTree;
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:298:15: note: declared private here
+  298 |     NameTree *jsNameTree; // Java Script name-tree
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:74:14: error: 'destNameTree' is a private member of 'Catalog'
+   74 |     catalog->destNameTree = &mockDestNameTree;
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:296:15: note: declared private here
+  296 |     NameTree *destNameTree; // named destination name-tree
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:95:5: error: member access into incomplete type 'PDFDoc'
+   95 |     EXPECT_CALL(*mockDoc, addEmbeddedFile(mockFile, mockFileName));
+      |     ^
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/local/include/gmock/gmock-spec-builders.h:2136:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:58:7: note: forward declaration of 'PDFDoc'
+   58 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp:12:7: warning: 'CatalogTest_675' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class CatalogTest_675 : public ::testing::Test {
+      |       ^
+2 warnings and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_675.dir/build.make:79: generated_build/CMakeFiles/test_675.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_675.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:17703: generated_build/CMakeFiles/test_675.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:17710: generated_build/CMakeFiles/test_675.dir/rule] Error 2
+gmake: *** [Makefile:3663: test_675] Error 2

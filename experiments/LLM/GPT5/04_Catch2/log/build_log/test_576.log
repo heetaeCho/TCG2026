@@ -1,0 +1,108 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_576.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:3:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:65:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/allocator.h:46:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:33:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/new_allocator.h:36:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/move.h:37:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/type_traits:1411:58: error: incomplete type '(anonymous namespace)::EventListenerFactory' used in type trait expression
+ 1411 |     : public integral_constant<bool, __is_base_of(_Base, _Derived)>
+      |                                                          ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:34:64: note: in instantiation of template class 'std::is_base_of<Catch::EventListenerFactory, (anonymous namespace)::EventListenerFactory>' requested here
+   34 |         template <typename U, typename = std::enable_if_t<std::is_base_of<T, U>::value>>
+      |                                                                ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: in instantiation of default argument for 'unique_ptr<(anonymous namespace)::EventListenerFactory>' required here
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   36 |             m_ptr(from.release())
+      |             ~~~~~~~~~~~~~~~~~~~~~
+   37 |         {}
+      |         ~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:67:32: note: while substituting deduced template arguments into function template 'unique_ptr' [with U = (anonymous namespace)::EventListenerFactory, $1 = (no value)]
+   67 |     registry_.registerListener(std::move(src));
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:25:7: note: forward declaration of '(anonymous namespace)::EventListenerFactory'
+   25 | class EventListenerFactory;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:67:32: error: no viable conversion from 'unique_ptr<(anonymous namespace)::EventListenerFactory>' to 'unique_ptr<EventListenerFactory>'
+   67 |     registry_.registerListener(std::move(src));
+      |                                ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'const unique_ptr<EventListenerFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'unique_ptr<EventListenerFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: requirement 'std::is_base_of<Catch::EventListenerFactory, (anonymous namespace)::EventListenerFactory>::value' was not satisfied [with U = (anonymous namespace)::EventListenerFactory]
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:42:68: note: passing argument to parameter 'factory' here
+   42 |         registerListener( Detail::unique_ptr<EventListenerFactory> factory );
+      |                                                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:107:32: error: no viable conversion from 'unique_ptr<(anonymous namespace)::EventListenerFactory>' to 'unique_ptr<EventListenerFactory>'
+  107 |     registry_.registerListener(std::move(a));
+      |                                ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'const unique_ptr<EventListenerFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'unique_ptr<EventListenerFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: requirement 'std::is_base_of<Catch::EventListenerFactory, (anonymous namespace)::EventListenerFactory>::value' was not satisfied [with U = (anonymous namespace)::EventListenerFactory]
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:42:68: note: passing argument to parameter 'factory' here
+   42 |         registerListener( Detail::unique_ptr<EventListenerFactory> factory );
+      |                                                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:109:32: error: no viable conversion from 'unique_ptr<(anonymous namespace)::EventListenerFactory>' to 'unique_ptr<EventListenerFactory>'
+  109 |     registry_.registerListener(std::move(b));
+      |                                ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'const unique_ptr<EventListenerFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>') to 'unique_ptr<EventListenerFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: requirement 'std::is_base_of<Catch::EventListenerFactory, (anonymous namespace)::EventListenerFactory>::value' was not satisfied [with U = (anonymous namespace)::EventListenerFactory]
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:42:68: note: passing argument to parameter 'factory' here
+   42 |         registerListener( Detail::unique_ptr<EventListenerFactory> factory );
+      |                                                                    ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:7:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:12:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type '(anonymous namespace)::EventListenerFactory' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:61:38: note: in instantiation of member function 'Catch::Detail::unique_ptr<(anonymous namespace)::EventListenerFactory>::~unique_ptr' requested here
+   61 |     unique_ptr<EventListenerFactory> src; // nullptr unique_ptr is valid and observable
+      |                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp:25:7: note: forward declaration of '(anonymous namespace)::EventListenerFactory'
+   25 | class EventListenerFactory;
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_576.dir/build.make:79: generated_build/CMakeFiles/test_576.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_576.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:38420: generated_build/CMakeFiles/test_576.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:38427: generated_build/CMakeFiles/test_576.dir/rule] Error 2
+gmake: *** [Makefile:13956: test_576] Error 2

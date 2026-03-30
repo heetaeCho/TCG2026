@@ -1,0 +1,154 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_668.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:20:33: error: base class has incomplete type
+   20 | class DummyValue final : public Exiv2::Value {
+      |                          ~~~~~~~^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:25:32: error: only virtual member functions can be marked 'override'
+   25 |   Exiv2::TypeId typeId() const override { return Exiv2::invalidTypeId; }
+      |                                ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:26:32: error: only virtual member functions can be marked 'override'
+   26 |   const char* typeName() const override { return "DummyValue"; }
+      |                                ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:27:27: error: only virtual member functions can be marked 'override'
+   27 |   size_t typeSize() const override { return 0; }
+      |                           ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:28:24: error: only virtual member functions can be marked 'override'
+   28 |   size_t count() const override { return 0; }
+      |                        ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:29:23: error: only virtual member functions can be marked 'override'
+   29 |   size_t size() const override { return 0; }
+      |                       ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:31:32: error: only virtual member functions can be marked 'override'
+   31 |   std::string toString() const override { return ""; }
+      |                                ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:32:38: error: only virtual member functions can be marked 'override'
+   32 |   std::string toString(size_t) const override { return ""; }
+      |                                      ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:34:33: error: only virtual member functions can be marked 'override'
+   34 |   int64_t toInt64(size_t) const override { return 0; }
+      |                                 ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:35:31: error: only virtual member functions can be marked 'override'
+   35 |   float toFloat(size_t) const override { return 0.0f; }
+      |                               ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:36:44: error: only virtual member functions can be marked 'override'
+   36 |   Exiv2::Rational toRational(size_t) const override { return Exiv2::Rational(0, 1); }
+      |                                            ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:38:56: error: only virtual member functions can be marked 'override'
+   38 |   int read(const Exiv2::byte*, long, Exiv2::ByteOrder) override { return 0; }
+      |                                                        ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:39:32: error: only virtual member functions can be marked 'override'
+   39 |   int read(const std::string&) override { return 0; }
+      |                                ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:41:51: error: only virtual member functions can be marked 'override'
+   41 |   long copy(Exiv2::byte*, Exiv2::ByteOrder) const override { return 0; }
+      |                                                   ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:43:47: error: only virtual member functions can be marked 'override'
+   43 |   std::unique_ptr<Exiv2::Value> clone() const override {
+      |                                               ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:44:12: error: no matching conversion for functional-style cast from 'DummyValue *' to 'std::unique_ptr<Exiv2::Value>'
+   44 |     return std::unique_ptr<Exiv2::Value>(new DummyValue(*this));
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:317:2: note: candidate constructor template not viable: no known conversion from 'DummyValue *' to 'pointer' (aka 'Exiv2::Value *') for 1st argument
+  317 |         unique_ptr(pointer __p) noexcept
+      |         ^          ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:359:12: note: candidate constructor template not viable: no known conversion from 'DummyValue *' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  359 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:366:7: note: candidate constructor not viable: no known conversion from 'DummyValue *' to 'unique_ptr<Value>' for 1st argument
+  366 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: candidate constructor not viable: no known conversion from 'DummyValue *' to 'const unique_ptr<Value>' for 1st argument
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:380:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'DummyValue *'
+  380 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:390:2: note: candidate template ignored: could not match 'auto_ptr<_Up>' against 'DummyValue *'
+  390 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:304:12: note: candidate constructor template not viable: requires 0 arguments, but 1 was provided
+  304 |         constexpr unique_ptr() noexcept
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:331:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  331 |         unique_ptr(pointer __p, const deleter_type& __d) noexcept
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:344:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  344 |         unique_ptr(pointer __p,
+      |         ^          ~~~~~~~~~~~~
+  345 |                    __enable_if_t<!is_lvalue_reference<_Del>::value,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  346 |                                  _Del&&> __d) noexcept
+      |                                  ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:353:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  353 |         unique_ptr(pointer,
+      |         ^          ~~~~~~~~
+  354 |                    __enable_if_t<is_lvalue_reference<_Del>::value,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  355 |                                  _DelUnref&&>) = delete;
+      |                                  ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:116:13: error: no member named 'strlen' in namespace 'std'; did you mean simply 'strlen'?
+  116 |   EXPECT_GE(std::strlen(fn), static_cast<size_t>(0));
+      |             ^~~~~~~~~~~
+      |             strlen
+/usr/local/include/gtest/gtest.h:1893:57: note: expanded from macro 'EXPECT_GE'
+ 1893 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperGE, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/usr/include/string.h:407:15: note: 'strlen' declared here
+  407 | extern size_t strlen (const char *__s)
+      |               ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:7:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'IptcdatumFamilyNameTest_668_FamilyNameReturnsNonNullPointer_668_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:55:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<IptcdatumFamilyNameTest_668_FamilyNameReturnsNonNullPointer_668_Test>::CreateTest' requested here
+   55 | TEST_F(IptcdatumFamilyNameTest_668, FamilyNameReturnsNonNullPointer_668) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'IptcdatumFamilyNameTest_668_FamilyNameIsStableAcrossCalls_668_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp:65:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<IptcdatumFamilyNameTest_668_FamilyNameIsStableAcrossCalls_668_Test>::CreateTest' requested here
+   65 | TEST_F(IptcdatumFamilyNameTest_668, FamilyNameIsStableAcrossCalls_668) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_668.dir/build.make:79: generated_build/CMakeFiles/test_668.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_668.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:31749: generated_build/CMakeFiles/test_668.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:31756: generated_build/CMakeFiles/test_668.dir/rule] Error 2
+gmake: *** [Makefile:9734: test_668] Error 2

@@ -1,0 +1,145 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_579.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:21:3: error: non-virtual member function marked 'override' hides virtual member function
+   21 |   MOCK_METHOD(const bool, isopen, (), (override));
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:147:1: note: expanded from here
+  147 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:209:30: note: hidden overloaded virtual function 'Exiv2::BasicIo::isopen' declared here: different return type ('bool' vs 'typename ::testing::internal::Function< ::testing::internal::identity_t<const bool> ()>::Result' (aka 'const bool'))
+  209 |   [[nodiscard]] virtual bool isopen() const = 0;
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:81:29: error: too few arguments to function call, expected 2, have 1; did you mean 'MockBasicIo::write'?
+   81 |   const size_t written = io.write(static_cast<Exiv2::BasicIo&>(io));
+      |                             ^~~~~
+      |                             MockBasicIo::write
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: 'MockBasicIo::write' declared here
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:91:15: error: variable type 'MockBasicIo' is an abstract class
+   91 |   MockBasicIo src;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:61:15: note: unimplemented pure virtual method 'open' in 'MockBasicIo'
+   61 |   virtual int open() = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:70:15: note: unimplemented pure virtual method 'close' in 'MockBasicIo'
+   70 |   virtual int close() = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:80:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   80 |   virtual size_t write(const byte* data, size_t wcount) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:98:15: note: unimplemented pure virtual method 'putb' in 'MockBasicIo'
+   98 |   virtual int putb(byte data) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: unimplemented pure virtual method 'read' in 'MockBasicIo'
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:140:15: note: unimplemented pure virtual method 'getb' in 'MockBasicIo'
+  140 |   virtual int getb() = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:154:16: note: unimplemented pure virtual method 'transfer' in 'MockBasicIo'
+  154 |   virtual void transfer(BasicIo& src) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:163:15: note: unimplemented pure virtual method 'seek' in 'MockBasicIo'
+  163 |   virtual int seek(int64_t offset, Position pos) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:184:17: note: unimplemented pure virtual method 'mmap' in 'MockBasicIo'
+  184 |   virtual byte* mmap(bool isWriteable = false) = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:191:15: note: unimplemented pure virtual method 'munmap' in 'MockBasicIo'
+  191 |   virtual int munmap() = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:201:32: note: unimplemented pure virtual method 'tell' in 'MockBasicIo'
+  201 |   [[nodiscard]] virtual size_t tell() const = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:207:32: note: unimplemented pure virtual method 'size' in 'MockBasicIo'
+  207 |   [[nodiscard]] virtual size_t size() const = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:209:30: note: unimplemented pure virtual method 'isopen' in 'MockBasicIo'
+  209 |   [[nodiscard]] virtual bool isopen() const = 0;
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:211:29: note: unimplemented pure virtual method 'error' in 'MockBasicIo'
+  211 |   [[nodiscard]] virtual int error() const = 0;
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:213:30: note: unimplemented pure virtual method 'eof' in 'MockBasicIo'
+  213 |   [[nodiscard]] virtual bool eof() const = 0;
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: unimplemented pure virtual method 'path' in 'MockBasicIo'
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MockBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:96:30: error: too few arguments to function call, expected 2, have 1; did you mean 'MockBasicIo::write'?
+   96 |   const size_t written = dst.write(static_cast<Exiv2::BasicIo&>(src));
+      |                              ^~~~~
+      |                              MockBasicIo::write
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: 'MockBasicIo::write' declared here
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:104:15: error: variable type 'MockBasicIo' is an abstract class
+  104 |   MockBasicIo src;
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:110:30: error: too few arguments to function call, expected 2, have 1; did you mean 'MockBasicIo::write'?
+  110 |   const size_t written = dst.write(static_cast<Exiv2::BasicIo&>(src));
+      |                              ^~~~~
+      |                              MockBasicIo::write
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: 'MockBasicIo::write' declared here
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:118:15: error: variable type 'MockBasicIo' is an abstract class
+  118 |   MockBasicIo src;
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:134:30: error: too few arguments to function call, expected 2, have 1; did you mean 'MockBasicIo::write'?
+  134 |   const size_t written = dst.write(static_cast<Exiv2::BasicIo&>(src));
+      |                              ^~~~~
+      |                              MockBasicIo::write
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: 'MockBasicIo::write' declared here
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:147:15: error: variable type 'MockBasicIo' is an abstract class
+  147 |   MockBasicIo src;
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:158:30: error: too few arguments to function call, expected 2, have 1; did you mean 'MockBasicIo::write'?
+  158 |   const size_t written = dst.write(static_cast<Exiv2::BasicIo&>(src));
+      |                              ^~~~~
+      |                              MockBasicIo::write
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: 'MockBasicIo::write' declared here
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:165:15: error: variable type 'MockBasicIo' is an abstract class
+  165 |   MockBasicIo src;
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp:178:30: error: too few arguments to function call, expected 2, have 1; did you mean 'MockBasicIo::write'?
+  178 |   const size_t written = dst.write(static_cast<Exiv2::BasicIo&>(src));
+      |                              ^~~~~
+      |                              MockBasicIo::write
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: 'MockBasicIo::write' declared here
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_579.dir/build.make:79: generated_build/CMakeFiles/test_579.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_579.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:43377: generated_build/CMakeFiles/test_579.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:43384: generated_build/CMakeFiles/test_579.dir/rule] Error 2
+gmake: *** [Makefile:14180: test_579] Error 2

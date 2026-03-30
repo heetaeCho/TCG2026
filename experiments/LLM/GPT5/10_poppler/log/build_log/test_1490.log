@@ -1,0 +1,193 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1490.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:15:21: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   15 |     std::unique_ptr<BaseStreamStream> baseStream;
+      |                     ^~~~~~~~~~~~~~~~
+      |                     BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:15:21: error: use of undeclared identifier 'BaseStreamStream'
+   15 |     std::unique_ptr<BaseStreamStream> baseStream;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:20:39: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   20 |         baseStream = std::make_unique<BaseStreamStream>(std::move(stream));
+      |                                       ^~~~~~~~~~~~~~~~
+      |                                       BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:20:39: error: use of undeclared identifier 'BaseStreamStream'
+   20 |         baseStream = std::make_unique<BaseStreamStream>(std::move(stream));
+      |                                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:32:20: error: variable type 'MockBaseStream' is an abstract class
+   32 |     MockBaseStream mockBaseStream;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockBaseStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockBaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'MockBaseStream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockBaseStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockBaseStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'MockBaseStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:358:10: note: unimplemented pure virtual method 'setPos' in 'MockBaseStream'
+  358 |     void setPos(Goffset pos, int dir = 0) override = 0;
+      |          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'MockBaseStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'MockBaseStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:368:21: note: unimplemented pure virtual method 'getStart' in 'MockBaseStream'
+  368 |     virtual Goffset getStart() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:369:18: note: unimplemented pure virtual method 'moveStart' in 'MockBaseStream'
+  369 |     virtual void moveStart(Goffset delta) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:42:20: error: variable type 'MockBaseStream' is an abstract class
+   42 |     MockBaseStream mockBaseStream;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:54:5: error: cannot use 'try' with exceptions disabled
+   54 |     EXPECT_THROW(baseStream->getChar(), std::runtime_error);  // Expecting a runtime error
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:59:20: error: variable type 'MockBaseStream' is an abstract class
+   59 |     MockBaseStream mockBaseStream;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:74:20: error: variable type 'MockBaseStream' is an abstract class
+   74 |     MockBaseStream mockBaseStream;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:98:5: error: cannot use 'try' with exceptions disabled
+   98 |     EXPECT_THROW(baseStream->getUndecodedStream(), std::runtime_error);  // Assuming exception thrown for no undecoded stream
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:103:20: error: variable type 'MockBaseStream' is an abstract class
+  103 |     MockBaseStream mockBaseStream;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:113:5: error: cannot use 'try' with exceptions disabled
+  113 |     EXPECT_THROW(baseStream->getPSFilter(1, nullptr), std::invalid_argument);  // Invalid filter name
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'Stream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:19:23: note: in instantiation of function template specialization 'std::make_unique<Stream>' requested here
+   19 |         stream = std::make_unique<Stream>();
+      |                       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'Stream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'Stream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'Stream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'Stream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'Stream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'Stream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'Stream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'Stream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'Stream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'Stream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'Stream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'Stream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'Stream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'StreamTest_1490_LookChar_NormalOperation_1490_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StreamTest_1490_LookChar_NormalOperation_1490_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'StreamTest_1490_LookChar_BoundaryCondition_1491_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StreamTest_1490_LookChar_BoundaryCondition_1491_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'StreamTest_1490_GetChar_ExceptionalCase_1492_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StreamTest_1490_GetChar_ExceptionalCase_1492_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'StreamTest_1490_CloseMethod_Verification_1493_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StreamTest_1490_CloseMethod_Verification_1493_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'StreamTest_1490_GetPos_BoundaryCondition_1494_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StreamTest_1490_GetPos_BoundaryCondition_1494_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'StreamTest_1490_GetRawChar_ExceptionalCase_1495_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StreamTest_1490_GetRawChar_ExceptionalCase_1495_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1490.dir/build.make:79: generated_build/CMakeFiles/test_1490.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1490.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:61703: generated_build/CMakeFiles/test_1490.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:61710: generated_build/CMakeFiles/test_1490.dir/rule] Error 2
+gmake: *** [Makefile:21538: test_1490] Error 2

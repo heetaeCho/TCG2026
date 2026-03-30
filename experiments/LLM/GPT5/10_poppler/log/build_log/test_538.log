@@ -1,0 +1,43 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_538.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp:13:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   13 | class FakeColorSpace final : public GfxColorSpace {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:270:18: note: unimplemented pure virtual method 'getGray' in 'FakeColorSpace'
+  270 |     virtual void getGray(const GfxColor *color, GfxGray *gray) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:271:18: note: unimplemented pure virtual method 'getRGB' in 'FakeColorSpace'
+  271 |     virtual void getRGB(const GfxColor *color, GfxRGB *rgb) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:272:18: note: unimplemented pure virtual method 'getCMYK' in 'FakeColorSpace'
+  272 |     virtual void getCMYK(const GfxColor *color, GfxCMYK *cmyk) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: unimplemented pure virtual method 'getDeviceN' in 'FakeColorSpace'
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp:49:12: error: no member named 'initNull' in 'Object'
+   49 |     decode.initNull();
+      |     ~~~~~~ ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::FakeColorSpace'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp:20:17: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::FakeColorSpace, const bool &>' requested here
+   20 |     return std::make_unique<FakeColorSpace>(useDeviceNLine_);
+      |                 ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::FakeColorSpace'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp:59:18: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::FakeColorSpace, bool>' requested here
+   59 |   auto cs = std::make_unique<FakeColorSpace>(true);
+      |                  ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_538.dir/build.make:79: generated_build/CMakeFiles/test_538.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_538.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:26119: generated_build/CMakeFiles/test_538.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:26126: generated_build/CMakeFiles/test_538.dir/rule] Error 2
+gmake: *** [Makefile:7082: test_538] Error 2

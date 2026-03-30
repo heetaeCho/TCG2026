@@ -1,0 +1,133 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_290.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:10:32: error: base class has incomplete type
+   10 | class MockTiffVisitor : public TiffVisitor {
+      |                         ~~~~~~~^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:38:7: note: forward declaration of 'Exiv2::Internal::TiffVisitor'
+   38 | class TiffVisitor;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:12:5: error: only virtual member functions can be marked 'override'
+   12 |     MOCK_METHOD(void, visit, (TiffComponent& component), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:218:1: note: expanded from here
+  218 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:29:31: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   29 |     TiffDirectory original(1, IfdId::MainDirectory, true);
+      |                               ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:32:37: error: 'doClone' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   32 |     TiffDirectory* clone = original.doClone();
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:871:32: note: declared protected here
+  871 |   [[nodiscard]] TiffDirectory* doClone() const override;
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:42:32: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   42 |     TiffDirectory directory(1, IfdId::MainDirectory, true);
+      |                                ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:54:32: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   54 |     TiffDirectory directory(1, IfdId::MainDirectory, true);
+      |                                ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:55:73: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   55 |     TiffComponent::SharedPtr child = std::make_shared<TiffComponent>(1, IfdId::MainDirectory);
+      |                                                                         ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:58:43: error: 'doAddChild' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   58 |     TiffComponent* addedChild = directory.doAddChild(child);
+      |                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:857:18: note: declared protected here
+  857 |   TiffComponent* doAddChild(SharedPtr tiffComponent) override;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:68:32: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   68 |     TiffDirectory directory(1, IfdId::MainDirectory, true);
+      |                                ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:69:15: error: no matching constructor for initialization of 'IoWrapper'
+   69 |     IoWrapper ioWrapper;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:109:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  109 | class IoWrapper {
+      |       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:109:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  109 | class IoWrapper {
+      |       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:119:3: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+  119 |   IoWrapper(BasicIo& io, const byte* pHeader, size_t size, OffsetWriter* pow);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:70:38: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+   70 |     ByteOrder byteOrder = ByteOrder::LittleEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                      littleEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:77:37: error: 'doWrite' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   77 |     size_t bytesWritten = directory.doWrite(ioWrapper, byteOrder, offset, valueIdx, dataIdx, imageIdx);
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:865:10: note: declared protected here
+  865 |   size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:86:32: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   86 |     TiffDirectory directory(1, IfdId::MainDirectory, true);
+      |                                ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:87:15: error: no matching constructor for initialization of 'IoWrapper'
+   87 |     IoWrapper ioWrapper;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:109:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  109 | class IoWrapper {
+      |       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:109:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  109 | class IoWrapper {
+      |       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:119:3: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+  119 |   IoWrapper(BasicIo& io, const byte* pHeader, size_t size, OffsetWriter* pow);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:88:38: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+   88 |     ByteOrder byteOrder = ByteOrder::LittleEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                      littleEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:98:37: error: 'doWrite' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   98 |     size_t bytesWritten = directory.doWrite(ioWrapper, byteOrder, offset, valueIdx, dataIdx, imageIdx);
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:865:10: note: declared protected here
+  865 |   size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:107:32: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+  107 |     TiffDirectory directory(1, IfdId::MainDirectory, true);
+      |                                ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:112:15: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffDirectory'
+  112 |     directory.doAccept(mockVisitor);
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:859:8: note: declared protected here
+  859 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp:112:24: error: non-const lvalue reference to type 'TiffVisitor' cannot bind to a value of unrelated type 'MockTiffVisitor'
+  112 |     directory.doAccept(mockVisitor);
+      |                        ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:859:30: note: passing argument to parameter 'visitor' here
+  859 |   void doAccept(TiffVisitor& visitor) override;
+      |                              ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_290.dir/build.make:79: generated_build/CMakeFiles/test_290.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_290.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:51775: generated_build/CMakeFiles/test_290.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:51782: generated_build/CMakeFiles/test_290.dir/rule] Error 2
+gmake: *** [Makefile:17391: test_290] Error 2

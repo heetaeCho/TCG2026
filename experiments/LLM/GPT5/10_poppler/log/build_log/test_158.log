@@ -1,0 +1,78 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_158.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:26:3: error: non-virtual member function marked 'override' hides virtual member function
+   26 |   MOCK_METHOD(size_t, init, (GooString *uri, CachedFile *cachedFile), (override));
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:275:1: note: expanded from here
+  275 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: hidden overloaded virtual function 'CachedFileLoader::init' declared here: different number of parameters (1 vs 2)
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:34:10: error: no member named 'initNull' in 'Object'
+   34 |     dict.initNull();
+      |     ~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:84:23: error: no matching constructor for initialization of 'CachedFile'
+   84 |     auto *cfRaw = new CachedFile(loader_.get(), uri_.get());
+      |                       ^          ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:47:14: note: candidate constructor not viable: requires single argument 'cacheLoader', but 2 arguments were provided
+   47 |     explicit CachedFile(std::unique_ptr<CachedFileLoader> &&cacheLoader);
+      |              ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:49:5: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   49 |     CachedFile(const CachedFile &) = delete;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:94:32: error: unknown type name 'Guint'; did you mean 'uint'?
+   94 |     const auto p = static_cast<Guint>(pos);
+      |                                ^~~~~
+      |                                uint
+/usr/include/x86_64-linux-gnu/sys/types.h:150:22: note: 'uint' declared here
+  150 | typedef unsigned int uint;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:96:13: error: unknown type name 'Guint'; did you mean 'uint'?
+   96 |       const Guint start = r.offset;
+      |             ^~~~~
+      |             uint
+/usr/include/x86_64-linux-gnu/sys/types.h:150:22: note: 'uint' declared here
+  150 | typedef unsigned int uint;
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:97:13: error: unknown type name 'Guint'; did you mean 'uint'?
+   97 |       const Guint end = start + r.length; // unsigned wrap is fine for typical sizes here
+      |             ^~~~~
+      |             uint
+/usr/include/x86_64-linux-gnu/sys/types.h:150:22: note: 'uint' declared here
+  150 | typedef unsigned int uint;
+      |                      ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:4:
+In file included from /usr/local/include/gmock/gmock.h:56:
+In file included from /usr/local/include/gmock/gmock-actions.h:140:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'testing::NiceMock<(anonymous namespace)::MockCachedFileLoader>'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp:55:20: note: in instantiation of function template specialization 'std::make_unique<testing::NiceMock<(anonymous namespace)::MockCachedFileLoader>>' requested here
+   55 |     loader_ = std::make_unique<NiceMock<MockCachedFileLoader>>();
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: unimplemented pure virtual method 'init' in 'NiceMock'
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_158.dir/build.make:79: generated_build/CMakeFiles/test_158.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_158.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:28199: generated_build/CMakeFiles/test_158.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:28206: generated_build/CMakeFiles/test_158.dir/rule] Error 2
+gmake: *** [Makefile:7927: test_158] Error 2

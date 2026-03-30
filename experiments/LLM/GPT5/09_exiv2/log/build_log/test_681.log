@@ -1,0 +1,60 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_681.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_681.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_681.cpp:47:32: error: non-virtual member function marked 'override' hides virtual member function
+   47 |   const Exiv2::Value* clone_() override { return new TestInt64Value(*this); }
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: hidden overloaded virtual function 'Exiv2::Value::clone_' declared here: different return type ('Value *' vs 'const Exiv2::Value *')
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_681.cpp:26:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   26 | class TestInt64Value final : public Exiv2::Value {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'TestInt64Value'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'TestInt64Value'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'TestInt64Value'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'TestInt64Value'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'TestInt64Value'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'TestInt64Value'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'TestInt64Value'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'TestInt64Value'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'TestInt64Value'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'TestInt64Value'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_681.cpp:47:54: error: allocating an object of abstract class type 'TestInt64Value'
+   47 |   const Exiv2::Value* clone_() override { return new TestInt64Value(*this); }
+      |                                                      ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_681.cpp:11:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::TestInt64Value'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_681.cpp:75:17: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::TestInt64Value, int>' requested here
+   75 |   auto v = std::make_unique<TestInt64Value>(42);
+      |                 ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_681.dir/build.make:79: generated_build/CMakeFiles/test_681.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_681.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11179: generated_build/CMakeFiles/test_681.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11186: generated_build/CMakeFiles/test_681.dir/rule] Error 2
+gmake: *** [Makefile:1869: test_681] Error 2

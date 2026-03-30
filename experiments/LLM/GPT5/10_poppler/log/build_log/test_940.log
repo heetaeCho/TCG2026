@@ -1,0 +1,61 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_940.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_940.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_940.cpp:18:16: error: no matching constructor for initialization of 'Dict'
+   18 |     return new Dict();
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_940.cpp:32:16: error: no matching constructor for initialization of 'Array'
+   32 |     return new Array();
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Array.h:50:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   50 |     explicit Array(XRef *xrefA);
+      |              ^     ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Array.h:55:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   55 |     Array(const Array &) = delete;
+      |     ^     ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_940.cpp:44:10: error: functional-style cast from 'Array *' to 'Object' uses deleted function
+   44 |   return Object(arr);
+      |          ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Array *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_940.cpp:58:10: error: functional-style cast from 'Dict *' to 'Object' uses deleted function
+   58 |   return Object(dict);
+      |          ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Dict *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_940.cpp:74:7: warning: 'OCGsTest_940' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   74 | class OCGsTest_940 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_940.dir/build.make:79: generated_build/CMakeFiles/test_940.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_940.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:71911: generated_build/CMakeFiles/test_940.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:71918: generated_build/CMakeFiles/test_940.dir/rule] Error 2
+gmake: *** [Makefile:25685: test_940] Error 2

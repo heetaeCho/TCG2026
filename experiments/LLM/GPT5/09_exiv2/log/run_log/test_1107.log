@@ -1,0 +1,43 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from ImageFactoryOpenFromMemoryTest_1107
+[ RUN      ] ImageFactoryOpenFromMemoryTest_1107.OpensGifFromMemory_1107
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1107.cpp:72: Failure
+Expected: { auto img = Exiv2::ImageFactory::open(kGif1x1, sizeof(kGif1x1)); switch (0) case 0: default: if (const ::testing::AssertionResult gtest_ar = (::testing::internal::CmpHelperNE("img", "nullptr", img, nullptr))) ; else return ::testing::internal::AssertHelper(::testing::TestPartResult::kFatalFailure, "/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1107.cpp", 71, gtest_ar.failure_message()) = ::testing::Message(); } doesn't throw an exception.
+  Actual: it throws Exiv2::Error with description "corrupted image metadata".
+
+[  FAILED  ] ImageFactoryOpenFromMemoryTest_1107.OpensGifFromMemory_1107 (0 ms)
+[ RUN      ] ImageFactoryOpenFromMemoryTest_1107.OpensPngFromMemory_1107
+[       OK ] ImageFactoryOpenFromMemoryTest_1107.OpensPngFromMemory_1107 (0 ms)
+[ RUN      ] ImageFactoryOpenFromMemoryTest_1107.ThrowsForUnknownImageType_1107
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1107.cpp:89: Failure
+Expected equality of these values:
+  Exiv2::ErrorCode::kerMemoryContainsUnknownImageType
+    Which is: 4-byte object <0D-00 00-00>
+  code
+    Which is: 4-byte object <15-00 00-00>
+
+[  FAILED  ] ImageFactoryOpenFromMemoryTest_1107.ThrowsForUnknownImageType_1107 (0 ms)
+[ RUN      ] ImageFactoryOpenFromMemoryTest_1107.ThrowsForEmptyBufferSizeZero_1107
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1107.cpp:101: Failure
+Expected equality of these values:
+  Exiv2::ErrorCode::kerMemoryContainsUnknownImageType
+    Which is: 4-byte object <0D-00 00-00>
+  code
+    Which is: 4-byte object <15-00 00-00>
+
+[  FAILED  ] ImageFactoryOpenFromMemoryTest_1107.ThrowsForEmptyBufferSizeZero_1107 (0 ms)
+[ RUN      ] ImageFactoryOpenFromMemoryTest_1107.NullptrWithZeroSizeDoesNotCrashAndThrowsOrSucceeds_1107
+[       OK ] ImageFactoryOpenFromMemoryTest_1107.NullptrWithZeroSizeDoesNotCrashAndThrowsOrSucceeds_1107 (0 ms)
+[----------] 5 tests from ImageFactoryOpenFromMemoryTest_1107 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] ImageFactoryOpenFromMemoryTest_1107.OpensGifFromMemory_1107
+[  FAILED  ] ImageFactoryOpenFromMemoryTest_1107.ThrowsForUnknownImageType_1107
+[  FAILED  ] ImageFactoryOpenFromMemoryTest_1107.ThrowsForEmptyBufferSizeZero_1107
+
+ 3 FAILED TESTS

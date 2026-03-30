@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_519.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_519.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_519.cpp:20:12: error: no matching constructor for initialization of 'GfxRadialShading'
+   20 |     return GfxRadialShading(x0, y0, r0, x1, y1, r1, t0, t1, std::move(dummyFuncs), extend0, extend1);
+      |            ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1060:5: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<int &>::type' (aka 'int') to 'std::vector<std::unique_ptr<Function>>' for 9th argument
+ 1060 |     GfxRadialShading(double x0A, double y0A, double r0A, double x1A, double y1A, double r1A, double t0A, double t1A, std::vector<std::unique_ptr<Function>> &&funcsA, bool extend0A, bool extend1A);
+      |     ^                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1061:14: note: candidate constructor not viable: requires single argument 'shading', but 11 arguments were provided
+ 1061 |     explicit GfxRadialShading(const GfxRadialShading *shading);
+      |              ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1057:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 11 were provided
+ 1057 | class GfxRadialShading : public GfxUnivariateShading
+      |       ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_519.cpp:102:10: warning: unused variable 'x0' [-Wunused-variable]
+  102 |   double x0 = 0, y0 = 0, r0 = 0, x1 = 0, y1 = 0, r1 = 0;
+      |          ^~
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_519.dir/build.make:79: generated_build/CMakeFiles/test_519.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_519.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:67399: generated_build/CMakeFiles/test_519.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:67406: generated_build/CMakeFiles/test_519.dir/rule] Error 2
+gmake: *** [Makefile:23852: test_519] Error 2

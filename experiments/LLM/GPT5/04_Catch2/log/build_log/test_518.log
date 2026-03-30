@@ -1,0 +1,33 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_518.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp:85:30: error: call to implicitly-deleted default constructor of 'Catch::AssertionInfo'
+   85 |         Catch::AssertionInfo info;
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp:113:28: error: no matching constructor for initialization of 'CapturingListener'
+  113 |         listenerRaw_ = new CapturingListener(*config_);
+      |                            ^                 ~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:145:9: note: candidate inherited constructor not viable: no known conversion from 'Catch::Config' to 'const IConfig *' for 1st argument; take the address of the argument with &
+  145 |         IEventListener( IConfig const* config ): m_config( config ) {}
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp:49:37: note: constructor from base class 'EventListenerBase' inherited here
+   49 |     using Catch::EventListenerBase::EventListenerBase;
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp:45:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Catch::Config' to 'const CapturingListener' for 1st argument
+   45 | class CapturingListener final : public Catch::EventListenerBase {
+      |       ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp:45:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Catch::Config' to 'CapturingListener' for 1st argument
+   45 | class CapturingListener final : public Catch::EventListenerBase {
+      |       ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp:45:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_518.dir/build.make:79: generated_build/CMakeFiles/test_518.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_518.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:16772: generated_build/CMakeFiles/test_518.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:16779: generated_build/CMakeFiles/test_518.dir/rule] Error 2
+gmake: *** [Makefile:5428: test_518] Error 2

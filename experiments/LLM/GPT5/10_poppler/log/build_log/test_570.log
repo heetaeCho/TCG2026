@@ -1,0 +1,138 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_570.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:23:22: error: variable has incomplete type 'PDFRectangle'
+   23 |         PDFRectangle pageBox = {0.0, 0.0, 600.0, 800.0};  // Example rectangle
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:57:7: note: forward declaration of 'PDFRectangle'
+   57 | class PDFRectangle;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:41:11: error: no member named 'setX2' in 'GfxState'
+   41 |     state.setX2(100.0);
+      |     ~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:52:11: error: no member named 'setX2' in 'GfxState'
+   52 |     state.setX2(std::numeric_limits<double>::max());
+      |     ~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:95:5: error: cannot use 'try' with exceptions disabled
+   95 |     EXPECT_THROW(state.transform(10.0, 20.0, nullptr, nullptr), std::invalid_argument);
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:9:7: warning: 'GfxStateTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxStateTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:66:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_tempbuf.h:61:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:115:4: error: no matching function for call to 'construct_at'
+  115 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/alloc_traits.h:660:9: note: in instantiation of function template specialization 'std::_Construct<GfxXYZ2DisplayTransforms>' requested here
+  660 |         { std::_Construct(__p, std::forward<_Args>(__args)...); }
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:604:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<void>>::construct<GfxXYZ2DisplayTransforms>' requested here
+  604 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:972:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<GfxXYZ2DisplayTransforms, std::allocator<void>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<>' requested here
+  972 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1712:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<GfxXYZ2DisplayTransforms, std::allocator<void>>' requested here
+ 1712 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:464:4: note: in instantiation of function template specialization 'std::__shared_ptr<GfxXYZ2DisplayTransforms>::__shared_ptr<std::allocator<void>>' requested here
+  464 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:1009:14: note: in instantiation of function template specialization 'std::shared_ptr<GfxXYZ2DisplayTransforms>::shared_ptr<std::allocator<void>>' requested here
+ 1009 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:61:31: note: in instantiation of function template specialization 'std::make_shared<GfxXYZ2DisplayTransforms>' requested here
+   61 |     auto mockTransform = std::make_shared<GfxXYZ2DisplayTransforms>();
+      |                               ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = GfxXYZ2DisplayTransforms, _Args = <>]: no matching constructor for initialization of 'GfxXYZ2DisplayTransforms'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/stl_construct.h:119:25: error: no matching constructor for initialization of 'GfxXYZ2DisplayTransforms'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1437:14: note: candidate constructor not viable: requires single argument 'displayProfileA', but no arguments were provided
+ 1437 |     explicit GfxXYZ2DisplayTransforms(const GfxLCMSProfilePtr &displayProfileA);
+      |              ^                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1433:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+ 1433 | class POPPLER_PRIVATE_EXPORT GfxXYZ2DisplayTransforms
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1433:30: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+ 1433 | class POPPLER_PRIVATE_EXPORT GfxXYZ2DisplayTransforms
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:80:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:556:24: error: comparison of distinct pointer types ('element_type *' (aka 'GfxColorTransform *') and 'element_type *' (aka 'GfxXYZ2DisplayTransforms *'))
+  556 |     { return __a.get() == __b.get(); }
+      |              ~~~~~~~~~ ^  ~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1394:11: note: in instantiation of function template specialization 'std::operator==<GfxColorTransform, GfxXYZ2DisplayTransforms>' requested here
+ 1394 |   if (lhs == rhs) {
+      |           ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<std::shared_ptr<GfxColorTransform>, std::shared_ptr<GfxXYZ2DisplayTransforms>>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:67:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<std::shared_ptr<GfxColorTransform>, std::shared_ptr<GfxXYZ2DisplayTransforms>, nullptr>' requested here
+   67 |     EXPECT_EQ(state.getXYZ2DisplayTransform(), mockTransform);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:80:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:53:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:60:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ext/aligned_buffer.h:93:28: error: invalid application of 'sizeof' to an incomplete type 'GfxFont'
+   93 |     : std::aligned_storage<sizeof(_Tp), __alignof__(_Tp)>
+      |                            ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:591:35: note: in instantiation of template class '__gnu_cxx::__aligned_buffer<GfxFont>' requested here
+  591 |         __gnu_cxx::__aligned_buffer<_Tp> _M_storage;
+      |                                          ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:652:13: note: in instantiation of member class 'std::_Sp_counted_ptr_inplace<GfxFont, std::allocator<void>, __gnu_cxx::_S_atomic>::_Impl' requested here
+  652 |       _Impl _M_impl;
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:968:13: note: in instantiation of template class 'std::_Sp_counted_ptr_inplace<GfxFont, std::allocator<void>, __gnu_cxx::_S_atomic>' requested here
+  968 |           typename _Sp_cp_type::__allocator_type __a2(__a._M_a);
+      |                    ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1712:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<GfxFont, std::allocator<void>>' requested here
+ 1712 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:464:4: note: in instantiation of function template specialization 'std::__shared_ptr<GfxFont>::__shared_ptr<std::allocator<void>>' requested here
+  464 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:1009:14: note: in instantiation of function template specialization 'std::shared_ptr<GfxFont>::shared_ptr<std::allocator<void>>' requested here
+ 1009 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:101:24: note: in instantiation of function template specialization 'std::make_shared<GfxFont>' requested here
+  101 |     state.setFont(std::make_shared<GfxFont>(), 12.0);
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:56:7: note: forward declaration of 'GfxFont'
+   56 | class GfxFont;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:80:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:53:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:60:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/ext/aligned_buffer.h:96:23: error: invalid application of 'sizeof' to an incomplete type 'GfxFont'
+   96 |         std::aligned_storage<sizeof(_Tp), __alignof__(_Tp)>::type _M_storage;
+      |                              ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:56:7: note: forward declaration of 'GfxFont'
+   56 | class GfxFont;
+      |       ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_570.dir/build.make:79: generated_build/CMakeFiles/test_570.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_570.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:58279: generated_build/CMakeFiles/test_570.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:58286: generated_build/CMakeFiles/test_570.dir/rule] Error 2
+gmake: *** [Makefile:20147: test_570] Error 2

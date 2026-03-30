@@ -1,0 +1,170 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_843.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:6:27: error: base class has incomplete type
+    6 | class MockPDFDoc : public PDFDoc {};
+      |                    ~~~~~~~^~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:7:24: error: base class has incomplete type
+    7 | class MockGfx : public Gfx {};
+      |                 ~~~~~~~^~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:69:7: note: forward declaration of 'Gfx'
+   69 | class Gfx;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:8:33: error: base class has incomplete type
+    8 | class MockPDFRectangle : public PDFRectangle {};
+      |                          ~~~~~~~^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:21:88: error: use of undeclared identifier 'AnnotSubtype'; did you mean 'Annot3D::AnnotSubtype'?
+   21 |         annotGeometry = std::make_unique<AnnotGeometry>(mockDoc.get(), mockRect.get(), AnnotSubtype::kText);
+      |                                                                                        ^~~~~~~~~~~~
+      |                                                                                        Annot3D::AnnotSubtype
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:663:10: note: 'Annot3D::AnnotSubtype' declared here
+  663 |     enum AnnotSubtype
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:21:102: error: no member named 'kText' in 'Annot::AnnotSubtype'
+   21 |         annotGeometry = std::make_unique<AnnotGeometry>(mockDoc.get(), mockRect.get(), AnnotSubtype::kText);
+      |                                                                                        ~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:28:27: error: call to implicitly-deleted default constructor of 'MockAnnotBorderEffect'
+   28 |     MockAnnotBorderEffect mockEffect;
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:10:31: note: default constructor of 'MockAnnotBorderEffect' is implicitly deleted because base class 'AnnotBorderEffect' has no default constructor
+   10 | class MockAnnotBorderEffect : public AnnotBorderEffect {};
+      |                               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:29:5: error: no member named 'gmock_getBorderEffect' in 'MockPDFRectangle'
+   29 |     EXPECT_CALL(*mockRect, getBorderEffect()).WillOnce(testing::Return(&mockEffect));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:48:1: note: expanded from here
+   48 | gmock_getBorderEffect
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:39:5: error: no member named 'gmock_getInteriorColor' in 'MockPDFRectangle'
+   39 |     EXPECT_CALL(*mockRect, getInteriorColor()).WillOnce(testing::Return(&mockColor));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:18:1: note: expanded from here
+   18 | gmock_getInteriorColor
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:48:5: error: no member named 'gmock_getGeometryRect' in 'MockPDFRectangle'
+   48 |     EXPECT_CALL(*mockRect, getGeometryRect()).WillOnce(testing::Return(mockRect.get()));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:79:1: note: expanded from here
+   79 | gmock_getGeometryRect
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:57:5: error: no member named 'gmock_setInteriorColor' in 'MockPDFRectangle'
+   57 |     EXPECT_CALL(*mockRect, setInteriorColor(testing::_)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:44:1: note: expanded from here
+   44 | gmock_setInteriorColor
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:64:5: error: unknown type name 'AnnotSubtype'; did you mean 'Annot3D::AnnotSubtype'?
+   64 |     AnnotSubtype newType = AnnotSubtype::kText;
+      |     ^~~~~~~~~~~~
+      |     Annot3D::AnnotSubtype
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:663:10: note: 'Annot3D::AnnotSubtype' declared here
+  663 |     enum AnnotSubtype
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:64:28: error: use of undeclared identifier 'AnnotSubtype'; did you mean 'Annot3D::AnnotSubtype'?
+   64 |     AnnotSubtype newType = AnnotSubtype::kText;
+      |                            ^~~~~~~~~~~~
+      |                            Annot3D::AnnotSubtype
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:663:10: note: 'Annot3D::AnnotSubtype' declared here
+  663 |     enum AnnotSubtype
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:64:42: error: no member named 'kText' in 'Annot::AnnotSubtype'
+   64 |     AnnotSubtype newType = AnnotSubtype::kText;
+      |                            ~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:65:5: error: no member named 'gmock_setType' in 'MockPDFRectangle'
+   65 |     EXPECT_CALL(*mockRect, setType(newType)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:5:1: note: expanded from here
+    5 | gmock_setType
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:73:5: error: no member named 'gmock_draw' in 'MockGfx'
+   73 |     EXPECT_CALL(mockGfx, draw(testing::_)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:62:1: note: expanded from here
+   62 | gmock_draw
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:75:25: error: cannot initialize a parameter of type 'Gfx *' with an rvalue of type 'MockGfx *'
+   75 |     annotGeometry->draw(&mockGfx, true);
+      |                         ^~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:1261:20: note: passing argument to parameter 'gfx' here
+ 1261 |     void draw(Gfx *gfx, bool printing) override;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:81:5: error: no member named 'gmock_draw' in 'MockGfx'
+   81 |     EXPECT_CALL(mockGfx, draw(testing::_)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:9:1: note: expanded from here
+    9 | gmock_draw
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:83:25: error: cannot initialize a parameter of type 'Gfx *' with an rvalue of type 'MockGfx *'
+   83 |     annotGeometry->draw(&mockGfx, false);
+      |                         ^~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:1261:20: note: passing argument to parameter 'gfx' here
+ 1261 |     void draw(Gfx *gfx, bool printing) override;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp:90:50: error: reference to type 'std::unique_ptr<AnnotColor>' could not bind to an lvalue of type 'int'
+   90 |     EXPECT_THROW(annotGeometry->setInteriorColor(invalidColor), std::invalid_argument);
+      |                                                  ^~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:1264:57: note: passing argument to parameter 'new_color' here
+ 1264 |     void setInteriorColor(std::unique_ptr<AnnotColor> &&new_color);
+      |                                                         ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_843.dir/build.make:79: generated_build/CMakeFiles/test_843.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_843.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:81927: generated_build/CMakeFiles/test_843.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:81934: generated_build/CMakeFiles/test_843.dir/rule] Error 2
+gmake: *** [Makefile:29754: test_843] Error 2

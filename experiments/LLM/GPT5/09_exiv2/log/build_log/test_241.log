@@ -1,0 +1,46 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_241.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp:22:29: error: allocating an object of abstract class type 'Exiv2::Internal::TiffDataEntryBase'
+   22 |         tiffDataEntry = new Exiv2::Internal::TiffDataEntryBase(1, 2, 3, 4);
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffDataEntryBase'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffDataEntryBase'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:495:16: note: unimplemented pure virtual method 'doEncode' in 'TiffDataEntryBase'
+  495 |   virtual void doEncode(TiffEncoder& encoder, const Exifdatum* datum) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:617:16: note: unimplemented pure virtual method 'setStrips' in 'TiffDataEntryBase'
+  617 |   virtual void setStrips(const Value* pSize, const byte* pData, size_t sizeData, size_t baseOffset) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp:63:11: error: unknown type name 'byte'
+   63 |     const byte* pData = nullptr; // Provide data or mock
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp:75:40: error: variable type 'Exiv2::Internal::TiffDataEntryBase' is an abstract class
+   75 |     Exiv2::Internal::TiffDataEntryBase testInstance(1, 2, 0, 4);
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp:81:40: error: variable type 'Exiv2::Internal::TiffDataEntryBase' is an abstract class
+   81 |     Exiv2::Internal::TiffDataEntryBase testInstance(1, 2, 65535, 4);
+      |                                        ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const Exiv2::IfdId' and 'const int')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Exiv2::IfdId, int>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp:38:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Exiv2::IfdId, int, nullptr>' requested here
+   38 |     EXPECT_EQ(tiffDataEntry->szGroup(), 4);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_241.dir/build.make:79: generated_build/CMakeFiles/test_241.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_241.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:43581: generated_build/CMakeFiles/test_241.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:43588: generated_build/CMakeFiles/test_241.dir/rule] Error 2
+gmake: *** [Makefile:14258: test_241] Error 2

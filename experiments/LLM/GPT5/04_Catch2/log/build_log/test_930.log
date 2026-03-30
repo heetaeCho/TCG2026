@@ -1,0 +1,49 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_930.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:13:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/extras/catch_amalgamated.hpp:6463:11: warning: 'FAIL' macro redefined [-Wmacro-redefined]
+ 6463 |   #define FAIL( ... ) do { \
+      |           ^
+/usr/local/include/gtest/gtest.h:1769:9: note: previous definition is here
+ 1769 | #define FAIL() GTEST_FAIL()
+      |         ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:13:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/extras/catch_amalgamated.hpp:6468:11: warning: 'SUCCEED' macro redefined [-Wmacro-redefined]
+ 6468 |   #define SUCCEED( ... ) INTERNAL_CATCH_MSG( "SUCCEED", Catch::ResultWas::Ok, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |           ^
+/usr/local/include/gtest/gtest.h:1779:9: note: previous definition is here
+ 1779 | #define SUCCEED() GTEST_SUCCEED()
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:53:12: error: no matching conversion for functional-style cast from 'typename std::remove_reference<unique_ptr<IGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::IGenerator<int>>') to 'Catch::Generators::GeneratorWrapper<int>'
+   53 |     return Catch::Generators::GeneratorWrapper<T>(std::move(gen));
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:97:15: note: in instantiation of function template specialization '(anonymous namespace)::wrap<int>' requested here
+   97 |         func, wrap<int>(std::move(mock))
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/extras/catch_amalgamated.hpp:7721:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<IGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::IGenerator<int>>') to 'const GeneratorWrapper<int>' for 1st argument
+ 7721 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/extras/catch_amalgamated.hpp:7721:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<IGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::IGenerator<int>>') to 'GeneratorWrapper<int>' for 1st argument
+ 7721 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/extras/catch_amalgamated.hpp:7725:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<IGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::IGenerator<int>>') to 'IGenerator<int> *' for 1st argument
+ 7725 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/extras/catch_amalgamated.hpp:7727:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<IGenerator<int>> &>::type' (aka 'std::unique_ptr<Catch::Generators::IGenerator<int>>') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+ 7727 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/extras/catch_amalgamated.hpp:8124:41: error: no matching function for call to object of type 'const (lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:287:27)'
+ 8124 |             if ( !m_cache ) { m_cache = m_function( m_generator.get() ); }
+      |                                         ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:313:19: note: in instantiation of member function 'Catch::Generators::MapGenerator<int, int, (lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:287:27)>::get' requested here
+  313 |     EXPECT_EQ(map.get(), 6);
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:287:27: note: candidate function not viable: 'this' argument has type 'const (lambda at /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp:287:27)', but method is not marked const
+  287 |     auto sometimesThrow = [count = 0](int x) mutable -> int {
+      |                           ^
+2 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_930.dir/build.make:79: generated_build/CMakeFiles/test_930.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_930.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:39740: generated_build/CMakeFiles/test_930.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:39747: generated_build/CMakeFiles/test_930.dir/rule] Error 2
+gmake: *** [Makefile:14476: test_930] Error 2

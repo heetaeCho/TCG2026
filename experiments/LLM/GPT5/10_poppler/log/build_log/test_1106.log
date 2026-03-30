@@ -1,0 +1,25 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1106.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1106.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1106.cpp:10:31: error: no matching constructor for initialization of 'SplashOutputDev'
+   10 |         splashOutputDev = new SplashOutputDev(/* pass necessary constructor parameters */);
+      |                               ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/SplashOutputDev.h:192:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  192 | class POPPLER_PRIVATE_EXPORT SplashOutputDev : public OutputDev
+      |                              ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/SplashOutputDev.h:196:5: note: candidate constructor not viable: requires at least 3 arguments, but 0 were provided
+  196 |     SplashOutputDev(SplashColorMode colorModeA, int bitmapRowPadA, SplashColorPtr paperColorA, bool bitmapTopDownA = true, SplashThinLineMode thinLineMode = splashThinLineDefault, bool overprintPreviewA = false);
+      |     ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1106.cpp:53:25: error: call to implicitly-deleted default constructor of 'MockSplashOutputDev'
+   53 |     MockSplashOutputDev mockDev;
+      |                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1106.cpp:47:29: note: default constructor of 'MockSplashOutputDev' is implicitly deleted because base class 'SplashOutputDev' has no default constructor
+   47 | class MockSplashOutputDev : public SplashOutputDev {
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1106.cpp:5:7: warning: 'SplashOutputDevTest_1106' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class SplashOutputDevTest_1106 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1106.dir/build.make:79: generated_build/CMakeFiles/test_1106.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1106.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21575: generated_build/CMakeFiles/test_1106.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21582: generated_build/CMakeFiles/test_1106.dir/rule] Error 2
+gmake: *** [Makefile:5236: test_1106] Error 2

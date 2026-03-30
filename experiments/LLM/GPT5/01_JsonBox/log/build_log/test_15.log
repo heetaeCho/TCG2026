@@ -1,5 +1,14 @@
 [ 71%] Built target JsonBox
 [ 85%] Building CXX object generated_build/CMakeFiles/test_15.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/01_JsonBox/test_files/test_15.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/01_JsonBox/test_files/test_15.cpp:23:84: error: use of undeclared identifier 'INT_MIN'
+   23 |     static int GetObjectInt(const Value& v, const std::string& key, int fallback = INT_MIN) {
+      |                                                                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/01_JsonBox/test_files/test_15.cpp:177:15: error: use of undeclared identifier 'INT_MIN'
+  177 |     EXPECT_EQ(INT_MIN, GetObjectInt(dst, "b", INT_MIN)); // "b" should not exist
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/01_JsonBox/test_files/test_15.cpp:177:47: error: use of undeclared identifier 'INT_MIN'
+  177 |     EXPECT_EQ(INT_MIN, GetObjectInt(dst, "b", INT_MIN)); // "b" should not exist
+      |                                               ^
 /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/01_JsonBox/test_files/test_15.cpp:207:8: error: use of overloaded operator '[]' is ambiguous (with operand types 'Value' and 'int')
   207 |     src[0].setInteger(10);
       |     ~~~^~
@@ -30,7 +39,7 @@
 /home/user/MyProjects/TCG2026/TestProjects/JsonBox/include/JsonBox/Value.h:288:10: note: candidate function
   288 |                 Value &operator[](size_t index);
       |                        ^
-2 errors generated.
+5 errors generated.
 gmake[3]: *** [generated_build/CMakeFiles/test_15.dir/build.make:79: generated_build/CMakeFiles/test_15.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/01_JsonBox/test_files/test_15.cpp.o] Error 1
 gmake[2]: *** [CMakeFiles/Makefile2:1605: generated_build/CMakeFiles/test_15.dir/all] Error 2
 gmake[1]: *** [CMakeFiles/Makefile2:1612: generated_build/CMakeFiles/test_15.dir/rule] Error 2

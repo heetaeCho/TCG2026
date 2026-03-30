@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1448.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1448.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1448.cpp:42:37: error: call to implicitly-deleted copy constructor of 'Exiv2::Internal::OMSystemMnHeader'
+   42 |   Exiv2::Internal::OMSystemMnHeader b(a);
+      |                                     ^ ~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:197:26: note: copy constructor of 'OMSystemMnHeader' is implicitly deleted because base class 'MnHeader' has a deleted copy constructor
+  197 | class OMSystemMnHeader : public MnHeader {
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:102:3: note: 'MnHeader' has been explicitly marked deleted here
+  102 |   MnHeader(const MnHeader&) = delete;
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1448.cpp:52:37: error: call to implicitly-deleted copy constructor of 'Exiv2::Internal::OMSystemMnHeader'
+   52 |   Exiv2::Internal::OMSystemMnHeader b(std::move(a));
+      |                                     ^ ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:197:26: note: copy constructor of 'OMSystemMnHeader' is implicitly deleted because base class 'MnHeader' has a deleted copy constructor
+  197 | class OMSystemMnHeader : public MnHeader {
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:102:3: note: 'MnHeader' has been explicitly marked deleted here
+  102 |   MnHeader(const MnHeader&) = delete;
+      |   ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1448.dir/build.make:79: generated_build/CMakeFiles/test_1448.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1448.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:62349: generated_build/CMakeFiles/test_1448.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:62356: generated_build/CMakeFiles/test_1448.dir/rule] Error 2
+gmake: *** [Makefile:21434: test_1448] Error 2

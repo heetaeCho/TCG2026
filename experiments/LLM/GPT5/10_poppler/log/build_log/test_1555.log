@@ -1,0 +1,152 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1555.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:8:35: error: base class has incomplete type
+    8 | class MockSplashFontFile : public SplashFontFile {
+      |                            ~~~~~~~^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:34:7: note: forward declaration of 'SplashFontFile'
+   34 | class SplashFontFile;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:10:5: error: only virtual member functions can be marked 'override'
+   10 |     MOCK_METHOD(void, someMethod, (), (override));  // Example method to mock
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:251:1: note: expanded from here
+  251 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:25:26: error: allocating an object of abstract class type 'SplashFont'
+   25 |         splashFont = new SplashFont(mockFontFile, mat, textMat, false);
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:82:18: note: unimplemented pure virtual method 'makeGlyph' in 'SplashFont'
+   82 |     virtual bool makeGlyph(int c, int xFrac, int yFrac, SplashGlyphBitmap *bitmap, int x0, int y0, const SplashClip &clip, SplashClipResult *clipRes) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:85:25: note: unimplemented pure virtual method 'getGlyphPath' in 'SplashFont'
+   85 |     virtual SplashPath *getGlyphPath(int c) = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:39:33: error: 'xMin' is a protected member of 'SplashFont'
+   39 |     EXPECT_EQ(xMin, splashFont->xMin);
+      |                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:9: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:40:33: error: 'yMin' is a protected member of 'SplashFont'
+   40 |     EXPECT_EQ(yMin, splashFont->yMin);
+      |                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:15: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:41:33: error: 'xMax' is a protected member of 'SplashFont'
+   41 |     EXPECT_EQ(xMax, splashFont->xMax);
+      |                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:21: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:42:33: error: 'yMax' is a protected member of 'SplashFont'
+   42 |     EXPECT_EQ(yMax, splashFont->yMax);
+      |                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:27: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:48:17: error: 'xMin' is a protected member of 'SplashFont'
+   48 |     splashFont->xMin = INT_MIN;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:9: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:49:17: error: 'yMin' is a protected member of 'SplashFont'
+   49 |     splashFont->yMin = INT_MIN;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:15: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:50:17: error: 'xMax' is a protected member of 'SplashFont'
+   50 |     splashFont->xMax = INT_MAX;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:21: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:51:17: error: 'yMax' is a protected member of 'SplashFont'
+   51 |     splashFont->yMax = INT_MAX;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:107:27: note: declared protected here
+  107 |     int xMin, yMin, xMax, yMax; // glyph bounding box
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:78:39: error: no viable conversion from 'shared_ptr<MockSplashFontFile>' to 'const shared_ptr<SplashFontFile>'
+   78 |     bool result = splashFont->matches(mockFontFile, mat, textMat);
+      |                                       ^~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:204:7: note: candidate constructor not viable: no known conversion from 'std::shared_ptr<MockSplashFontFile>' to 'const shared_ptr<SplashFontFile> &' for 1st argument
+  204 |       shared_ptr(const shared_ptr&) noexcept = default; ///< Copy constructor
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:359:7: note: candidate constructor not viable: no known conversion from 'std::shared_ptr<MockSplashFontFile>' to 'shared_ptr<SplashFontFile> &&' for 1st argument
+  359 |       shared_ptr(shared_ptr&& __r) noexcept
+      |       ^          ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:412:17: note: candidate constructor not viable: no known conversion from 'std::shared_ptr<MockSplashFontFile>' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  412 |       constexpr shared_ptr(nullptr_t) noexcept : shared_ptr() { }
+      |                 ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:351:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<SplashFontFile, __gnu_cxx::_S_atomic>, const std::shared_ptr<MockSplashFontFile> &>::value' was not satisfied [with _Yp = MockSplashFontFile]
+  351 |         shared_ptr(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:368:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<SplashFontFile, __gnu_cxx::_S_atomic>, std::shared_ptr<MockSplashFontFile>>::value' was not satisfied [with _Yp = MockSplashFontFile]
+  368 |         shared_ptr(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:387:2: note: candidate template ignored: could not match 'auto_ptr' against 'std::shared_ptr'
+  387 |         shared_ptr(auto_ptr<_Yp>&& __r);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:395:2: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+  395 |         shared_ptr(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:463:2: note: candidate template ignored: could not match '_Sp_alloc_shared_tag' against 'std::shared_ptr'
+  463 |         shared_ptr(_Sp_alloc_shared_tag<_Alloc> __tag, _Args&&... __args)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:478:2: note: candidate template ignored: could not match '_Sp_counted_array_base' against 'std::shared_ptr'
+  478 |         shared_ptr(const _Sp_counted_array_base<_Alloc>& __a,
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:214:2: note: explicit constructor is not a candidate
+  214 |         shared_ptr(_Yp* __p) : __shared_ptr<_Tp>(__p) { }
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:380:11: note: explicit constructor is not a candidate
+  380 |         explicit shared_ptr(const weak_ptr<_Yp>& __r)
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:66:57: note: passing argument to parameter 'fontFileA' here
+   66 |     bool matches(const std::shared_ptr<SplashFontFile> &fontFileA, const std::array<SplashCoord, 4> &matA, const std::array<SplashCoord, 4> &textMatA) const
+      |                                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:13:7: warning: 'SplashFontTest_1555' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class SplashFontTest_1555 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:80:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:556:24: error: comparison of distinct pointer types ('element_type *' (aka 'SplashFontFile *') and 'element_type *' (aka 'MockSplashFontFile *'))
+  556 |     { return __a.get() == __b.get(); }
+      |              ~~~~~~~~~ ^  ~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1394:11: note: in instantiation of function template specialization 'std::operator==<SplashFontFile, MockSplashFontFile>' requested here
+ 1394 |   if (lhs == rhs) {
+      |           ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<std::shared_ptr<SplashFontFile>, std::shared_ptr<MockSplashFontFile>>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp:73:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<std::shared_ptr<SplashFontFile>, std::shared_ptr<MockSplashFontFile>, nullptr>' requested here
+   73 |     EXPECT_EQ(fontFile, mockFontFile);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+1 warning and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1555.dir/build.make:79: generated_build/CMakeFiles/test_1555.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1555.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:61639: generated_build/CMakeFiles/test_1555.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:61646: generated_build/CMakeFiles/test_1555.dir/rule] Error 2
+gmake: *** [Makefile:21512: test_1555] Error 2

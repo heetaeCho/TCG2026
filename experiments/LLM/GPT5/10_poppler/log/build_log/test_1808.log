@@ -1,0 +1,172 @@
+[ 66%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1808.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:21:5: error: non-virtual member function marked 'override' hides virtual member function
+   21 |     MOCK_METHOD(bool, isBinary, (bool last), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:112:1: note: expanded from here
+  112 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different qualifiers ('const' vs unqualified)
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:26:5: error: only virtual member functions can be marked 'override'
+   26 |     MOCK_METHOD(bool, isEncrypted, (), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:72:1: note: expanded from here
+   72 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:31:16: error: field type 'MockStream' is an abstract class
+   31 |     MockStream mockStream;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'MockStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:32:21: error: field has incomplete type 'JBIG2MMRDecoder'
+   32 |     JBIG2MMRDecoder decoder;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/JBIG2Stream.h:44:7: note: forward declaration of 'JBIG2MMRDecoder'
+   44 | class JBIG2MMRDecoder;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:42:5: error: cannot use 'try' with exceptions disabled
+   42 |     EXPECT_NO_THROW(decoder.setStream(&mockStream));
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:47:5: error: cannot use 'try' with exceptions disabled
+   47 |     EXPECT_NO_THROW(decoder.reset());
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:78:5: error: cannot use 'try' with exceptions disabled
+   78 |     EXPECT_NO_THROW({ decoder.~JBIG2MMRDecoder(); });
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp:83:5: error: cannot use 'try' with exceptions disabled
+   83 |     EXPECT_NO_THROW(decoder.resetByteCounter());
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_SetStream_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_SetStream_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_Reset_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_Reset_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_Get2DCode_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_Get2DCode_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_GetBlackCode_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_GetBlackCode_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_GetWhiteCode_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_GetWhiteCode_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_Get24Bits_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_Get24Bits_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_SkipTo_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_SkipTo_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_Destructor_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_Destructor_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_ResetByteCounter_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_ResetByteCounter_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_GetByteCounter_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_GetByteCounter_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JBIG2MMRDecoderTest_ExceptionalCases_1808_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JBIG2MMRDecoderTest_ExceptionalCases_1808_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1808.dir/build.make:79: generated_build/CMakeFiles/test_1808.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1808.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:38151: generated_build/CMakeFiles/test_1808.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:38158: generated_build/CMakeFiles/test_1808.dir/rule] Error 2
+gmake: *** [Makefile:11970: test_1808] Error 2

@@ -1,0 +1,18 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_810.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_810.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_810.cpp:21:33: error: return type 'Exiv2::StringValueBase' is an abstract class
+   21 |   static Exiv2::StringValueBase Make(const std::string& buf) {
+      |                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:365:20: note: unimplemented pure virtual method 'clone_' in 'StringValueBase'
+  365 |   StringValueBase* clone_() const override = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_810.cpp:22:12: error: allocating an object of abstract class type 'Exiv2::StringValueBase'
+   22 |     return Exiv2::StringValueBase(static_cast<Exiv2::TypeId>(0), buf);
+      |            ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_810.dir/build.make:79: generated_build/CMakeFiles/test_810.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_810.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:42969: generated_build/CMakeFiles/test_810.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:42976: generated_build/CMakeFiles/test_810.dir/rule] Error 2
+gmake: *** [Makefile:14024: test_810] Error 2

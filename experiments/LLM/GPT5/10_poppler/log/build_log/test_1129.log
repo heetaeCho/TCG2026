@@ -1,0 +1,221 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1129.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:21:21: error: conversion function from 'typename std::remove_reference<unique_ptr<GooString> &>::type' (aka 'std::unique_ptr<GooString>') to 'Object' invokes a deleted function
+   21 |     EmbFile embFile(std::move(checksumStr));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<std::unique_ptr<GooString>>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/FileSpec.h:26:31: note: passing argument to parameter 'efStream' here
+   26 |     explicit EmbFile(Object &&efStream);
+      |                               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:24:35: error: no member named 'getCString' in 'GooString'
+   24 |     EXPECT_EQ(embFile.checksum()->getCString(), "mock_checksum");
+      |               ~~~~~~~~~~~~~~~~~~  ^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:30:20: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   30 |     EmbFile embFile(Object());  // Assuming Object initializes correctly for this example
+      |                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:30:21: note: add a pair of parentheses to declare a variable
+   30 |     EmbFile embFile(Object());  // Assuming Object initializes correctly for this example
+      |                     ^       
+      |                     (       )
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:33:22: error: member reference base type 'EmbFile (Object (*)())' is not a structure or union
+   33 |     EXPECT_EQ(embFile.size(), 0); // Assuming 0 is the default for testing
+      |               ~~~~~~~^~~~~
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:40:21: error: conversion function from 'typename std::remove_reference<unique_ptr<GooString> &>::type' (aka 'std::unique_ptr<GooString>') to 'Object' invokes a deleted function
+   40 |     EmbFile embFile(std::move(createDateStr));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<std::unique_ptr<GooString>>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/FileSpec.h:26:31: note: passing argument to parameter 'efStream' here
+   26 |     explicit EmbFile(Object &&efStream);
+      |                               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:43:37: error: no member named 'getCString' in 'GooString'
+   43 |     EXPECT_EQ(embFile.createDate()->getCString(), "2022-01-01");
+      |               ~~~~~~~~~~~~~~~~~~~~  ^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:50:21: error: conversion function from 'typename std::remove_reference<unique_ptr<GooString> &>::type' (aka 'std::unique_ptr<GooString>') to 'Object' invokes a deleted function
+   50 |     EmbFile embFile(std::move(modDateStr));
+      |                     ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<std::unique_ptr<GooString>>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/FileSpec.h:26:31: note: passing argument to parameter 'efStream' here
+   26 |     explicit EmbFile(Object &&efStream);
+      |                               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:53:34: error: no member named 'getCString' in 'GooString'
+   53 |     EXPECT_EQ(embFile.modDate()->getCString(), "2022-02-01");
+      |               ~~~~~~~~~~~~~~~~~  ^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:60:21: error: conversion function from 'typename std::remove_reference<unique_ptr<GooString> &>::type' (aka 'std::unique_ptr<GooString>') to 'Object' invokes a deleted function
+   60 |     EmbFile embFile(std::move(mimeTypeStr));
+      |                     ^~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<std::unique_ptr<GooString>>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/FileSpec.h:26:31: note: passing argument to parameter 'efStream' here
+   26 |     explicit EmbFile(Object &&efStream);
+      |                               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:63:35: error: no member named 'getCString' in 'GooString'
+   63 |     EXPECT_EQ(embFile.mimeType()->getCString(), "application/pdf");
+      |               ~~~~~~~~~~~~~~~~~~  ^
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:69:20: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   69 |     EmbFile embFile(Object());  // Assuming Object initializes the EmbFile correctly
+      |                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:69:21: note: add a pair of parentheses to declare a variable
+   69 |     EmbFile embFile(Object());  // Assuming Object initializes the EmbFile correctly
+      |                     ^       
+      |                     (       )
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:72:24: error: member reference base type 'EmbFile (Object (*)())' is not a structure or union
+   72 |     EXPECT_TRUE(embFile.isOk());  // Assuming isOk() returns true by default
+      |                 ~~~~~~~^~~~~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:81:20: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   81 |     EmbFile embFile(Object());
+      |                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:81:21: note: add a pair of parentheses to declare a variable
+   81 |     EmbFile embFile(Object());
+      |                     ^       
+      |                     (       )
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:84:24: error: member reference base type 'EmbFile (Object (*)())' is not a structure or union
+   84 |     EXPECT_TRUE(embFile.save("mock_path"));
+      |                 ~~~~~~~^~~~~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:90:20: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   90 |     EmbFile embFile(Object());  // Assuming a mock failure in saving
+      |                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:90:21: note: add a pair of parentheses to declare a variable
+   90 |     EmbFile embFile(Object());  // Assuming a mock failure in saving
+      |                     ^       
+      |                     (       )
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:93:25: error: member reference base type 'EmbFile (Object (*)())' is not a structure or union
+   93 |     EXPECT_FALSE(embFile.save("invalid_path"));
+      |                  ~~~~~~~^~~~~
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:99:20: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   99 |     EmbFile embFile(Object());
+      |                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:99:21: note: add a pair of parentheses to declare a variable
+   99 |     EmbFile embFile(Object());
+      |                     ^       
+      |                     (       )
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:109:20: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+  109 |     EmbFile embFile(Object());
+      |                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:109:21: note: add a pair of parentheses to declare a variable
+  109 |     EmbFile embFile(Object());
+      |                     ^       
+      |                     (       )
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:120:20: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+  120 |     EmbFile embFile(Object());
+      |                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:120:21: note: add a pair of parentheses to declare a variable
+  120 |     EmbFile embFile(Object());
+      |                     ^       
+      |                     (       )
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:123:22: error: member reference base type 'EmbFile (Object (*)())' is not a structure or union
+  123 |     EXPECT_EQ(embFile.streamObject(), &mockObject);
+      |               ~~~~~~~^~~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp:11:7: warning: 'EmbFileTest_1129' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class EmbFileTest_1129 : public ::testing::Test {
+      |       ^
+8 warnings and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1129.dir/build.make:79: generated_build/CMakeFiles/test_1129.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1129.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:43495: generated_build/CMakeFiles/test_1129.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:43502: generated_build/CMakeFiles/test_1129.dir/rule] Error 2
+gmake: *** [Makefile:14141: test_1129] Error 2

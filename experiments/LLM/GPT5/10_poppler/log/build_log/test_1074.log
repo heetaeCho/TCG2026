@@ -1,0 +1,73 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1074.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1074.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1074.cpp:15:19: error: field type 'MockOutputDev' is an abstract class
+   15 |     MockOutputDev mockOutputDev;
+      |                   ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/OutputDev.h:79:18: note: unimplemented pure virtual method 'upsideDown' in 'MockOutputDev'
+   79 |     virtual bool upsideDown() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/OutputDev.h:82:18: note: unimplemented pure virtual method 'useDrawChar' in 'MockOutputDev'
+   82 |     virtual bool useDrawChar() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/OutputDev.h:102:18: note: unimplemented pure virtual method 'interpretType3Chars' in 'MockOutputDev'
+  102 |     virtual bool interpretType3Chars() = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1074.cpp:52:27: error: no matching constructor for initialization of 'GfxState'
+   52 |     GfxState* state = new GfxState();  // Mocked state
+      |                           ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/GfxState.h:1545:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+ 1545 |     GfxState(const GfxState &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/GfxState.h:1833:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+ 1833 |     GfxState(const GfxState *state, bool copyPath);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/GfxState.h:1540:5: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+ 1540 |     GfxState(double hDPIA, double vDPIA, const PDFRectangle *pageBox, int rotateA, bool upsideDown);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1074.cpp:53:40: error: no matching constructor for initialization of 'GfxPatchMeshShading'
+   53 |     GfxPatchMeshShading* shading = new GfxPatchMeshShading();  // Mocked shading
+      |                                        ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/GfxState.h:1192:14: note: candidate constructor not viable: requires single argument 'shading', but no arguments were provided
+ 1192 |     explicit GfxPatchMeshShading(const GfxPatchMeshShading *shading);
+      |              ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/GfxState.h:1188:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+ 1188 | class POPPLER_PRIVATE_EXPORT GfxPatchMeshShading : public GfxShading
+      |                              ^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/GfxState.h:1191:5: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+ 1191 |     GfxPatchMeshShading(int typeA, GfxPatch *patchesA, int nPatchesA, std::vector<std::unique_ptr<Function>> &&funcsA);
+      |     ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1074.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'OutputDevTest_1074_PatchMeshShadedFill_NormalOperation_1074_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<OutputDevTest_1074_PatchMeshShadedFill_NormalOperation_1074_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'OutputDevTest_1074_PatchMeshShadedFill_NullInputs_1074_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<OutputDevTest_1074_PatchMeshShadedFill_NullInputs_1074_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'OutputDevTest_1074_PatchMeshShadedFill_ValidPointers_1074_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<OutputDevTest_1074_PatchMeshShadedFill_ValidPointers_1074_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'OutputDevTest_1074_PatchMeshShadedFill_ErrorCondition_1074_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/usr/local/include/gtest/internal/gtest-internal.h:454:7: note: in instantiation of member function 'testing::internal::TestFactoryImpl<OutputDevTest_1074_PatchMeshShadedFill_ErrorCondition_1074_Test>::CreateTest' requested here
+  454 | class TestFactoryImpl : public TestFactoryBase {
+      |       ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1074.dir/build.make:79: generated_build/CMakeFiles/test_1074.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1074.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21639: generated_build/CMakeFiles/test_1074.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21646: generated_build/CMakeFiles/test_1074.dir/rule] Error 2
+gmake: *** [Makefile:5262: test_1074] Error 2

@@ -1,0 +1,72 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1321.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:18:27: error: no matching constructor for initialization of 'PSOutputDev'
+   18 |         psOutputDev = new PSOutputDev(/*parameters as needed*/);
+      |                           ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/PSOutputDev.h:116:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  116 | class POPPLER_PRIVATE_EXPORT PSOutputDev : public OutputDev
+      |                              ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/PSOutputDev.h:121:5: note: candidate constructor not viable: requires at least 5 arguments, but 0 were provided
+  121 |     PSOutputDev(const char *fileName, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0,
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  122 |                 int imgURXA = 0, int imgURYA = 0, PSForceRasterize forceRasterizeA = psRasterizeWhenNeeded, bool manualCtrlA = false, PSOutCustomCodeCbk customCodeCbkA = nullptr, void *customCodeCbkDataA = nullptr,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  123 |                 PSLevel levelA = psLevel2);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/PSOutputDev.h:126:5: note: candidate constructor not viable: requires at least 5 arguments, but 0 were provided
+  126 |     PSOutputDev(int fdA, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0, int imgURXA = 0,
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  127 |                 int imgURYA = 0, PSForceRasterize forceRasterizeA = psRasterizeWhenNeeded, bool manualCtrlA = false, PSOutCustomCodeCbk customCodeCbkA = nullptr, void *customCodeCbkDataA = nullptr, PSLevel levelA = psLevel2);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/PSOutputDev.h:131:5: note: candidate constructor not viable: requires at least 6 arguments, but 0 were provided
+  131 |     PSOutputDev(FoFiOutputFunc outputFuncA, void *outputStreamA, char *psTitleA, PDFDoc *docA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true,
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  132 |                 int imgLLXA = 0, int imgLLYA = 0, int imgURXA = 0, int imgURYA = 0, PSForceRasterize forceRasterizeA = psRasterizeWhenNeeded, bool manualCtrlA = false, PSOutCustomCodeCbk customCodeCbkA = nullptr,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  133 |                 void *customCodeCbkDataA = nullptr, PSLevel levelA = psLevel2);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:49:61: error: too few arguments to function call, single argument 'b' was not specified
+   49 |         psOutputDev->setOptimizeColorSpace(/*invalid input*/);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/PSOutputDev.h:334:10: note: 'setOptimizeColorSpace' declared here
+  334 |     void setOptimizeColorSpace(bool b) { optimizeColorSpace = b; }
+      |          ^                     ~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:48:5: error: cannot use 'try' with exceptions disabled
+   48 |     try {
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:65:33: error: cannot initialize a parameter of type 'void (*)(PSOutputDev *, void *)' with an rvalue of type 'typename ::testing::internal::Function< ::testing::internal::identity_t<void> (PSOutputDev *, void *)>::Result (MockExternalDependency::*)(typename ::testing::internal::Function< ::testing::internal::identity_t<void> (PSOutputDev *, void *)>::template template Arg<0>::type, typename ::testing::internal::Function< ::testing::internal::identity_t<void> (PSOutputDev *, void *)>::template template Arg<1>::type)'
+   65 |     psOutputDev->setUnderlayCbk(&MockExternalDependency::callbackMethod, data);
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/PSOutputDev.h:293:32: note: passing argument to parameter 'cbk' here
+  293 |     void setUnderlayCbk(void (*cbk)(PSOutputDev *psOut, void *data), void *data)
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:68:18: error: no member named 'triggerUnderlayCallback' in 'PSOutputDev'
+   68 |     psOutputDev->triggerUnderlayCallback();
+      |     ~~~~~~~~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:73:29: warning: empty parentheses interpreted as a function declaration [-Wvexing-parse]
+   73 |     PSOutputDev largeTestDev(/*parameters with large or boundary values*/);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:73:29: note: replace parentheses with an initializer to declare a variable
+   73 |     PSOutputDev largeTestDev(/*parameters with large or boundary values*/);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                             {}
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:76:17: error: base of member reference is a function; perhaps you meant to call it with no arguments?
+   76 |     EXPECT_TRUE(largeTestDev.isOk());
+      |                 ^~~~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp:11:7: warning: 'PSOutputDevTest_1321' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class PSOutputDevTest_1321 : public ::testing::Test {
+      |       ^
+2 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1321.dir/build.make:79: generated_build/CMakeFiles/test_1321.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1321.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19399: generated_build/CMakeFiles/test_1321.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19406: generated_build/CMakeFiles/test_1321.dir/rule] Error 2
+gmake: *** [Makefile:4352: test_1321] Error 2

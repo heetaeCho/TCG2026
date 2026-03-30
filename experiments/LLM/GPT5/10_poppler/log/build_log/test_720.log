@@ -1,0 +1,52 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_720.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_720.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_720.cpp:21:22: error: redeclaration of 'globalParams' with a different type: 'GlobalParams *' vs 'std::unique_ptr<GlobalParams>'
+   21 | extern GlobalParams *globalParams;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GlobalParams.h:72:61: note: previous declaration is here
+   72 | extern std::unique_ptr<GlobalParams> POPPLER_PRIVATE_EXPORT globalParams;
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_720.cpp:29:20: error: no viable overloaded '='
+   29 |       globalParams = new GlobalParams();
+      |       ~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:414:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'unique_ptr<GlobalParams>' for 1st argument
+  414 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:430:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'GlobalParams *'
+  430 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:440:7: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  440 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:523:19: note: candidate function not viable: no known conversion from 'GlobalParams *' to 'const unique_ptr<GlobalParams>' for 1st argument
+  523 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_720.cpp:34:5: error: cannot delete expression of type 'std::unique_ptr<GlobalParams>'
+   34 |     delete globalParams;
+      |     ^      ~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_720.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_720.cpp:168:17: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, std::unique_ptr<GooString>, std::nullptr_t, std::nullptr_t, std::nullptr_t>' requested here
+  168 |     return std::make_unique<PDFDoc>(std::move(fname), nullptr, nullptr, nullptr);
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'const std::optional<GooString>' for 2nd argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'unique_ptr<GooString, default_delete<GooString>>' to 'unique_ptr<BaseStream, default_delete<BaseStream>>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 4 were provided
+  388 |     PDFDoc();
+      |     ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_720.dir/build.make:79: generated_build/CMakeFiles/test_720.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_720.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:61991: generated_build/CMakeFiles/test_720.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:61998: generated_build/CMakeFiles/test_720.dir/rule] Error 2
+gmake: *** [Makefile:21655: test_720] Error 2

@@ -1,0 +1,53 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2013.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp:14:5: error: only virtual member functions can be marked 'override'
+   14 |     MOCK_METHOD(XRef*, getXRef, (), (const, override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:105:1: note: expanded from here
+  105 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp:13:20: error: call to constructor of 'PDFDoc' is ambiguous
+   13 |     PDFDocMock() : PDFDoc(nullptr, {}, {}, {}) {}
+      |                    ^      ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp:29:20: error: use of undeclared identifier 'getForPublicReleaseStampExtGStateDict'
+   29 |     Dict* result = getForPublicReleaseStampExtGStateDict(&docMock);
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp:44:20: error: use of undeclared identifier 'getForPublicReleaseStampExtGStateDict'
+   44 |     Dict* result = getForPublicReleaseStampExtGStateDict(&docMock);
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp:54:24: error: use of undeclared identifier 'getForPublicReleaseStampExtGStateDict'
+   54 |         Dict* result = getForPublicReleaseStampExtGStateDict(nullptr);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp:65:20: error: use of undeclared identifier 'getForPublicReleaseStampExtGStateDict'
+   65 |     Dict* result = getForPublicReleaseStampExtGStateDict(&docMock);
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp:17:7: warning: 'AnnotStampForPublicReleaseTest_2013' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class AnnotStampForPublicReleaseTest_2013 : public testing::Test {
+      |       ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2013.dir/build.make:79: generated_build/CMakeFiles/test_2013.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_2013.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:62951: generated_build/CMakeFiles/test_2013.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:62958: generated_build/CMakeFiles/test_2013.dir/rule] Error 2
+gmake: *** [Makefile:22045: test_2013] Error 2

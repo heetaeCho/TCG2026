@@ -1,0 +1,116 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_501.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:61:34: error: only virtual member functions can be marked 'override'
+   61 |     std::ostream& stream() const override { return std::cout; }
+      |                                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:73:20: error: no type named 'OrNot' in 'Catch::ShowDurations'
+   73 |     ShowDurations::OrNot showDurations() const override { return ShowDurations::DefaultForReporter; }
+      |     ~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:81:35: error: return type of virtual function 'getTestsOrTags' is not covariant with the return type of the function it overrides ('const std::vector<StringRef> &' is not derived from 'const std::vector<std::string> &' (aka 'const vector<basic_string<char>> &'))
+   81 |     std::vector<StringRef> const& getTestsOrTags() const override { return m_empty; }
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:85:49: note: overridden virtual function is here
+   85 |         virtual std::vector<std::string> const& getTestsOrTags() const = 0;
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:83:5: error: unknown type name 'ContextOptions'
+   83 |     ContextOptions const& getContextOptions() const override { return m_ctxOpts; }
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:89:9: error: virtual function 'benchmarkSamples' has a different return type ('int') than the function it overrides (which has return type 'unsigned int')
+   89 |     int benchmarkSamples() const override { return 100; }
+      |     ~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:98:30: note: overridden virtual function is here
+   98 |         virtual unsigned int benchmarkSamples() const = 0;
+      |                 ~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:97:35: error: only virtual member functions can be marked 'override'
+   97 |     ColourMode colourMode() const override { return ColourMode::PlatformDefault; }
+      |                                   ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:99:29: error: only virtual member functions can be marked 'override'
+   99 |     bool shmStartup() const override { return false; }
+      |                             ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:101:29: error: only virtual member functions can be marked 'override'
+  101 |     bool shmCleanup() const override { return false; }
+      |                             ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:109:14: error: field has incomplete type 'TestSpec'
+  109 |     TestSpec m_testSpec;                  // default-constructed OK for tests
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:63:11: note: forward declaration of 'Catch::TestSpec'
+   63 |     class TestSpec;
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:113:5: error: unknown type name 'ContextOptions'
+  113 |     ContextOptions m_ctxOpts{};           // default-constructed
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:73:66: error: cannot initialize return object of type 'int' with an rvalue of type 'Catch::ShowDurations'
+   73 |     ShowDurations::OrNot showDurations() const override { return ShowDurations::DefaultForReporter; }
+      |                                                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:5:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RunContext_BenchmarkPreparing_Test_501_ForwardsToReporterWithSameName_501_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:161:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RunContext_BenchmarkPreparing_Test_501_ForwardsToReporterWithSameName_501_Test>::CreateTest' requested here
+  161 | TEST_F(RunContext_BenchmarkPreparing_Test_501, ForwardsToReporterWithSameName_501) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RunContext_BenchmarkPreparing_Test_501_ForwardsEmptyName_501_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:203:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RunContext_BenchmarkPreparing_Test_501_ForwardsEmptyName_501_Test>::CreateTest' requested here
+  203 | TEST_F(RunContext_BenchmarkPreparing_Test_501, ForwardsEmptyName_501) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RunContext_BenchmarkPreparing_Test_501_ForwardsLongName_501_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:237:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RunContext_BenchmarkPreparing_Test_501_ForwardsLongName_501_Test>::CreateTest' requested here
+  237 | TEST_F(RunContext_BenchmarkPreparing_Test_501, ForwardsLongName_501) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RunContext_BenchmarkPreparing_Test_501_MultipleCallsAreForwardedInOrder_501_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp:279:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RunContext_BenchmarkPreparing_Test_501_MultipleCallsAreForwardedInOrder_501_Test>::CreateTest' requested here
+  279 | TEST_F(RunContext_BenchmarkPreparing_Test_501, MultipleCallsAreForwardedInOrder_501) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_501.dir/build.make:79: generated_build/CMakeFiles/test_501.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_501.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:37925: generated_build/CMakeFiles/test_501.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:37932: generated_build/CMakeFiles/test_501.dir/rule] Error 2
+gmake: *** [Makefile:13761: test_501] Error 2

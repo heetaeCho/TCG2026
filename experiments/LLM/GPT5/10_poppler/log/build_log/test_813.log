@@ -1,0 +1,186 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_813.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:6:31: error: base class has incomplete type
+    6 | class MockLinkAction : public LinkAction {
+      |                        ~~~~~~~^~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:84:7: note: forward declaration of 'LinkAction'
+   84 | class LinkAction;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:8:5: error: only virtual member functions can be marked 'override'
+    8 |     MOCK_METHOD(void, execute, (), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:287:1: note: expanded from here
+  287 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:30:18: error: 'action' is a private member of 'AnnotScreen'
+   30 |     annotScreen->action = std::move(mockLinkAction);
+      |                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:1010:33: note: declared private here
+ 1010 |     std::unique_ptr<LinkAction> action; // A
+      |                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:30:25: error: no viable overloaded '='
+   30 |     annotScreen->action = std::move(mockLinkAction);
+      |     ~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:414:19: note: candidate function not viable: no known conversion from 'unique_ptr<MockLinkAction, default_delete<MockLinkAction>>' to 'unique_ptr<LinkAction, default_delete<LinkAction>>' for 1st argument
+  414 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:430:2: note: candidate template ignored: requirement '__and_<std::__and_<std::is_convertible<MockLinkAction *, LinkAction *>, std::__not_<std::is_array<MockLinkAction>>>, std::is_assignable<std::default_delete<LinkAction> &, std::default_delete<MockLinkAction> &&>>::value' was not satisfied [with _Up = MockLinkAction, _Ep = std::default_delete<MockLinkAction>]
+  430 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:440:7: note: candidate function not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockLinkAction> &>::type' (aka 'std::unique_ptr<MockLinkAction>') to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  440 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:523:19: note: candidate function not viable: no known conversion from 'unique_ptr<MockLinkAction, default_delete<MockLinkAction>>' to 'const unique_ptr<LinkAction, default_delete<LinkAction>>' for 1st argument
+  523 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:42:18: error: 'action' is a private member of 'AnnotScreen'
+   42 |     annotScreen->action = std::move(mockLinkAction);
+      |                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:1010:33: note: declared private here
+ 1010 |     std::unique_ptr<LinkAction> action; // A
+      |                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:42:25: error: no viable overloaded '='
+   42 |     annotScreen->action = std::move(mockLinkAction);
+      |     ~~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:414:19: note: candidate function not viable: no known conversion from 'unique_ptr<MockLinkAction, default_delete<MockLinkAction>>' to 'unique_ptr<LinkAction, default_delete<LinkAction>>' for 1st argument
+  414 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:430:2: note: candidate template ignored: requirement '__and_<std::__and_<std::is_convertible<MockLinkAction *, LinkAction *>, std::__not_<std::is_array<MockLinkAction>>>, std::is_assignable<std::default_delete<LinkAction> &, std::default_delete<MockLinkAction> &&>>::value' was not satisfied [with _Up = MockLinkAction, _Ep = std::default_delete<MockLinkAction>]
+  430 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:440:7: note: candidate function not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockLinkAction> &>::type' (aka 'std::unique_ptr<MockLinkAction>') to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  440 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:523:19: note: candidate function not viable: no known conversion from 'unique_ptr<MockLinkAction, default_delete<MockLinkAction>>' to 'const unique_ptr<LinkAction, default_delete<LinkAction>>' for 1st argument
+  523 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:59:5: error: cannot use 'try' with exceptions disabled
+   59 |     ASSERT_NO_THROW({
+      |     ^
+/usr/local/include/gtest/gtest.h:1800:3: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:67:18: error: 'action' is a private member of 'AnnotScreen'
+   67 |     annotScreen->action = nullptr;
+      |                  ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:1010:33: note: declared private here
+ 1010 |     std::unique_ptr<LinkAction> action; // A
+      |                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:12:7: warning: 'AnnotScreenTest_813' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class AnnotScreenTest_813 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:19:20: note: in instantiation of function template specialization 'std::make_unique<PDFDoc>' requested here
+   19 |         doc = std::make_unique<PDFDoc>();
+      |                    ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'PDFDoc'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<PDFDoc>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:19:15: note: in instantiation of member function 'std::unique_ptr<PDFDoc>::~unique_ptr' requested here
+   19 |         doc = std::make_unique<PDFDoc>();
+      |               ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'PDFRectangle'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:20:21: note: in instantiation of function template specialization 'std::make_unique<PDFRectangle>' requested here
+   20 |         rect = std::make_unique<PDFRectangle>();
+      |                     ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'PDFRectangle'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<PDFRectangle>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:20:16: note: in instantiation of member function 'std::unique_ptr<PDFRectangle>::~unique_ptr' requested here
+   20 |         rect = std::make_unique<PDFRectangle>();
+      |                ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: comparison of distinct pointer types ('LinkAction *' and 'MockLinkAction *')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<LinkAction *, MockLinkAction *>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:45:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<LinkAction *, MockLinkAction *, nullptr>' requested here
+   45 |     ASSERT_EQ(annotScreen->getAction(), mockLinkAction.get());
+      |     ^
+/usr/local/include/gtest/gtest.h:1914:31: note: expanded from macro 'ASSERT_EQ'
+ 1914 | #define ASSERT_EQ(val1, val2) GTEST_ASSERT_EQ(val1, val2)
+      |                               ^
+/usr/local/include/gtest/gtest.h:1898:54: note: expanded from macro 'GTEST_ASSERT_EQ'
+ 1898 |   ASSERT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'LinkAction'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:211:4: note: in instantiation of member function 'std::default_delete<LinkAction>::operator()' requested here
+  211 |           _M_deleter()(__old_p);
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:509:7: note: in instantiation of member function 'std::__uniq_ptr_impl<LinkAction, std::default_delete<LinkAction>>::reset' requested here
+  509 |         _M_t.reset(std::move(__p));
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:442:2: note: in instantiation of member function 'std::unique_ptr<LinkAction>::reset' requested here
+  442 |         reset();
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp:67:25: note: in instantiation of member function 'std::unique_ptr<LinkAction>::operator=' requested here
+   67 |     annotScreen->action = nullptr;
+      |                         ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Annot.h:84:7: note: forward declaration of 'LinkAction'
+   84 | class LinkAction;
+      |       ^
+1 warning and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_813.dir/build.make:79: generated_build/CMakeFiles/test_813.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_813.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:84711: generated_build/CMakeFiles/test_813.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:84718: generated_build/CMakeFiles/test_813.dir/rule] Error 2
+gmake: *** [Makefile:30885: test_813] Error 2

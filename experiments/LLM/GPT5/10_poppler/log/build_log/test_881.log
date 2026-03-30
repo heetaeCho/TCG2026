@@ -1,0 +1,35 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_881.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_881.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_881.cpp:15:97: error: no member named 'Text' in 'FormFieldType'
+   15 |         formField = new FormField(docA, std::move(aobj), aref, nullptr, nullptr, FormFieldType::Text);
+      |                                                                                  ~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_881.cpp:72:20: error: 'createChildren' is a protected member of 'FormField'
+   72 |         formField->createChildren(nullptr);
+      |                    ^
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/Form.h:403:10: note: declared protected here
+  403 |     void createChildren(std::set<int> *usedParents);
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_881.cpp:5:7: warning: 'FormFieldTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class FormFieldTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_881.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:7: error: cannot cast 'const GooString' to its private base class 'const basic_string<char, char_traits<char>, allocator<char>>'
+ 1394 |   if (lhs == rhs) {
+      |       ^
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<GooString, GooString>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_881.cpp:56:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<GooString, GooString, nullptr>' requested here
+   56 |     EXPECT_EQ(*fullyQualifiedName, testName);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:56:19: note: declared private here
+   56 | class GooString : private std::string
+      |                   ^~~~~~~~~~~~~~~~~~~
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_881.dir/build.make:79: generated_build/CMakeFiles/test_881.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_881.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:77063: generated_build/CMakeFiles/test_881.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:77070: generated_build/CMakeFiles/test_881.dir/rule] Error 2
+gmake: *** [Makefile:27778: test_881] Error 2

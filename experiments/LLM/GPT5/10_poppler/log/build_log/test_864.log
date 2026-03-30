@@ -1,0 +1,35 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_864.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp:8:29: error: unknown class name 'Instance'; did you mean 'AnnotRichMedia::Instance'?
+    8 | class MockInstance : public Instance {
+      |                             ^~~~~~~~
+      |                             AnnotRichMedia::Instance
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1586:34: note: 'AnnotRichMedia::Instance' declared here
+ 1586 |     class POPPLER_PRIVATE_EXPORT Instance
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp:34:12: error: 'instances' is a private member of 'AnnotRichMedia::Configuration'
+   34 |     config.instances.push_back(std::move(mockInstance));
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1637:48: note: declared private here
+ 1637 |         std::vector<std::unique_ptr<Instance>> instances; // Instances
+      |                                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp:14:7: warning: 'AnnotRichMediaConfigurationTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   14 | class AnnotRichMediaConfigurationTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: call to implicitly-deleted default constructor of 'MockInstance'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp:33:30: note: in instantiation of function template specialization 'std::make_unique<MockInstance>' requested here
+   33 |     auto mockInstance = std::make_unique<MockInstance>();
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp:8:22: note: default constructor of 'MockInstance' is implicitly deleted because base class 'AnnotRichMedia::Instance' has no default constructor
+    8 | class MockInstance : public Instance {
+      |                      ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_864.dir/build.make:79: generated_build/CMakeFiles/test_864.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_864.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:82343: generated_build/CMakeFiles/test_864.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:82350: generated_build/CMakeFiles/test_864.dir/rule] Error 2
+gmake: *** [Makefile:29923: test_864] Error 2

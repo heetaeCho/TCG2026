@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1842.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1842.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1842.cpp:76:18: error: no matching function for call to 'checkedAdd'
+   76 |     EXPECT_DEATH(checkedAdd(x, y, nullptr), ".*");  // Expect crash or handle the null pointer
+      |                  ^~~~~~~~~~
+/usr/local/include/gtest/gtest-death-test.h:190:15: note: expanded from macro 'EXPECT_DEATH'
+  190 |   EXPECT_EXIT(statement, ::testing::internal::ExitedUnsuccessfully, matcher)
+      |               ^~~~~~~~~
+/usr/local/include/gtest/gtest-death-test.h:179:21: note: expanded from macro 'EXPECT_EXIT'
+  179 |   GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:242:47: note: expanded from macro 'GTEST_DEATH_TEST_'
+  242 |           GTEST_EXECUTE_DEATH_TEST_STATEMENT_(statement, gtest_dt);            \
+      |                                               ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-death-test-internal.h:215:50: note: expanded from macro 'GTEST_EXECUTE_DEATH_TEST_STATEMENT_'
+  215 |   GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1842.cpp:18:13: note: candidate template ignored: could not match 'T *' against 'std::nullptr_t'
+   18 | inline bool checkedAdd(T x, T y, T *z) {
+      |             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1842.cpp:28:7: warning: 'GooCheckedOpsTest_1842' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   28 | class GooCheckedOpsTest_1842 : public ::testing::Test {
+      |       ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1842.dir/build.make:79: generated_build/CMakeFiles/test_1842.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1842.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:52359: generated_build/CMakeFiles/test_1842.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:52366: generated_build/CMakeFiles/test_1842.dir/rule] Error 2
+gmake: *** [Makefile:17742: test_1842] Error 2

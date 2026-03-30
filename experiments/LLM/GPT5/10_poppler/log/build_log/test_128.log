@@ -1,0 +1,145 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_128.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:19:16: error: only virtual member functions can be marked 'override'
+   19 |   void reset() override {}
+      |                ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:12:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   12 | class DummyBaseStream final : public BaseStream {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'DummyBaseStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'DummyBaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'DummyBaseStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'DummyBaseStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:358:10: note: unimplemented pure virtual method 'setPos' in 'DummyBaseStream'
+  358 |     void setPos(Goffset pos, int dir = 0) override = 0;
+      |          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'DummyBaseStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'DummyBaseStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:368:21: note: unimplemented pure virtual method 'getStart' in 'DummyBaseStream'
+  368 |     virtual Goffset getStart() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:369:18: note: unimplemented pure virtual method 'moveStart' in 'DummyBaseStream'
+  369 |     virtual void moveStart(Goffset delta) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:34:17: error: call to constructor of 'Dict' is ambiguous
+   34 |   Dict *d = new Dict(nullptr);
+      |                 ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:35:10: error: call to deleted constructor of 'Object'
+   35 |   Object dictObj(d);
+      |          ^       ~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Dict *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:37:19: error: variable type 'DummyBaseStream' is an abstract class
+   37 |   DummyBaseStream s(std::move(dictObj), /*lengthA=*/0);
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:48:19: error: variable type 'DummyBaseStream' is an abstract class
+   48 |   DummyBaseStream s(std::move(nonDictObj), /*lengthA=*/0);
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:57:19: error: variable type 'DummyBaseStream' is an abstract class
+   57 |   DummyBaseStream s(std::move(defaultObj), /*lengthA=*/0);
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:64:18: error: call to constructor of 'Dict' is ambiguous
+   64 |   Dict *d1 = new Dict(nullptr);
+      |                  ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:65:18: error: call to constructor of 'Dict' is ambiguous
+   65 |   Dict *d2 = new Dict(nullptr);
+      |                  ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:67:21: error: functional-style cast from 'Dict *' to 'Object' uses deleted function
+   67 |   DummyBaseStream s(Object(d1), /*lengthA=*/0);
+      |                     ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Dict *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:67:19: error: variable type 'DummyBaseStream' is an abstract class
+   67 |   DummyBaseStream s(Object(d1), /*lengthA=*/0);
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:74:17: error: functional-style cast from 'Dict *' to 'Object' uses deleted function
+   74 |   *dictObject = Object(d2);
+      |                 ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Dict *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:84:17: error: call to constructor of 'Dict' is ambiguous
+   84 |   Dict *d = new Dict(nullptr);
+      |                 ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:86:21: error: functional-style cast from 'Dict *' to 'Object' uses deleted function
+   86 |   DummyBaseStream s(Object(d), /*lengthA=*/0);
+      |                     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Dict *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:86:19: error: variable type 'DummyBaseStream' is an abstract class
+   86 |   DummyBaseStream s(Object(d), /*lengthA=*/0);
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp:29:7: warning: 'BaseStreamGetDictTest_128' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   29 | class BaseStreamGetDictTest_128 : public ::testing::Test {
+      |       ^
+2 warnings and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_128.dir/build.make:79: generated_build/CMakeFiles/test_128.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_128.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:90823: generated_build/CMakeFiles/test_128.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:90830: generated_build/CMakeFiles/test_128.dir/rule] Error 2
+gmake: *** [Makefile:33368: test_128] Error 2

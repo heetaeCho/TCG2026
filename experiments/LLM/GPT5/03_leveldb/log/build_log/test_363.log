@@ -1,0 +1,675 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_363.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:41:3: error: no matching function for call to 'AppendInternalKey'
+   41 |   AppendInternalKey(&encoded, ikey);  // encodes: user_key || 8-byte tag
+      |   ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/dbformat.h:86:6: note: candidate function not viable: no known conversion from 'InternalKey' to 'const ParsedInternalKey' for 2nd argument
+   86 | void AppendInternalKey(std::string* result, const ParsedInternalKey& key);
+      |      ^                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:49:7: error: deleted function '~MemTableIteratorKeyTest_363' cannot override a non-deleted function
+   49 | class MemTableIteratorKeyTest_363 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:248:11: note: overridden virtual function is here
+  248 |   virtual ~Test();
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: error: field of type 'MemTable' has private destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/memtable.h:77:3: note: declared private here
+   77 |   ~MemTable();  // Private since only Unref() should be used to delete it
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   73 | TEST_F(MemTableIteratorKeyTest_363, KeyReturnsInternalKeyBytes_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: note: destructor of 'MemTableIteratorKeyTest_363_KeyReturnsInternalKeyBytes_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: note: replace 'default' with 'delete'
+   73 | TEST_F(MemTableIteratorKeyTest_363, KeyReturnsInternalKeyBytes_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   73 | TEST_F(MemTableIteratorKeyTest_363, KeyReturnsInternalKeyBytes_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:90:1: note: expanded from here
+   90 | MemTableIteratorKeyTest_363_KeyReturnsInternalKeyBytes_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: note: default constructor of 'MemTableIteratorKeyTest_363_KeyReturnsInternalKeyBytes_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: note: replace 'default' with 'delete'
+   73 | TEST_F(MemTableIteratorKeyTest_363, KeyReturnsInternalKeyBytes_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  111 | TEST_F(MemTableIteratorKeyTest_363, KeyChangesAfterNext_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: note: destructor of 'MemTableIteratorKeyTest_363_KeyChangesAfterNext_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: note: replace 'default' with 'delete'
+  111 | TEST_F(MemTableIteratorKeyTest_363, KeyChangesAfterNext_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  111 | TEST_F(MemTableIteratorKeyTest_363, KeyChangesAfterNext_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:40:1: note: expanded from here
+   40 | MemTableIteratorKeyTest_363_KeyChangesAfterNext_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: note: default constructor of 'MemTableIteratorKeyTest_363_KeyChangesAfterNext_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: note: replace 'default' with 'delete'
+  111 | TEST_F(MemTableIteratorKeyTest_363, KeyChangesAfterNext_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  157 | TEST_F(MemTableIteratorKeyTest_363, EmptyUserKey_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: note: destructor of 'MemTableIteratorKeyTest_363_EmptyUserKey_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: note: replace 'default' with 'delete'
+  157 | TEST_F(MemTableIteratorKeyTest_363, EmptyUserKey_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  157 | TEST_F(MemTableIteratorKeyTest_363, EmptyUserKey_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:13:1: note: expanded from here
+   13 | MemTableIteratorKeyTest_363_EmptyUserKey_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: note: default constructor of 'MemTableIteratorKeyTest_363_EmptyUserKey_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: note: replace 'default' with 'delete'
+  157 | TEST_F(MemTableIteratorKeyTest_363, EmptyUserKey_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  195 | TEST_F(MemTableIteratorKeyTest_363, KeyMatchesSeekTargetEntry_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: note: destructor of 'MemTableIteratorKeyTest_363_KeyMatchesSeekTargetEntry_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: note: replace 'default' with 'delete'
+  195 | TEST_F(MemTableIteratorKeyTest_363, KeyMatchesSeekTargetEntry_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  195 | TEST_F(MemTableIteratorKeyTest_363, KeyMatchesSeekTargetEntry_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:78:1: note: expanded from here
+   78 | MemTableIteratorKeyTest_363_KeyMatchesSeekTargetEntry_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: note: default constructor of 'MemTableIteratorKeyTest_363_KeyMatchesSeekTargetEntry_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: note: replace 'default' with 'delete'
+  195 | TEST_F(MemTableIteratorKeyTest_363, KeyMatchesSeekTargetEntry_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  227 | TEST_F(MemTableIteratorKeyTest_363, SameUserKeyDifferentSeq_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: note: destructor of 'MemTableIteratorKeyTest_363_SameUserKeyDifferentSeq_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: note: replace 'default' with 'delete'
+  227 | TEST_F(MemTableIteratorKeyTest_363, SameUserKeyDifferentSeq_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+  227 | TEST_F(MemTableIteratorKeyTest_363, SameUserKeyDifferentSeq_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:43:1: note: expanded from here
+   43 | MemTableIteratorKeyTest_363_SameUserKeyDifferentSeq_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: note: default constructor of 'MemTableIteratorKeyTest_363_SameUserKeyDifferentSeq_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: note: replace 'default' with 'delete'
+  227 | TEST_F(MemTableIteratorKeyTest_363, SameUserKeyDifferentSeq_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: call to implicitly-deleted default constructor of 'MemTableIteratorKeyTest_363_KeyReturnsInternalKeyBytes_363_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MemTableIteratorKeyTest_363_KeyReturnsInternalKeyBytes_363_Test>::CreateTest' requested here
+   73 | TEST_F(MemTableIteratorKeyTest_363, KeyReturnsInternalKeyBytes_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: note: explicitly defaulted function was implicitly deleted here
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:90:1: note: expanded from here
+   90 | MemTableIteratorKeyTest_363_KeyReturnsInternalKeyBytes_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:73:1: note: default constructor of 'MemTableIteratorKeyTest_363_KeyReturnsInternalKeyBytes_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:15:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: call to implicitly-deleted default constructor of 'MemTableIteratorKeyTest_363_KeyChangesAfterNext_363_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MemTableIteratorKeyTest_363_KeyChangesAfterNext_363_Test>::CreateTest' requested here
+  111 | TEST_F(MemTableIteratorKeyTest_363, KeyChangesAfterNext_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: note: explicitly defaulted function was implicitly deleted here
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:40:1: note: expanded from here
+   40 | MemTableIteratorKeyTest_363_KeyChangesAfterNext_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:111:1: note: default constructor of 'MemTableIteratorKeyTest_363_KeyChangesAfterNext_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:15:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: call to implicitly-deleted default constructor of 'MemTableIteratorKeyTest_363_EmptyUserKey_363_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MemTableIteratorKeyTest_363_EmptyUserKey_363_Test>::CreateTest' requested here
+  157 | TEST_F(MemTableIteratorKeyTest_363, EmptyUserKey_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: note: explicitly defaulted function was implicitly deleted here
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:13:1: note: expanded from here
+   13 | MemTableIteratorKeyTest_363_EmptyUserKey_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:157:1: note: default constructor of 'MemTableIteratorKeyTest_363_EmptyUserKey_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:15:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: call to implicitly-deleted default constructor of 'MemTableIteratorKeyTest_363_KeyMatchesSeekTargetEntry_363_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MemTableIteratorKeyTest_363_KeyMatchesSeekTargetEntry_363_Test>::CreateTest' requested here
+  195 | TEST_F(MemTableIteratorKeyTest_363, KeyMatchesSeekTargetEntry_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: note: explicitly defaulted function was implicitly deleted here
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:78:1: note: expanded from here
+   78 | MemTableIteratorKeyTest_363_KeyMatchesSeekTargetEntry_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:195:1: note: default constructor of 'MemTableIteratorKeyTest_363_KeyMatchesSeekTargetEntry_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:15:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: call to implicitly-deleted default constructor of 'MemTableIteratorKeyTest_363_SameUserKeyDifferentSeq_363_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MemTableIteratorKeyTest_363_SameUserKeyDifferentSeq_363_Test>::CreateTest' requested here
+  227 | TEST_F(MemTableIteratorKeyTest_363, SameUserKeyDifferentSeq_363) {
+      | ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: note: explicitly defaulted function was implicitly deleted here
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:43:1: note: expanded from here
+   43 | MemTableIteratorKeyTest_363_SameUserKeyDifferentSeq_363_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:227:1: note: default constructor of 'MemTableIteratorKeyTest_363_SameUserKeyDifferentSeq_363_Test' is implicitly deleted because base class 'MemTableIteratorKeyTest_363' has a deleted destructor
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp:61:12: note: destructor of 'MemTableIteratorKeyTest_363' is implicitly deleted because field 'mem_' has an inaccessible destructor
+   61 |   MemTable mem_;
+      |            ^
+18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_363.dir/build.make:76: generated_build/CMakeFiles/test_363.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_363.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:1979: generated_build/CMakeFiles/test_363.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:1986: generated_build/CMakeFiles/test_363.dir/rule] Error 2
+gmake: *** [Makefile:543: test_363] Error 2

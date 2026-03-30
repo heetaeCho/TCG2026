@@ -14,6 +14,11 @@ class Builder:
         self.project_build_options = {
             "poppler": ["-DENABLE_GPGME=OFF", "-DENABLE_QT6=OFF"],
             "re2": ["-DCMAKE_POLICY_VERSION_MINIMUM=3.5"],
+            "glomap": ["-DOpenMP_C_FLAGS=-fopenmp", 
+                       "-DOpenMP_CXX_FLAGS=-fopenmp", 
+                       "-DOpenMP_C_LIB_NAMES=omp",
+                       "-DOpenMP_CXX_LIB_NAMES=omp",
+                       "-DOpenMP_omp_LIBRARY=/usr/lib/llvm-20/lib/libomp.so"]
             }
 
 class ProjectBuilder(Builder):
@@ -61,6 +66,16 @@ class TestBuilder(Builder):
     cmake_template = \
     """
     set(CMAKE_CXX_STANDARD 17)
+    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    set(CMAKE_CXX_EXTENSIONS OFF)
+
+    set(CMAKE_C_COMPILER /usr/lib/llvm-20/bin/clang)
+    set(CMAKE_CXX_COMPILER /usr/lib/llvm-20/bin/clang++)
+    """
+
+    cmake_template_poppler = \
+    """
+    set(CMAKE_CXX_STANDARD 20)
     set(CMAKE_CXX_STANDARD_REQUIRED ON)
     set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -321,7 +336,7 @@ class TestBuilder(Builder):
             self.project_depenendy[self.project] = list(set(self.project_depenendy[self.project]))
 
     def __make_cmake_lists(self, test_files):
-        cmake_list = self.cmake_template
+        cmake_list = self.cmake_template if self.project != "poppler" else self.cmake_template_poppler
         for test_file in test_files:
             test_name = os.path.splitext(test_file)[0]
             test_build_dir = os.path.join(self.BUILD_DIR, test_name)

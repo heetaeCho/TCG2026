@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1489.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1489.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1489.cpp:31:36: error: call to implicitly-deleted copy constructor of 'Exiv2::Internal::SamsungMnHeader'
+   31 |   Exiv2::Internal::SamsungMnHeader h2(h1);
+      |                                    ^  ~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:400:25: note: copy constructor of 'SamsungMnHeader' is implicitly deleted because base class 'MnHeader' has a deleted copy constructor
+  400 | class SamsungMnHeader : public MnHeader {
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:102:3: note: 'MnHeader' has been explicitly marked deleted here
+  102 |   MnHeader(const MnHeader&) = delete;
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1489.cpp:38:6: error: object of type 'Exiv2::Internal::SamsungMnHeader' cannot be assigned because its copy assignment operator is implicitly deleted
+   38 |   h2 = h1;
+      |      ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:400:25: note: copy assignment operator of 'SamsungMnHeader' is implicitly deleted because base class 'MnHeader' has a deleted copy assignment operator
+  400 | class SamsungMnHeader : public MnHeader {
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:103:13: note: 'operator=' has been explicitly marked deleted here
+  103 |   MnHeader& operator=(const MnHeader&) = delete;
+      |             ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1489.dir/build.make:79: generated_build/CMakeFiles/test_1489.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1489.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:40725: generated_build/CMakeFiles/test_1489.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:40732: generated_build/CMakeFiles/test_1489.dir/rule] Error 2
+gmake: *** [Makefile:13166: test_1489] Error 2

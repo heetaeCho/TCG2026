@@ -1,0 +1,58 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_996.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_996.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_996.cpp:5:7: warning: 'UnicodeMapTest_996' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    5 | class UnicodeMapTest_996 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_996.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'UnicodeMap'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_996.cpp:11:31: note: in instantiation of function template specialization 'std::make_unique<UnicodeMap, const char *, bool &, int>' requested here
+   11 |         testUnicodeMap = std::make_unique<UnicodeMap>(encodingName.c_str(), unicodeOut, 10);  // Assumed constructor with encoding, unicodeOut, and ranges
+      |                               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:67:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::span<const UnicodeMapRange>' for 3rd argument
+   67 |     UnicodeMap(const char *encodingNameA, bool unicodeOutA, std::span<const UnicodeMapRange> rangesA);
+      |     ^                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:71:5: note: candidate constructor not viable: no known conversion from 'int' to 'UnicodeMapFunc' (aka 'int (*)(unsigned int, char *, int)') for 3rd argument
+   71 |     UnicodeMap(const char *encodingNameA, bool unicodeOutA, UnicodeMapFunc funcA);
+      |     ^                                                       ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:73:5: note: candidate constructor not viable: requires single argument 'other', but 3 arguments were provided
+   73 |     UnicodeMap(UnicodeMap &&other) noexcept;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:80:5: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+   80 |     UnicodeMap(const UnicodeMap &) = delete;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:98:14: note: candidate constructor not viable: requires single argument 'encodingNameA', but 3 arguments were provided
+   98 |     explicit UnicodeMap(const std::string &encodingNameA);
+      |              ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_996.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'UnicodeMap'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_996.cpp:26:49: note: in instantiation of function template specialization 'std::make_unique<UnicodeMap, const char (&)[1], bool &, int>' requested here
+   26 |     std::unique_ptr<UnicodeMap> emptyMap = std::make_unique<UnicodeMap>("", unicodeOut, 10);
+      |                                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:67:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::span<const UnicodeMapRange>' for 3rd argument
+   67 |     UnicodeMap(const char *encodingNameA, bool unicodeOutA, std::span<const UnicodeMapRange> rangesA);
+      |     ^                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:71:5: note: candidate constructor not viable: no known conversion from 'int' to 'UnicodeMapFunc' (aka 'int (*)(unsigned int, char *, int)') for 3rd argument
+   71 |     UnicodeMap(const char *encodingNameA, bool unicodeOutA, UnicodeMapFunc funcA);
+      |     ^                                                       ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:73:5: note: candidate constructor not viable: requires single argument 'other', but 3 arguments were provided
+   73 |     UnicodeMap(UnicodeMap &&other) noexcept;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:80:5: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+   80 |     UnicodeMap(const UnicodeMap &) = delete;
+      |     ^          ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/UnicodeMap.h:98:14: note: candidate constructor not viable: requires single argument 'encodingNameA', but 3 arguments were provided
+   98 |     explicit UnicodeMap(const std::string &encodingNameA);
+      |              ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_996.dir/build.make:79: generated_build/CMakeFiles/test_996.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_996.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:92679: generated_build/CMakeFiles/test_996.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:92686: generated_build/CMakeFiles/test_996.dir/rule] Error 2
+gmake: *** [Makefile:34122: test_996] Error 2

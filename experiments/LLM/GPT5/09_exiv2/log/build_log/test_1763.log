@@ -1,0 +1,187 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1763.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:20:19: error: field type 'CiffComponent' is an abstract class
+   20 |     CiffComponent component;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:26:17: error: allocating an object of abstract class type 'CiffComponent'
+   26 |     component = CiffComponent(tag, 0);
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:31:19: error: variable type 'CiffComponent' is an abstract class
+   31 |     CiffComponent emptyComponent;
+      |                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:39:17: error: allocating an object of abstract class type 'CiffComponent'
+   39 |     component = CiffComponent(0, 0);  // Testing boundary condition for tagId
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:58:5: error: unknown type name 'UniquePtr'; did you mean 'Exiv2::Internal::CiffDirectory::UniquePtr'?
+   58 |     UniquePtr mockComponent(new CiffComponent(0x1111, 0x2222));
+      |     ^~~~~~~~~
+      |     Exiv2::Internal::CiffDirectory::UniquePtr
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:64:9: note: 'Exiv2::Internal::CiffDirectory::UniquePtr' declared here
+   64 |   using UniquePtr = std::unique_ptr<CiffComponent>;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:58:33: error: allocating an object of abstract class type 'CiffComponent'
+   58 |     UniquePtr mockComponent(new CiffComponent(0x1111, 0x2222));
+      |                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:59:5: error: no member named 'gmock_add' in 'Exiv2::Internal::MockCrwDirs'
+   59 |     EXPECT_CALL(mockCrwDirs, add(mockComponent)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:50:1: note: expanded from here
+   50 | gmock_add
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:66:5: error: no member named 'gmock_remove' in 'Exiv2::Internal::MockCrwDirs'
+   66 |     EXPECT_CALL(mockCrwDirs, remove(tagId)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:32:1: note: expanded from here
+   32 | gmock_remove
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:73:5: error: unknown type name 'ByteOrder'; did you mean 'Exiv2::ByteOrder'?
+   73 |     ByteOrder byteOrder = ByteOrder::BigEndian;
+      |     ^~~~~~~~~
+      |     Exiv2::ByteOrder
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:32:6: note: 'Exiv2::ByteOrder' declared here
+   32 | enum ByteOrder {
+      |      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:73:27: error: use of undeclared identifier 'ByteOrder'; did you mean 'Exiv2::ByteOrder'?
+   73 |     ByteOrder byteOrder = ByteOrder::BigEndian;
+      |                           ^~~~~~~~~
+      |                           Exiv2::ByteOrder
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:32:6: note: 'Exiv2::ByteOrder' declared here
+   32 | enum ByteOrder {
+      |      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:73:38: error: no member named 'BigEndian' in 'Exiv2::ByteOrder'; did you mean 'bigEndian'?
+   73 |     ByteOrder byteOrder = ByteOrder::BigEndian;
+      |                           ~~~~~~~~~~~^~~~~~~~~
+      |                                      bigEndian
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:35:3: note: 'bigEndian' declared here
+   35 |   bigEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:74:5: error: no member named 'gmock_write' in 'Exiv2::Internal::MockBlob'
+   74 |     EXPECT_CALL(mockBlob, write(offset, byteOrder)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-spec-builders.h:2136:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:6:1: note: expanded from here
+    6 | gmock_write
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:101:11: error: unknown type name 'byte'
+  101 |     const byte* invalidData = nullptr;
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:102:52: error: use of undeclared identifier 'ByteOrder'; did you mean 'Exiv2::ByteOrder'?
+  102 |     EXPECT_THROW(component.read(invalidData, 0, 0, ByteOrder::LittleEndian), std::invalid_argument);
+      |                                                    ^~~~~~~~~
+      |                                                    Exiv2::ByteOrder
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:32:6: note: 'Exiv2::ByteOrder' declared here
+   32 | enum ByteOrder {
+      |      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:102:63: error: no member named 'LittleEndian' in 'Exiv2::ByteOrder'; did you mean 'littleEndian'?
+  102 |     EXPECT_THROW(component.read(invalidData, 0, 0, ByteOrder::LittleEndian), std::invalid_argument);
+      |                                                    ~~~~~~~~~~~^~~~~~~~~~~~
+      |                                                               littleEndian
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:105:1: error: extraneous closing brace ('}')
+  105 | }  // namespace Exiv2
+      | ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CiffComponentTest_TagId_ValidTag_ExpectedResult_1763_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:24:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CiffComponentTest_TagId_ValidTag_ExpectedResult_1763_Test>::CreateTest' requested here
+   24 | TEST_F(CiffComponentTest, TagId_ValidTag_ExpectedResult_1763) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CiffComponentTest_DefaultConstructor_EmptyComponent_1764_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:30:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CiffComponentTest_DefaultConstructor_EmptyComponent_1764_Test>::CreateTest' requested here
+   30 | TEST_F(CiffComponentTest, DefaultConstructor_EmptyComponent_1764) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CiffComponentTest_BoundaryTagId_ZeroTag_ExpectedResult_1765_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp:38:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CiffComponentTest_BoundaryTagId_ZeroTag_ExpectedResult_1765_Test>::CreateTest' requested here
+   38 | TEST_F(CiffComponentTest, BoundaryTagId_ZeroTag_ExpectedResult_1765) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1763.dir/build.make:79: generated_build/CMakeFiles/test_1763.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1763.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:31273: generated_build/CMakeFiles/test_1763.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:31280: generated_build/CMakeFiles/test_1763.dir/rule] Error 2
+gmake: *** [Makefile:9552: test_1763] Error 2

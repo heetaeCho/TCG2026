@@ -1,0 +1,154 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1488.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:13:25: error: base class has incomplete type
+   13 | class MockDict : public Dict {};
+      |                  ~~~~~~~^~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:7:7: note: forward declaration of 'Dict'
+    7 | class Dict;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:14:27: error: base class has incomplete type
+   14 | class MockObject : public Object {};
+      |                    ~~~~~~~^~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:8:7: note: forward declaration of 'Object'
+    8 | class Object;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:23:20: error: no viable overloaded '='
+   23 |         mockStream = std::make_unique<BaseStreamStream>(nullptr);
+      |         ~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:414:19: note: candidate function not viable: no known conversion from 'unique_ptr<BaseStreamStream, default_delete<BaseStreamStream>>' to 'unique_ptr<Stream, default_delete<Stream>>' for 1st argument
+  414 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:430:2: note: candidate template ignored: requirement '__and_<std::__and_<std::is_convertible<BaseStreamStream *, Stream *>, std::__not_<std::is_array<BaseStreamStream>>>, std::is_assignable<std::default_delete<Stream> &, std::default_delete<BaseStreamStream> &&>>::value' was not satisfied [with _Up = BaseStreamStream, _Ep = std::default_delete<BaseStreamStream>]
+  430 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:440:7: note: candidate function not viable: no known conversion from '__detail::__unique_ptr_t<BaseStreamStream>' (aka 'unique_ptr<BaseStreamStream>') to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  440 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:523:19: note: candidate function not viable: no known conversion from 'unique_ptr<BaseStreamStream, default_delete<BaseStreamStream>>' to 'const unique_ptr<Stream, default_delete<Stream>>' for 1st argument
+  523 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:35:29: error: member access into incomplete type 'Stream'
+   35 |     bool result = mockStream->rewind();
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:44:27: error: member access into incomplete type 'Stream'
+   44 |     auto kind = mockStream->getKind();
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:46:21: error: use of undeclared identifier 'StreamKind'
+   46 |     EXPECT_EQ(kind, StreamKind::SomeKind); // Replace `SomeKind` with the expected stream kind value
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:53:28: error: member access into incomplete type 'Stream'
+   53 |     int result = mockStream->getChar();
+      |                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:62:29: error: member access into incomplete type 'Stream'
+   62 |     Goffset pos = mockStream->getPos();
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:62:13: error: variable has incomplete type 'Goffset'
+   62 |     Goffset pos = mockStream->getPos();
+      |             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:9:7: note: forward declaration of 'Goffset'
+    9 | class Goffset;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:64:20: error: 'Goffset' is an incomplete type
+   64 |     EXPECT_EQ(pos, Goffset(0)); // Assuming the position starts at 0
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:9:7: note: forward declaration of 'Goffset'
+    9 | class Goffset;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:71:40: error: member access into incomplete type 'Stream'
+   71 |     BaseStream* baseStream = mockStream->getBaseStream();
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:80:29: error: member access into incomplete type 'Stream'
+   80 |     bool result = mockStream->unfilteredRewind();
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:89:41: error: member access into incomplete type 'Stream'
+   89 |     Stream* undecodedStream = mockStream->getUndecodedStream();
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:98:28: error: member access into incomplete type 'Stream'
+   98 |     Dict* dict = mockStream->getDict();
+      |                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:107:36: error: member access into incomplete type 'Stream'
+  107 |     Object* dictObject = mockStream->getDictObject();
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:116:29: error: member access into incomplete type 'Stream'
+  116 |     bool result = mockStream->isBinary();
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:17:7: warning: 'BaseStreamStreamTest_1488' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class BaseStreamStreamTest_1488 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocation of incomplete type 'BaseStreamStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:23:27: note: in instantiation of function template specialization 'std::make_unique<BaseStreamStream, std::nullptr_t>' requested here
+   23 |         mockStream = std::make_unique<BaseStreamStream>(nullptr);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:6:7: note: forward declaration of 'BaseStreamStream'
+    6 | class BaseStreamStream;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'BaseStreamStream'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<BaseStreamStream>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:23:22: note: in instantiation of member function 'std::unique_ptr<BaseStreamStream>::~unique_ptr' requested here
+   23 |         mockStream = std::make_unique<BaseStreamStream>(nullptr);
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:6:7: note: forward declaration of 'BaseStreamStream'
+    6 | class BaseStreamStream;
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'Stream'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<Stream>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:17:7: note: in instantiation of member function 'std::unique_ptr<Stream>::~unique_ptr' requested here
+   17 | class BaseStreamStreamTest_1488 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp:5:7: note: forward declaration of 'Stream'
+    5 | class Stream;
+      |       ^
+1 warning and 19 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1488.dir/build.make:79: generated_build/CMakeFiles/test_1488.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1488.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:75111: generated_build/CMakeFiles/test_1488.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:75118: generated_build/CMakeFiles/test_1488.dir/rule] Error 2
+gmake: *** [Makefile:26985: test_1488] Error 2

@@ -1,0 +1,25 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1848.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1848.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1848.cpp:6:27: error: base class has incomplete type
+    6 | class MockPDFDoc : public PDFDoc {
+      |                    ~~~~~~~^~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/SecurityHandler.h:31:7: note: forward declaration of 'PDFDoc'
+   31 | class PDFDoc;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1848.cpp:24:23: error: no matching constructor for initialization of 'StandardSecurityHandler'
+   24 |         handler = new StandardSecurityHandler(mockPDFDoc, nullptr); // Assuming PDFDoc and encryptDictA are required
+      |                       ^                       ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/SecurityHandler.h:98:5: note: candidate constructor not viable: no known conversion from 'MockPDFDoc *' to 'PDFDoc *' for 1st argument
+   98 |     StandardSecurityHandler(PDFDoc *docA, Object *encryptDictA);
+      |     ^                       ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/poppler/poppler/SecurityHandler.h:95:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   95 | class StandardSecurityHandler : public SecurityHandler
+      |       ^~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1848.cpp:11:7: warning: 'StandardSecurityHandlerTest_1848' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class StandardSecurityHandlerTest_1848 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1848.dir/build.make:79: generated_build/CMakeFiles/test_1848.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1848.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:64519: generated_build/CMakeFiles/test_1848.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:64526: generated_build/CMakeFiles/test_1848.dir/rule] Error 2
+gmake: *** [Makefile:22682: test_1848] Error 2

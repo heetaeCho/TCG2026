@@ -1,0 +1,34 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_713.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp:21:7: error: no member named 'initInt' in 'Object'
+   21 |     o.initInt(v);
+      |     ~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp:28:7: error: no member named 'initReal' in 'Object'
+   28 |     o.initReal(v);
+      |     ~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp:41:7: error: no member named 'initArray' in 'Object'
+   41 |     o.initArray(arr);
+      |     ~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp:80:17: error: no member named 'initDict' in 'Object'
+   80 |     pageDictObj.initDict(pageDict.release());
+      |     ~~~~~~~~~~~ ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: call to constructor of 'Dict' is ambiguous
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp:78:26: note: in instantiation of function template specialization 'std::make_unique<Dict, std::nullptr_t>' requested here
+   78 |     auto pageDict = std::make_unique<Dict>(nullptr);
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_713.dir/build.make:79: generated_build/CMakeFiles/test_713.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_713.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:16519: generated_build/CMakeFiles/test_713.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:16526: generated_build/CMakeFiles/test_713.dir/rule] Error 2
+gmake: *** [Makefile:3182: test_713] Error 2

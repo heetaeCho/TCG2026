@@ -1,0 +1,144 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_181.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:9:29: error: base class has incomplete type
+    9 | class MockExifData : public ExifData {
+      |                      ~~~~~~~^~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/exiv2/src/tags_int.hpp:26:7: note: forward declaration of 'Exiv2::ExifData'
+   26 | class ExifData;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:24:11: error: variable type 'Value' is an abstract class
+   24 |     Value value; // Assuming Value is a proper type
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'Value'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'Value'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'Value'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'Value'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'Value'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'Value'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'Value'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'Value'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'Value'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'Value'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'Value'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:54:11: error: variable type 'Value' is an abstract class
+   54 |     Value invalidValue; // An invalid value not in the tag array
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:67:11: error: variable type 'Value' is an abstract class
+   67 |     Value validValue; // Assuming this is a value present in the array
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:88:28: error: no matching function for call to 'printTagNoError'
+   88 |     std::ostream& result = printTagNoError(os, invalidType, exifData);
+      |                            ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/./TestProjects/exiv2/src/tags_int.hpp:160:15: note: candidate template ignored: couldn't infer template argument 'N'
+  160 | std::ostream& printTagNoError(std::ostream& os, const T& value, const ExifData*) {
+      |               ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:64:
+In file included from /usr/local/include/gtest/gtest-death-test.h:43:
+In file included from /usr/local/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /usr/local/include/gtest/gtest-matchers.h:49:
+In file included from /usr/local/include/gtest/gtest-printers.h:122:
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithValidValue_181_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:22:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithValidValue_181_Test>::CreateTest' requested here
+   22 | TEST_F(PrintTagNoErrorTest_181, PrintTagNoErrorWithValidValue_181) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithEmptyArray_181_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:42:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithEmptyArray_181_Test>::CreateTest' requested here
+   42 | TEST_F(PrintTagNoErrorTest_181, PrintTagNoErrorWithEmptyArray_181) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithInvalidTag_181_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithInvalidTag_181_Test>::CreateTest' requested here
+   53 | TEST_F(PrintTagNoErrorTest_181, PrintTagNoErrorWithInvalidTag_181) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithValidTagFound_181_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:66:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithValidTagFound_181_Test>::CreateTest' requested here
+   66 | TEST_F(PrintTagNoErrorTest_181, PrintTagNoErrorWithValidTagFound_181) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/usr/local/include/gtest/internal/gtest-internal.h:456:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithTypeMismatch_181_Test *'
+  456 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp:82:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::PrintTagNoErrorTest_181_PrintTagNoErrorWithTypeMismatch_181_Test>::CreateTest' requested here
+   82 | TEST_F(PrintTagNoErrorTest_181, PrintTagNoErrorWithTypeMismatch_181) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1517:15: note: expanded from macro 'GTEST_TEST_'
+ 1517 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_181.dir/build.make:79: generated_build/CMakeFiles/test_181.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_181.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:28009: generated_build/CMakeFiles/test_181.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:28016: generated_build/CMakeFiles/test_181.dir/rule] Error 2
+gmake: *** [Makefile:8304: test_181] Error 2

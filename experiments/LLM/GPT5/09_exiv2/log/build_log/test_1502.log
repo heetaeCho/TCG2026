@@ -1,0 +1,48 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1502.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1502.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1502.cpp:16:30: error: base class has incomplete type
+   16 | class MockIoWrapper : public IoWrapper {
+      |                       ~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:20:7: note: forward declaration of 'Exiv2::Internal::IoWrapper'
+   20 | class IoWrapper;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1502.cpp:38:36: error: non-const lvalue reference to type 'IoWrapper' cannot bind to a value of unrelated type 'MockIoWrapper'
+   38 |   const size_t ret = header_.write(io, Exiv2::littleEndian);
+      |                                    ^~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:464:27: note: passing argument to parameter 'ioWrapper' here
+  464 |   size_t write(IoWrapper& ioWrapper, ByteOrder byteOrder) const override;
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1502.cpp:61:37: error: non-const lvalue reference to type 'IoWrapper' cannot bind to a value of unrelated type 'MockIoWrapper'
+   61 |   const size_t ret1 = header_.write(io, Exiv2::littleEndian);
+      |                                     ^~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:464:27: note: passing argument to parameter 'ioWrapper' here
+  464 |   size_t write(IoWrapper& ioWrapper, ByteOrder byteOrder) const override;
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1502.cpp:62:37: error: non-const lvalue reference to type 'IoWrapper' cannot bind to a value of unrelated type 'MockIoWrapper'
+   62 |   const size_t ret2 = header_.write(io, Exiv2::bigEndian);
+      |                                     ^~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:464:27: note: passing argument to parameter 'ioWrapper' here
+  464 |   size_t write(IoWrapper& ioWrapper, ByteOrder byteOrder) const override;
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1502.cpp:77:36: error: non-const lvalue reference to type 'IoWrapper' cannot bind to a value of unrelated type 'MockIoWrapper'
+   77 |   EXPECT_THROW((void)header_.write(io, Exiv2::littleEndian), std::runtime_error);
+      |                                    ^~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:464:27: note: passing argument to parameter 'ioWrapper' here
+  464 |   size_t write(IoWrapper& ioWrapper, ByteOrder byteOrder) const override;
+      |                           ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1502.dir/build.make:79: generated_build/CMakeFiles/test_1502.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1502.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:59867: generated_build/CMakeFiles/test_1502.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:59874: generated_build/CMakeFiles/test_1502.dir/rule] Error 2
+gmake: *** [Makefile:20485: test_1502] Error 2

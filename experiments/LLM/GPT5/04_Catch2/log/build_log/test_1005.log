@@ -1,0 +1,145 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1005.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:37:45: error: 'Pattern' is a private member of 'Catch::TestSpec'
+   37 | class MockPattern : public Catch::TestSpec::Pattern {
+      |                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:31:15: note: implicitly declared private here
+   31 |         class Pattern {
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:49:5: error: non-virtual member function marked 'override' hides virtual member function
+   49 |     MOCK_METHOD(bool, matches, (const Catch::TestCaseInfo&), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:171:1: note: expanded from here
+  171 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:35:26: note: hidden overloaded virtual function 'Catch::TestSpec::Pattern::matches' declared here: different qualifiers ('const' vs unqualified)
+   35 |             virtual bool matches( TestCaseInfo const& testCase ) const = 0;
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:43:28: error: 'Pattern' is a private member of 'Catch::TestSpec'
+   43 |         : Catch::TestSpec::Pattern(name) {}
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:31:15: note: implicitly declared private here
+   31 |         class Pattern {
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:65:49: error: invalid use of incomplete type 'NameAndTags'
+   65 |     return Catch::TestCaseInfo(/*className*/"", NameAndTags{name, ""}, SourceLineInfo{__FILE__, __LINE__});
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:47:12: note: forward declaration of 'Catch::NameAndTags'
+   47 |     struct NameAndTags;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:81:49: error: invalid use of incomplete type 'NameAndTags'
+   81 |     return Catch::TestCaseInfo(/*className*/"", NameAndTags{name, "[.]"}, SourceLineInfo{__FILE__, __LINE__});
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:47:12: note: forward declaration of 'Catch::NameAndTags'
+   47 |     struct NameAndTags;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:87:51: error: 'Pattern' is a private member of 'Catch::TestSpec'
+   87 | inline Catch::Detail::unique_ptr<Catch::TestSpec::Pattern>
+      |                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:31:15: note: implicitly declared private here
+   31 |         class Pattern {
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:91:20: error: allocating an object of abstract class type 'NiceMock<MockPattern>'
+   91 |     auto raw = new NiceMock<MockPattern>(name);
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:35:26: note: unimplemented pure virtual method 'matches' in 'NiceMock'
+   35 |             virtual bool matches( TestCaseInfo const& testCase ) const = 0;
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:38:26: note: unimplemented pure virtual method 'serializeTo' in 'NiceMock'
+   38 |             virtual void serializeTo( std::ostream& out ) const = 0;
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:97:55: error: 'Pattern' is a private member of 'Catch::TestSpec'
+   97 |     return Catch::Detail::unique_ptr<Catch::TestSpec::Pattern>(raw);
+      |                                                       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:31:15: note: implicitly declared private here
+   31 |         class Pattern {
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:113:22: error: 'Filter' is a private member of 'Catch::TestSpec'
+  113 |     Catch::TestSpec::Filter f;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:129:22: error: 'Filter' is a private member of 'Catch::TestSpec'
+  129 |     Catch::TestSpec::Filter f;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:143:22: error: 'Filter' is a private member of 'Catch::TestSpec'
+  143 |     Catch::TestSpec::Filter f;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:173:22: error: 'Filter' is a private member of 'Catch::TestSpec'
+  173 |     Catch::TestSpec::Filter f;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:179:27: error: allocating an object of abstract class type 'MockPattern'
+  179 |     MockPattern* r1 = new MockPattern("reqFirst");
+      |                           ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:35:26: note: unimplemented pure virtual method 'matches' in 'MockPattern'
+   35 |             virtual bool matches( TestCaseInfo const& testCase ) const = 0;
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:38:26: note: unimplemented pure virtual method 'serializeTo' in 'MockPattern'
+   38 |             virtual void serializeTo( std::ostream& out ) const = 0;
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:181:27: error: allocating an object of abstract class type 'MockPattern'
+  181 |     MockPattern* r2 = new MockPattern("reqSecond");
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:195:71: error: 'Pattern' is a private member of 'Catch::TestSpec'
+  195 |     f.m_required.push_back(Catch::Detail::unique_ptr<Catch::TestSpec::Pattern>(r1));
+      |                                                                       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:31:15: note: implicitly declared private here
+   31 |         class Pattern {
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:197:71: error: 'Pattern' is a private member of 'Catch::TestSpec'
+  197 |     f.m_required.push_back(Catch::Detail::unique_ptr<Catch::TestSpec::Pattern>(r2));
+      |                                                                       ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:31:15: note: implicitly declared private here
+   31 |         class Pattern {
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:213:22: error: 'Filter' is a private member of 'Catch::TestSpec'
+  213 |     Catch::TestSpec::Filter f;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:243:22: error: 'Filter' is a private member of 'Catch::TestSpec'
+  243 |     Catch::TestSpec::Filter f;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp:279:22: error: 'Filter' is a private member of 'Catch::TestSpec'
+  279 |     Catch::TestSpec::Filter f;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1005.dir/build.make:79: generated_build/CMakeFiles/test_1005.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/04_Catch2/test_files/test_1005.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19148: generated_build/CMakeFiles/test_1005.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19155: generated_build/CMakeFiles/test_1005.dir/rule] Error 2
+gmake: *** [Makefile:6364: test_1005] Error 2

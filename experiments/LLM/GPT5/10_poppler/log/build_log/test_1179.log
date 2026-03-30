@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1179.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp:27:19: error: cannot initialize a variable of type 'TextFontInfo *' with an rvalue of type 'const TextFontInfo *'
+   27 |     TextFontInfo* fontInfo = word->getFontInfo(0);
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp:33:5: error: cannot use 'try' with exceptions disabled
+   33 |     EXPECT_THROW(word->getFontInfo(-1), std::out_of_range);
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp:34:5: error: cannot use 'try' with exceptions disabled
+   34 |     EXPECT_THROW(word->getFontInfo(100), std::out_of_range); // Assuming there are fewer than 100 chars
+      |     ^
+/usr/local/include/gtest/gtest.h:1792:3: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1371:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1371 |     try {                                                                   \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp:88:15: error: cannot initialize a variable of type 'TextWord *' with an rvalue of type 'const TextWord *'
+   88 |     TextWord* next = word->nextWord();
+      |               ^      ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp:95:15: error: cannot initialize a variable of type 'TextWord *' with an rvalue of type 'const TextWord *'
+   95 |     TextWord* next = lastWord.nextWord();
+      |               ^      ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp:6:7: warning: 'TextWordTest_1179' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    6 | class TextWordTest_1179 : public ::testing::Test {
+      |       ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1179.dir/build.make:79: generated_build/CMakeFiles/test_1179.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1179.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:49799: generated_build/CMakeFiles/test_1179.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:49806: generated_build/CMakeFiles/test_1179.dir/rule] Error 2
+gmake: *** [Makefile:16702: test_1179] Error 2

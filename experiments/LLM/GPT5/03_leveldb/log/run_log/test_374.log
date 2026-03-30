@@ -1,0 +1,59 @@
+Running main() from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from FilterBlockReaderTest_374
+[ RUN      ] FilterBlockReaderTest_374.DelegatesToPolicyOnValidRange_374
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_374.cpp:205: Failure
+Actual function call count doesn't match EXPECT_CALL(policy, KeyMayMatch(_, _))...
+         Expected: to be called once
+           Actual: never called - unsatisfied and active
+
+[  FAILED  ] FilterBlockReaderTest_374.DelegatesToPolicyOnValidRange_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.ReturnsFalseOnEmptyFilter_374
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_374.cpp:249: Failure
+Value of: reader->KeyMayMatch(block_offset, key)
+  Actual: true
+Expected: false
+
+[  FAILED  ] FilterBlockReaderTest_374.ReturnsFalseOnEmptyFilter_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.ReturnsTrueOnIndexOutOfRange_374
+[       OK ] FilterBlockReaderTest_374.ReturnsTrueOnIndexOutOfRange_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.ReturnsTrueOnCorruptRangeStartGreaterThanLimit_374
+[       OK ] FilterBlockReaderTest_374.ReturnsTrueOnCorruptRangeStartGreaterThanLimit_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.ReturnsTrueOnCorruptRangeLimitBeyondData_374
+[       OK ] FilterBlockReaderTest_374.ReturnsTrueOnCorruptRangeLimitBeyondData_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.UsesBlockOffsetShiftByBaseLg_374
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_374.cpp:445: Failure
+Value of: reader->KeyMayMatch( 3, key)
+  Actual: true
+Expected: false
+
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_374.cpp:425: Failure
+Expected equality of these values:
+  std::string("F0")
+    Which is: "F0"
+  std::string(filter.data(), filter.size())
+    Which is: ""
+
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_374.cpp:447: Failure
+Value of: reader->KeyMayMatch( 4, key)
+  Actual: false
+Expected: true
+
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_374.cpp:431: Failure
+Actual function call count doesn't match EXPECT_CALL(policy, KeyMayMatch(_, _))...
+         Expected: to be called once
+           Actual: never called - unsatisfied and active
+
+[  FAILED  ] FilterBlockReaderTest_374.UsesBlockOffsetShiftByBaseLg_374 (0 ms)
+[----------] 6 tests from FilterBlockReaderTest_374 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] FilterBlockReaderTest_374.DelegatesToPolicyOnValidRange_374
+[  FAILED  ] FilterBlockReaderTest_374.ReturnsFalseOnEmptyFilter_374
+[  FAILED  ] FilterBlockReaderTest_374.UsesBlockOffsetShiftByBaseLg_374
+
+ 3 FAILED TESTS

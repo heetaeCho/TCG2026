@@ -1,0 +1,118 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_421.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:5:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/table.h:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:19:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/slice.h:27:22: error: redefinition of 'Slice'
+   27 | class LEVELDB_EXPORT Slice {
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:25:7: note: previous definition is here
+   25 | class Slice {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:5:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/table.h:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:19:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/slice.h:103:19: error: out-of-line definition of 'compare' does not match any declaration in 'leveldb::Slice'
+  103 | inline int Slice::compare(const Slice& b) const {
+      |                   ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:25:7: note: Slice defined here
+   25 | class Slice {
+      |       ^~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:12:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/block.h:18:7: error: redefinition of 'Block'
+   18 | class Block {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: previous definition is here
+   53 | class Block {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:42:31: error: reference to type 'const Slice' could not bind to an lvalue of type 'const char[35]'
+   42 |     return Status::Corruption("file is too short to be an sstable");
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/status.h:43:41: note: passing argument to parameter 'msg' here
+   43 |   static Status Corruption(const Slice& msg, const Slice& msg2 = Slice()) {
+      |                                         ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:66:30: error: no matching constructor for initialization of 'Block'
+   66 |     Block* index_block = new Block(index_block_contents);
+      |                              ^     ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'BlockContents' to 'const Block' for 1st argument
+   53 | class Block {
+      |       ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:98:21: error: no matching constructor for initialization of 'Block'
+   98 |   Block* meta = new Block(contents);
+      |                     ^     ~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'BlockContents' to 'const Block' for 1st argument
+   53 | class Block {
+      |       ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:100:26: error: no member named 'NewIterator' in 'leveldb::Block'
+  100 |   Iterator* iter = meta->NewIterator(BytewiseComparator());
+      |                    ~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:103:14: error: no viable conversion from 'std::string' (aka 'basic_string<char>') to 'const Slice'
+  103 |   iter->Seek(key);
+      |              ^~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:25:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'const Slice &' for 1st argument
+   25 | class Slice {
+      |       ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:25:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::string' (aka 'basic_string<char>') to 'Slice &&' for 1st argument
+   25 | class Slice {
+      |       ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:31:12: note: explicit constructor is not a candidate
+   31 |   explicit Slice(const char* s) : data_(s), size_(s ? ::strlen(s) : 0) {}
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:33:12: note: explicit constructor is not a candidate
+   33 |   explicit Slice(const std::string& s) : data_(s.data()), size_(s.size()) {}
+      |            ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:932:7: note: candidate function
+  932 |       operator __sv_type() const noexcept
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:48:34: note: passing argument to parameter 'target' here
+   48 |   virtual void Seek(const Slice& target) = 0;
+      |                                  ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:179:23: error: no matching constructor for initialization of 'Block'
+  179 |           block = new Block(contents);
+      |                       ^     ~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'BlockContents' to 'const Block' for 1st argument
+   53 | class Block {
+      |       ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:181:67: error: no member named 'size' in 'leveldb::Block'
+  181 |             cache_handle = block_cache->Insert(key, block, block->size(),
+      |                                                            ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:189:21: error: no matching constructor for initialization of 'Block'
+  189 |         block = new Block(contents);
+      |                     ^     ~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'BlockContents' to 'const Block' for 1st argument
+   53 | class Block {
+      |       ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:53:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp:75:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:196:19: error: no member named 'NewIterator' in 'leveldb::Block'
+  196 |     iter = block->NewIterator(table->rep_->options.comparator);
+      |            ~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:210:26: error: no member named 'NewIterator' in 'leveldb::Block'
+  210 |       rep_->index_block->NewIterator(rep_->options.comparator),
+      |       ~~~~~~~~~~~~~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:218:40: error: no member named 'NewIterator' in 'leveldb::Block'
+  218 |   Iterator* iiter = rep_->index_block->NewIterator(rep_->options.comparator);
+      |                     ~~~~~~~~~~~~~~~~~  ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./table/table.cc:246:26: error: no member named 'NewIterator' in 'leveldb::Block'
+  246 |       rep_->index_block->NewIterator(rep_->options.comparator);
+      |       ~~~~~~~~~~~~~~~~~  ^
+15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_421.dir/build.make:76: generated_build/CMakeFiles/test_421.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/03_leveldb/test_files/test_421.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9461: generated_build/CMakeFiles/test_421.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9468: generated_build/CMakeFiles/test_421.dir/rule] Error 2
+gmake: *** [Makefile:3897: test_421] Error 2

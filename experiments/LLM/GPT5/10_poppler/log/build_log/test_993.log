@@ -1,0 +1,52 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_993.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_993.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_993.cpp:10:20: error: field of type 'PDFDoc' has private default constructor
+   10 |     PDFDocTest() : pdfDoc(/* Initialization if necessary */) {}
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_993.cpp:26:51: error: no member named 'Normal' in 'PDFSubtypeConformance'
+   26 |     EXPECT_EQ(conformance, PDFSubtypeConformance::Normal);  // Adjust based on the actual default value
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_993.cpp:31:12: error: calling a private constructor of class 'PDFDoc'
+   31 |     PDFDoc invalidPdfDoc;
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_993.cpp:33:80: error: no member named 'Invalid' in 'PDFSubtypeConformance'
+   33 |     EXPECT_EQ(invalidPdfDoc.getPDFSubtypeConformance(), PDFSubtypeConformance::Invalid);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~~~~^
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_993.cpp:4:7: warning: 'PDFDocTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    4 | class PDFDocTest : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_993.dir/build.make:79: generated_build/CMakeFiles/test_993.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_993.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:87463: generated_build/CMakeFiles/test_993.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:87470: generated_build/CMakeFiles/test_993.dir/rule] Error 2
+gmake: *** [Makefile:32003: test_993] Error 2

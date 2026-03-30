@@ -1,0 +1,49 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1521.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1521.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1521.cpp:82:22: error: no matching constructor for initialization of 'std::string_view' (aka 'basic_string_view<char>')
+   82 |     std::string_view textStr(10000, 'A');  // 10,000 'A' characters
+      |                      ^       ~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:146:7: note: candidate constructor not viable: no known conversion from 'int' to 'const char *' for 1st argument
+  146 |       basic_string_view(const _CharT* __str, size_type __len) noexcept
+      |       ^                 ~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:155:2: note: candidate template ignored: constraints not satisfied [with _It = int, _End = char]
+  155 |         basic_string_view(_It __first, _End __last)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:151:16: note: because 'int' does not satisfy 'contiguous_iterator'
+  151 |       template<contiguous_iterator _It, sized_sentinel_for<_It> _End>
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/iterator_concepts.h:698:35: note: because 'int' does not satisfy 'random_access_iterator'
+  698 |     concept contiguous_iterator = random_access_iterator<_Iter>
+      |                                   ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/iterator_concepts.h:682:38: note: because 'int' does not satisfy 'bidirectional_iterator'
+  682 |     concept random_access_iterator = bidirectional_iterator<_Iter>
+      |                                      ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/iterator_concepts.h:672:38: note: because 'int' does not satisfy 'forward_iterator'
+  672 |     concept bidirectional_iterator = forward_iterator<_Iter>
+      |                                      ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/iterator_concepts.h:667:32: note: because 'int' does not satisfy 'input_iterator'
+  667 |     concept forward_iterator = input_iterator<_Iter>
+      |                                ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/iterator_concepts.h:656:30: note: because 'int' does not satisfy 'input_or_output_iterator'
+  656 |     concept input_iterator = input_or_output_iterator<_Iter>
+      |                              ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/iterator_concepts.h:635:33: note: because '*__i' would be invalid: indirection requires pointer operand ('int' invalid)
+  635 |       = requires(_Iter __i) { { *__i } -> __detail::__can_reference; }
+      |                                 ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:136:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  136 |       constexpr basic_string_view(const basic_string_view&) noexcept = default;
+      |                 ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:140:7: note: candidate constructor not viable: requires single argument '__str', but 2 arguments were provided
+  140 |       basic_string_view(const _CharT* __str) noexcept
+      |       ^                 ~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:132:7: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+  132 |       basic_string_view() noexcept
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1521.cpp:11:7: warning: 'TextStringToUCS4Test_1521' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class TextStringToUCS4Test_1521 : public ::testing::Test {
+      |       ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1521.dir/build.make:79: generated_build/CMakeFiles/test_1521.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_1521.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:25287: generated_build/CMakeFiles/test_1521.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:25294: generated_build/CMakeFiles/test_1521.dir/rule] Error 2
+gmake: *** [Makefile:6744: test_1521] Error 2

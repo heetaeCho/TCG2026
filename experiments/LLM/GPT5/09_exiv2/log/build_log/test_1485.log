@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[ 50%] Building CXX object generated_build/CMakeFiles/test_1485.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1485.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1485.cpp:52:18: error: call to implicitly-deleted copy constructor of 'PentaxMnHeader'
+   52 |   PentaxMnHeader copy = original;
+      |                  ^      ~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:373:24: note: copy constructor of 'PentaxMnHeader' is implicitly deleted because base class 'MnHeader' has a deleted copy constructor
+  373 | class PentaxMnHeader : public MnHeader {
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:102:3: note: 'MnHeader' has been explicitly marked deleted here
+  102 |   MnHeader(const MnHeader&) = delete;
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1485.cpp:62:18: error: call to implicitly-deleted copy constructor of 'PentaxMnHeader'
+   62 |   PentaxMnHeader moved = std::move(original);
+      |                  ^       ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:373:24: note: copy constructor of 'PentaxMnHeader' is implicitly deleted because base class 'MnHeader' has a deleted copy constructor
+  373 | class PentaxMnHeader : public MnHeader {
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:102:3: note: 'MnHeader' has been explicitly marked deleted here
+  102 |   MnHeader(const MnHeader&) = delete;
+      |   ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1485.dir/build.make:79: generated_build/CMakeFiles/test_1485.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/09_exiv2/test_files/test_1485.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:45179: generated_build/CMakeFiles/test_1485.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:45186: generated_build/CMakeFiles/test_1485.dir/rule] Error 2
+gmake: *** [Makefile:14869: test_1485] Error 2

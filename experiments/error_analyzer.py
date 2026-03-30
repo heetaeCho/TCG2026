@@ -24,18 +24,40 @@ class ErrorAnalyzer:
         self.BUILD_FAIL_DIR = os.path.join(self.FAIL_DIR, "build_fail")
         self.RUN_FAIL_DIR = os.path.join(self.FAIL_DIR, "run_fail")
 
+    def get_map(self):
+        log_errors_map = self.find_error_lines(self._get_build_failed_list())
+        for log, lines in log_errors_map.items():
+            for ix, line in enumerate(lines):
+                pattern, description = self.match_line_to_pattern(line) 
+                if pattern is None and description is None:
+                    continue
+                category, subtype = self.match_pattern_to_category(pattern)
+                if category is None and subtype is None:
+                    print(pattern)
+                elif category != "Semantic":
+                    log_errors_map[log][ix] = category
+                else:
+                    log_errors_map[log][ix] = subtype
+        return log_errors_map
+
     def find_error_lines(self, build_failed_list):
-        error_lines = []
+        error_lines = {}
         for build_failed in build_failed_list:
             build_failed = os.path.join(self.BUILD_LOG_DIR, build_failed)
             with open(build_failed, 'r', encoding='utf-8') as log:
+                name = build_failed.split('/')[-1]
                 for line in log.readlines():
                     if self._is_error_line(line):
                         TEST_FILES_PATH = os.path.join(self.project_path, "test_files")
                         TEST_FILES_PATH = TEST_FILES_PATH.replace("\\", "/")
                         if TEST_FILES_PATH in line:
                             error_log = line.split("error:")[-1].strip()
-                            error_lines.append(error_log)
+                            
+                            # error_lines.append(error_log)
+                            if name in error_lines.keys():
+                                error_lines[name].append(error_log)
+                            else:
+                                error_lines[name] = [error_log]
         return error_lines
 
     def match_line_to_pattern(self, line):
@@ -59,22 +81,23 @@ class ErrorAnalyzer:
     def analyze(self): 
         project_error_count = error_category.COUNT_CATEGORIES.copy()
         error_lines = self.find_error_lines(self._get_build_failed_list())
-        for line in error_lines:
+        for log, lines in error_lines.items():
             # leveldb = "cannot use 'try' with exceptions disabled" which is removed since this's setting problem
             # exiv2 = "Cannot find WXMP_Common.hpp (needed for WXMP_Result)." which  is project message
             # poppler = "cannot use 'try' with exceptions disabled", "cannot use 'throw' with exceptions disabled"
             #           "Goffset is not defined. Please include the Poppler header that defines Goffset (e.g., goo/gtypes.h) before including this test."
             # poppler have None that appeared with the same reason
-            pattern, description = self.match_line_to_pattern(line) 
-            if pattern is None and description is None:
-                continue
-            category, subtype = self.match_pattern_to_category(pattern)
-            if category is None and subtype is None:
-                print(pattern)
-            elif category != "Semantic":
-                project_error_count[category] += 1
-            else:
-                project_error_count[category][subtype] += 1
+            for line in lines:
+                pattern, description = self.match_line_to_pattern(line) 
+                if pattern is None and description is None:
+                    continue
+                category, subtype = self.match_pattern_to_category(pattern)
+                if category is None and subtype is None:
+                    print(pattern)
+                elif category != "Semantic":
+                    project_error_count[category] += 1
+                else:
+                    project_error_count[category][subtype] += 1
         return project_error_count
 
     def _pre_analyze(self):

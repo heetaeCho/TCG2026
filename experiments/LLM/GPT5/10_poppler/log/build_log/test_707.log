@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_707.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp:99:8: error: cannot specialize a dependent template
+   99 | struct is_unique_ptr<std::unique_ptr<U>> : std::true_type {};
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp:109:40: error: no matching constructor for initialization of 'PDFDoc'
+  109 |     return std::unique_ptr<PDFDoc>(new PDFDoc(fileName.release()));
+      |                                        ^      ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'GooString *') to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'GooString *') to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'GooString *') to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp:137:41: error: no member named 'GetTestInfo' in 'PageTest_707_MediaHeightMatchesMediaBox_707_Test'
+  137 |       WriteOnePagePdfWithMediaBox(this->GetTestInfo(), 0.0, 0.0, 200.0, 400.0);
+      |                                   ~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp:151:41: error: no member named 'GetTestInfo' in 'PageTest_707_MediaHeightZeroWhenY1EqualsY2_707_Test'
+  151 |       WriteOnePagePdfWithMediaBox(this->GetTestInfo(), 0.0, 10.0, 200.0, 10.0);
+      |                                   ~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp:165:62: error: no member named 'GetTestInfo' in 'PageTest_707_MediaHeightSupportsNegativeCoordinates_707_Test'
+  165 |   const std::string path = WriteOnePagePdfWithMediaBox(this->GetTestInfo(),
+      |                                                        ~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp:182:41: error: no member named 'GetTestInfo' in 'PageTest_707_MediaHeightLargeValues_707_Test'
+  182 |       WriteOnePagePdfWithMediaBox(this->GetTestInfo(), 0.0, -1e9, 1.0, 1e9);
+      |                                   ~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp:196:53: error: no member named 'GetTestInfo' in 'PageTest_707_InvalidPdfDoesNotProduceUsablePage_707_Test'
+  196 |       std::string(testing::TempDir()) + "/" + this->GetTestInfo()->name() +
+      |                                               ~~~~  ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_707.dir/build.make:79: generated_build/CMakeFiles/test_707.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_707.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:89639: generated_build/CMakeFiles/test_707.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:89646: generated_build/CMakeFiles/test_707.dir/rule] Error 2
+gmake: *** [Makefile:32887: test_707] Error 2

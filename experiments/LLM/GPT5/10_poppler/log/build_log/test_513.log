@@ -1,0 +1,61 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_513.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:24:13: error: virtual function 'copy' has a different return type ('Function *') than the function it overrides (which has return type 'std::unique_ptr<Function>')
+   24 |   Function *copy() const override { return new DummyFunction(inSize_, outSize_); }
+      |   ~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Function.h:62:39: note: overridden virtual function is here
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:25:28: error: only virtual member functions can be marked 'override'
+   25 |   int getInputSize() const override { return inSize_; }
+      |                            ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:26:29: error: only virtual member functions can be marked 'override'
+   26 |   int getOutputSize() const override { return outSize_; }
+      |                             ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:18:7: warning: abstract class is marked 'final' [-Wabstract-final-class]
+   18 | class DummyFunction final : public Function {
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Function.h:73:18: note: unimplemented pure virtual method 'getType' in 'DummyFunction'
+   73 |     virtual Type getType() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Function.h:89:18: note: unimplemented pure virtual method 'isOk' in 'DummyFunction'
+   89 |     virtual bool isOk() const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:24:48: error: allocating an object of abstract class type 'DummyFunction'
+   24 |   Function *copy() const override { return new DummyFunction(inSize_, outSize_); }
+      |                                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:56:24: error: variable type 'GfxUnivariateShading' is an abstract class
+   56 |   GfxUnivariateShading shading(/*typeA=*/1,
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'GfxUnivariateShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:968:18: note: unimplemented pure virtual method 'getParameterRange' in 'GfxUnivariateShading'
+  968 |     virtual void getParameterRange(double *lower, double *upper, double xMin, double yMin, double xMax, double yMax) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:970:20: note: unimplemented pure virtual method 'getDistance' in 'GfxUnivariateShading'
+  970 |     virtual double getDistance(double sMin, double sMax) const = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:75:24: error: variable type 'GfxUnivariateShading' is an abstract class
+   75 |   GfxUnivariateShading shading(/*typeA=*/1,
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:91:24: error: variable type 'GfxUnivariateShading' is an abstract class
+   91 |   GfxUnivariateShading shading(/*typeA=*/1,
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:112:24: error: variable type 'GfxUnivariateShading' is an abstract class
+  112 |   GfxUnivariateShading shading(/*typeA=*/1,
+      |                        ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:4:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::DummyFunction'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp:42:29: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::DummyFunction, int, int>' requested here
+   42 |     funcs.emplace_back(std::make_unique<DummyFunction>(1, 3));
+      |                             ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_513.dir/build.make:79: generated_build/CMakeFiles/test_513.dir/home/user/MyProjects/TCG2026/experiments/LLM/GPT5/10_poppler/test_files/test_513.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:82919: generated_build/CMakeFiles/test_513.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:82926: generated_build/CMakeFiles/test_513.dir/rule] Error 2
+gmake: *** [Makefile:30157: test_513] Error 2
