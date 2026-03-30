@@ -1,0 +1,66 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from ValueTypeURationalTest_163
+[ RUN      ] ValueTypeURationalTest_163.ToInt64NormalOperation_163
+[       OK ] ValueTypeURationalTest_163.ToInt64NormalOperation_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64BoundaryConditionZeroNumerator_163
+[       OK ] ValueTypeURationalTest_163.ToInt64BoundaryConditionZeroNumerator_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64BoundaryConditionLargeNumerator_163
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_163.cpp:51: Failure
+Expected equality of these values:
+  value_type.toInt64(0)
+    Which is: 4294967295
+  std::numeric_limits<int64_t>::max()
+    Which is: 9223372036854775807
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64BoundaryConditionLargeNumerator_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64BoundaryConditionLargeDenominator_163
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_163.cpp:63: Failure
+Expected equality of these values:
+  value_type.toInt64(0)
+    Which is: 2147483647
+  std::numeric_limits<int64_t>::max() / 2
+    Which is: 4611686018427387903
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64BoundaryConditionLargeDenominator_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64BoundaryConditionZeroDenominator_163
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_163.cpp:75: Failure
+Expected: value_type.toInt64(0) throws an exception of type std::overflow_error.
+  Actual: it throws nothing.
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64BoundaryConditionZeroDenominator_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64IndexOutOfBounds_163
+[       OK ] ValueTypeURationalTest_163.ToInt64IndexOutOfBounds_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64NegativeNumerator_163
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_163.cpp:99: Failure
+Expected equality of these values:
+  value_type.toInt64(0)
+    Which is: 4293967296
+  -1000000
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64NegativeNumerator_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64NegativeDenominator_163
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_163.cpp:111: Failure
+Expected equality of these values:
+  value_type.toInt64(0)
+    Which is: 0
+  -1000000
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64NegativeDenominator_163 (0 ms)
+[ RUN      ] ValueTypeURationalTest_163.ToInt64NegativeBoth_163
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_163.cpp:123: Failure
+Expected equality of these values:
+  value_type.toInt64(0)
+    Which is: 0
+  1000000
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64NegativeBoth_163 (0 ms)
+[----------] 9 tests from ValueTypeURationalTest_163 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64BoundaryConditionLargeNumerator_163
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64BoundaryConditionLargeDenominator_163
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64BoundaryConditionZeroDenominator_163
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64NegativeNumerator_163
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64NegativeDenominator_163
+[  FAILED  ] ValueTypeURationalTest_163.ToInt64NegativeBoth_163
+
+ 6 FAILED TESTS

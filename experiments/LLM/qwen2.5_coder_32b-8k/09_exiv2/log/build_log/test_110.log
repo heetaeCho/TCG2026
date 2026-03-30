@@ -1,0 +1,106 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_110.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_110.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_110.cpp:49:13: error: variable has incomplete type 'ExifKey'
+   49 |     ExifKey key("Exif.Image.Artist");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_110.cpp:51:18: error: incomplete type 'Exiv2::Value' named in nested name specifier
+   51 |     auto value = Value::create(undef);
+      |                  ^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_110.cpp:51:32: error: use of undeclared identifier 'undef'; did you mean 'index'?
+   51 |     auto value = Value::create(undef);
+      |                                ^~~~~
+      |                                index
+/usr/include/strings.h:68:14: note: 'index' declared here
+   68 | extern char *index (const char *__s, int __c)
+      |              ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_110.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Exiv2::Metadatum'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_110.cpp:23:26: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Metadatum>' requested here
+   23 |         metadatum = std::make_unique<Metadatum>();
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:119:16: note: unimplemented pure virtual method 'setValue' in 'Metadatum'
+  119 |   virtual void setValue(const Value* pValue) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:126:15: note: unimplemented pure virtual method 'setValue' in 'Metadatum'
+  126 |   virtual int setValue(const std::string& buf) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:148:18: note: unimplemented pure virtual method 'copy' in 'Metadatum'
+  148 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:170:25: note: unimplemented pure virtual method 'write' in 'Metadatum'
+  170 |   virtual std::ostream& write(std::ostream& os, const ExifData* pMetadata = nullptr) const = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:177:37: note: unimplemented pure virtual method 'key' in 'Metadatum'
+  177 |   [[nodiscard]] virtual std::string key() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:179:37: note: unimplemented pure virtual method 'familyName' in 'Metadatum'
+  179 |   [[nodiscard]] virtual const char* familyName() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:181:37: note: unimplemented pure virtual method 'groupName' in 'Metadatum'
+  181 |   [[nodiscard]] virtual std::string groupName() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:183:37: note: unimplemented pure virtual method 'tagName' in 'Metadatum'
+  183 |   [[nodiscard]] virtual std::string tagName() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:185:37: note: unimplemented pure virtual method 'tagLabel' in 'Metadatum'
+  185 |   [[nodiscard]] virtual std::string tagLabel() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:187:37: note: unimplemented pure virtual method 'tagDesc' in 'Metadatum'
+  187 |   [[nodiscard]] virtual std::string tagDesc() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:189:34: note: unimplemented pure virtual method 'tag' in 'Metadatum'
+  189 |   [[nodiscard]] virtual uint16_t tag() const = 0;
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:191:32: note: unimplemented pure virtual method 'typeId' in 'Metadatum'
+  191 |   [[nodiscard]] virtual TypeId typeId() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:193:37: note: unimplemented pure virtual method 'typeName' in 'Metadatum'
+  193 |   [[nodiscard]] virtual const char* typeName() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:195:32: note: unimplemented pure virtual method 'typeSize' in 'Metadatum'
+  195 |   [[nodiscard]] virtual size_t typeSize() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:197:32: note: unimplemented pure virtual method 'count' in 'Metadatum'
+  197 |   [[nodiscard]] virtual size_t count() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:199:32: note: unimplemented pure virtual method 'size' in 'Metadatum'
+  199 |   [[nodiscard]] virtual size_t size() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:201:37: note: unimplemented pure virtual method 'toString' in 'Metadatum'
+  201 |   [[nodiscard]] virtual std::string toString() const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:207:37: note: unimplemented pure virtual method 'toString' in 'Metadatum'
+  207 |   [[nodiscard]] virtual std::string toString(size_t n) const = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:213:33: note: unimplemented pure virtual method 'toInt64' in 'Metadatum'
+  213 |   [[nodiscard]] virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:223:31: note: unimplemented pure virtual method 'toFloat' in 'Metadatum'
+  223 |   [[nodiscard]] virtual float toFloat(size_t n = 0) const = 0;
+      |                               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:229:34: note: unimplemented pure virtual method 'toRational' in 'Metadatum'
+  229 |   [[nodiscard]] virtual Rational toRational(size_t n = 0) const = 0;
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:243:48: note: unimplemented pure virtual method 'getValue' in 'Metadatum'
+  243 |   [[nodiscard]] virtual std::unique_ptr<Value> getValue() const = 0;
+      |                                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:257:38: note: unimplemented pure virtual method 'value' in 'Metadatum'
+  257 |   [[nodiscard]] virtual const Value& value() const = 0;
+      |                                      ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_110.dir/build.make:79: generated_build/CMakeFiles/test_110.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_110.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:81117: generated_build/CMakeFiles/test_110.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:81124: generated_build/CMakeFiles/test_110.dir/rule] 오류 2
+gmake: *** [Makefile:28610: test_110] 오류 2

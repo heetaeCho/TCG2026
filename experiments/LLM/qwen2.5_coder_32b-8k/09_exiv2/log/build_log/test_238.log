@@ -1,0 +1,62 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_238.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:23:44: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   23 |         entry_ = new TiffEntryBase(0x1234, IfdId::IFD0, TiffType::undefined);
+      |                                            ^~~~~
+      |                                            Exiv2::IfdId
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:23:44: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   23 |         entry_ = new TiffEntryBase(0x1234, IfdId::IFD0, TiffType::undefined);
+      |                                            ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:23:57: error: no member named 'undefined' in 'Exiv2::Internal::TiffType'; did you mean 'Exiv2::undefined'?
+   23 |         entry_ = new TiffEntryBase(0x1234, IfdId::IFD0, TiffType::undefined);
+      |                                                         ^~~~~~~~~~~~~~~~~~~
+      |                                                         Exiv2::undefined
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:75:3: note: 'Exiv2::undefined' declared here
+   75 |   undefined = 7,            //!< Exif UNDEFINED type, an 8-bit byte that may contain anything.
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:43:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   43 |     entry_->setCount(count);
+      |             ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:45:23: error: 'doCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   45 |     EXPECT_EQ(entry_->doCount(), count);
+      |                       ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:516:24: note: declared protected here
+  516 |   [[nodiscard]] size_t doCount() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:55:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   55 |     entry_->setCount(count);
+      |             ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:57:23: error: 'doCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   57 |     EXPECT_EQ(entry_->doCount(), count);
+      |                       ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:516:24: note: declared protected here
+  516 |   [[nodiscard]] size_t doCount() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:67:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   67 |     entry_->setCount(count);
+      |             ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp:69:23: error: 'doCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   69 |     EXPECT_EQ(entry_->doCount(), count);
+      |                       ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:516:24: note: declared protected here
+  516 |   [[nodiscard]] size_t doCount() const override;
+      |                        ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_238.dir/build.make:79: generated_build/CMakeFiles/test_238.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_238.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:47525: generated_build/CMakeFiles/test_238.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:47532: generated_build/CMakeFiles/test_238.dir/rule] 오류 2
+gmake: *** [Makefile:15766: test_238] 오류 2

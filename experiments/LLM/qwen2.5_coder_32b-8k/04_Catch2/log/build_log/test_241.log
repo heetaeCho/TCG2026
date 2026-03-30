@@ -1,0 +1,58 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_241.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp:31:20: error: no matching constructor for initialization of 'std::exception'
+   31 |     std::exception ex("Expected exception message");
+      |                    ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:67:5: note: candidate constructor not viable: no known conversion from 'const char[27]' to 'const exception' for 1st argument
+   67 |     exception(const exception&) = default;
+      |     ^         ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:69:5: note: candidate constructor not viable: no known conversion from 'const char[27]' to 'exception' for 1st argument
+   69 |     exception(exception&&) = default;
+      |     ^         ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:64:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   64 |     exception() _GLIBCXX_NOTHROW { }
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp:41:20: error: no matching constructor for initialization of 'std::exception'
+   41 |     std::exception ex("Unexpected exception message");
+      |                    ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:67:5: note: candidate constructor not viable: no known conversion from 'const char[29]' to 'const exception' for 1st argument
+   67 |     exception(const exception&) = default;
+      |     ^         ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:69:5: note: candidate constructor not viable: no known conversion from 'const char[29]' to 'exception' for 1st argument
+   69 |     exception(exception&&) = default;
+      |     ^         ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:64:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   64 |     exception() _GLIBCXX_NOTHROW { }
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp:61:20: error: no matching constructor for initialization of 'std::exception'
+   61 |     std::exception ex("");
+      |                    ^  ~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:67:5: note: candidate constructor not viable: no known conversion from 'const char[1]' to 'const exception' for 1st argument
+   67 |     exception(const exception&) = default;
+      |     ^         ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:69:5: note: candidate constructor not viable: no known conversion from 'const char[1]' to 'exception' for 1st argument
+   69 |     exception(exception&&) = default;
+      |     ^         ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/exception.h:64:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   64 |     exception() _GLIBCXX_NOTHROW { }
+      |     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/matchers/catch_matchers_exception.hpp:42:26: error: no member named 'match' in 'std::basic_string<char>'
+   42 |         return m_matcher.match( ex.what() );
+      |                ~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp:33:25: note: in instantiation of member function 'Catch::Matchers::ExceptionMessageMatchesMatcher<std::basic_string<char>>::match' requested here
+   33 |     EXPECT_TRUE(matcher.match(ex));
+      |                         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/matchers/catch_matchers_exception.hpp:46:42: error: no member named 'describe' in 'std::basic_string<char>'
+   46 |         return " matches \"" + m_matcher.describe() + '"';
+      |                                ~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp:51:23: note: in instantiation of member function 'Catch::Matchers::ExceptionMessageMatchesMatcher<std::basic_string<char>>::describe' requested here
+   51 |     EXPECT_EQ(matcher.describe(), " matches \"Expected exception message\"");
+      |                       ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_241.dir/build.make:79: generated_build/CMakeFiles/test_241.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_241.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:19643: generated_build/CMakeFiles/test_241.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:19650: generated_build/CMakeFiles/test_241.dir/rule] 오류 2
+gmake: *** [Makefile:6559: test_241] 오류 2

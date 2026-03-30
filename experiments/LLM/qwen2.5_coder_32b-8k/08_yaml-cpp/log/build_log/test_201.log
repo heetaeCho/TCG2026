@@ -1,0 +1,214 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_201.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:19:5: error: unknown type name 'base_type'; did you mean 'std::false_type'?
+   19 |     base_type m_iterator;
+      |     ^~~~~~~~~
+      |     std::false_type
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:86:9: note: 'std::false_type' declared here
+   86 |   using false_type = integral_constant<bool, false>;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:29:30: error: no matching constructor for initialization of 'std::false_type' (aka 'integral_constant<bool, false>')
+   29 |     IteratorBaseTest_201() : m_iterator(0), m_pMemory(nullptr), iter1(m_iterator, m_pMemory) {
+      |                              ^          ~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:65:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const integral_constant<bool, false>' for 1st argument
+   65 |     struct integral_constant
+      |            ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:65:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'integral_constant<bool, false>' for 1st argument
+   65 |     struct integral_constant
+      |            ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:65:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:29:65: error: no matching constructor for initialization of 'iterator_base<V>' (aka 'iterator_base<int>')
+   29 |     IteratorBaseTest_201() : m_iterator(0), m_pMemory(nullptr), iter1(m_iterator, m_pMemory) {
+      |                                                                 ^     ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:52:12: note: candidate constructor not viable: no known conversion from 'std::false_type' (aka 'integral_constant<bool, false>') to 'base_type' (aka 'node_iterator_base<node>') for 1st argument
+   52 |   explicit iterator_base(base_type rhs, shared_memory_holder pMemory)
+      |            ^             ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:56:3: note: candidate template ignored: could not match 'iterator_base' against 'std::integral_constant'
+   56 |   iterator_base(const iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:51:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   51 |   iterator_base() : m_iterator(), m_pMemory() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:33:17: error: no matching constructor for initialization of 'iterator_base<V>' (aka 'iterator_base<int>')
+   33 |         iter2 = iterator_base<V>(m_iterator + 1, m_pMemory);
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:52:12: note: candidate constructor not viable: no known conversion from 'int' to 'base_type' (aka 'node_iterator_base<node>') for 1st argument
+   52 |   explicit iterator_base(base_type rhs, shared_memory_holder pMemory)
+      |            ^             ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:56:3: note: candidate template ignored: could not match 'iterator_base<W>' against 'int'
+   56 |   iterator_base(const iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:51:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   51 |   iterator_base() : m_iterator(), m_pMemory() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:73:8: error: unknown class name 'IteratorBaseDtest_201'; did you mean 'IteratorBaseTest_201'?
+   73 | TEST_F(IteratorBaseDtest_201, InequalityOperatorDifferentLocations_201) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+      |        IteratorBaseTest_201
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:13:7: note: 'IteratorBaseTest_201' declared here
+   13 | class IteratorBaseTest_201 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:73:8: error: unknown type name 'IteratorBaseDtest_201'; did you mean 'IteratorBaseTest_201'?
+   73 | TEST_F(IteratorBaseDtest_201, InequalityOperatorDifferentLocations_201) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+      |        IteratorBaseTest_201
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:13:7: note: 'IteratorBaseTest_201' declared here
+   13 | class IteratorBaseTest_201 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:73:8: error: unknown type name 'IteratorBaseDtest_201'; did you mean 'IteratorBaseTest_201'?
+   73 | TEST_F(IteratorBaseDtest_201, InequalityOperatorDifferentLocations_201) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+      |        IteratorBaseTest_201
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:13:7: note: 'IteratorBaseTest_201' declared here
+   13 | class IteratorBaseTest_201 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:73:8: error: unknown type name 'IteratorBaseDtest_201'; did you mean 'IteratorBaseTest_201'?
+   73 | TEST_F(IteratorBaseDtest_201, InequalityOperatorDifferentLocations_201) {
+      |        ^~~~~~~~~~~~~~~~~~~~~
+      |        IteratorBaseTest_201
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:13:7: note: 'IteratorBaseTest_201' declared here
+   13 | class IteratorBaseTest_201 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:89:20: error: 'm_iterator' is a private member of 'YAML::detail::iterator_base<int>'
+   89 |     EXPECT_EQ(iter.m_iterator, iter1.m_iterator + 1);
+      |                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:96:13: note: declared private here
+   96 |   base_type m_iterator;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:89:38: error: 'm_iterator' is a private member of 'YAML::detail::iterator_base<int>'
+   89 |     EXPECT_EQ(iter.m_iterator, iter1.m_iterator + 1);
+      |                                      ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:96:13: note: declared private here
+   96 |   base_type m_iterator;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:89:49: error: invalid operands to binary expression ('base_type' (aka 'node_iterator_base<node>') and 'int')
+   89 |     EXPECT_EQ(iter.m_iterator, iter1.m_iterator + 1);
+      |                                ~~~~~~~~~~~~~~~~ ^ ~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:103:20: error: 'm_iterator' is a private member of 'YAML::detail::iterator_base<int>'
+  103 |     EXPECT_EQ(temp.m_iterator, iter1.m_iterator);
+      |                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:96:13: note: declared private here
+   96 |   base_type m_iterator;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:103:38: error: 'm_iterator' is a private member of 'YAML::detail::iterator_base<int>'
+  103 |     EXPECT_EQ(temp.m_iterator, iter1.m_iterator);
+      |                                      ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:96:13: note: declared private here
+   96 |   base_type m_iterator;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:105:20: error: 'm_iterator' is a private member of 'YAML::detail::iterator_base<int>'
+  105 |     EXPECT_EQ(iter.m_iterator, iter1.m_iterator + 1);
+      |                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:96:13: note: declared private here
+   96 |   base_type m_iterator;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:105:38: error: 'm_iterator' is a private member of 'YAML::detail::iterator_base<int>'
+  105 |     EXPECT_EQ(iter.m_iterator, iter1.m_iterator + 1);
+      |                                      ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:96:13: note: declared private here
+   96 |   base_type m_iterator;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:105:49: error: invalid operands to binary expression ('base_type' (aka 'node_iterator_base<node>') and 'int')
+  105 |     EXPECT_EQ(iter.m_iterator, iter1.m_iterator + 1);
+      |                                ~~~~~~~~~~~~~~~~ ^ ~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:11:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:170:21: error: member access into incomplete type 'YAML::detail::node'
+  170 |     return it->first->is_defined() && it->second->is_defined();
+      |                     ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:164:31: note: in instantiation of member function 'YAML::detail::node_iterator_base<YAML::detail::node>::is_defined' requested here
+  164 |     while (it != m_mapEnd && !is_defined(it))
+      |                               ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:137:19: note: in instantiation of member function 'YAML::detail::node_iterator_base<YAML::detail::node>::increment_until_defined' requested here
+  137 |         m_mapIt = increment_until_defined(m_mapIt);
+      |                   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:62:5: note: in instantiation of member function 'YAML::detail::node_iterator_base<YAML::detail::node>::operator++' requested here
+   62 |     ++m_iterator;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:87:5: note: in instantiation of member function 'YAML::detail::iterator_base<int>::operator++' requested here
+   87 |     ++iter;
+      |     ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/ptr.h:14:7: note: forward declaration of 'YAML::detail::node'
+   14 | class node;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:11:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:170:49: error: member access into incomplete type 'YAML::detail::node'
+  170 |     return it->first->is_defined() && it->second->is_defined();
+      |                                                 ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/ptr.h:14:7: note: forward declaration of 'YAML::detail::node'
+   14 | class node;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:85:14: error: cannot convert 'Node' to 'value_type' (aka 'int') without a conversion operator
+   85 |       return value_type(Node(*v, m_pMemory));
+      |              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp:117:15: note: in instantiation of member function 'YAML::detail::iterator_base<int>::operator*' requested here
+  117 |     EXPECT_EQ(*iter1, m_iterator);
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_201.dir/build.make:79: generated_build/CMakeFiles/test_201.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_201.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:23534: generated_build/CMakeFiles/test_201.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:23541: generated_build/CMakeFiles/test_201.dir/rule] 오류 2
+gmake: *** [Makefile:8838: test_201] 오류 2

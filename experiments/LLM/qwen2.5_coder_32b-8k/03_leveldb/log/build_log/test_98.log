@@ -1,0 +1,102 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_98.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:11:31: error: expected class name
+   11 | class ComparatorMock : public Comparator {
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:15:24: error: unknown type name 'Compare'
+   15 |     MOCK_CONST_METHOD2(Compare, int(const Key& a, const Key& b));
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:15:43: error: unknown type name 'Key'
+   15 |     MOCK_CONST_METHOD2(Compare, int(const Key& a, const Key& b));
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:15:57: error: unknown type name 'Key'
+   15 |     MOCK_CONST_METHOD2(Compare, int(const Key& a, const Key& b));
+      |                                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:15:5: error: a type specifier is required for all declarations
+   15 |     MOCK_CONST_METHOD2(Compare, int(const Key& a, const Key& b));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:25:18: error: unknown type name 'AllocateAligned'
+   25 |     MOCK_METHOD1(AllocateAligned, char*(size_t bytes));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:25:5: error: a type specifier is required for all declarations
+   25 |     MOCK_METHOD1(AllocateAligned, char*(size_t bytes));
+      |     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:255:29: error: type 'const ComparatorMock' does not provide a call operator
+  255 |   return (n != nullptr) && (compare_(n->key, key) < 0);
+      |                             ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:266:9: note: in instantiation of member function 'leveldb::SkipList<int, ComparatorMock>::KeyIsAfterNode' requested here
+  266 |     if (KeyIsAfterNode(key, next)) {
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:339:13: note: in instantiation of member function 'leveldb::SkipList<int, ComparatorMock>::FindGreaterOrEqual' requested here
+  339 |   Node* x = FindGreaterOrEqual(key, prev);
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:73:15: note: in instantiation of member function 'leveldb::SkipList<int, ComparatorMock>::Insert' requested here
+   73 |     skiplist_.Insert(10);
+      |               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:108:58: error: type 'const ComparatorMock' does not provide a call operator
+  108 |   bool Equal(const Key& a, const Key& b) const { return (compare_(a, b) == 0); }
+      |                                                          ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:342:27: note: in instantiation of member function 'leveldb::SkipList<int, ComparatorMock>::Equal' requested here
+  342 |   assert(x == nullptr || !Equal(key, x->key));
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:73:15: note: in instantiation of member function 'leveldb::SkipList<int, ComparatorMock>::Insert' requested here
+   73 |     skiplist_.Insert(10);
+      |               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:287:26: error: type 'const ComparatorMock' does not provide a call operator
+  287 |     assert(x == head_ || compare_(x->key, key) < 0);
+      |                          ^~~~~~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+   93 |      (static_cast <bool> (expr)                                         \
+      |                           ^~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:215:18: note: in instantiation of member function 'leveldb::SkipList<int, ComparatorMock>::FindLessThan' requested here
+  215 |   node_ = list_->FindLessThan(node_->key);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:185:8: note: in instantiation of member function 'leveldb::SkipList<int, ComparatorMock>::Iterator::Prev' requested here
+  185 |     it.Prev();
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:289:28: error: type 'const ComparatorMock' does not provide a call operator
+  289 |     if (next == nullptr || compare_(next->key, key) >= 0) {
+      |                            ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:45:32: error: field 'comparator_mock_' is uninitialized when used here [-Werror,-Wuninitialized]
+   45 |     SkipListTest() : skiplist_(comparator_mock_, &arena_mock_) {}
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:71:1: note: in instantiation of member function 'SkipListTest<int, ComparatorMock>::SkipListTest' requested here
+   71 | TEST_F(SkipListTest_98, InsertAndContains_NormalOperation_98) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:46:1: note: expanded from here
+   46 | SkipListTest_98_InsertAndContains_NormalOperation_98_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp:71:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SkipListTest_98_InsertAndContains_NormalOperation_98_Test>::CreateTest' requested here
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_98.dir/build.make:76: generated_build/CMakeFiles/test_98.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_98.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:10273: generated_build/CMakeFiles/test_98.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:10280: generated_build/CMakeFiles/test_98.dir/rule] 오류 2
+gmake: *** [Makefile:4261: test_98] 오류 2

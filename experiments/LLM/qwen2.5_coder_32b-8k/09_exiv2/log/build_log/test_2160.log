@@ -1,0 +1,60 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_2160.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2160.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2160.cpp:29:39: error: return type of virtual function 'write' is not covariant with the return type of the function it overrides (class type 'typename ::testing::internal::Function< ::testing::internal::identity_t<const std::ostream &> (std::ostream &)>::Result' (aka 'const std::basic_ostream<char> &') does not have the same cv-qualification as or less cv-qualification than class type 'std::ostream &' (aka 'basic_ostream<char> &'))
+   29 |     MOCK_METHOD(const std::ostream &, write, (std::ostream & os), (const, override));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: overridden virtual function is here
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |           ~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2160.cpp:31:5: error: non-virtual member function marked 'override' hides virtual member function
+   31 |     MOCK_METHOD(std::string, toString, (), (const, override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:78:1: note: expanded from here
+   78 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:129:23: note: hidden overloaded virtual function 'Exiv2::Value::toString' declared here: different number of parameters (1 vs 0)
+  129 |   virtual std::string toString(size_t n) const;
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2160.cpp:61:81: error: no member named 'invalid' in 'Exiv2::TypeId'
+   61 |     std::unique_ptr<MockValue> mock_value = std::make_unique<MockValue>(TypeId::invalid);
+      |                                                                         ~~~~~~~~^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2160.dir/build.make:79: generated_build/CMakeFiles/test_2160.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2160.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:28213: generated_build/CMakeFiles/test_2160.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:28220: generated_build/CMakeFiles/test_2160.dir/rule] 오류 2
+gmake: *** [Makefile:8382: test_2160] 오류 2

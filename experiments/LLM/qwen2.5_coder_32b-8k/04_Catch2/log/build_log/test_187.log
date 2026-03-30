@@ -1,0 +1,31 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_187.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp:31:13: error: value of type 'AnyMatchMatcher<bool &>' is not contextually convertible to 'bool'
+   31 |         if (Catch::Matchers::AnyMatch(condition)) {
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp:79:1: error: expected unqualified-id
+   79 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp:5:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_quantifiers.hpp:70:17: error: non-const lvalue reference to type 'bool' cannot bind to a temporary of type 'std::remove_reference_t<decltype(matcher)>' (aka 'bool')
+   70 |                 m_matcher(CATCH_MOVE(matcher))
+      |                 ^         ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_quantifiers.hpp:151:20: note: in instantiation of member function 'Catch::Matchers::AnyMatchMatcher<bool &>::AnyMatchMatcher' requested here
+  151 |             return { CATCH_FORWARD(matcher) };
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp:31:30: note: in instantiation of function template specialization 'Catch::Matchers::AnyMatch<bool &>' requested here
+   31 |         if (Catch::Matchers::AnyMatch(condition)) {
+      |                              ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp:5:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_quantifiers.hpp:74:48: error: member reference base type 'bool' is not a structure or union
+   74 |                 return "any match " + m_matcher.describe();
+      |                                       ~~~~~~~~~^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp:31:13: note: in instantiation of member function 'Catch::Matchers::AnyMatchMatcher<bool &>::describe' requested here
+   31 |         if (Catch::Matchers::AnyMatch(condition)) {
+      |             ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_187.dir/build.make:79: generated_build/CMakeFiles/test_187.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_187.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15419: generated_build/CMakeFiles/test_187.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15426: generated_build/CMakeFiles/test_187.dir/rule] 오류 2
+gmake: *** [Makefile:4895: test_187] 오류 2

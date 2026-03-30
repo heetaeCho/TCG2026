@@ -1,0 +1,77 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[ 80%] Building CXX object generated_build/CMakeFiles/test_227.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:13:18: error: unknown type name 'GetSnapshot'; did you mean 'Snapshot'?
+   13 |     MOCK_METHOD0(GetSnapshot, const leveldb::Snapshot*());
+      |                  ^~~~~~~~~~~
+      |                  Snapshot
+/home/user/TCG2026/TestProjects/leveldb/./db/c.cc:41:16: note: 'Snapshot' declared here
+   41 | using leveldb::Snapshot;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:13:5: error: a type specifier is required for all declarations
+   13 |     MOCK_METHOD0(GetSnapshot, const leveldb::Snapshot*());
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:23:18: error: allocating an object of abstract class type 'DBMock'
+   23 |         db = new DBMock();
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:66:18: note: unimplemented pure virtual method 'Put' in 'DBMock'
+   66 |   virtual Status Put(const WriteOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:73:18: note: unimplemented pure virtual method 'Delete' in 'DBMock'
+   73 |   virtual Status Delete(const WriteOptions& options, const Slice& key) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:78:18: note: unimplemented pure virtual method 'Write' in 'DBMock'
+   78 |   virtual Status Write(const WriteOptions& options, WriteBatch* updates) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:87:18: note: unimplemented pure virtual method 'Get' in 'DBMock'
+   87 |   virtual Status Get(const ReadOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:96:21: note: unimplemented pure virtual method 'NewIterator' in 'DBMock'
+   96 |   virtual Iterator* NewIterator(const ReadOptions& options) = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:102:27: note: unimplemented pure virtual method 'GetSnapshot' in 'DBMock'
+  102 |   virtual const Snapshot* GetSnapshot() = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:106:16: note: unimplemented pure virtual method 'ReleaseSnapshot' in 'DBMock'
+  106 |   virtual void ReleaseSnapshot(const Snapshot* snapshot) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:124:16: note: unimplemented pure virtual method 'GetProperty' in 'DBMock'
+  124 |   virtual bool GetProperty(const Slice& property, std::string* value) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:134:16: note: unimplemented pure virtual method 'GetApproximateSizes' in 'DBMock'
+  134 |   virtual void GetApproximateSizes(const Range* range, int n,
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:147:16: note: unimplemented pure virtual method 'CompactRange' in 'DBMock'
+  147 |   virtual void CompactRange(const Slice* begin, const Slice* end) = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:75:25: error: cannot initialize a variable of type 'leveldb_snapshot_t *' with an rvalue of type 'const leveldb_snapshot_t *'
+   75 |     leveldb_snapshot_t* snapshot = leveldb_create_snapshot(&env->c_db);
+      |                         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:89:27: error: use of undeclared identifier 'GetSnapshot'; did you mean 'Snapshot'?
+   89 |     EXPECT_CALL(*env->db, GetSnapshot()).WillOnce(::testing::Return(mock_snapshot));
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/./db/c.cc:41:16: note: 'Snapshot' declared here
+   41 | using leveldb::Snapshot;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:89:62: error: no member named 'Return' in namespace 'testing'
+   89 |     EXPECT_CALL(*env->db, GetSnapshot()).WillOnce(::testing::Return(mock_snapshot));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:93:25: error: cannot initialize a variable of type 'leveldb_snapshot_t *' with an rvalue of type 'const leveldb_snapshot_t *'
+   93 |     leveldb_snapshot_t* snapshot = leveldb_create_snapshot(&env->c_db);
+      |                         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:103:12: error: calling a protected destructor of class 'const leveldb::Snapshot'
+  103 |     delete mock_snapshot;
+      |            ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:31:11: note: declared protected here
+   31 |   virtual ~Snapshot();
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp:113:25: error: cannot initialize a variable of type 'leveldb_snapshot_t *' with an rvalue of type 'const leveldb_snapshot_t *'
+  113 |     leveldb_snapshot_t* snapshot = leveldb_create_snapshot(null_db);
+      |                         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_227.dir/build.make:76: generated_build/CMakeFiles/test_227.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_227.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4038: generated_build/CMakeFiles/test_227.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4045: generated_build/CMakeFiles/test_227.dir/rule] 오류 2
+gmake: *** [Makefile:1466: test_227] 오류 2

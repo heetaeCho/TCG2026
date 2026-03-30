@@ -1,0 +1,78 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1210.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp:21:20: error: no matching constructor for initialization of 'TextPage'
+   21 |         page = new TextPage();
+      |                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:558:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  558 |     TextPage(const TextPage &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:556:14: note: candidate constructor not viable: requires at least argument 'rawOrderA', but no arguments were provided
+  556 |     explicit TextPage(bool rawOrderA, bool discardDiagA = false);
+      |              ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp:23:22: error: no matching constructor for initialization of 'TextBlock'
+   23 |         block1 = new TextBlock();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:387:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  387 |     TextBlock(const TextBlock &) = delete;
+      |     ^         ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:384:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  384 |     TextBlock(TextPage *pageA, int rotA);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp:25:22: error: no matching constructor for initialization of 'TextBlock'
+   25 |         block2 = new TextBlock();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:387:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  387 |     TextBlock(const TextBlock &) = delete;
+      |     ^         ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:384:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  384 |     TextBlock(TextPage *pageA, int rotA);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp:63:48: error: no member named 'getBlock' in 'TextBlock'; did you mean 'getBBox'?
+   63 |     EXPECT_EQ(textFlow.getBlocks()->getNext()->getBlock(), block2);
+      |                                                ^~~~~~~~
+      |                                                getBBox
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:422:18: note: 'getBBox' declared here
+  422 |     PDFRectangle getBBox() const { return { xMin, yMin, xMax, yMax }; }
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp:7:7: warning: 'TextFlowTest_1210' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class TextFlowTest_1210 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const PDFRectangle' and 'TextBlock *const')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<PDFRectangle, TextBlock *>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp:63:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<PDFRectangle, TextBlock *, nullptr>' requested here
+   63 |     EXPECT_EQ(textFlow.getBlocks()->getNext()->getBlock(), block2);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const PDFRectangle' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:102:13: note: candidate function not viable: no known conversion from 'const PDFRectangle' to 'const Ref' for 1st argument
+  102 | inline bool operator==(const Ref lhs, const Ref rhs) noexcept
+      |             ^          ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFRectangle.h:53:20: note: candidate function not viable: no known conversion from 'TextBlock *const' to 'const PDFRectangle' for 1st argument
+   53 |     constexpr bool operator==(const PDFRectangle &rect) const { return x1 == rect.x1 && y1 == rect.y1 && x2 == rect.x2 && y2 == rect.y2; }
+      |                    ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1210.dir/build.make:79: generated_build/CMakeFiles/test_1210.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1210.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:43018: generated_build/CMakeFiles/test_1210.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:43025: generated_build/CMakeFiles/test_1210.dir/rule] 오류 2
+gmake: *** [Makefile:13946: test_1210] 오류 2

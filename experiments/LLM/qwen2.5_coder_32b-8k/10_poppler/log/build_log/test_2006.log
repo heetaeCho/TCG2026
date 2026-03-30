@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2006.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp:39:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+   39 |     Dict* extGStateDict = getForCommentStampExtGStateDict(mockPdfDoc.get());
+      |           ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp:89:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+   89 |     Dict* extGStateDict = getForCommentStampExtGStateDict(mockPdfDoc.get());
+      |           ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp:119:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+  119 |     Dict* extGStateDict = getForCommentStampExtGStateDict(mockPdfDoc.get());
+      |           ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp:145:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+  145 |     Dict* extGStateDict = getForCommentStampExtGStateDict(mockPdfDoc.get());
+      |           ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'MockPDFDoc'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp:31:28: note: in instantiation of function template specialization 'std::make_unique<MockPDFDoc>' requested here
+   31 |     auto mockPdfDoc = std::make_unique<MockPDFDoc>();
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp:19:20: note: default constructor of 'MockPDFDoc' is implicitly deleted because base class 'PDFDoc' has an inaccessible default constructor
+   19 | class MockPDFDoc : public PDFDoc {
+      |                    ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2006.dir/build.make:79: generated_build/CMakeFiles/test_2006.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2006.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:92554: generated_build/CMakeFiles/test_2006.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:92561: generated_build/CMakeFiles/test_2006.dir/rule] 오류 2
+gmake: *** [Makefile:34070: test_2006] 오류 2

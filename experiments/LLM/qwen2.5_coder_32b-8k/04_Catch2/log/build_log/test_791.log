@@ -1,0 +1,148 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_791.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_791.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_791.cpp:39:33: error: no viable conversion from 'std::shared_ptr<MockIEventListener>' to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+   39 |         m_reporter->addListener(m_mockListener);
+      |                                 ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::shared_ptr<MockIEventListener>' to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::shared_ptr<MockIEventListener>' to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::shared_ptr<MockIEventListener>' to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:39:47: note: passing argument to parameter 'listener' here
+   39 |         void addListener( IEventListenerPtr&& listener );
+      |                                               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_791.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Catch::MultiReporter'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_791.cpp:35:27: note: in instantiation of function template specialization 'std::make_unique<Catch::MultiReporter>' requested here
+   35 |         m_reporter = std::make_unique<MultiReporter>();
+      |                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:32:9: note: candidate constructor not viable: requires single argument 'config', but no arguments were provided
+   32 |         MultiReporter( IConfig const* config ):
+      |         ^              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:137:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  137 |     class IEventListener {
+      |           ^~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:37:31: note: constructor from base class 'IEventListener' inherited here
+   37 |         using IEventListener::IEventListener;
+      |                               ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:15:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     class MultiReporter final : public IEventListener {
+      |           ^~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:15:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     class MultiReporter final : public IEventListener {
+      |           ^~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_791.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:46:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:162:23: error: allocating an object of abstract class type 'MockIEventListener'
+  162 |         { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |                              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:516:8: note: in instantiation of function template specialization '__gnu_cxx::new_allocator<MockIEventListener>::construct<MockIEventListener>' requested here
+  516 |           __a.construct(__p, std::forward<_Args>(__args)...);
+      |               ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:519:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<MockIEventListener>>::construct<MockIEventListener>' requested here
+  519 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:651:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<MockIEventListener, std::allocator<MockIEventListener>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<>' requested here
+  651 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<MockIEventListener, std::allocator<MockIEventListener>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<MockIEventListener>::__shared_ptr<std::allocator<MockIEventListener>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<MockIEventListener>::shared_ptr<std::allocator<MockIEventListener>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<MockIEventListener, std::allocator<MockIEventListener>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_791.cpp:37:31: note: in instantiation of function template specialization 'std::make_shared<MockIEventListener>' requested here
+   37 |         m_mockListener = std::make_shared<MockIEventListener>();
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:157:22: note: unimplemented pure virtual method 'noMatchingTestCases' in 'MockIEventListener'
+  157 |         virtual void noMatchingTestCases( StringRef unmatchedSpec ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:159:22: note: unimplemented pure virtual method 'reportInvalidTestSpec' in 'MockIEventListener'
+  159 |         virtual void reportInvalidTestSpec( StringRef invalidArgument ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:166:22: note: unimplemented pure virtual method 'testRunStarting' in 'MockIEventListener'
+  166 |         virtual void testRunStarting( TestRunInfo const& testRunInfo ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:169:22: note: unimplemented pure virtual method 'testCaseStarting' in 'MockIEventListener'
+  169 |         virtual void testCaseStarting( TestCaseInfo const& testInfo ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:171:22: note: unimplemented pure virtual method 'testCasePartialStarting' in 'MockIEventListener'
+  171 |         virtual void testCasePartialStarting( TestCaseInfo const& testInfo, uint64_t partNumber ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:173:22: note: unimplemented pure virtual method 'sectionStarting' in 'MockIEventListener'
+  173 |         virtual void sectionStarting( SectionInfo const& sectionInfo ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:178:22: note: unimplemented pure virtual method 'benchmarkStarting' in 'MockIEventListener'
+  178 |         virtual void benchmarkStarting( BenchmarkInfo const& benchmarkInfo ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:180:22: note: unimplemented pure virtual method 'benchmarkEnded' in 'MockIEventListener'
+  180 |         virtual void benchmarkEnded( BenchmarkStats<> const& benchmarkStats ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:182:22: note: unimplemented pure virtual method 'benchmarkFailed' in 'MockIEventListener'
+  182 |         virtual void benchmarkFailed( StringRef benchmarkName ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:185:22: note: unimplemented pure virtual method 'assertionStarting' in 'MockIEventListener'
+  185 |         virtual void assertionStarting( AssertionInfo const& assertionInfo ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:188:22: note: unimplemented pure virtual method 'assertionEnded' in 'MockIEventListener'
+  188 |         virtual void assertionEnded( AssertionStats const& assertionStats ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:191:22: note: unimplemented pure virtual method 'sectionEnded' in 'MockIEventListener'
+  191 |         virtual void sectionEnded( SectionStats const& sectionStats ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:193:22: note: unimplemented pure virtual method 'testCasePartialEnded' in 'MockIEventListener'
+  193 |         virtual void testCasePartialEnded(TestCaseStats const& testCaseStats, uint64_t partNumber ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:195:22: note: unimplemented pure virtual method 'testCaseEnded' in 'MockIEventListener'
+  195 |         virtual void testCaseEnded( TestCaseStats const& testCaseStats ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:201:22: note: unimplemented pure virtual method 'testRunEnded' in 'MockIEventListener'
+  201 |         virtual void testRunEnded( TestRunStats const& testRunStats ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:209:22: note: unimplemented pure virtual method 'skipTest' in 'MockIEventListener'
+  209 |         virtual void skipTest( TestCaseInfo const& testInfo ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:212:22: note: unimplemented pure virtual method 'fatalErrorEncountered' in 'MockIEventListener'
+  212 |         virtual void fatalErrorEncountered( StringRef error ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:215:22: note: unimplemented pure virtual method 'listReporters' in 'MockIEventListener'
+  215 |         virtual void listReporters(std::vector<ReporterDescription> const& descriptions) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:217:22: note: unimplemented pure virtual method 'listListeners' in 'MockIEventListener'
+  217 |         virtual void listListeners(std::vector<ListenerDescription> const& descriptions) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:219:22: note: unimplemented pure virtual method 'listTests' in 'MockIEventListener'
+  219 |         virtual void listTests(std::vector<TestCaseHandle> const& tests) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:221:22: note: unimplemented pure virtual method 'listTags' in 'MockIEventListener'
+  221 |         virtual void listTags(std::vector<TagInfo> const& tags) = 0;
+      |                      ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_791.dir/build.make:79: generated_build/CMakeFiles/test_791.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_791.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8621: generated_build/CMakeFiles/test_791.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8628: generated_build/CMakeFiles/test_791.dir/rule] 오류 2
+gmake: *** [Makefile:2217: test_791] 오류 2

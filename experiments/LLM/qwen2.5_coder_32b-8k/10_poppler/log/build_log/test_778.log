@@ -1,0 +1,48 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_778.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_778.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_778.cpp:21:23: error: calling a private constructor of class 'PDFDoc'
+   21 |         mockDoc = new PDFDoc();
+      |                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_778.cpp:105:31: error: no member named 'getName' in 'Annot'; did you mean 'getType'?
+  105 |     EXPECT_EQ(nullptr, annot->getName());
+      |                               ^~~~~~~
+      |                               getType
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:757:18: note: 'getType' declared here
+  757 |     AnnotSubtype getType() const { return type; }
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_778.cpp:9:7: warning: 'AnnotTest_778' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class AnnotTest_778 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_778.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const std::nullptr_t' and 'const Annot::AnnotSubtype')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<std::nullptr_t, Annot::AnnotSubtype>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_778.cpp:105:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<std::nullptr_t, Annot::AnnotSubtype, nullptr>' requested here
+  105 |     EXPECT_EQ(nullptr, annot->getName());
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_778.dir/build.make:79: generated_build/CMakeFiles/test_778.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_778.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:77578: generated_build/CMakeFiles/test_778.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:77585: generated_build/CMakeFiles/test_778.dir/rule] 오류 2
+gmake: *** [Makefile:27986: test_778] 오류 2

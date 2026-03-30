@@ -1,0 +1,61 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1760.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:23:17: error: use of undeclared identifier 'isNumber'
+   23 |     EXPECT_TRUE(isNumber(&intObj));
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:33:17: error: use of undeclared identifier 'isNumber'
+   33 |     EXPECT_TRUE(isNumber(&realObj));
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:41:12: error: call to deleted constructor of 'Object'
+   41 |     Object stringObj("Hello");
+      |            ^         ~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<const char *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:43:18: error: use of undeclared identifier 'isNumber'
+   43 |     EXPECT_FALSE(isNumber(&stringObj));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:51:28: error: no member named 'nameType' in 'Object'
+   51 |     Object nameObj(Object::nameType, "Name");
+      |                    ~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:53:18: error: use of undeclared identifier 'isNumber'
+   53 |     EXPECT_FALSE(isNumber(&nameObj));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:61:25: error: no matching constructor for initialization of 'Array'
+   61 |     Object arrayObj(new Array());
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Array.h:50:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   50 |     explicit Array(XRef *xrefA);
+      |              ^     ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Array.h:55:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   55 |     Array(const Array &) = delete;
+      |     ^     ~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:63:18: error: use of undeclared identifier 'isNumber'
+   63 |     EXPECT_FALSE(isNumber(&arrayObj));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:71:24: error: no matching constructor for initialization of 'Dict'
+   71 |     Object dictObj(new Dict());
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:73:18: error: use of undeclared identifier 'isNumber'
+   73 |     EXPECT_FALSE(isNumber(&dictObj));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:83:18: error: use of undeclared identifier 'isNumber'
+   83 |     EXPECT_FALSE(isNumber(&nullObj));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp:93:18: error: use of undeclared identifier 'isNumber'
+   93 |     EXPECT_FALSE(isNumber(&boolObj));
+      |                  ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1760.dir/build.make:79: generated_build/CMakeFiles/test_1760.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1760.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:36650: generated_build/CMakeFiles/test_1760.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:36657: generated_build/CMakeFiles/test_1760.dir/rule] 오류 2
+gmake: *** [Makefile:11359: test_1760] 오류 2

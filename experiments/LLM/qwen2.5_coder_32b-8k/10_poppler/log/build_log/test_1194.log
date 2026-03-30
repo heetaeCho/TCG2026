@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1194.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1194.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1194.cpp:15:21: error: no matching constructor for initialization of 'GfxState'
+   15 |         state = new GfxState();
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1545:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+ 1545 |     GfxState(const GfxState &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1833:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+ 1833 |     GfxState(const GfxState *state, bool copyPath);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1540:5: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+ 1540 |     GfxState(double hDPIA, double vDPIA, const PDFRectangle *pageBox, int rotateA, bool upsideDown);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1194.cpp:17:24: error: no matching constructor for initialization of 'TextFontInfo'
+   17 |         fontInfo = new TextFontInfo();
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:92:14: note: candidate constructor not viable: requires single argument 'state', but no arguments were provided
+   92 |     explicit TextFontInfo(const GfxState *state);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:95:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   95 |     TextFontInfo(const TextFontInfo &) = delete;
+      |     ^            ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1194.cpp:81:5: error: cannot use 'try' with exceptions disabled
+   81 |     EXPECT_THROW(textWord->getEdge(0), std::out_of_range);
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1194.cpp:7:7: warning: 'TextWordTest_1194' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class TextWordTest_1194 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1194.dir/build.make:79: generated_build/CMakeFiles/test_1194.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1194.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:55978: generated_build/CMakeFiles/test_1194.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:55985: generated_build/CMakeFiles/test_1194.dir/rule] 오류 2
+gmake: *** [Makefile:19211: test_1194] 오류 2

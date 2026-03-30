@@ -1,0 +1,80 @@
+[ 80%] Built target Catch2
+[ 80%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_440.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp:61:31: error: no matching constructor for initialization of 'NameAndLocation'
+   61 |     NameAndLocation nameAndLoc{"test_case", "file.cpp", 10};
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:29:9: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   29 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp:123:24: error: no matching constructor for initialization of 'NameAndLocation'
+  123 |     MockITracker child{NameAndLocation{"child_case", "file.cpp", 20}, &tracker};
+      |                        ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:29:9: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   29 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp:135:24: error: no matching constructor for initialization of 'NameAndLocationRef'
+  135 |     NameAndLocationRef childNameAndLoc{"child_case", "file.cpp", 20};
+      |                        ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:55:19: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   55 |         constexpr NameAndLocationRef( StringRef name_ CATCH_ATTR_LIFETIMEBOUND,
+      |                   ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                       SourceLineInfo location_ ):
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted copy constructor of 'MockITracker'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp:127:27: note: in instantiation of function template specialization 'std::make_unique<MockITracker, MockITracker>' requested here
+  127 |     tracker.addChild(std::make_unique<MockITracker>(std::move(child)));
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp:19:5: note: copy constructor of 'MockITracker' is implicitly deleted because field 'gmock10_isComplete_19' has a deleted copy constructor
+   19 |     MOCK_METHOD(bool, isComplete, (), (const));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 5 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gtest/internal/gtest-internal.h:78:39: note: expanded from macro 'GTEST_CONCAT_TOKEN_'
+   78 | #define GTEST_CONCAT_TOKEN_(foo, bar) GTEST_CONCAT_TOKEN_IMPL_(foo, bar)
+      |                                       ^
+/usr/include/gtest/internal/gtest-internal.h:79:44: note: expanded from macro 'GTEST_CONCAT_TOKEN_IMPL_'
+   79 | #define GTEST_CONCAT_TOKEN_IMPL_(foo, bar) foo ## bar
+      |                                            ^
+<scratch space>:79:1: note: expanded from here
+   79 | gmock10_isComplete_19
+      | ^
+/usr/include/gmock/gmock-spec-builders.h:1482:3: note: 'FunctionMocker' has been explicitly marked deleted here
+ 1482 |   FunctionMocker(const FunctionMocker&) = delete;
+      |   ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_440.dir/build.make:79: generated_build/CMakeFiles/test_440.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_440.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:23141: generated_build/CMakeFiles/test_440.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:23148: generated_build/CMakeFiles/test_440.dir/rule] 오류 2
+gmake: *** [Makefile:7937: test_440] 오류 2

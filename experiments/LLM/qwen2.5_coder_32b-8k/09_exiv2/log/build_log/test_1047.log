@@ -1,0 +1,180 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1047.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:27:22: error: allocating an object of abstract class type 'Image'
+   27 |         image_ = new Image(imageTypeNone, 0, std::move(io_));
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:93:38: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65536 to 0 [-Wconstant-conversion]
+   93 |     EXPECT_TRUE(image_->isStringType(string));
+      |                 ~~~~~~               ^~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:101:39: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65537 to 1 [-Wconstant-conversion]
+  101 |     EXPECT_FALSE(image_->isStringType(date));
+      |                  ~~~~~~               ^~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:109:39: error: reference to 'time' is ambiguous
+  109 |     EXPECT_FALSE(image_->isStringType(time));
+      |                                       ^
+/usr/include/time.h:76:15: note: candidate found by name lookup is 'time'
+   76 | extern time_t time (time_t *__timer) __THROW;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:87:3: note: candidate found by name lookup is 'Exiv2::time'
+   87 |   time = 0x10002,           //!< IPTC time type.
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:117:38: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65539 to 3 [-Wconstant-conversion]
+  117 |     EXPECT_TRUE(image_->isStringType(comment));
+      |                 ~~~~~~               ^~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:125:39: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65540 to 4 [-Wconstant-conversion]
+  125 |     EXPECT_FALSE(image_->isStringType(directory));
+      |                  ~~~~~~               ^~~~~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:133:38: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65541 to 5 [-Wconstant-conversion]
+  133 |     EXPECT_TRUE(image_->isStringType(xmpText));
+      |                 ~~~~~~               ^~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:141:39: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65542 to 6 [-Wconstant-conversion]
+  141 |     EXPECT_FALSE(image_->isStringType(xmpAlt));
+      |                  ~~~~~~               ^~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:149:39: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65543 to 7 [-Wconstant-conversion]
+  149 |     EXPECT_FALSE(image_->isStringType(xmpBag));
+      |                  ~~~~~~               ^~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:157:39: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65544 to 8 [-Wconstant-conversion]
+  157 |     EXPECT_FALSE(image_->isStringType(xmpSeq));
+      |                  ~~~~~~               ^~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:165:38: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 65545 to 9 [-Wconstant-conversion]
+  165 |     EXPECT_TRUE(image_->isStringType(langAlt));
+      |                 ~~~~~~               ^~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:173:39: warning: implicit conversion from 'Exiv2::TypeId' to 'uint16_t' (aka 'unsigned short') changes value from 131070 to 65534 [-Wconstant-conversion]
+  173 |     EXPECT_FALSE(image_->isStringType(invalidTypeId));
+      |                  ~~~~~~               ^~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:25:20: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   25 |         io_ = std::make_unique<BasicIo>();
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:25:15: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   25 |         io_ = std::make_unique<BasicIo>();
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp:27:28: error: use of undeclared identifier 'imageTypeNone'
+   27 |         image_ = new Image(imageTypeNone, 0, std::move(io_));
+      |                            ^
+10 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1047.dir/build.make:79: generated_build/CMakeFiles/test_1047.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1047.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:26003: generated_build/CMakeFiles/test_1047.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:26010: generated_build/CMakeFiles/test_1047.dir/rule] 오류 2
+gmake: *** [Makefile:7537: test_1047] 오류 2

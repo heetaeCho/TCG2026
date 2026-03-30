@@ -1,0 +1,59 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1967.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:9:27: error: expected class name
+    9 | class MockStream : public Stream {
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:13:5: error: only virtual member functions can be marked 'override'
+   13 |     MOCK_METHOD(int, getChar, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:135:1: note: expanded from here
+  135 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:47:18: error: use of undeclared identifier 'readFromStream'
+   47 |     int result = readFromStream(mockStream.get());
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:63:18: error: use of undeclared identifier 'readFromStream'
+   63 |     int result = readFromStream(mockStream.get());
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:79:61: error: no member named 'Throw' in namespace 'testing'
+   79 |     EXPECT_CALL(*mockStream, getChar()).WillOnce(::testing::Throw(std::runtime_error("Simulated exception")));
+      |                                                  ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:83:18: error: use of undeclared identifier 'readFromStream'
+   83 |     EXPECT_THROW(readFromStream(mockStream.get()), std::exception);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:83:5: error: cannot use 'try' with exceptions disabled
+   83 |     EXPECT_THROW(readFromStream(mockStream.get()), std::exception);
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:97:18: error: use of undeclared identifier 'readFromStream'
+   97 |     int result = readFromStream(mockStream.get());
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp:21:7: warning: 'ReadFromStreamTest_1967' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   21 | class ReadFromStreamTest_1967 : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1967.dir/build.make:79: generated_build/CMakeFiles/test_1967.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1967.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:64554: generated_build/CMakeFiles/test_1967.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:64561: generated_build/CMakeFiles/test_1967.dir/rule] 오류 2
+gmake: *** [Makefile:22695: test_1967] 오류 2

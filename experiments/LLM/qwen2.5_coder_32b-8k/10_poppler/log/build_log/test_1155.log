@@ -1,0 +1,52 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1155.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:11:29: error: base class has incomplete type
+   11 |     class MockXRef : public XRef {
+      |                      ~~~~~~~^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:27:36: error: base class has incomplete type
+   27 |     class MockPSOutputDev : public PSOutputDev {
+      |                             ~~~~~~~^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:51:7: note: forward declaration of 'PSOutputDev'
+   51 | class PSOutputDev;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:49:37: error: cannot initialize a parameter of type 'XRef *' with an rvalue of type 'pointer' (aka 'GfxFontTest_1155::MockXRef *')
+   49 |         gfxFont = GfxFont::makeFont(mockXRef.get(), "tag", Ref(1, 0), mockFontDict.get());
+      |                                     ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:52: note: passing argument to parameter 'xref' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:61:14: error: 'flags' is a protected member of 'GfxFont'
+   61 |     gfxFont->flags |= fontBold;
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:321:9: note: declared protected here
+  321 |     int flags; // font descriptor flags
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:71:14: error: 'flags' is a protected member of 'GfxFont'
+   71 |     gfxFont->flags &= ~fontBold;
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:321:9: note: declared protected here
+  321 |     int flags; // font descriptor flags
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:7:7: warning: 'GfxFontTest_1155' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class GfxFontTest_1155 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'GfxFontTest_1155::MockDict'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:47:29: note: in instantiation of function template specialization 'std::make_unique<GfxFontTest_1155::MockDict>' requested here
+   47 |         mockFontDict = std::make_unique<MockDict>();
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp:19:22: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+   19 |     class MockDict : public Dict {
+      |                      ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1155.dir/build.make:79: generated_build/CMakeFiles/test_1155.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1155.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:57930: generated_build/CMakeFiles/test_1155.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:57937: generated_build/CMakeFiles/test_1155.dir/rule] 오류 2
+gmake: *** [Makefile:20004: test_1155] 오류 2

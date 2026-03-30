@@ -1,0 +1,152 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_213.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:35:5: error: no template named 'Walker'; did you mean 'MockRegexp::Walker'?
+   35 |     Walker<int> walker;
+      |     ^~~~~~
+      |     MockRegexp::Walker
+/home/user/TCG2026/TestProjects/re2/re2/walker-inl.h:27:36: note: 'MockRegexp::Walker' declared here
+   27 | template<typename T> class Regexp::Walker {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:35:17: error: field type 'Walker<int>' is an abstract class
+   35 |     Walker<int> walker;
+      |                 ^
+/home/user/TCG2026/TestProjects/re2/re2/walker-inl.h:67:13: note: unimplemented pure virtual method 'ShortVisit' in 'Walker'
+   67 |   virtual T ShortVisit(Regexp* re, T parent_arg) = 0;
+      |             ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:1116:19: error: static assertion failed due to requirement 'std::is_lvalue_reference<bool *>::value': Argument must be a reference type.
+ 1116 |     static_assert(std::is_lvalue_reference<argk_type>::value,
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14: note: in instantiation of function template specialization 'testing::internal::SetArgRefereeAction<2, bool>::operator()<MockRegexp *, int, bool *>' requested here
+   61 |     { return std::forward<_Fn>(__f)(std::forward<_Args>(__args)...); }
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:451:35: note: in instantiation of member function 'std::_Function_handler<void (MockRegexp *, int, bool *), testing::internal::SetArgRefereeAction<2, bool>>::_M_invoke' requested here
+  451 |               _M_invoker = &_My_handler::_M_invoke;
+      |                                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:533:4: note: in instantiation of function template specialization 'std::function<void (MockRegexp *, int, bool *)>::function<const testing::internal::SetArgRefereeAction<2, bool> &, void>' requested here
+  533 |           function(std::forward<_Functor>(__f)).swap(*this);
+      |           ^
+/usr/include/gmock/gmock-actions.h:507:10: note: in instantiation of function template specialization 'std::function<void (MockRegexp *, int, bool *)>::operator=<const testing::internal::SetArgRefereeAction<2, bool> &>' requested here
+  507 |     fun_ = ::std::forward<G>(g);
+      |          ^
+/usr/include/gmock/gmock-actions.h:472:5: note: in instantiation of function template specialization 'testing::Action<void (MockRegexp *, int, bool *)>::Init<const testing::internal::SetArgRefereeAction<2, bool> &>' requested here
+  472 |     Init(::std::forward<G>(fun), IsCompatibleFunctor<G>());
+      |     ^
+/usr/include/gmock/gmock-actions.h:1042:13: note: in instantiation of function template specialization 'testing::Action<void (MockRegexp *, int, bool *)>::Action<const testing::internal::SetArgRefereeAction<2, bool> &, void>' requested here
+ 1042 |     return {ActionT(std::get<I>(actions))...};
+      |             ^
+/usr/include/gmock/gmock-actions.h:1061:15: note: in instantiation of function template specialization 'testing::internal::DoAllAction<testing::internal::SetArgRefereeAction<2, bool>, testing::internal::ReturnAction<int>>::Convert<testing::Action<void (MockRegexp *, int, bool *)>, 0UL>' requested here
+ 1061 |     return Op{Convert<Action<void(NonFinalType<Args>...)>>(
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:153:79: note: in instantiation of function template specialization 'testing::internal::DoAllAction<testing::internal::SetArgRefereeAction<2, bool>, testing::internal::ReturnAction<int>>::operator Action<int, MockRegexp *, int, bool *>' requested here
+  153 |     EXPECT_CALL(mock_regexp, PreVisit(&mock_regexp, top_arg, &stop)).WillOnce(::testing::DoAll(::testing::SetArgReferee<2>(true), ::testing::Return(1)));
+      |                                                                               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:1118:38: error: incompatible integer to pointer conversion assigning to 'bool *' from 'const bool'
+ 1118 |     std::get<k>(std::tie(args...)) = value;
+      |                                      ^~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_CopyIncreasesCount_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:43:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_CopyIncreasesCount_213_Test>::CreateTest' requested here
+   43 | TEST_F(WalkerTest_213, CopyIncreasesCount_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_WalkNormalOperation_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_WalkNormalOperation_213_Test>::CreateTest' requested here
+   53 | TEST_F(WalkerTest_213, WalkNormalOperation_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_WalkExponentialNormalOperation_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:75:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_WalkExponentialNormalOperation_213_Test>::CreateTest' requested here
+   75 | TEST_F(WalkerTest_213, WalkExponentialNormalOperation_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_WalkBoundaryCondition_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:99:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_WalkBoundaryCondition_213_Test>::CreateTest' requested here
+   99 | TEST_F(WalkerTest_213, WalkBoundaryCondition_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_WalkExponentialBoundaryCondition_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:121:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_WalkExponentialBoundaryCondition_213_Test>::CreateTest' requested here
+  121 | TEST_F(WalkerTest_213, WalkExponentialBoundaryCondition_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_WalkStoppedEarly_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:145:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_WalkStoppedEarly_213_Test>::CreateTest' requested here
+  145 | TEST_F(WalkerTest_213, WalkStoppedEarly_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_WalkExponentialStoppedEarly_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:165:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_WalkExponentialStoppedEarly_213_Test>::CreateTest' requested here
+  165 | TEST_F(WalkerTest_213, WalkExponentialStoppedEarly_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'WalkerTest_213_ResetFunctionality_213_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp:187:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<WalkerTest_213_ResetFunctionality_213_Test>::CreateTest' requested here
+  187 | TEST_F(WalkerTest_213, ResetFunctionality_213) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_213.dir/build.make:79: generated_build/CMakeFiles/test_213.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_213.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:19177: generated_build/CMakeFiles/test_213.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:19184: generated_build/CMakeFiles/test_213.dir/rule] 오류 2
+gmake: *** [Makefile:7173: test_213] 오류 2

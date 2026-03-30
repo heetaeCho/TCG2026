@@ -1,0 +1,36 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1534.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1534.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1534.cpp:61:27: error: no member named 'unique' in 'std::unique_ptr<Exiv2::Internal::TiffIfdMakernote>'
+   61 |     EXPECT_TRUE(makernote.unique());
+      |                 ~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1534.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Internal::TiffIfdMakernote'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::Internal::TiffIfdMakernote>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1534.cpp:49:22: note: in instantiation of member function 'std::unique_ptr<Exiv2::Internal::TiffIfdMakernote>::~unique_ptr' requested here
+   49 |     auto makernote = newCasio2Mn2(someTag, someGroup, someMnGroup);
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1534.cpp:11:11: note: forward declaration of 'Exiv2::Internal::TiffIfdMakernote'
+   11 |     class TiffIfdMakernote;
+      |           ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1534.dir/build.make:79: generated_build/CMakeFiles/test_1534.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1534.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:53271: generated_build/CMakeFiles/test_1534.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:53278: generated_build/CMakeFiles/test_1534.dir/rule] 오류 2
+gmake: *** [Makefile:17963: test_1534] 오류 2

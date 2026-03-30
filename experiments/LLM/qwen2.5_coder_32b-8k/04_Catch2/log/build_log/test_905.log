@@ -1,0 +1,72 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_905.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6463:11: warning: 'FAIL' macro redefined [-Wmacro-redefined]
+ 6463 |   #define FAIL( ... ) do { \
+      |           ^
+/usr/include/gtest/gtest.h:1928:10: note: previous definition is here
+ 1928 | # define FAIL() GTEST_FAIL()
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6468:11: warning: 'SUCCEED' macro redefined [-Wmacro-redefined]
+ 6468 |   #define SUCCEED( ... ) INTERNAL_CATCH_MSG( "SUCCEED", Catch::ResultWas::Ok, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |           ^
+/usr/include/gtest/gtest.h:1937:10: note: previous definition is here
+ 1937 | # define SUCCEED() GTEST_SUCCEED()
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:19:5: error: only virtual member functions can be marked 'override'
+   19 |     MOCK_METHOD(void, measureImpl, (std::function<void()>, int), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:233:1: note: expanded from here
+  233 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:75:9: error: 'this' cannot be implicitly captured in this context
+   75 |         chronometer_.measure(lambda);
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:73:100: note: explicitly capture 'this'
+   73 |     Detail::run_for_at_least(std::chrono::milliseconds(1), 1, [&chronometer = chronometer_, &lambda](){
+      |                                                                                                    ^
+      |                                                                                                    , this
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:73:5: error: no matching function for call to 'run_for_at_least'
+   73 |     Detail::run_for_at_least(std::chrono::milliseconds(1), 1, [&chronometer = chronometer_, &lambda](){
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:1866:17: note: candidate template ignored: couldn't infer template argument 'Clock'
+ 1866 |                 run_for_at_least(IDuration how_long,
+      |                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'ChronometerMock'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp:37:27: note: in instantiation of function template specialization 'std::make_unique<ChronometerMock>' requested here
+   37 |         : mock_impl_(std::make_unique<ChronometerMock>()),
+      |                           ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:1578:30: note: unimplemented pure virtual method 'start' in 'ChronometerMock'
+ 1578 |                 virtual void start() = 0;
+      |                              ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:1579:30: note: unimplemented pure virtual method 'finish' in 'ChronometerMock'
+ 1579 |                 virtual void finish() = 0;
+      |                              ^
+2 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_905.dir/build.make:79: generated_build/CMakeFiles/test_905.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_905.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:27431: generated_build/CMakeFiles/test_905.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:27438: generated_build/CMakeFiles/test_905.dir/rule] 오류 2
+gmake: *** [Makefile:9627: test_905] 오류 2

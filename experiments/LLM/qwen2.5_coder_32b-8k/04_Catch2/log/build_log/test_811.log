@@ -1,0 +1,76 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_811.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_811.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_811.cpp:39:9: error: use of undeclared identifier 'setMutableRegistryHub'; did you mean 'IMutableRegistryHub'?
+   39 |         setMutableRegistryHub(mockRegistryHub);
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:47:11: note: 'IMutableRegistryHub' declared here
+   47 |     class IMutableRegistryHub {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_811.cpp:49:65: error: allocating an object of abstract class type 'EventListenerFactory'
+   49 |     auto listenerFactory = unique_ptr<EventListenerFactory>(new EventListenerFactory());
+      |                                                                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:37:35: note: unimplemented pure virtual method 'create' in 'EventListenerFactory'
+   37 |         virtual IEventListenerPtr create( IConfig const* config ) const = 0;
+      |                                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:39:27: note: unimplemented pure virtual method 'getName' in 'EventListenerFactory'
+   39 |         virtual StringRef getName() const = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:41:29: note: unimplemented pure virtual method 'getDescription' in 'EventListenerFactory'
+   41 |         virtual std::string getDescription() const = 0;
+      |                             ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_811.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:46:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:162:23: error: allocating an object of abstract class type 'testing::NiceMock<MockIMutableRegistryHub>'
+  162 |         { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |                              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:516:8: note: in instantiation of function template specialization '__gnu_cxx::new_allocator<testing::NiceMock<MockIMutableRegistryHub>>::construct<testing::NiceMock<MockIMutableRegistryHub>>' requested here
+  516 |           __a.construct(__p, std::forward<_Args>(__args)...);
+      |               ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:519:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<testing::NiceMock<MockIMutableRegistryHub>>>::construct<testing::NiceMock<MockIMutableRegistryHub>>' requested here
+  519 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:651:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<testing::NiceMock<MockIMutableRegistryHub>, std::allocator<testing::NiceMock<MockIMutableRegistryHub>>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<>' requested here
+  651 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<testing::NiceMock<MockIMutableRegistryHub>, std::allocator<testing::NiceMock<MockIMutableRegistryHub>>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<testing::NiceMock<MockIMutableRegistryHub>>::__shared_ptr<std::allocator<testing::NiceMock<MockIMutableRegistryHub>>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<testing::NiceMock<MockIMutableRegistryHub>>::shared_ptr<std::allocator<testing::NiceMock<MockIMutableRegistryHub>>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<testing::NiceMock<MockIMutableRegistryHub>, std::allocator<testing::NiceMock<MockIMutableRegistryHub>>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_811.cpp:37:32: note: in instantiation of function template specialization 'std::make_shared<testing::NiceMock<MockIMutableRegistryHub>>' requested here
+   37 |         mockRegistryHub = std::make_shared<testing::NiceMock<MockIMutableRegistryHub>>();
+      |                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:50:22: note: unimplemented pure virtual method 'registerReporter' in 'NiceMock'
+   50 |         virtual void registerReporter( std::string const& name, IReporterFactoryPtr factory ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:52:22: note: unimplemented pure virtual method 'registerTest' in 'NiceMock'
+   52 |         virtual void registerTest(Detail::unique_ptr<TestCaseInfo>&& testInfo, Detail::unique_ptr<ITestInvoker>&& invoker) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:53:22: note: unimplemented pure virtual method 'registerTranslator' in 'NiceMock'
+   53 |         virtual void registerTranslator( Detail::unique_ptr<IExceptionTranslator>&& translator ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:54:22: note: unimplemented pure virtual method 'registerTagAlias' in 'NiceMock'
+   54 |         virtual void registerTagAlias( std::string const& alias, std::string const& tag, SourceLineInfo const& lineInfo ) = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:55:22: note: unimplemented pure virtual method 'registerStartupException' in 'NiceMock'
+   55 |         virtual void registerStartupException() noexcept = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:56:45: note: unimplemented pure virtual method 'getMutableEnumValuesRegistry' in 'NiceMock'
+   56 |         virtual IMutableEnumValuesRegistry& getMutableEnumValuesRegistry() = 0;
+      |                                             ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_811.dir/build.make:79: generated_build/CMakeFiles/test_811.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_811.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:37595: generated_build/CMakeFiles/test_811.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:37602: generated_build/CMakeFiles/test_811.dir/rule] 오류 2
+gmake: *** [Makefile:13631: test_811] 오류 2

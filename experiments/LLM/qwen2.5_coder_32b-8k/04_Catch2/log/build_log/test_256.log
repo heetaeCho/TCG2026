@@ -1,0 +1,81 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_256.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:15:28: error: base class has incomplete type
+   15 | class MockIConfig : public IConfig {
+      |                     ~~~~~~~^~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_context.hpp:16:11: note: forward declaration of 'Catch::IConfig'
+   16 |     class IConfig;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:25:35: error: base class has incomplete type
+   25 | class MockIResultCapture : public IResultCapture {
+      |                            ~~~~~~~^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_context.hpp:15:11: note: forward declaration of 'Catch::IResultCapture'
+   15 |     class IResultCapture;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:43:18: error: no member named 'cleanUpContext' in 'Catch::Context'
+   43 |         Context::cleanUpContext();
+      |         ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:53:18: error: no member named 'cleanUpContext' in 'Catch::Context'
+   53 |         Context::cleanUpContext();
+      |         ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:87:30: error: cannot initialize a parameter of type 'const IConfig *' with an rvalue of type 'MockIConfig *'
+   87 |     mutableContext.setConfig(&mockConfig);
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_context.hpp:34:50: note: passing argument to parameter 'config' here
+   34 |         constexpr void setConfig( IConfig const* config ) { m_config = config; }
+      |                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:105:37: error: cannot initialize a parameter of type 'IResultCapture *' with an rvalue of type 'MockIResultCapture *'
+  105 |     mutableContext.setResultCapture(&mockResult);
+      |                                     ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_context.hpp:31:58: note: passing argument to parameter 'resultCapture' here
+   31 |         constexpr void setResultCapture( IResultCapture* resultCapture ) {
+      |                                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:123:30: error: cannot initialize a parameter of type 'const IConfig *' with an rvalue of type 'MockIConfig *'
+  123 |     mutableContext.setConfig(&mockConfig);
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_context.hpp:34:50: note: passing argument to parameter 'config' here
+   34 |         constexpr void setConfig( IConfig const* config ) { m_config = config; }
+      |                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:127:14: error: no member named 'cleanUpContext' in 'Catch::Context'
+  127 |     Context::cleanUpContext();
+      |     ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:143:37: error: cannot initialize a parameter of type 'IResultCapture *' with an rvalue of type 'MockIResultCapture *'
+  143 |     mutableContext.setResultCapture(&mockResult);
+      |                                     ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_context.hpp:31:58: note: passing argument to parameter 'resultCapture' here
+   31 |         constexpr void setResultCapture( IResultCapture* resultCapture ) {
+      |                                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:147:14: error: no member named 'cleanUpContext' in 'Catch::Context'
+  147 |     Context::cleanUpContext();
+      |     ~~~~~~~~~^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: comparison of distinct pointer types ('const Catch::IConfig *' and 'MockIConfig *')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<const Catch::IConfig *, MockIConfig *>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:93:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<const Catch::IConfig *, MockIConfig *, nullptr>' requested here
+   93 |     EXPECT_EQ(context.getConfig(), &mockConfig);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1545:11: error: comparison of distinct pointer types ('Catch::IResultCapture *' and 'MockIResultCapture *')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Catch::IResultCapture *, MockIResultCapture *>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp:111:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Catch::IResultCapture *, MockIResultCapture *, nullptr>' requested here
+  111 |     EXPECT_EQ(context.getResultCapture(), &mockResult);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_256.dir/build.make:79: generated_build/CMakeFiles/test_256.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_256.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:32645: generated_build/CMakeFiles/test_256.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:32652: generated_build/CMakeFiles/test_256.dir/rule] 오류 2
+gmake: *** [Makefile:11681: test_256] 오류 2

@@ -1,0 +1,47 @@
+Running main() from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from GetLengthPrefixedSliceTest_353
+[ RUN      ] GetLengthPrefixedSliceTest_353.NormalOperation_353
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_353.cpp:47: Failure
+Expected equality of these values:
+  result.data()
+    Which is: "helloiU"
+  "hello"
+
+[  FAILED  ] GetLengthPrefixedSliceTest_353.NormalOperation_353 (0 ms)
+[ RUN      ] GetLengthPrefixedSliceTest_353.BoundaryCondition_ZeroLength_353
+[       OK ] GetLengthPrefixedSliceTest_353.BoundaryCondition_ZeroLength_353 (0 ms)
+[ RUN      ] GetLengthPrefixedSliceTest_353.BoundaryCondition_MaxUint32Length_353
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_353.cpp:89: Failure
+Expected equality of these values:
+  result.data()
+    Which is: "a\xFF\xFF\xFF\xFF\xFD\x7F"
+  "a"
+
+[  FAILED  ] GetLengthPrefixedSliceTest_353.BoundaryCondition_MaxUint32Length_353 (0 ms)
+[ RUN      ] GetLengthPrefixedSliceTest_353.ErrorCase_CorruptedData_353
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_353.cpp:115: Failure
+Expected equality of these values:
+  result.size()
+    Which is: 13439
+  0
+
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_353.cpp:117: Failure
+Expected equality of these values:
+  result.data()
+    Which is: "elloiU"
+  ""
+
+[  FAILED  ] GetLengthPrefixedSliceTest_353.ErrorCase_CorruptedData_353 (0 ms)
+[----------] 4 tests from GetLengthPrefixedSliceTest_353 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] GetLengthPrefixedSliceTest_353.NormalOperation_353
+[  FAILED  ] GetLengthPrefixedSliceTest_353.BoundaryCondition_MaxUint32Length_353
+[  FAILED  ] GetLengthPrefixedSliceTest_353.ErrorCase_CorruptedData_353
+
+ 3 FAILED TESTS

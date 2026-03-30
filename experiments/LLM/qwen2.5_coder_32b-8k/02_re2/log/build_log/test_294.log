@@ -1,0 +1,63 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_294.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp:3:
+/home/user/TCG2026/TestProjects/re2/re2/compile.cc:528:3: warning: unsupported MC/DC boolean expression; contains an operation with a nested boolean expression. Expression will not be covered
+  528 |   ABSL_DCHECK(inst_[root].opcode() == kInstAlt ||
+      |   ^
+/usr/local/include/absl/log/absl_check.h:47:3: note: expanded from macro 'ABSL_DCHECK'
+   47 |   ABSL_LOG_INTERNAL_DCHECK_IMPL((condition), #condition)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:41:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_IMPL'
+   41 |   ABSL_LOG_INTERNAL_CHECK_IMPL(condition, condition_text)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:28:37: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_IMPL'
+   28 |                                     ABSL_PREDICT_FALSE(!(condition))) \
+      |                                     ^
+/usr/local/include/absl/base/optimization.h:189:49: note: expanded from macro 'ABSL_PREDICT_FALSE'
+  189 | #define ABSL_PREDICT_FALSE(x) (__builtin_expect(false || (x), false))
+      |                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp:123:14: error: 'ninst_' is a private member of 're2::Compiler'
+  123 |     compiler.ninst_ = compiler.max_ninst_;
+      |              ^
+/home/user/TCG2026/TestProjects/re2/re2/compile.cc:213:7: note: declared private here
+  213 |   int ninst_;          // Number of instructions used.
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp:123:32: error: 'max_ninst_' is a private member of 're2::Compiler'
+  123 |     compiler.ninst_ = compiler.max_ninst_;
+      |                                ^
+/home/user/TCG2026/TestProjects/re2/re2/compile.cc:214:7: note: declared private here
+  214 |   int max_ninst_;      // Maximum number of instructions.
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp:137:14: error: 'ninst_' is a private member of 're2::Compiler'
+  137 |     compiler.ninst_ = compiler.max_ninst_;
+      |              ^
+/home/user/TCG2026/TestProjects/re2/re2/compile.cc:213:7: note: declared private here
+  213 |   int ninst_;          // Number of instructions used.
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp:137:32: error: 'max_ninst_' is a private member of 're2::Compiler'
+  137 |     compiler.ninst_ = compiler.max_ninst_;
+      |                                ^
+/home/user/TCG2026/TestProjects/re2/re2/compile.cc:214:7: note: declared private here
+  214 |   int max_ninst_;      // Maximum number of instructions.
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const re2::Frag' and 'const re2::Frag')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<re2::Frag, re2::Frag>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp:125:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<re2::Frag, re2::Frag, nullptr>' requested here
+  125 |     EXPECT_EQ(compiler.Plus(a, true), compiler.NoMatch());
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const re2::Frag' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_294.dir/build.make:79: generated_build/CMakeFiles/test_294.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_294.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:13161: generated_build/CMakeFiles/test_294.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:13168: generated_build/CMakeFiles/test_294.dir/rule] 오류 2
+gmake: *** [Makefile:4729: test_294] 오류 2

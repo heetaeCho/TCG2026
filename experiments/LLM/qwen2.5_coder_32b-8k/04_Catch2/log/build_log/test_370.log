@@ -1,0 +1,23 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_370.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_370.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_370.cpp:17:51: error: no type named 'ResultType' in 'Catch::Clara::Detail::BasicResult<int>'
+   17 |     using ResultType = typename BasicResult<int>::ResultType;
+      |                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_370.cpp:37:60: error: rvalue reference to type 'basic_string<...>' cannot bind to lvalue of type 'basic_string<...>'
+   37 |     BasicResult<int> result = BasicResult<int>::logicError(errorMessage);
+      |                                                            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:247:55: note: passing argument to parameter 'message' here
+  247 |                 static auto logicError( std::string&& message )
+      |                                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_370.cpp:49:62: error: rvalue reference to type 'basic_string<...>' cannot bind to lvalue of type 'basic_string<...>'
+   49 |     BasicResult<int> result = BasicResult<int>::runtimeError(errorMessage);
+      |                                                              ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:251:57: note: passing argument to parameter 'message' here
+  251 |                 static auto runtimeError( std::string&& message )
+      |                                                         ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_370.dir/build.make:79: generated_build/CMakeFiles/test_370.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_370.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:32249: generated_build/CMakeFiles/test_370.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:32256: generated_build/CMakeFiles/test_370.dir/rule] 오류 2
+gmake: *** [Makefile:11525: test_370] 오류 2

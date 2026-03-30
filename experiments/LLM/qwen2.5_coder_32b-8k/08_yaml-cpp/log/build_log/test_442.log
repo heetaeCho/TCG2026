@@ -1,0 +1,41 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_442.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_442.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_442.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted copy constructor of 'MockSettingChangeBase'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_442.cpp:65:30: note: in instantiation of function template specialization 'std::make_unique<MockSettingChangeBase, testing::NiceMock<MockSettingChangeBase> &>' requested here
+   65 |     settingChanges.push(std::make_unique<MockSettingChangeBase>(mockSettingChange1));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_442.cpp:21:5: note: copy constructor of 'MockSettingChangeBase' is implicitly deleted because field 'gmock00_pop_21' has a deleted copy constructor
+   21 |     MOCK_METHOD(void, pop, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 5 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gtest/internal/gtest-internal.h:78:39: note: expanded from macro 'GTEST_CONCAT_TOKEN_'
+   78 | #define GTEST_CONCAT_TOKEN_(foo, bar) GTEST_CONCAT_TOKEN_IMPL_(foo, bar)
+      |                                       ^
+/usr/include/gtest/internal/gtest-internal.h:79:44: note: expanded from macro 'GTEST_CONCAT_TOKEN_IMPL_'
+   79 | #define GTEST_CONCAT_TOKEN_IMPL_(foo, bar) foo ## bar
+      |                                            ^
+<scratch space>:65:1: note: expanded from here
+   65 | gmock00_pop_21
+      | ^
+/usr/include/gmock/gmock-spec-builders.h:1482:3: note: 'FunctionMocker' has been explicitly marked deleted here
+ 1482 |   FunctionMocker(const FunctionMocker&) = delete;
+      |   ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_442.dir/build.make:79: generated_build/CMakeFiles/test_442.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_442.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:12110: generated_build/CMakeFiles/test_442.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:12117: generated_build/CMakeFiles/test_442.dir/rule] 오류 2
+gmake: *** [Makefile:4197: test_442] 오류 2

@@ -1,0 +1,87 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from StreamTest_72
+[ RUN      ] StreamTest_72.OperatorBool_ReturnsTrueForNonEmptyStream_72
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:37: Failure
+Value of: static_cast<bool>(stream)
+  Actual: false
+Expected: true
+[  FAILED  ] StreamTest_72.OperatorBool_ReturnsTrueForNonEmptyStream_72 (0 ms)
+[ RUN      ] StreamTest_72.OperatorBool_ReturnsFalseForEmptyStream_72
+[       OK ] StreamTest_72.OperatorBool_ReturnsFalseForEmptyStream_72 (0 ms)
+[ RUN      ] StreamTest_72.OperatorNot_ReturnsTrueForEmptyStream_72
+[       OK ] StreamTest_72.OperatorNot_ReturnsTrueForEmptyStream_72 (0 ms)
+[ RUN      ] StreamTest_72.OperatorNot_ReturnsFalseForNonEmptyStream_72
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:63: Failure
+Value of: !stream
+  Actual: true
+Expected: false
+[  FAILED  ] StreamTest_72.OperatorNot_ReturnsFalseForNonEmptyStream_72 (0 ms)
+[ RUN      ] StreamTest_72.Peek_ReturnsFirstCharacterWithoutAdvancing_72
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:73: Failure
+Expected equality of these values:
+  'a'
+    Which is: 'a' (97, 0x61)
+  stream.peek()
+    Which is: '\x4' (4)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:75: Failure
+Expected equality of these values:
+  'a'
+    Which is: 'a' (97, 0x61)
+  stream.peek()
+    Which is: '\x4' (4)
+[  FAILED  ] StreamTest_72.Peek_ReturnsFirstCharacterWithoutAdvancing_72 (0 ms)
+[ RUN      ] StreamTest_72.Get_ReturnsNextCharacterAndAdvances_72
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:85: Failure
+Expected equality of these values:
+  'a'
+    Which is: 'a' (97, 0x61)
+  stream.get()
+    Which is: '\x4' (4)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:87: Failure
+Expected equality of these values:
+  'b'
+    Which is: 'b' (98, 0x62)
+  stream.get()
+    Which is: '\x4' (4)
+[  FAILED  ] StreamTest_72.Get_ReturnsNextCharacterAndAdvances_72 (0 ms)
+[ RUN      ] StreamTest_72.GetN_ReturnsSpecifiedNumberOfCharacters_72
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:97: Failure
+Expected equality of these values:
+  "abc"
+  stream.get(3)
+    Which is: "\x4\x4\x4"
+[  FAILED  ] StreamTest_72.GetN_ReturnsSpecifiedNumberOfCharacters_72 (0 ms)
+[ RUN      ] StreamTest_72.Eat_AdvancesBySpecifiedNumberOfCharacters_72
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:109: Failure
+Expected equality of these values:
+  'd'
+    Which is: 'd' (100, 0x64)
+  stream.get()
+    Which is: '\x4' (4)
+[  FAILED  ] StreamTest_72.Eat_AdvancesBySpecifiedNumberOfCharacters_72 (0 ms)
+[ RUN      ] StreamTest_72.Get_ReturnsEofForEmptyStream_72
+[       OK ] StreamTest_72.Get_ReturnsEofForEmptyStream_72 (0 ms)
+[ RUN      ] StreamTest_72.GetN_ReturnsPartialStringIfEndOfStreamReached_72
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_72.cpp:127: Failure
+Expected equality of these values:
+  "ab"
+  stream.get(5)
+    Which is: "\x4\x4\x4\x4\x4"
+[  FAILED  ] StreamTest_72.GetN_ReturnsPartialStringIfEndOfStreamReached_72 (0 ms)
+[----------] 10 tests from StreamTest_72 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 10 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 7 tests, listed below:
+[  FAILED  ] StreamTest_72.OperatorBool_ReturnsTrueForNonEmptyStream_72
+[  FAILED  ] StreamTest_72.OperatorNot_ReturnsFalseForNonEmptyStream_72
+[  FAILED  ] StreamTest_72.Peek_ReturnsFirstCharacterWithoutAdvancing_72
+[  FAILED  ] StreamTest_72.Get_ReturnsNextCharacterAndAdvances_72
+[  FAILED  ] StreamTest_72.GetN_ReturnsSpecifiedNumberOfCharacters_72
+[  FAILED  ] StreamTest_72.Eat_AdvancesBySpecifiedNumberOfCharacters_72
+[  FAILED  ] StreamTest_72.GetN_ReturnsPartialStringIfEndOfStreamReached_72
+
+ 7 FAILED TESTS

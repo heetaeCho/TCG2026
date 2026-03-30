@@ -1,0 +1,123 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_169.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:21:27: error: allocation of incomplete type 'TableCache'
+   21 |         table_cache = new TableCache(options, 10);
+      |                           ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:37:7: note: forward declaration of 'leveldb::TableCache'
+   37 | class TableCache;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:37:9: error: deleting pointer to incomplete type 'TableCache' is incompatible with C++2c and may cause undefined behavior [-Werror,-Wdelete-incomplete]
+   37 |         delete table_cache;
+      |         ^      ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:37:7: note: forward declaration of 'leveldb::TableCache'
+   37 | class TableCache;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:77:28: error: calling a private constructor of class 'leveldb::Version'
+   77 |     Version* version = new Version(version_set);
+      |                            ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: declared private here
+  123 |   explicit Version(VersionSet* vset)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:79:14: error: 'files_' is a private member of 'leveldb::Version'
+   79 |     version->files_[0].push_back(file);
+      |              ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:154:30: note: declared private here
+  154 |   std::vector<FileMetaData*> files_[config::kNumLevels];
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:83:18: error: 'dummy_versions_' is a private member of 'leveldb::VersionSet'
+   83 |     version_set->dummy_versions_.next_->next_ = version;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:310:11: note: declared private here
+  310 |   Version dummy_versions_;  // Head of circular doubly-linked list of versions.
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:83:34: error: 'next_' is a private member of 'leveldb::Version'
+   83 |     version_set->dummy_versions_.next_->next_ = version;
+      |                                  ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:149:12: note: declared private here
+  149 |   Version* next_;     // Next version in linked list
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:83:41: error: 'next_' is a private member of 'leveldb::Version'
+   83 |     version_set->dummy_versions_.next_->next_ = version;
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:149:12: note: declared private here
+  149 |   Version* next_;     // Next version in linked list
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:85:14: error: 'prev_' is a private member of 'leveldb::Version'
+   85 |     version->prev_ = &version_set->dummy_versions_;
+      |              ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:150:12: note: declared private here
+  150 |   Version* prev_;     // Previous version in linked list
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:85:36: error: 'dummy_versions_' is a private member of 'leveldb::VersionSet'
+   85 |     version->prev_ = &version_set->dummy_versions_;
+      |                                    ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:310:11: note: declared private here
+  310 |   Version dummy_versions_;  // Head of circular doubly-linked list of versions.
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:87:18: error: 'dummy_versions_' is a private member of 'leveldb::VersionSet'
+   87 |     version_set->dummy_versions_.next_->next_->next_ = &version_set->dummy_versions_;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:310:11: note: declared private here
+  310 |   Version dummy_versions_;  // Head of circular doubly-linked list of versions.
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:87:34: error: 'next_' is a private member of 'leveldb::Version'
+   87 |     version_set->dummy_versions_.next_->next_->next_ = &version_set->dummy_versions_;
+      |                                  ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:149:12: note: declared private here
+  149 |   Version* next_;     // Next version in linked list
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:87:41: error: 'next_' is a private member of 'leveldb::Version'
+   87 |     version_set->dummy_versions_.next_->next_->next_ = &version_set->dummy_versions_;
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:149:12: note: declared private here
+  149 |   Version* next_;     // Next version in linked list
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:87:48: error: 'next_' is a private member of 'leveldb::Version'
+   87 |     version_set->dummy_versions_.next_->next_->next_ = &version_set->dummy_versions_;
+      |                                                ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:149:12: note: declared private here
+  149 |   Version* next_;     // Next version in linked list
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:87:70: error: 'dummy_versions_' is a private member of 'leveldb::VersionSet'
+   87 |     version_set->dummy_versions_.next_->next_->next_ = &version_set->dummy_versions_;
+      |                                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:310:11: note: declared private here
+  310 |   Version dummy_versions_;  // Head of circular doubly-linked list of versions.
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:121:28: error: calling a private constructor of class 'leveldb::Version'
+  121 |     Version* version = new Version(version_set);
+      |                            ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: declared private here
+  123 |   explicit Version(VersionSet* vset)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:123:14: error: 'files_' is a private member of 'leveldb::Version'
+  123 |     version->files_[0].push_back(file1);
+      |              ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:154:30: note: declared private here
+  154 |   std::vector<FileMetaData*> files_[config::kNumLevels];
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:125:14: error: 'files_' is a private member of 'leveldb::Version'
+  125 |     version->files_[1].push_back(file2);
+      |              ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:154:30: note: declared private here
+  154 |   std::vector<FileMetaData*> files_[config::kNumLevels];
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp:129:18: error: 'dummy_versions_' is a private member of 'leveldb::VersionSet'
+  129 |     version_set->dummy_versions_.next_->next_ = version;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:310:11: note: declared private here
+  310 |   Version dummy_versions_;  // Head of circular doubly-linked list of versions.
+      |           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_169.dir/build.make:76: generated_build/CMakeFiles/test_169.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_169.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:6387: generated_build/CMakeFiles/test_169.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:6394: generated_build/CMakeFiles/test_169.dir/rule] 오류 2
+gmake: *** [Makefile:2519: test_169] 오류 2

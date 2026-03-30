@@ -1,0 +1,178 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_385.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:23:28: error: unknown type name 'validate'
+   23 |         MOCK_CONST_METHOD0(validate, Result());
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:23:9: error: a type specifier is required for all declarations
+   23 |         MOCK_CONST_METHOD0(validate, Result());
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:25:28: error: unknown type name 'parse'
+   25 |         MOCK_CONST_METHOD1(parse, InternalParseResult(const std::string&, TokenStream));
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:25:9: error: a type specifier is required for all declarations
+   25 |         MOCK_CONST_METHOD1(parse, InternalParseResult(const std::string&, TokenStream));
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:27:28: error: unknown type name 'cardinality'
+   27 |         MOCK_CONST_METHOD0(cardinality, size_t());
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:27:9: error: a type specifier is required for all declarations
+   27 |         MOCK_CONST_METHOD0(cardinality, size_t());
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:49:30: error: use of undeclared identifier 'validate'
+   49 |     EXPECT_CALL(*mockParser, validate()).WillOnce(::testing::Return(Result::ok()));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:49:62: error: no member named 'Return' in namespace 'testing'
+   49 |     EXPECT_CALL(*mockParser, validate()).WillOnce(::testing::Return(Result::ok()));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:61:30: error: use of undeclared identifier 'validate'
+   61 |     EXPECT_CALL(*mockParser, validate()).WillOnce(::testing::Return(BasicResult<void>::logicError("Logic Error")));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:61:62: error: no member named 'Return' in namespace 'testing'
+   61 |     EXPECT_CALL(*mockParser, validate()).WillOnce(::testing::Return(BasicResult<void>::logicError("Logic Error")));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:75:30: error: use of undeclared identifier 'validate'
+   75 |     EXPECT_CALL(*mockParser, validate()).WillOnce(::testing::Return(BasicResult<void>::runtimeError("Runtime Error")));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:75:62: error: no member named 'Return' in namespace 'testing'
+   75 |     EXPECT_CALL(*mockParser, validate()).WillOnce(::testing::Return(BasicResult<void>::runtimeError("Runtime Error")));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:89:17: error: no matching constructor for initialization of 'TokenStream'
+   89 |     TokenStream tokens;
+      |                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:116:26: note: candidate constructor not viable: requires single argument 'args', but no arguments were provided
+  116 |                 explicit TokenStream( Args const& args );
+      |                          ^            ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:108:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  108 |             class TokenStream {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:108:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  108 |             class TokenStream {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:117:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  117 |                 TokenStream( Iterator it, Iterator itEnd );
+      |                 ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:91:25: error: no matching constructor for initialization of 'InternalParseResult' (aka 'BasicResult<ParseState>')
+   91 |     InternalParseResult expectedResult; // Assuming default constructed is expected
+      |                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:93:47: error: no member named '_' in namespace 'testing'
+   93 |     EXPECT_CALL(*mockParser, parse(::testing::_, ::testing::_)).WillOnce(::testing::Return(expectedResult));
+      |                                    ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:93:61: error: no member named '_' in namespace 'testing'
+   93 |     EXPECT_CALL(*mockParser, parse(::testing::_, ::testing::_)).WillOnce(::testing::Return(expectedResult));
+      |                                                  ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:93:85: error: no member named 'Return' in namespace 'testing'
+   93 |     EXPECT_CALL(*mockParser, parse(::testing::_, ::testing::_)).WillOnce(::testing::Return(expectedResult));
+      |                                                                          ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:105:10: error: no matching constructor for initialization of 'Args'
+  105 |     Args args;
+      |          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:714:13: note: candidate constructor not viable: requires single argument 'args', but no arguments were provided
+  714 |             Args(std::initializer_list<StringRef> args);
+      |             ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:706:15: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  706 |         class Args {
+      |               ^~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:706:15: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  706 |         class Args {
+      |               ^~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:712:13: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  712 |             Args(int argc, char const* const* argv);
+      |             ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp:107:25: error: no matching constructor for initialization of 'InternalParseResult' (aka 'BasicResult<ParseState>')
+  107 |     InternalParseResult expectedResult; // Assuming default constructed is expected
+      |                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::Detail::ParseState>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_385.dir/build.make:79: generated_build/CMakeFiles/test_385.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_385.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:12581: generated_build/CMakeFiles/test_385.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:12588: generated_build/CMakeFiles/test_385.dir/rule] 오류 2
+gmake: *** [Makefile:3777: test_385] 오류 2

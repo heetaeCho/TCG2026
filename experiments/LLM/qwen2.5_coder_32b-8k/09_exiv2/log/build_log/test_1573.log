@@ -1,0 +1,61 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1573.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp:17:28: error: base class has incomplete type
+   17 | class MockBasicIo : public BasicIo {
+      |                     ~~~~~~~^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp:21:5: error: only virtual member functions can be marked 'override'
+   21 |     MOCK_METHOD(bool, good, (), (const, override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:89:1: note: expanded from here
+   89 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp:49:18: error: no matching function for call to 'newAsfInstance'
+   49 |     auto image = newAsfInstance(std::move(mockBasicIo), false);
+      |                  ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/asfvideo.hpp:181:27: note: candidate function not viable: no known conversion from 'unique_ptr<(anonymous namespace)::MockBasicIo, default_delete<(anonymous namespace)::MockBasicIo>>' to 'unique_ptr<BasicIo, default_delete<Exiv2::BasicIo>>' for 1st argument
+  181 | EXIV2API Image::UniquePtr newAsfInstance(std::unique_ptr<BasicIo> io, bool create);
+      |                           ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp:61:18: error: no matching function for call to 'newAsfInstance'
+   61 |     auto image = newAsfInstance(std::move(mockBasicIo), false);
+      |                  ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/asfvideo.hpp:181:27: note: candidate function not viable: no known conversion from 'unique_ptr<(anonymous namespace)::MockBasicIo, default_delete<(anonymous namespace)::MockBasicIo>>' to 'unique_ptr<BasicIo, default_delete<Exiv2::BasicIo>>' for 1st argument
+  181 | EXIV2API Image::UniquePtr newAsfInstance(std::unique_ptr<BasicIo> io, bool create);
+      |                           ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp:73:18: error: no matching function for call to 'newAsfInstance'
+   73 |     auto image = newAsfInstance(std::move(mockBasicIo), true);
+      |                  ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/asfvideo.hpp:181:27: note: candidate function not viable: no known conversion from 'unique_ptr<(anonymous namespace)::MockBasicIo, default_delete<(anonymous namespace)::MockBasicIo>>' to 'unique_ptr<BasicIo, default_delete<Exiv2::BasicIo>>' for 1st argument
+  181 | EXIV2API Image::UniquePtr newAsfInstance(std::unique_ptr<BasicIo> io, bool create);
+      |                           ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp:85:18: error: no matching function for call to 'newAsfInstance'
+   85 |     auto image = newAsfInstance(std::move(mockBasicIo), true);
+      |                  ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/asfvideo.hpp:181:27: note: candidate function not viable: no known conversion from 'unique_ptr<(anonymous namespace)::MockBasicIo, default_delete<(anonymous namespace)::MockBasicIo>>' to 'unique_ptr<BasicIo, default_delete<Exiv2::BasicIo>>' for 1st argument
+  181 | EXIV2API Image::UniquePtr newAsfInstance(std::unique_ptr<BasicIo> io, bool create);
+      |                           ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1573.dir/build.make:79: generated_build/CMakeFiles/test_1573.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1573.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:39195: generated_build/CMakeFiles/test_1573.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:39202: generated_build/CMakeFiles/test_1573.dir/rule] 오류 2
+gmake: *** [Makefile:12581: test_1573] 오류 2

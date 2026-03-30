@@ -1,0 +1,45 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1089.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1089.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1089.cpp:25:14: error: incomplete type 'Exiv2::BasicIo' named in nested name specifier
+   25 |         io = BasicIo::create("dummy.jpg");
+      |              ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1089.cpp:27:21: error: allocating an object of abstract class type 'Image'
+   27 |         image = new Image(imageJpeg, 0x7f, std::move(io));
+      |                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1089.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1089.cpp:13:7: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   13 | class ImageTest_1089 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1089.cpp:27:27: error: use of undeclared identifier 'imageJpeg'
+   27 |         image = new Image(imageJpeg, 0x7f, std::move(io));
+      |                           ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1089.dir/build.make:79: generated_build/CMakeFiles/test_1089.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1089.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:52761: generated_build/CMakeFiles/test_1089.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:52768: generated_build/CMakeFiles/test_1089.dir/rule] 오류 2
+gmake: *** [Makefile:17768: test_1089] 오류 2

@@ -1,0 +1,66 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1075.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:27:21: error: allocating an object of abstract class type 'Image'
+   27 |         image = new Image(ImageType::jpeg, 0x7f, std::move(io));
+      |                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:49:61: error: allocation of incomplete type 'Value'
+   49 |     iptcData.add(IptcKey("Iptc.Application2.Keywords"), new Value(std::string("test")));
+      |                                                             ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:97:61: error: allocation of incomplete type 'Value'
+   97 |     iptcData.add(IptcKey("Iptc.Application2.Keywords"), new Value(std::string("test1")));
+      |                                                             ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:99:66: error: allocation of incomplete type 'Value'
+   99 |     iptcData.add(IptcKey("Iptc.Application2.CaptionWriter"), new Value(std::string("test2")));
+      |                                                                  ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:25:19: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   25 |         io = std::make_unique<BasicIo>();
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp:25:14: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   25 |         io = std::make_unique<BasicIo>();
+      |              ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1075.dir/build.make:79: generated_build/CMakeFiles/test_1075.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1075.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:62247: generated_build/CMakeFiles/test_1075.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:62254: generated_build/CMakeFiles/test_1075.dir/rule] 오류 2
+gmake: *** [Makefile:21395: test_1075] 오류 2

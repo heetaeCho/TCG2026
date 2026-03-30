@@ -1,0 +1,336 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_804.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:81:5: error: no template named 'NiceMock'; did you mean 'testing::NiceMock'?
+   81 |     NiceMock<MockEventListener> mockListener;
+      |     ^~~~~~~~
+      |     testing::NiceMock
+/usr/include/gmock/gmock-nice-strict.h:136:39: note: 'testing::NiceMock' declared here
+  136 | class GTEST_INTERNAL_EMPTY_BASE_CLASS NiceMock
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:83:5: error: no template named 'NiceMock'; did you mean 'testing::NiceMock'?
+   83 |     NiceMock<MockEventListener> mockReporter;
+      |     ^~~~~~~~
+      |     testing::NiceMock
+/usr/include/gmock/gmock-nice-strict.h:136:39: note: 'testing::NiceMock' declared here
+  136 | class GTEST_INTERNAL_EMPTY_BASE_CLASS NiceMock
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:87:5: error: constructor for 'MultiReporterTest_804' must explicitly initialize the member 'multiReporter' which does not have a default constructor
+   87 |     MultiReporterTest_804() {
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:79:19: note: member is declared here
+   79 |     MultiReporter multiReporter;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:15:11: note: 'Catch::MultiReporter' declared here
+   15 |     class MultiReporter final : public IEventListener {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:89:35: error: no matching constructor for initialization of 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+   89 |         multiReporter.addListener(IEventListenerPtr(&mockListener, [](IEventListener*){}));
+      |                                   ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: requires at most 1 argument, but 2 were provided
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: requires single argument 'ptr', but 2 arguments were provided
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate constructor template not viable: requires single argument 'from', but 2 arguments were provided
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:91:35: error: no matching constructor for initialization of 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+   91 |         multiReporter.addReporter(IEventListenerPtr(&mockReporter, [](IEventListener*){}));
+      |                                   ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: requires at most 1 argument, but 2 were provided
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: requires single argument 'ptr', but 2 arguments were provided
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate constructor template not viable: requires single argument 'from', but 2 arguments were provided
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:101:24: error: no matching constructor for initialization of 'TestRunInfo'
+  101 |     TestRunStats stats(TestRunInfo(), Totals(), false);
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:16:19: note: candidate constructor not viable: requires single argument '_name', but no arguments were provided
+   16 |         constexpr TestRunInfo(StringRef _name) : name(_name) {}
+      |                   ^           ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:245:17: error: no matching constructor for initialization of 'TestRunInfo'
+  245 |     TestRunInfo info;
+      |                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:16:19: note: candidate constructor not viable: requires single argument '_name', but no arguments were provided
+   16 |         constexpr TestRunInfo(StringRef _name) : name(_name) {}
+      |                   ^           ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:263:18: error: variable has incomplete type 'TestCaseInfo'
+  263 |     TestCaseInfo info;
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:281:18: error: variable has incomplete type 'TestCaseInfo'
+  281 |     TestCaseInfo info;
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:301:17: error: no matching constructor for initialization of 'SectionInfo'
+  301 |     SectionInfo info;
+      |                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_section_info.hpp:24:9: note: candidate constructor not viable: requires at least 2 arguments, but 0 were provided
+   24 |         SectionInfo( SourceLineInfo const& _lineInfo, std::string _name,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   25 |                     const char* const = nullptr ):
+      |                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:319:19: error: call to implicitly-deleted default constructor of 'AssertionInfo'
+  319 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:337:20: error: no matching constructor for initialization of 'AssertionStats'
+  337 |     AssertionStats stats;
+      |                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:355:18: error: no matching constructor for initialization of 'SectionStats'
+  355 |     SectionStats stats;
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:73:9: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+   73 |         SectionStats(   SectionInfo&& _sectionInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   74 |                         Counts const& _assertions,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   75 |                         double _durationInSeconds,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~
+   76 |                         bool _missingAssertions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:373:19: error: no matching constructor for initialization of 'TestCaseStats'
+  373 |     TestCaseStats stats;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:85:9: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+   85 |         TestCaseStats(  TestCaseInfo const& _testInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |                         Totals const& _totals,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   87 |                         std::string&& _stdOut,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   88 |                         std::string&& _stdErr,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   89 |                         bool _aborting );
+      |                         ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:393:19: error: no matching constructor for initialization of 'TestCaseStats'
+  393 |     TestCaseStats stats;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:85:9: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+   85 |         TestCaseStats(  TestCaseInfo const& _testInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |                         Totals const& _totals,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   87 |                         std::string&& _stdOut,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   88 |                         std::string&& _stdErr,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   89 |                         bool _aborting );
+      |                         ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:411:18: error: variable has incomplete type 'TestCaseInfo'
+  411 |     TestCaseInfo info;
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:67:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1054:2: error: arithmetic on a pointer to an incomplete type 'const Catch::ReporterDescription'
+ 1054 |         ++_M_current;
+      |         ^ ~~~~~~~~~~
+/usr/include/gtest/gtest-printers.h:136:22: note: in instantiation of member function '__gnu_cxx::__normal_iterator<const Catch::ReporterDescription *, std::vector<Catch::ReporterDescription>>::operator++' requested here
+  136 |     for (auto&& elem : container) {
+      |                      ^
+/usr/include/gtest/gtest-printers.h:312:12: note: in instantiation of function template specialization 'testing::internal::ContainerPrinter::PrintValue<std::vector<Catch::ReporterDescription>, void>' requested here
+  312 |   Printer::PrintValue(value, os);
+      |            ^
+/usr/include/gtest/gtest-printers.h:441:13: note: in instantiation of function template specialization 'testing::internal::PrintWithFallback<std::vector<Catch::ReporterDescription>>' requested here
+  441 |   internal::PrintWithFallback(value, os);
+      |             ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<std::vector<Catch::ReporterDescription>>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::vector<Catch::ReporterDescription>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gtest/gtest-printers.h:851:5: note: (skipping 3 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+  851 |     UniversalPrint(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<const std::vector<Catch::ReporterDescription> &>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::tuple<const std::vector<Catch::ReporterDescription> &>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gmock/gmock-spec-builders.h:1678:5: note: in instantiation of function template specialization 'testing::internal::UniversalPrint<std::tuple<const std::vector<Catch::ReporterDescription> &>>' requested here
+ 1678 |     UniversalPrint(args, os);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:1468:3: note: in instantiation of member function 'testing::internal::FunctionMocker<void (const std::vector<Catch::ReporterDescription> &)>::UntypedDescribeUninterestingCall' requested here
+ 1468 |   FunctionMocker() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:69:5: note: in instantiation of member function 'testing::internal::FunctionMocker<void (const std::vector<Catch::ReporterDescription> &)>::FunctionMocker' requested here
+   69 |     MockEventListener(IConfig const* config) : IEventListener(config) {}
+      |     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:26:12: note: forward declaration of 'Catch::ReporterDescription'
+   26 |     struct ReporterDescription;
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:67:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1054:2: error: arithmetic on a pointer to an incomplete type 'const Catch::ListenerDescription'
+ 1054 |         ++_M_current;
+      |         ^ ~~~~~~~~~~
+/usr/include/gtest/gtest-printers.h:136:22: note: in instantiation of member function '__gnu_cxx::__normal_iterator<const Catch::ListenerDescription *, std::vector<Catch::ListenerDescription>>::operator++' requested here
+  136 |     for (auto&& elem : container) {
+      |                      ^
+/usr/include/gtest/gtest-printers.h:312:12: note: in instantiation of function template specialization 'testing::internal::ContainerPrinter::PrintValue<std::vector<Catch::ListenerDescription>, void>' requested here
+  312 |   Printer::PrintValue(value, os);
+      |            ^
+/usr/include/gtest/gtest-printers.h:441:13: note: in instantiation of function template specialization 'testing::internal::PrintWithFallback<std::vector<Catch::ListenerDescription>>' requested here
+  441 |   internal::PrintWithFallback(value, os);
+      |             ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<std::vector<Catch::ListenerDescription>>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::vector<Catch::ListenerDescription>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gtest/gtest-printers.h:851:5: note: (skipping 3 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+  851 |     UniversalPrint(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<const std::vector<Catch::ListenerDescription> &>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::tuple<const std::vector<Catch::ListenerDescription> &>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gmock/gmock-spec-builders.h:1678:5: note: in instantiation of function template specialization 'testing::internal::UniversalPrint<std::tuple<const std::vector<Catch::ListenerDescription> &>>' requested here
+ 1678 |     UniversalPrint(args, os);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:1468:3: note: in instantiation of member function 'testing::internal::FunctionMocker<void (const std::vector<Catch::ListenerDescription> &)>::UntypedDescribeUninterestingCall' requested here
+ 1468 |   FunctionMocker() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:69:5: note: in instantiation of member function 'testing::internal::FunctionMocker<void (const std::vector<Catch::ListenerDescription> &)>::FunctionMocker' requested here
+   69 |     MockEventListener(IConfig const* config) : IEventListener(config) {}
+      |     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:27:12: note: forward declaration of 'Catch::ListenerDescription'
+   27 |     struct ListenerDescription;
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:67:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1054:2: error: arithmetic on a pointer to an incomplete type 'const Catch::TestCaseHandle'
+ 1054 |         ++_M_current;
+      |         ^ ~~~~~~~~~~
+/usr/include/gtest/gtest-printers.h:136:22: note: in instantiation of member function '__gnu_cxx::__normal_iterator<const Catch::TestCaseHandle *, std::vector<Catch::TestCaseHandle>>::operator++' requested here
+  136 |     for (auto&& elem : container) {
+      |                      ^
+/usr/include/gtest/gtest-printers.h:312:12: note: in instantiation of function template specialization 'testing::internal::ContainerPrinter::PrintValue<std::vector<Catch::TestCaseHandle>, void>' requested here
+  312 |   Printer::PrintValue(value, os);
+      |            ^
+/usr/include/gtest/gtest-printers.h:441:13: note: in instantiation of function template specialization 'testing::internal::PrintWithFallback<std::vector<Catch::TestCaseHandle>>' requested here
+  441 |   internal::PrintWithFallback(value, os);
+      |             ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<std::vector<Catch::TestCaseHandle>>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::vector<Catch::TestCaseHandle>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gtest/gtest-printers.h:851:5: note: (skipping 3 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+  851 |     UniversalPrint(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<const std::vector<Catch::TestCaseHandle> &>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::tuple<const std::vector<Catch::TestCaseHandle> &>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gmock/gmock-spec-builders.h:1678:5: note: in instantiation of function template specialization 'testing::internal::UniversalPrint<std::tuple<const std::vector<Catch::TestCaseHandle> &>>' requested here
+ 1678 |     UniversalPrint(args, os);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:1468:3: note: in instantiation of member function 'testing::internal::FunctionMocker<void (const std::vector<Catch::TestCaseHandle> &)>::UntypedDescribeUninterestingCall' requested here
+ 1468 |   FunctionMocker() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp:69:5: note: in instantiation of member function 'testing::internal::FunctionMocker<void (const std::vector<Catch::TestCaseHandle> &)>::FunctionMocker' requested here
+   69 |     MockEventListener(IConfig const* config) : IEventListener(config) {}
+      |     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:30:11: note: forward declaration of 'Catch::TestCaseHandle'
+   30 |     class TestCaseHandle;
+      |           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_804.dir/build.make:79: generated_build/CMakeFiles/test_804.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_804.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3638: generated_build/CMakeFiles/test_804.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3645: generated_build/CMakeFiles/test_804.dir/rule] 오류 2
+gmake: *** [Makefile:254: test_804] 오류 2

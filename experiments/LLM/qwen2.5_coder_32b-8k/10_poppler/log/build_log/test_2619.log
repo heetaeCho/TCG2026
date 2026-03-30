@@ -1,0 +1,43 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2619.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp:37:32: error: 'italic' is a private member of 'HtmlFont'
+   37 |         const_cast<bool&>(font.italic) = italic;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/utils/HtmlFonts.h:65:10: note: declared private here
+   65 |     bool italic;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp:9:7: warning: 'HtmlFontTest_2619' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class HtmlFontTest_2619 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'GfxFont'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp:25:28: note: in instantiation of function template specialization 'std::make_unique<GfxFont>' requested here
+   25 |         mockGfxFont = std::make_unique<GfxFont>();
+      |                            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:56:7: note: forward declaration of 'GfxFont'
+   56 | class GfxFont;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'GfxFont'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<GfxFont>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp:25:23: note: in instantiation of member function 'std::unique_ptr<GfxFont>::~unique_ptr' requested here
+   25 |         mockGfxFont = std::make_unique<GfxFont>();
+      |                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:56:7: note: forward declaration of 'GfxFont'
+   56 | class GfxFont;
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2619.dir/build.make:79: generated_build/CMakeFiles/test_2619.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2619.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:72522: generated_build/CMakeFiles/test_2619.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:72529: generated_build/CMakeFiles/test_2619.dir/rule] 오류 2
+gmake: *** [Makefile:25932: test_2619] 오류 2

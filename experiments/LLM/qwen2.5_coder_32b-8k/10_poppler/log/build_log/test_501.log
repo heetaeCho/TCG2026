@@ -1,0 +1,185 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_501.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:13:5: error: only virtual member functions can be marked 'override'
+   13 |     MOCK_METHOD(GfxShading*, getShading, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:267:1: note: expanded from here
+  267 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:15:52: error: virtual function 'copy' has a different return type ('unique_ptr<...>') than the function it overrides (which has return type 'unique_ptr<...>')
+   15 |     MOCK_METHOD(const std::unique_ptr<GfxPattern>, copy, (), (const override));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/./TestProjects/poppler/poppler/GfxState.h:880:33: note: overridden virtual function is here
+  880 |     std::unique_ptr<GfxPattern> copy() const override;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:61:42: error: too many arguments provided to function-like macro invocation
+   61 |     EXPECT_EQ(matrix, std::array<double, 6>({0.0, 1.0, 2.0, 3.0, 4.0, 5.0}));
+      |                                          ^
+/usr/include/gtest/gtest.h:2043:9: note: macro 'EXPECT_EQ' defined here
+ 2043 | #define EXPECT_EQ(val1, val2) \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:61:5: error: use of undeclared identifier 'EXPECT_EQ'
+   61 |     EXPECT_EQ(matrix, std::array<double, 6>({0.0, 1.0, 2.0, 3.0, 4.0, 5.0}));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:75:27: error: calling a private constructor of class 'GfxShadingPattern'
+   75 |     GfxShadingPatternMock patternWithZeroMatrix(std::make_unique<GfxShading>(), std::array<double, 6>({0.0}), 1);
+      |                           ^
+/home/user/TCG2026/./TestProjects/poppler/poppler/GfxState.h:886:5: note: declared private here
+  886 |     GfxShadingPattern(std::unique_ptr<GfxShading> &&shadingA, const std::array<double, 6> &matrixA, int patternRefNumA);
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:79:42: error: too many arguments provided to function-like macro invocation
+   79 |     EXPECT_EQ(matrix, std::array<double, 6>({0.0, 0.0, 0.0, 0.0, 0.0, 0.0}));
+      |                                          ^
+/usr/include/gtest/gtest.h:2043:9: note: macro 'EXPECT_EQ' defined here
+ 2043 | #define EXPECT_EQ(val1, val2) \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:79:5: error: use of undeclared identifier 'EXPECT_EQ'
+   79 |     EXPECT_EQ(matrix, std::array<double, 6>({0.0, 0.0, 0.0, 0.0, 0.0, 0.0}));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:9:7: warning: 'GfxShadingPatternMock' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxShadingPatternMock : public GfxShadingPattern {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:27:7: warning: 'GfxShadingPatternTest_501' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   27 | class GfxShadingPatternTest_501 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:3:
+In file included from /usr/include/gmock/gmock.h:61:
+In file included from /usr/include/gmock/gmock-function-mocker.h:42:
+/usr/include/gmock/gmock-spec-builders.h:1327:23: error: call to deleted constructor of 'const std::unique_ptr<GfxPattern>'
+ 1327 |   T Unwrap() { return std::move(value_); }
+      |                       ^~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1381:20: note: in instantiation of member function 'testing::internal::ReferenceOrValueWrapper<const std::unique_ptr<GfxPattern>>::Unwrap' requested here
+ 1381 |     return result_.Unwrap();
+      |                    ^
+/usr/include/gmock/gmock-spec-builders.h:1600:20: note: in instantiation of member function 'testing::internal::ActionResultHolder<const std::unique_ptr<GfxPattern>>::Unwrap' requested here
+ 1600 |     return holder->Unwrap();
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:15:5: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<GfxPattern> ()>::Invoke' requested here
+   15 |     MOCK_METHOD(const std::unique_ptr<GfxPattern>, copy, (), (const override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:141:1: note: expanded from here
+  141 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:10: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'GfxShading'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:35:64: note: in instantiation of function template specialization 'std::make_unique<GfxShading>' requested here
+   35 |         pattern = std::make_unique<GfxShadingPatternMock>(std::make_unique<GfxShading>(), matrix, 1);
+      |                                                                ^
+/home/user/TCG2026/./TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'GfxShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: calling a private constructor of class 'GfxShadingPattern'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:35:24: note: in instantiation of function template specialization 'std::make_unique<GfxShadingPatternMock, std::unique_ptr<GfxShading>, std::array<double, 6> &, int>' requested here
+   35 |         pattern = std::make_unique<GfxShadingPatternMock>(std::make_unique<GfxShading>(), matrix, 1);
+      |                        ^
+/home/user/TCG2026/./TestProjects/poppler/poppler/GfxState.h:886:5: note: declared private here
+  886 |     GfxShadingPattern(std::unique_ptr<GfxShading> &&shadingA, const std::array<double, 6> &matrixA, int patternRefNumA);
+      |     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:3:
+In file included from /usr/include/gmock/gmock.h:61:
+In file included from /usr/include/gmock/gmock-function-mocker.h:42:
+/usr/include/gmock/gmock-spec-builders.h:1321:9: error: call to deleted constructor of 'const std::unique_ptr<GfxPattern>'
+ 1321 |       : value_(std::move(value)) {
+      |         ^      ~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1398:35: note: in instantiation of member function 'testing::internal::ReferenceOrValueWrapper<const std::unique_ptr<GfxPattern>>::ReferenceOrValueWrapper' requested here
+ 1398 |     return new ActionResultHolder(Wrapper(func_mocker->PerformDefaultAction(
+      |                                   ^
+/usr/include/gmock/gmock-spec-builders.h:1548:26: note: in instantiation of function template specialization 'testing::internal::ActionResultHolder<const std::unique_ptr<GfxPattern>>::PerformDefaultAction<const std::unique_ptr<GfxPattern> ()>' requested here
+ 1548 |     return ResultHolder::PerformDefaultAction(this, std::move(*args),
+      |                          ^
+/usr/include/gmock/gmock-spec-builders.h:1468:3: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<GfxPattern> ()>::UntypedPerformDefaultAction' requested here
+ 1468 |   FunctionMocker() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:19:30: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<GfxPattern> ()>::FunctionMocker' requested here
+   19 |     using GfxShadingPattern::GfxShadingPattern;
+      |                              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:3:
+In file included from /usr/include/gmock/gmock.h:61:
+In file included from /usr/include/gmock/gmock-function-mocker.h:42:
+/usr/include/gmock/gmock-spec-builders.h:1415:9: error: call to implicitly-deleted copy constructor of 'Wrapper' (aka 'ReferenceOrValueWrapper<const std::unique_ptr<GfxPattern, std::default_delete<GfxPattern>>>')
+ 1415 |       : result_(std::move(result)) {
+      |         ^       ~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1398:16: note: in instantiation of member function 'testing::internal::ActionResultHolder<const std::unique_ptr<GfxPattern>>::ActionResultHolder' requested here
+ 1398 |     return new ActionResultHolder(Wrapper(func_mocker->PerformDefaultAction(
+      |                ^
+/usr/include/gmock/gmock-spec-builders.h:1548:26: note: in instantiation of function template specialization 'testing::internal::ActionResultHolder<const std::unique_ptr<GfxPattern>>::PerformDefaultAction<const std::unique_ptr<GfxPattern> ()>' requested here
+ 1548 |     return ResultHolder::PerformDefaultAction(this, std::move(*args),
+      |                          ^
+/usr/include/gmock/gmock-spec-builders.h:1468:3: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<GfxPattern> ()>::UntypedPerformDefaultAction' requested here
+ 1468 |   FunctionMocker() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp:19:30: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<GfxPattern> ()>::FunctionMocker' requested here
+   19 |     using GfxShadingPattern::GfxShadingPattern;
+      |                              ^
+/usr/include/gmock/gmock-spec-builders.h:1338:5: note: copy constructor of 'ReferenceOrValueWrapper<const std::unique_ptr<GfxPattern>>' is implicitly deleted because field 'value_' has a deleted copy constructor
+ 1338 |   T value_;
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+2 warnings and 12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_501.dir/build.make:79: generated_build/CMakeFiles/test_501.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_501.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:76074: generated_build/CMakeFiles/test_501.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:76081: generated_build/CMakeFiles/test_501.dir/rule] 오류 2
+gmake: *** [Makefile:27375: test_501] 오류 2

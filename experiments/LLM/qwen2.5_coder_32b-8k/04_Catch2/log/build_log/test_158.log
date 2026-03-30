@@ -1,0 +1,80 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_158.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:55:16: error: static_cast from 'value_type' (aka 'const void *') to 'MockMatcherGenericBase *' casts away qualifiers
+   55 |         delete static_cast<MockMatcherGenericBase*>(matchers[0]);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:57:16: error: static_cast from 'value_type' (aka 'const void *') to 'MockMatcherGenericBase *' casts away qualifiers
+   57 |         delete static_cast<MockMatcherGenericBase*>(matchers[1]);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:69:17: error: no matching constructor for initialization of 'MatcherType' (aka 'MatchAllOfGeneric<MockMatcherGenericBase>')
+   69 |     MatcherType matcher(matchers);
+      |                 ^       ~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:113:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const MatchAllOfGeneric<MockMatcherGenericBase>' for 1st argument
+  113 |             MatchAllOfGeneric(MatchAllOfGeneric const&) = delete;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:115:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'MatchAllOfGeneric<MockMatcherGenericBase>' for 1st argument
+  115 |             MatchAllOfGeneric(MatchAllOfGeneric&&) = default;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:118:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const MockMatcherGenericBase' for 1st argument
+  118 |             MatchAllOfGeneric(MatcherTs const&... matchers CATCH_ATTR_LIFETIMEBOUND)
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:120:22: note: candidate constructor not viable: no known conversion from 'array<[...], 2>' to 'array<[...], sizeof...(MatcherTs) aka 1>' for 1st argument
+  120 |             explicit MatchAllOfGeneric(std::array<void const*, sizeof...(MatcherTs)> matchers) : m_matchers{matchers} {}
+      |                      ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:93:12: error: static_cast from 'value_type' (aka 'const void *') to 'MockMatcherGenericBase *' casts away qualifiers
+   93 |     delete static_cast<MockMatcherGenericBase*>(single_matcher[0]);
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:103:17: error: no matching constructor for initialization of 'MatcherType' (aka 'MatchAllOfGeneric<MockMatcherGenericBase>')
+  103 |     MatcherType matcher(matchers);
+      |                 ^       ~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:113:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const MatchAllOfGeneric<MockMatcherGenericBase>' for 1st argument
+  113 |             MatchAllOfGeneric(MatchAllOfGeneric const&) = delete;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:115:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'MatchAllOfGeneric<MockMatcherGenericBase>' for 1st argument
+  115 |             MatchAllOfGeneric(MatchAllOfGeneric&&) = default;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:118:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const MockMatcherGenericBase' for 1st argument
+  118 |             MatchAllOfGeneric(MatcherTs const&... matchers CATCH_ATTR_LIFETIMEBOUND)
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:120:22: note: candidate constructor not viable: no known conversion from 'array<[...], 2>' to 'array<[...], sizeof...(MatcherTs) aka 1>' for 1st argument
+  120 |             explicit MatchAllOfGeneric(std::array<void const*, sizeof...(MatcherTs)> matchers) : m_matchers{matchers} {}
+      |                      ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:121:18: error: static_cast from 'value_type' (aka 'const void *') to 'MockMatcherGenericBase *' casts away qualifiers
+  121 |     EXPECT_CALL(*static_cast<MockMatcherGenericBase*>(matchers[0]), describe()).WillOnce(::testing::Return("matcher1 description"));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:123:18: error: static_cast from 'value_type' (aka 'const void *') to 'MockMatcherGenericBase *' casts away qualifiers
+  123 |     EXPECT_CALL(*static_cast<MockMatcherGenericBase*>(matchers[1]), describe()).WillOnce(::testing::Return("matcher2 description"));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp:127:17: error: no matching constructor for initialization of 'MatcherType' (aka 'MatchAllOfGeneric<MockMatcherGenericBase>')
+  127 |     MatcherType matcher(matchers);
+      |                 ^       ~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:113:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const MatchAllOfGeneric<MockMatcherGenericBase>' for 1st argument
+  113 |             MatchAllOfGeneric(MatchAllOfGeneric const&) = delete;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:115:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'MatchAllOfGeneric<MockMatcherGenericBase>' for 1st argument
+  115 |             MatchAllOfGeneric(MatchAllOfGeneric&&) = default;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:118:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const MockMatcherGenericBase' for 1st argument
+  118 |             MatchAllOfGeneric(MatcherTs const&... matchers CATCH_ATTR_LIFETIMEBOUND)
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:120:22: note: candidate constructor not viable: no known conversion from 'array<[...], 2>' to 'array<[...], sizeof...(MatcherTs) aka 1>' for 1st argument
+  120 |             explicit MatchAllOfGeneric(std::array<void const*, sizeof...(MatcherTs)> matchers) : m_matchers{matchers} {}
+      |                      ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_158.dir/build.make:79: generated_build/CMakeFiles/test_158.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_158.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:28322: generated_build/CMakeFiles/test_158.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:28329: generated_build/CMakeFiles/test_158.dir/rule] 오류 2
+gmake: *** [Makefile:9978: test_158] 오류 2

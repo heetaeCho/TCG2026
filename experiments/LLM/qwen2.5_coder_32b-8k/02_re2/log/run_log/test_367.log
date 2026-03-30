@@ -1,0 +1,38 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from ConvertRunesToBytesTest_367
+[ RUN      ] ConvertRunesToBytesTest_367.Latin1Conversion_367
+[       OK ] ConvertRunesToBytesTest_367.Latin1Conversion_367 (0 ms)
+[ RUN      ] ConvertRunesToBytesTest_367.Latin1EmptyInput_367
+[       OK ] ConvertRunesToBytesTest_367.Latin1EmptyInput_367 (0 ms)
+[ RUN      ] ConvertRunesToBytesTest_367.UTFConversion_SingleByteChars_367
+[       OK ] ConvertRunesToBytesTest_367.UTFConversion_SingleByteChars_367 (0 ms)
+[ RUN      ] ConvertRunesToBytesTest_367.UTFConversion_MultiByteChars_367
+[       OK ] ConvertRunesToBytesTest_367.UTFConversion_MultiByteChars_367 (0 ms)
+[ RUN      ] ConvertRunesToBytesTest_367.UTFConversion_BoundaryCondition_367
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_367.cpp:119: Failure
+Expected equality of these values:
+  bytes
+    Which is: "\x7F\xC2\x80"
+  "\x7F\xE2\x82\xAC"
+[  FAILED  ] ConvertRunesToBytesTest_367.UTFConversion_BoundaryCondition_367 (0 ms)
+[ RUN      ] ConvertRunesToBytesTest_367.UTFConversion_ErrorHandling_367
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_367.cpp:139: Failure
+Expected equality of these values:
+  bytes
+    Which is: "\xED\xA0\x80"
+  "\xEF\xBF\xBD"
+    Which is: "\xEF\xBF\xBD"
+    As Text: "�"
+[  FAILED  ] ConvertRunesToBytesTest_367.UTFConversion_ErrorHandling_367 (0 ms)
+[----------] 6 tests from ConvertRunesToBytesTest_367 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] ConvertRunesToBytesTest_367.UTFConversion_BoundaryCondition_367
+[  FAILED  ] ConvertRunesToBytesTest_367.UTFConversion_ErrorHandling_367
+
+ 2 FAILED TESTS

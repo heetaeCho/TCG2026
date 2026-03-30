@@ -1,0 +1,668 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_301.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:25:5: error: reference to 'AssertionResult' is ambiguous
+   25 |     AssertionResult result;
+      |     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate found by name lookup is 'Catch::AssertionResult'
+   35 |     class AssertionResult {
+      |           ^
+/usr/include/gtest/gtest.h:283:18: note: candidate found by name lookup is 'testing::AssertionResult'
+  283 | class GTEST_API_ AssertionResult {
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:37:14: error: no member named 'setMessage' in 'Catch::AssertionResultData'
+   37 |         data.setMessage(StringRef("Test message"));
+      |         ~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:39:18: error: reference to 'AssertionResult' is ambiguous
+   39 |         result = AssertionResult(info, std::move(data));
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate found by name lookup is 'Catch::AssertionResult'
+   35 |     class AssertionResult {
+      |           ^
+/usr/include/gtest/gtest.h:283:18: note: candidate found by name lookup is 'testing::AssertionResult'
+  283 | class GTEST_API_ AssertionResult {
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:39:18: error: no matching constructor for initialization of 'AssertionResult'
+   39 |         result = AssertionResult(info, std::move(data));
+      |                  ^               ~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:305:12: note: candidate constructor [with T = Catch::AssertionInfo] not viable: no known conversion from 'typename std::remove_reference<AssertionResultData &>::type' (aka 'Catch::AssertionResultData') to 'typename std::enable_if<!std::is_convertible<AssertionInfo, AssertionResult>::value>::type *' (aka 'void *') for 2nd argument
+  305 |   explicit AssertionResult(
+      |            ^
+  306 |       const T& success,
+  307 |       typename std::enable_if<
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~
+  308 |           !std::is_convertible<T, AssertionResult>::value>::type*
+      |           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  309 |       /*enabler*/
+      |       ~~~~~~~~~~~
+  310 |       = nullptr)
+      |       ~~~~~~~~~
+/usr/include/gtest/gtest.h:287:3: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+  287 |   AssertionResult(const AssertionResult& other);
+      |   ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:47:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   47 | TEST_F(AssertionResultTest_301, GetSourceInfo_ReturnsCorrectLineInfo_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:59:1: note: expanded from here
+   59 | AssertionResultTest_301_GetSourceInfo_ReturnsCorrectLineInfo_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:47:1: note: default constructor of 'AssertionResultTest_301_GetSourceInfo_ReturnsCorrectLineInfo_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:47:1: note: replace 'default' with 'delete'
+   47 | TEST_F(AssertionResultTest_301, GetSourceInfo_ReturnsCorrectLineInfo_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:49:40: error: no member named 'getSourceInfo' in 'testing::AssertionResult'
+   49 |     SourceLineInfo sourceInfo = result.getSourceInfo();
+      |                                 ~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:51:26: error: no member named 'lineInfo' in 'Catch::SourceLineInfo'
+   51 |     EXPECT_EQ(sourceInfo.lineInfo.file, "");
+      |               ~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:53:26: error: no member named 'lineInfo' in 'Catch::SourceLineInfo'
+   53 |     EXPECT_EQ(sourceInfo.lineInfo.line, 0);
+      |               ~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:59:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   59 | TEST_F(AssertionResultTest_301, IsOk_ReturnsTrueForSuccessfulAssertion_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:101:1: note: expanded from here
+  101 | AssertionResultTest_301_IsOk_ReturnsTrueForSuccessfulAssertion_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:59:1: note: default constructor of 'AssertionResultTest_301_IsOk_ReturnsTrueForSuccessfulAssertion_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:59:1: note: replace 'default' with 'delete'
+   59 | TEST_F(AssertionResultTest_301, IsOk_ReturnsTrueForSuccessfulAssertion_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:61:5: error: no member named 'gmock_succeeded' in 'Catch::AssertionInfo'
+   61 |     ON_CALL(info, succeeded()).WillByDefault(Return(true));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2033:3: note: expanded from macro 'ON_CALL'
+ 2033 |   GMOCK_ON_CALL_IMPL_(obj, InternalDefaultActionSetAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:12:1: note: expanded from here
+   12 | gmock_succeeded
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:63:24: error: no member named 'isOk' in 'testing::AssertionResult'
+   63 |     EXPECT_TRUE(result.isOk());
+      |                 ~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:69:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   69 | TEST_F(AssertionResultTest_301, Succeeded_ReturnsTrueForSuccessfulAssertion_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:29:1: note: expanded from here
+   29 | AssertionResultTest_301_Succeeded_ReturnsTrueForSuccessfulAssertion_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:69:1: note: default constructor of 'AssertionResultTest_301_Succeeded_ReturnsTrueForSuccessfulAssertion_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:69:1: note: replace 'default' with 'delete'
+   69 | TEST_F(AssertionResultTest_301, Succeeded_ReturnsTrueForSuccessfulAssertion_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:71:5: error: no member named 'gmock_succeeded' in 'Catch::AssertionInfo'
+   71 |     ON_CALL(info, succeeded()).WillByDefault(Return(true));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2033:3: note: expanded from macro 'ON_CALL'
+ 2033 |   GMOCK_ON_CALL_IMPL_(obj, InternalDefaultActionSetAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:56:1: note: expanded from here
+   56 | gmock_succeeded
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:73:24: error: no member named 'succeeded' in 'testing::AssertionResult'
+   73 |     EXPECT_TRUE(result.succeeded());
+      |                 ~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:79:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   79 | TEST_F(AssertionResultTest_301, HasExpression_ReturnsTrueWhenExpressionExists_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:73:1: note: expanded from here
+   73 | AssertionResultTest_301_HasExpression_ReturnsTrueWhenExpressionExists_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:79:1: note: default constructor of 'AssertionResultTest_301_HasExpression_ReturnsTrueWhenExpressionExists_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:79:1: note: replace 'default' with 'delete'
+   79 | TEST_F(AssertionResultTest_301, HasExpression_ReturnsTrueWhenExpressionExists_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:81:24: error: no member named 'hasExpression' in 'testing::AssertionResult'
+   81 |     EXPECT_TRUE(result.hasExpression());
+      |                 ~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:87:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   87 | TEST_F(AssertionResultTest_301, HasMessage_ReturnsTrueWhenMessageExists_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:29:1: note: expanded from here
+   29 | AssertionResultTest_301_HasMessage_ReturnsTrueWhenMessageExists_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:87:1: note: default constructor of 'AssertionResultTest_301_HasMessage_ReturnsTrueWhenMessageExists_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:87:1: note: replace 'default' with 'delete'
+   87 | TEST_F(AssertionResultTest_301, HasMessage_ReturnsTrueWhenMessageExists_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:89:24: error: no member named 'hasMessage' in 'testing::AssertionResult'
+   89 |     EXPECT_TRUE(result.hasMessage());
+      |                 ~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:95:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   95 | TEST_F(AssertionResultTest_301, GetExpression_ReturnsCapturedExpression_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:68:1: note: expanded from here
+   68 | AssertionResultTest_301_GetExpression_ReturnsCapturedExpression_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:95:1: note: default constructor of 'AssertionResultTest_301_GetExpression_ReturnsCapturedExpression_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:95:1: note: replace 'default' with 'delete'
+   95 | TEST_F(AssertionResultTest_301, GetExpression_ReturnsCapturedExpression_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:97:22: error: no member named 'getExpression' in 'testing::AssertionResult'
+   97 |     EXPECT_EQ(result.getExpression(), "1 == 1");
+      |               ~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:103:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  103 | TEST_F(AssertionResultTest_301, GetExpressionInMacro_ReturnsCapturedExpression_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:25:1: note: expanded from here
+   25 | AssertionResultTest_301_GetExpressionInMacro_ReturnsCapturedExpression_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:103:1: note: default constructor of 'AssertionResultTest_301_GetExpressionInMacro_ReturnsCapturedExpression_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:103:1: note: replace 'default' with 'delete'
+  103 | TEST_F(AssertionResultTest_301, GetExpressionInMacro_ReturnsCapturedExpression_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:105:22: error: no member named 'getExpressionInMacro' in 'testing::AssertionResult'
+  105 |     EXPECT_EQ(result.getExpressionInMacro(), "1 == 1");
+      |               ~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:111:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  111 | TEST_F(AssertionResultTest_301, HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:63:1: note: expanded from here
+   63 | AssertionResultTest_301_HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:111:1: note: default constructor of 'AssertionResultTest_301_HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:111:1: note: replace 'default' with 'delete'
+  111 | TEST_F(AssertionResultTest_301, HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:113:25: error: no member named 'hasExpandedExpression' in 'testing::AssertionResult'
+  113 |     EXPECT_FALSE(result.hasExpandedExpression());
+      |                  ~~~~~~ ^
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:119:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  119 | TEST_F(AssertionResultTest_301, GetMessage_ReturnsSetMessage_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:30:1: note: expanded from here
+   30 | AssertionResultTest_301_GetMessage_ReturnsSetMessage_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:119:1: note: default constructor of 'AssertionResultTest_301_GetMessage_ReturnsSetMessage_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:119:1: note: replace 'default' with 'delete'
+  119 | TEST_F(AssertionResultTest_301, GetMessage_ReturnsSetMessage_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:121:22: error: no member named 'getMessage' in 'testing::AssertionResult'
+  121 |     EXPECT_EQ(result.getMessage(), "Test message");
+      |               ~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:127:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  127 | TEST_F(AssertionResultTest_301, GetTestMacroName_ReturnsCorrectMacroName_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:68:1: note: expanded from here
+   68 | AssertionResultTest_301_GetTestMacroName_ReturnsCorrectMacroName_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:127:1: note: default constructor of 'AssertionResultTest_301_GetTestMacroName_ReturnsCorrectMacroName_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:127:1: note: replace 'default' with 'delete'
+  127 | TEST_F(AssertionResultTest_301, GetTestMacroName_ReturnsCorrectMacroName_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:129:22: error: no member named 'getTestMacroName' in 'testing::AssertionResult'
+  129 |     EXPECT_EQ(result.getTestMacroName(), "TEST_MACRO");
+      |               ~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'AssertionResultTest_301_GetSourceInfo_ReturnsCorrectLineInfo_301_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AssertionResultTest_301_GetSourceInfo_ReturnsCorrectLineInfo_301_Test>::CreateTest' requested here
+   47 | TEST_F(AssertionResultTest_301, GetSourceInfo_ReturnsCorrectLineInfo_301) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:47:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:59:1: note: expanded from here
+   59 | AssertionResultTest_301_GetSourceInfo_ReturnsCorrectLineInfo_301_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:47:1: note: default constructor of 'AssertionResultTest_301_GetSourceInfo_ReturnsCorrectLineInfo_301_Test' is implicitly deleted because base class 'AssertionResultTest_301' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp:21:19: note: default constructor of 'AssertionResultTest_301' is implicitly deleted because field 'info' has a deleted default constructor
+   21 |     AssertionInfo info;
+      |                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+10 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_301.dir/build.make:79: generated_build/CMakeFiles/test_301.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_301.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7763: generated_build/CMakeFiles/test_301.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7770: generated_build/CMakeFiles/test_301.dir/rule] 오류 2
+gmake: *** [Makefile:1879: test_301] 오류 2

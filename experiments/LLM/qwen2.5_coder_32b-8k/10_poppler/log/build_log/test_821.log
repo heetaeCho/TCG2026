@@ -1,0 +1,49 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_821.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp:23:19: error: allocation of incomplete type 'PDFDoc'
+   23 |         doc = new PDFDoc();
+      |                   ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp:35:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   35 |         delete doc;
+      |         ^      ~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp:9:7: warning: 'AnnotFreeTextTest_821' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class AnnotFreeTextTest_821 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'PDFRectangle'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp:25:21: note: in instantiation of function template specialization 'std::make_unique<PDFRectangle>' requested here
+   25 |         rect = std::make_unique<PDFRectangle>();
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'PDFRectangle'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<PDFRectangle>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp:25:16: note: in instantiation of member function 'std::unique_ptr<PDFRectangle>::~unique_ptr' requested here
+   25 |         rect = std::make_unique<PDFRectangle>();
+      |                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+2 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_821.dir/build.make:79: generated_build/CMakeFiles/test_821.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_821.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:77994: generated_build/CMakeFiles/test_821.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:78001: generated_build/CMakeFiles/test_821.dir/rule] 오류 2
+gmake: *** [Makefile:28155: test_821] 오류 2

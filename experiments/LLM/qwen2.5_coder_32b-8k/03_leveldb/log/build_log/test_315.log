@@ -1,0 +1,126 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_315.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:5:
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:174:3: error: use of undeclared identifier 'port'
+  174 |   port::Mutex mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:176:3: error: use of undeclared identifier 'port'
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:7:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:23:5: error: only virtual member functions can be marked 'override'
+   23 |     MOCK_METHOD(uint64_t, ApproximateOffsetOf, (const Version* v, const InternalKey& ikey), (override));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:5:1: note: expanded from here
+    5 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:41:24: error: no matching constructor for initialization of 'MockVersionSet'
+   41 |         versions = new MockVersionSet(dbname, options, nullptr, nullptr);
+      |                        ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:19:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   19 | class MockVersionSet : public VersionSet {
+      |       ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:19:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:43:19: error: incompatible pointer types assigning to 'DB *' from 'DBImpl *'
+   43 |         db_impl = new DBImpl(*options, dbname);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:45:40: error: 'versions_' is a private member of 'leveldb::DBImpl'
+   45 |         static_cast<DBImpl*>(db_impl)->versions_ = versions;
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: declared private here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:45:50: error: cannot assign to non-static data member 'versions_' with const-qualified type 'VersionSet *const'
+   45 |         static_cast<DBImpl*>(db_impl)->versions_ = versions;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: non-static data member 'versions_' declared const here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |   ~~~~~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:81:13: error: no matching constructor for initialization of 'Version'
+   81 |     Version mock_version;
+      |             ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: candidate constructor not viable: requires single argument 'vset', but no arguments were provided
+  123 |   explicit Version(VersionSet* vset)
+      |            ^       ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:133:3: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  133 |   Version(const Version&) = delete;
+      |   ^       ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:113:13: error: no matching constructor for initialization of 'Version'
+  113 |     Version mock_version;
+      |             ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: candidate constructor not viable: requires single argument 'vset', but no arguments were provided
+  123 |   explicit Version(VersionSet* vset)
+      |            ^       ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:133:3: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  133 |   Version(const Version&) = delete;
+      |   ^       ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:173:13: error: no matching constructor for initialization of 'Version'
+  173 |     Version mock_version;
+      |             ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: candidate constructor not viable: requires single argument 'vset', but no arguments were provided
+  123 |   explicit Version(VersionSet* vset)
+      |            ^       ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:133:3: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  133 |   Version(const Version&) = delete;
+      |   ^       ~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:710:12: error: no matching function for call to object of type 'std::equal_to<void>'
+  710 |     return Op()(lhs, Unwrap(rhs_));
+      |            ^~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:337:22: note: in instantiation of function template specialization 'testing::internal::ComparisonBase<testing::internal::EqMatcher<leveldb::InternalKey>, leveldb::InternalKey, std::equal_to<void>>::MatchAndExplain<leveldb::InternalKey>' requested here
+  337 |     return P::Get(m).MatchAndExplain(value, listener->stream());
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:375:41: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const leveldb::InternalKey &>::MatchAndExplainImpl<testing::internal::MatcherBase<const leveldb::InternalKey &>::ValuePolicy<testing::internal::EqMatcher<leveldb::InternalKey>>>' requested here
+  375 |     static constexpr VTable kVTable = {&MatchAndExplainImpl<P>,
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:449:15: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const leveldb::InternalKey &>::GetVTable<testing::internal::MatcherBase<const leveldb::InternalKey &>::ValuePolicy<testing::internal::EqMatcher<leveldb::InternalKey>>>' requested here
+  449 |     vtable_ = GetVTable<Policy>();
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:283:5: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const leveldb::InternalKey &>::Init<testing::internal::EqMatcher<leveldb::InternalKey>>' requested here
+  283 |     Init(std::forward<M>(m));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:484:20: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const leveldb::InternalKey &>::MatcherBase<testing::internal::EqMatcher<leveldb::InternalKey>, void>' requested here
+  484 |   Matcher(M&& m) : internal::MatcherBase<T>(std::forward<M>(m)) {}  // NOLINT
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:912:11: note: in instantiation of function template specialization 'testing::Matcher<const leveldb::InternalKey &>::Matcher<testing::internal::EqMatcher<leveldb::InternalKey>, void>' requested here
+  912 |   *this = Eq(value);
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp:91:63: note: in instantiation of member function 'testing::Matcher<const leveldb::InternalKey &>::Matcher' requested here
+   91 |     EXPECT_CALL(*versions, ApproximateOffsetOf(&mock_version, k1)).WillOnce(::testing::Return(100U));
+      |                                                               ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h:506:2: note: candidate template ignored: substitution failure [with _Tp = const leveldb::InternalKey &, _Up = const leveldb::InternalKey &]: invalid operands to binary expression ('const leveldb::InternalKey' and 'const leveldb::InternalKey')
+  506 |         operator()(_Tp&& __t, _Up&& __u) const
+      |         ^
+  507 |         noexcept(noexcept(std::forward<_Tp>(__t) == std::forward<_Up>(__u)))
+  508 |         -> decltype(std::forward<_Tp>(__t) == std::forward<_Up>(__u))
+      |                                            ~~
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_315.dir/build.make:76: generated_build/CMakeFiles/test_315.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_315.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4589: generated_build/CMakeFiles/test_315.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4596: generated_build/CMakeFiles/test_315.dir/rule] 오류 2
+gmake: *** [Makefile:1713: test_315] 오류 2

@@ -1,0 +1,46 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_772.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_772.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_772.cpp:103:5: error: cannot use 'try' with exceptions disabled
+  103 |     EXPECT_NO_THROW(annotAppearance->setBorderColor(std::move(color)));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_772.cpp:113:5: error: cannot use 'try' with exceptions disabled
+  113 |     EXPECT_NO_THROW(annotAppearance->setBackColor(std::move(color)));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_772.cpp:7:7: warning: 'AnnotAppearanceCharacsTest_772' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class AnnotAppearanceCharacsTest_772 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_772.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Dict'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_772.cpp:19:21: note: in instantiation of function template specialization 'std::make_unique<Dict>' requested here
+   19 |         dict = std::make_unique<Dict>();
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_772.dir/build.make:79: generated_build/CMakeFiles/test_772.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_772.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:76394: generated_build/CMakeFiles/test_772.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:76401: generated_build/CMakeFiles/test_772.dir/rule] 오류 2
+gmake: *** [Makefile:27505: test_772] 오류 2

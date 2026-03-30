@@ -1,0 +1,42 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_747.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_747.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_747.cpp:53:25: error: 'key_' is a private member of 'Exiv2::Exifdatum'
+   53 |     exifdatumWithoutKey.key_.reset(); // Manually set key to null
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:203:28: note: declared private here
+  203 |   std::unique_ptr<ExifKey> key_;  //!< Key
+      |                            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_747.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::Value'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_747.cpp:23:22: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Value>' requested here
+   23 |         value = std::make_unique<Exiv2::Value>();
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_747.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_747.cpp:23:17: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::~unique_ptr' requested here
+   23 |         value = std::make_unique<Exiv2::Value>();
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_747.dir/build.make:79: generated_build/CMakeFiles/test_747.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_747.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:19849: generated_build/CMakeFiles/test_747.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:19856: generated_build/CMakeFiles/test_747.dir/rule] 오류 2
+gmake: *** [Makefile:5184: test_747] 오류 2

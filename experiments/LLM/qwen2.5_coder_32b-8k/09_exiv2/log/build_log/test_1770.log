@@ -1,0 +1,56 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1770.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp:21:27: error: field type 'CiffComponent' is an abstract class
+   21 |             CiffComponent component{1, 1};
+      |                           ^
+/home/user/TCG2026/./TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/TCG2026/./TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/TCG2026/./TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Exiv2::Internal::CiffComponent'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp:29:38: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::CiffComponent, int, int>' requested here
+   29 |             auto newComponent = std::make_unique<CiffComponent>(2, 2);
+      |                                      ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_1770_AddComponent_ReturnsUniquePtrReference_1770_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp:27:9: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_1770_AddComponent_ReturnsUniquePtrReference_1770_Test>::CreateTest' requested here
+   27 |         TEST_F(CiffComponentTest_1770, AddComponent_ReturnsUniquePtrReference_1770) {
+      |         ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'Exiv2::Internal::CiffComponentTest_1770_AddNullComponent_ReturnsEmptyUniquePtrReference_1770_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp:39:9: note: in instantiation of member function 'testing::internal::TestFactoryImpl<Exiv2::Internal::CiffComponentTest_1770_AddNullComponent_ReturnsEmptyUniquePtrReference_1770_Test>::CreateTest' requested here
+   39 |         TEST_F(CiffComponentTest_1770, AddNullComponent_ReturnsEmptyUniquePtrReference_1770) {
+      |         ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1770.dir/build.make:79: generated_build/CMakeFiles/test_1770.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1770.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:10533: generated_build/CMakeFiles/test_1770.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:10540: generated_build/CMakeFiles/test_1770.dir/rule] 오류 2
+gmake: *** [Makefile:1622: test_1770] 오류 2

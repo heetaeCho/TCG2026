@@ -1,0 +1,57 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_505.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:47:5: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   47 |     ParseState* parse_state;
+      |     ^~~~~~~~~~
+      |     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:21:27: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   21 |         parse_state = new ParseState(ParseFlags(0), absl::string_view(""), status);
+      |                           ^~~~~~~~~~
+      |                           ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:21:38: error: use of undeclared identifier 'ParseFlags'; did you mean 're2::Regexp::ParseFlags'?
+   21 |         parse_state = new ParseState(ParseFlags(0), absl::string_view(""), status);
+      |                                      ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 're2::Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:39:45: error: use of undeclared identifier 'ParseFlags'; did you mean 're2::Regexp::ParseFlags'?
+   39 |         return new Regexp(kRegexpOpLiteral, ParseFlags(0));
+      |                                             ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 're2::Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:39:27: error: use of undeclared identifier 'kRegexpOpLiteral'
+   39 |         return new Regexp(kRegexpOpLiteral, ParseFlags(0));
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:59:16: error: member reference base type 'ParseStatus' is not a structure or union
+   59 |     parse_state->PushRegexp(re);
+      |     ~~~~~~~~~~~^ ~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:65:33: error: member reference base type 'ParseStatus' is not a structure or union
+   65 |     Regexp* result = parse_state->DoFinish();
+      |                      ~~~~~~~~~~~^ ~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:85:9: error: 'down_' is a private member of 're2::Regexp'
+   85 |     re->down_ = CreateRegexpMock(); // Artificially set to simulate missing parenthesis
+      |         ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:598:11: note: declared private here
+  598 |   Regexp* down_;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:87:16: error: member reference base type 'ParseStatus' is not a structure or union
+   87 |     parse_state->PushRegexp(re);
+      |     ~~~~~~~~~~~^ ~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:93:33: error: member reference base type 'ParseStatus' is not a structure or union
+   93 |     Regexp* result = parse_state->DoFinish();
+      |                      ~~~~~~~~~~~^ ~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp:113:33: error: member reference base type 'ParseStatus' is not a structure or union
+  113 |     Regexp* result = parse_state->DoFinish();
+      |                      ~~~~~~~~~~~^ ~~~~~~~~
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_505.dir/build.make:79: generated_build/CMakeFiles/test_505.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_505.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18889: generated_build/CMakeFiles/test_505.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18896: generated_build/CMakeFiles/test_505.dir/rule] 오류 2
+gmake: *** [Makefile:7056: test_505] 오류 2

@@ -1,0 +1,91 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from ManifestParserTest_168
+[ RUN      ] ManifestParserTest_168.LoadValidManifestFile_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:51: Failure
+Value of: parser_.ParseTest(input, &err_)
+  Actual: false
+Expected: true
+[  FAILED  ] ManifestParserTest_168.LoadValidManifestFile_168 (0 ms)
+[ RUN      ] ManifestParserTest_168.LoadInvalidManifestFile_MissingRule_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:65: Failure
+Expected equality of these values:
+  err_
+    Which is: "input:1: unknown build rule 'cc'\nbuild foo.o: cc foo.cc\n             ^ near here"
+  "missing rule for build statement"
+With diff:
+@@ -1,3 +1,1 @@
+-input:1: unknown build rule 'cc'
+-build foo.o: cc foo.cc
+-             ^ near here
++missing rule for build statement
+
+[  FAILED  ] ManifestParserTest_168.LoadInvalidManifestFile_MissingRule_168 (0 ms)
+[ RUN      ] ManifestParserTest_168.LoadEmptyManifestFile_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:77: Failure
+Value of: parser_.ParseTest(input, &err_)
+  Actual: true
+Expected: false
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:79: Failure
+Expected equality of these values:
+  err_
+    Which is: ""
+  "expected build command or pool definition"
+[  FAILED  ] ManifestParserTest_168.LoadEmptyManifestFile_168 (0 ms)
+[ RUN      ] ManifestParserTest_168.LoadLargeManifestFile_LargeInput_168
+[       OK ] ManifestParserTest_168.LoadLargeManifestFile_LargeInput_168 (10 ms)
+[ RUN      ] ManifestParserTest_168.LoadManifestFileWithSpecialCharacters_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:101: Failure
+Value of: parser_.ParseTest(input, &err_)
+  Actual: false
+Expected: true
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithSpecialCharacters_168 (0 ms)
+[ RUN      ] ManifestParserTest_168.LoadManifestFileWithMultipleRules_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:117: Failure
+Value of: parser_.ParseTest(input, &err_)
+  Actual: false
+Expected: true
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithMultipleRules_168 (0 ms)
+[ RUN      ] ManifestParserTest_168.LoadManifestFileWithMultipleEdges_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:135: Failure
+Value of: parser_.ParseTest(input, &err_)
+  Actual: false
+Expected: true
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithMultipleEdges_168 (0 ms)
+[ RUN      ] ManifestParserTest_168.LoadManifestFileWithDefaultTarget_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:153: Failure
+Value of: parser_.ParseTest(input, &err_)
+  Actual: false
+Expected: true
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithDefaultTarget_168 (0 ms)
+[ RUN      ] ManifestParserTest_168.LoadManifestFileWithInvalidDefaultTarget_168
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_168.cpp:171: Failure
+Expected equality of these values:
+  err_
+    Which is: "input:3: unexpected EOF\ndefault bar.o\n             ^ near here"
+  "'bar.o' doesn't match any rule or existing file"
+With diff:
+@@ -1,3 +1,1 @@
+-input:3: unexpected EOF
+-default bar.o
+-             ^ near here
++'bar.o' doesn't match any rule or existing file
+
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithInvalidDefaultTarget_168 (0 ms)
+[----------] 9 tests from ManifestParserTest_168 (10 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (10 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 8 tests, listed below:
+[  FAILED  ] ManifestParserTest_168.LoadValidManifestFile_168
+[  FAILED  ] ManifestParserTest_168.LoadInvalidManifestFile_MissingRule_168
+[  FAILED  ] ManifestParserTest_168.LoadEmptyManifestFile_168
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithSpecialCharacters_168
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithMultipleRules_168
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithMultipleEdges_168
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithDefaultTarget_168
+[  FAILED  ] ManifestParserTest_168.LoadManifestFileWithInvalidDefaultTarget_168
+
+ 8 FAILED TESTS

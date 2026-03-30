@@ -1,0 +1,40 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_6.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_6.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_6.cpp:159:29: error: no viable conversion from 'char' to 'StringRef'
+  159 |     EXPECT_DEATH({StringRef substr = str[str.size() + 1];}, "");
+      |                             ^        ~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest-death-test.h:189:17: note: expanded from macro 'EXPECT_DEATH'
+  189 |     EXPECT_EXIT(statement, ::testing::internal::ExitedUnsuccessfully, matcher)
+      |                 ^~~~~~~~~
+/usr/include/gtest/gtest-death-test.h:178:23: note: expanded from macro 'EXPECT_EXIT'
+  178 |     GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-death-test-internal.h:235:47: note: expanded from macro 'GTEST_DEATH_TEST_'
+  235 |           GTEST_EXECUTE_DEATH_TEST_STATEMENT_(statement, gtest_dt);            \
+      |                                               ^~~~~~~~~
+/usr/include/gtest/internal/gtest-death-test-internal.h:192:52: note: expanded from macro 'GTEST_EXECUTE_DEATH_TEST_STATEMENT_'
+  192 |     GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'char' to 'const StringRef &' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'char' to 'StringRef &&' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:40:9: note: candidate constructor not viable: no known conversion from 'char' to 'const char *' for 1st argument
+   40 |         StringRef( char const* rawChars CATCH_ATTR_LIFETIMEBOUND ) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:48:9: note: candidate constructor not viable: no known conversion from 'char' to 'const std::string &' (aka 'const basic_string<char> &') for 1st argument
+   48 |         StringRef(
+      |         ^
+   49 |             std::string const& stdString CATCH_ATTR_LIFETIMEBOUND ) noexcept
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_6.dir/build.make:79: generated_build/CMakeFiles/test_6.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_6.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18257: generated_build/CMakeFiles/test_6.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18264: generated_build/CMakeFiles/test_6.dir/rule] 오류 2
+gmake: *** [Makefile:6013: test_6] 오류 2

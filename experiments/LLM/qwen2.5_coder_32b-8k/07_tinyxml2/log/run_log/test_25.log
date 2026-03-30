@@ -1,0 +1,40 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from MemPoolTTest_25
+[ RUN      ] MemPoolTTest_25.UntrackedInitiallyZero_25
+[       OK ] MemPoolTTest_25.UntrackedInitiallyZero_25 (0 ms)
+[ RUN      ] MemPoolTTest_25.AllocAndFreeDoesNotAffectUntracked_25
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_25.cpp:35: Failure
+Expected equality of these values:
+  memPool.Untracked()
+    Which is: 1
+  0
+[  FAILED  ] MemPoolTTest_25.AllocAndFreeDoesNotAffectUntracked_25 (0 ms)
+[ RUN      ] MemPoolTTest_25.SetTrackedIncreasesUntrackedCount_25
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_25.cpp:47: Failure
+Expected equality of these values:
+  memPool.Untracked()
+    Which is: 0
+  1
+[  FAILED  ] MemPoolTTest_25.SetTrackedIncreasesUntrackedCount_25 (0 ms)
+[ RUN      ] MemPoolTTest_25.ClearResetsAllCounts_25
+[       OK ] MemPoolTTest_25.ClearResetsAllCounts_25 (0 ms)
+[ RUN      ] MemPoolTTest_25.AllocIncreasesCurrentAllocsCount_25
+[       OK ] MemPoolTTest_25.AllocIncreasesCurrentAllocsCount_25 (0 ms)
+[ RUN      ] MemPoolTTest_25.FreeDecreasesCurrentAllocsCount_25
+[       OK ] MemPoolTTest_25.FreeDecreasesCurrentAllocsCount_25 (0 ms)
+[ RUN      ] MemPoolTTest_25.AllocateAndFreeMultipleItems_25
+[       OK ] MemPoolTTest_25.AllocateAndFreeMultipleItems_25 (0 ms)
+[ RUN      ] MemPoolTTest_25.AllocReturnsNonNullPointer_25
+[       OK ] MemPoolTTest_25.AllocReturnsNonNullPointer_25 (0 ms)
+[----------] 8 tests from MemPoolTTest_25 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] MemPoolTTest_25.AllocAndFreeDoesNotAffectUntracked_25
+[  FAILED  ] MemPoolTTest_25.SetTrackedIncreasesUntrackedCount_25
+
+ 2 FAILED TESTS

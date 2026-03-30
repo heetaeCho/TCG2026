@@ -1,0 +1,51 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1646.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:21:34: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   21 |     MockTiffSubIfd(uint16_t tag, IfdId group, IfdId newGroup) : TiffSubIfd(tag, group, newGroup) {}
+      |                                  ^~~~~
+      |                                  Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:21:47: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   21 |     MockTiffSubIfd(uint16_t tag, IfdId group, IfdId newGroup) : TiffSubIfd(tag, group, newGroup) {}
+      |                                               ^~~~~
+      |                                               Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:37:48: error: use of undeclared identifier 'ifdExif'
+   37 |     TiffCopierTest_1646() : mockSubIfd(0x0025, ifdExif, ifdExif) {}
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:37:57: error: use of undeclared identifier 'ifdExif'
+   37 |     TiffCopierTest_1646() : mockSubIfd(0x0025, ifdExif, ifdExif) {}
+      |                                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:45:5: error: no member named 'gmock_doAccept' in 'testing::StrictMock<MockTiffSubIfd>'
+   45 |     EXPECT_CALL(mockSubIfd, doAccept(::testing::_))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:120:1: note: expanded from here
+  120 | gmock_doAccept
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:47:53: error: no member named 'copyObject' in 'Exiv2::Internal::TiffVisitor'
+   47 |         .WillOnce([](TiffVisitor& visitor){ visitor.copyObject(&mockSubIfd); });
+      |                                             ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:47:65: error: 'this' cannot be implicitly captured in this context
+   47 |         .WillOnce([](TiffVisitor& visitor){ visitor.copyObject(&mockSubIfd); });
+      |                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp:47:20: note: explicitly capture 'this'
+   47 |         .WillOnce([](TiffVisitor& visitor){ visitor.copyObject(&mockSubIfd); });
+      |                    ^
+      |                    this
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1646.dir/build.make:79: generated_build/CMakeFiles/test_1646.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1646.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:56637: generated_build/CMakeFiles/test_1646.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:56644: generated_build/CMakeFiles/test_1646.dir/rule] 오류 2
+gmake: *** [Makefile:19250: test_1646] 오류 2

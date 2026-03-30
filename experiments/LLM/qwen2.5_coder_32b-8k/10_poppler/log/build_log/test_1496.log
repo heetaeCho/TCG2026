@@ -1,0 +1,226 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1496.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:17:35: error: virtual function 'getKind' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<const StreamKind> ()>::Result' (aka 'const StreamKind')) than the function it overrides (which has return type 'StreamKind')
+   17 |     MOCK_METHOD(const StreamKind, getKind, (), (const override));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: overridden virtual function is here
+  129 |     virtual StreamKind getKind() const = 0;
+      |             ~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:53:21: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   53 |     std::unique_ptr<BaseStreamStream> baseStreamStream;
+      |                     ^~~~~~~~~~~~~~~~
+      |                     BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:53:21: error: use of undeclared identifier 'BaseStreamStream'
+   53 |     std::unique_ptr<BaseStreamStream> baseStreamStream;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:61:45: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   61 |         baseStreamStream = std::make_unique<BaseStreamStream>(std::move(mockStream));
+      |                                             ^~~~~~~~~~~~~~~~
+      |                                             BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:61:45: error: use of undeclared identifier 'BaseStreamStream'
+   61 |         baseStreamStream = std::make_unique<BaseStreamStream>(std::move(mockStream));
+      |                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:71:69: error: no member named 'other' in 'StreamKind'
+   71 |     EXPECT_CALL(*mockStream, getKind()).WillOnce(Return(StreamKind::other));
+      |                                                         ~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:73:56: error: no member named 'other' in 'StreamKind'
+   73 |     EXPECT_EQ(baseStreamStream->getKind(), StreamKind::other);
+      |                                            ~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:185:30: error: no matching constructor for initialization of 'Dict'
+  185 |     Dict* expectedDict = new Dict();
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:13:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<testing::StrictMock<MockStream>>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:59:22: note: in instantiation of member function 'std::unique_ptr<testing::StrictMock<MockStream>>::~unique_ptr' requested here
+   59 |         mockStream = std::make_unique<StrictMock<MockStream>>();
+      |                      ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:682:18: error: no matching function for call to 'ImplicitCast_'
+  682 |           value_(ImplicitCast_<Result>(value_before_cast_)) {}
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-actions.h:662:26: note: in instantiation of member function 'testing::internal::ReturnAction<MockStream *>::Impl<MockStream *, BaseStream *()>::Impl' requested here
+  662 |     return Action<F>(new Impl<R, F>(value_));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:163:56: note: in instantiation of function template specialization 'testing::internal::ReturnAction<MockStream *>::operator Action<BaseStream *()>' requested here
+  163 |     EXPECT_CALL(*mockStream, getBaseStream()).WillOnce(Return(mockBaseStream));
+      |                                                        ^
+/usr/include/gtest/internal/gtest-port.h:1070:11: note: candidate function template not viable: no known conversion from 'MockStream *' to 'Result' (aka 'BaseStream *') for 1st argument
+ 1070 | inline To ImplicitCast_(To x) { return x; }
+      |           ^             ~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_GetKind_ReturnsSameAsBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:69:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_GetKind_ReturnsSameAsBaseStream_1496_Test>::CreateTest' requested here
+   69 | TEST_F(BaseStreamStreamTest_1496, GetKind_ReturnsSameAsBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_Rewind_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:79:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_Rewind_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+   79 | TEST_F(BaseStreamStreamTest_1496, Rewind_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_GetChar_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:89:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_GetChar_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+   89 | TEST_F(BaseStreamStreamTest_1496, GetChar_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_LookChar_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:99:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_LookChar_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+   99 | TEST_F(BaseStreamStreamTest_1496, LookChar_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_IsBinary_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:109:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_IsBinary_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+  109 | TEST_F(BaseStreamStreamTest_1496, IsBinary_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_GetUnfilteredChar_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:119:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_GetUnfilteredChar_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+  119 | TEST_F(BaseStreamStreamTest_1496, GetUnfilteredChar_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_UnfilteredRewind_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:129:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_UnfilteredRewind_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+  129 | TEST_F(BaseStreamStreamTest_1496, UnfilteredRewind_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_GetPos_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:139:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_GetPos_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+  139 | TEST_F(BaseStreamStreamTest_1496, GetPos_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_SetPos_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:149:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_SetPos_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+  149 | TEST_F(BaseStreamStreamTest_1496, SetPos_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1496_GetBaseStream_DelegatesToBaseStream_1496_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp:159:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1496_GetBaseStream_DelegatesToBaseStream_1496_Test>::CreateTest' requested here
+  159 | TEST_F(BaseStreamStreamTest_1496, GetBaseStream_DelegatesToBaseStream_1496) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1496.dir/build.make:79: generated_build/CMakeFiles/test_1496.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1496.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:17386: generated_build/CMakeFiles/test_1496.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:17393: generated_build/CMakeFiles/test_1496.dir/rule] 오류 2
+gmake: *** [Makefile:3533: test_1496] 오류 2

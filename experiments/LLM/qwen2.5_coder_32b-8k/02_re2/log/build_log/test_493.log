@@ -1,0 +1,70 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_493.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:19:5: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   19 |     ParseState parse_state_{NoParseFlags, "", &status};
+      |     ^~~~~~~~~~
+      |     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:19:29: error: use of undeclared identifier 'NoParseFlags'; did you mean 'Regexp::NoParseFlags'?
+   19 |     ParseState parse_state_{NoParseFlags, "", &status};
+      |                             ^~~~~~~~~~~~
+      |                             Regexp::NoParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:282:5: note: 'Regexp::NoParseFlags' declared here
+  282 |     NoParseFlags  = 0,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:19:28: error: excess elements in scalar initializer
+   19 |     ParseState parse_state_{NoParseFlags, "", &status};
+      |                            ^            ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:27:27: error: use of undeclared identifier 'DotNL'; did you mean 'Regexp::DotNL'?
+   27 |     parse_state_.flags_ = DotNL;
+      |                           ^~~~~
+      |                           Regexp::DotNL
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:287:5: note: 'Regexp::DotNL' declared here
+  287 |     DotNL         = 1<<3,   // Allow . to match newline.
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:37:27: error: use of undeclared identifier 'NeverNL'; did you mean 'Regexp::NeverNL'?
+   37 |     parse_state_.flags_ = NeverNL | DotNL;
+      |                           ^~~~~~~
+      |                           Regexp::NeverNL
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:310:5: note: 'Regexp::NeverNL' declared here
+  310 |     NeverNL       = 1<<11,  // Never match NL, even if the regexp mentions
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:37:37: error: use of undeclared identifier 'DotNL'; did you mean 'Regexp::DotNL'?
+   37 |     parse_state_.flags_ = NeverNL | DotNL;
+      |                                     ^~~~~
+      |                                     Regexp::DotNL
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:287:5: note: 'Regexp::DotNL' declared here
+  287 |     DotNL         = 1<<3,   // Allow . to match newline.
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:53:19: error: 'ccb_' is a private member of 're2::Regexp'
+   53 |     ASSERT_NE(re->ccb_, nullptr);
+      |                   ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:619:25: note: declared private here
+  619 |       CharClassBuilder* ccb_;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:55:22: error: 'ccb_' is a private member of 're2::Regexp'
+   55 |     EXPECT_FALSE(re->ccb_->Contains('\n'));
+      |                      ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:619:25: note: declared private here
+  619 |       CharClassBuilder* ccb_;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:57:21: error: 'ccb_' is a private member of 're2::Regexp'
+   57 |     EXPECT_TRUE(re->ccb_->Contains('a'));  // Assuming 'a' is within the range (0, '\n'-1) and ('\n'+1, rune_max_)
+      |                     ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:619:25: note: declared private here
+  619 |       CharClassBuilder* ccb_;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp:65:27: error: use of undeclared identifier 'DotNL'; did you mean 'Regexp::DotNL'?
+   65 |     parse_state_.flags_ = DotNL;
+      |                           ^~~~~
+      |                           Regexp::DotNL
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:287:5: note: 'Regexp::DotNL' declared here
+  287 |     DotNL         = 1<<3,   // Allow . to match newline.
+      |     ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_493.dir/build.make:79: generated_build/CMakeFiles/test_493.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_493.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8937: generated_build/CMakeFiles/test_493.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8944: generated_build/CMakeFiles/test_493.dir/rule] 오류 2
+gmake: *** [Makefile:3013: test_493] 오류 2

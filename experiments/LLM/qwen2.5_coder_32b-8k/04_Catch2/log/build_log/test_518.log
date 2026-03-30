@@ -1,0 +1,204 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_518.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:23:5: error: unknown type name 'MockEventListener'; did you mean 'IEventListener'?
+   23 |     MockEventListener* mock_reporter;
+      |     ^~~~~~~~~~~~~~~~~
+      |     IEventListener
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: 'IEventListener' declared here
+   31 |     class IEventListener;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:33:47: error: unknown type name 'MockEventListener'; did you mean 'IEventListener'?
+   33 |         mock_reporter = new testing::NiceMock<MockEventListener>();
+      |                                               ^~~~~~~~~~~~~~~~~
+      |                                               IEventListener
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: 'IEventListener' declared here
+   31 |     class IEventListener;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:3:
+In file included from /usr/include/gmock/gmock.h:65:
+/usr/include/gmock/gmock-nice-strict.h:138:14: error: base class has incomplete type
+  138 |       public MockClass {
+      |       ~~~~~~~^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:33:29: note: in instantiation of template class 'testing::NiceMock<Catch::IEventListener>' requested here
+   33 |         mock_reporter = new testing::NiceMock<MockEventListener>();
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:47:9: warning: deleting pointer to incomplete type 'IEventListener' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   47 |         delete mock_reporter;
+      |         ^      ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:57:34: error: no viable conversion from 'const char[11]' to 'SourceLineInfo'
+   57 |     AssertionInfo info{"ASSERT", "expression", ResultDisposition::Normal};
+      |                                  ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[11]' to 'const SourceLineInfo &' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[11]' to 'SourceLineInfo &&' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:57:48: error: no viable conversion from 'Catch::ResultDisposition::Flags' to 'StringRef'
+   57 |     AssertionInfo info{"ASSERT", "expression", ResultDisposition::Normal};
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const StringRef &' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'StringRef &&' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:40:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const char *' for 1st argument
+   40 |         StringRef( char const* rawChars CATCH_ATTR_LIFETIMEBOUND ) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:48:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const std::string &' (aka 'const basic_string<char> &') for 1st argument
+   48 |         StringRef(
+      |         ^
+   49 |             std::string const& stdString CATCH_ATTR_LIFETIMEBOUND ) noexcept
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:65:5: error: member access into incomplete type 'IEventListener'
+   65 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:65:48: error: use of undeclared identifier '_'
+   65 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:77:34: error: no viable conversion from 'const char[11]' to 'SourceLineInfo'
+   77 |     AssertionInfo info{"ASSERT", "expression", ResultDisposition::Normal};
+      |                                  ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[11]' to 'const SourceLineInfo &' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[11]' to 'SourceLineInfo &&' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:77:48: error: no viable conversion from 'Catch::ResultDisposition::Flags' to 'StringRef'
+   77 |     AssertionInfo info{"ASSERT", "expression", ResultDisposition::Normal};
+      |                                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const StringRef &' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'StringRef &&' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:40:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const char *' for 1st argument
+   40 |         StringRef( char const* rawChars CATCH_ATTR_LIFETIMEBOUND ) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:48:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const std::string &' (aka 'const basic_string<char> &') for 1st argument
+   48 |         StringRef(
+      |         ^
+   49 |             std::string const& stdString CATCH_ATTR_LIFETIMEBOUND ) noexcept
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:85:5: error: member access into incomplete type 'IEventListener'
+   85 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:85:48: error: use of undeclared identifier '_'
+   85 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:97:28: error: no viable conversion from 'const char[11]' to 'SourceLineInfo'
+   97 |     AssertionInfo info{"", "expression", ResultDisposition::Normal};
+      |                            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[11]' to 'const SourceLineInfo &' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[11]' to 'SourceLineInfo &&' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:97:42: error: no viable conversion from 'Catch::ResultDisposition::Flags' to 'StringRef'
+   97 |     AssertionInfo info{"", "expression", ResultDisposition::Normal};
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const StringRef &' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'StringRef &&' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:40:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const char *' for 1st argument
+   40 |         StringRef( char const* rawChars CATCH_ATTR_LIFETIMEBOUND ) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:48:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const std::string &' (aka 'const basic_string<char> &') for 1st argument
+   48 |         StringRef(
+      |         ^
+   49 |             std::string const& stdString CATCH_ATTR_LIFETIMEBOUND ) noexcept
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:105:5: error: member access into incomplete type 'IEventListener'
+  105 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:105:48: error: use of undeclared identifier '_'
+  105 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:117:34: error: no viable conversion from 'const char[1]' to 'SourceLineInfo'
+  117 |     AssertionInfo info{"ASSERT", "", ResultDisposition::Normal};
+      |                                  ^~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[1]' to 'const SourceLineInfo &' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[1]' to 'SourceLineInfo &&' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:117:38: error: no viable conversion from 'Catch::ResultDisposition::Flags' to 'StringRef'
+  117 |     AssertionInfo info{"ASSERT", "", ResultDisposition::Normal};
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const StringRef &' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'StringRef &&' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:40:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const char *' for 1st argument
+   40 |         StringRef( char const* rawChars CATCH_ATTR_LIFETIMEBOUND ) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:48:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultDisposition::Flags' to 'const std::string &' (aka 'const basic_string<char> &') for 1st argument
+   48 |         StringRef(
+      |         ^
+   49 |             std::string const& stdString CATCH_ATTR_LIFETIMEBOUND ) noexcept
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:125:5: error: member access into incomplete type 'IEventListener'
+  125 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp:125:48: error: use of undeclared identifier '_'
+  125 |     EXPECT_CALL(*mock_reporter, assertionEnded(_)).Times(1);
+      |                                                ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_518.dir/build.make:79: generated_build/CMakeFiles/test_518.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_518.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8225: generated_build/CMakeFiles/test_518.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8232: generated_build/CMakeFiles/test_518.dir/rule] 오류 2
+gmake: *** [Makefile:2061: test_518] 오류 2

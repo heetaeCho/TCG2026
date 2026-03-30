@@ -1,0 +1,23 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_311.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_311.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_311.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:174:3: error: use of undeclared identifier 'port'
+  174 |   port::Mutex mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:176:3: error: use of undeclared identifier 'port'
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_311.cpp:29:58: error: cannot initialize a parameter of type 'DB **' with an rvalue of type 'DBImpl **'
+   29 |         Status status = DB::Open(options, "/tmp/testdb", &db_);
+      |                                                          ^~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:54:27: note: passing argument to parameter 'dbptr' here
+   54 |                      DB** dbptr);
+      |                           ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_311.dir/build.make:76: generated_build/CMakeFiles/test_311.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_311.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:9055: generated_build/CMakeFiles/test_311.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:9062: generated_build/CMakeFiles/test_311.dir/rule] 오류 2
+gmake: *** [Makefile:3715: test_311] 오류 2

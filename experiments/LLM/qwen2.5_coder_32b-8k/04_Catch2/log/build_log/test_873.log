@@ -1,0 +1,26 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_873.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_873.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_873.cpp:29:24: error: no matching constructor for initialization of 'ReporterConfig'
+   29 |         ReporterConfig config; // Assuming a default constructor for ReporterConfig
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_873.dir/build.make:79: generated_build/CMakeFiles/test_873.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_873.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:29576: generated_build/CMakeFiles/test_873.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:29583: generated_build/CMakeFiles/test_873.dir/rule] 오류 2
+gmake: *** [Makefile:10472: test_873] 오류 2

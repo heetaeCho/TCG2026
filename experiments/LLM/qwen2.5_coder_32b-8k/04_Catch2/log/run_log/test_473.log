@@ -1,0 +1,50 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from XmlWriterTest_473
+[ RUN      ] XmlWriterTest_473.StartElementWritesCorrectTag_473
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_473.cpp:37: Failure
+Expected equality of these values:
+  oss.str()
+    Which is: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<test"
+  "<test"
+With diff:
+@@ -1,2 @@
+-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+ <test
+
+[  FAILED  ] XmlWriterTest_473.StartElementWritesCorrectTag_473 (0 ms)
+[ RUN      ] XmlWriterTest_473.StartElementWithIndentationWritesIndentedTag_473
+[       OK ] XmlWriterTest_473.StartElementWithIndentationWritesIndentedTag_473 (0 ms)
+[ RUN      ] XmlWriterTest_473.StartElementDoesNotClosePreviousTagIfNotNeeded_473
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_473.cpp:63: Failure
+Expected equality of these values:
+  oss.str()
+    Which is: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root/>><child"
+  "<root/><child"
+With diff:
+@@ -1,2 +1,1 @@
+-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+-<root/>><child
++<root/><child
+
+[  FAILED  ] XmlWriterTest_473.StartElementDoesNotClosePreviousTagIfNotNeeded_473 (0 ms)
+[ RUN      ] XmlWriterTest_473.StartElementClosesPreviousTagIfNecessary_473
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_473.cpp:77: Failure
+Value of: oss.str()
+Expected: has substring "</child>"
+  Actual: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root>  <child/>"
+[  FAILED  ] XmlWriterTest_473.StartElementClosesPreviousTagIfNecessary_473 (0 ms)
+[ RUN      ] XmlWriterTest_473.StartElementWithEmptyNameDoesNotThrow_473
+[       OK ] XmlWriterTest_473.StartElementWithEmptyNameDoesNotThrow_473 (0 ms)
+[----------] 5 tests from XmlWriterTest_473 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] XmlWriterTest_473.StartElementWritesCorrectTag_473
+[  FAILED  ] XmlWriterTest_473.StartElementDoesNotClosePreviousTagIfNotNeeded_473
+[  FAILED  ] XmlWriterTest_473.StartElementClosesPreviousTagIfNecessary_473
+
+ 3 FAILED TESTS

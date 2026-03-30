@@ -1,0 +1,648 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_786.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:79:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   79 | TEST_F(MultiReporterTest_786, AddListener_NormalOperation_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:5:1: note: expanded from here
+    5 | MultiReporterTest_786_AddListener_NormalOperation_786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:79:1: note: default constructor of 'MultiReporterTest_786_AddListener_NormalOperation_786_Test' is implicitly deleted because base class 'MultiReporterTest_786' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:71:19: note: default constructor of 'MultiReporterTest_786' is implicitly deleted because field 'multi_reporter' has no default constructor
+   71 |     MultiReporter multi_reporter;
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:79:1: note: replace 'default' with 'delete'
+   79 | TEST_F(MultiReporterTest_786, AddListener_NormalOperation_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:81:53: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+   81 |     EXPECT_CALL(*mock_listener, noMatchingTestCases(_)).Times(0);
+      |                                                     ^
+      |                                                     testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:83:55: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+   83 |     EXPECT_CALL(*mock_listener, fatalErrorEncountered(_)).Times(0);
+      |                                                       ^
+      |                                                       testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:87:32: error: no viable conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+   87 |     multi_reporter.addListener(CATCH_MOVE(mock_listener));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:39:47: note: passing argument to parameter 'listener' here
+   39 |         void addListener( IEventListenerPtr&& listener );
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:97:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   97 | TEST_F(MultiReporterTest_786, AddListener_MultipleListeners_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:49:1: note: expanded from here
+   49 | MultiReporterTest_786_AddListener_MultipleListeners_786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:97:1: note: default constructor of 'MultiReporterTest_786_AddListener_MultipleListeners_786_Test' is implicitly deleted because base class 'MultiReporterTest_786' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:71:19: note: default constructor of 'MultiReporterTest_786' is implicitly deleted because field 'multi_reporter' has no default constructor
+   71 |     MultiReporter multi_reporter;
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:97:1: note: replace 'default' with 'delete'
+   97 | TEST_F(MultiReporterTest_786, AddListener_MultipleListeners_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:103:53: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  103 |     EXPECT_CALL(*mock_listener, noMatchingTestCases(_)).Times(0);
+      |                                                     ^
+      |                                                     testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:105:54: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  105 |     EXPECT_CALL(*mock_listener2, noMatchingTestCases(_)).Times(0);
+      |                                                      ^
+      |                                                      testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:109:32: error: no viable conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  109 |     multi_reporter.addListener(CATCH_MOVE(mock_listener));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:39:47: note: passing argument to parameter 'listener' here
+   39 |         void addListener( IEventListenerPtr&& listener );
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:111:32: error: no viable conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  111 |     multi_reporter.addListener(CATCH_MOVE(mock_listener2));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:39:47: note: passing argument to parameter 'listener' here
+   39 |         void addListener( IEventListenerPtr&& listener );
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:121:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  121 | TEST_F(MultiReporterTest_786, AddListener_ExceptionHandling_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:93:1: note: expanded from here
+   93 | MultiReporterTest_786_AddListener_ExceptionHandling_786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:121:1: note: default constructor of 'MultiReporterTest_786_AddListener_ExceptionHandling_786_Test' is implicitly deleted because base class 'MultiReporterTest_786' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:71:19: note: default constructor of 'MultiReporterTest_786' is implicitly deleted because field 'multi_reporter' has no default constructor
+   71 |     MultiReporter multi_reporter;
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:121:1: note: replace 'default' with 'delete'
+  121 | TEST_F(MultiReporterTest_786, AddListener_ExceptionHandling_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:127:48: error: no viable conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  127 |     EXPECT_NO_THROW(multi_reporter.addListener(CATCH_MOVE(mock_listener)));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:39:47: note: passing argument to parameter 'listener' here
+   39 |         void addListener( IEventListenerPtr&& listener );
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:133:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  133 | TEST_F(MultiReporterTest_786, AddReporter_NormalOperation_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:42:1: note: expanded from here
+   42 | MultiReporterTest_786_AddReporter_NormalOperation_786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:133:1: note: default constructor of 'MultiReporterTest_786_AddReporter_NormalOperation_786_Test' is implicitly deleted because base class 'MultiReporterTest_786' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:71:19: note: default constructor of 'MultiReporterTest_786' is implicitly deleted because field 'multi_reporter' has no default constructor
+   71 |     MultiReporter multi_reporter;
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:133:1: note: replace 'default' with 'delete'
+  133 | TEST_F(MultiReporterTest_786, AddReporter_NormalOperation_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:135:53: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  135 |     EXPECT_CALL(*mock_listener, noMatchingTestCases(_)).Times(0);
+      |                                                     ^
+      |                                                     testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:137:55: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  137 |     EXPECT_CALL(*mock_listener, fatalErrorEncountered(_)).Times(0);
+      |                                                       ^
+      |                                                       testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:141:32: error: no viable conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  141 |     multi_reporter.addReporter(CATCH_MOVE(mock_listener));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:40:47: note: passing argument to parameter 'reporter' here
+   40 |         void addReporter( IEventListenerPtr&& reporter );
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:151:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  151 | TEST_F(MultiReporterTest_786, AddReporter_MultipleReporters_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:86:1: note: expanded from here
+   86 | MultiReporterTest_786_AddReporter_MultipleReporters_786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:151:1: note: default constructor of 'MultiReporterTest_786_AddReporter_MultipleReporters_786_Test' is implicitly deleted because base class 'MultiReporterTest_786' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:71:19: note: default constructor of 'MultiReporterTest_786' is implicitly deleted because field 'multi_reporter' has no default constructor
+   71 |     MultiReporter multi_reporter;
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:151:1: note: replace 'default' with 'delete'
+  151 | TEST_F(MultiReporterTest_786, AddReporter_MultipleReporters_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:157:53: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  157 |     EXPECT_CALL(*mock_listener, noMatchingTestCases(_)).Times(0);
+      |                                                     ^
+      |                                                     testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:159:54: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  159 |     EXPECT_CALL(*mock_listener2, noMatchingTestCases(_)).Times(0);
+      |                                                      ^
+      |                                                      testing::_
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^
+/usr/include/gmock/gmock-matchers.h:4063:33: note: 'testing::_' declared here
+ 4063 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:163:32: error: no viable conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  163 |     multi_reporter.addReporter(CATCH_MOVE(mock_listener));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:40:47: note: passing argument to parameter 'reporter' here
+   40 |         void addReporter( IEventListenerPtr&& reporter );
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:165:32: error: no viable conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  165 |     multi_reporter.addReporter(CATCH_MOVE(mock_listener2));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(mock_listener2)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:40:47: note: passing argument to parameter 'reporter' here
+   40 |         void addReporter( IEventListenerPtr&& reporter );
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:175:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  175 | TEST_F(MultiReporterTest_786, AddReporter_ExceptionHandling_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:37:1: note: expanded from here
+   37 | MultiReporterTest_786_AddReporter_ExceptionHandling_786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:175:1: note: default constructor of 'MultiReporterTest_786_AddReporter_ExceptionHandling_786_Test' is implicitly deleted because base class 'MultiReporterTest_786' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:71:19: note: default constructor of 'MultiReporterTest_786' is implicitly deleted because field 'multi_reporter' has no default constructor
+   71 |     MultiReporter multi_reporter;
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:175:1: note: replace 'default' with 'delete'
+  175 | TEST_F(MultiReporterTest_786, AddReporter_ExceptionHandling_786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:181:48: error: no viable conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>')
+  181 |     EXPECT_NO_THROW(multi_reporter.addReporter(CATCH_MOVE(mock_listener)));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_move_and_forward.hpp:14:25: note: expanded from macro 'CATCH_MOVE'
+   14 | #define CATCH_MOVE(...) static_cast<std::remove_reference_t<decltype(__VA_ARGS__)>&&>(__VA_ARGS__)
+      |                         ^
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'const unique_ptr<IEventListener> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'std::remove_reference_t<decltype(this->mock_listener)>' (aka 'std::shared_ptr<MockEventListener>') to 'unique_ptr<IEventListener> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_multi.hpp:40:47: note: passing argument to parameter 'reporter' here
+   40 |         void addReporter( IEventListenerPtr&& reporter );
+      |                                               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/allocator.h:46:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/x86_64-linux-gnu/c++/11/bits/c++allocator.h:33:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/new_allocator.h:162:23: error: call to implicitly-deleted default constructor of 'MockEventListener'
+  162 |         { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+      |                              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:516:8: note: in instantiation of function template specialization '__gnu_cxx::new_allocator<MockEventListener>::construct<MockEventListener>' requested here
+  516 |           __a.construct(__p, std::forward<_Args>(__args)...);
+      |               ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:519:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<MockEventListener>>::construct<MockEventListener>' requested here
+  519 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:651:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<MockEventListener, std::allocator<MockEventListener>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<>' requested here
+  651 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<MockEventListener, std::allocator<MockEventListener>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<MockEventListener>::__shared_ptr<std::allocator<MockEventListener>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<MockEventListener>::shared_ptr<std::allocator<MockEventListener>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<MockEventListener, std::allocator<MockEventListener>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:99:32: note: in instantiation of function template specialization 'std::make_shared<MockEventListener>' requested here
+   99 |     auto mock_listener2 = std::make_shared<MockEventListener>();
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:15:27: note: default constructor of 'MockEventListener' is implicitly deleted because base class 'IEventListener' has no default constructor
+   15 | class MockEventListener : public IEventListener {
+      |                           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:67:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1054:2: error: arithmetic on a pointer to an incomplete type 'const Catch::ReporterDescription'
+ 1054 |         ++_M_current;
+      |         ^ ~~~~~~~~~~
+/usr/include/gtest/gtest-printers.h:136:22: note: in instantiation of member function '__gnu_cxx::__normal_iterator<const Catch::ReporterDescription *, std::vector<Catch::ReporterDescription>>::operator++' requested here
+  136 |     for (auto&& elem : container) {
+      |                      ^
+/usr/include/gtest/gtest-printers.h:312:12: note: in instantiation of function template specialization 'testing::internal::ContainerPrinter::PrintValue<std::vector<Catch::ReporterDescription>, void>' requested here
+  312 |   Printer::PrintValue(value, os);
+      |            ^
+/usr/include/gtest/gtest-printers.h:441:13: note: in instantiation of function template specialization 'testing::internal::PrintWithFallback<std::vector<Catch::ReporterDescription>>' requested here
+  441 |   internal::PrintWithFallback(value, os);
+      |             ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<std::vector<Catch::ReporterDescription>>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::vector<Catch::ReporterDescription>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gtest/gtest-printers.h:851:5: note: (skipping 12 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+  851 |     UniversalPrint(value, os);
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<MockEventListener, std::allocator<MockEventListener>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<MockEventListener>::__shared_ptr<std::allocator<MockEventListener>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<MockEventListener>::shared_ptr<std::allocator<MockEventListener>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<MockEventListener, std::allocator<MockEventListener>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:99:32: note: in instantiation of function template specialization 'std::make_shared<MockEventListener>' requested here
+   99 |     auto mock_listener2 = std::make_shared<MockEventListener>();
+      |                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:26:12: note: forward declaration of 'Catch::ReporterDescription'
+   26 |     struct ReporterDescription;
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:67:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1054:2: error: arithmetic on a pointer to an incomplete type 'const Catch::ListenerDescription'
+ 1054 |         ++_M_current;
+      |         ^ ~~~~~~~~~~
+/usr/include/gtest/gtest-printers.h:136:22: note: in instantiation of member function '__gnu_cxx::__normal_iterator<const Catch::ListenerDescription *, std::vector<Catch::ListenerDescription>>::operator++' requested here
+  136 |     for (auto&& elem : container) {
+      |                      ^
+/usr/include/gtest/gtest-printers.h:312:12: note: in instantiation of function template specialization 'testing::internal::ContainerPrinter::PrintValue<std::vector<Catch::ListenerDescription>, void>' requested here
+  312 |   Printer::PrintValue(value, os);
+      |            ^
+/usr/include/gtest/gtest-printers.h:441:13: note: in instantiation of function template specialization 'testing::internal::PrintWithFallback<std::vector<Catch::ListenerDescription>>' requested here
+  441 |   internal::PrintWithFallback(value, os);
+      |             ^
+/usr/include/gtest/gtest-printers.h:691:5: note: in instantiation of function template specialization 'testing::internal::PrintTo<std::vector<Catch::ListenerDescription>>' requested here
+  691 |     PrintTo(value, os);
+      |     ^
+/usr/include/gtest/gtest-printers.h:980:25: note: in instantiation of member function 'testing::internal::UniversalPrinter<std::vector<Catch::ListenerDescription>>::Print' requested here
+  980 |   UniversalPrinter<T1>::Print(value, os);
+      |                         ^
+/usr/include/gtest/gtest-printers.h:851:5: note: (skipping 12 contexts in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+  851 |     UniversalPrint(value, os);
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<MockEventListener, std::allocator<MockEventListener>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<MockEventListener>::__shared_ptr<std::allocator<MockEventListener>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<MockEventListener>::shared_ptr<std::allocator<MockEventListener>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<MockEventListener, std::allocator<MockEventListener>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp:99:32: note: in instantiation of function template specialization 'std::make_shared<MockEventListener>' requested here
+   99 |     auto mock_listener2 = std::make_shared<MockEventListener>();
+      |                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:27:12: note: forward declaration of 'Catch::ListenerDescription'
+   27 |     struct ListenerDescription;
+      |            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+6 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_786.dir/build.make:79: generated_build/CMakeFiles/test_786.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_786.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:9941: generated_build/CMakeFiles/test_786.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:9948: generated_build/CMakeFiles/test_786.dir/rule] 오류 2
+gmake: *** [Makefile:2737: test_786] 오류 2

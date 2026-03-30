@@ -1,0 +1,35 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_73.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_73.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_73.cpp:125:32: error: 'dense_' is a private member of 're2::SparseArray<int>'
+  125 |     EXPECT_EQ(it, sparse_array.dense_.data() + sparse_array.size_);
+      |                                ^
+/home/user/TCG2026/TestProjects/re2/re2/sparse_array.h:264:24: note: declared private here
+  264 |   PODArray<IndexValue> dense_;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_73.cpp:125:61: error: 'size_' is a private member of 're2::SparseArray<int>'
+  125 |     EXPECT_EQ(it, sparse_array.dense_.data() + sparse_array.size_);
+      |                                                             ^
+/home/user/TCG2026/TestProjects/re2/re2/sparse_array.h:262:7: note: declared private here
+  262 |   int size_ = 0;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_73.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const re2::SparseArray<int>::IndexValue' and 'const int')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<re2::SparseArray<int>::IndexValue, int>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_73.cpp:51:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<re2::SparseArray<int>::IndexValue, int, nullptr>' requested here
+   51 |     EXPECT_EQ(*it, value);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const re2::SparseArray<int>::IndexValue' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_73.dir/build.make:79: generated_build/CMakeFiles/test_73.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_73.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5193: generated_build/CMakeFiles/test_73.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5200: generated_build/CMakeFiles/test_73.dir/rule] 오류 2
+gmake: *** [Makefile:1492: test_73] 오류 2

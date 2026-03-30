@@ -1,0 +1,83 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1465.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:25:71: error: 'signature_' is a private member of 'Exiv2::Internal::Nikon3MnHeader'
+   25 |     EXPECT_EQ(nikon3MnHeader.sizeOfSignature(), sizeof(nikon3MnHeader.signature_));
+      |                                                                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:312:21: note: declared private here
+  312 |   static const byte signature_[];          //!< Nikon 3 makernote header signature
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:25:55: error: invalid application of 'sizeof' to an incomplete type 'const byte[]' (aka 'const unsigned char[]')
+   25 |     EXPECT_EQ(nikon3MnHeader.sizeOfSignature(), sizeof(nikon3MnHeader.signature_));
+      |                                                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:33:30: error: 'start_' is a private member of 'Exiv2::Internal::Nikon3MnHeader'
+   33 |     EXPECT_EQ(nikon3MnHeader.start_, nikon3MnHeader.sizeOfSignature());
+      |                              ^
+/home/user/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:311:10: note: declared private here
+  311 |   size_t start_;                           //!< Start of the mn IFD rel. to mn start
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:41:30: error: base class has incomplete type
+   41 | class MockIoWrapper : public IoWrapper {
+      |                       ~~~~~~~^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:20:7: note: forward declaration of 'Exiv2::Internal::IoWrapper'
+   20 | class IoWrapper;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+   45 |     MOCK_METHOD(size_t, write, (const byte* data, size_t size), (override));
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:5: error: only virtual member functions can be marked 'override'
+   45 |     MOCK_METHOD(size_t, write, (const byte* data, size_t size), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:5:1: note: expanded from here
+    5 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+   45 |     MOCK_METHOD(size_t, write, (const byte* data, size_t size), (override));
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp:45:39: error: unknown type name 'byte'
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1465.dir/build.make:79: generated_build/CMakeFiles/test_1465.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1465.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:76969: generated_build/CMakeFiles/test_1465.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:76976: generated_build/CMakeFiles/test_1465.dir/rule] 오류 2
+gmake: *** [Makefile:27024: test_1465] 오류 2

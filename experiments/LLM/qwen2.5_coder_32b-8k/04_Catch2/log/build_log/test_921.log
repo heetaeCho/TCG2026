@@ -1,0 +1,40 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_921.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_921.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_921.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6463:11: warning: 'FAIL' macro redefined [-Wmacro-redefined]
+ 6463 |   #define FAIL( ... ) do { \
+      |           ^
+/usr/include/gtest/gtest.h:1928:10: note: previous definition is here
+ 1928 | # define FAIL() GTEST_FAIL()
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_921.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6468:11: warning: 'SUCCEED' macro redefined [-Wmacro-redefined]
+ 6468 |   #define SUCCEED( ... ) INTERNAL_CATCH_MSG( "SUCCEED", Catch::ResultWas::Ok, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |           ^
+/usr/include/gtest/gtest.h:1937:10: note: previous definition is here
+ 1937 | # define SUCCEED() GTEST_SUCCEED()
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_921.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Catch::Generators::TakeGenerator<int>'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_921.cpp:43:32: note: in instantiation of function template specialization 'std::make_unique<Catch::Generators::TakeGenerator<int>, int, MockGeneratorWrapper>' requested here
+   43 |         take_generator_ = std::make_unique<TakeGenerator<int>>(3, CATCH_MOVE(*mock_generator_));
+      |                                ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7966:9: note: candidate constructor not viable: no known conversion from 'MockGeneratorWrapper' to 'GeneratorWrapper<int>' for 2nd argument
+ 7966 |         TakeGenerator(size_t target, GeneratorWrapper<T>&& generator):
+      |         ^                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7950:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+ 7950 |     class TakeGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7950:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+ 7950 |     class TakeGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_921.dir/build.make:79: generated_build/CMakeFiles/test_921.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_921.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7103: generated_build/CMakeFiles/test_921.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7110: generated_build/CMakeFiles/test_921.dir/rule] 오류 2
+gmake: *** [Makefile:1619: test_921] 오류 2

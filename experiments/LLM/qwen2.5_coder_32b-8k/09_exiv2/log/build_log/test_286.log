@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_286.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_286.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_286.cpp:21:25: error: call to implicitly-deleted default constructor of 'TiffEntry'
+   21 |         tiffEntry = new TiffEntry();
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:571:19: note: default constructor of 'TiffEntry' is implicitly deleted because base class 'TiffEntryBase' has no default constructor
+  571 | class TiffEntry : public TiffEntryBase {
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_286.cpp:39:41: error: 'doClone' is a protected member of 'Exiv2::Internal::TiffEntry'
+   39 |     TiffEntry* clonedEntry = tiffEntry->doClone();
+      |                                         ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:584:28: note: declared protected here
+  584 |   [[nodiscard]] TiffEntry* doClone() const override;
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_286.cpp:51:41: error: 'doClone' is a protected member of 'Exiv2::Internal::TiffEntry'
+   51 |     TiffEntry* clonedEntry = tiffEntry->doClone();
+      |                                         ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:584:28: note: declared protected here
+  584 |   [[nodiscard]] TiffEntry* doClone() const override;
+      |                            ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_286.dir/build.make:79: generated_build/CMakeFiles/test_286.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_286.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:79995: generated_build/CMakeFiles/test_286.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:80002: generated_build/CMakeFiles/test_286.dir/rule] 오류 2
+gmake: *** [Makefile:28181: test_286] 오류 2

@@ -1,0 +1,69 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_684.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_684.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_684.cpp:21:16: error: no matching constructor for initialization of 'IptcKey'
+   21 |     IptcKey key{"IPTC", 0x1, 0x5, "ObjectName"};
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:260:3: note: candidate constructor not viable: requires 2 arguments, but 4 were provided
+  260 |   IptcKey(uint16_t tag, uint16_t record);
+      |   ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:254:12: note: candidate constructor not viable: requires single argument 'key', but 4 arguments were provided
+  254 |   explicit IptcKey(std::string key);
+      |            ^       ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_684.cpp:123:12: error: no viable conversion from 'const std::type_info' to 'TypeId'
+  123 |     TypeId expectedTypeId = typeid(StringValue);
+      |            ^                ~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_684.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Exiv2::Value'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_684.cpp:29:26: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Value, const std::type_info &>' requested here
+   29 |         mockValue = std::make_unique<Value>(typeid(StringValue));
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'Value'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'Value'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'Value'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'Value'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'Value'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'Value'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'Value'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'Value'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'Value'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'Value'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'Value'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_684.dir/build.make:79: generated_build/CMakeFiles/test_684.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_684.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:78737: generated_build/CMakeFiles/test_684.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:78744: generated_build/CMakeFiles/test_684.dir/rule] 오류 2
+gmake: *** [Makefile:27700: test_684] 오류 2

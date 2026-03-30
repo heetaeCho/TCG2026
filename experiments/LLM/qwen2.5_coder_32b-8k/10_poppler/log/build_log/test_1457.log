@@ -1,0 +1,98 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1457.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:19:5: error: only virtual member functions can be marked 'override'
+   19 |     MOCK_METHOD(void, reset, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:185:1: note: expanded from here
+  185 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:41:24: error: allocation of incomplete type 'XRef'
+   41 |         mockXref = new XRef();
+      |                        ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:55:9: warning: deleting pointer to incomplete type 'XRef' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   55 |         delete mockXref;
+      |         ^      ~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:27:7: warning: 'LexerTest_1457' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   27 | class LexerTest_1457 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'testing::NiceMock<MockStream>'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:43:30: note: in instantiation of function template specialization 'std::make_unique<testing::NiceMock<MockStream>>' requested here
+   43 |         mockStreamPtr = std::make_unique<NiceMock<MockStream>>();
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'NiceMock'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'NiceMock'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'NiceMock'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'NiceMock'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'NiceMock'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'NiceMock'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'NiceMock'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'NiceMock'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'NiceMock'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'NiceMock'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'NiceMock'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'NiceMock'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:15:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<testing::NiceMock<MockStream>>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp:43:25: note: in instantiation of member function 'std::unique_ptr<testing::NiceMock<MockStream>>::~unique_ptr' requested here
+   43 |         mockStreamPtr = std::make_unique<NiceMock<MockStream>>();
+      |                         ^
+3 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1457.dir/build.make:79: generated_build/CMakeFiles/test_1457.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1457.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:62666: generated_build/CMakeFiles/test_1457.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:62673: generated_build/CMakeFiles/test_1457.dir/rule] 오류 2
+gmake: *** [Makefile:21928: test_1457] 오류 2

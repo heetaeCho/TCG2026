@@ -1,0 +1,125 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_511.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:51:5: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   51 |     ParseState parse_state_;
+      |     ^~~~~~~~~~
+      |     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:21:24: error: use of undeclared identifier 'ParseFlags'; did you mean 're2::Regexp::ParseFlags'?
+   21 |           parse_state_(ParseFlags::kNone, absl::string_view(""), status_) {}
+      |                        ^~~~~~~~~~
+      |                        re2::Regexp::ParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 're2::Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:21:24: error: no member named 'kNone' in 're2::Regexp::ParseFlags'; did you mean 'clone'?
+   21 |           parse_state_(ParseFlags::kNone, absl::string_view(""), status_) {}
+      |                        ^~~~~~~~~~~~~~~~~
+      |                        clone
+/usr/include/x86_64-linux-gnu/bits/sched.h:82:12: note: 'clone' declared here
+   82 | extern int clone (int (*__fn) (void *__arg), void *__child_stack,
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:21:11: error: excess elements in scalar initializer
+   21 |           parse_state_(ParseFlags::kNone, absl::string_view(""), status_) {}
+      |           ^                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:61:52: error: use of undeclared identifier 'ParseFlags'; did you mean 're2::Regexp::ParseFlags'?
+   61 |     Regexp* r1 = Regexp::LiteralString(nullptr, 0, ParseFlags::kNone);
+      |                                                    ^~~~~~~~~~
+      |                                                    re2::Regexp::ParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 're2::Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:61:64: error: no member named 'kNone' in 're2::Regexp::ParseFlags'
+   61 |     Regexp* r1 = Regexp::LiteralString(nullptr, 0, ParseFlags::kNone);
+      |                                                    ~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:63:17: error: member reference base type 'ParseStatus' is not a structure or union
+   63 |     parse_state_.stacktop_ = r1;
+      |     ~~~~~~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:69:17: error: member reference base type 'ParseStatus' is not a structure or union
+   69 |     parse_state_.DoAlternation();
+      |     ~~~~~~~~~~~~^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:75:27: error: member reference base type 'ParseStatus' is not a structure or union
+   75 |     EXPECT_EQ(parse_state_.stacktop_->op(), kRegexpAlternate);
+      |               ~~~~~~~~~~~~^~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:87:17: error: member reference base type 'ParseStatus' is not a structure or union
+   87 |     parse_state_.stacktop_ = nullptr;
+      |     ~~~~~~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:93:30: error: member reference base type 'ParseStatus' is not a structure or union
+   93 |     EXPECT_DEATH(parse_state_.DoAlternation(), "stacktop_ should not be null");
+      |                  ~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/gtest/gtest-death-test.h:189:17: note: expanded from macro 'EXPECT_DEATH'
+  189 |     EXPECT_EXIT(statement, ::testing::internal::ExitedUnsuccessfully, matcher)
+      |                 ^~~~~~~~~
+/usr/include/gtest/gtest-death-test.h:178:23: note: expanded from macro 'EXPECT_EXIT'
+  178 |     GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-death-test-internal.h:235:47: note: expanded from macro 'GTEST_DEATH_TEST_'
+  235 |           GTEST_EXECUTE_DEATH_TEST_STATEMENT_(statement, gtest_dt);            \
+      |                                               ^~~~~~~~~
+/usr/include/gtest/internal/gtest-death-test-internal.h:192:52: note: expanded from macro 'GTEST_EXECUTE_DEATH_TEST_STATEMENT_'
+  192 |     GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:103:52: error: use of undeclared identifier 'ParseFlags'; did you mean 're2::Regexp::ParseFlags'?
+  103 |     Regexp* r1 = Regexp::LiteralString(nullptr, 0, ParseFlags::kNone);
+      |                                                    ^~~~~~~~~~
+      |                                                    re2::Regexp::ParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 're2::Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:103:64: error: no member named 'kNone' in 're2::Regexp::ParseFlags'
+  103 |     Regexp* r1 = Regexp::LiteralString(nullptr, 0, ParseFlags::kNone);
+      |                                                    ~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:105:17: error: member reference base type 'ParseStatus' is not a structure or union
+  105 |     parse_state_.stacktop_ = r1;
+      |     ~~~~~~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:111:33: error: member reference base type 'ParseStatus' is not a structure or union
+  111 |     EXPECT_NO_THROW(parse_state_.DoAlternation());
+      |                     ~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:123:52: error: use of undeclared identifier 'ParseFlags'; did you mean 're2::Regexp::ParseFlags'?
+  123 |     Regexp* r1 = Regexp::LiteralString(nullptr, 0, ParseFlags::kNone);
+      |                                                    ^~~~~~~~~~
+      |                                                    re2::Regexp::ParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 're2::Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:123:64: error: no member named 'kNone' in 're2::Regexp::ParseFlags'
+  123 |     Regexp* r1 = Regexp::LiteralString(nullptr, 0, ParseFlags::kNone);
+      |                                                    ~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:125:17: error: member reference base type 'ParseStatus' is not a structure or union
+  125 |     parse_state_.stacktop_ = r1;
+      |     ~~~~~~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp:131:17: error: member reference base type 'ParseStatus' is not a structure or union
+  131 |     parse_state_.DoAlternation();
+      |     ~~~~~~~~~~~~^~~~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_511.dir/build.make:79: generated_build/CMakeFiles/test_511.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_511.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18569: generated_build/CMakeFiles/test_511.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18576: generated_build/CMakeFiles/test_511.dir/rule] 오류 2
+gmake: *** [Makefile:6926: test_511] 오류 2

@@ -1,0 +1,30 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[ 50%] Building CXX object generated_build/CMakeFiles/test_1200.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1200.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1200.cpp:53:37: error: exception specification of overriding function is more lax than base version
+   53 |     MOCK_METHOD(const std::string&, path, (), (const override));
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1200.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'testing::StrictMock<MockBasicIo>'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1200.cpp:65:24: note: in instantiation of function template specialization 'std::make_unique<testing::StrictMock<MockBasicIo>>' requested here
+   65 |         mock_io = std::make_unique<StrictMock<MockBasicIo>>();
+      |                        ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'StrictMock'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'StrictMock'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1200.dir/build.make:79: generated_build/CMakeFiles/test_1200.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1200.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:76867: generated_build/CMakeFiles/test_1200.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:76874: generated_build/CMakeFiles/test_1200.dir/rule] 오류 2
+gmake: *** [Makefile:26985: test_1200] 오류 2

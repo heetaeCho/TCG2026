@@ -1,0 +1,77 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_172.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp:15:62: error: use of undeclared identifier 'exvDouble'; did you mean 'getDouble'?
+   15 |             value = std::make_unique<ValueType<double>>(3.5, exvDouble);
+      |                                                              ^~~~~~~~~
+      |                                                              getDouble
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:249:17: note: 'getDouble' declared here
+  249 | EXIV2API double getDouble(const byte* buf, ByteOrder byteOrder);
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp:59:103: error: use of undeclared identifier 'exvDouble'; did you mean 'getDouble'?
+   59 |         std::unique_ptr<ValueType<double>> negative_value = std::make_unique<ValueType<double>>(-3.5, exvDouble);
+      |                                                                                                       ^~~~~~~~~
+      |                                                                                                       getDouble
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:249:17: note: 'getDouble' declared here
+  249 | EXIV2API double getDouble(const byte* buf, ByteOrder byteOrder);
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp:75:102: error: use of undeclared identifier 'exvDouble'; did you mean 'getDouble'?
+   75 |         std::unique_ptr<ValueType<double>> boundary_value = std::make_unique<ValueType<double>>(0.0, exvDouble);
+      |                                                                                                      ^~~~~~~~~
+      |                                                                                                      getDouble
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:249:17: note: 'getDouble' declared here
+  249 | EXIV2API double getDouble(const byte* buf, ByteOrder byteOrder);
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp:91:99: error: use of undeclared identifier 'exvDouble'; did you mean 'getDouble'?
+   91 |         std::unique_ptr<ValueType<double>> large_value = std::make_unique<ValueType<double>>(1e6, exvDouble);
+      |                                                                                                   ^~~~~~~~~
+      |                                                                                                   getDouble
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:249:17: note: 'getDouble' declared here
+  249 | EXIV2API double getDouble(const byte* buf, ByteOrder byteOrder);
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp:107:100: error: use of undeclared identifier 'exvDouble'; did you mean 'getDouble'?
+  107 |         std::unique_ptr<ValueType<double>> small_value = std::make_unique<ValueType<double>>(1e-6, exvDouble);
+      |                                                                                                    ^~~~~~~~~
+      |                                                                                                    getDouble
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:249:17: note: 'getDouble' declared here
+  249 | EXIV2API double getDouble(const byte* buf, ByteOrder byteOrder);
+      |                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Exiv2::ValueType<double>'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp:15:26: note: in instantiation of function template specialization 'std::make_unique<Exiv2::ValueType<double>, double, double (&)(const unsigned char *, Exiv2::ByteOrder)>' requested here
+   15 |             value = std::make_unique<ValueType<double>>(3.5, exvDouble);
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1144:12: note: candidate constructor not viable: no known conversion from 'double (const unsigned char *, Exiv2::ByteOrder)' to 'TypeId' for 2nd argument
+ 1144 |   explicit ValueType(const T& val, TypeId typeId = getType<T>());
+      |            ^                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:225:3: note: candidate inherited constructor not viable: requires 1 argument, but 2 were provided
+  225 |   Value(const Value&) = default;
+      |   ^     ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1131:16: note: constructor from base class 'Value' inherited here
+ 1131 |   using Value::Value;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:41:12: note: candidate inherited constructor not viable: requires single argument 'typeId', but 2 arguments were provided
+   41 |   explicit Value(TypeId typeId);
+      |            ^     ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1131:16: note: constructor from base class 'Value' inherited here
+ 1131 |   using Value::Value;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1146:3: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+ 1146 |   ValueType(const ValueType<T>& rhs);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1140:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+ 1140 |   ValueType();
+      |   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1142:3: note: candidate constructor not viable: requires at least 3 arguments, but 2 were provided
+ 1142 |   ValueType(const byte* buf, size_t len, ByteOrder byteOrder, TypeId typeId = getType<T>());
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_172.dir/build.make:79: generated_build/CMakeFiles/test_172.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_172.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:60343: generated_build/CMakeFiles/test_172.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:60350: generated_build/CMakeFiles/test_172.dir/rule] 오류 2
+gmake: *** [Makefile:20667: test_172] 오류 2

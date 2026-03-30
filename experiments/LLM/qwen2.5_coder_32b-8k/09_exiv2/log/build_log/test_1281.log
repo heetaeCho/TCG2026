@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1281.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1281.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1281.cpp:29:34: error: use of undeclared identifier 'StringValue'
+   29 |         value = std::make_unique<StringValue>(std::string("John Doe"));
+      |                                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1281.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1281.cpp:13:7: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::~unique_ptr' requested here
+   13 | class XmpdatumTest_1281 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1281.dir/build.make:79: generated_build/CMakeFiles/test_1281.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1281.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:36781: generated_build/CMakeFiles/test_1281.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:36788: generated_build/CMakeFiles/test_1281.dir/rule] 오류 2
+gmake: *** [Makefile:11658: test_1281] 오류 2

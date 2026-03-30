@@ -1,0 +1,89 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1685.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:23:37: error: invalid use of incomplete type 'IptcData'
+   23 |     TiffEncoder encoder{ExifData(), IptcData{}, XmpData{}, nullptr, false, PrimaryGroups(), nullptr, nullptr};
+      |                                     ^~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:23:49: error: invalid use of incomplete type 'XmpData'
+   23 |     TiffEncoder encoder{ExifData(), IptcData{}, XmpData{}, nullptr, false, PrimaryGroups(), nullptr, nullptr};
+      |                                                 ^~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:33:58: error: use of undeclared identifier 'ifdExif'; did you mean 'mdExif'?
+   33 |         mn_entry = std::make_unique<TiffMnEntry>(0x1234, ifdExif, ifdExif);
+      |                                                          ^~~~~~~
+      |                                                          mdExif
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:47:3: note: 'mdExif' declared here
+   47 |   mdExif = 1,
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:33:67: error: use of undeclared identifier 'ifdExif'; did you mean 'mdExif'?
+   33 |         mn_entry = std::make_unique<TiffMnEntry>(0x1234, ifdExif, ifdExif);
+      |                                                                   ^~~~~~~
+      |                                                                   mdExif
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:47:3: note: 'mdExif' declared here
+   47 |   mdExif = 1,
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:35:50: error: 'ExifKey' is an incomplete type
+   35 |         exif_datum = std::make_unique<Exifdatum>(ExifKey("Exif.Image.Artist"), nullptr);
+      |                                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:45:15: error: 'mn_' is a private member of 'Exiv2::Internal::TiffMnEntry'
+   45 |     mn_entry->mn_ = std::make_unique<TiffIfdMakernote>();
+      |               ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:1053:37: note: declared private here
+ 1053 |   std::unique_ptr<TiffIfdMakernote> mn_;  //!< The Makernote
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:95:15: error: 'mn_' is a private member of 'Exiv2::Internal::TiffMnEntry'
+   95 |     mn_entry->mn_ = std::make_unique<TiffIfdMakernote>();
+      |               ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:1053:37: note: declared private here
+ 1053 |   std::unique_ptr<TiffIfdMakernote> mn_;  //!< The Makernote
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:109:15: error: 'mn_' is a private member of 'Exiv2::Internal::TiffMnEntry'
+  109 |     mn_entry->mn_ = std::make_unique<TiffIfdMakernote>();
+      |               ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:1053:37: note: declared private here
+ 1053 |   std::unique_ptr<TiffIfdMakernote> mn_;  //!< The Makernote
+      |                                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Exiv2::Internal::TiffMnEntry'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:33:25: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffMnEntry, int, Exiv2::MetadataId, Exiv2::MetadataId>' requested here
+   33 |         mn_entry = std::make_unique<TiffMnEntry>(0x1234, ifdExif, ifdExif);
+      |                         ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:1015:3: note: candidate constructor not viable: no known conversion from 'Exiv2::MetadataId' to 'IfdId' for 2nd argument
+ 1015 |   TiffMnEntry(uint16_t tag, IfdId group, IfdId mnGroup);
+      |   ^                         ~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:1006:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+ 1006 | class TiffMnEntry : public TiffEntryBase {
+      |       ^~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Exiv2::Internal::TiffIfdMakernote'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp:45:26: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffIfdMakernote>' requested here
+   45 |     mn_entry->mn_ = std::make_unique<TiffIfdMakernote>();
+      |                          ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:1086:3: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+ 1086 |   TiffIfdMakernote(const TiffIfdMakernote&) = delete;
+      |   ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:1072:3: note: candidate constructor not viable: requires at least 4 arguments, but 0 were provided
+ 1072 |   TiffIfdMakernote(uint16_t tag, IfdId group, IfdId mnGroup, std::unique_ptr<MnHeader> pHeader, bool hasNext = true);
+      |   ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1685.dir/build.make:79: generated_build/CMakeFiles/test_1685.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1685.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15497: generated_build/CMakeFiles/test_1685.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15504: generated_build/CMakeFiles/test_1685.dir/rule] 오류 2
+gmake: *** [Makefile:3520: test_1685] 오류 2

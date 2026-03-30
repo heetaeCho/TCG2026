@@ -1,0 +1,62 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from JsonArrayWriterTest_526
+[ RUN      ] JsonArrayWriterTest_526.WriteBoolValue_526
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_526.cpp:37: Failure
+Expected equality of these values:
+  "[true]"
+  oss.str()
+    Which is: "[\n  true"
+With diff:
+@@ -1,1 +1,2 @@
+-[true]
++[
++  true
+
+[  FAILED  ] JsonArrayWriterTest_526.WriteBoolValue_526 (0 ms)
+[ RUN      ] JsonArrayWriterTest_526.WriteMultipleValues_526
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_526.cpp:47: Failure
+Expected equality of these values:
+  "[true,false,42]"
+  oss.str()
+    Which is: "[\n  true,\n  false,\n  42"
+With diff:
+@@ -1,1 +1,4 @@
+-[true,false,42]
++[
++  true,
++  false,
++  42
+
+[  FAILED  ] JsonArrayWriterTest_526.WriteMultipleValues_526 (0 ms)
+[ RUN      ] JsonArrayWriterTest_526.WriteObject_526
+[       OK ] JsonArrayWriterTest_526.WriteObject_526 (0 ms)
+[ RUN      ] JsonArrayWriterTest_526.WriteArray_526
+[       OK ] JsonArrayWriterTest_526.WriteArray_526 (0 ms)
+[ RUN      ] JsonArrayWriterTest_526.MoveConstructor_526
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_526.cpp:83: Failure
+Expected equality of these values:
+  "[true]"
+  oss.str()
+    Which is: "[[\n  true"
+With diff:
+@@ -1,1 +1,2 @@
+-[true]
++[[
++  true
+
+[  FAILED  ] JsonArrayWriterTest_526.MoveConstructor_526 (0 ms)
+[ RUN      ] JsonArrayWriterTest_526.Destructor_526
+[       OK ] JsonArrayWriterTest_526.Destructor_526 (0 ms)
+[----------] 6 tests from JsonArrayWriterTest_526 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] JsonArrayWriterTest_526.WriteBoolValue_526
+[  FAILED  ] JsonArrayWriterTest_526.WriteMultipleValues_526
+[  FAILED  ] JsonArrayWriterTest_526.MoveConstructor_526
+
+ 3 FAILED TESTS

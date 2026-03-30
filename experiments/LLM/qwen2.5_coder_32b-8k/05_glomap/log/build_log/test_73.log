@@ -1,0 +1,60 @@
+[ 27%] Built target faiss
+[ 39%] Built target PoseLib
+[ 48%] Built target colmap_vlfeat
+[ 51%] Built target colmap_util
+[ 51%] Built target colmap_feature_types
+[ 54%] Built target colmap_math
+[ 57%] Built target colmap_geometry
+[ 57%] Built target colmap_sensor
+[ 63%] Built target colmap_scene
+[ 66%] Built target colmap_lsd
+[ 66%] Built target colmap_image
+[ 69%] Built target colmap_optim
+[ 75%] Built target colmap_estimators
+[ 78%] Built target colmap_retrieval
+[ 81%] Built target colmap_feature
+[ 81%] Built target colmap_poisson_recon
+[ 84%] Built target colmap_mvs
+[ 87%] Built target colmap_sfm
+[ 90%] Built target colmap_controllers
+[ 90%] Built target colmap_exe
+[100%] Built target glomap
+[100%] Building CXX object generated_build/CMakeFiles/test_73.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_73.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_73.cpp:107:21: error: no viable conversion from 'QuaternionType' (aka 'Quaternion<double>') to 'Eigen::Matrix3d' (aka 'Matrix<double, 3, 3>')
+  107 |     Eigen::Matrix3d rotation_matrix =
+      |                     ^
+  108 | 
+  109 |         Eigen::AngleAxisd(angle_x, Eigen::Vector3d::UnitX()) *
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  110 | 
+  111 |         Eigen::AngleAxisd(angle_y, Eigen::Vector3d::UnitY()) *
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  112 | 
+  113 |         Eigen::AngleAxisd(angle_z, Eigen::Vector3d::UnitZ());
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:273:5: note: candidate constructor not viable: no known conversion from 'QuaternionType' (aka 'Quaternion<double>') to 'Matrix<double, 3, 3> &&' for 1st argument
+  273 |     Matrix(Matrix&& other) EIGEN_NOEXCEPT_IF(std::is_nothrow_move_constructible<Scalar>::value)
+      |     ^      ~~~~~~~~~~~~~~
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:414:25: note: candidate constructor not viable: no known conversion from 'QuaternionType' (aka 'Quaternion<double>') to 'const Matrix<double, 3, 3> &' for 1st argument
+  414 |     EIGEN_STRONG_INLINE Matrix(const Matrix& other) : Base(other)
+      |                         ^      ~~~~~~~~~~~~~~~~~~~
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:422:25: note: candidate template ignored: could not match 'EigenBase' against 'Quaternion'
+  422 |     EIGEN_STRONG_INLINE Matrix(const EigenBase<OtherDerived> &other)
+      |                         ^
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:267:14: note: explicit constructor is not a candidate
+  267 |     explicit Matrix(internal::constructor_without_unaligned_array_assert)
+      |              ^
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:321:34: note: explicit constructor is not a candidate
+  321 |     explicit EIGEN_STRONG_INLINE Matrix(const std::initializer_list<std::initializer_list<Scalar>>& list) : Base(list) {}
+      |                                  ^
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:329:14: note: explicit constructor is not a candidate
+  329 |     explicit Matrix(const T& x)
+      |              ^
+/usr/include/eigen3/Eigen/src/Core/Matrix.h:435:14: note: explicit constructor is not a candidate
+  435 |     explicit Matrix(const RotationBase<OtherDerived,ColsAtCompileTime>& r);
+      |              ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_73.dir/build.make:79: generated_build/CMakeFiles/test_73.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_73.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3751: generated_build/CMakeFiles/test_73.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3758: generated_build/CMakeFiles/test_73.dir/rule] 오류 2
+gmake: *** [Makefile:962: test_73] 오류 2

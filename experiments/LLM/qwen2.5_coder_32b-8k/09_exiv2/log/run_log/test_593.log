@@ -1,0 +1,81 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from MemIoTest_593
+[ RUN      ] MemIoTest_593.EofInitiallyFalse_593
+[       OK ] MemIoTest_593.EofInitiallyFalse_593 (0 ms)
+[ RUN      ] MemIoTest_593.OpenCloseCycle_593
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:49: Failure
+Value of: memIo->isopen()
+  Actual: true
+Expected: false
+[  FAILED  ] MemIoTest_593.OpenCloseCycle_593 (0 ms)
+[ RUN      ] MemIoTest_593.WriteReadCycle_593
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:71: Failure
+Expected equality of these values:
+  dataSize
+    Which is: 3
+  memIo->read(readData, dataSize)
+    Which is: 0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:75: Failure
+Expected equality of these values:
+  data[i]
+    Which is: '\x1' (1)
+  readData[i]
+    Which is: '@' (64, 0x40)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:75: Failure
+Expected equality of these values:
+  data[i]
+    Which is: '\x2' (2)
+  readData[i]
+    Which is: 'T' (84, 0x54)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:75: Failure
+Expected equality of these values:
+  data[i]
+    Which is: '\x3' (3)
+  readData[i]
+    Which is: '\xA7' (167)
+[  FAILED  ] MemIoTest_593.WriteReadCycle_593 (0 ms)
+[ RUN      ] MemIoTest_593.SeekTellCycle_593
+[       OK ] MemIoTest_593.SeekTellCycle_593 (0 ms)
+[ RUN      ] MemIoTest_593.ReadBeyondSize_593
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:137: Failure
+Expected equality of these values:
+  dataSize
+    Which is: 3
+  memIo->read(readData, dataSize + 1)
+    Which is: 0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:141: Failure
+Expected equality of these values:
+  data[i]
+    Which is: '\x1' (1)
+  readData[i]
+    Which is: '@' (64, 0x40)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:141: Failure
+Expected equality of these values:
+  data[i]
+    Which is: '\x2' (2)
+  readData[i]
+    Which is: 'T' (84, 0x54)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_593.cpp:141: Failure
+Expected equality of these values:
+  data[i]
+    Which is: '\x3' (3)
+  readData[i]
+    Which is: '\xA7' (167)
+[  FAILED  ] MemIoTest_593.ReadBeyondSize_593 (0 ms)
+[ RUN      ] MemIoTest_593.ErrorHandling_593
+[       OK ] MemIoTest_593.ErrorHandling_593 (0 ms)
+[ RUN      ] MemIoTest_593.MmapMunmapCycle_593
+[       OK ] MemIoTest_593.MmapMunmapCycle_593 (0 ms)
+[----------] 7 tests from MemIoTest_593 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] MemIoTest_593.OpenCloseCycle_593
+[  FAILED  ] MemIoTest_593.WriteReadCycle_593
+[  FAILED  ] MemIoTest_593.ReadBeyondSize_593
+
+ 3 FAILED TESTS

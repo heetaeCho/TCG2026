@@ -1,0 +1,60 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1070.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp:23:14: error: incomplete type 'Exiv2::BasicIo' named in nested name specifier
+   23 |         io = BasicIo::createMemIo();
+      |              ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp:25:21: error: allocating an object of abstract class type 'Image'
+   25 |         image = new Image(imageTypeUndefined, 0, std::move(io));
+      |                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp:45:18: warning: reference cannot be bound to dereferenced null pointer in well-defined C++ code; comparison may be assumed to always evaluate to true [-Wtautological-undefined-compare]
+   45 |     EXPECT_TRUE(&xmpData != nullptr);
+      |                  ^~~~~~~    ~~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp:85:1: error: expected unqualified-id
+   85 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp:11:7: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   11 | class ImageTest_1070 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp:25:27: error: use of undeclared identifier 'imageTypeUndefined'
+   25 |         image = new Image(imageTypeUndefined, 0, std::move(io));
+      |                           ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1070.dir/build.make:79: generated_build/CMakeFiles/test_1070.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1070.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:28349: generated_build/CMakeFiles/test_1070.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:28356: generated_build/CMakeFiles/test_1070.dir/rule] 오류 2
+gmake: *** [Makefile:8434: test_1070] 오류 2

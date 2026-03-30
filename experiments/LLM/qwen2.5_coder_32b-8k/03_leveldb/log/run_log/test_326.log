@@ -1,0 +1,72 @@
+Running main() from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from FileNameTest_326
+[ RUN      ] FileNameTest_326.NormalOperation_326
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_326.cpp:29: Failure
+Expected equality of these values:
+  MakeFileName(dbname, number, suffix)
+    Which is: "/path/to/db/012345.log"
+  expected
+    Which is: "/path/to/db/00012345.log"
+
+[  FAILED  ] FileNameTest_326.NormalOperation_326 (0 ms)
+[ RUN      ] FileNameTest_326.BoundaryCondition_ZeroNumber_326
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_326.cpp:43: Failure
+Expected equality of these values:
+  MakeFileName(dbname, number, suffix)
+    Which is: "/path/to/db/000000.log"
+  expected
+    Which is: "/path/to/db/00000000.log"
+
+[  FAILED  ] FileNameTest_326.BoundaryCondition_ZeroNumber_326 (0 ms)
+[ RUN      ] FileNameTest_326.BoundaryCondition_MaxNumber_326
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_326.cpp:57: Failure
+Expected equality of these values:
+  MakeFileName(dbname, number, suffix)
+    Which is: "/path/to/db/999999.log"
+  expected
+    Which is: "/path/to/db/00999999.log"
+
+[  FAILED  ] FileNameTest_326.BoundaryCondition_MaxNumber_326 (0 ms)
+[ RUN      ] FileNameTest_326.LongSuffix_326
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_326.cpp:71: Failure
+Expected equality of these values:
+  MakeFileName(dbname, number, suffix)
+    Which is: "/path/to/db/000123.verylongsuffix"
+  expected
+    Which is: "/path/to/db/00000123.verylongsuffix"
+
+[  FAILED  ] FileNameTest_326.LongSuffix_326 (0 ms)
+[ RUN      ] FileNameTest_326.EmptySuffix_326
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_326.cpp:85: Failure
+Expected equality of these values:
+  MakeFileName(dbname, number, suffix)
+    Which is: "/path/to/db/000123."
+  expected
+    Which is: "/path/to/db/00000123."
+
+[  FAILED  ] FileNameTest_326.EmptySuffix_326 (0 ms)
+[ RUN      ] FileNameTest_326.LargeNumberExceedingBuffer_326
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_326.cpp:99: Failure
+Expected equality of these values:
+  MakeFileName(dbname, number, suffix)
+    Which is: "/path/to/db/999999999.log"
+  expected
+    Which is: "/path/to/db/0999999999.log"
+
+[  FAILED  ] FileNameTest_326.LargeNumberExceedingBuffer_326 (0 ms)
+[----------] 6 tests from FileNameTest_326 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] FileNameTest_326.NormalOperation_326
+[  FAILED  ] FileNameTest_326.BoundaryCondition_ZeroNumber_326
+[  FAILED  ] FileNameTest_326.BoundaryCondition_MaxNumber_326
+[  FAILED  ] FileNameTest_326.LongSuffix_326
+[  FAILED  ] FileNameTest_326.EmptySuffix_326
+[  FAILED  ] FileNameTest_326.LargeNumberExceedingBuffer_326
+
+ 6 FAILED TESTS

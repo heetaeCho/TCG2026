@@ -1,0 +1,50 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1166.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp:33:20: error: allocation of incomplete type 'XRef'
+   33 |         xref = new XRef();
+      |                    ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp:39:17: error: use of undeclared identifier 'gfxFontType1'; did you mean 'fontType1'?
+   39 |         typeA = gfxFontType1;
+      |                 ^~~~~~~~~~~~
+      |                 fontType1
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:64:5: note: 'fontType1' declared here
+   64 |     fontType1,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp:43:24: error: no matching constructor for initialization of 'Dict'
+   43 |         fontDict = new Dict();
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp:49:20: error: no matching constructor for initialization of 'Gfx8BitFont'
+   49 |         font = new Gfx8BitFont(xref, "Tag", idA, std::move(nameA), typeA, embFontIDA, fontDict);
+      |                    ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:341:5: note: candidate constructor not viable: no known conversion from 'Dict *' to 'const Dict' for 7th argument; dereference the argument with *
+  341 |     Gfx8BitFont(XRef *xref, const char *tagA, Ref idA, std::optional<std::string> &&nameA, GfxFontType typeA, Ref embFontIDA, const Dict &fontDict);
+      |     ^                                                                                                                         ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:338:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 7 were provided
+  338 | class POPPLER_PRIVATE_EXPORT Gfx8BitFont : public GfxFont
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp:61:9: warning: deleting pointer to incomplete type 'XRef' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   61 |         delete xref;
+      |         ^      ~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp:7:7: warning: 'Gfx8BitFontTest_1166' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class Gfx8BitFontTest_1166 : public ::testing::Test {
+      |       ^
+2 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1166.dir/build.make:79: generated_build/CMakeFiles/test_1166.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1166.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:93482: generated_build/CMakeFiles/test_1166.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:93489: generated_build/CMakeFiles/test_1166.dir/rule] 오류 2
+gmake: *** [Makefile:34447: test_1166] 오류 2

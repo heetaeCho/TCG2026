@@ -1,0 +1,64 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_138.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:27:22: error: allocating an object of abstract class type 'BaseSeekInputStream'
+   27 |         stream = new BaseSeekInputStream(startA, limitedA, lengthA, std::move(dictA));
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'BaseSeekInputStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'BaseSeekInputStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:417:21: note: unimplemented pure virtual method 'currentPos' in 'BaseSeekInputStream'
+  417 |     virtual Goffset currentPos() const = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:418:18: note: unimplemented pure virtual method 'setCurrentPos' in 'BaseSeekInputStream'
+  418 |     virtual void setCurrentPos(Goffset offset) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:419:21: note: unimplemented pure virtual method 'read' in 'BaseSeekInputStream'
+  419 |     virtual Goffset read(char *buf, Goffset size) = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:45:26: error: no matching function for call to 'rewind'
+   45 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(true));
+      |                          ^~~~~~
+/usr/include/stdio.h:723:13: note: candidate function not viable: requires single argument '__stream', but no arguments were provided
+  723 | extern void rewind (FILE *__stream);
+      |             ^       ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:45:5: error: use of undeclared identifier 'EXPECT_CALL'
+   45 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(true));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:45:56: error: no member named 'Return' in namespace 'testing'
+   45 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(true));
+      |                                             ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:79:26: error: no matching function for call to 'rewind'
+   79 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(false));
+      |                          ^~~~~~
+/usr/include/stdio.h:723:13: note: candidate function not viable: requires single argument '__stream', but no arguments were provided
+  723 | extern void rewind (FILE *__stream);
+      |             ^       ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:79:5: error: use of undeclared identifier 'EXPECT_CALL'
+   79 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(false));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:79:56: error: no member named 'Return' in namespace 'testing'
+   79 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(false));
+      |                                             ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:95:26: error: no matching function for call to 'rewind'
+   95 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(false));
+      |                          ^~~~~~
+/usr/include/stdio.h:723:13: note: candidate function not viable: requires single argument '__stream', but no arguments were provided
+  723 | extern void rewind (FILE *__stream);
+      |             ^       ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:95:5: error: use of undeclared identifier 'EXPECT_CALL'
+   95 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(false));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:95:56: error: no member named 'Return' in namespace 'testing'
+   95 |     EXPECT_CALL(*stream, rewind()).WillOnce(::testing::Return(false));
+      |                                             ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp:7:7: warning: 'BaseSeekInputStreamTest_138' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class BaseSeekInputStreamTest_138 : public ::testing::Test {
+      |       ^
+1 warning and 10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_138.dir/build.make:79: generated_build/CMakeFiles/test_138.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_138.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:40298: generated_build/CMakeFiles/test_138.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:40305: generated_build/CMakeFiles/test_138.dir/rule] 오류 2
+gmake: *** [Makefile:12841: test_138] 오류 2

@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_810.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_810.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_810.cpp:9:7: warning: 'AnnotMovieTest_810' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class AnnotMovieTest_810 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_810.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Movie'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_810.cpp:21:22: note: in instantiation of function template specialization 'std::make_unique<Movie>' requested here
+   21 |         movie = std::make_unique<Movie>();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:83:7: note: forward declaration of 'Movie'
+   83 | class Movie;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_810.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Movie'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Movie>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_810.cpp:21:17: note: in instantiation of member function 'std::unique_ptr<Movie>::~unique_ptr' requested here
+   21 |         movie = std::make_unique<Movie>();
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:83:7: note: forward declaration of 'Movie'
+   83 | class Movie;
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_810.dir/build.make:79: generated_build/CMakeFiles/test_810.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_810.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:86250: generated_build/CMakeFiles/test_810.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:86257: generated_build/CMakeFiles/test_810.dir/rule] 오류 2
+gmake: *** [Makefile:31509: test_810] 오류 2

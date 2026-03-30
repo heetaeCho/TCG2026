@@ -1,0 +1,37 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1002.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1002.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1002.cpp:17:23: error: field type 'TestSpec::Pattern' is an abstract class
+   17 |     TestSpec::Pattern pattern;
+      |                       ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_test_spec.hpp:35:26: note: unimplemented pure virtual method 'matches' in 'Pattern'
+   35 |             virtual bool matches( TestCaseInfo const& testCase ) const = 0;
+      |                          ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_test_spec.hpp:38:26: note: unimplemented pure virtual method 'serializeTo' in 'Pattern'
+   38 |             virtual void serializeTo( std::ostream& out ) const = 0;
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1002.cpp:17:15: error: 'Pattern' is a private member of 'Catch::TestSpec'
+   17 |     TestSpec::Pattern pattern;
+      |               ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_test_spec.hpp:31:15: note: implicitly declared private here
+   31 |         class Pattern {
+      |               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1002.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TestSpecPatternTest_1002_NameReturnsCorrectValue_1002_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1002.cpp:27:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TestSpecPatternTest_1002_NameReturnsCorrectValue_1002_Test>::CreateTest' requested here
+   27 | TEST_F(TestSpecPatternTest_1002, NameReturnsCorrectValue_1002) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1002.dir/build.make:79: generated_build/CMakeFiles/test_1002.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1002.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:19379: generated_build/CMakeFiles/test_1002.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:19386: generated_build/CMakeFiles/test_1002.dir/rule] 오류 2
+gmake: *** [Makefile:6455: test_1002] 오류 2

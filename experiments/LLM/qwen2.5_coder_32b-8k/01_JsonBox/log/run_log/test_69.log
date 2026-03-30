@@ -1,0 +1,149 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from ValueTest_69
+[ RUN      ] ValueTest_69.EmptyObjectSerialization_69
+[       OK ] ValueTest_69.EmptyObjectSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.SingleKeyObjectSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:63: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"key\" : \"value\"\n}"
+  R"({"key": "value"})"
+    Which is: "{\"key\": \"value\"}"
+With diff:
+@@ -1,3 +1,1 @@
+-{
+-\t\"key\" : \"value\"
+-}
++{\"key\": \"value\"}
+
+[  FAILED  ] ValueTest_69.SingleKeyObjectSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.MultipleKeysObjectSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:79: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"key1\" : \"value1\",\n\t\"key2\" : 42,\n\t\"key3\" : true\n}"
+  R"({"key1": "value1", "key2": 42, "key3": true})"
+    Which is: "{\"key1\": \"value1\", \"key2\": 42, \"key3\": true}"
+With diff:
+@@ -1,5 +1,1 @@
+-{
+-\t\"key1\" : \"value1\",
+-\t\"key2\" : 42,
+-\t\"key3\" : true
+-}
++{\"key1\": \"value1\", \"key2\": 42, \"key3\": true}
+
+[  FAILED  ] ValueTest_69.MultipleKeysObjectSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.NestedObjectSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:97: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"outerKey\" : {\n\t\t\"innerKey\" : \"innerValue\"\n\t}\n}"
+  R"({"outerKey": {"innerKey": "innerValue"}})"
+    Which is: "{\"outerKey\": {\"innerKey\": \"innerValue\"}}"
+With diff:
+@@ -1,5 +1,1 @@
+-{
+-\t\"outerKey\" : {
+-\t\t\"innerKey\" : \"innerValue\"
+-\t}
+-}
++{\"outerKey\": {\"innerKey\": \"innerValue\"}}
+
+[  FAILED  ] ValueTest_69.NestedObjectSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.StringWithSpecialCharactersSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:113: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"key\" : \"\\\"special\\\": \\\"value\\\"\"\n}"
+  R"({"key": "\"special\": \"value\""})"
+    Which is: "{\"key\": \"\\\"special\\\": \\\"value\\\"\"}"
+With diff:
+@@ -1,3 +1,1 @@
+-{
+-\t\"key\" : \"\\\"special\\\": \\\"value\\\"\"
+-}
++{\"key\": \"\\\"special\\\": \\\"value\\\"\"}
+
+[  FAILED  ] ValueTest_69.StringWithSpecialCharactersSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.EmptyStringSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:129: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"key\" : \"\"\n}"
+  R"({"key": ""})"
+    Which is: "{\"key\": \"\"}"
+With diff:
+@@ -1,3 +1,1 @@
+-{
+-\t\"key\" : \"\"
+-}
++{\"key\": \"\"}
+
+[  FAILED  ] ValueTest_69.EmptyStringSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.BooleanValuesSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:145: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"falseKey\" : false,\n\t\"trueKey\" : true\n}"
+  R"({"trueKey": true, "falseKey": false})"
+    Which is: "{\"trueKey\": true, \"falseKey\": false}"
+With diff:
+@@ -1,4 +1,1 @@
+-{
+-\t\"falseKey\" : false,
+-\t\"trueKey\" : true
+-}
++{\"trueKey\": true, \"falseKey\": false}
+
+[  FAILED  ] ValueTest_69.BooleanValuesSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.IntegerValuesSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:161: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"intKey\" : 123,\n\t\"negativeIntKey\" : -456\n}"
+  R"({"intKey": 123, "negativeIntKey": -456})"
+    Which is: "{\"intKey\": 123, \"negativeIntKey\": -456}"
+With diff:
+@@ -1,4 +1,1 @@
+-{
+-\t\"intKey\" : 123,
+-\t\"negativeIntKey\" : -456
+-}
++{\"intKey\": 123, \"negativeIntKey\": -456}
+
+[  FAILED  ] ValueTest_69.IntegerValuesSerialization_69 (0 ms)
+[ RUN      ] ValueTest_69.DoubleValuesSerialization_69
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_69.cpp:177: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "{\n\t\"doubleKey\" : 123.45,\n\t\"negativeDoubleKey\" : -678.89999999999998\n}"
+  R"({"doubleKey": 123.45, "negativeDoubleKey": -678.9})"
+    Which is: "{\"doubleKey\": 123.45, \"negativeDoubleKey\": -678.9}"
+With diff:
+@@ -1,4 +1,1 @@
+-{
+-\t\"doubleKey\" : 123.45,
+-\t\"negativeDoubleKey\" : -678.89999999999998
+-}
++{\"doubleKey\": 123.45, \"negativeDoubleKey\": -678.9}
+
+[  FAILED  ] ValueTest_69.DoubleValuesSerialization_69 (0 ms)
+[----------] 9 tests from ValueTest_69 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 8 tests, listed below:
+[  FAILED  ] ValueTest_69.SingleKeyObjectSerialization_69
+[  FAILED  ] ValueTest_69.MultipleKeysObjectSerialization_69
+[  FAILED  ] ValueTest_69.NestedObjectSerialization_69
+[  FAILED  ] ValueTest_69.StringWithSpecialCharactersSerialization_69
+[  FAILED  ] ValueTest_69.EmptyStringSerialization_69
+[  FAILED  ] ValueTest_69.BooleanValuesSerialization_69
+[  FAILED  ] ValueTest_69.IntegerValuesSerialization_69
+[  FAILED  ] ValueTest_69.DoubleValuesSerialization_69
+
+ 8 FAILED TESTS

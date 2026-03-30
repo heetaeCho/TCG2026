@@ -1,0 +1,62 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 19 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 19 tests from RE2Test_1
+[ RUN      ] RE2Test_1.ValidPatternOk_1
+[       OK ] RE2Test_1.ValidPatternOk_1 (0 ms)
+[ RUN      ] RE2Test_1.EmptyPatternOk_1
+[       OK ] RE2Test_1.EmptyPatternOk_1 (0 ms)
+[ RUN      ] RE2Test_1.BadEscapeSequenceNotOk_1
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1774677329.858276 1679372 re2.cc:242] Error parsing 'abc\': trailing \
+[       OK ] RE2Test_1.BadEscapeSequenceNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.BadCharClassNotOk_1
+E0000 00:00:1774677329.858707 1679372 re2.cc:242] Error parsing '[z-a]': invalid character class range: z-a
+[       OK ] RE2Test_1.BadCharClassNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.BadCharRangeNotOk_1
+E0000 00:00:1774677329.858722 1679372 re2.cc:242] Error parsing '[a-z-': missing ]: [a-z-
+[       OK ] RE2Test_1.BadCharRangeNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.MissingBracketNotOk_1
+E0000 00:00:1774677329.858731 1679372 re2.cc:242] Error parsing '[abc': missing ]: [abc
+[       OK ] RE2Test_1.MissingBracketNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.MissingParenthesisNotOk_1
+E0000 00:00:1774677329.858739 1679372 re2.cc:242] Error parsing '(abc': missing ): (abc
+[       OK ] RE2Test_1.MissingParenthesisNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.UnexpectedParenthesisNotOk_1
+E0000 00:00:1774677329.858745 1679372 re2.cc:242] Error parsing 'abc)': unexpected ): abc)
+[       OK ] RE2Test_1.UnexpectedParenthesisNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.TrailingBackslashNotOk_1
+E0000 00:00:1774677329.858752 1679372 re2.cc:242] Error parsing 'abc\': trailing \
+[       OK ] RE2Test_1.TrailingBackslashNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.BadPerlOperatorNotOk_1
+[       OK ] RE2Test_1.BadPerlOperatorNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.BadUTF8SequenceNotOk_1
+E0000 00:00:1774677329.858801 1679372 re2.cc:242] Error parsing 'Ã(': invalid UTF-8
+[       OK ] RE2Test_1.BadUTF8SequenceNotOk_1 (0 ms)
+[ RUN      ] RE2Test_1.BadNamedCaptureNotOk_1
+E0000 00:00:1774677329.860075 1679372 re2.cc:242] Error parsing '(?P<name>abc': missing ): (?P<name>abc
+[       OK ] RE2Test_1.BadNamedCaptureNotOk_1 (1 ms)
+[ RUN      ] RE2Test_1.PatternTooLargeNotOk_1
+E0000 00:00:1774677329.955788 1679372 re2.cc:267] Error compiling 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...'
+[       OK ] RE2Test_1.PatternTooLargeNotOk_1 (95 ms)
+[ RUN      ] RE2Test_1.FullMatchValidPattern_1
+[       OK ] RE2Test_1.FullMatchValidPattern_1 (0 ms)
+[ RUN      ] RE2Test_1.FullMatchEmptyPatternAndString_1
+[       OK ] RE2Test_1.FullMatchEmptyPatternAndString_1 (0 ms)
+[ RUN      ] RE2Test_1.FullMatchInvalidPattern_1
+E0000 00:00:1774677329.956074 1679372 re2.cc:242] Error parsing 'abc\': trailing \
+E0000 00:00:1774677329.956083 1679372 re2.cc:926] Invalid RE2: trailing \
+[       OK ] RE2Test_1.FullMatchInvalidPattern_1 (0 ms)
+[ RUN      ] RE2Test_1.PartialMatchValidPattern_1
+[       OK ] RE2Test_1.PartialMatchValidPattern_1 (0 ms)
+[ RUN      ] RE2Test_1.PartialMatchEmptyPatternAndString_1
+[       OK ] RE2Test_1.PartialMatchEmptyPatternAndString_1 (0 ms)
+[ RUN      ] RE2Test_1.PartialMatchInvalidPattern_1
+E0000 00:00:1774677329.956187 1679372 re2.cc:242] Error parsing 'bc\': trailing \
+E0000 00:00:1774677329.956194 1679372 re2.cc:926] Invalid RE2: trailing \
+[       OK ] RE2Test_1.PartialMatchInvalidPattern_1 (0 ms)
+[----------] 19 tests from RE2Test_1 (98 ms total)
+
+[----------] Global test environment tear-down
+[==========] 19 tests from 1 test suite ran. (98 ms total)
+[  PASSED  ] 19 tests.

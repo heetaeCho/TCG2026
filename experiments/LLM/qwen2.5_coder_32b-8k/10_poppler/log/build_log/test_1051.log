@@ -1,0 +1,52 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1051.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1051.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1051.cpp:13:17: error: incompatible pointer types assigning to 'SplashColor *' (aka 'unsigned char (*)[8]') from 'unsigned char *'
+   13 |         color = new SplashColor();
+      |                 ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1051.cpp:15:32: error: no matching constructor for initialization of 'SplashSolidColor'
+   15 |         splashSolidColor = new SplashSolidColor(color);
+      |                                ^                ~~~~~
+/home/user/TCG2026/TestProjects/poppler/splash/SplashPattern.h:69:14: note: candidate constructor not viable: no known conversion from 'SplashColor *' (aka 'unsigned char (*)[8]') to 'SplashColorConstPtr' (aka 'const unsigned char *') for 1st argument; dereference the argument with *
+   69 |     explicit SplashSolidColor(SplashColorConstPtr colorA);
+      |              ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/splash/SplashPattern.h:66:30: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'SplashColor *' (aka 'unsigned char (*)[8]') to 'const SplashSolidColor' for 1st argument
+   66 | class POPPLER_PRIVATE_EXPORT SplashSolidColor : public SplashPattern
+      |                              ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1051.cpp:53:50: error: cannot initialize a parameter of type 'SplashColorPtr' (aka 'unsigned char *') with an rvalue of type 'SplashColor *' (aka 'unsigned char (*)[8]')
+   53 |     EXPECT_TRUE(splashSolidColor->getColor(0, 0, &c));
+      |                                                  ^~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/splash/SplashPattern.h:75:48: note: passing argument to parameter 'c' here
+   75 |     bool getColor(int x, int y, SplashColorPtr c) const override;
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1051.cpp:91:62: error: cannot initialize a parameter of type 'SplashColorPtr' (aka 'unsigned char *') with an rvalue of type 'SplashColor *' (aka 'unsigned char (*)[8]')
+   91 |     EXPECT_TRUE(splashSolidColor->getColor(INT_MAX, INT_MAX, &c));
+      |                                                              ^~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/splash/SplashPattern.h:75:48: note: passing argument to parameter 'c' here
+   75 |     bool getColor(int x, int y, SplashColorPtr c) const override;
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1051.cpp:7:7: warning: 'SplashSolidColorTest_1051' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class SplashSolidColorTest_1051 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1051.dir/build.make:79: generated_build/CMakeFiles/test_1051.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1051.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:41610: generated_build/CMakeFiles/test_1051.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:41617: generated_build/CMakeFiles/test_1051.dir/rule] 오류 2
+gmake: *** [Makefile:13374: test_1051] 오류 2

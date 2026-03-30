@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_526.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_526.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_526.cpp:11:7: warning: 'GfxPatchMeshShadingTest_526' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class GfxPatchMeshShadingTest_526 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_526.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Function'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_526.cpp:31:34: note: in instantiation of function template specialization 'std::make_unique<Function>' requested here
+   31 |         funcsA.emplace_back(std::make_unique<Function>());  // Mock Function object
+      |                                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:62:39: note: unimplemented pure virtual method 'copy' in 'Function'
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |                                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:73:18: note: unimplemented pure virtual method 'getType' in 'Function'
+   73 |     virtual Type getType() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:87:18: note: unimplemented pure virtual method 'transform' in 'Function'
+   87 |     virtual void transform(const double *in, double *out) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:89:18: note: unimplemented pure virtual method 'isOk' in 'Function'
+   89 |     virtual bool isOk() const = 0;
+      |                  ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_526.dir/build.make:79: generated_build/CMakeFiles/test_526.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_526.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:83530: generated_build/CMakeFiles/test_526.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:83537: generated_build/CMakeFiles/test_526.dir/rule] 오류 2
+gmake: *** [Makefile:30404: test_526] 오류 2

@@ -1,0 +1,358 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1704.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:37:41: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   37 |         subIfd = new TiffSubIfd(0x0111, IfdId::ifd0Id, IfdId::ifd1Id);
+      |                                         ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:37:56: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   37 |         subIfd = new TiffSubIfd(0x0111, IfdId::ifd0Id, IfdId::ifd1Id);
+      |                                                        ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:41:18: error: no matching constructor for initialization of 'TiffReader'
+   41 |         reader = TiffReader(data, sizeof(data), subIfd, {});
+      |                  ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:590:3: note: candidate constructor not viable: cannot convert initializer list argument to 'TiffRwState'
+  590 |   TiffReader(const byte* pData, size_t size, TiffComponent* pRoot, TiffRwState state);
+      |   ^                                                                ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:577:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+  577 | class TiffReader : public TiffVisitor {
+      |       ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:41:16: error: object of type 'TiffReader' cannot be assigned because its copy assignment operator is implicitly deleted
+   41 |         reader = TiffReader(data, sizeof(data), subIfd, {});
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:577:20: note: copy assignment operator of 'TiffReader' is implicitly deleted because base class 'TiffVisitor' has a deleted copy assignment operator
+  577 | class TiffReader : public TiffVisitor {
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:67:16: note: 'operator=' has been explicitly marked deleted here
+   67 |   TiffVisitor& operator=(const TiffVisitor&) = delete;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:57:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   57 | TEST_F(TiffReaderTest_1704, NormalOperation_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:93:1: note: expanded from here
+   93 | TiffReaderTest_1704_NormalOperation_1704_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:57:1: note: default constructor of 'TiffReaderTest_1704_NormalOperation_1704_Test' is implicitly deleted because base class 'TiffReaderTest_1704' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:29:16: note: default constructor of 'TiffReaderTest_1704' is implicitly deleted because field 'reader' has no default constructor
+   29 |     TiffReader reader;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:57:1: note: replace 'default' with 'delete'
+   57 | TEST_F(TiffReaderTest_1704, NormalOperation_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:71:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   71 |     subIfd->setCount(2);
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:81:23: error: no member named 'children' in 'Exiv2::Internal::TiffSubIfd'
+   81 |     EXPECT_EQ(subIfd->children().size(), 1U); // Only one child should be added due to group check
+      |               ~~~~~~  ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:87:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   87 | TEST_F(TiffReaderTest_1704, BoundaryCondition_ZeroCount_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:135:1: note: expanded from here
+  135 | TiffReaderTest_1704_BoundaryCondition_ZeroCount_1704_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:87:1: note: default constructor of 'TiffReaderTest_1704_BoundaryCondition_ZeroCount_1704_Test' is implicitly deleted because base class 'TiffReaderTest_1704' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:29:16: note: default constructor of 'TiffReaderTest_1704' is implicitly deleted because field 'reader' has no default constructor
+   29 |     TiffReader reader;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:87:1: note: replace 'default' with 'delete'
+   87 | TEST_F(TiffReaderTest_1704, BoundaryCondition_ZeroCount_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:89:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   89 |     subIfd->setCount(0);
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:95:23: error: no member named 'children' in 'Exiv2::Internal::TiffSubIfd'
+   95 |     EXPECT_EQ(subIfd->children().size(), 0U); // No children should be added
+      |               ~~~~~~  ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:101:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  101 | TEST_F(TiffReaderTest_1704, BoundaryCondition_MaxCount_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:29:1: note: expanded from here
+   29 | TiffReaderTest_1704_BoundaryCondition_MaxCount_1704_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:101:1: note: default constructor of 'TiffReaderTest_1704_BoundaryCondition_MaxCount_1704_Test' is implicitly deleted because base class 'TiffReaderTest_1704' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:29:16: note: default constructor of 'TiffReaderTest_1704' is implicitly deleted because field 'reader' has no default constructor
+   29 |     TiffReader reader;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:101:1: note: replace 'default' with 'delete'
+  101 | TEST_F(TiffReaderTest_1704, BoundaryCondition_MaxCount_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:103:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+  103 |     subIfd->setCount(9);
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:119:23: error: no member named 'children' in 'Exiv2::Internal::TiffSubIfd'
+  119 |     EXPECT_EQ(subIfd->children().size(), 1U); // Only one child should be added due to group check
+      |               ~~~~~~  ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:125:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  125 | TEST_F(TiffReaderTest_1704, OutOfBoundsOffset_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:67:1: note: expanded from here
+   67 | TiffReaderTest_1704_OutOfBoundsOffset_1704_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:125:1: note: default constructor of 'TiffReaderTest_1704_OutOfBoundsOffset_1704_Test' is implicitly deleted because base class 'TiffReaderTest_1704' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:29:16: note: default constructor of 'TiffReaderTest_1704' is implicitly deleted because field 'reader' has no default constructor
+   29 |     TiffReader reader;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:125:1: note: replace 'default' with 'delete'
+  125 | TEST_F(TiffReaderTest_1704, OutOfBoundsOffset_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:127:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+  127 |     subIfd->setCount(1);
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:135:25: error: use of undeclared identifier 'WARNING'
+  135 |     EXPECT_LOG_CONTAINS(WARNING, "is out of bounds; ignoring it.", reader.visitSubIfd(subIfd));
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:139:23: error: no member named 'children' in 'Exiv2::Internal::TiffSubIfd'
+  139 |     EXPECT_EQ(subIfd->children().size(), 0U); // No children should be added
+      |               ~~~~~~  ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:145:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  145 | TEST_F(TiffReaderTest_1704, UnsupportedType_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:5:1: note: expanded from here
+    5 | TiffReaderTest_1704_UnsupportedType_1704_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:145:1: note: default constructor of 'TiffReaderTest_1704_UnsupportedType_1704_Test' is implicitly deleted because base class 'TiffReaderTest_1704' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:29:16: note: default constructor of 'TiffReaderTest_1704' is implicitly deleted because field 'reader' has no default constructor
+   29 |     TiffReader reader;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:145:1: note: replace 'default' with 'delete'
+  145 | TEST_F(TiffReaderTest_1704, UnsupportedType_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:147:13: error: no member named 'setTiffType' in 'Exiv2::Internal::TiffSubIfd'
+  147 |     subIfd->setTiffType(ttAsciiString); // Unsupported type for SubIFD
+      |     ~~~~~~  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:149:13: error: 'setCount' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+  149 |     subIfd->setCount(1);
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:497:8: note: declared protected here
+  497 |   void setCount(size_t count) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:157:25: error: use of undeclared identifier 'WARNING'
+  157 |     EXPECT_LOG_CONTAINS(WARNING, "doesn't look like a sub-IFD.", reader.visitSubIfd(subIfd));
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:161:23: error: no member named 'children' in 'Exiv2::Internal::TiffSubIfd'
+  161 |     EXPECT_EQ(subIfd->children().size(), 0U); // No children should be added
+      |               ~~~~~~  ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:167:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  167 | TEST_F(TiffReaderTest_1704, Ifd1GroupSpecialHandling_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:43:1: note: expanded from here
+   43 | TiffReaderTest_1704_Ifd1GroupSpecialHandling_1704_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:167:1: note: default constructor of 'TiffReaderTest_1704_Ifd1GroupSpecialHandling_1704_Test' is implicitly deleted because base class 'TiffReaderTest_1704' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:29:16: note: default constructor of 'TiffReaderTest_1704' is implicitly deleted because field 'reader' has no default constructor
+   29 |     TiffReader reader;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:167:1: note: replace 'default' with 'delete'
+  167 | TEST_F(TiffReaderTest_1704, Ifd1GroupSpecialHandling_1704) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:171:37: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+  171 |     subIfd = new TiffSubIfd(0x0112, IfdId::ifd1Id, IfdId::ifd2Id);
+      |                                     ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp:171:52: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+  171 |     subIfd = new TiffSubIfd(0x0112, IfdId::ifd1Id, IfdId::ifd2Id);
+      |                                                    ^~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+6 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1704.dir/build.make:79: generated_build/CMakeFiles/test_1704.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1704.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:35489: generated_build/CMakeFiles/test_1704.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:35496: generated_build/CMakeFiles/test_1704.dir/rule] 오류 2
+gmake: *** [Makefile:11164: test_1704] 오류 2

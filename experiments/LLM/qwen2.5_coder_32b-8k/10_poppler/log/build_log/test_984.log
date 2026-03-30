@@ -1,0 +1,64 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_984.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_984.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_984.cpp:31:22: error: call to constructor of 'PDFDoc' is ambiguous
+   31 |         pdfDoc = new PDFDoc(nullptr, std::nullopt, std::nullopt, [](){});
+      |                      ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_984.cpp:69:26: error: no member named 'getCString' in 'GooString'
+   69 |     EXPECT_STREQ(author->getCString(), "John Doe");
+      |                  ~~~~~~~~^
+/usr/include/gtest/gtest.h:2113:60: note: expanded from macro 'EXPECT_STREQ'
+ 2113 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_984.cpp:103:29: error: no member named 'getCString' in 'GooString'
+  103 |     EXPECT_STREQ(firstCall->getCString(), "Alice");
+      |                  ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2113:60: note: expanded from macro 'EXPECT_STREQ'
+ 2113 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_984.cpp:113:30: error: no member named 'getCString' in 'GooString'
+  113 |     EXPECT_STREQ(secondCall->getCString(), "Bob");
+      |                  ~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2113:60: note: expanded from macro 'EXPECT_STREQ'
+ 2113 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_984.cpp:17:7: warning: 'PDFDocTest_984' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class PDFDocTest_984 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_984.dir/build.make:79: generated_build/CMakeFiles/test_984.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_984.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14922: generated_build/CMakeFiles/test_984.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14929: generated_build/CMakeFiles/test_984.dir/rule] 오류 2
+gmake: *** [Makefile:2532: test_984] 오류 2

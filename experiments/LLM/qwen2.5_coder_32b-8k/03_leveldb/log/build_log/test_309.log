@@ -1,0 +1,95 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_309.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:174:3: error: use of undeclared identifier 'port'
+  174 |   port::Mutex mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:176:3: error: use of undeclared identifier 'port'
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:57:51: error: member access into incomplete type 'VersionSet'
+   57 |     uint64_t initial_sequence = db_impl->versions_->LastSequence();
+      |                                                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:27:7: note: forward declaration of 'leveldb::VersionSet'
+   27 | class VersionSet;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:57:42: error: 'versions_' is a private member of 'leveldb::DBImpl'
+   57 |     uint64_t initial_sequence = db_impl->versions_->LastSequence();
+      |                                          ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: declared private here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:61:59: error: member access into incomplete type 'VersionSet'
+   61 |     uint64_t sequence_after_snapshot1 = db_impl->versions_->LastSequence();
+      |                                                           ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:27:7: note: forward declaration of 'leveldb::VersionSet'
+   27 | class VersionSet;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:61:50: error: 'versions_' is a private member of 'leveldb::DBImpl'
+   61 |     uint64_t sequence_after_snapshot1 = db_impl->versions_->LastSequence();
+      |                                                  ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: declared private here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:79:47: error: member access into incomplete type 'VersionSet'
+   79 |     uint64_t new_sequence = db_impl->versions_->LastSequence();
+      |                                               ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:27:7: note: forward declaration of 'leveldb::VersionSet'
+   27 | class VersionSet;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:79:38: error: 'versions_' is a private member of 'leveldb::DBImpl'
+   79 |     uint64_t new_sequence = db_impl->versions_->LastSequence();
+      |                                      ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: declared private here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:87:38: error: 'versions_' is a private member of 'leveldb::DBImpl'
+   87 |     EXPECT_EQ(new_sequence, db_impl->versions_->LastSequence());
+      |                                      ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: declared private here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:87:47: error: member access into incomplete type 'VersionSet'
+   87 |     EXPECT_EQ(new_sequence, db_impl->versions_->LastSequence());
+      |                                               ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:27:7: note: forward declaration of 'leveldb::VersionSet'
+   27 | class VersionSet;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:89:26: error: no member named 'sequence_number' in 'leveldb::Snapshot'
+   89 |     EXPECT_EQ(snapshot2->sequence_number(), new_sequence);
+      |               ~~~~~~~~~  ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1892:63: note: expanded from macro 'EXPECT_EQ'
+ 1892 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:99:5: error: cannot use 'try' with exceptions disabled
+   99 |     EXPECT_NO_THROW(db_impl->ReleaseSnapshot(snapshot));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1801:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1801 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1412:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1412 |     try {                                                                \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:109:32: error: no member named 'sequence_number' in 'leveldb::Snapshot'
+  109 |     uint64_t seq1 = snapshot1->sequence_number();
+      |                     ~~~~~~~~~  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp:123:32: error: no member named 'sequence_number' in 'leveldb::Snapshot'
+  123 |     uint64_t seq2 = snapshot2->sequence_number();
+      |                     ~~~~~~~~~  ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_309.dir/build.make:76: generated_build/CMakeFiles/test_309.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_309.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14188: generated_build/CMakeFiles/test_309.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14195: generated_build/CMakeFiles/test_309.dir/rule] 오류 2
+gmake: *** [Makefile:6016: test_309] 오류 2

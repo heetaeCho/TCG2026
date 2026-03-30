@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1500.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1500.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1500.cpp:17:21: error: 'string_hasher' is a private member of 'NameToCharCode'
+   17 |     NameToCharCode::string_hasher hasher;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/NameToCharCode.h:43:12: note: declared private here
+   43 |     struct string_hasher
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1500.cpp:25:89: warning: null passed to a callee that requires a non-null argument [-Wnonnull]
+   25 |     EXPECT_EQ(hasher(static_cast<const char*>(nullptr)), std::hash<std::string_view> {}(static_cast<const char*>(nullptr)));
+      |                                                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1500.cpp:13:7: warning: 'NameToCharCodeTest_1500' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class NameToCharCodeTest_1500 : public ::testing::Test {
+      |       ^
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1500.dir/build.make:79: generated_build/CMakeFiles/test_1500.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1500.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:20490: generated_build/CMakeFiles/test_1500.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:20497: generated_build/CMakeFiles/test_1500.dir/rule] 오류 2
+gmake: *** [Makefile:4794: test_1500] 오류 2

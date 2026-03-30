@@ -1,0 +1,25 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from RE2SetTest_234
+[ RUN      ] RE2SetTest_234.AddPattern_234
+[       OK ] RE2SetTest_234.AddPattern_234 (0 ms)
+[ RUN      ] RE2SetTest_234.CompilePatterns_234
+[       OK ] RE2SetTest_234.CompilePatterns_234 (0 ms)
+[ RUN      ] RE2SetTest_234.MatchExistingPattern_234
+[       OK ] RE2SetTest_234.MatchExistingPattern_234 (0 ms)
+[ RUN      ] RE2SetTest_234.MatchNonExistingPattern_234
+[       OK ] RE2SetTest_234.MatchNonExistingPattern_234 (0 ms)
+[ RUN      ] RE2SetTest_234.MatchAfterClearingPatterns_234
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+F0000 00:00:1774677327.545982 1679249 set.cc:142] RE2::Set::Match() called before compiling
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x555bc8f9ec97  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x555bc8f9e69f  absl::log_internal::LogMessage::SendToLog()
+    @     0x555bc8f9e65b  absl::log_internal::LogMessage::Flush()
+    @     0x555bc8f17ab9  absl::log_internal::Voidify::operator&&<>()
+    @     0x555bc8f1601e  re2::RE2::Set::Match()
+    @     0x555bc8f15f24  re2::RE2::Set::Match()
+    @     0x555bc8edee75  RE2SetTest_234_MatchAfterClearingPatterns_234_Test::TestBody()
+    @     0x555bc8f1478f  testing::internal::HandleExceptionsInMethodIfSupported<>()

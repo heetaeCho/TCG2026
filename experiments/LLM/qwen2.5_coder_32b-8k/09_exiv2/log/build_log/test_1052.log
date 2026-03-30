@@ -1,0 +1,51 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1052.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp:23:14: error: incomplete type 'Exiv2::BasicIo' named in nested name specifier
+   23 |         io = BasicIo::createMemIo();
+      |              ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp:25:21: error: allocating an object of abstract class type 'Image'
+   25 |         image = new Image(imageTypeJpeg, 0x7fff, std::move(io));
+      |                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp:43:36: error: use of undeclared identifier 'typeShort'
+   43 |     EXPECT_TRUE(image->is2ByteType(typeShort));
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp:51:37: error: use of undeclared identifier 'typeLong'
+   51 |     EXPECT_FALSE(image->is2ByteType(typeLong));
+      |                                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp:11:7: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   11 | class ImageTest_1052 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp:25:27: error: use of undeclared identifier 'imageTypeJpeg'
+   25 |         image = new Image(imageTypeJpeg, 0x7fff, std::move(io));
+      |                           ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1052.dir/build.make:79: generated_build/CMakeFiles/test_1052.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1052.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:48171: generated_build/CMakeFiles/test_1052.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:48178: generated_build/CMakeFiles/test_1052.dir/rule] 오류 2
+gmake: *** [Makefile:16013: test_1052] 오류 2

@@ -1,0 +1,45 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1729.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp:53:63: error: unknown type name 'UShort'
+   53 |     Exifdatum exif_datum("Exif.PrimaryGroup.Compression", new UShort(65000));
+      |                                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp:67:63: error: unknown type name 'UShort'
+   67 |     Exifdatum exif_datum("Exif.PrimaryGroup.Compression", new UShort(0));
+      |                                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp:81:63: error: unknown type name 'UShort'
+   81 |     Exifdatum exif_datum("Exif.PrimaryGroup.Compression", new UShort(65535));
+      |                                                               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp:29:24: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   29 |         auto io = std::make_unique<BasicIo>();
+      |                        ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp:29:19: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   29 |         auto io = std::make_unique<BasicIo>();
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1729.dir/build.make:79: generated_build/CMakeFiles/test_1729.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1729.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:82545: generated_build/CMakeFiles/test_1729.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:82552: generated_build/CMakeFiles/test_1729.dir/rule] 오류 2
+gmake: *** [Makefile:29156: test_1729] 오류 2

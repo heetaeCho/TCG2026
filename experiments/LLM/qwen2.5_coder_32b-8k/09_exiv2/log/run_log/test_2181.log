@@ -1,0 +1,46 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from ExifKeyTest_2181
+[ RUN      ] ExifKeyTest_2181.ValidConstructorNormalOperation_2181
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2181.cpp:27: Failure
+Expected: ExifKey key(0x0132, "Exif.Photo") doesn't throw an exception.
+  Actual: it throws Exiv2::Error with description "Invalid ifdId 0".
+[  FAILED  ] ExifKeyTest_2181.ValidConstructorNormalOperation_2181 (0 ms)
+[ RUN      ] ExifKeyTest_2181.InvalidIfdIdThrowsException_2181
+[       OK ] ExifKeyTest_2181.InvalidIfdIdThrowsException_2181 (0 ms)
+[ RUN      ] ExifKeyTest_2181.ValidConstructorBoundaryCondition_2181
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2181.cpp:43: Failure
+Expected: ExifKey key(0xFFFF, "Exif.Photo") doesn't throw an exception.
+  Actual: it throws Exiv2::Error with description "Invalid ifdId 0".
+[  FAILED  ] ExifKeyTest_2181.ValidConstructorBoundaryCondition_2181 (0 ms)
+[ RUN      ] ExifKeyTest_2181.TagInfoConstructorNormalOperation_2181
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2181.cpp:55: Failure
+Expected: ExifKey key(mockTagInfo) doesn't throw an exception.
+  Actual: it throws Exiv2::Error with description "Invalid ifdId 850248928".
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2181.cpp:53: Failure
+Actual function call count doesn't match EXPECT_CALL(mockTagInfo, tag())...
+         Expected: to be called once
+           Actual: never called - unsatisfied and active
+[  FAILED  ] ExifKeyTest_2181.TagInfoConstructorNormalOperation_2181 (0 ms)
+[ RUN      ] ExifKeyTest_2181.CopyConstructorNormalOperation_2181
+unknown file: Failure
+C++ exception with description "Invalid ifdId 0" thrown in the test body.
+[  FAILED  ] ExifKeyTest_2181.CopyConstructorNormalOperation_2181 (0 ms)
+[ RUN      ] ExifKeyTest_2181.MoveConstructorNormalOperation_2181
+unknown file: Failure
+C++ exception with description "Invalid ifdId 0" thrown in the test body.
+[  FAILED  ] ExifKeyTest_2181.MoveConstructorNormalOperation_2181 (0 ms)
+[----------] 6 tests from ExifKeyTest_2181 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 5 tests, listed below:
+[  FAILED  ] ExifKeyTest_2181.ValidConstructorNormalOperation_2181
+[  FAILED  ] ExifKeyTest_2181.ValidConstructorBoundaryCondition_2181
+[  FAILED  ] ExifKeyTest_2181.TagInfoConstructorNormalOperation_2181
+[  FAILED  ] ExifKeyTest_2181.CopyConstructorNormalOperation_2181
+[  FAILED  ] ExifKeyTest_2181.MoveConstructorNormalOperation_2181
+
+ 5 FAILED TESTS

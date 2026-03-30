@@ -1,0 +1,193 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_850.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:15:19: error: allocation of incomplete type 'PDFDoc'
+   15 |         doc = new PDFDoc();
+      |                   ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:17:20: error: allocation of incomplete type 'PDFRectangle'
+   17 |         rect = new PDFRectangle(0, 0, 100, 100);
+      |                    ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:19:52: error: use of undeclared identifier 'AnnotSubtype'; did you mean 'Annot3D::AnnotSubtype'?
+   19 |         annotPolygon = new AnnotPolygon(doc, rect, AnnotSubtype::polygon);
+      |                                                    ^~~~~~~~~~~~
+      |                                                    Annot3D::AnnotSubtype
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:663:10: note: 'Annot3D::AnnotSubtype' declared here
+  663 |     enum AnnotSubtype
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:19:66: error: no member named 'polygon' in 'Annot::AnnotSubtype'
+   19 |         annotPolygon = new AnnotPolygon(doc, rect, AnnotSubtype::polygon);
+      |                                                    ~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:31:9: warning: deleting pointer to incomplete type 'PDFRectangle' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   31 |         delete rect;
+      |         ^      ~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:33:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   33 |         delete doc;
+      |         ^      ~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:51:42: error: use of undeclared identifier 'AnnotPolygonIntent'; did you mean 'AnnotPolygon::AnnotPolygonIntent'?
+   51 |     EXPECT_EQ(annotPolygon->getIntent(), AnnotPolygonIntent::unknown);
+      |                                          ^~~~~~~~~~~~~~~~~~
+      |                                          AnnotPolygon::AnnotPolygonIntent
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1286:10: note: 'AnnotPolygon::AnnotPolygonIntent' declared here
+ 1286 |     enum AnnotPolygonIntent
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:51:62: error: no member named 'unknown' in 'AnnotPolygon::AnnotPolygonIntent'
+   51 |     EXPECT_EQ(annotPolygon->getIntent(), AnnotPolygonIntent::unknown);
+      |                                          ~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:59:29: error: use of undeclared identifier 'AnnotPolygonIntent'; did you mean 'AnnotPolygon::AnnotPolygonIntent'?
+   59 |     annotPolygon->setIntent(AnnotPolygonIntent::link);
+      |                             ^~~~~~~~~~~~~~~~~~
+      |                             AnnotPolygon::AnnotPolygonIntent
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1286:10: note: 'AnnotPolygon::AnnotPolygonIntent' declared here
+ 1286 |     enum AnnotPolygonIntent
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:59:49: error: no member named 'link' in 'AnnotPolygon::AnnotPolygonIntent'
+   59 |     annotPolygon->setIntent(AnnotPolygonIntent::link);
+      |                             ~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:61:42: error: use of undeclared identifier 'AnnotPolygonIntent'; did you mean 'AnnotPolygon::AnnotPolygonIntent'?
+   61 |     EXPECT_EQ(annotPolygon->getIntent(), AnnotPolygonIntent::link);
+      |                                          ^~~~~~~~~~~~~~~~~~
+      |                                          AnnotPolygon::AnnotPolygonIntent
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1286:10: note: 'AnnotPolygon::AnnotPolygonIntent' declared here
+ 1286 |     enum AnnotPolygonIntent
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:61:42: error: no member named 'link' in 'AnnotPolygon::AnnotPolygonIntent'; did you mean simply 'link'?
+   61 |     EXPECT_EQ(annotPolygon->getIntent(), AnnotPolygonIntent::link);
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                          link
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/usr/include/unistd.h:819:12: note: 'link' declared here
+  819 | extern int link (const char *__from, const char *__to)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:93:68: error: no member named 'none' in 'AnnotLineEndingStyle'
+   93 |     EXPECT_EQ(annotPolygon->getStartStyle(), AnnotLineEndingStyle::none);
+      |                                              ~~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:101:66: error: no member named 'none' in 'AnnotLineEndingStyle'
+  101 |     EXPECT_EQ(annotPolygon->getEndStyle(), AnnotLineEndingStyle::none);
+      |                                            ~~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:7:7: warning: 'AnnotPolygonTest_850' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class AnnotPolygonTest_850 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: comparison between pointer and integer ('AnnotPolygon::AnnotPolygonIntent' and 'int (*)(const char *, const char *) noexcept')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<AnnotPolygon::AnnotPolygonIntent, int (const char *, const char *) noexcept>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:61:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<AnnotPolygon::AnnotPolygonIntent, int (const char *, const char *) noexcept, nullptr>' requested here
+   61 |     EXPECT_EQ(annotPolygon->getIntent(), AnnotPolygonIntent::link);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1545:11: error: comparison between pointer and integer ('AnnotLineEndingStyle' and 'int (*)(int (*)(void *), void *, int, void *, ...) noexcept')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<AnnotLineEndingStyle, int (int (*)(void *), void *, int, void *, ...) noexcept>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:93:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<AnnotLineEndingStyle, int (int (*)(void *), void *, int, void *, ...) noexcept, nullptr>' requested here
+   93 |     EXPECT_EQ(annotPolygon->getStartStyle(), AnnotLineEndingStyle::none);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1545:11: error: comparison between pointer and integer ('AnnotLineEndingStyle' and 'int (*)(int) noexcept')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<AnnotLineEndingStyle, int (int) noexcept>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp:93:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<AnnotLineEndingStyle, int (int) noexcept, nullptr>' requested here
+   93 |     EXPECT_EQ(annotPolygon->getStartStyle(), AnnotLineEndingStyle::none);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+3 warnings and 15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_850.dir/build.make:79: generated_build/CMakeFiles/test_850.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_850.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:99242: generated_build/CMakeFiles/test_850.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:99249: generated_build/CMakeFiles/test_850.dir/rule] 오류 2
+gmake: *** [Makefile:36787: test_850] 오류 2

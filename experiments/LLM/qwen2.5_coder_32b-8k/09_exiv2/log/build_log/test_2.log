@@ -1,0 +1,39 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_2.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2.cpp:45:35: error: 'rangeCheck' is a protected member of 'Exiv2::Internal::SliceBase'
+   45 |     ASSERT_NO_THROW(mockSliceBase.rangeCheck(5)); // Index within bounds
+      |                                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:41:8: note: declared protected here
+   41 |   void rangeCheck(size_t index) const {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2.cpp:55:35: error: 'rangeCheck' is a protected member of 'Exiv2::Internal::SliceBase'
+   55 |     ASSERT_NO_THROW(mockSliceBase.rangeCheck(0)); // Lower boundary index
+      |                                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:41:8: note: declared protected here
+   41 |   void rangeCheck(size_t index) const {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2.cpp:65:35: error: 'rangeCheck' is a protected member of 'Exiv2::Internal::SliceBase'
+   65 |     ASSERT_NO_THROW(mockSliceBase.rangeCheck(9)); // Upper boundary index
+      |                                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:41:8: note: declared protected here
+   41 |   void rangeCheck(size_t index) const {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2.cpp:75:32: error: 'rangeCheck' is a protected member of 'Exiv2::Internal::SliceBase'
+   75 |     EXPECT_THROW(mockSliceBase.rangeCheck(-1), std::out_of_range); // Index below lower bound
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:41:8: note: declared protected here
+   41 |   void rangeCheck(size_t index) const {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2.cpp:85:32: error: 'rangeCheck' is a protected member of 'Exiv2::Internal::SliceBase'
+   85 |     EXPECT_THROW(mockSliceBase.rangeCheck(10), std::out_of_range); // Index above upper bound
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:41:8: note: declared protected here
+   41 |   void rangeCheck(size_t index) const {
+      |        ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2.dir/build.make:79: generated_build/CMakeFiles/test_2.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:68401: generated_build/CMakeFiles/test_2.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:68408: generated_build/CMakeFiles/test_2.dir/rule] 오류 2
+gmake: *** [Makefile:23748: test_2] 오류 2

@@ -1,0 +1,100 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1147.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:17:25: error: base class has incomplete type
+   17 | class MockXRef : public XRef {
+      |                  ~~~~~~~^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:41:5: error: reference to 'Ref' is ambiguous
+   41 |     Ref validEmbFontID;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:43:5: error: reference to 'Ref' is ambiguous
+   43 |     Ref invalidEmbFontID;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:61:13: error: variable type 'GfxFont' is an abstract class
+   61 |     GfxFont font("tag", validEmbFontID, "name", gfxFontType1, validEmbFontID);
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:256:38: note: unimplemented pure virtual method 'getToUnicode' in 'GfxFont'
+  256 |     virtual const CharCodeToUnicode *getToUnicode() const = 0;
+      |                                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:291:17: note: unimplemented pure virtual method 'getNextChar' in 'GfxFont'
+  291 |     virtual int getNextChar(const char *s, int len, CharCode *code, Unicode const **u, int *uLen, double *dx, double *dy, double *ox, double *oy) const = 0;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:61:49: error: use of undeclared identifier 'gfxFontType1'; did you mean 'fontType1'?
+   61 |     GfxFont font("tag", validEmbFontID, "name", gfxFontType1, validEmbFontID);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 fontType1
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:64:5: note: 'fontType1' declared here
+   64 |     fontType1,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:63:5: error: reference to 'Ref' is ambiguous
+   63 |     Ref embID;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:65:41: error: use of undeclared identifier 'embID'
+   65 |     EXPECT_TRUE(font.getEmbeddedFontID(&embID));
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:67:15: error: use of undeclared identifier 'embID'
+   67 |     EXPECT_EQ(embID.num, 123);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:69:15: error: use of undeclared identifier 'embID'
+   69 |     EXPECT_EQ(embID.gen, 456);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:77:13: error: variable type 'GfxFont' is an abstract class
+   77 |     GfxFont font("tag", invalidEmbFontID, "name", gfxFontType1, invalidEmbFontID);
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:77:51: error: use of undeclared identifier 'gfxFontType1'; did you mean 'fontType1'?
+   77 |     GfxFont font("tag", invalidEmbFontID, "name", gfxFontType1, invalidEmbFontID);
+      |                                                   ^~~~~~~~~~~~
+      |                                                   fontType1
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:64:5: note: 'fontType1' declared here
+   64 |     fontType1,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:79:5: error: reference to 'Ref' is ambiguous
+   79 |     Ref embID;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:81:42: error: use of undeclared identifier 'embID'
+   81 |     EXPECT_FALSE(font.getEmbeddedFontID(&embID));
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:89:13: error: variable type 'GfxFont' is an abstract class
+   89 |     GfxFont font("tag", validEmbFontID, "name", gfxFontType1, validEmbFontID);
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:89:49: error: use of undeclared identifier 'gfxFontType1'; did you mean 'fontType1'?
+   89 |     GfxFont font("tag", validEmbFontID, "name", gfxFontType1, validEmbFontID);
+      |                                                 ^~~~~~~~~~~~
+      |                                                 fontType1
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:64:5: note: 'fontType1' declared here
+   64 |     fontType1,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp:37:7: warning: 'GfxFontTest_1147' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   37 | class GfxFontTest_1147 : public ::testing::Test {
+      |       ^
+1 warning and 15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1147.dir/build.make:79: generated_build/CMakeFiles/test_1147.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1147.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:103082: generated_build/CMakeFiles/test_1147.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:103089: generated_build/CMakeFiles/test_1147.dir/rule] 오류 2
+gmake: *** [Makefile:38347: test_1147] 오류 2

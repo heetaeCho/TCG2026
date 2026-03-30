@@ -1,0 +1,32 @@
+Running main() from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from VersionEditTest_65
+[ RUN      ] VersionEditTest_65.SetLastSequence_NormalOperation_65
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_65.cpp:51: Failure
+Expected: (debug_string.find("Last sequence: 12345")) != (std::string::npos), actual: 18446744073709551615 vs 18446744073709551615
+
+[  FAILED  ] VersionEditTest_65.SetLastSequence_NormalOperation_65 (0 ms)
+[ RUN      ] VersionEditTest_65.SetLastSequence_BoundaryCondition_65
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_65.cpp:79: Failure
+Expected: (debug_string.find("Last sequence: " + std::to_string(max_seq))) != (std::string::npos), actual: 18446744073709551615 vs 18446744073709551615
+
+[  FAILED  ] VersionEditTest_65.SetLastSequence_BoundaryCondition_65 (0 ms)
+[ RUN      ] VersionEditTest_65.SetLastSequence_ZeroValue_65
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_65.cpp:107: Failure
+Expected: (debug_string.find("Last sequence: 0")) != (std::string::npos), actual: 18446744073709551615 vs 18446744073709551615
+
+[  FAILED  ] VersionEditTest_65.SetLastSequence_ZeroValue_65 (0 ms)
+[ RUN      ] VersionEditTest_65.Clear_ResetsLastSequence_65
+[       OK ] VersionEditTest_65.Clear_ResetsLastSequence_65 (0 ms)
+[----------] 4 tests from VersionEditTest_65 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] VersionEditTest_65.SetLastSequence_NormalOperation_65
+[  FAILED  ] VersionEditTest_65.SetLastSequence_BoundaryCondition_65
+[  FAILED  ] VersionEditTest_65.SetLastSequence_ZeroValue_65
+
+ 3 FAILED TESTS

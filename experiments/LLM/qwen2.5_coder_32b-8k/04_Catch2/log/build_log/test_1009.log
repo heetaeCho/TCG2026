@@ -1,0 +1,114 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1009.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:91:17: error: field type 'MockIConfig' is an abstract class
+   91 |     MockIConfig mockConfig;
+      |                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:77:22: note: unimplemented pure virtual method 'warnAboutInfiniteGenerators' in 'MockIConfig'
+   77 |         virtual bool warnAboutInfiniteGenerators() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:91:48: note: unimplemented pure virtual method 'getPathFilters' in 'MockIConfig'
+   91 |         virtual std::vector<PathFilter> const& getPathFilters() const = 0;
+      |                                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:92:22: note: unimplemented pure virtual method 'useNewFilterBehaviour' in 'MockIConfig'
+   92 |         virtual bool useNewFilterBehaviour() const = 0;
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:101:24: error: no matching constructor for initialization of 'TestCaseInfo'
+  101 |         testCaseInfo = TestCaseInfo("TestName", "Description", SourceLineInfo("", 0));
+      |                        ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: no known conversion from 'const char[12]' to 'const NameAndTags' for 2nd argument
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:101:22: error: object of type 'TestCaseInfo' cannot be assigned because its copy assignment operator is implicitly deleted
+  101 |         testCaseInfo = TestCaseInfo("TestName", "Description", SourceLineInfo("", 0));
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:27: note: copy assignment operator of 'TestCaseInfo' is implicitly deleted because base class 'Detail::NonCopyable' has a deleted copy assignment operator
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_noncopyable.hpp:19:26: note: 'operator=' has been explicitly marked deleted here
+   19 |             NonCopyable& operator=( NonCopyable const& ) = delete;
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:117:50: error: use of undeclared identifier 'ReturnRef'; did you mean 'testing::ReturnRef'?
+  117 |     EXPECT_CALL(mockConfig, testSpec()).WillOnce(ReturnRef(testSpec));
+      |                                                  ^~~~~~~~~
+      |                                                  testing::ReturnRef
+/usr/include/gmock/gmock-actions.h:1260:37: note: 'testing::ReturnRef' declared here
+ 1260 | inline internal::ReturnRefAction<R> ReturnRef(R& x) {  // NOLINT
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:133:5: error: unknown type name 'Filter'
+  133 |     Filter filter;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:135:53: error: use of undeclared identifier 'Pattern'
+  135 |     filter.m_required.push_back(Detail::make_unique<Pattern>("TestName"));
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:137:14: error: 'm_filters' is a private member of 'Catch::TestSpec'
+  137 |     testSpec.m_filters.push_back(filter);
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:100:29: note: declared private here
+  100 |         std::vector<Filter> m_filters;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:141:50: error: use of undeclared identifier 'ReturnRef'; did you mean 'testing::ReturnRef'?
+  141 |     EXPECT_CALL(mockConfig, testSpec()).WillOnce(ReturnRef(testSpec));
+      |                                                  ^~~~~~~~~
+      |                                                  testing::ReturnRef
+/usr/include/gmock/gmock-actions.h:1260:37: note: 'testing::ReturnRef' declared here
+ 1260 | inline internal::ReturnRefAction<R> ReturnRef(R& x) {  // NOLINT
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:161:5: error: unknown type name 'Filter'
+  161 |     Filter filter;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:163:53: error: use of undeclared identifier 'Pattern'
+  163 |     filter.m_required.push_back(Detail::make_unique<Pattern>("NonExistentName"));
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:165:14: error: 'm_filters' is a private member of 'Catch::TestSpec'
+  165 |     testSpec.m_filters.push_back(filter);
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:100:29: note: declared private here
+  100 |         std::vector<Filter> m_filters;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:169:50: error: use of undeclared identifier 'ReturnRef'; did you mean 'testing::ReturnRef'?
+  169 |     EXPECT_CALL(mockConfig, testSpec()).WillOnce(ReturnRef(testSpec));
+      |                                                  ^~~~~~~~~
+      |                                                  testing::ReturnRef
+/usr/include/gmock/gmock-actions.h:1260:37: note: 'testing::ReturnRef' declared here
+ 1260 | inline internal::ReturnRefAction<R> ReturnRef(R& x) {  // NOLINT
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:187:5: error: unknown type name 'Filter'
+  187 |     Filter filter;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:189:54: error: use of undeclared identifier 'Pattern'
+  189 |     filter.m_forbidden.push_back(Detail::make_unique<Pattern>("TestName"));
+      |                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:191:14: error: 'm_filters' is a private member of 'Catch::TestSpec'
+  191 |     testSpec.m_filters.push_back(filter);
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:100:29: note: declared private here
+  100 |         std::vector<Filter> m_filters;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:195:50: error: use of undeclared identifier 'ReturnRef'; did you mean 'testing::ReturnRef'?
+  195 |     EXPECT_CALL(mockConfig, testSpec()).WillOnce(ReturnRef(testSpec));
+      |                                                  ^~~~~~~~~
+      |                                                  testing::ReturnRef
+/usr/include/gmock/gmock-actions.h:1260:37: note: 'testing::ReturnRef' declared here
+ 1260 | inline internal::ReturnRefAction<R> ReturnRef(R& x) {  // NOLINT
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:213:5: error: unknown type name 'Filter'
+  213 |     Filter filter;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:215:53: error: use of undeclared identifier 'Pattern'
+  215 |     filter.m_required.push_back(Detail::make_unique<Pattern>("TestName"));
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp:217:53: error: use of undeclared identifier 'Pattern'
+  217 |     filter.m_required.push_back(Detail::make_unique<Pattern>("Description"));
+      |                                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1009.dir/build.make:79: generated_build/CMakeFiles/test_1009.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1009.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18686: generated_build/CMakeFiles/test_1009.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18693: generated_build/CMakeFiles/test_1009.dir/rule] 오류 2
+gmake: *** [Makefile:6182: test_1009] 오류 2

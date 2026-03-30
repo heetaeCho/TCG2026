@@ -1,0 +1,300 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_538.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:13:37: error: base class has incomplete type
+   13 |     class MockEmitterState : public EmitterState {
+      |                              ~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: forward declaration of 'YAML::EmitterState'
+   37 | class EmitterState;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:57:17: error: 'm_pState' is a private member of 'YAML::Emitter'
+   57 |         emitter.m_pState.reset(new MockEmitterState());
+      |                 ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:57:32: error: cannot initialize a parameter of type 'pointer' (aka 'YAML::EmitterState *') with an rvalue of type 'MockEmitterState *'
+   57 |         emitter.m_pState.reset(new MockEmitterState());
+      |                                ^~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:452:21: note: passing argument to parameter '__p' here
+  452 |       reset(pointer __p = pointer()) noexcept
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:65:17: error: object of type 'MockEmitter' cannot be assigned because its copy assignment operator is implicitly deleted
+   65 |         emitter = MockEmitter(oss);
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:31:21: note: copy assignment operator of 'MockEmitter' is implicitly deleted because base class 'YAML::Emitter' has a deleted copy assignment operator
+   31 | class MockEmitter : public YAML::Emitter {
+      |                     ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:44:12: note: 'operator=' has been explicitly marked deleted here
+   44 |   Emitter& operator=(const Emitter&) = delete;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:77:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   77 | TEST_F(EmitterTest_538, WriteAlias_NormalOperation_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:142:1: note: expanded from here
+  142 | EmitterTest_538_WriteAlias_NormalOperation_538_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:77:1: note: default constructor of 'EmitterTest_538_WriteAlias_NormalOperation_538_Test' is implicitly deleted because base class 'EmitterTest_538' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:71:17: note: default constructor of 'EmitterTest_538' is implicitly deleted because field 'emitter' has no default constructor
+   71 |     MockEmitter emitter;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:77:1: note: replace 'default' with 'delete'
+   77 | TEST_F(EmitterTest_538, WriteAlias_NormalOperation_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:81:57: error: 'm_pState' is a private member of 'YAML::Emitter'
+   81 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(false));
+      |                                                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:81:18: error: static_cast from 'pointer' (aka 'YAML::EmitterState *') to 'MockEmitterState *', which are not related by inheritance, is not allowed
+   81 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(false));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: 'EmitterState' is incomplete
+   37 | class EmitterState;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:83:57: error: 'm_pState' is a private member of 'YAML::Emitter'
+   83 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasTag()).WillOnce(::testing::Return(false));
+      |                                                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:83:18: error: static_cast from 'pointer' (aka 'YAML::EmitterState *') to 'MockEmitterState *', which are not related by inheritance, is not allowed
+   83 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasTag()).WillOnce(::testing::Return(false));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: 'EmitterState' is incomplete
+   37 | class EmitterState;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:99:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   99 | TEST_F(EmitterTest_538, WriteAlias_BoundaryCondition_EmptyString_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:23:1: note: expanded from here
+   23 | EmitterTest_538_WriteAlias_BoundaryCondition_EmptyString_538_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:99:1: note: default constructor of 'EmitterTest_538_WriteAlias_BoundaryCondition_EmptyString_538_Test' is implicitly deleted because base class 'EmitterTest_538' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:71:17: note: default constructor of 'EmitterTest_538' is implicitly deleted because field 'emitter' has no default constructor
+   71 |     MockEmitter emitter;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:99:1: note: replace 'default' with 'delete'
+   99 | TEST_F(EmitterTest_538, WriteAlias_BoundaryCondition_EmptyString_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:103:57: error: 'm_pState' is a private member of 'YAML::Emitter'
+  103 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(false));
+      |                                                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:103:18: error: static_cast from 'pointer' (aka 'YAML::EmitterState *') to 'MockEmitterState *', which are not related by inheritance, is not allowed
+  103 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(false));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: 'EmitterState' is incomplete
+   37 | class EmitterState;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:105:57: error: 'm_pState' is a private member of 'YAML::Emitter'
+  105 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasTag()).WillOnce(::testing::Return(false));
+      |                                                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:105:18: error: static_cast from 'pointer' (aka 'YAML::EmitterState *') to 'MockEmitterState *', which are not related by inheritance, is not allowed
+  105 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasTag()).WillOnce(::testing::Return(false));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: 'EmitterState' is incomplete
+   37 | class EmitterState;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:121:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  121 | TEST_F(EmitterTest_538, WriteAlias_ErrorCase_HasAnchor_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:72:1: note: expanded from here
+   72 | EmitterTest_538_WriteAlias_ErrorCase_HasAnchor_538_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:121:1: note: default constructor of 'EmitterTest_538_WriteAlias_ErrorCase_HasAnchor_538_Test' is implicitly deleted because base class 'EmitterTest_538' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:71:17: note: default constructor of 'EmitterTest_538' is implicitly deleted because field 'emitter' has no default constructor
+   71 |     MockEmitter emitter;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:121:1: note: replace 'default' with 'delete'
+  121 | TEST_F(EmitterTest_538, WriteAlias_ErrorCase_HasAnchor_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:125:57: error: 'm_pState' is a private member of 'YAML::Emitter'
+  125 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(true));
+      |                                                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:125:18: error: static_cast from 'pointer' (aka 'YAML::EmitterState *') to 'MockEmitterState *', which are not related by inheritance, is not allowed
+  125 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(true));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: 'EmitterState' is incomplete
+   37 | class EmitterState;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:127:57: error: 'm_pState' is a private member of 'YAML::Emitter'
+  127 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), SetError(ErrorMsg::INVALID_ALIAS)).Times(1);
+      |                                                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:127:18: error: static_cast from 'pointer' (aka 'YAML::EmitterState *') to 'MockEmitterState *', which are not related by inheritance, is not allowed
+  127 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), SetError(ErrorMsg::INVALID_ALIAS)).Times(1);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: 'EmitterState' is incomplete
+   37 | class EmitterState;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:127:83: error: use of undeclared identifier 'ErrorMsg'
+  127 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), SetError(ErrorMsg::INVALID_ALIAS)).Times(1);
+      |                                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:143:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  143 | TEST_F(EmitterTest_538, WriteAlias_ErrorCase_HasTag_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:23:1: note: expanded from here
+   23 | EmitterTest_538_WriteAlias_ErrorCase_HasTag_538_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:143:1: note: default constructor of 'EmitterTest_538_WriteAlias_ErrorCase_HasTag_538_Test' is implicitly deleted because base class 'EmitterTest_538' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:71:17: note: default constructor of 'EmitterTest_538' is implicitly deleted because field 'emitter' has no default constructor
+   71 |     MockEmitter emitter;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:143:1: note: replace 'default' with 'delete'
+  143 | TEST_F(EmitterTest_538, WriteAlias_ErrorCase_HasTag_538) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:147:57: error: 'm_pState' is a private member of 'YAML::Emitter'
+  147 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(false));
+      |                                                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:141:33: note: declared private here
+  141 |   std::unique_ptr<EmitterState> m_pState;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp:147:18: error: static_cast from 'pointer' (aka 'YAML::EmitterState *') to 'MockEmitterState *', which are not related by inheritance, is not allowed
+  147 |     EXPECT_CALL(*static_cast<MockEmitterState*>(emitter.m_pState.get()), HasAnchor()).WillOnce(::testing::Return(false));
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emitter.h:37:7: note: 'EmitterState' is incomplete
+   37 | class EmitterState;
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+4 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_538.dir/build.make:79: generated_build/CMakeFiles/test_538.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_538.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:19918: generated_build/CMakeFiles/test_538.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:19925: generated_build/CMakeFiles/test_538.dir/rule] 오류 2
+gmake: *** [Makefile:7369: test_538] 오류 2

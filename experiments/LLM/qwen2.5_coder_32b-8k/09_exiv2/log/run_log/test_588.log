@@ -1,0 +1,56 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from MemIoTest_588
+[ RUN      ] MemIoTest_588.CloseReturnsZero_588
+[       OK ] MemIoTest_588.CloseReturnsZero_588 (0 ms)
+[ RUN      ] MemIoTest_588.OpenCloseSequence_588
+[       OK ] MemIoTest_588.OpenCloseSequence_588 (0 ms)
+[ RUN      ] MemIoTest_588.DefaultConstructorInitializesProperly_588
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_588.cpp:41: Failure
+Value of: memIo.isopen()
+  Actual: true
+Expected: false
+[  FAILED  ] MemIoTest_588.DefaultConstructorInitializesProperly_588 (0 ms)
+[ RUN      ] MemIoTest_588.IsOpenReturnsTrueAfterOpen_588
+[       OK ] MemIoTest_588.IsOpenReturnsTrueAfterOpen_588 (0 ms)
+[ RUN      ] MemIoTest_588.IsOpenReturnsFalseAfterClose_588
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_588.cpp:69: Failure
+Value of: memIo.isopen()
+  Actual: true
+Expected: false
+[  FAILED  ] MemIoTest_588.IsOpenReturnsFalseAfterClose_588 (0 ms)
+[ RUN      ] MemIoTest_588.ErrorInitiallyZero_588
+[       OK ] MemIoTest_588.ErrorInitiallyZero_588 (0 ms)
+[ RUN      ] MemIoTest_588.EofInitiallyFalse_588
+[       OK ] MemIoTest_588.EofInitiallyFalse_588 (0 ms)
+[ RUN      ] MemIoTest_588.TellInitiallyZero_588
+[       OK ] MemIoTest_588.TellInitiallyZero_588 (0 ms)
+[ RUN      ] MemIoTest_588.TellUpdatesAfterSeek_588
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_588.cpp:137: Failure
+Expected equality of these values:
+  memIo.tell()
+    Which is: 0
+  static_cast<size_t>(offset)
+    Which is: 10
+[  FAILED  ] MemIoTest_588.TellUpdatesAfterSeek_588 (0 ms)
+[ RUN      ] MemIoTest_588.SizeInitiallyZero_588
+[       OK ] MemIoTest_588.SizeInitiallyZero_588 (0 ms)
+[ RUN      ] MemIoTest_588.PathInitiallyEmpty_588
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_588.cpp:169: Failure
+Value of: memIo.path().empty()
+  Actual: false
+Expected: true
+[  FAILED  ] MemIoTest_588.PathInitiallyEmpty_588 (0 ms)
+[----------] 11 tests from MemIoTest_588 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 7 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] MemIoTest_588.DefaultConstructorInitializesProperly_588
+[  FAILED  ] MemIoTest_588.IsOpenReturnsFalseAfterClose_588
+[  FAILED  ] MemIoTest_588.TellUpdatesAfterSeek_588
+[  FAILED  ] MemIoTest_588.PathInitiallyEmpty_588
+
+ 4 FAILED TESTS

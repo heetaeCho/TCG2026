@@ -1,0 +1,45 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_532.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_532.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_532.cpp:37:17: error: unknown type name 'mockJsonUtils'; did you mean 'JsonUtils'?
+   37 |     EXPECT_CALL(mockJsonUtils, appendCommaNewline(Ref(os), Ref(should_comma), Eq(1))).Times(1);
+      |                 ^~~~~~~~~~~~~
+      |                 JsonUtils
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_jsonwriter.hpp:22:12: note: 'JsonUtils' declared here
+   22 |     struct JsonUtils {
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_532.cpp:37:5: error: expected expression
+   37 |     EXPECT_CALL(mockJsonUtils, appendCommaNewline(Ref(os), Ref(should_comma), Eq(1))).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_532.cpp:53:28: error: no member named 'getIndentLevel' in 'Catch::JsonObjectWriter'
+   53 |     EXPECT_EQ(objectWriter.getIndentLevel(), 1);
+      |               ~~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_532.dir/build.make:79: generated_build/CMakeFiles/test_532.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_532.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:12317: generated_build/CMakeFiles/test_532.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:12324: generated_build/CMakeFiles/test_532.dir/rule] 오류 2
+gmake: *** [Makefile:3673: test_532] 오류 2

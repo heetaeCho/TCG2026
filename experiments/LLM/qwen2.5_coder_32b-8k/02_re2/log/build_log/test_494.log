@@ -1,0 +1,86 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_494.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:17:5: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   17 |     ParseState parse_state{ParseFlags{}, "", &status};
+      |     ^~~~~~~~~~
+      |     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:17:28: error: use of undeclared identifier 'ParseFlags'; did you mean 'absl::ParseFlag'?
+   17 |     ParseState parse_state{ParseFlags{}, "", &status};
+      |                            ^~~~~~~~~~
+      |                            absl::ParseFlag
+/usr/local/include/absl/time/time.h:742:6: note: 'absl::ParseFlag' declared here
+  742 | bool ParseFlag(const std::string& text, Duration* dst, std::string* error);
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:17:38: error: expected '}'
+   17 |     ParseState parse_state{ParseFlags{}, "", &status};
+      |                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:17:27: note: to match this '{'
+   17 |     ParseState parse_state{ParseFlags{}, "", &status};
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:51:5: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   51 |     ParseState empty_flags_parse_state{ParseFlags{}, "", &status};
+      |     ^~~~~~~~~~
+      |     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:51:40: error: use of undeclared identifier 'ParseFlags'; did you mean 'absl::ParseFlag'?
+   51 |     ParseState empty_flags_parse_state{ParseFlags{}, "", &status};
+      |                                        ^~~~~~~~~~
+      |                                        absl::ParseFlag
+/usr/local/include/absl/time/time.h:742:6: note: 'absl::ParseFlag' declared here
+  742 | bool ParseFlag(const std::string& text, Duration* dst, std::string* error);
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:51:50: error: expected '}'
+   51 |     ParseState empty_flags_parse_state{ParseFlags{}, "", &status};
+      |                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:51:39: note: to match this '{'
+   51 |     ParseState empty_flags_parse_state{ParseFlags{}, "", &status};
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:51:40: warning: 'ParseFlag' is deprecated: Use AbslParseFlag() instead. [-Wdeprecated-declarations]
+   51 |     ParseState empty_flags_parse_state{ParseFlags{}, "", &status};
+      |                                        ^
+/usr/local/include/absl/time/time.h:741:1: note: 'ParseFlag' has been explicitly marked deprecated here
+  741 | ABSL_DEPRECATED("Use AbslParseFlag() instead.")
+      | ^
+/usr/local/include/absl/base/attributes.h:693:49: note: expanded from macro 'ABSL_DEPRECATED'
+  693 | #define ABSL_DEPRECATED(message) __attribute__((deprecated(message)))
+      |                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:53:40: error: member reference base type 'ParseStatus' is not a structure or union
+   53 |     EXPECT_TRUE(empty_flags_parse_state.PushSimpleOp(kRegexpNoMatch));
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:69:44: error: no member named 'kBadEscape' in 're2::RegexpStatus'
+   69 |     EXPECT_EQ(status.code(), RegexpStatus::kBadEscape);  // Example error code
+      |                              ~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp:77:1: error: expected unqualified-id
+   77 | ```
+      | ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_494.dir/build.make:79: generated_build/CMakeFiles/test_494.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_494.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4393: generated_build/CMakeFiles/test_494.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4400: generated_build/CMakeFiles/test_494.dir/rule] 오류 2
+gmake: *** [Makefile:1167: test_494] 오류 2

@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_363.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_363.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_363.cpp:75:5: error: cannot use 'try' with exceptions disabled
+   75 |     EXPECT_THROW(sampledFunction->getEncodeMax(i), std::out_of_range); // Assuming it throws out_of_range or similar
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_363.cpp:151:1: error: expected unqualified-id
+  151 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_363.cpp:9:7: warning: 'SampledFunctionTest_363' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class SampledFunctionTest_363 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_363.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'SampledFunction'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_363.cpp:25:32: note: in instantiation of function template specialization 'std::make_unique<SampledFunction>' requested here
+   25 |         sampledFunction = std::make_unique<SampledFunction>(/* appropriate arguments */);
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:125:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  125 | class SampledFunction : public Function
+      |       ^~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:132:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  132 |     SampledFunction(Object *funcObj, Dict *dict);
+      |     ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:148:14: note: candidate constructor not viable: requires at least argument 'func', but no arguments were provided
+  148 |     explicit SampledFunction(const SampledFunction *func, PrivateTag /*unused*/ = {});
+      |              ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_363.dir/build.make:79: generated_build/CMakeFiles/test_363.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_363.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15658: generated_build/CMakeFiles/test_363.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15665: generated_build/CMakeFiles/test_363.dir/rule] 오류 2
+gmake: *** [Makefile:2831: test_363] 오류 2

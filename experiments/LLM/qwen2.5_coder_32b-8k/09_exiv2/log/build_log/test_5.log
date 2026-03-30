@@ -1,0 +1,99 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_5.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:23:30: error: no matching constructor for initialization of 'ConstSliceBase<std::vector, int>'
+   23 |     ConstSliceBaseTest_5() : slice(data, 1, 4) {}
+      |                              ^     ~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:90:3: note: candidate constructor not viable: no known conversion from 'std::vector<int>' to 'int &' for 1st argument
+   90 |   ConstSliceBase(data_type& data, size_t begin, size_t end) : SliceBase(begin, end), storage_(data, begin, end) {
+      |   ^              ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:82:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   82 | struct ConstSliceBase : SliceBase {
+      |        ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:82:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   82 | struct ConstSliceBase : SliceBase {
+      |        ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:105:21: error: no member named 'unsafeAt' in 'std::vector<int>'
+  105 |     return storage_.unsafeAt(begin_ + index);
+      |            ~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:39:21: note: in instantiation of member function 'Exiv2::Internal::ConstSliceBase<std::vector, int>::at' requested here
+   39 |     EXPECT_EQ(slice.at(0), 2);
+      |                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:5:
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:112:21: error: no member named 'unsafeGetIteratorAt' in 'std::vector<int>'
+  112 |     return storage_.unsafeGetIteratorAt(begin_);
+      |            ~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:51:21: note: in instantiation of member function 'Exiv2::Internal::ConstSliceBase<std::vector, int>::cbegin' requested here
+   51 |     auto it = slice.cbegin();
+      |                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:5:
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:119:21: error: no member named 'unsafeGetIteratorAt' in 'std::vector<int>'
+  119 |     return storage_.unsafeGetIteratorAt(end_);
+      |            ~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:61:21: note: in instantiation of member function 'Exiv2::Internal::ConstSliceBase<std::vector, int>::cend' requested here
+   61 |     auto it = slice.cend();
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:63:25: error: 'storage_' is a protected member of 'Exiv2::Internal::ConstSliceBase<std::vector, int>'
+   63 |     EXPECT_EQ(it, slice.storage_.unsafeGetIteratorAt(4));
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:151:27: note: declared protected here
+  151 |   storage_type<data_type> storage_;
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:63:34: error: no member named 'unsafeGetIteratorAt' in 'std::vector<int>'
+   63 |     EXPECT_EQ(it, slice.storage_.unsafeGetIteratorAt(4));
+      |                   ~~~~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:73:23: error: member reference base type 'int' is not a structure or union
+   73 |     EXPECT_EQ(subslice.size(), 1);
+      |               ~~~~~~~~^~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:75:23: error: member reference base type 'int' is not a structure or union
+   75 |     EXPECT_EQ(subslice.at(0), 3);
+      |               ~~~~~~~~^~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:5:
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:144:22: error: no member named 'data_' in 'std::vector<int>'
+  144 |     return {storage_.data_, new_begin, new_end};
+      |             ~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp:71:27: note: in instantiation of function template specialization 'Exiv2::Internal::ConstSliceBase<std::vector, int>::subSlice<int>' requested here
+   71 |     auto subslice = slice.subSlice<int>(1, 2);
+      |                           ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_5.dir/build.make:79: generated_build/CMakeFiles/test_5.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_5.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:58507: generated_build/CMakeFiles/test_5.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:58514: generated_build/CMakeFiles/test_5.dir/rule] 오류 2
+gmake: *** [Makefile:19965: test_5] 오류 2

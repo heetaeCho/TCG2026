@@ -1,0 +1,135 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_633.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:17:28: error: base class has incomplete type
+   17 | class MockIStream : public IStream {
+      |                     ~~~~~~~^~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:19:11: note: forward declaration of 'Catch::IStream'
+   19 |     class IStream;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:21:5: error: only virtual member functions can be marked 'override'
+   21 |     MOCK_METHOD(std::ostream&, stream, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:112:1: note: expanded from here
+  112 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:23:44: error: use of undeclared identifier 'override'
+   23 |     MOCK_CONST_METHOD0(isConsole, bool(), (override));
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:23:44: error: use of undeclared identifier 'override'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:23:44: error: use of undeclared identifier 'override'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:23:44: error: use of undeclared identifier 'override'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:23:44: error: use of undeclared identifier 'override'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:23:44: error: use of undeclared identifier 'override'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:23:44: error: use of undeclared identifier 'override'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:37:23: error: no matching function for call to 'makeColourImpl'
+   37 |     auto colourImpl = makeColourImpl(ColourMode::ANSI, &mockStream);
+      |                       ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:133:36: note: candidate function not viable: no known conversion from 'MockIStream *' to 'IStream *' for 2nd argument
+  133 |     Detail::unique_ptr<ColourImpl> makeColourImpl( ColourMode colourSelection,
+      |                                    ^
+  134 |                                                    IStream* stream );
+      |                                                    ~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:41:30: error: unknown type name 'ANSIColourImpl'; did you mean 'ColourImpl'?
+   41 |     EXPECT_TRUE(dynamic_cast<ANSIColourImpl*>(colourImpl.get()) != nullptr);
+      |                              ^~~~~~~~~~~~~~
+      |                              ColourImpl
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:60:11: note: 'ColourImpl' declared here
+   60 |     class ColourImpl {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:73:23: error: no matching function for call to 'makeColourImpl'
+   73 |     auto colourImpl = makeColourImpl(ColourMode::None, &mockStream);
+      |                       ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:133:36: note: candidate function not viable: no known conversion from 'MockIStream *' to 'IStream *' for 2nd argument
+  133 |     Detail::unique_ptr<ColourImpl> makeColourImpl( ColourMode colourSelection,
+      |                                    ^
+  134 |                                                    IStream* stream );
+      |                                                    ~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:77:30: error: unknown type name 'NoColourImpl'; did you mean 'ColourImpl'?
+   77 |     EXPECT_TRUE(dynamic_cast<NoColourImpl*>(colourImpl.get()) != nullptr);
+      |                              ^~~~~~~~~~~~
+      |                              ColourImpl
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:60:11: note: 'ColourImpl' declared here
+   60 |     class ColourImpl {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:89:17: error: use of undeclared identifier 'ANSIColourImpl'
+   89 |     EXPECT_CALL(ANSIColourImpl, useImplementationForStream(_)).WillOnce(Return(true));
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:93:23: error: no matching function for call to 'makeColourImpl'
+   93 |     auto colourImpl = makeColourImpl(ColourMode::PlatformDefault, &mockStream);
+      |                       ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:133:36: note: candidate function not viable: no known conversion from 'MockIStream *' to 'IStream *' for 2nd argument
+  133 |     Detail::unique_ptr<ColourImpl> makeColourImpl( ColourMode colourSelection,
+      |                                    ^
+  134 |                                                    IStream* stream );
+      |                                                    ~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:97:30: error: unknown type name 'ANSIColourImpl'; did you mean 'ColourImpl'?
+   97 |     EXPECT_TRUE(dynamic_cast<ANSIColourImpl*>(colourImpl.get()) != nullptr);
+      |                              ^~~~~~~~~~~~~~
+      |                              ColourImpl
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:60:11: note: 'ColourImpl' declared here
+   60 |     class ColourImpl {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:135:17: error: use of undeclared identifier 'Win32ColourImpl'
+  135 |     EXPECT_CALL(Win32ColourImpl, useImplementationForStream(_)).WillOnce(Return(false));
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:137:17: error: use of undeclared identifier 'ANSIColourImpl'
+  137 |     EXPECT_CALL(ANSIColourImpl, useImplementationForStream(_)).WillOnce(Return(false));
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp:141:23: error: no matching function for call to 'makeColourImpl'
+  141 |     auto colourImpl = makeColourImpl(ColourMode::PlatformDefault, &mockStream);
+      |                       ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_console_colour.hpp:133:36: note: candidate function not viable: no known conversion from 'MockIStream *' to 'IStream *' for 2nd argument
+  133 |     Detail::unique_ptr<ColourImpl> makeColourImpl( ColourMode colourSelection,
+      |                                    ^
+  134 |                                                    IStream* stream );
+      |                                                    ~~~~~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_633.dir/build.make:79: generated_build/CMakeFiles/test_633.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_633.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:22811: generated_build/CMakeFiles/test_633.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:22818: generated_build/CMakeFiles/test_633.dir/rule] 오류 2
+gmake: *** [Makefile:7807: test_633] 오류 2

@@ -1,0 +1,117 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_451.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:109:42: error: too few arguments to function call, at least argument 'msg' must be specified
+  109 |         .WillOnce(Return(Status::IOError()));
+      |                          ~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:52:17: note: 'IOError' declared here
+   52 |   static Status IOError(const Slice& msg, const Slice& msg2 = Slice()) {
+      |                 ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockEnv'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:39:26: note: in instantiation of function template specialization 'std::make_unique<MockEnv>' requested here
+   39 |         mock_env_ = std::make_unique<MockEnv>();
+      |                          ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'MockEnv'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'MockEnv'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'MockEnv'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:114:16: note: unimplemented pure virtual method 'FileExists' in 'MockEnv'
+  114 |   virtual bool FileExists(const std::string& fname) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'MockEnv'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'MockEnv'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'MockEnv'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:185:18: note: unimplemented pure virtual method 'LockFile' in 'MockEnv'
+  185 |   virtual Status LockFile(const std::string& fname, FileLock** lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:190:18: note: unimplemented pure virtual method 'UnlockFile' in 'MockEnv'
+  190 |   virtual Status UnlockFile(FileLock* lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'MockEnv'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'MockEnv'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'MockEnv'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'MockEnv'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'MockEnv'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'MockEnv'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock.h:56:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:1778:19: error: static assertion failed due to requirement 'std::is_lvalue_reference<std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char>>, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>> *>::value': Argument must be a reference type.
+ 1778 |     static_assert(std::is_lvalue_reference<argk_type>::value,
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:540:14: note: in instantiation of function template specialization 'testing::internal::SetArgRefereeAction<1, std::vector<std::basic_string<char>>>::operator()<const std::basic_string<char> &, std::vector<std::basic_string<char>> *>' requested here
+  540 |       return std::move(*callable_)(std::forward<ArgRefs>(args)...);
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h:61:14: note: in instantiation of function template specialization 'testing::OnceAction<void (const std::basic_string<char> &, std::vector<std::basic_string<char>> *)>::StdFunctionAdaptor<testing::internal::SetArgRefereeAction<1, std::vector<std::basic_string<char>>>>::operator()<const std::basic_string<char> &, std::vector<std::basic_string<char>> *>' requested here
+   61 |     { return std::forward<_Fn>(__f)(std::forward<_Args>(__args)...); }
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:451:35: note: in instantiation of member function 'std::_Function_handler<void (const std::basic_string<char> &, std::vector<std::basic_string<char>> *), testing::OnceAction<void (const std::basic_string<char> &, std::vector<std::basic_string<char>> *)>::StdFunctionAdaptor<testing::internal::SetArgRefereeAction<1, std::vector<std::basic_string<char>>>>>::_M_invoke' requested here
+  451 |               _M_invoker = &_My_handler::_M_invoke;
+      |                                          ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:463:9: note: in instantiation of function template specialization 'std::function<void (const std::basic_string<char> &, std::vector<std::basic_string<char>> *)>::function<testing::OnceAction<void (const std::basic_string<char> &, std::vector<std::basic_string<char>> *)>::StdFunctionAdaptor<testing::internal::SetArgRefereeAction<1, std::vector<std::basic_string<char>>>>, void>' requested here
+  463 |       : function_(StdFunctionAdaptor<typename std::decay<Callable>::type>(
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:1654:9: note: in instantiation of function template specialization 'testing::OnceAction<void (const std::basic_string<char> &, std::vector<std::basic_string<char>> *)>::OnceAction<testing::internal::SetArgRefereeAction<1, std::vector<std::basic_string<char>>>, 0>' requested here
+ 1654 |         std::move(initial_action_),
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:55:19: note: in instantiation of function template specialization 'testing::internal::DoAllAction<testing::internal::SetArgRefereeAction<1, std::vector<std::basic_string<char>>>, testing::internal::ReturnAction<leveldb::Status>>::operator OnceAction<leveldb::Status, const std::basic_string<char> &, std::vector<std::basic_string<char>> *, 0>' requested here
+   55 |         .WillOnce(testing::DoAll(
+      |                   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock.h:56:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:1780:38: error: assigning to 'std::vector<std::basic_string<char>> *' from incompatible type 'const std::vector<std::basic_string<char>>'
+ 1780 |     std::get<k>(std::tie(args...)) = value;
+      |                                      ^~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:1:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1395:11: error: invalid operands to binary expression ('const leveldb::Status' and 'const leveldb::Status')
+ 1395 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1414:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<leveldb::Status, leveldb::Status>' requested here
+ 1414 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp:69:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<leveldb::Status, leveldb::Status, nullptr>' requested here
+   69 |     EXPECT_EQ(status, Status::OK());
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1892:54: note: expanded from macro 'EXPECT_EQ'
+ 1892 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const leveldb::Status' to 'faketype' for 1st argument
+ 1387 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/slice.h:96:13: note: candidate function not viable: no known conversion from 'const leveldb::Status' to 'const Slice' for 1st argument
+   96 | inline bool operator==(const Slice& x, const Slice& y) {
+      |             ^          ~~~~~~~~~~~~~~
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_451.dir/build.make:76: generated_build/CMakeFiles/test_451.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_451.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:6445: generated_build/CMakeFiles/test_451.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:6452: generated_build/CMakeFiles/test_451.dir/rule] 오류 2
+gmake: *** [Makefile:2545: test_451] 오류 2

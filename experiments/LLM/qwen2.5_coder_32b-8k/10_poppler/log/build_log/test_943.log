@@ -1,0 +1,47 @@
+[ 66%] Built target poppler
+[ 66%] Building CXX object generated_build/CMakeFiles/test_943.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp:47:19: error: cannot initialize a parameter of type 'State' (aka 'OptionalContentGroup::State') with an rvalue of type 'State'
+   47 |     ocg->setState(State::On);
+      |                   ^~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/OptionalContent.h:101:25: note: passing argument to parameter 'state' here
+  101 |     void setState(State state) { m_state = state; };
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp:57:19: error: cannot initialize a parameter of type 'State' (aka 'OptionalContentGroup::State') with an rvalue of type 'State'
+   57 |     ocg->setState(State::Off);
+      |                   ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/OptionalContent.h:101:25: note: passing argument to parameter 'state' here
+  101 |     void setState(State state) { m_state = state; };
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp:17:7: warning: 'OptionalContentGroupTest_943' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class OptionalContentGroupTest_943 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const OptionalContentGroup::State' and 'const State')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<OptionalContentGroup::State, State>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp:39:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<OptionalContentGroup::State, State, nullptr>' requested here
+   39 |     EXPECT_EQ(ocg->getState(), State::Off);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const OptionalContentGroup::UsageState' and 'const UsageState')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<OptionalContentGroup::UsageState, UsageState>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp:67:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<OptionalContentGroup::UsageState, UsageState, nullptr>' requested here
+   67 |     EXPECT_EQ(ocg->getViewState(), UsageState::Unused);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_943.dir/build.make:79: generated_build/CMakeFiles/test_943.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_943.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:37162: generated_build/CMakeFiles/test_943.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:37169: generated_build/CMakeFiles/test_943.dir/rule] 오류 2
+gmake: *** [Makefile:11567: test_943] 오류 2

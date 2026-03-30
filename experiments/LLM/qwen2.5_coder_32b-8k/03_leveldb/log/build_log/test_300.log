@@ -1,0 +1,56 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_300.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:174:3: error: use of undeclared identifier 'port'
+  174 |   port::Mutex mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:176:3: error: use of undeclared identifier 'port'
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp:31:24: error: unknown type name 'MockEnv'
+   31 |         mock_env = new MockEnv(Env::Default());
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp:57:24: error: 'versions_' is a private member of 'leveldb::DBImpl'
+   57 |     ASSERT_NE(db_impl->versions_, nullptr);
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:200:21: note: declared private here
+  200 |   VersionSet* const versions_ GUARDED_BY(mutex_);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp:59:24: error: 'shutting_down_' is a private member of 'leveldb::DBImpl'
+   59 |     ASSERT_EQ(db_impl->shutting_down_.load(), false);
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:175:21: note: declared private here
+  175 |   std::atomic<bool> shutting_down_;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp:173:16: error: variable has incomplete type 'WriteBatch'
+  173 |     WriteBatch batch;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:24:7: note: forward declaration of 'leveldb::WriteBatch'
+   24 | class WriteBatch;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp:239:12: error: no viable conversion from 'bool' to 'Status'
+  239 |     Status status = db_impl->GetProperty(Slice("leveldb.stats"), &property);
+      |            ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:33:3: note: candidate constructor not viable: no known conversion from 'bool' to 'Status &&' for 1st argument
+   33 |   Status(Status&& rhs) noexcept : state_(rhs.state_) { rhs.state_ = nullptr; }
+      |   ^      ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:103:16: note: candidate constructor not viable: no known conversion from 'bool' to 'const Status &' for 1st argument
+  103 | inline Status::Status(const Status& rhs) {
+      |                ^      ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp:251:12: error: no viable overloaded '='
+  251 |     status = db_impl->GetProperty(Slice("unknown_property"), &property);
+      |     ~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:106:24: note: candidate function not viable: no known conversion from 'bool' to 'const Status' for 1st argument
+  106 | inline Status& Status::operator=(const Status& rhs) {
+      |                        ^         ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:115:24: note: candidate function not viable: no known conversion from 'bool' to 'Status' for 1st argument
+  115 | inline Status& Status::operator=(Status&& rhs) noexcept {
+      |                        ^         ~~~~~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_300.dir/build.make:76: generated_build/CMakeFiles/test_300.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_300.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:13434: generated_build/CMakeFiles/test_300.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:13441: generated_build/CMakeFiles/test_300.dir/rule] 오류 2
+gmake: *** [Makefile:5678: test_300] 오류 2

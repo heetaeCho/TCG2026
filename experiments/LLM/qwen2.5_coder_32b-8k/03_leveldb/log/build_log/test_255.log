@@ -1,0 +1,40 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_255.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_255.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_255.cpp:19:23: error: allocation of incomplete type 'leveldb_options_t'
+   19 |         options = new leveldb_options_t;
+      |                       ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/c.h:63:16: note: forward declaration of 'leveldb_options_t'
+   63 | typedef struct leveldb_options_t leveldb_options_t;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_255.cpp:27:9: error: deleting pointer to incomplete type 'leveldb_options_t' is incompatible with C++2c and may cause undefined behavior [-Werror,-Wdelete-incomplete]
+   27 |         delete options;
+      |         ^      ~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/c.h:63:16: note: forward declaration of 'leveldb_options_t'
+   63 | typedef struct leveldb_options_t leveldb_options_t;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_255.cpp:37:22: error: member access into incomplete type 'leveldb_options_t'
+   37 |     EXPECT_EQ(options->rep.create_if_missing, false);
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/c.h:63:16: note: forward declaration of 'leveldb_options_t'
+   63 | typedef struct leveldb_options_t leveldb_options_t;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_255.cpp:47:22: error: member access into incomplete type 'leveldb_options_t'
+   47 |     EXPECT_EQ(options->rep.create_if_missing, true);
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/c.h:63:16: note: forward declaration of 'leveldb_options_t'
+   63 | typedef struct leveldb_options_t leveldb_options_t;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_255.cpp:57:22: error: member access into incomplete type 'leveldb_options_t'
+   57 |     EXPECT_EQ(options->rep.create_if_missing, false);
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/c.h:63:16: note: forward declaration of 'leveldb_options_t'
+   63 | typedef struct leveldb_options_t leveldb_options_t;
+      |                ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_255.dir/build.make:76: generated_build/CMakeFiles/test_255.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_255.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:11056: generated_build/CMakeFiles/test_255.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:11063: generated_build/CMakeFiles/test_255.dir/rule] 오류 2
+gmake: *** [Makefile:4612: test_255] 오류 2

@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1991.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1991.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1991.cpp:271:12: error: functional-style cast from 'std::nullptr_t' to 'GooString' uses deleted function
+  271 |     date = GooString(nullptr);
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/goo/GooString.h:78:14: note: candidate constructor has been explicitly deleted
+   78 |     explicit GooString(std::nullptr_t) = delete;
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/goo/GooString.h:72:14: note: candidate constructor
+   72 |     explicit GooString(const char *sA) : std::string(sA ? sA : "") { }
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/goo/GooString.h:81:14: note: candidate constructor
+   81 |     explicit GooString(const std::string &str) : std::string(str) { }
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/goo/GooString.h:82:14: note: candidate constructor
+   82 |     explicit GooString(std::string &&str) : std::string(std::move(str)) { }
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/goo/GooString.h:90:14: note: candidate constructor
+   90 |     explicit GooString(std::string_view str) : std::string(str) { }
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1991.cpp:9:7: warning: 'DateInfoTest_1991' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class DateInfoTest_1991 : public ::testing::Test {
+      |       ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1991.dir/build.make:79: generated_build/CMakeFiles/test_1991.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1991.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:31178: generated_build/CMakeFiles/test_1991.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:31185: generated_build/CMakeFiles/test_1991.dir/rule] 오류 2
+gmake: *** [Makefile:9136: test_1991] 오류 2

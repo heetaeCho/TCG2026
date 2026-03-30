@@ -1,0 +1,172 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1195.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:25:23: error: no matching constructor for initialization of 'std::unique_ptr<BasicIo>'
+   25 |     BmffImageTest() : io_(nullptr, [](BasicIo*){}), bmffImage_(std::make_unique<BasicIo>(), false, 10) {}
+      |                       ^   ~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:294:2: note: candidate constructor template not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:25:36)' to 'const deleter_type' (aka 'const std::default_delete<Exiv2::BasicIo>') for 2nd argument
+  294 |         unique_ptr(pointer __p, const deleter_type& __d) noexcept
+      |         ^                       ~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:306:2: note: candidate constructor [with _Del = std::default_delete<Exiv2::BasicIo>, $1 = void] not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:25:36)' to 'std::default_delete<Exiv2::BasicIo>' for 2nd argument
+  306 |         unique_ptr(pointer __p,
+      |         ^
+  307 |                    __enable_if_t<!is_lvalue_reference<_Del>::value,
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  308 |                                  _Del&&> __d) noexcept
+      |                                  ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:314:2: note: candidate template ignored: requirement 'is_lvalue_reference<std::default_delete<Exiv2::BasicIo>>::value' was not satisfied [with _Del = deleter_type, _DelUnref = typename remove_reference<deleter_type>::type]
+  314 |         unique_ptr(pointer,
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:281:2: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  281 |         unique_ptr(pointer __p) noexcept
+      |         ^          ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:320:12: note: candidate constructor template not viable: requires 1 argument, but 2 were provided
+  320 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:327:7: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  327 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:340:2: note: candidate constructor template not viable: requires single argument '__u', but 2 arguments were provided
+  340 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:350:2: note: candidate constructor template not viable: requires single argument '__u', but 2 arguments were provided
+  350 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:269:12: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  269 |         constexpr unique_ptr() noexcept
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:33:20: error: 'exifData_' is a protected member of 'Exiv2::Image'
+   33 |         bmffImage_.exifData_.clear();
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:35:20: error: 'pixelHeight_' is a protected member of 'Exiv2::Image'
+   35 |         bmffImage_.pixelHeight_ = 42; // Default pixel height
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:484:12: note: declared protected here
+  484 |   uint32_t pixelHeight_{0};           //!< image pixel height
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:59:31: error: 'ExifKey' is an incomplete type
+   59 |     Exifdatum pixelYDimension(ExifKey("Exif.Photo.PixelYDimension"), new Value);
+      |                               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:59:74: error: allocation of incomplete type 'Value'
+   59 |     Exifdatum pixelYDimension(ExifKey("Exif.Photo.PixelYDimension"), new Value);
+      |                                                                          ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:61:21: error: no matching member function for call to 'setValue'
+   61 |     pixelYDimension.setValue(1080);
+      |     ~~~~~~~~~~~~~~~~^~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:112:8: note: candidate function not viable: no known conversion from 'int' to 'const Value *' for 1st argument
+  112 |   void setValue(const Value* pValue) override;
+      |        ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:120:7: note: candidate function not viable: no known conversion from 'int' to 'const std::string' (aka 'const basic_string<char>') for 1st argument
+  120 |   int setValue(const std::string& value) override;
+      |       ^        ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:63:16: error: 'exifData_' is a protected member of 'Exiv2::Image'
+   63 |     bmffImage_.exifData_.add(pixelYDimension);
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:75:16: error: 'exifData_' is a protected member of 'Exiv2::Image'
+   75 |     bmffImage_.exifData_.erase(bmffImage_.exifData_.findKey(ExifKey("Exif.Photo.PixelYDimension")));
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:75:43: error: 'exifData_' is a protected member of 'Exiv2::Image'
+   75 |     bmffImage_.exifData_.erase(bmffImage_.exifData_.findKey(ExifKey("Exif.Photo.PixelYDimension")));
+      |                                           ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:75:61: error: 'ExifKey' is an incomplete type
+   75 |     bmffImage_.exifData_.erase(bmffImage_.exifData_.findKey(ExifKey("Exif.Photo.PixelYDimension")));
+      |                                                             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:87:16: error: 'exifData_' is a protected member of 'Exiv2::Image'
+   87 |     bmffImage_.exifData_.clear();
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:99:31: error: 'ExifKey' is an incomplete type
+   99 |     Exifdatum pixelYDimension(ExifKey("Exif.Photo.PixelYDimension"), new Value);
+      |                               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:99:74: error: allocation of incomplete type 'Value'
+   99 |     Exifdatum pixelYDimension(ExifKey("Exif.Photo.PixelYDimension"), new Value);
+      |                                                                          ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:101:16: error: 'exifData_' is a protected member of 'Exiv2::Image'
+  101 |     bmffImage_.exifData_.add(pixelYDimension);
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:113:31: error: 'ExifKey' is an incomplete type
+  113 |     Exifdatum pixelYDimension(ExifKey("Exif.Photo.PixelYDimension"), new Value);
+      |                               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:113:74: error: allocation of incomplete type 'Value'
+  113 |     Exifdatum pixelYDimension(ExifKey("Exif.Photo.PixelYDimension"), new Value);
+      |                                                                          ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:117:16: error: 'exifData_' is a protected member of 'Exiv2::Image'
+  117 |     bmffImage_.exifData_.add(pixelYDimension);
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:25:69: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   25 |     BmffImageTest() : io_(nullptr, [](BasicIo*){}), bmffImage_(std::make_unique<BasicIo>(), false, 10) {}
+      |                                                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp:25:64: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   25 |     BmffImageTest() : io_(nullptr, [](BasicIo*){}), bmffImage_(std::make_unique<BasicIo>(), false, 10) {}
+      |                                                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+19 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1195.dir/build.make:79: generated_build/CMakeFiles/test_1195.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1195.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:53101: generated_build/CMakeFiles/test_1195.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:53108: generated_build/CMakeFiles/test_1195.dir/rule] 오류 2
+gmake: *** [Makefile:17898: test_1195] 오류 2

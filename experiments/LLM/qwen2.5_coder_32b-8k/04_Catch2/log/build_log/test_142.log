@@ -1,0 +1,26 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_142.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_142.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_142.cpp:63:12: error: overload resolution selected deleted operator '='
+   63 |     target = CATCH_MOVE(original);
+      |     ~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:112:25: note: candidate function has been explicitly deleted
+  112 |             MatchAnyOf& operator=(MatchAnyOf const&) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_142.cpp:91:30: error: use of overloaded operator '||' is ambiguous (with operand types 'MatchAnyOf<int>' and 'std::remove_reference_t<decltype(matcher2)>' (aka 'Catch::Matchers::Detail::MatchAnyOf<int>'))
+   91 |     auto combined = matcher1 || CATCH_MOVE(matcher2);
+      |                     ~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:156:26: note: candidate function [with ArgT = int] has been explicitly deleted
+  156 |         MatchAnyOf<ArgT> operator|| (MatchAnyOf<ArgT> const& lhs, MatcherBase<ArgT> const& rhs) = delete;
+      |                          ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:146:13: note: candidate function
+  146 |             operator||( MatcherBase<ArgT> const& lhs CATCH_ATTR_LIFETIMEBOUND,
+      |             ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/matchers/catch_matchers.hpp:160:26: note: candidate function [with ArgT = int] has been explicitly deleted
+  160 |         MatchAnyOf<ArgT> operator|| (MatcherBase<ArgT> const& lhs, MatchAnyOf<ArgT> const& rhs) = delete;
+      |                          ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_142.dir/build.make:79: generated_build/CMakeFiles/test_142.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_142.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:23801: generated_build/CMakeFiles/test_142.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:23808: generated_build/CMakeFiles/test_142.dir/rule] 오류 2
+gmake: *** [Makefile:8197: test_142] 오류 2

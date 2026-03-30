@@ -1,0 +1,55 @@
+[ 66%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_697.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp:19:20: error: 'separationInfo' is a private member of 'PageAttrs'
+   19 |         pageAttrs->separationInfo = Object(separationInfoDict.get());
+      |                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:113:12: note: declared private here
+  113 |     Object separationInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp:19:37: error: functional-style cast from 'pointer' (aka 'Dict *') to 'Object' uses deleted function
+   19 |         pageAttrs->separationInfo = Object(separationInfoDict.get());
+      |                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Dict *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp:51:16: error: 'separationInfo' is a private member of 'PageAttrs'
+   51 |     pageAttrs->separationInfo = Object();
+      |                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:113:12: note: declared private here
+  113 |     Object separationInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp:9:7: warning: 'PageAttrsTest_697' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class PageAttrsTest_697 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Dict'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp:15:35: note: in instantiation of function template specialization 'std::make_unique<Dict>' requested here
+   15 |         separationInfoDict = std::make_unique<Dict>();
+      |                                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_697.dir/build.make:79: generated_build/CMakeFiles/test_697.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_697.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:39274: generated_build/CMakeFiles/test_697.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:39281: generated_build/CMakeFiles/test_697.dir/rule] 오류 2
+gmake: *** [Makefile:12425: test_697] 오류 2

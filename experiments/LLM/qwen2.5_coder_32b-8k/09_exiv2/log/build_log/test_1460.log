@@ -1,0 +1,90 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1460.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp:23:55: error: 'signature_' is a private member of 'Exiv2::Internal::Nikon2MnHeader'
+   23 |     EXPECT_EQ(header.sizeOfSignature(), sizeof(header.signature_));
+      |                                                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:280:21: note: declared private here
+  280 |   static const byte signature_[];  //!< Nikon 2 makernote header signature
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp:23:47: error: invalid application of 'sizeof' to an incomplete type 'const byte[]' (aka 'const unsigned char[]')
+   23 |     EXPECT_EQ(header.sizeOfSignature(), sizeof(header.signature_));
+      |                                               ^~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp:31:11: error: unknown type name 'byte'
+   31 |     const byte data[] = { 0x01, 0x02, 0x03 };
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp:33:49: error: use of undeclared identifier 'littleEndian'; did you mean 'Exiv2::littleEndian'?
+   33 |     EXPECT_TRUE(header.read(data, sizeof(data), littleEndian));
+      |                                                 ^~~~~~~~~~~~
+      |                                                 Exiv2::littleEndian
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'Exiv2::littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp:41:42: error: use of undeclared identifier 'littleEndian'; did you mean 'Exiv2::littleEndian'?
+   41 |     EXPECT_FALSE(header.read(nullptr, 0, littleEndian));
+      |                                          ^~~~~~~~~~~~
+      |                                          Exiv2::littleEndian
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'Exiv2::littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp:65:15: error: variable has incomplete type 'IoWrapper'
+   65 |     IoWrapper ioWrapper;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/src/makernote_int.hpp:20:7: note: forward declaration of 'Exiv2::Internal::IoWrapper'
+   20 | class IoWrapper;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp:67:39: error: use of undeclared identifier 'littleEndian'; did you mean 'Exiv2::littleEndian'?
+   67 |     EXPECT_GT(header.write(ioWrapper, littleEndian), 0);
+      |                                       ^~~~~~~~~~~~
+      |                                       Exiv2::littleEndian
+/usr/include/gtest/gtest.h:2054:57: note: expanded from macro 'EXPECT_GT'
+ 2054 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperGT, val1, val2)
+      |                                                         ^
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'Exiv2::littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1460.dir/build.make:79: generated_build/CMakeFiles/test_1460.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1460.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:78057: generated_build/CMakeFiles/test_1460.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:78064: generated_build/CMakeFiles/test_1460.dir/rule] 오류 2
+gmake: *** [Makefile:27440: test_1460] 오류 2

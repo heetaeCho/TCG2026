@@ -1,0 +1,37 @@
+[ 77%] Built target libninja
+[ 88%] Built target libninja-re2c
+[ 88%] Building CXX object generated_build/CMakeFiles/test_88.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_88.cpp.o
+[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_88.cpp:25:11: [0m[0;1;31merror: [0m[1mno matching constructor for initialization of 'CommandRunner::Result'[0m
+   25 |         : success_result({[0;32mnullptr[0m, ExitSuccess, [0;32m"Output from success"[0m, [0;32mtrue[0m}),[0m
+      | [0;1;32m          ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/build.h:156:10: [0m[0;1;36mnote: [0mcandidate constructor (the implicit copy constructor) not viable: cannot convert initializer list argument to 'const Result'[0m
+  156 |   [0;34mstruct[0m Result {[0m
+      | [0;1;32m         ^~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/build.h:156:10: [0m[0;1;36mnote: [0mcandidate constructor (the implicit move constructor) not viable: cannot convert initializer list argument to 'Result'[0m
+  156 |   [0;34mstruct[0m Result {[0m
+      | [0;1;32m         ^~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/build.h:156:10: [0m[0;1;36mnote: [0mcandidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided[0m
+[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_88.cpp:27:11: [0m[0;1;31merror: [0m[1mno matching constructor for initialization of 'CommandRunner::Result'[0m
+   27 |           failure_result({[0;32mnullptr[0m, ExitFailure, [0;32m"Output from failure"[0m, [0;32mfalse[0m}) {}[0m
+      | [0;1;32m          ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/build.h:156:10: [0m[0;1;36mnote: [0mcandidate constructor (the implicit copy constructor) not viable: cannot convert initializer list argument to 'const Result'[0m
+  156 |   [0;34mstruct[0m Result {[0m
+      | [0;1;32m         ^~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/build.h:156:10: [0m[0;1;36mnote: [0mcandidate constructor (the implicit move constructor) not viable: cannot convert initializer list argument to 'Result'[0m
+  156 |   [0;34mstruct[0m Result {[0m
+      | [0;1;32m         ^~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/build.h:156:10: [0m[0;1;36mnote: [0mcandidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided[0m
+[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_88.cpp:53:81: [0m[0;1;31merror: [0m[1mexcess elements in struct initializer[0m
+   53 |     CommandRunner::Result custom_result = {&mock_edge, ExitSuccess, [0;32m"Edge set"[0m, [0;32mtrue[0m};[0m
+      | [0;1;32m                                                                                ^~~~
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_88.cpp:65:83: [0m[0;1;31merror: [0m[1mexcess elements in struct initializer[0m
+   65 |     CommandRunner::Result custom_result = {[0;32mnullptr[0m, ExitFailure, expected_output, [0;32mfalse[0m};[0m
+      | [0;1;32m                                                                                  ^~~~~
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_88.cpp:75:92: [0m[0;1;31merror: [0m[1mexcess elements in struct initializer[0m
+   75 |     CommandRunner::Result custom_result = {[0;32mnullptr[0m, ExitInterrupted, [0;32m"Interrupted output"[0m, [0;32mfalse[0m};[0m
+      | [0;1;32m                                                                                           ^~~~~
+[0m5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_88.dir/build.make:79: generated_build/CMakeFiles/test_88.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_88.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:6816: generated_build/CMakeFiles/test_88.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:6823: generated_build/CMakeFiles/test_88.dir/rule] 오류 2
+gmake: *** [Makefile:2610: test_88] 오류 2

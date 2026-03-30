@@ -1,0 +1,94 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from MemIoTest
+[ RUN      ] MemIoTest.OpenClose_576
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:35: Failure
+Value of: memIo.isopen()
+  Actual: true
+Expected: false
+[  FAILED  ] MemIoTest.OpenClose_576 (0 ms)
+[ RUN      ] MemIoTest.WriteData_576
+[       OK ] MemIoTest.WriteData_576 (0 ms)
+[ RUN      ] MemIoTest.ReadData_576
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:71: Failure
+Expected equality of these values:
+  bytesRead
+    Which is: 0
+  sizeof(readBuffer)
+    Which is: 3
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:75: Failure
+Expected equality of these values:
+  readBuffer[i]
+    Which is: '\xC1' (193)
+  writeData[i]
+    Which is: '\x1' (1)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:75: Failure
+Expected equality of these values:
+  readBuffer[i]
+    Which is: '\xC4' (196)
+  writeData[i]
+    Which is: '\x2' (2)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:75: Failure
+Expected equality of these values:
+  readBuffer[i]
+    Which is: 'T' (84, 0x54)
+  writeData[i]
+    Which is: '\x3' (3)
+[  FAILED  ] MemIoTest.ReadData_576 (0 ms)
+[ RUN      ] MemIoTest.SeekPosition_576
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:113: Failure
+Expected equality of these values:
+  rc
+    Which is: 1
+  0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:115: Failure
+Expected equality of these values:
+  memIo.tell()
+    Which is: 0
+  sizeof(data) + 2
+    Which is: 5
+[  FAILED  ] MemIoTest.SeekPosition_576 (0 ms)
+[ RUN      ] MemIoTest.PutbGetb_576
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:131: Failure
+Expected equality of these values:
+  rc
+    Which is: 42
+  0
+[  FAILED  ] MemIoTest.PutbGetb_576 (0 ms)
+[ RUN      ] MemIoTest.ErrorHandling_576
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:155: Failure
+Expected: (memIo.write(nullptr, 1)) != (1), actual: 1 vs 1
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:157: Failure
+Expected: (memIo.seek(0, BasicIo::beg)) != (0), actual: 0 vs 0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:161: Failure
+Expected equality of these values:
+  memIo.open()
+    Which is: 0
+  1
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:165: Failure
+Expected equality of these values:
+  memIo.close()
+    Which is: 0
+  1
+[  FAILED  ] MemIoTest.ErrorHandling_576 (0 ms)
+[ RUN      ] MemIoTest.MmapMunmap_576
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_576.cpp:177: Failure
+Expected: (mappedData) != (nullptr), actual: NULL vs (nullptr)
+[  FAILED  ] MemIoTest.MmapMunmap_576 (0 ms)
+[ RUN      ] MemIoTest.ConstructorWithData_576
+[       OK ] MemIoTest.ConstructorWithData_576 (0 ms)
+[----------] 8 tests from MemIoTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] MemIoTest.OpenClose_576
+[  FAILED  ] MemIoTest.ReadData_576
+[  FAILED  ] MemIoTest.SeekPosition_576
+[  FAILED  ] MemIoTest.PutbGetb_576
+[  FAILED  ] MemIoTest.ErrorHandling_576
+[  FAILED  ] MemIoTest.MmapMunmap_576
+
+ 6 FAILED TESTS

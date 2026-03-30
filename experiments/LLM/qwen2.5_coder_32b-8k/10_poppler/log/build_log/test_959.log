@@ -1,0 +1,88 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_959.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:19:5: error: field of type 'PDFDoc' has private default constructor
+   19 |     PDFDocTest_959() {
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:23:44: error: no member named 'StrictMock' in namespace 'testing'
+   23 |         catalogMock = make_unique<testing::StrictMock<Catalog>>(nullptr);
+      |                                   ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:23:55: error: 'Catalog' does not refer to a value
+   23 |         catalogMock = make_unique<testing::StrictMock<Catalog>>(nullptr);
+      |                                                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Catalog.h:110:30: note: declared here
+  110 | class POPPLER_PRIVATE_EXPORT Catalog
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:25:16: error: 'catalog' is a private member of 'PDFDoc'
+   25 |         pdfDoc.catalog = catalogMock.get();
+      |                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:420:14: note: declared private here
+  420 |     Catalog *catalog = nullptr;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:33:16: error: 'catalog' is a private member of 'PDFDoc'
+   33 |         pdfDoc.catalog = nullptr;
+      |                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:420:14: note: declared private here
+  420 |     Catalog *catalog = nullptr;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:49:31: error: use of undeclared identifier 'readMetadata'
+   49 |     EXPECT_CALL(*catalogMock, readMetadata()).WillOnce(testing::Return(make_unique<GooString>("Sample Metadata")));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:49:65: error: no member named 'Return' in namespace 'testing'
+   49 |     EXPECT_CALL(*catalogMock, readMetadata()).WillOnce(testing::Return(make_unique<GooString>("Sample Metadata")));
+      |                                                        ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:61:31: error: use of undeclared identifier 'readMetadata'
+   61 |     EXPECT_CALL(*catalogMock, readMetadata()).WillOnce(testing::Return(make_unique<GooString>("")));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:61:65: error: no member named 'Return' in namespace 'testing'
+   61 |     EXPECT_CALL(*catalogMock, readMetadata()).WillOnce(testing::Return(make_unique<GooString>("")));
+      |                                                        ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:65:23: error: no member named 'getCString' in 'GooString'
+   65 |     ASSERT_EQ(result->getCString(), "");
+      |               ~~~~~~~~^
+/usr/include/gtest/gtest.h:2073:48: note: expanded from macro 'ASSERT_EQ'
+ 2073 | # define ASSERT_EQ(val1, val2) GTEST_ASSERT_EQ(val1, val2)
+      |                                                ^~~~
+/usr/include/gtest/gtest.h:2057:63: note: expanded from macro 'GTEST_ASSERT_EQ'
+ 2057 |   ASSERT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:168:36: note: expanded from macro 'ASSERT_PRED_FORMAT2'
+  168 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:73:31: error: use of undeclared identifier 'readMetadata'
+   73 |     EXPECT_CALL(*catalogMock, readMetadata()).WillOnce(testing::Return(make_unique<GooString>("Valid Metadata")));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:73:65: error: no member named 'Return' in namespace 'testing'
+   73 |     EXPECT_CALL(*catalogMock, readMetadata()).WillOnce(testing::Return(make_unique<GooString>("Valid Metadata")));
+      |                                                        ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:77:26: error: no member named 'getCString' in 'GooString'
+   77 |     ASSERT_STREQ(result->getCString(), "Valid Metadata");
+      |                  ~~~~~~~~^
+/usr/include/gtest/gtest.h:2122:60: note: expanded from macro 'ASSERT_STREQ'
+ 2122 |   ASSERT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:168:36: note: expanded from macro 'ASSERT_PRED_FORMAT2'
+  168 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_FATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp:15:7: warning: 'PDFDocTest_959' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class PDFDocTest_959 : public ::testing::Test {
+      |       ^
+1 warning and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_959.dir/build.make:79: generated_build/CMakeFiles/test_959.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_959.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:34506: generated_build/CMakeFiles/test_959.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:34513: generated_build/CMakeFiles/test_959.dir/rule] 오류 2
+gmake: *** [Makefile:10488: test_959] 오류 2

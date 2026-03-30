@@ -1,0 +1,47 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_317.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:29:32: error: expression is not assignable
+   29 |         mockArrayCfg.tagStep() = 10; // Mocking the tagStep function
+      |         ~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:37:64: error: use of undeclared identifier 'ifdExif'
+   37 |         tiffBinaryArray = std::make_unique<TiffBinaryArray>(0, ifdExif, mockArrayCfg, &mockArrayDef, sizeof(mockArrayDef));
+      |                                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:63:103: error: call to non-static member function without an object argument
+   63 |     EXPECT_EQ(result, std::min(mockArrayDef.size(0 / mockArrayCfg.tagStep(), ifdExif), TiffEntryBase::doSize() - idx));
+      |                                                                                        ~~~~~~~~~~~~~~~^~~~~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:63:103: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:529:24: note: declared protected here
+  529 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:63:78: error: use of undeclared identifier 'ifdExif'
+   63 |     EXPECT_EQ(result, std::min(mockArrayDef.size(0 / mockArrayCfg.tagStep(), ifdExif), TiffEntryBase::doSize() - idx));
+      |                                                                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:71:33: error: call to non-static member function without an object argument
+   71 |     size_t idx = TiffEntryBase::doSize();
+      |                  ~~~~~~~~~~~~~~~^~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:71:33: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:529:24: note: declared protected here
+  529 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp:85:32: error: use of undeclared identifier 'ttInvalid'
+   85 |     mockArrayCfg.elTiffType_ = ttInvalid; // This would simulate a case where dynamic_cast<TiffBinaryElement*> fails
+      |                                ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_317.dir/build.make:79: generated_build/CMakeFiles/test_317.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_317.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:64117: generated_build/CMakeFiles/test_317.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:64124: generated_build/CMakeFiles/test_317.dir/rule] 오류 2
+gmake: *** [Makefile:22110: test_317] 오류 2

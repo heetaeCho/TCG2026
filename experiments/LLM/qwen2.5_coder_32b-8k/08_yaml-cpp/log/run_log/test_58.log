@@ -1,0 +1,107 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 14 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 14 tests from EmitterTest_58
+[ RUN      ] EmitterTest_58.WriteString_NormalOperation_58
+[       OK ] EmitterTest_58.WriteString_NormalOperation_58 (0 ms)
+[ RUN      ] EmitterTest_58.WriteBool_NormalOperation_58
+[       OK ] EmitterTest_58.WriteBool_NormalOperation_58 (0 ms)
+[ RUN      ] EmitterTest_58.WriteChar_NormalOperation_58
+[       OK ] EmitterTest_58.WriteChar_NormalOperation_58 (0 ms)
+[ RUN      ] EmitterTest_58.SetOutputCharset_ValidValue_58
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:65: Failure
+Value of: result
+  Actual: false
+Expected: true
+[  FAILED  ] EmitterTest_58.SetOutputCharset_ValidValue_58 (0 ms)
+[ RUN      ] EmitterTest_58.SetIndent_ValidValue_58
+[       OK ] EmitterTest_58.SetIndent_ValidValue_58 (0 ms)
+[ RUN      ] EmitterTest_58.WriteMultipleTypes_NormalOperation_58
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:95: Failure
+Expected equality of these values:
+  emitter.c_str()
+    Which is: "test\n---\n42\n---\n3.14"
+  "test423.14"
+With diff:
+@@ -1,5 +1,1 @@
+-test
+----
+-42
+----
+-3.14
++test423.14
+
+[  FAILED  ] EmitterTest_58.WriteMultipleTypes_NormalOperation_58 (0 ms)
+[ RUN      ] EmitterTest_58.SetIndent_BoundaryCondition_58
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:107: Failure
+Value of: result
+  Actual: false
+Expected: true
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:113: Failure
+Expected equality of these values:
+  emitter.c_str()
+    Which is: "- item\n- value"
+  "- item: value\n"
+With diff:
+@@ -1,2 +1,1 @@
+-- item
+-- value
++- item: value\n
+
+[  FAILED  ] EmitterTest_58.SetIndent_BoundaryCondition_58 (0 ms)
+[ RUN      ] EmitterTest_58.SetFloatPrecision_ValidValue_58
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:133: Failure
+Expected equality of these values:
+  emitter.c_str()
+    Which is: "3.14"
+  "3.142"
+[  FAILED  ] EmitterTest_58.SetFloatPrecision_ValidValue_58 (0 ms)
+[ RUN      ] EmitterTest_58.WriteBinary_ValidValue_58
+[       OK ] EmitterTest_58.WriteBinary_ValidValue_58 (0 ms)
+[ RUN      ] EmitterTest_58.SetOutputCharset_InvalidValue_58
+[       OK ] EmitterTest_58.SetOutputCharset_InvalidValue_58 (0 ms)
+[ RUN      ] EmitterTest_58.SetIndent_ExceedMax_58
+[       OK ] EmitterTest_58.SetIndent_ExceedMax_58 (0 ms)
+[ RUN      ] EmitterTest_58.SetFloatPrecision_ExceedMax_58
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:191: Failure
+Value of: result
+  Actual: false
+Expected: true
+[  FAILED  ] EmitterTest_58.SetFloatPrecision_ExceedMax_58 (0 ms)
+[ RUN      ] EmitterTest_58.Write_ErrorStateHandling_58
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:215: Failure
+Value of: result
+  Actual: true
+Expected: false
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:219: Failure
+Value of: invalidEmitter.good()
+  Actual: true
+Expected: false
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:221: Failure
+Value of: invalidEmitter.GetLastError().empty()
+  Actual: true
+Expected: false
+[  FAILED  ] EmitterTest_58.Write_ErrorStateHandling_58 (0 ms)
+[ RUN      ] EmitterTest_58.Write_EmptyString_NormalOperation_58
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_58.cpp:233: Failure
+Expected equality of these values:
+  emitter.c_str()
+    Which is: 0x55a35ac2c3d0
+  ""
+    Which is: 0x55a35979e20a
+[  FAILED  ] EmitterTest_58.Write_EmptyString_NormalOperation_58 (0 ms)
+[----------] 14 tests from EmitterTest_58 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 14 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 7 tests.
+[  FAILED  ] 7 tests, listed below:
+[  FAILED  ] EmitterTest_58.SetOutputCharset_ValidValue_58
+[  FAILED  ] EmitterTest_58.WriteMultipleTypes_NormalOperation_58
+[  FAILED  ] EmitterTest_58.SetIndent_BoundaryCondition_58
+[  FAILED  ] EmitterTest_58.SetFloatPrecision_ValidValue_58
+[  FAILED  ] EmitterTest_58.SetFloatPrecision_ExceedMax_58
+[  FAILED  ] EmitterTest_58.Write_ErrorStateHandling_58
+[  FAILED  ] EmitterTest_58.Write_EmptyString_NormalOperation_58
+
+ 7 FAILED TESTS

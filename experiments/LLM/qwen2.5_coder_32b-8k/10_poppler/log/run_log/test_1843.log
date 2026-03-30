@@ -1,0 +1,70 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from GooCheckedOpsTest_1843
+[ RUN      ] GooCheckedOpsTest_1843.MultiplyNormalOperation_1843
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:23: Failure
+Value of: checkedMultiply(5, 10, &result)
+  Actual: false
+Expected: true
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyNormalOperation_1843 (0 ms)
+[ RUN      ] GooCheckedOpsTest_1843.MultiplyByZero_1843
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:35: Failure
+Value of: checkedMultiply(0, 10, &result)
+  Actual: false
+Expected: true
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:41: Failure
+Value of: checkedMultiply(10, 0, &result)
+  Actual: false
+Expected: true
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyByZero_1843 (0 ms)
+[ RUN      ] GooCheckedOpsTest_1843.MultiplyMaxInt_1843
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:53: Failure
+Value of: checkedMultiply(2147483647, 1, &result)
+  Actual: false
+Expected: true
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:59: Failure
+Value of: checkedMultiply(2147483647, 2, &result)
+  Actual: true
+Expected: false
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyMaxInt_1843 (0 ms)
+[ RUN      ] GooCheckedOpsTest_1843.MultiplyNegativeNumbers_1843
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:69: Failure
+Value of: checkedMultiply(-5, -10, &result)
+  Actual: false
+Expected: true
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:75: Failure
+Value of: checkedMultiply(-5, 10, &result)
+  Actual: false
+Expected: true
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyNegativeNumbers_1843 (0 ms)
+[ RUN      ] GooCheckedOpsTest_1843.MultiplyBoundaryConditions_1843
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:87: Failure
+Value of: checkedMultiply(2147483647, 0, &result)
+  Actual: false
+Expected: true
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:93: Failure
+Value of: checkedMultiply(2147483647, 2147483647, &result)
+  Actual: true
+Expected: false
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyBoundaryConditions_1843 (0 ms)
+[ RUN      ] GooCheckedOpsTest_1843.MultiplyOverflowCondition_1843
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1843.cpp:103: Failure
+Value of: checkedMultiply(2147483647, 2, &result)
+  Actual: true
+Expected: false
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyOverflowCondition_1843 (0 ms)
+[----------] 6 tests from GooCheckedOpsTest_1843 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyNormalOperation_1843
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyByZero_1843
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyMaxInt_1843
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyNegativeNumbers_1843
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyBoundaryConditions_1843
+[  FAILED  ] GooCheckedOpsTest_1843.MultiplyOverflowCondition_1843
+
+ 6 FAILED TESTS

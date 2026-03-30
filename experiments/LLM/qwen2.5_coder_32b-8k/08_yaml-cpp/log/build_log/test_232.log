@@ -1,0 +1,40 @@
+[ 66%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_232.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_232.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_232.cpp:19:36: error: no viable conversion from 'shared_ptr<int>' to 'shared_ptr<memory_holder>'
+   19 |     shared_memory_holder pMemory = std::make_shared<int>(); // Dummy memory holder
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:150:7: note: candidate constructor not viable: no known conversion from 'shared_ptr<int>' to 'const shared_ptr<memory_holder> &' for 1st argument
+  150 |       shared_ptr(const shared_ptr&) noexcept = default; ///< Copy constructor
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:304:7: note: candidate constructor not viable: no known conversion from 'shared_ptr<int>' to 'shared_ptr<memory_holder> &&' for 1st argument
+  304 |       shared_ptr(shared_ptr&& __r) noexcept
+      |       ^          ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:357:17: note: candidate constructor not viable: no known conversion from 'shared_ptr<int>' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  357 |       constexpr shared_ptr(nullptr_t) noexcept : shared_ptr() { }
+      |                 ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:296:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic>, const std::shared_ptr<int> &>::value' was not satisfied [with _Yp = int]
+  296 |         shared_ptr(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:313:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic>, std::shared_ptr<int>>::value' was not satisfied [with _Yp = int]
+  313 |         shared_ptr(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:332:2: note: candidate template ignored: could not match 'auto_ptr' against 'shared_ptr'
+  332 |         shared_ptr(auto_ptr<_Yp>&& __r);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:340:2: note: candidate template ignored: could not match 'unique_ptr' against 'shared_ptr'
+  340 |         shared_ptr(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:408:2: note: candidate template ignored: could not match '_Sp_alloc_shared_tag' against 'shared_ptr'
+  408 |         shared_ptr(_Sp_alloc_shared_tag<_Alloc> __tag, _Args&&... __args)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:160:2: note: explicit constructor is not a candidate
+  160 |         shared_ptr(_Yp* __p) : __shared_ptr<_Tp>(__p) { }
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:325:11: note: explicit constructor is not a candidate
+  325 |         explicit shared_ptr(const weak_ptr<_Yp>& __r)
+      |                  ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_232.dir/build.make:79: generated_build/CMakeFiles/test_232.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_232.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3278: generated_build/CMakeFiles/test_232.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3285: generated_build/CMakeFiles/test_232.dir/rule] 오류 2
+gmake: *** [Makefile:609: test_232] 오류 2

@@ -1,0 +1,89 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_338.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:33:21: error: field type 'MockTiffVisitor' is an abstract class
+   33 |     MockTiffVisitor mockVisitor;
+      |                     ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:87:16: note: unimplemented pure virtual method 'visitDataEntry' in 'MockTiffVisitor'
+   87 |   virtual void visitDataEntry(TiffDataEntry* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:89:16: note: unimplemented pure virtual method 'visitImageEntry' in 'MockTiffVisitor'
+   89 |   virtual void visitImageEntry(TiffImageEntry* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:91:16: note: unimplemented pure virtual method 'visitSizeEntry' in 'MockTiffVisitor'
+   91 |   virtual void visitSizeEntry(TiffSizeEntry* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:93:16: note: unimplemented pure virtual method 'visitDirectory' in 'MockTiffVisitor'
+   93 |   virtual void visitDirectory(TiffDirectory* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:105:16: note: unimplemented pure virtual method 'visitSubIfd' in 'MockTiffVisitor'
+  105 |   virtual void visitSubIfd(TiffSubIfd* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:107:16: note: unimplemented pure virtual method 'visitMnEntry' in 'MockTiffVisitor'
+  107 |   virtual void visitMnEntry(TiffMnEntry* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:109:16: note: unimplemented pure virtual method 'visitIfdMakernote' in 'MockTiffVisitor'
+  109 |   virtual void visitIfdMakernote(TiffIfdMakernote* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:113:16: note: unimplemented pure virtual method 'visitBinaryArray' in 'MockTiffVisitor'
+  113 |   virtual void visitBinaryArray(TiffBinaryArray* object) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:120:16: note: unimplemented pure virtual method 'visitBinaryElement' in 'MockTiffVisitor'
+  120 |   virtual void visitBinaryElement(TiffBinaryElement* object) = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:51:16: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffEntry'
+   51 |     tiffEntry->doAccept(mockVisitor);
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:578:8: note: declared protected here
+  578 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:93:16: error: 'doAccept' is a protected member of 'Exiv2::Internal::TiffEntry'
+   93 |     tiffEntry->doAccept(mockVisitor);
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:578:8: note: declared protected here
+  578 |   void doAccept(TiffVisitor& visitor) override;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'Exiv2::Internal::TiffEntry'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:39:26: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffEntry>' requested here
+   39 |         tiffEntry = std::make_unique<TiffEntry>();
+      |                          ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:571:19: note: default constructor of 'TiffEntry' is implicitly deleted because base class 'TiffEntryBase' has no default constructor
+  571 | class TiffEntry : public TiffEntryBase {
+      |                   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryTest_338_DoAcceptCallsVisitEntry_338_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryTest_338_DoAcceptCallsVisitEntry_338_Test>::CreateTest' requested here
+   47 | TEST_F(TiffEntryTest_338, DoAcceptCallsVisitEntry_338) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryTest_338_DoAcceptDoesNotCallOtherVisitMethods_338_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp:63:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryTest_338_DoAcceptDoesNotCallOtherVisitMethods_338_Test>::CreateTest' requested here
+   63 | TEST_F(TiffEntryTest_338, DoAcceptDoesNotCallOtherVisitMethods_338) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_338.dir/build.make:79: generated_build/CMakeFiles/test_338.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_338.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:76561: generated_build/CMakeFiles/test_338.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:76568: generated_build/CMakeFiles/test_338.dir/rule] 오류 2
+gmake: *** [Makefile:26868: test_338] 오류 2

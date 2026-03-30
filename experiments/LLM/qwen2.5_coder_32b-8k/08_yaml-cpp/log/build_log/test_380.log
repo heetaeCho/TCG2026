@@ -1,0 +1,36 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_380.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp:17:26: warning: declaring overloaded 'operator()' as 'static' is a C++23 extension [-Wc++23-extensions]
+   17 |     static constexpr int operator()(RoundingMode rm, Args... args) noexcept {
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp:17:26: warning: declaring overloaded 'operator()<YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::nearest_toward_zero_t>' as 'static' is a C++23 extension [-Wc++23-extensions]
+/home/user/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:2702:67: note: in instantiation of function template specialization 'MockFunc::operator()<YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::nearest_toward_zero_t>' requested here
+ 2702 |                         JKJ_SAFEBUFFERS static constexpr decltype(Func{}(nearest_toward_zero,
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp:43:19: note: while substituting deduced template arguments into function template 'delegate' [with SignedSignificandBits = int, Func = MockFunc, Args = <>]
+   43 |     auto result = nearest_toward_minus_infinity_static_boundary_t::delegate(1, MockFunc{});
+      |                   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:2705:33: error: member reference base type 'int' is not a structure or union
+ 2705 |                         return s.is_negative() ? f(nearest_away_from_zero, args...)
+      |                                ~^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp:43:68: note: in instantiation of function template specialization 'YAML::jkj::dragonbox::policy::decimal_to_binary_rounding::nearest_toward_minus_infinity_static_boundary_t::delegate<int, MockFunc>' requested here
+   43 |     auto result = nearest_toward_minus_infinity_static_boundary_t::delegate(1, MockFunc{});
+      |                                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp:53:19: error: no matching function for call to 'delegate'
+   53 |     auto result = nearest_toward_minus_infinity_static_boundary_t::delegate(-1, MockFunc{});
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:2704:25: note: candidate template ignored: substitution failure [with SignedSignificandBits = int, Func = MockFunc, Args = <>]
+ 2704 |                         delegate(SignedSignificandBits s, Func f, Args... args) noexcept {
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp:63:19: error: no matching function for call to 'delegate'
+   63 |     auto result = nearest_toward_minus_infinity_static_boundary_t::delegate(0, MockFunc{});
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:2704:25: note: candidate template ignored: substitution failure [with SignedSignificandBits = int, Func = MockFunc, Args = <>]
+ 2704 |                         delegate(SignedSignificandBits s, Func f, Args... args) noexcept {
+      |                         ^
+2 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_380.dir/build.make:79: generated_build/CMakeFiles/test_380.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_380.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5230: generated_build/CMakeFiles/test_380.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5237: generated_build/CMakeFiles/test_380.dir/rule] 오류 2
+gmake: *** [Makefile:1402: test_380] 오류 2

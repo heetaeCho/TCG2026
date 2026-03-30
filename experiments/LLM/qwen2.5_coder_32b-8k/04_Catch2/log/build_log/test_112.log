@@ -1,0 +1,40 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_112.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp:23:36: error: incomplete type 'Catch::ColourMode' named in nested name specifier
+   23 |     ColourMode defaultColourMode = ColourMode::Default;
+      |                                    ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp:77:17: error: 'this' argument to member function 'takeStream' is an lvalue, but function has rvalue ref-qualifier
+   77 |     EXPECT_THAT(config->takeStream(), NotNull());
+      |                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:45:37: note: 'takeStream' declared here
+   45 |         Detail::unique_ptr<IStream> takeStream() &&;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp:113:5: error: 'this' argument to member function 'takeStream' is an lvalue, but function has rvalue ref-qualifier
+  113 |     config->takeStream();
+      |     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:45:37: note: 'takeStream' declared here
+   45 |         Detail::unique_ptr<IStream> takeStream() &&;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp:115:17: error: 'this' argument to member function 'takeStream' is an lvalue, but function has rvalue ref-qualifier
+  115 |     EXPECT_THAT(config->takeStream(), ::testing::IsNull());
+      |                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:45:37: note: 'takeStream' declared here
+   45 |         Detail::unique_ptr<IStream> takeStream() &&;
+      |                                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp:5:
+In file included from /home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:17:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IStream' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp:15:7: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IStream>::~unique_ptr' requested here
+   15 | class ReporterConfigTest_112 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:32:11: note: forward declaration of 'Catch::IStream'
+   32 |     class IStream;
+      |           ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_112.dir/build.make:79: generated_build/CMakeFiles/test_112.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_112.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:25913: generated_build/CMakeFiles/test_112.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:25920: generated_build/CMakeFiles/test_112.dir/rule] 오류 2
+gmake: *** [Makefile:9029: test_112] 오류 2

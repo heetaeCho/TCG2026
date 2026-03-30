@@ -1,0 +1,62 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from EmitterTest_96
+[ RUN      ] EmitterTest_96.WriteString_NormalOperation_96
+[       OK ] EmitterTest_96.WriteString_NormalOperation_96 (0 ms)
+[ RUN      ] EmitterTest_96.WriteEmptyString_NormalOperation_96
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_96.cpp:47: Failure
+Expected equality of these values:
+  empty_string
+    Which is: ""
+  output_stream.str()
+    Which is: "\"\""
+[  FAILED  ] EmitterTest_96.WriteEmptyString_NormalOperation_96 (0 ms)
+[ RUN      ] EmitterTest_96.WriteBoolTrue_NormalOperation_96
+[       OK ] EmitterTest_96.WriteBoolTrue_NormalOperation_96 (0 ms)
+[ RUN      ] EmitterTest_96.WriteBoolFalse_NormalOperation_96
+[       OK ] EmitterTest_96.WriteBoolFalse_NormalOperation_96 (0 ms)
+[ RUN      ] EmitterTest_96.WriteChar_NormalOperation_96
+[       OK ] EmitterTest_96.WriteChar_NormalOperation_96 (0 ms)
+[ RUN      ] EmitterTest_96.WriteNode_ScalarString_96
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_96.cpp:91: Failure
+Expected equality of these values:
+  "\"test\""
+  output_stream.str()
+    Which is: "test"
+[  FAILED  ] EmitterTest_96.WriteNode_ScalarString_96 (0 ms)
+[ RUN      ] EmitterTest_96.WriteNode_EmptyScalarString_96
+[       OK ] EmitterTest_96.WriteNode_EmptyScalarString_96 (0 ms)
+[ RUN      ] EmitterTest_96.Good_ReturnsTrueAfterWrite_96
+[       OK ] EmitterTest_96.Good_ReturnsTrueAfterWrite_96 (0 ms)
+[ RUN      ] EmitterTest_96.GetLastError_ReturnsEmptyStringWhenNoError_96
+[       OK ] EmitterTest_96.GetLastError_ReturnsEmptyStringWhenNoError_96 (0 ms)
+[ RUN      ] EmitterTest_96.SetIndent_NormalOperation_96
+[       OK ] EmitterTest_96.SetIndent_NormalOperation_96 (0 ms)
+[ RUN      ] EmitterTest_96.SetInvalidIndent_ReturnsFalse_96
+[       OK ] EmitterTest_96.SetInvalidIndent_ReturnsFalse_96 (0 ms)
+[ RUN      ] EmitterTest_96.WriteMultipleTimes_ConcatenatesOutput_96
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_96.cpp:149: Failure
+Expected equality of these values:
+  "firstsecond"
+  output_stream.str()
+    Which is: "first\n---\nsecond"
+With diff:
+@@ -1,1 +1,3 @@
+-firstsecond
++first
++---
++second
+
+[  FAILED  ] EmitterTest_96.WriteMultipleTimes_ConcatenatesOutput_96 (0 ms)
+[----------] 12 tests from EmitterTest_96 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 9 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] EmitterTest_96.WriteEmptyString_NormalOperation_96
+[  FAILED  ] EmitterTest_96.WriteNode_ScalarString_96
+[  FAILED  ] EmitterTest_96.WriteMultipleTimes_ConcatenatesOutput_96
+
+ 3 FAILED TESTS

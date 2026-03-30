@@ -1,0 +1,201 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_142.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:19:5: error: non-virtual member function marked 'override' hides virtual member function
+   19 |     MOCK_METHOD(const StreamKind, getKind, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:185:1: note: expanded from here
+  185 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: hidden overloaded virtual function 'Stream::getKind' declared here: different return type ('StreamKind' vs 'typename ::testing::internal::Function< ::testing::internal::identity_t<const StreamKind> ()>::Result' (aka 'const StreamKind'))
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:47:5: error: non-virtual member function marked 'override' hides virtual member function
+   47 |     MOCK_METHOD(const bool, isBinary, (bool last), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:95:1: note: expanded from here
+   95 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different return type ('bool' vs 'typename ::testing::internal::Function< ::testing::internal::identity_t<const bool> (bool)>::Result' (aka 'const bool'))
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:91:30: error: no matching constructor for initialization of 'Dict'
+   91 |     Dict* expectedDict = new Dict();
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:139:42: error: allocating an object of abstract class type 'BaseStream'
+  139 |     BaseStream* expectedBaseStream = new BaseStream();
+      |                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'BaseStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'BaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'BaseStream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'BaseStream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'BaseStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'BaseStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'BaseStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:358:10: note: unimplemented pure virtual method 'setPos' in 'BaseStream'
+  358 |     void setPos(Goffset pos, int dir = 0) override = 0;
+      |          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'BaseStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'BaseStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:368:21: note: unimplemented pure virtual method 'getStart' in 'BaseStream'
+  368 |     virtual Goffset getStart() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:369:18: note: unimplemented pure virtual method 'moveStart' in 'BaseStream'
+  369 |     virtual void moveStart(Goffset delta) = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:151:43: error: allocating an object of abstract class type 'Stream'
+  151 |     Stream* expectedUndecodedStream = new Stream();
+      |                                           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'Stream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'Stream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'Stream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'Stream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'Stream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'Stream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'Stream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'Stream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'Stream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'Stream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'Stream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'Stream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'Stream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:67:7: warning: 'FilterStreamTest_142' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   67 | class FilterStreamTest_142 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockStream'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:79:27: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+   79 |         mockStream = std::make_unique<MockStream>();
+      |                           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'MockStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:15:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<MockStream>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:79:22: note: in instantiation of member function 'std::unique_ptr<MockStream>::~unique_ptr' requested here
+   79 |         mockStream = std::make_unique<MockStream>();
+      |                      ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'FilterStream'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp:81:29: note: in instantiation of function template specialization 'std::make_unique<FilterStream, MockStream *>' requested here
+   81 |         filterStream = std::make_unique<FilterStream>(mockStream.get());
+      |                             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'FilterStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'FilterStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'FilterStream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'FilterStream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'FilterStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+2 warnings and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_142.dir/build.make:79: generated_build/CMakeFiles/test_142.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_142.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:63594: generated_build/CMakeFiles/test_142.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:63601: generated_build/CMakeFiles/test_142.dir/rule] 오류 2
+gmake: *** [Makefile:22305: test_142] 오류 2

@@ -1,0 +1,200 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2675.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:3:1: error: expected unqualified-id
+    3 | ### Test Cases for `Dict` Class
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:17:10: error: no matching constructor for initialization of 'Dict'
+   17 |     Dict dict;
+      |          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:19:18: error: unknown type name 'PDF_STRING'
+   19 |     Object value(PDF_STRING);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:19:17: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   19 |     Object value(PDF_STRING);
+      |                 ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:19:18: note: add a pair of parentheses to declare a variable
+   19 |     Object value(PDF_STRING);
+      |                  ^
+      |                  (
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:23:10: error: no member named 'dictAdd' in 'Dict'
+   23 |     dict.dictAdd(copyString("key1"), &value);
+      |     ~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:23:18: error: use of undeclared identifier 'copyString'; did you mean 'GooString'?
+   23 |     dict.dictAdd(copyString("key1"), &value);
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/goo/gfile.h:61:7: note: 'GooString' declared here
+   61 | class GooString;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:29:22: error: no matching member function for call to 'lookup'
+   29 |     EXPECT_TRUE(dict.lookup("key1", &result));
+      |                 ~~~~~^~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:82:12: note: candidate function not viable: no known conversion from 'Object *' to 'int' for 2nd argument
+   82 |     Object lookup(std::string_view key, int recursion = 0) const;
+      |            ^                            ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:84:12: note: candidate function not viable: no known conversion from 'Object *' to 'Ref *' for 2nd argument
+   84 |     Object lookup(std::string_view key, Ref *returnRef, int recursion = 0) const;
+      |            ^                            ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:31:35: error: no member named 'getCString' in 'GooString'
+   31 |     EXPECT_EQ(result.getString()->getCString(), "testValue");
+      |               ~~~~~~~~~~~~~~~~~~  ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:39:10: error: no matching constructor for initialization of 'Dict'
+   39 |     Dict dict;
+      |          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:45:23: error: no matching member function for call to 'lookup'
+   45 |     EXPECT_FALSE(dict.lookup("nonexistentKey", &result));
+      |                  ~~~~~^~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:82:12: note: candidate function not viable: no known conversion from 'Object *' to 'int' for 2nd argument
+   82 |     Object lookup(std::string_view key, int recursion = 0) const;
+      |            ^                            ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:84:12: note: candidate function not viable: no known conversion from 'Object *' to 'Ref *' for 2nd argument
+   84 |     Object lookup(std::string_view key, Ref *returnRef, int recursion = 0) const;
+      |            ^                            ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:45:5: error: invalid argument type 'Object' to unary expression
+   45 |     EXPECT_FALSE(dict.lookup("nonexistentKey", &result));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1986:33: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1969:23: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1970 |                       GTEST_NONFATAL_FAILURE_)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:53:10: error: no matching constructor for initialization of 'Dict'
+   53 |     Dict dict;
+      |          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:55:18: error: unknown type name 'PDF_STRING'
+   55 |     Object value(PDF_STRING);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:55:17: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   55 |     Object value(PDF_STRING);
+      |                 ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:55:18: note: add a pair of parentheses to declare a variable
+   55 |     Object value(PDF_STRING);
+      |                  ^
+      |                  (
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:59:10: error: no member named 'dictAdd' in 'Dict'
+   59 |     dict.dictAdd(copyString("key1"), &value);
+      |     ~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:59:18: error: use of undeclared identifier 'copyString'; did you mean 'GooString'?
+   59 |     dict.dictAdd(copyString("key1"), &value);
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/goo/gfile.h:61:7: note: 'GooString' declared here
+   61 | class GooString;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:63:10: error: no member named 'dictRemove' in 'Dict'
+   63 |     dict.dictRemove("key1");
+      |     ~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:69:23: error: no matching member function for call to 'lookup'
+   69 |     EXPECT_FALSE(dict.lookup("key1", &result));
+      |                  ~~~~~^~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:82:12: note: candidate function not viable: no known conversion from 'Object *' to 'int' for 2nd argument
+   82 |     Object lookup(std::string_view key, int recursion = 0) const;
+      |            ^                            ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:84:12: note: candidate function not viable: no known conversion from 'Object *' to 'Ref *' for 2nd argument
+   84 |     Object lookup(std::string_view key, Ref *returnRef, int recursion = 0) const;
+      |            ^                            ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:69:5: error: invalid argument type 'Object' to unary expression
+   69 |     EXPECT_FALSE(dict.lookup("key1", &result));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1986:33: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1969:23: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |   ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1970 |                       GTEST_NONFATAL_FAILURE_)
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:77:10: error: no matching constructor for initialization of 'Dict'
+   77 |     Dict dict;
+      |          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp:81:10: error: no member named 'dictRemove' in 'Dict'
+   81 |     dict.dictRemove("nonexistentKey");
+      |     ~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+2 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2675.dir/build.make:79: generated_build/CMakeFiles/test_2675.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2675.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:69642: generated_build/CMakeFiles/test_2675.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:69649: generated_build/CMakeFiles/test_2675.dir/rule] 오류 2
+gmake: *** [Makefile:24762: test_2675] 오류 2

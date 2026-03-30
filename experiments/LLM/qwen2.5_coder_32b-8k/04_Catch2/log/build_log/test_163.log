@@ -1,0 +1,57 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_163.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_163.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_163.cpp:25:49: error: no matching conversion for functional-style cast from 'std::array<const void *, 2>' to 'MatchAnyOfGeneric<MatcherType>' (aka 'MatchAnyOfGeneric<int>')
+   25 |     MatchAnyOfGeneric<MatcherType> matchAnyOf = MatchAnyOfGeneric<MatcherType>(matchersArray);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:169:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const MatchAnyOfGeneric<int>' for 1st argument
+  169 |             MatchAnyOfGeneric(MatchAnyOfGeneric const&) = delete;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:171:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'MatchAnyOfGeneric<int>' for 1st argument
+  171 |             MatchAnyOfGeneric(MatchAnyOfGeneric&&) = default;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:174:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 2>' to 'const int' for 1st argument
+  174 |             MatchAnyOfGeneric(MatcherTs const&... matchers CATCH_ATTR_LIFETIMEBOUND)
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:176:22: note: candidate constructor not viable: no known conversion from 'array<[...], 2>' to 'array<[...], sizeof...(MatcherTs) aka 1>' for 1st argument
+  176 |             explicit MatchAnyOfGeneric(std::array<void const*, sizeof...(MatcherTs)> matchers) : m_matchers{matchers} {}
+      |                      ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_163.cpp:77:54: error: no matching conversion for functional-style cast from 'std::array<const void *, 0>' to 'MatchAnyOfGeneric<MatcherType>' (aka 'MatchAnyOfGeneric<int>')
+   77 |     MatchAnyOfGeneric<MatcherType> emptyMatchAnyOf = MatchAnyOfGeneric<MatcherType>(emptyMatchersArray);
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:169:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 0>' to 'const MatchAnyOfGeneric<int>' for 1st argument
+  169 |             MatchAnyOfGeneric(MatchAnyOfGeneric const&) = delete;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:171:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 0>' to 'MatchAnyOfGeneric<int>' for 1st argument
+  171 |             MatchAnyOfGeneric(MatchAnyOfGeneric&&) = default;
+      |             ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:174:13: note: candidate constructor not viable: no known conversion from 'std::array<const void *, 0>' to 'const int' for 1st argument
+  174 |             MatchAnyOfGeneric(MatcherTs const&... matchers CATCH_ATTR_LIFETIMEBOUND)
+      |             ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:176:22: note: candidate constructor not viable: no known conversion from 'array<[...], 0>' to 'array<[...], sizeof...(MatcherTs) aka 1>' for 1st argument
+  176 |             explicit MatchAnyOfGeneric(std::array<void const*, sizeof...(MatcherTs)> matchers) : m_matchers{matchers} {}
+      |                      ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:95:56: error: member reference base type 'const int' is not a structure or union
+   95 |             return static_cast<T const*>(matchers[Idx])->match(arg) || match_any_of<MatcherTs...>(arg, matchers, std::index_sequence<Indices...>{});
+      |                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ ~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:180:24: note: in instantiation of function template specialization 'Catch::Matchers::Detail::match_any_of<int, 1UL, int &, 0UL>' requested here
+  180 |                 return match_any_of<MatcherTs...>(arg, m_matchers, std::index_sequence_for<MatcherTs...>{});
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_163.cpp:33:28: note: in instantiation of function template specialization 'Catch::Matchers::Detail::MatchAnyOfGeneric<int>::match<int>' requested here
+   33 |     EXPECT_TRUE(matchAnyOf.match(42));
+      |                            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_163.cpp:5:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:103:61: error: member reference base type 'const int' is not a structure or union
+  103 |                 static_cast<MatcherTs const*>(matchers[Idx])->toString()...
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^ ~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_templated.hpp:184:24: note: in instantiation of function template specialization 'Catch::Matchers::Detail::describe_multi_matcher<int, 0UL>' requested here
+  184 |                 return describe_multi_matcher<MatcherTs...>(" or "_sr, m_matchers, std::index_sequence_for<MatcherTs...>{});
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_163.cpp:57:42: note: in instantiation of member function 'Catch::Matchers::Detail::MatchAnyOfGeneric<int>::describe' requested here
+   57 |     std::string description = matchAnyOf.describe();
+      |                                          ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_163.dir/build.make:79: generated_build/CMakeFiles/test_163.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_163.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18290: generated_build/CMakeFiles/test_163.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18297: generated_build/CMakeFiles/test_163.dir/rule] 오류 2
+gmake: *** [Makefile:6026: test_163] 오류 2

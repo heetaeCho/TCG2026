@@ -1,0 +1,35 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_685.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_685.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_685.cpp:145:20: error: implicit instantiation of undefined template 'YAML::detail::iterator_base<YAML::detail::iterator_value>'
+  145 |     EXPECT_EQ(node.begin(), node.end());
+      |                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator_fwd.h:20:7: note: template is declared here
+   20 | class iterator_base;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_685.cpp:145:34: error: implicit instantiation of undefined template 'YAML::detail::iterator_base<YAML::detail::iterator_value>'
+  145 |     EXPECT_EQ(node.begin(), node.end());
+      |                                  ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator_fwd.h:20:7: note: template is declared here
+   20 | class iterator_base;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_685.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const YAML::detail::iterator_base<YAML::detail::iterator_value>' and 'const YAML::detail::iterator_base<YAML::detail::iterator_value>')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<YAML::detail::iterator_base<YAML::detail::iterator_value>, YAML::detail::iterator_base<YAML::detail::iterator_value>>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_685.cpp:145:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<YAML::detail::iterator_base<YAML::detail::iterator_value>, YAML::detail::iterator_base<YAML::detail::iterator_value>, nullptr>' requested here
+  145 |     EXPECT_EQ(node.begin(), node.end());
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: cannot convert argument of incomplete type 'const YAML::detail::iterator_base<YAML::detail::iterator_value>' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_685.dir/build.make:79: generated_build/CMakeFiles/test_685.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_685.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:21934: generated_build/CMakeFiles/test_685.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:21941: generated_build/CMakeFiles/test_685.dir/rule] 오류 2
+gmake: *** [Makefile:8188: test_685] 오류 2

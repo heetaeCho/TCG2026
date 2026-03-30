@@ -1,0 +1,56 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_762.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp:23:5: error: unknown type name 'MockValue'; did you mean 'LongValue'?
+   23 |     MockValue* mock_value_;
+      |     ^~~~~~~~~
+      |     LongValue
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:1288:7: note: 'LongValue' declared here
+ 1288 | using LongValue = ValueType<int32_t>;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp:33:53: error: expected ';' at end of declaration list
+   33 |         MOCK_METHOD1(toRational, Rational(size_t n)) const;
+      |                                                     ^
+      |                                                     ;
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp:33:22: warning: 'ExifdatumTest::MockValue::toRational' hides overloaded virtual function [-Woverloaded-virtual]
+   33 |         MOCK_METHOD1(toRational, Rational(size_t n)) const;
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: hidden overloaded virtual function 'Exiv2::Value::toRational' declared here: different qualifiers ('const' vs unqualified)
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp:51:40: error: expected ')'
+   51 |     ~ExifdatumTest() override = default;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp:43:22: note: to match this '('
+   43 |         : mock_value_(new MockValue(TypeId::rational),
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp:59:5: error: no member named 'gmock_toRational' in 'Exiv2::ValueType<int>'
+   59 |     EXPECT_CALL(*mock_value_, toRational(0)).WillOnce(Return(Rational(1, 2)));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:132:1: note: expanded from here
+  132 | gmock_toRational
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp:81:5: error: no member named 'gmock_toRational' in 'Exiv2::ValueType<int>'
+   81 |     EXPECT_CALL(*mock_value_, toRational(0)).WillOnce(Return(Rational(3, 4)));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:62:1: note: expanded from here
+   62 | gmock_toRational
+      | ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_762.dir/build.make:79: generated_build/CMakeFiles/test_762.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_762.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:40181: generated_build/CMakeFiles/test_762.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:40188: generated_build/CMakeFiles/test_762.dir/rule] 오류 2
+gmake: *** [Makefile:12958: test_762] 오류 2

@@ -1,0 +1,94 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_352.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:17:32: error: base class has incomplete type
+   17 | class MockTiffEncoder : public TiffEncoder {
+      |                         ~~~~~~~^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:41:7: note: forward declaration of 'Exiv2::Internal::TiffEncoder'
+   41 | class TiffEncoder;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:21:5: error: only virtual member functions can be marked 'override'
+   21 |     MOCK_METHOD(void, encodeTiffEntry, (TiffEntry* object, const Exifdatum * datum), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:84:1: note: expanded from here
+   84 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:39:26: error: a type specifier is required for all declarations
+   39 |     Exifdatum exifDatum(*key, value.get());
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:39:31: error: unknown type name 'value'; did you mean 'Value'?
+   39 |     Exifdatum exifDatum(*key, value.get());
+      |                               ^~~~~
+      |                               Value
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: 'Value' declared here
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:39:36: error: expected ')'
+   39 |     Exifdatum exifDatum(*key, value.get());
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:39:24: note: to match this '('
+   39 |     Exifdatum exifDatum(*key, value.get());
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:37:53: error: use of undeclared identifier 'UShortValue'
+   37 |     std::unique_ptr<Value> value = std::make_unique<UShortValue>(1);
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:57:15: error: 'doEncode' is a protected member of 'Exiv2::Internal::TiffEntry'
+   57 |     tiffEntry.doEncode(mockEncoder, &exifDatum);
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:579:8: note: declared protected here
+  579 |   void doEncode(TiffEncoder& encoder, const Exifdatum* datum) override;
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:67:15: error: 'doEncode' is a protected member of 'Exiv2::Internal::TiffEntry'
+   67 |     tiffEntry.doEncode(mockEncoder, nullptr);
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:579:8: note: declared protected here
+  579 |   void doEncode(TiffEncoder& encoder, const Exifdatum* datum) override;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryTest_352_DoEncodeCallsEncoder_352_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryTest_352_DoEncodeCallsEncoder_352_Test>::CreateTest' requested here
+   53 | TEST_F(TiffEntryTest_352, DoEncodeCallsEncoder_352) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryTest_352_DoEncodeWithNullExifdatum_352_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp:63:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryTest_352_DoEncodeWithNullExifdatum_352_Test>::CreateTest' requested here
+   63 | TEST_F(TiffEntryTest_352, DoEncodeWithNullExifdatum_352) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_352.dir/build.make:79: generated_build/CMakeFiles/test_352.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_352.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:77615: generated_build/CMakeFiles/test_352.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:77622: generated_build/CMakeFiles/test_352.dir/rule] 오류 2
+gmake: *** [Makefile:27271: test_352] 오류 2

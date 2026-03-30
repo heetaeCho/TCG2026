@@ -1,0 +1,116 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1028.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:13:37: error: expected class name
+   13 |         class MockITracker : public ITracker {
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:17:13: error: only virtual member functions can be marked 'override'
+   17 |             MOCK_METHOD(void, someMethod, (), (override));
+      |             ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:44:1: note: expanded from here
+   44 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:33:34: error: no member named 'TrackerContext' in namespace 'Catch::TestCaseTracking'
+   33 | using ::Catch::TestCaseTracking::TrackerContext;
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:59:21: error: use of undeclared identifier 'TrackerContext'
+   59 |     std::unique_ptr<TrackerContext> trackerContext;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:45:43: error: use of undeclared identifier 'TrackerContext'
+   45 |         trackerContext = std::make_unique<TrackerContext>();
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:77:5: error: unknown type name 'ITracker'
+   77 |     ITracker& rootTracker = trackerContext->startRun();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:95:5: error: unknown type name 'ITracker'
+   95 |     ITracker& firstCall = trackerContext->startRun();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:101:5: error: unknown type name 'ITracker'
+  101 |     ITracker& secondCall = trackerContext->startRun();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:115:5: error: unknown type name 'ITracker'
+  115 |     ITracker& rootTracker = trackerContext->startRun();
+      |     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TrackerContextTest_1028_StartRun_ReturnsRootTrackerReference_1028_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:67:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TrackerContextTest_1028_StartRun_ReturnsRootTrackerReference_1028_Test>::CreateTest' requested here
+   67 | TEST_F(TrackerContextTest_1028, StartRun_ReturnsRootTrackerReference_1028) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TrackerContextTest_1028_StartRun_SecondCall_ReturnsSameRootTrackerReference_1028_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:91:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TrackerContextTest_1028_StartRun_SecondCall_ReturnsSameRootTrackerReference_1028_Test>::CreateTest' requested here
+   91 | TEST_F(TrackerContextTest_1028, StartRun_SecondCall_ReturnsSameRootTrackerReference_1028) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TrackerContextTest_1028_StartRun_CallsConstructorOfSectionTracker_1028_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:111:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TrackerContextTest_1028_StartRun_CallsConstructorOfSectionTracker_1028_Test>::CreateTest' requested here
+  111 | TEST_F(TrackerContextTest_1028, StartRun_CallsConstructorOfSectionTracker_1028) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TrackerContextTest_1028_StartRun_ExceptionHandling_NotStartedState_1028_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:129:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TrackerContextTest_1028_StartRun_ExceptionHandling_NotStartedState_1028_Test>::CreateTest' requested here
+  129 | TEST_F(TrackerContextTest_1028, StartRun_ExceptionHandling_NotStartedState_1028) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TrackerContextTest_1028_CompleteCycle_ChangesRunStateToCompletedCycle_1028_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp:141:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TrackerContextTest_1028_CompleteCycle_ChangesRunStateToCompletedCycle_1028_Test>::CreateTest' requested here
+  141 | TEST_F(TrackerContextTest_1028, CompleteCycle_ChangesRunStateToCompletedCycle_1028) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1028.dir/build.make:79: generated_build/CMakeFiles/test_1028.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1028.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8786: generated_build/CMakeFiles/test_1028.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8793: generated_build/CMakeFiles/test_1028.dir/rule] 오류 2
+gmake: *** [Makefile:2282: test_1028] 오류 2

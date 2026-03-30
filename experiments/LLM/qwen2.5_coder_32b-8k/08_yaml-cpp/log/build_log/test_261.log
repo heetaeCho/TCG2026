@@ -1,0 +1,44 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_261.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_261.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_261.cpp:59:11: error: no viable conversion from 'node' to 'node *'
+   59 |     node* firstGetResult = testNode.get(keyNode, pMemory);
+      |           ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_261.cpp:61:11: error: no viable conversion from 'node' to 'node *'
+   61 |     node* secondGetResult = testNode.get(keyNode, pMemory);
+      |           ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_261.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const YAML::detail::node' and 'const std::nullptr_t')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<YAML::detail::node, std::nullptr_t>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_261.cpp:35:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<YAML::detail::node, std::nullptr_t, nullptr>' requested here
+   35 |     EXPECT_EQ(testNode.get(keyNode, pMemory), nullptr);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const YAML::detail::node' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/usr/include/gtest/gtest.h:1624:28: error: invalid operands to binary expression ('const YAML::detail::node' and 'const std::nullptr_t')
+ 1624 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/gtest/gtest.h:1614:12: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1614 |   if (val1 op val2) {\
+      |       ~~~~ ^  ~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_261.cpp:47:5: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<YAML::detail::node, std::nullptr_t>' requested here
+   47 |     EXPECT_NE(testNode.get(keyNode, pMemory), nullptr);
+      |     ^
+/usr/include/gtest/gtest.h:2046:44: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/include/gtest/gtest.h:1537:13: note: candidate function not viable: no known conversion from 'const YAML::detail::node' to 'faketype' for 1st argument
+ 1537 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_261.dir/build.make:79: generated_build/CMakeFiles/test_261.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_261.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:11054: generated_build/CMakeFiles/test_261.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:11061: generated_build/CMakeFiles/test_261.dir/rule] 오류 2
+gmake: *** [Makefile:3768: test_261] 오류 2

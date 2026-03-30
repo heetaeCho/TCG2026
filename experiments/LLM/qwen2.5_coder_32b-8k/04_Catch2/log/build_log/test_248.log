@@ -1,0 +1,81 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_248.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp:33:23: error: exception specification of overriding function is more lax than base version
+   33 |     MOCK_METHOD(void, registerStartupException, (), (override));
+      |                       ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:55:22: note: overridden virtual function is here
+   55 |         virtual void registerStartupException() noexcept = 0;
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp:67:64: error: allocating an object of abstract class type 'IExceptionTranslator'
+   67 |     auto mockTranslator = unique_ptr<IExceptionTranslator>(new IExceptionTranslator());
+      |                                                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_exception.hpp:25:29: note: unimplemented pure virtual method 'translate' in 'IExceptionTranslator'
+   25 |         virtual std::string translate( ExceptionTranslators::const_iterator it, ExceptionTranslators::const_iterator itEnd ) const = 0;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp:89:64: error: allocating an object of abstract class type 'IExceptionTranslator'
+   89 |     auto mockTranslator = unique_ptr<IExceptionTranslator>(new IExceptionTranslator());
+      |                                                                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp:5:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IReporterFactory' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp:23:5: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IReporterFactory>::~unique_ptr' requested here
+   23 |     MOCK_METHOD(void, registerReporter, (const std::string &name, IReporterFactoryPtr factory), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:64:1: note: expanded from here
+   64 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:33: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |                                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:23:11: note: forward declaration of 'Catch::IReporterFactory'
+   23 |     class IReporterFactory;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp:5:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::EventListenerFactory' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp:25:5: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::EventListenerFactory>::~unique_ptr' requested here
+   25 |     MOCK_METHOD(void, registerListener, (unique_ptr<EventListenerFactory> factory), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:118:1: note: expanded from here
+  118 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:33: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |                                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:30:11: note: forward declaration of 'Catch::EventListenerFactory'
+   30 |     class EventListenerFactory;
+      |           ^
+2 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_248.dir/build.make:79: generated_build/CMakeFiles/test_248.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_248.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:12119: generated_build/CMakeFiles/test_248.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:12126: generated_build/CMakeFiles/test_248.dir/rule] 오류 2
+gmake: *** [Makefile:3595: test_248] 오류 2

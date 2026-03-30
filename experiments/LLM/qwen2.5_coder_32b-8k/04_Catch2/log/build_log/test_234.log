@@ -1,0 +1,42 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_234.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp:59:64: error: no matching conversion for functional-style cast from 'int' to 'std::equal_to<size_t>' (aka 'equal_to<unsigned long>')
+   59 |     SizeMatchesMatcher<std::equal_to<size_t>> non_zero_matcher(std::equal_to<size_t>(1));
+      |                                                                ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h:365:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const equal_to<unsigned long>' for 1st argument
+  365 |     struct equal_to : public binary_function<_Tp, _Tp, bool>
+      |            ^~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h:365:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'equal_to<unsigned long>' for 1st argument
+  365 |     struct equal_to : public binary_function<_Tp, _Tp, bool>
+      |            ^~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h:365:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp:71:60: error: no matching conversion for functional-style cast from 'int' to 'std::equal_to<size_t>' (aka 'equal_to<unsigned long>')
+   71 |     SizeMatchesMatcher<std::equal_to<size_t>> zero_matcher(std::equal_to<size_t>(0));
+      |                                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h:365:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const equal_to<unsigned long>' for 1st argument
+  365 |     struct equal_to : public binary_function<_Tp, _Tp, bool>
+      |            ^~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h:365:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'equal_to<unsigned long>' for 1st argument
+  365 |     struct equal_to : public binary_function<_Tp, _Tp, bool>
+      |            ^~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_function.h:365:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp:5:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_container_properties.hpp:68:34: error: no member named 'match' in 'std::equal_to<unsigned long>'
+   68 |                 return m_matcher.match(size(rng));
+      |                        ~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp:31:25: note: in instantiation of function template specialization 'Catch::Matchers::SizeMatchesMatcher<std::equal_to<unsigned long>>::match<std::vector<int> &>' requested here
+   31 |     EXPECT_TRUE(matcher.match(vec));
+      |                         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp:5:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/matchers/catch_matchers_container_properties.hpp:72:52: error: no member named 'describe' in 'std::equal_to<unsigned long>'
+   72 |                 return "size matches " + m_matcher.describe();
+      |                                          ~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp:49:23: note: in instantiation of member function 'Catch::Matchers::SizeMatchesMatcher<std::equal_to<unsigned long>>::describe' requested here
+   49 |     EXPECT_EQ(matcher.describe(), "size matches is equal to");
+      |                       ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_234.dir/build.make:79: generated_build/CMakeFiles/test_234.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_234.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5090: generated_build/CMakeFiles/test_234.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5097: generated_build/CMakeFiles/test_234.dir/rule] 오류 2
+gmake: *** [Makefile:826: test_234] 오류 2

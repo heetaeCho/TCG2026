@@ -1,0 +1,49 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1211.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp:23:22: error: no matching constructor for initialization of 'TextBlock'
+   23 |         block1 = new TextBlock();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:387:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  387 |     TextBlock(const TextBlock &) = delete;
+      |     ^         ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:384:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  384 |     TextBlock(TextPage *pageA, int rotA);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp:25:22: error: no matching constructor for initialization of 'TextBlock'
+   25 |         block2 = new TextBlock();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:387:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  387 |     TextBlock(const TextBlock &) = delete;
+      |     ^         ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:384:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  384 |     TextBlock(TextPage *pageA, int rotA);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp:27:20: error: no matching constructor for initialization of 'TextPage'
+   27 |         page = new TextPage();
+      |                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:558:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  558 |     TextPage(const TextPage &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:556:14: note: candidate constructor not viable: requires at least argument 'rawOrderA', but no arguments were provided
+  556 |     explicit TextPage(bool rawOrderA, bool discardDiagA = false);
+      |              ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp:105:15: error: overload resolution selected deleted operator '='
+  105 |     textFlow1 = TextFlow(page, block1);
+      |     ~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:476:15: note: candidate function has been explicitly deleted
+  476 |     TextFlow &operator=(const TextFlow &) = delete;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp:107:15: error: 'next' is a private member of 'TextFlow'
+  107 |     textFlow1.next = &textFlow2;
+      |               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:500:15: note: declared private here
+  500 |     TextFlow *next;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp:9:7: warning: 'TextFlowTest_1211' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class TextFlowTest_1211 : public ::testing::Test {
+      |       ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1211.dir/build.make:79: generated_build/CMakeFiles/test_1211.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1211.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:98090: generated_build/CMakeFiles/test_1211.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:98097: generated_build/CMakeFiles/test_1211.dir/rule] 오류 2
+gmake: *** [Makefile:36319: test_1211] 오류 2

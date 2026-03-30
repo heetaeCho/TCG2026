@@ -1,0 +1,35 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from SafeOpTest_64
+[ RUN      ] SafeOpTest_64.NormalAddition_PositiveNumbers_64
+[       OK ] SafeOpTest_64.NormalAddition_PositiveNumbers_64 (0 ms)
+[ RUN      ] SafeOpTest_64.NormalAddition_NegativeNumbers_64
+[       OK ] SafeOpTest_64.NormalAddition_NegativeNumbers_64 (0 ms)
+[ RUN      ] SafeOpTest_64.NormalAddition_MixedSigns_NoOverflow_64
+[       OK ] SafeOpTest_64.NormalAddition_MixedSigns_NoOverflow_64 (0 ms)
+[ RUN      ] SafeOpTest_64.Overflow_PositiveNumbers_64
+[       OK ] SafeOpTest_64.Overflow_PositiveNumbers_64 (0 ms)
+[ RUN      ] SafeOpTest_64.Overflow_NegativeNumbers_64
+[       OK ] SafeOpTest_64.Overflow_NegativeNumbers_64 (0 ms)
+[ RUN      ] SafeOpTest_64.BoundaryCondition_PositiveMax_64
+[       OK ] SafeOpTest_64.BoundaryCondition_PositiveMax_64 (0 ms)
+[ RUN      ] SafeOpTest_64.BoundaryCondition_NegativeMin_64
+[       OK ] SafeOpTest_64.BoundaryCondition_NegativeMin_64 (0 ms)
+[ RUN      ] SafeOpTest_64.Overflow_PositiveToNegativeCross_64
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_64.cpp:107: Failure
+Value of: fallback_add_overflow(std::numeric_limits<int>::max(), -std::numeric_limits<int>::max() - 1, result)
+  Actual: false
+Expected: true
+[  FAILED  ] SafeOpTest_64.Overflow_PositiveToNegativeCross_64 (0 ms)
+[ RUN      ] SafeOpTest_64.Overflow_NegativeToPositiveCross_64
+[       OK ] SafeOpTest_64.Overflow_NegativeToPositiveCross_64 (0 ms)
+[----------] 9 tests from SafeOpTest_64 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 8 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] SafeOpTest_64.Overflow_PositiveToNegativeCross_64
+
+ 1 FAILED TEST

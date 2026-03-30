@@ -1,0 +1,43 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_401.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_401.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_401.cpp:13:7: warning: 'GfxColorSpaceTest_401' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class GfxColorSpaceTest_401 : public Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_401.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'GfxColorSpace'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_401.cpp:23:27: note: in instantiation of function template specialization 'std::make_unique<GfxColorSpace>' requested here
+   23 |         colorSpace = std::make_unique<GfxColorSpace>();
+      |                           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:263:44: note: unimplemented pure virtual method 'copy' in 'GfxColorSpace'
+  263 |     virtual std::unique_ptr<GfxColorSpace> copy() const = 0;
+      |                                            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:264:31: note: unimplemented pure virtual method 'getMode' in 'GfxColorSpace'
+  264 |     virtual GfxColorSpaceMode getMode() const = 0;
+      |                               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:270:18: note: unimplemented pure virtual method 'getGray' in 'GfxColorSpace'
+  270 |     virtual void getGray(const GfxColor *color, GfxGray *gray) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:271:18: note: unimplemented pure virtual method 'getRGB' in 'GfxColorSpace'
+  271 |     virtual void getRGB(const GfxColor *color, GfxRGB *rgb) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:272:18: note: unimplemented pure virtual method 'getCMYK' in 'GfxColorSpace'
+  272 |     virtual void getCMYK(const GfxColor *color, GfxCMYK *cmyk) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: unimplemented pure virtual method 'getDeviceN' in 'GfxColorSpace'
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:295:17: note: unimplemented pure virtual method 'getNComps' in 'GfxColorSpace'
+  295 |     virtual int getNComps() const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:298:18: note: unimplemented pure virtual method 'getDefaultColor' in 'GfxColorSpace'
+  298 |     virtual void getDefaultColor(GfxColor *color) const = 0;
+      |                  ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_401.dir/build.make:79: generated_build/CMakeFiles/test_401.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_401.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:77290: generated_build/CMakeFiles/test_401.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:77297: generated_build/CMakeFiles/test_401.dir/rule] 오류 2
+gmake: *** [Makefile:27869: test_401] 오류 2

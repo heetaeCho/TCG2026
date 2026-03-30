@@ -1,0 +1,150 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_572.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:21:5: error: constructor for 'TeamCityReporterTest_572' must explicitly initialize the member 'config' which does not have a default constructor
+   21 |     TeamCityReporterTest_572() : reporter(std::move(config)) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:15:20: note: member is declared here
+   15 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: 'Catch::ReporterConfig' declared here
+   35 |     struct ReporterConfig {
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:21:53: warning: field 'config' is uninitialized when used here [-Wuninitialized]
+   21 |     TeamCityReporterTest_572() : reporter(std::move(config)) {}
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:51:30: error: 'printSectionHeader' is a private member of 'Catch::TeamCityReporter'
+   51 |     EXPECT_NO_THROW(reporter.printSectionHeader(mockOs));
+      |                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_teamcity.hpp:55:14: note: declared private here
+   55 |         void printSectionHeader(std::ostream& os);
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:63:25: error: no matching constructor for initialization of 'TestRunInfo'
+   63 |     MockTestRunInfo() : TestRunInfo("MockRun", "MockName") {}
+      |                         ^           ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:16:19: note: candidate constructor not viable: requires single argument '_name', but 2 arguments were provided
+   16 |         constexpr TestRunInfo(StringRef _name) : name(_name) {}
+      |                   ^           ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:73:52: error: no matching constructor for initialization of 'TestRunStats'
+   73 |     MockTestRunStats(const TestRunInfo& runInfo) : TestRunStats(runInfo, std::vector<TestCaseStats>()) {}
+      |                                                    ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:98:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   98 |     struct TestRunStats {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:98:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   98 |     struct TestRunStats {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:99:9: note: candidate constructor not viable: requires 3 arguments, but 2 were provided
+   99 |         TestRunStats(   TestRunInfo const& _runInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  100 |                         Totals const& _totals,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+  101 |                         bool _aborting );
+      |                         ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:107:43: error: call to deleted constructor of 'AssertionResult'
+  107 |     MockAssertionStats() : AssertionStats(AssertionResult(), "", "", 0) {}
+      |                                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: 'AssertionResult' has been explicitly marked deleted here
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:107:28: error: no matching constructor for initialization of 'AssertionStats'
+  107 |     MockAssertionStats() : AssertionStats(AssertionResult(), "", "", 0) {}
+      |                            ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 4 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:125:33: error: base class has incomplete type
+  125 | class MockTestCaseInfo : public TestCaseInfo {
+      |                          ~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:129:93: error: use of undeclared identifier 'Tags'
+  129 |     MockTestCaseInfo() : TestCaseInfo("MockName", "MockDescription", SourceLineInfo("", 0), Tags()) {}
+      |                                                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:129:26: error: type 'TestCaseInfo' is not a direct or virtual base of 'MockTestCaseInfo'
+  129 |     MockTestCaseInfo() : TestCaseInfo("MockName", "MockDescription", SourceLineInfo("", 0), Tags()) {}
+      |                          ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:139:55: error: no matching constructor for initialization of 'TestCaseStats'
+  139 |     MockTestCaseStats(const TestCaseInfo& testInfo) : TestCaseStats(testInfo, std::vector<AssertionResult>()) {}
+      |                                                       ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:85:9: note: candidate constructor not viable: requires 5 arguments, but 2 were provided
+   85 |         TestCaseStats(  TestCaseInfo const& _testInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |                         Totals const& _totals,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   87 |                         std::string&& _stdOut,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   88 |                         std::string&& _stdErr,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   89 |                         bool _aborting );
+      |                         ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:149:47: error: no viable conversion from 'MockTestCaseInfo' to incomplete type 'const TestCaseInfo'
+  149 |     EXPECT_NO_THROW(reporter.testCaseStarting(mockCaseInfo));
+      |                                               ^~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_teamcity.hpp:50:51: note: passing argument to parameter 'testInfo' here
+   50 |         void testCaseStarting(TestCaseInfo const& testInfo) override;
+      |                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:159:23: error: no matching constructor for initialization of 'MockTestCaseStats'
+  159 |     MockTestCaseStats mockCaseStats(mockCaseInfo);
+      |                       ^             ~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:135:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'MockTestCaseInfo' to 'const MockTestCaseStats' for 1st argument
+  135 | class MockTestCaseStats : public TestCaseStats {
+      |       ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:135:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'MockTestCaseInfo' to 'MockTestCaseStats' for 1st argument
+  135 | class MockTestCaseStats : public TestCaseStats {
+      |       ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:139:5: note: candidate constructor not viable: no known conversion from 'MockTestCaseInfo' to 'const TestCaseInfo' for 1st argument
+  139 |     MockTestCaseStats(const TestCaseInfo& testInfo) : TestCaseStats(testInfo, std::vector<AssertionResult>()) {}
+      |     ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp:173:25: error: no matching constructor for initialization of 'SectionInfo'
+  173 |     MockSectionInfo() : SectionInfo("MockName", "MockDescription", SourceLineInfo("", 0)) {}
+      |                         ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_section_info.hpp:24:9: note: candidate constructor not viable: no known conversion from 'const char[9]' to 'const SourceLineInfo' for 1st argument
+   24 |         SectionInfo( SourceLineInfo const& _lineInfo, std::string _name,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_section_info.hpp:20:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   20 |     struct SectionInfo {
+      |            ^~~~~~~~~~~
+1 warning and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_572.dir/build.make:79: generated_build/CMakeFiles/test_572.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_572.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:37958: generated_build/CMakeFiles/test_572.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:37965: generated_build/CMakeFiles/test_572.dir/rule] 오류 2
+gmake: *** [Makefile:13774: test_572] 오류 2

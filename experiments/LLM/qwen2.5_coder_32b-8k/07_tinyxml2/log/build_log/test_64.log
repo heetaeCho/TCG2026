@@ -1,0 +1,19 @@
+Built target tinyxml2
+Building CXX object generated_build/CMakeFiles/test_64.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_64.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_64.cpp:23:23: error: calling a protected constructor of class 'tinyxml2::XMLText'
+   23 |         xmlText = new XMLText(&doc);
+      |                       ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1018:14: note: declared protected here
+ 1018 |     explicit XMLText( XMLDocument* doc )        : XMLNode( doc ), _isCData( false )     {}
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_64.cpp:31:16: error: calling a protected destructor of class 'XMLText'
+   31 |         delete xmlText;
+      |                ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1019:13: note: declared protected here
+ 1019 |     virtual ~XMLText()                                                                                          {}
+      |             ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_64.dir/build.make:79: generated_build/CMakeFiles/test_64.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_64.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:10113: generated_build/CMakeFiles/test_64.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:10120: generated_build/CMakeFiles/test_64.dir/rule] 오류 2
+gmake: *** [Makefile:3832: test_64] 오류 2

@@ -1,0 +1,57 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_94.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp:23:5: error: constructor for 'leveldb::SkipListTest_94' must explicitly initialize the member 'skiplist' which does not have a default constructor
+   23 |     SkipListTest_94() : iter(&skiplist) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp:17:38: note: member is declared here
+   17 |     SkipList<Comparator, Comparator> skiplist;
+      |                                      ^
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:40:7: note: 'leveldb::SkipList<int, int>' declared here
+   40 | class SkipList {
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:287:26: error: called object type 'int' is not a function or function pointer
+  287 |     assert(x == head_ || compare_(x->key, key) < 0);
+      |                          ^~~~~~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+   93 |      (static_cast <bool> (expr)                                         \
+      |                           ^~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:215:18: note: in instantiation of member function 'leveldb::SkipList<int, int>::FindLessThan' requested here
+  215 |   node_ = list_->FindLessThan(node_->key);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp:69:10: note: in instantiation of member function 'leveldb::SkipList<int, int>::Iterator::Prev' requested here
+   69 |     iter.Prev();
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:289:28: error: called object type 'int' is not a function or function pointer
+  289 |     if (next == nullptr || compare_(next->key, key) >= 0) {
+      |                            ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:255:29: error: called object type 'int' is not a function or function pointer
+  255 |   return (n != nullptr) && (compare_(n->key, key) < 0);
+      |                             ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:266:9: note: in instantiation of member function 'leveldb::SkipList<int, int>::KeyIsAfterNode' requested here
+  266 |     if (KeyIsAfterNode(key, next)) {
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:223:18: note: in instantiation of member function 'leveldb::SkipList<int, int>::FindGreaterOrEqual' requested here
+  223 |   node_ = list_->FindGreaterOrEqual(target, nullptr);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp:79:10: note: in instantiation of member function 'leveldb::SkipList<int, int>::Iterator::Seek' requested here
+   79 |     iter.Seek(0);
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:108:58: error: called object type 'int' is not a function or function pointer
+  108 |   bool Equal(const Key& a, const Key& b) const { return (compare_(a, b) == 0); }
+      |                                                          ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:342:27: note: in instantiation of member function 'leveldb::SkipList<int, int>::Equal' requested here
+  342 |   assert(x == nullptr || !Equal(key, x->key));
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp:95:18: note: in instantiation of member function 'leveldb::SkipList<int, int>::Insert' requested here
+   95 |         skiplist.Insert(10);
+      |                  ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_94.dir/build.make:76: generated_build/CMakeFiles/test_94.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_94.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15725: generated_build/CMakeFiles/test_94.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15732: generated_build/CMakeFiles/test_94.dir/rule] 오류 2
+gmake: *** [Makefile:6705: test_94] 오류 2

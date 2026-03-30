@@ -1,0 +1,79 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_595.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:87:5: error: implicit instantiation of undefined template 'std::basic_ofstream<char>'
+   87 |     std::ofstream(permanentFilePath).close(); // Create an empty file
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iosfwd:119:11: note: template is declared here
+  119 |     class basic_ofstream;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:87:37: error: implicit instantiation of undefined template 'std::basic_ofstream<char>'
+   87 |     std::ofstream(permanentFilePath).close(); // Create an empty file
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iosfwd:119:11: note: template is declared here
+  119 |     class basic_ofstream;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:93:13: error: 'isTemp_' is a private member of 'Exiv2::XPathIo'
+   93 |     xpathIo.isTemp_ = false; // Manually set to non-temp for testing purposes
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:702:8: note: declared private here
+  702 |   bool isTemp_{true};
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:99:17: error: call to implicitly-deleted copy constructor of 'XPathIo'
+   99 |         XPathIo tempXPathIo(std::move(xpathIo));
+      |                 ^           ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:657:26: note: copy constructor of 'XPathIo' is implicitly deleted because base class 'FileIo' has a deleted copy constructor
+  657 | class EXIV2API XPathIo : public FileIo {
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:276:25: note: copy constructor of 'FileIo' is implicitly deleted because base class 'BasicIo' has a deleted copy constructor
+  276 | class EXIV2API FileIo : public BasicIo {
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:43:3: note: 'BasicIo' has been explicitly marked deleted here
+   43 |   BasicIo(const BasicIo&) = delete;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:101:21: error: 'isTemp_' is a private member of 'Exiv2::XPathIo'
+  101 |         tempXPathIo.isTemp_ = false;
+      |                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:702:8: note: declared private here
+  702 |   bool isTemp_{true};
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:119:5: error: unknown type name 'BasicIoMock'
+  119 |     BasicIoMock mockSrc;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:133:19: error: implicit instantiation of undefined template 'std::basic_ifstream<char>'
+  133 |     std::ifstream ifs(xpathIo.writeDataToFile(testFilePath));
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/iosfwd:116:11: note: template is declared here
+  116 |     class basic_ifstream;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:149:5: error: only virtual member functions can be marked 'override'
+  149 |     MOCK_METHOD(std::string, readData, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:30:1: note: expanded from here
+   30 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp:153:1: error: expected unqualified-id
+  153 | ```
+      | ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_595.dir/build.make:79: generated_build/CMakeFiles/test_595.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_595.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:26615: generated_build/CMakeFiles/test_595.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:26622: generated_build/CMakeFiles/test_595.dir/rule] 오류 2
+gmake: *** [Makefile:7771: test_595] 오류 2

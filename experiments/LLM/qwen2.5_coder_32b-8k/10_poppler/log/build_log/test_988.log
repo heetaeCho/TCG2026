@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_988.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_988.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_988.cpp:9:7: warning: 'PDFDocTest_988' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class PDFDocTest_988 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_988.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: calling a private constructor of class 'PDFDoc'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_988.cpp:23:23: note: in instantiation of function template specialization 'std::make_unique<PDFDoc>' requested here
+   23 |         pdfDoc = std::make_unique<PDFDoc>();
+      |                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_988.dir/build.make:79: generated_build/CMakeFiles/test_988.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_988.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18154: generated_build/CMakeFiles/test_988.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18161: generated_build/CMakeFiles/test_988.dir/rule] 오류 2
+gmake: *** [Makefile:3845: test_988] 오류 2

@@ -1,0 +1,47 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_113.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp:25:24: error: allocation of incomplete type 'XRef'
+   25 |         mockXRef = new XRef();
+      |                        ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp:37:9: warning: deleting pointer to incomplete type 'XRef' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   37 |         delete mockXRef;
+      |         ^      ~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp:129:17: error: no viable conversion from 'std::unique_ptr<Dict>' to 'const Dict *'
+  129 |     const Dict* copiedDict = dict->copy(mockXRef);
+      |                 ^            ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp:145:17: error: no viable conversion from 'std::unique_ptr<Dict>' to 'const Dict *'
+  145 |     const Dict* deepCopiedDict = dict->deepCopy();
+      |                 ^                ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp:13:7: warning: 'DictTest_113' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class DictTest_113 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const Object' and 'const Object')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Object, Object>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp:109:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Object, Object, nullptr>' requested here
+  109 |     EXPECT_EQ(dict->lookupNF("key"), defaultObj);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const Object' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:102:13: note: candidate function not viable: no known conversion from 'const Object' to 'const Ref' for 1st argument
+  102 | inline bool operator==(const Ref lhs, const Ref rhs) noexcept
+      |             ^          ~~~~~~~~~~~~~
+2 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_113.dir/build.make:79: generated_build/CMakeFiles/test_113.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_113.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:75882: generated_build/CMakeFiles/test_113.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:75889: generated_build/CMakeFiles/test_113.dir/rule] 오류 2
+gmake: *** [Makefile:27297: test_113] 오류 2

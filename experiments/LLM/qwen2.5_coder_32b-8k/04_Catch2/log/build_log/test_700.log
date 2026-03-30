@@ -1,0 +1,38 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_700.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_700.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_700.cpp:37:29: error: 'm_value' is a private member of 'Catch::Approx'
+   37 |     EXPECT_DOUBLE_EQ(approx.m_value, 1.0);
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_approx.hpp:113:16: note: declared private here
+  113 |         double m_value;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_700.cpp:49:29: error: 'm_value' is a private member of 'Catch::Approx'
+   49 |     EXPECT_DOUBLE_EQ(approx.m_value, static_cast<double>(value));
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_approx.hpp:113:16: note: declared private here
+  113 |         double m_value;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_700.cpp:61:18: warning: comparison of address of 'approx' not equal to a null pointer is always true [-Wtautological-pointer-compare]
+   61 |     EXPECT_TRUE(&approx != nullptr);
+      |                  ^~~~~~    ~~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_700.cpp:73:36: error: 'm_value' is a private member of 'Catch::Approx'
+   73 |     EXPECT_DOUBLE_EQ(negatedApprox.m_value, -3.0);
+      |                                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_approx.hpp:113:16: note: declared private here
+  113 |         double m_value;
+      |                ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_700.dir/build.make:79: generated_build/CMakeFiles/test_700.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_700.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:33305: generated_build/CMakeFiles/test_700.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:33312: generated_build/CMakeFiles/test_700.dir/rule] 오류 2
+gmake: *** [Makefile:11941: test_700] 오류 2

@@ -1,0 +1,65 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_228.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_228.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_228.cpp:31:23: error: allocating an object of abstract class type 'DB'
+   31 |         mock_db = new DB();
+      |                       ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:66:18: note: unimplemented pure virtual method 'Put' in 'DB'
+   66 |   virtual Status Put(const WriteOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:73:18: note: unimplemented pure virtual method 'Delete' in 'DB'
+   73 |   virtual Status Delete(const WriteOptions& options, const Slice& key) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:78:18: note: unimplemented pure virtual method 'Write' in 'DB'
+   78 |   virtual Status Write(const WriteOptions& options, WriteBatch* updates) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:87:18: note: unimplemented pure virtual method 'Get' in 'DB'
+   87 |   virtual Status Get(const ReadOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:96:21: note: unimplemented pure virtual method 'NewIterator' in 'DB'
+   96 |   virtual Iterator* NewIterator(const ReadOptions& options) = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:102:27: note: unimplemented pure virtual method 'GetSnapshot' in 'DB'
+  102 |   virtual const Snapshot* GetSnapshot() = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:106:16: note: unimplemented pure virtual method 'ReleaseSnapshot' in 'DB'
+  106 |   virtual void ReleaseSnapshot(const Snapshot* snapshot) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:124:16: note: unimplemented pure virtual method 'GetProperty' in 'DB'
+  124 |   virtual bool GetProperty(const Slice& property, std::string* value) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:134:16: note: unimplemented pure virtual method 'GetApproximateSizes' in 'DB'
+  134 |   virtual void GetApproximateSizes(const Range* range, int n,
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:147:16: note: unimplemented pure virtual method 'CompactRange' in 'DB'
+  147 |   virtual void CompactRange(const Slice* begin, const Slice* end) = 0;
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_228.cpp:1:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1395:11: error: invalid operands to binary expression ('const leveldb::Status' and 'const leveldb::Status')
+ 1395 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1414:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<leveldb::Status, leveldb::Status>' requested here
+ 1414 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_228.cpp:33:9: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<leveldb::Status, leveldb::Status, nullptr>' requested here
+   33 |         ASSERT_EQ(DB::Open(options, "/tmp/testdb", &mock_db), Status::OK());
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1921:31: note: expanded from macro 'ASSERT_EQ'
+ 1921 | #define ASSERT_EQ(val1, val2) GTEST_ASSERT_EQ(val1, val2)
+      |                               ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1905:54: note: expanded from macro 'GTEST_ASSERT_EQ'
+ 1905 |   ASSERT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const leveldb::Status' to 'faketype' for 1st argument
+ 1387 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/slice.h:96:13: note: candidate function not viable: no known conversion from 'const leveldb::Status' to 'const Slice' for 1st argument
+   96 | inline bool operator==(const Slice& x, const Slice& y) {
+      |             ^          ~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_228.dir/build.make:76: generated_build/CMakeFiles/test_228.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_228.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:11491: generated_build/CMakeFiles/test_228.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:11498: generated_build/CMakeFiles/test_228.dir/rule] 오류 2
+gmake: *** [Makefile:4807: test_228] 오류 2

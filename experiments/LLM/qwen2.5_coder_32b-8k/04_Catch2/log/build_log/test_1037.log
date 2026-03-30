@@ -1,0 +1,67 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1037.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp:19:36: error: no matching constructor for initialization of 'NameAndLocation'
+   19 |     NameAndLocation nameAndLocation{"test_section", "file.cpp", 42};
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:29:9: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   29 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp:55:5: error: unknown type name 'StringRef'; did you mean 'Catch::StringRef'?
+   55 |     StringRef expected = "test_section";
+      |     ^~~~~~~~~
+      |     Catch::StringRef
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: 'Catch::StringRef' declared here
+   24 |     class StringRef {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp:83:17: error: unknown type name 'StringRef'; did you mean 'Catch::StringRef'?
+   83 |     std::vector<StringRef> filters{"next_filter1", "next_filter2"};
+      |                 ^~~~~~~~~
+      |                 Catch::StringRef
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: 'Catch::StringRef' declared here
+   24 |     class StringRef {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp:101:68: error: no matching constructor for initialization of 'const NameAndLocationRef &'
+  101 |     SectionTracker& acquiredTracker = SectionTracker::acquire(ctx, {"another_section", "file.cpp", 43});
+      |                                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:55:19: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   55 |         constexpr NameAndLocationRef( StringRef name_ CATCH_ATTR_LIFETIMEBOUND,
+      |                   ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                       SourceLineInfo location_ ):
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:243:88: note: passing argument to parameter 'nameAndLocation' here
+  243 |         static SectionTracker& acquire( TrackerContext& ctx, NameAndLocationRef const& nameAndLocation );
+      |                                                                                        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const char[16]' and 'const Catch::StringRef')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<char[16], Catch::StringRef>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp:105:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<char[16], Catch::StringRef, nullptr>' requested here
+  105 |     EXPECT_EQ("another_section", acquiredTracker.trimmedName());
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const char[16]' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1037.dir/build.make:79: generated_build/CMakeFiles/test_1037.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1037.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:23735: generated_build/CMakeFiles/test_1037.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:23742: generated_build/CMakeFiles/test_1037.dir/rule] 오류 2
+gmake: *** [Makefile:8171: test_1037] 오류 2

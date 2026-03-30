@@ -1,0 +1,225 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1167.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:21:5: error: reference to 'Ref' is ambiguous
+   21 |     Ref idA = {1, 0};
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:23:5: error: reference to 'Ref' is ambiguous
+   23 |     Ref embFontIDA = {2, 0};
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:29:24: error: allocation of incomplete type 'XRef'
+   29 |         mockXRef = new XRef();
+      |                        ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:31:24: error: no matching constructor for initialization of 'Dict'
+   31 |         mockDict = new Dict();
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:39:9: warning: deleting pointer to incomplete type 'XRef' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   39 |         delete mockXRef;
+      |         ^      ~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:49:16: error: no matching constructor for initialization of 'Gfx8BitFont'
+   49 |         return Gfx8BitFont(mockXRef, tagA, idA, std::move(nameA), typeA, embFontIDA, mockDict);
+      |                ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:341:5: note: candidate constructor not viable: no known conversion from 'Dict *' to 'const Dict' for 7th argument; dereference the argument with *
+  341 |     Gfx8BitFont(XRef *xref, const char *tagA, Ref idA, std::optional<std::string> &&nameA, GfxFontType typeA, Ref embFontIDA, const Dict &fontDict);
+      |     ^                                                                                                                         ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:338:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 7 were provided
+  338 | class POPPLER_PRIVATE_EXPORT Gfx8BitFont : public GfxFont
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:57:16: error: no matching constructor for initialization of 'Gfx8BitFont'
+   57 |         return Gfx8BitFont(mockXRef, tagA, idA, std::move(nameA), typeA, embFontIDA, mockDict);
+      |                ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:341:5: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<int &>::type' (aka 'int') to 'std::optional<std::string>' (aka 'optional<basic_string<char>>') for 4th argument
+  341 |     Gfx8BitFont(XRef *xref, const char *tagA, Ref idA, std::optional<std::string> &&nameA, GfxFontType typeA, Ref embFontIDA, const Dict &fontDict);
+      |     ^                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:338:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 7 were provided
+  338 | class POPPLER_PRIVATE_EXPORT Gfx8BitFont : public GfxFont
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:65:8: error: unknown class name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   65 | TEST_F(Gfx8BitFontTest_1167, GetWidth_NormalOperation_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:65:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   65 | TEST_F(Gfx8BitFontTest_1167, GetWidth_NormalOperation_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:65:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   65 | TEST_F(Gfx8BitFontTest_1167, GetWidth_NormalOperation_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:65:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   65 | TEST_F(Gfx8BitFontTest_1167, GetWidth_NormalOperation_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:69:66: error: use of undeclared identifier 'gfxFontType1'; did you mean 'fontType1'?
+   69 |     Gfx8BitFont font = createGfx8BitFont("Tag", std::move(name), gfxFontType1);
+      |                                                                  ^~~~~~~~~~~~
+      |                                                                  fontType1
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:64:5: note: 'fontType1' declared here
+   64 |     fontType1,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:81:8: error: unknown class name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   81 | TEST_F(Gfx8BitFontTest_1167, GetWidth_BoundaryCondition_Min_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:81:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   81 | TEST_F(Gfx8BitFontTest_1167, GetWidth_BoundaryCondition_Min_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:81:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   81 | TEST_F(Gfx8BitFontTest_1167, GetWidth_BoundaryCondition_Min_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:81:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   81 | TEST_F(Gfx8BitFontTest_1167, GetWidth_BoundaryCondition_Min_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:85:66: error: use of undeclared identifier 'gfxFontType1'; did you mean 'fontType1'?
+   85 |     Gfx8BitFont font = createGfx8BitFont("Tag", std::move(name), gfxFontType1);
+      |                                                                  ^~~~~~~~~~~~
+      |                                                                  fontType1
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:64:5: note: 'fontType1' declared here
+   64 |     fontType1,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:97:8: error: unknown class name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   97 | TEST_F(Gfx8BitFontTest_1167, GetWidth_BoundaryCondition_Max_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:97:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   97 | TEST_F(Gfx8BitFontTest_1167, GetWidth_BoundaryCondition_Max_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:97:8: error: unknown type name 'Gfx8BitFontTest_1167'; did you mean 'Gfx8BitFontTest'?
+   97 | TEST_F(Gfx8BitFontTest_1167, GetWidth_BoundaryCondition_Max_1167) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        Gfx8BitFontTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp:13:7: note: 'Gfx8BitFontTest' declared here
+   13 | class Gfx8BitFontTest : public Test {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1167.dir/build.make:79: generated_build/CMakeFiles/test_1167.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1167.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:60138: generated_build/CMakeFiles/test_1167.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:60145: generated_build/CMakeFiles/test_1167.dir/rule] 오류 2
+gmake: *** [Makefile:20901: test_1167] 오류 2

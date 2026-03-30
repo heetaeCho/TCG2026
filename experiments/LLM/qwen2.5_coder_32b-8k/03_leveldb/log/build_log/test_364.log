@@ -1,0 +1,282 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_364.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:27:25: error: no matching constructor for initialization of 'leveldb::MemTableIterator'
+   27 |         iterator_ = new leveldb::MemTableIterator(memtable_);
+      |                         ^                         ~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.cc:48:12: note: candidate constructor not viable: no known conversion from 'leveldb::MemTable *' to 'MemTable::Table *' (aka 'SkipList<const char *, KeyComparator> *') for 1st argument
+   48 |   explicit MemTableIterator(MemTable::Table* table) : iter_(table) {}
+      |            ^                ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.cc:50:3: note: candidate constructor not viable: no known conversion from 'leveldb::MemTable *' to 'const MemTableIterator' for 1st argument
+   50 |   MemTableIterator(const MemTableIterator&) = delete;
+      |   ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:37:16: error: calling a private destructor of class 'leveldb::MemTable'
+   37 |         delete memtable_;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.h:77:3: note: declared private here
+   77 |   ~MemTable();  // Private since only Unref() should be used to delete it
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:47:8: error: unknown class name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   47 | TEST_F(MemTableIteratorTest_364, ValueEmptyWhenInvalid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:16: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:47:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   47 | TEST_F(MemTableIteratorTest_364, ValueEmptyWhenInvalid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2229:46: note: expanded from macro 'GTEST_TEST_F'
+ 2229 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1508:67: note: expanded from macro 'GTEST_TEST_'
+ 1508 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id),  \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:47:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   47 | TEST_F(MemTableIteratorTest_364, ValueEmptyWhenInvalid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1510:15: note: expanded from macro 'GTEST_TEST_'
+ 1510 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:47:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   47 | TEST_F(MemTableIteratorTest_364, ValueEmptyWhenInvalid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1512:15: note: expanded from macro 'GTEST_TEST_'
+ 1512 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),       \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:61:8: error: unknown class name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   61 | TEST_F(MemTableIteratorTest_364, ValueNonEmptyWhenValid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:16: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:61:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   61 | TEST_F(MemTableIteratorTest_364, ValueNonEmptyWhenValid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2229:46: note: expanded from macro 'GTEST_TEST_F'
+ 2229 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1508:67: note: expanded from macro 'GTEST_TEST_'
+ 1508 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id),  \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:61:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   61 | TEST_F(MemTableIteratorTest_364, ValueNonEmptyWhenValid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1510:15: note: expanded from macro 'GTEST_TEST_'
+ 1510 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:61:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   61 | TEST_F(MemTableIteratorTest_364, ValueNonEmptyWhenValid_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1512:15: note: expanded from macro 'GTEST_TEST_'
+ 1512 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),       \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:67:81: error: too few arguments to function call, expected 4, have 3
+   67 |     memtable_->Add(leveldb::kTypeValue, leveldb::Slice(key), leveldb::Slice(val));
+      |     ~~~~~~~~~~~~~~                                                              ^
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.cc:76:16: note: 'Add' declared here
+   76 | void MemTable::Add(SequenceNumber s, ValueType type, const Slice& key,
+      |                ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   77 |                    const Slice& value) {
+      |                    ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:85:8: error: unknown class name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   85 | TEST_F(MemTableIteratorTest_364, ValueWithEmptyString_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:16: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:85:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   85 | TEST_F(MemTableIteratorTest_364, ValueWithEmptyString_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2229:46: note: expanded from macro 'GTEST_TEST_F'
+ 2229 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1508:67: note: expanded from macro 'GTEST_TEST_'
+ 1508 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id),  \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:85:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   85 | TEST_F(MemTableIteratorTest_364, ValueWithEmptyString_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1510:15: note: expanded from macro 'GTEST_TEST_'
+ 1510 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:85:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+   85 | TEST_F(MemTableIteratorTest_364, ValueWithEmptyString_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1512:15: note: expanded from macro 'GTEST_TEST_'
+ 1512 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),       \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:89:80: error: too few arguments to function call, expected 4, have 3
+   89 |     memtable_->Add(leveldb::kTypeValue, leveldb::Slice(key), leveldb::Slice(""));
+      |     ~~~~~~~~~~~~~~                                                             ^
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.cc:76:16: note: 'Add' declared here
+   76 | void MemTable::Add(SequenceNumber s, ValueType type, const Slice& key,
+      |                ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   77 |                    const Slice& value) {
+      |                    ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:105:8: error: unknown class name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+  105 | TEST_F(MemTableIteratorTest_364, ValueConsistencyAcrossCalls_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:16: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:105:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+  105 | TEST_F(MemTableIteratorTest_364, ValueConsistencyAcrossCalls_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2229:46: note: expanded from macro 'GTEST_TEST_F'
+ 2229 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1508:67: note: expanded from macro 'GTEST_TEST_'
+ 1508 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id),  \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:105:8: error: unknown type name 'MemTableIteratorTest_364'; did you mean 'MemTableIteratorTest'?
+  105 | TEST_F(MemTableIteratorTest_364, ValueConsistencyAcrossCalls_364) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        MemTableIteratorTest
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:54: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                                      ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:40: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1510:15: note: expanded from macro 'GTEST_TEST_'
+ 1510 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp:13:7: note: 'MemTableIteratorTest' declared here
+   13 | class MemTableIteratorTest : public ::testing::Test {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_364.dir/build.make:76: generated_build/CMakeFiles/test_364.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_364.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4734: generated_build/CMakeFiles/test_364.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4741: generated_build/CMakeFiles/test_364.dir/rule] 오류 2
+gmake: *** [Makefile:1778: test_364] 오류 2

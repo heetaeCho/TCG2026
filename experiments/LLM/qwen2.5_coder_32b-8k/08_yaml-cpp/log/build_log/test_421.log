@@ -1,0 +1,24 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_421.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_421.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_421.cpp:51:35: error: no matching member function for call to 'operator()'
+   51 |     EXPECT_FALSE((policy.template operator()<InvalidPolicy>(dummy<InvalidPolicy>{})));
+      |                   ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:4053:32: note: candidate template ignored: substitution failure [with Policy = InvalidPolicy]: no type named 'binary_to_decimal_rounding_policy' in 'InvalidPolicy'
+ 4052 |                 template <class Policy, class = typename Policy::binary_to_decimal_rounding_policy>
+      |                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 4053 |                 constexpr bool operator()(dummy<Policy>) const noexcept {
+      |                                ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_421.dir/build.make:79: generated_build/CMakeFiles/test_421.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_421.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:21998: generated_build/CMakeFiles/test_421.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:22005: generated_build/CMakeFiles/test_421.dir/rule] 오류 2
+gmake: *** [Makefile:8214: test_421] 오류 2

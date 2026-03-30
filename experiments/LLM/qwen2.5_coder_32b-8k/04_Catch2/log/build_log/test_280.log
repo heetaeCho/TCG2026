@@ -1,0 +1,45 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_280.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_280.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_280.cpp:43:66: error: 'getInternal' is a private member of 'Catch::Singleton<MockInterface, MockInterface, MockMutableInterface>'
+   43 |     EXPECT_CALL(*reinterpret_cast<MockInterface*>(TestSingleton::getInternal()), someMethod())
+      |                                                                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_singletons.hpp:25:21: note: implicitly declared private here
+   25 |         static auto getInternal() -> Singleton* {
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_280.cpp:43:18: warning: 'reinterpret_cast' from class 'Singleton<MockInterface, MockInterface, MockMutableInterface> *' to its base at non-zero offset 'MockInterface *' behaves differently from 'static_cast' [-Wreinterpret-base-class]
+   43 |     EXPECT_CALL(*reinterpret_cast<MockInterface*>(TestSingleton::getInternal()), someMethod())
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_280.cpp:43:18: note: use 'static_cast' to adjust the pointer correctly while upcasting
+   43 |     EXPECT_CALL(*reinterpret_cast<MockInterface*>(TestSingleton::getInternal()), someMethod())
+      |                  ^~~~~~~~~~~~~~~~
+      |                  static_cast
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_280.cpp:63:73: error: 'getInternal' is a private member of 'Catch::Singleton<MockInterface, MockInterface, MockMutableInterface>'
+   63 |     EXPECT_CALL(*reinterpret_cast<MockMutableInterface*>(TestSingleton::getInternal()), modifySomething())
+      |                                                                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_singletons.hpp:25:21: note: implicitly declared private here
+   25 |         static auto getInternal() -> Singleton* {
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_singletons.hpp:39:20: error: non-const lvalue reference to type 'MockMutableInterface' cannot bind to a value of unrelated type 'Singleton<MockInterface, MockInterface, MockMutableInterface>'
+   39 |             return *getInternal();
+      |                    ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_280.cpp:69:20: note: in instantiation of member function 'Catch::Singleton<MockInterface, MockInterface, MockMutableInterface>::getMutable' requested here
+   69 |     TestSingleton::getMutable().modifySomething();
+      |                    ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_280.dir/build.make:79: generated_build/CMakeFiles/test_280.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_280.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7037: generated_build/CMakeFiles/test_280.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7044: generated_build/CMakeFiles/test_280.dir/rule] 오류 2
+gmake: *** [Makefile:1593: test_280] 오류 2

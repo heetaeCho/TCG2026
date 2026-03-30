@@ -1,0 +1,69 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_85.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:101:24: error: exception specification of overriding function is more lax than base version
+  101 |     const std::string& path() const override { static const std::string dummyPath = "dummy"; return dummyPath; }
+      |                        ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:105:10: warning: 'Exiv2::(anonymous namespace)::MockBasicIo::populateFakeData' hides overloaded virtual function [-Woverloaded-virtual]
+  105 |     void populateFakeData(const std::vector<byte>& data) {
+      |          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: hidden overloaded virtual function 'Exiv2::BasicIo::populateFakeData' declared here: different number of parameters (0 vs 1)
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:127:17: error: variable type 'MockBasicIo' is an abstract class
+  127 |     MockBasicIo io;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:98:15: note: unimplemented pure virtual method 'putb' in 'MockBasicIo'
+   98 |   virtual int putb(byte data) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: unimplemented pure virtual method 'read' in 'MockBasicIo'
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:140:15: note: unimplemented pure virtual method 'getb' in 'MockBasicIo'
+  140 |   virtual int getb() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:154:16: note: unimplemented pure virtual method 'transfer' in 'MockBasicIo'
+  154 |   virtual void transfer(BasicIo& src) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:184:17: note: unimplemented pure virtual method 'mmap' in 'MockBasicIo'
+  184 |   virtual byte* mmap(bool isWriteable = false) = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:191:15: note: unimplemented pure virtual method 'munmap' in 'MockBasicIo'
+  191 |   virtual int munmap() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MockBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:199:17: error: variable type 'MockBasicIo' is an abstract class
+  199 |     MockBasicIo io;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:259:17: error: variable type 'MockBasicIo' is an abstract class
+  259 |     MockBasicIo io;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:319:17: error: variable type 'MockBasicIo' is an abstract class
+  319 |     MockBasicIo io;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:379:17: error: variable type 'MockBasicIo' is an abstract class
+  379 |     MockBasicIo io;
+      |                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Exiv2::(anonymous namespace)::MockBasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp:129:25: note: in instantiation of function template specialization 'std::make_unique<Exiv2::(anonymous namespace)::MockBasicIo>' requested here
+  129 |     Jp2Image image(std::make_unique<MockBasicIo>(), false);
+      |                         ^
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_85.dir/build.make:79: generated_build/CMakeFiles/test_85.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_85.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:43411: generated_build/CMakeFiles/test_85.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:43418: generated_build/CMakeFiles/test_85.dir/rule] 오류 2
+gmake: *** [Makefile:14193: test_85] 오류 2

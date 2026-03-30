@@ -1,0 +1,47 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1631.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:19:5: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   19 |     IfdId group = ifdExif; // Example IFD group
+      |     ^~~~~
+      |     Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:19:19: error: use of undeclared identifier 'ifdExif'
+   19 |     IfdId group = ifdExif; // Example IFD group
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:35:49: error: no member named '_' in namespace 'testing'
+   35 |     EXPECT_CALL(*tiffEntry, doAccept(::testing::_)).Times(1);
+      |                                      ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:65:5: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   65 |     IfdId newGroup = ifdGpsInfo;
+      |     ^~~~~
+      |     Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:65:22: error: use of undeclared identifier 'ifdGpsInfo'
+   65 |     IfdId newGroup = ifdGpsInfo;
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:85:1: error: expected unqualified-id
+   85 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'Exiv2::Internal::TiffEntry'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp:27:44: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffEntry>' requested here
+   27 |     TiffFinderTest_1631() : tiffEntry(std::make_unique<TiffEntry>()), tiffFinder(tag, group) {}
+      |                                            ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:571:19: note: default constructor of 'TiffEntry' is implicitly deleted because base class 'TiffEntryBase' has no default constructor
+  571 | class TiffEntry : public TiffEntryBase {
+      |                   ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1631.dir/build.make:79: generated_build/CMakeFiles/test_1631.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1631.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:66021: generated_build/CMakeFiles/test_1631.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:66028: generated_build/CMakeFiles/test_1631.dir/rule] 오류 2
+gmake: *** [Makefile:22838: test_1631] 오류 2

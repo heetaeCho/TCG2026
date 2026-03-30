@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_724.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp:25:19: error: allocation of incomplete type 'PDFDoc'
+   25 |         doc = new PDFDoc();
+      |                   ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:50:7: note: forward declaration of 'PDFDoc'
+   50 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp:41:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   41 |         delete doc;
+      |         ^      ~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:50:7: note: forward declaration of 'PDFDoc'
+   50 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp:99:1: error: expected unqualified-id
+   99 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp:9:7: warning: 'PageTest_724' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class PageTest_724 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'PageAttrs'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp:33:22: note: in instantiation of function template specialization 'std::make_unique<PageAttrs>' requested here
+   33 |         attrs = std::make_unique<PageAttrs>();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:66:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   66 | class PageAttrs
+      |       ^~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:72:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+   72 |     PageAttrs(const PageAttrs *attrs, Dict *dict);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_724.dir/build.make:79: generated_build/CMakeFiles/test_724.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_724.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14986: generated_build/CMakeFiles/test_724.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14993: generated_build/CMakeFiles/test_724.dir/rule] 오류 2
+gmake: *** [Makefile:2558: test_724] 오류 2

@@ -1,0 +1,16 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_477.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_477.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_477.cpp:43:50: error: 'prefilter_tree_' is a private member of 're2::FilteredRE2'
+   43 |         const_cast<PrefilterTree*&>(filtered_re2.prefilter_tree_) = &mock_prefilter_tree;
+      |                                                  ^
+/home/user/TCG2026/./TestProjects/re2/re2/filtered_re2.h:110:34: note: declared private here
+  110 |   std::unique_ptr<PrefilterTree> prefilter_tree_;
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_477.cpp:43:9: error: const_cast from 'std::unique_ptr<PrefilterTree>' to 'PrefilterTree *&' is not allowed
+   43 |         const_cast<PrefilterTree*&>(filtered_re2.prefilter_tree_) = &mock_prefilter_tree;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_477.dir/build.make:79: generated_build/CMakeFiles/test_477.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_477.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:19433: generated_build/CMakeFiles/test_477.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:19440: generated_build/CMakeFiles/test_477.dir/rule] 오류 2
+gmake: *** [Makefile:7277: test_477] 오류 2

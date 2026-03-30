@@ -1,0 +1,241 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_671.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:5:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/impl.h:40:34: error: member access into incomplete type 'element_type' (aka 'YAML::detail::memory_holder')
+   40 |       sequence.push_back(&pMemory->create_node());
+      |                                  ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/ptr.h:18:7: note: forward declaration of 'YAML::detail::memory_holder'
+   18 | class memory_holder;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:5:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/impl.h:110:7: error: implicit instantiation of undefined template 'YAML::convert<std::basic_string<char>>'
+  110 |   if (convert<std::string>::decode(Node(*this, std::move(pMemory)), lhs)) {
+      |       ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:5:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/impl.h:169:20: error: member access into incomplete type 'element_type' (aka 'YAML::detail::memory_holder')
+  169 |   node& v = pMemory->create_node();
+      |                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/ptr.h:18:7: note: forward declaration of 'YAML::detail::memory_holder'
+   18 | class memory_holder;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:5:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/impl.h:216:13: error: use of undeclared identifier 'BadInsert'
+  216 |       throw BadInsert();
+      |             ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/impl.h:229:10: error: member access into incomplete type 'element_type' (aka 'YAML::detail::memory_holder')
+  229 |   pMemory->merge(*value.m_pMemory);
+      |          ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/ptr.h:18:7: note: forward declaration of 'YAML::detail::memory_holder'
+   18 | class memory_holder;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:23:36: error: no viable conversion from 'shared_ptr<YAML::detail::node>' to 'shared_ptr<memory_holder>'
+   23 |     shared_memory_holder pMemory = std::make_shared<node>(); // Mock or placeholder
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:150:7: note: candidate constructor not viable: no known conversion from 'shared_ptr<node>' to 'const shared_ptr<memory_holder> &' for 1st argument
+  150 |       shared_ptr(const shared_ptr&) noexcept = default; ///< Copy constructor
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:304:7: note: candidate constructor not viable: no known conversion from 'shared_ptr<node>' to 'shared_ptr<memory_holder> &&' for 1st argument
+  304 |       shared_ptr(shared_ptr&& __r) noexcept
+      |       ^          ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:357:17: note: candidate constructor not viable: no known conversion from 'shared_ptr<node>' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  357 |       constexpr shared_ptr(nullptr_t) noexcept : shared_ptr() { }
+      |                 ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:296:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic>, const std::shared_ptr<YAML::detail::node> &>::value' was not satisfied [with _Yp = YAML::detail::node]
+  296 |         shared_ptr(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:313:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic>, std::shared_ptr<YAML::detail::node>>::value' was not satisfied [with _Yp = YAML::detail::node]
+  313 |         shared_ptr(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:332:2: note: candidate template ignored: could not match 'auto_ptr' against 'shared_ptr'
+  332 |         shared_ptr(auto_ptr<_Yp>&& __r);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:340:2: note: candidate template ignored: could not match 'unique_ptr' against 'shared_ptr'
+  340 |         shared_ptr(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:408:2: note: candidate template ignored: could not match '_Sp_alloc_shared_tag' against 'shared_ptr'
+  408 |         shared_ptr(_Sp_alloc_shared_tag<_Alloc> __tag, _Args&&... __args)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:160:2: note: explicit constructor is not a candidate
+  160 |         shared_ptr(_Yp* __p) : __shared_ptr<_Tp>(__p) { }
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:325:11: note: explicit constructor is not a candidate
+  325 |         explicit shared_ptr(const weak_ptr<_Yp>& __r)
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:31:8: error: unknown class name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   31 | TEST_F(NodeDataTest_671, ForceInsertConvertsUndefinedToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:31:8: error: unknown type name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   31 | TEST_F(NodeDataTest_671, ForceInsertConvertsUndefinedToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:31:8: error: unknown type name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   31 | TEST_F(NodeDataTest_671, ForceInsertConvertsUndefinedToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:31:8: error: unknown type name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   31 | TEST_F(NodeDataTest_671, ForceInsertConvertsUndefinedToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:33:17: error: use of undeclared identifier 'NodeType'; did you mean 'YAML::NodeType'?
+   33 |     nd.set_type(NodeType::Undefined);
+      |                 ^~~~~~~~
+      |                 YAML::NodeType
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/type.h:11:11: note: 'YAML::NodeType' declared here
+   11 | namespace NodeType {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:37:26: error: use of undeclared identifier 'NodeType'; did you mean 'YAML::NodeType'?
+   37 |     EXPECT_EQ(nd.type(), NodeType::Map);
+      |                          ^~~~~~~~
+      |                          YAML::NodeType
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/type.h:11:11: note: 'YAML::NodeType' declared here
+   11 | namespace NodeType {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:43:8: error: unknown class name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   43 | TEST_F(NodeDataTest_671, ForceInsertConvertsNullToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:43:8: error: unknown type name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   43 | TEST_F(NodeDataTest_671, ForceInsertConvertsNullToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:43:8: error: unknown type name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   43 | TEST_F(NodeDataTest_671, ForceInsertConvertsNullToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:43:8: error: unknown type name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   43 | TEST_F(NodeDataTest_671, ForceInsertConvertsNullToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:45:17: error: use of undeclared identifier 'NodeType'; did you mean 'YAML::NodeType'?
+   45 |     nd.set_type(NodeType::Null);
+      |                 ^~~~~~~~
+      |                 YAML::NodeType
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/type.h:11:11: note: 'YAML::NodeType' declared here
+   11 | namespace NodeType {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:49:26: error: use of undeclared identifier 'NodeType'; did you mean 'YAML::NodeType'?
+   49 |     EXPECT_EQ(nd.type(), NodeType::Map);
+      |                          ^~~~~~~~
+      |                          YAML::NodeType
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/type.h:11:11: note: 'YAML::NodeType' declared here
+   11 | namespace NodeType {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:55:8: error: unknown class name 'NodeDataTest_671'; did you mean 'NodeDataTest'?
+   55 | TEST_F(NodeDataTest_671, ForceInsertConvertsSequenceToMap_671) {
+      |        ^~~~~~~~~~~~~~~~
+      |        NodeDataTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp:19:7: note: 'NodeDataTest' declared here
+   19 | class NodeDataTest : public ::testing::Test {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_671.dir/build.make:79: generated_build/CMakeFiles/test_671.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_671.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:24334: generated_build/CMakeFiles/test_671.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:24341: generated_build/CMakeFiles/test_671.dir/rule] 오류 2
+gmake: *** [Makefile:9163: test_671] 오류 2

@@ -1,0 +1,63 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_686.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_686.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_686.cpp:17:9: error: non-virtual member function marked 'override' hides virtual member function
+   17 |         MOCK_METHOD(bool, translate, (std::string& message), (override));
+      |         ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:59:1: note: expanded from here
+   59 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_exception.hpp:25:29: note: hidden overloaded virtual function 'Catch::IExceptionTranslator::translate' declared here: different number of parameters (2 vs 1)
+   25 |         virtual std::string translate( ExceptionTranslators::const_iterator it, ExceptionTranslators::const_iterator itEnd ) const = 0;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_686.cpp:43:65: error: allocating an object of abstract class type 'MockIExceptionTranslator'
+   43 |     Detail::unique_ptr<MockIExceptionTranslator> translator(new MockIExceptionTranslator());
+      |                                                                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_exception.hpp:25:29: note: unimplemented pure virtual method 'translate' in 'MockIExceptionTranslator'
+   25 |         virtual std::string translate( ExceptionTranslators::const_iterator it, ExceptionTranslators::const_iterator itEnd ) const = 0;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_686.cpp:63:52: error: allocating an object of abstract class type 'MockIExceptionTranslator'
+   63 |     MockIExceptionTranslator* mockTranslator = new MockIExceptionTranslator;
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_686.cpp:67:57: error: no viable conversion from 'internal::SetArgRefereeAction<0UL, typename std::decay<basic_string<char> &>::type>' (aka 'SetArgRefereeAction<0UL, std::basic_string<char>>') to 'const Action<bool (basic_string<char> &)>'
+   67 |     EXPECT_CALL(*mockTranslator, translate(_)).WillOnce(::testing::SetArgReferee<0>(translatedMessage));
+      |                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::SetArgRefereeAction<0UL, typename std::decay<basic_string<char> &>::type>' (aka 'SetArgRefereeAction<0UL, std::basic_string<char>>') to 'const Action<bool (basic_string<char> &)> &' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/usr/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::SetArgRefereeAction<0UL, typename std::decay<basic_string<char> &>::type>' (aka 'SetArgRefereeAction<0UL, std::basic_string<char>>') to 'Action<bool (basic_string<char> &)> &&' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/usr/include/gmock/gmock-actions.h:471:3: note: candidate template ignored: requirement 'internal::is_constructible<std::function<bool ()>, testing::internal::SetArgRefereeAction<0, std::basic_string<char, std::char_traits<char>, std::allocator<char>>>>::value' was not satisfied [with G = internal::SetArgRefereeAction<0UL, typename std::decay<basic_string<char> &>::type>]
+  471 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/include/gmock/gmock-actions.h:476:12: note: explicit constructor is not a candidate
+  476 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/include/gmock/gmock-actions.h:483:12: note: explicit constructor is not a candidate
+  483 |   explicit Action(const Action<Func>& action) : fun_(action.fun_) {}
+      |            ^
+/usr/include/gmock/gmock-spec-builders.h:1011:47: note: passing argument to parameter 'action' here
+ 1011 |   TypedExpectation& WillOnce(const Action<F>& action) {
+      |                                               ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_686.dir/build.make:79: generated_build/CMakeFiles/test_686.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_686.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:20336: generated_build/CMakeFiles/test_686.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:20343: generated_build/CMakeFiles/test_686.dir/rule] 오류 2
+gmake: *** [Makefile:6832: test_686] 오류 2

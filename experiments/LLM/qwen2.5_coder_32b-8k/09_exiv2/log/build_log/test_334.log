@@ -1,0 +1,57 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_334.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:15:42: error: use of undeclared identifier 'IFD0'
+   15 |     TiffDirectoryTest_334() : tiffDir(1, IFD0, true) {}
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:27:57: error: use of undeclared identifier 'IFD0'
+   27 |     auto component = std::make_unique<TiffComponent>(2, IFD0);
+      |                                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:29:23: error: 'doAddNext' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   29 |     EXPECT_NE(tiffDir.doAddNext(std::move(component)), nullptr);
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:858:18: note: declared protected here
+  858 |   TiffComponent* doAddNext(UniquePtr tiffComponent) override;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:37:62: error: use of undeclared identifier 'IFD0'
+   37 |     auto firstComponent = std::make_unique<TiffComponent>(2, IFD0);
+      |                                                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:39:13: error: 'doAddNext' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   39 |     tiffDir.doAddNext(std::move(firstComponent));
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:858:18: note: declared protected here
+  858 |   TiffComponent* doAddNext(UniquePtr tiffComponent) override;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:43:63: error: use of undeclared identifier 'IFD1'
+   43 |     auto secondComponent = std::make_unique<TiffComponent>(3, IFD1);
+      |                                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:45:23: error: 'doAddNext' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   45 |     EXPECT_EQ(tiffDir.doAddNext(std::move(secondComponent)), nullptr);
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:858:18: note: declared protected here
+  858 |   TiffComponent* doAddNext(UniquePtr tiffComponent) override;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:53:36: error: use of undeclared identifier 'IFD0'
+   53 |     TiffDirectory tiffDirNoNext(1, IFD0, false);
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:55:57: error: use of undeclared identifier 'IFD0'
+   55 |     auto component = std::make_unique<TiffComponent>(2, IFD0);
+      |                                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:57:29: error: 'doAddNext' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   57 |     EXPECT_EQ(tiffDirNoNext.doAddNext(std::move(component)), nullptr);
+      |                             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:858:18: note: declared protected here
+  858 |   TiffComponent* doAddNext(UniquePtr tiffComponent) override;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp:65:23: error: 'doAddNext' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   65 |     EXPECT_EQ(tiffDir.doAddNext(nullptr), nullptr);
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:858:18: note: declared protected here
+  858 |   TiffComponent* doAddNext(UniquePtr tiffComponent) override;
+      |                  ^
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_334.dir/build.make:79: generated_build/CMakeFiles/test_334.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_334.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:37461: generated_build/CMakeFiles/test_334.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:37468: generated_build/CMakeFiles/test_334.dir/rule] 오류 2
+gmake: *** [Makefile:11918: test_334] 오류 2

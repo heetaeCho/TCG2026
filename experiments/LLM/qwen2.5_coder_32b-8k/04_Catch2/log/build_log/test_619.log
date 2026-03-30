@@ -1,0 +1,41 @@
+[ 80%] Built target Catch2
+[ 80%] Built target Catch2WithMain
+[ 80%] Building CXX object generated_build/CMakeFiles/test_619.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_619.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_619.cpp:117:69: error: 'EndTag' is a private member of 'Catch::TextFlow::Columns::iterator'
+  117 |     EXPECT_TRUE(it == Columns::iterator(columns, Columns::iterator::EndTag{}));
+      |                                                                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_textflow.hpp:255:24: note: implicitly declared private here
+  255 |                 struct EndTag {};
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_619.cpp:117:23: error: calling a private constructor of class 'Catch::TextFlow::Columns::iterator'
+  117 |     EXPECT_TRUE(it == Columns::iterator(columns, Columns::iterator::EndTag{}));
+      |                       ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_textflow.hpp:261:17: note: implicitly declared private here
+  261 |                 iterator( Columns const& columns, EndTag );
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_619.cpp:151:13: error: no viable overloaded '='
+  151 |     columns = column1;
+      |     ~~~~~~~ ^ ~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_textflow.hpp:249:15: note: candidate function (the implicit copy assignment operator) not viable: no known conversion from 'Column' to 'const Columns' for 1st argument
+  249 |         class Columns {
+      |               ^~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_textflow.hpp:249:15: note: candidate function (the implicit move assignment operator) not viable: no known conversion from 'Column' to 'Columns' for 1st argument
+  249 |         class Columns {
+      |               ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_619.cpp:171:69: error: 'EndTag' is a private member of 'Catch::TextFlow::Columns::iterator'
+  171 |     EXPECT_TRUE(it == Columns::iterator(columns, Columns::iterator::EndTag{}));
+      |                                                                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_textflow.hpp:255:24: note: implicitly declared private here
+  255 |                 struct EndTag {};
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_619.cpp:171:23: error: calling a private constructor of class 'Catch::TextFlow::Columns::iterator'
+  171 |     EXPECT_TRUE(it == Columns::iterator(columns, Columns::iterator::EndTag{}));
+      |                       ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_textflow.hpp:261:17: note: implicitly declared private here
+  261 |                 iterator( Columns const& columns, EndTag );
+      |                 ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_619.dir/build.make:79: generated_build/CMakeFiles/test_619.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_619.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8390: generated_build/CMakeFiles/test_619.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8397: generated_build/CMakeFiles/test_619.dir/rule] 오류 2
+gmake: *** [Makefile:2126: test_619] 오류 2

@@ -1,0 +1,23 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_357.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_357.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_357.cpp:23:55: error: no matching constructor for initialization of 'TokenStream'
+   23 |     TokenStreamTest_357() : args({Token(), Token()}), tokenStream(args) {}
+      |                                                       ^           ~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:108:19: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::vector<Token>' to 'const TokenStream' for 1st argument
+  108 |             class TokenStream {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:108:19: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::vector<Token>' to 'TokenStream' for 1st argument
+  108 |             class TokenStream {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:116:26: note: candidate constructor not viable: no known conversion from 'std::vector<Token>' to 'const Args' for 1st argument
+  116 |                 explicit TokenStream( Args const& args );
+      |                          ^            ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:117:17: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  117 |                 TokenStream( Iterator it, Iterator itEnd );
+      |                 ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_357.dir/build.make:79: generated_build/CMakeFiles/test_357.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_357.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:39476: generated_build/CMakeFiles/test_357.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:39483: generated_build/CMakeFiles/test_357.dir/rule] 오류 2
+gmake: *** [Makefile:14372: test_357] 오류 2

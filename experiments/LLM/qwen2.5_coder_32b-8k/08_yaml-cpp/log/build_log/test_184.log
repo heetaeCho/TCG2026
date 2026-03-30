@@ -1,0 +1,344 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_184.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:41:11: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+   41 |         : seqIterator(SeqIter()),
+      |           ^           ~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'SeqIter' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'SeqIter' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:43:11: error: no matching constructor for initialization of 'node_iterator_base<MapIter>' (aka 'node_iterator_base<_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>>')
+   43 |           mapIterator(MapIter(), MapIter()) {}
+      |           ^           ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: no known conversion from 'MapIter' (aka '_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>') to 'MapIter' (aka '__normal_iterator<std::pair<YAML::detail::node *, YAML::detail::node *> *, std::vector<std::pair<YAML::detail::node *, YAML::detail::node *>, std::allocator<std::pair<YAML::detail::node *, YAML::detail::node *>>>>') for 1st argument
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '_Rb_tree_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: requires single argument 'seqIt', but 2 arguments were provided
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:53:25: error: 'm_type' is a private member of 'YAML::detail::node_iterator_base<__gnu_cxx::__normal_iterator<int *, std::vector<int>>>'
+   53 |     EXPECT_EQ(defaultIt.m_type.value, iterator_type::NoneType);
+      |                         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:174:33: note: declared private here
+  174 |   typename iterator_type::value m_type;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:53:31: error: member reference base type 'typename iterator_type::value' is not a structure or union
+   53 |     EXPECT_EQ(defaultIt.m_type.value, iterator_type::NoneType);
+      |               ~~~~~~~~~~~~~~~~^~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:63:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+   63 |     node_iterator_base<SeqIter> seqIt(vec.begin());
+      |                                 ^     ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:65:21: error: 'm_type' is a private member of 'YAML::detail::node_iterator_base<__gnu_cxx::__normal_iterator<int *, std::vector<int>>>'
+   65 |     EXPECT_EQ(seqIt.m_type.value, iterator_type::Sequence);
+      |                     ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:174:33: note: declared private here
+  174 |   typename iterator_type::value m_type;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:65:27: error: member reference base type 'typename iterator_type::value' is not a structure or union
+   65 |     EXPECT_EQ(seqIt.m_type.value, iterator_type::Sequence);
+      |               ~~~~~~~~~~~~^~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:75:33: error: no matching constructor for initialization of 'node_iterator_base<MapIter>' (aka 'node_iterator_base<_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>>')
+   75 |     node_iterator_base<MapIter> mapIt(map.begin(), map.end());
+      |                                 ^     ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: no known conversion from 'iterator' (aka '_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>') to 'MapIter' (aka '__normal_iterator<std::pair<YAML::detail::node *, YAML::detail::node *> *, std::vector<std::pair<YAML::detail::node *, YAML::detail::node *>, std::allocator<std::pair<YAML::detail::node *, YAML::detail::node *>>>>') for 1st argument
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '_Rb_tree_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: requires single argument 'seqIt', but 2 arguments were provided
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:77:21: error: 'm_type' is a private member of 'YAML::detail::node_iterator_base<std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>>'
+   77 |     EXPECT_EQ(mapIt.m_type.value, iterator_type::Map);
+      |                     ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:174:33: note: declared private here
+  174 |   typename iterator_type::value m_type;
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:77:27: error: member reference base type 'typename iterator_type::value' is not a structure or union
+   77 |     EXPECT_EQ(mapIt.m_type.value, iterator_type::Map);
+      |               ~~~~~~~~~~~~^~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:87:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+   87 |     node_iterator_base<SeqIter> seqIt1(vec.begin());
+      |                                 ^      ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:89:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+   89 |     node_iterator_base<SeqIter> seqIt2(vec.begin());
+      |                                 ^      ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:103:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+  103 |     node_iterator_base<SeqIter> seqIt(vec.begin());
+      |                                 ^     ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:107:33: error: no matching constructor for initialization of 'node_iterator_base<MapIter>' (aka 'node_iterator_base<_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>>')
+  107 |     node_iterator_base<MapIter> mapIt(map.begin(), map.end());
+      |                                 ^     ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: no known conversion from 'iterator' (aka '_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>') to 'MapIter' (aka '__normal_iterator<std::pair<YAML::detail::node *, YAML::detail::node *> *, std::vector<std::pair<YAML::detail::node *, YAML::detail::node *>, std::allocator<std::pair<YAML::detail::node *, YAML::detail::node *>>>>') for 1st argument
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '_Rb_tree_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: requires single argument 'seqIt', but 2 arguments were provided
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:121:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+  121 |     node_iterator_base<SeqIter> seqIt1(vec.begin());
+      |                                 ^      ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:123:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+  123 |     node_iterator_base<SeqIter> seqIt2(vec.end());
+      |                                 ^      ~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:137:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+  137 |     node_iterator_base<SeqIter> seqIt(vec.begin());
+      |                                 ^     ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:141:33: error: no matching constructor for initialization of 'node_iterator_base<MapIter>' (aka 'node_iterator_base<_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>>')
+  141 |     node_iterator_base<MapIter> mapIt(map.begin(), map.end());
+      |                                 ^     ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: no known conversion from 'iterator' (aka '_Rb_tree_iterator<std::pair<const std::basic_string<char>, int>>') to 'MapIter' (aka '__normal_iterator<std::pair<YAML::detail::node *, YAML::detail::node *> *, std::vector<std::pair<YAML::detail::node *, YAML::detail::node *>, std::allocator<std::pair<YAML::detail::node *, YAML::detail::node *>>>>') for 1st argument
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '_Rb_tree_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: requires single argument 'seqIt', but 2 arguments were provided
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp:155:33: error: no matching constructor for initialization of 'node_iterator_base<SeqIter>' (aka 'node_iterator_base<__normal_iterator<int *, std::vector<int, std::allocator<int>>>>')
+  155 |     node_iterator_base<SeqIter> seqIt(vec.begin());
+      |                                 ^     ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'const node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:55:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'iterator' (aka '__normal_iterator<int *, std::vector<int, std::allocator<int>>>') to 'node_iterator_base<__normal_iterator<int *, vector<int>>>' for 1st argument
+   55 | class node_iterator_base {
+      |       ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:82:12: note: candidate constructor not viable: no known conversion from '__normal_iterator<std::vector<int>::pointer, vector<int, allocator<int>>>' to '__normal_iterator<std::vector<YAML::detail::node *>::pointer, vector<YAML::detail::node *, allocator<YAML::detail::node *>>>' for 1st argument
+   82 |   explicit node_iterator_base(SeqIter seqIt)
+      |            ^                  ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:96:3: note: candidate template ignored: could not match 'node_iterator_base' against '__normal_iterator'
+   96 |   node_iterator_base(const node_iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:80:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   80 |   node_iterator_base()
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h:87:12: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   87 |   explicit node_iterator_base(MapIter mapIt, MapIter mapEnd)
+      |            ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_184.dir/build.make:79: generated_build/CMakeFiles/test_184.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_184.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5006: generated_build/CMakeFiles/test_184.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5013: generated_build/CMakeFiles/test_184.dir/rule] 오류 2
+gmake: *** [Makefile:1311: test_184] 오류 2

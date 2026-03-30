@@ -1,0 +1,35 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1162.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1162.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1162.cpp:21:5: error: reference to 'Ref' is ambiguous
+   21 |     Ref id = {42, 0};
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1162.cpp:25:24: error: use of undeclared identifier 'gfxFontType1'; did you mean 'fontType1'?
+   25 |     GfxFontType type = gfxFontType1;
+      |                        ^~~~~~~~~~~~
+      |                        fontType1
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:64:5: note: 'fontType1' declared here
+   64 |     fontType1,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1162.cpp:31:20: error: allocating an object of abstract class type 'GfxFont'
+   31 |         font = new GfxFont(tag.c_str(), id, std::move(name), type, id);
+      |                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:256:38: note: unimplemented pure virtual method 'getToUnicode' in 'GfxFont'
+  256 |     virtual const CharCodeToUnicode *getToUnicode() const = 0;
+      |                                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:291:17: note: unimplemented pure virtual method 'getNextChar' in 'GfxFont'
+  291 |     virtual int getNextChar(const char *s, int len, CharCode *code, Unicode const **u, int *uLen, double *dx, double *dy, double *ox, double *oy) const = 0;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1162.cpp:13:7: warning: 'GfxFontTest_1162' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class GfxFontTest_1162 : public Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1162.dir/build.make:79: generated_build/CMakeFiles/test_1162.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1162.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:52202: generated_build/CMakeFiles/test_1162.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:52209: generated_build/CMakeFiles/test_1162.dir/rule] 오류 2
+gmake: *** [Makefile:17677: test_1162] 오류 2

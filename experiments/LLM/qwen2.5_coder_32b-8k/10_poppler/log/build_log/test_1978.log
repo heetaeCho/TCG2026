@@ -1,0 +1,64 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1978.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1978.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1978.cpp:27:7: warning: 'StreamBitReaderTest_1978' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   27 | class StreamBitReaderTest_1978 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1978.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockStream'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1978.cpp:39:29: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+   39 |         mock_stream_ = std::make_unique<MockStream>();
+      |                             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'MockStream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'MockStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'MockStream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'MockStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'MockStream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'MockStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'MockStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'MockStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1978.cpp:17:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<MockStream>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1978.cpp:39:24: note: in instantiation of member function 'std::unique_ptr<MockStream>::~unique_ptr' requested here
+   39 |         mock_stream_ = std::make_unique<MockStream>();
+      |                        ^
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1978.dir/build.make:79: generated_build/CMakeFiles/test_1978.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1978.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:46026: generated_build/CMakeFiles/test_1978.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:46033: generated_build/CMakeFiles/test_1978.dir/rule] 오류 2
+gmake: *** [Makefile:15168: test_1978] 오류 2

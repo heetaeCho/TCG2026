@@ -1,0 +1,46 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_295.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_295.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_295.cpp:61:50: error: no member named 'Uri' in 'LinkActionKind'
+   61 |     EXPECT_EQ(linkURI.getKind(), LinkActionKind::Uri); // Assuming Uri is the correct kind for URI links
+      |                                  ~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_295.cpp:97:13: error: no matching constructor for initialization of 'LinkURI'
+   97 |     LinkURI linkURI(&dummyObject, std::optional<std::string>("http://example.com"), "http://base.com");
+      |             ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:249:5: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+  249 |     LinkURI(const Object *uriObj, const std::optional<std::string> &baseURI);
+      |     ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:245:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+  245 | class POPPLER_PRIVATE_EXPORT LinkURI : public LinkAction
+      |                              ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_295.cpp:109:13: error: no matching constructor for initialization of 'LinkURI'
+  109 |     LinkURI linkURI(&dummyObject, std::optional<std::string>("http://example.com"), 80);
+      |             ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:249:5: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+  249 |     LinkURI(const Object *uriObj, const std::optional<std::string> &baseURI);
+      |     ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:245:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+  245 | class POPPLER_PRIVATE_EXPORT LinkURI : public LinkAction
+      |                              ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_295.cpp:115:1: error: expected unqualified-id
+  115 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_295.cpp:9:7: warning: 'LinkURITest_295' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class LinkURITest_295 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_295.dir/build.make:79: generated_build/CMakeFiles/test_295.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_295.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:102762: generated_build/CMakeFiles/test_295.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:102769: generated_build/CMakeFiles/test_295.dir/rule] 오류 2
+gmake: *** [Makefile:38217: test_295] 오류 2

@@ -1,0 +1,400 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1786.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:27:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   27 | TEST_F(RoleMapResolveTest, NormalOperation_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:282:1: note: expanded from here
+  282 | RoleMapResolveTest_NormalOperation_1786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:27:1: note: default constructor of 'RoleMapResolveTest_NormalOperation_1786_Test' is implicitly deleted because base class 'RoleMapResolveTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:21:10: note: default constructor of 'RoleMapResolveTest' is implicitly deleted because field 'roleMap' has no default constructor
+   21 |     Dict roleMap;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:27:1: note: replace 'default' with 'delete'
+   27 | TEST_F(RoleMapResolveTest, NormalOperation_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:31:5: error: no member named 'gmock_lookup' in 'Dict'
+   31 |     EXPECT_CALL(roleMap, lookup(StrEq("DocumentRoot"))).WillOnce(Return(resolvedObj));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:16:1: note: expanded from here
+   16 | gmock_lookup
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:31:73: error: call to deleted constructor of 'Object'
+   31 |     EXPECT_CALL(roleMap, lookup(StrEq("DocumentRoot"))).WillOnce(Return(resolvedObj));
+      |                                                                         ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/include/gmock/gmock-actions.h:1244:36: note: passing argument to parameter 'value' here
+ 1244 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:33:15: error: use of undeclared identifier 'roleMapResolve'
+   33 |     EXPECT_EQ(roleMapResolve(&roleMap, "DocumentRoot"), StructElement::Type::DocumentRoot);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:33:78: error: no member named 'DocumentRoot' in 'StructElement::Type'
+   33 |     EXPECT_EQ(roleMapResolve(&roleMap, "DocumentRoot"), StructElement::Type::DocumentRoot);
+      |                                                         ~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:39:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   39 | TEST_F(RoleMapResolveTest, CircularReference_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:32:1: note: expanded from here
+   32 | RoleMapResolveTest_CircularReference_1786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:39:1: note: default constructor of 'RoleMapResolveTest_CircularReference_1786_Test' is implicitly deleted because base class 'RoleMapResolveTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:21:10: note: default constructor of 'RoleMapResolveTest' is implicitly deleted because field 'roleMap' has no default constructor
+   21 |     Dict roleMap;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:39:1: note: replace 'default' with 'delete'
+   39 | TEST_F(RoleMapResolveTest, CircularReference_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:47:5: error: no member named 'gmock_lookup' in 'Dict'
+   47 |     EXPECT_CALL(roleMap, lookup(StrEq("First"))).WillOnce(Return(first));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:59:1: note: expanded from here
+   59 | gmock_lookup
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:47:66: error: call to deleted constructor of 'Object'
+   47 |     EXPECT_CALL(roleMap, lookup(StrEq("First"))).WillOnce(Return(first));
+      |                                                                  ^~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/include/gmock/gmock-actions.h:1244:36: note: passing argument to parameter 'value' here
+ 1244 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:49:5: error: no member named 'gmock_lookup' in 'Dict'
+   49 |     EXPECT_CALL(roleMap, lookup(StrEq("Second"))).WillOnce(Return(second));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:64:1: note: expanded from here
+   64 | gmock_lookup
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:49:67: error: call to deleted constructor of 'Object'
+   49 |     EXPECT_CALL(roleMap, lookup(StrEq("Second"))).WillOnce(Return(second));
+      |                                                                   ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/include/gmock/gmock-actions.h:1244:36: note: passing argument to parameter 'value' here
+ 1244 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:51:5: error: no member named 'gmock_lookup' in 'Dict'
+   51 |     EXPECT_CALL(roleMap, lookup(StrEq("Circular"))).WillRepeatedly(Return(first));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:69:1: note: expanded from here
+   69 | gmock_lookup
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:51:75: error: call to deleted constructor of 'Object'
+   51 |     EXPECT_CALL(roleMap, lookup(StrEq("Circular"))).WillRepeatedly(Return(first));
+      |                                                                           ^~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/include/gmock/gmock-actions.h:1244:36: note: passing argument to parameter 'value' here
+ 1244 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:55:15: error: use of undeclared identifier 'roleMapResolve'
+   55 |     EXPECT_EQ(roleMapResolve(&roleMap, "Circular"), StructElement::Type::Unknown);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:61:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   61 | TEST_F(RoleMapResolveTest, UnknownName_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:85:1: note: expanded from here
+   85 | RoleMapResolveTest_UnknownName_1786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:61:1: note: default constructor of 'RoleMapResolveTest_UnknownName_1786_Test' is implicitly deleted because base class 'RoleMapResolveTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:21:10: note: default constructor of 'RoleMapResolveTest' is implicitly deleted because field 'roleMap' has no default constructor
+   21 |     Dict roleMap;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:61:1: note: replace 'default' with 'delete'
+   61 | TEST_F(RoleMapResolveTest, UnknownName_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:65:5: error: no member named 'gmock_lookup' in 'Dict'
+   65 |     EXPECT_CALL(roleMap, lookup(StrEq("UnknownName"))).WillOnce(Return(unknownObj));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:112:1: note: expanded from here
+  112 | gmock_lookup
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:65:72: error: call to deleted constructor of 'Object'
+   65 |     EXPECT_CALL(roleMap, lookup(StrEq("UnknownName"))).WillOnce(Return(unknownObj));
+      |                                                                        ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/include/gmock/gmock-actions.h:1244:36: note: passing argument to parameter 'value' here
+ 1244 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:67:15: error: use of undeclared identifier 'roleMapResolve'
+   67 |     EXPECT_EQ(roleMapResolve(&roleMap, "UnknownName"), StructElement::Type::Unknown);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:73:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   73 | TEST_F(RoleMapResolveTest, NonNameObject_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:17:1: note: expanded from here
+   17 | RoleMapResolveTest_NonNameObject_1786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:73:1: note: default constructor of 'RoleMapResolveTest_NonNameObject_1786_Test' is implicitly deleted because base class 'RoleMapResolveTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:21:10: note: default constructor of 'RoleMapResolveTest' is implicitly deleted because field 'roleMap' has no default constructor
+   21 |     Dict roleMap;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:73:1: note: replace 'default' with 'delete'
+   73 | TEST_F(RoleMapResolveTest, NonNameObject_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:75:23: error: no matching constructor for initialization of 'Object'
+   75 |     Object nonNameObj(Object(ObjType::objInt, 42));
+      |                       ^      ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:245:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::string' (aka 'basic_string<char>') for 2nd argument
+  245 |     Object(ObjType typeA, std::string &&stringA)
+      |     ^                     ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:252:5: note: candidate constructor not viable: no known conversion from 'int' to 'const char *' for 2nd argument
+  252 |     Object(ObjType typeA, const char *v) : Object(typeA, std::string_view(v)) { }
+      |     ^                     ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:253:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::string_view' (aka 'basic_string_view<char>') for 2nd argument
+  253 |     Object(ObjType typeA, std::string_view v)
+      |     ^                     ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor not viable: requires single argument 'boolnA', but 2 arguments were provided
+  218 |     explicit Object(bool boolnA)
+      |              ^      ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:223:14: note: candidate constructor not viable: requires single argument 'intgA', but 2 arguments were provided
+  223 |     explicit Object(int intgA)
+      |              ^      ~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:228:14: note: candidate constructor not viable: requires single argument 'realA', but 2 arguments were provided
+  228 |     explicit Object(double realA)
+      |              ^      ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:233:14: note: candidate constructor not viable: requires single argument 'stringA', but 2 arguments were provided
+  233 |     explicit Object(std::unique_ptr<GooString> stringA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor not viable: requires single argument 'stringA', but 2 arguments were provided
+  239 |     explicit Object(std::string &&stringA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:261:14: note: candidate constructor not viable: requires single argument 'int64gA', but 2 arguments were provided
+  261 |     explicit Object(long long int64gA)
+      |              ^      ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:266:14: note: candidate constructor not viable: requires single argument 'arrayA', but 2 arguments were provided
+  266 |     explicit Object(std::unique_ptr<Array> arrayA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:272:14: note: candidate constructor not viable: requires single argument 'dictA', but 2 arguments were provided
+  272 |     explicit Object(std::unique_ptr<Dict> &&dictA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:280:14: note: candidate constructor template not viable: requires single argument 'streamA', but 2 arguments were provided
+  280 |     explicit Object(std::unique_ptr<StreamType> &&streamA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:286:14: note: candidate constructor not viable: requires single argument 'r', but 2 arguments were provided
+  286 |     explicit Object(const Ref r)
+      |              ^      ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor template not viable: requires 1 argument, but 2 were provided
+  293 |     Object(T) = delete;
+      |     ^      ~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+  295 |     Object(Object &&other) noexcept
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+  312 |     Object(const Object &other) = delete;
+      |     ^      ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: candidate constructor not viable: requires single argument 'typeA', but 2 arguments were provided
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^      ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:215:5: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+  215 |     Object() : type(objNone) { }
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:77:5: error: no member named 'gmock_lookup' in 'Dict'
+   77 |     EXPECT_CALL(roleMap, lookup(StrEq("NonName"))).WillOnce(Return(nonNameObj));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:44:1: note: expanded from here
+   44 | gmock_lookup
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:77:68: error: call to deleted constructor of 'Object'
+   77 |     EXPECT_CALL(roleMap, lookup(StrEq("NonName"))).WillOnce(Return(nonNameObj));
+      |                                                                    ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/usr/include/gmock/gmock-actions.h:1244:36: note: passing argument to parameter 'value' here
+ 1244 | internal::ReturnAction<R> Return(R value) {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:79:15: error: use of undeclared identifier 'roleMapResolve'
+   79 |     EXPECT_EQ(roleMapResolve(&roleMap, "NonName"), StructElement::Type::Unknown);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:85:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   85 | TEST_F(RoleMapResolveTest, NestedResolution_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:60:1: note: expanded from here
+   60 | RoleMapResolveTest_NestedResolution_1786_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:85:1: note: default constructor of 'RoleMapResolveTest_NestedResolution_1786_Test' is implicitly deleted because base class 'RoleMapResolveTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:21:10: note: default constructor of 'RoleMapResolveTest' is implicitly deleted because field 'roleMap' has no default constructor
+   21 |     Dict roleMap;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:85:1: note: replace 'default' with 'delete'
+   85 | TEST_F(RoleMapResolveTest, NestedResolution_1786) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp:93:5: error: no member named 'gmock_lookup' in 'Dict'
+   93 |     EXPECT_CALL(roleMap, lookup(StrEq("First"))).WillOnce(Return(first));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:87:1: note: expanded from here
+   87 | gmock_lookup
+      | ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+5 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1786.dir/build.make:79: generated_build/CMakeFiles/test_1786.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1786.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:61226: generated_build/CMakeFiles/test_1786.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:61233: generated_build/CMakeFiles/test_1786.dir/rule] 오류 2
+gmake: *** [Makefile:21343: test_1786] 오류 2

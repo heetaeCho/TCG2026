@@ -1,0 +1,42 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_673.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:15:24: error: unknown type name 'tag'
+   15 |     MOCK_CONST_METHOD0(tag, uint16_t());
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:15:5: error: a type specifier is required for all declarations
+   15 |     MOCK_CONST_METHOD0(tag, uint16_t());
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:59:27: error: use of undeclared identifier 'tag'
+   59 |     EXPECT_CALL(*mockKey, tag()).WillOnce(::testing::Return(123));
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:59:54: error: no member named 'Return' in namespace 'testing'
+   59 |     EXPECT_CALL(*mockKey, tag()).WillOnce(::testing::Return(123));
+      |                                           ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:69:15: error: no matching constructor for initialization of 'Iptcdatum'
+   69 |     Iptcdatum iptcdatumNull(nullptr, nullptr);
+      |               ^             ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:49:12: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'const IptcKey' for 1st argument
+   49 |   explicit Iptcdatum(const IptcKey& key, const Value* pValue = nullptr);
+      |            ^         ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:51:3: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+   51 |   Iptcdatum(const Iptcdatum& rhs);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'Exiv2::MockIptcKey'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:39:24: note: in instantiation of function template specialization 'std::make_unique<Exiv2::MockIptcKey>' requested here
+   39 |         mockKey = std::make_unique<MockIptcKey>();
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp:11:21: note: default constructor of 'MockIptcKey' is implicitly deleted because base class 'IptcKey' has no default constructor
+   11 | class MockIptcKey : public IptcKey {
+      |                     ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_673.dir/build.make:79: generated_build/CMakeFiles/test_673.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_673.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:49735: generated_build/CMakeFiles/test_673.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:49742: generated_build/CMakeFiles/test_673.dir/rule] 오류 2
+gmake: *** [Makefile:16611: test_673] 오류 2

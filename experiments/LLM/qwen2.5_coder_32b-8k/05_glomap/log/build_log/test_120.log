@@ -1,0 +1,132 @@
+[ 27%] Built target faiss
+[ 39%] Built target PoseLib
+[ 48%] Built target colmap_vlfeat
+[ 51%] Built target colmap_util
+[ 51%] Built target colmap_feature_types
+[ 54%] Built target colmap_math
+[ 57%] Built target colmap_geometry
+[ 57%] Built target colmap_sensor
+[ 63%] Built target colmap_scene
+[ 66%] Built target colmap_lsd
+[ 66%] Built target colmap_image
+[ 69%] Built target colmap_optim
+[ 75%] Built target colmap_estimators
+[ 78%] Built target colmap_retrieval
+[ 81%] Built target colmap_feature
+[ 81%] Built target colmap_poisson_recon
+[ 84%] Built target colmap_mvs
+[ 87%] Built target colmap_sfm
+[ 90%] Built target colmap_controllers
+[ 90%] Built target colmap_exe
+[100%] Built target glomap
+[100%] Building CXX object generated_build/CMakeFiles/test_120.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:47:24: error: no matching constructor for initialization of 'colmap::Camera'
+   47 |         colmap::Camera colmap_camera(1);
+      |                        ^             ~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/camera.h:47:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const Camera' for 1st argument
+   47 | struct Camera {
+      |        ^~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/camera.h:47:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'Camera' for 1st argument
+   47 | struct Camera {
+      |        ^~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/camera.h:47:8: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:53:21: error: no matching constructor for initialization of 'colmap::Rig'
+   53 |         colmap::Rig colmap_rig(1);
+      |                     ^          ~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/sensor/rig.h:49:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const Rig' for 1st argument
+   49 | class Rig {
+      |       ^~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/sensor/rig.h:49:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'Rig' for 1st argument
+   49 | class Rig {
+      |       ^~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/sensor/rig.h:49:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:61:22: error: no member named 'SetImageId' in 'colmap::Frame'
+   61 |         colmap_frame.SetImageId(1);
+      |         ~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:63:22: error: no member named 'SetCameraId' in 'colmap::Frame'
+   63 |         colmap_frame.SetCameraId(1);
+      |         ~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:67:22: error: no member named 'SetHasPose' in 'colmap::Frame'
+   67 |         colmap_frame.SetHasPose(true);
+      |         ~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:69:41: error: too many arguments to function call, expected single argument 'frame_id', have 2 arguments
+   69 |         reconstruction.RegisterFrame(1, colmap_frame);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~    ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/reconstruction.h:165:8: note: 'RegisterFrame' declared here
+  165 |   void RegisterFrame(frame_t frame_id);
+      |        ^             ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:83:22: error: no member named 'AddPoint2D' in 'colmap::Image'
+   83 |         colmap_image.AddPoint2D(Eigen::Vector2d(0, 0), 1, 2);
+      |         ~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:85:24: error: no member named 'RegisterImage' in 'colmap::Reconstruction'
+   85 |         reconstruction.RegisterImage(colmap_image);
+      |         ~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:153:5: error: 'this' argument to member function 'clear' has type 'const std::unordered_map<camera_t, Camera>' (aka 'const unordered_map<unsigned int, colmap::Camera>'), but function is not marked const
+  153 |     reconstruction.Cameras().clear();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:790:7: note: 'clear' declared here
+  790 |       clear() noexcept
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:173:5: error: 'this' argument to member function 'clear' has type 'const std::unordered_map<rig_t, Rig>' (aka 'const unordered_map<unsigned int, colmap::Rig>'), but function is not marked const
+  173 |     reconstruction.Rigs().clear();
+      |     ^~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:790:7: note: 'clear' declared here
+  790 |       clear() noexcept
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:193:5: error: 'this' argument to member function 'clear' has type 'const std::unordered_map<frame_t, class Frame>' (aka 'const unordered_map<unsigned int, colmap::Frame>'), but function is not marked const
+  193 |     reconstruction.Frames().clear();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:790:7: note: 'clear' declared here
+  790 |       clear() noexcept
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:213:5: error: 'this' argument to member function 'clear' has type 'const std::unordered_map<image_t, class Image>' (aka 'const unordered_map<unsigned int, colmap::Image>'), but function is not marked const
+  213 |     reconstruction.Images().clear();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unordered_map.h:790:7: note: 'clear' declared here
+  790 |       clear() noexcept
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:235:11: error: no member named 'SetHasPose' in 'colmap::Frame'
+  235 |     frame.SetHasPose(false);
+      |     ~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:237:37: error: too many arguments to function call, expected single argument 'frame_id', have 2 arguments
+  237 |     reconstruction.RegisterFrame(1, frame);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~    ^~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/reconstruction.h:165:8: note: 'RegisterFrame' declared here
+  165 |   void RegisterFrame(frame_t frame_id);
+      |        ^             ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:259:37: error: too many arguments to function call, expected single argument 'frame_id', have 2 arguments
+  259 |     reconstruction.RegisterFrame(1, frame);
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~    ^~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/reconstruction.h:165:8: note: 'RegisterFrame' declared here
+  165 |   void RegisterFrame(frame_t frame_id);
+      |        ^             ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:271:28: error: no member named 'rig_ptr' in 'glomap::Frame'; did you mean 'rig_ptr_'?
+  271 |     EXPECT_EQ(glomap_frame.rig_ptr, nullptr);
+      |                            ^~~~~~~
+      |                            rig_ptr_
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:115:14: note: 'rig_ptr_' declared here
+  115 |   class Rig* rig_ptr_ = nullptr;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:283:20: error: no member named 'RegisterImage' in 'colmap::Reconstruction'
+  283 |     reconstruction.RegisterImage(image);
+      |     ~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp:305:20: error: no member named 'RegisterImage' in 'colmap::Reconstruction'
+  305 |     reconstruction.RegisterImage(image);
+      |     ~~~~~~~~~~~~~~ ^
+18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_120.dir/build.make:79: generated_build/CMakeFiles/test_120.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_120.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:9679: generated_build/CMakeFiles/test_120.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:9686: generated_build/CMakeFiles/test_120.dir/rule] 오류 2
+gmake: *** [Makefile:2444: test_120] 오류 2

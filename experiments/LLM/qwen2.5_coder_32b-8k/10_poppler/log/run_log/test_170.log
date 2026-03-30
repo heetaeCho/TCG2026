@@ -1,0 +1,45 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from BaseMemStreamTest_170
+[ RUN      ] BaseMemStreamTest_170.InitialPositionIsZero_170
+[       OK ] BaseMemStreamTest_170.InitialPositionIsZero_170 (0 ms)
+[ RUN      ] BaseMemStreamTest_170.SetPositionAndGetPositionConsistent_170
+[       OK ] BaseMemStreamTest_170.SetPositionAndGetPositionConsistent_170 (0 ms)
+[ RUN      ] BaseMemStreamTest_170.RewindResetsPositionToStart_170
+[       OK ] BaseMemStreamTest_170.RewindResetsPositionToStart_170 (0 ms)
+[ RUN      ] BaseMemStreamTest_170.SetPositionBeyondBufferEndDoesNotChangePosition_170
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_170.cpp:67: Failure
+Expected equality of these values:
+  stream.getPos()
+    Which is: 32768
+  initialPosition
+    Which is: 0
+[  FAILED  ] BaseMemStreamTest_170.SetPositionBeyondBufferEndDoesNotChangePosition_170 (0 ms)
+[ RUN      ] BaseMemStreamTest_170.GetCharAtInitialPositionReturnsEOF_170
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_170.cpp:77: Failure
+Expected equality of these values:
+  result
+    Which is: 0
+  (-1)
+    Which is: -1
+[  FAILED  ] BaseMemStreamTest_170.GetCharAtInitialPositionReturnsEOF_170 (0 ms)
+[ RUN      ] BaseMemStreamTest_170.LookCharAtInitialPositionReturnsEOF_170
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_170.cpp:87: Failure
+Expected equality of these values:
+  result
+    Which is: 0
+  (-1)
+    Which is: -1
+[  FAILED  ] BaseMemStreamTest_170.LookCharAtInitialPositionReturnsEOF_170 (0 ms)
+[----------] 6 tests from BaseMemStreamTest_170 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] BaseMemStreamTest_170.SetPositionBeyondBufferEndDoesNotChangePosition_170
+[  FAILED  ] BaseMemStreamTest_170.GetCharAtInitialPositionReturnsEOF_170
+[  FAILED  ] BaseMemStreamTest_170.LookCharAtInitialPositionReturnsEOF_170
+
+ 3 FAILED TESTS

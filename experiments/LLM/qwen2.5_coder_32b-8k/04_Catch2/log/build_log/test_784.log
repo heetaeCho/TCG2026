@@ -1,0 +1,125 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_784.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:19:31: error: base class has incomplete type
+   19 | class MockTestStream : public IStream {
+      |                        ~~~~~~~^~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:32:11: note: forward declaration of 'Catch::IStream'
+   32 |     class IStream;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:23:5: error: only virtual member functions can be marked 'override'
+   23 |     MOCK_METHOD(void, write, (std::string const&), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:112:1: note: expanded from here
+  112 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:35:24: error: no matching constructor for initialization of 'ReporterConfig'
+   35 |         ReporterConfig config;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:37:16: error: reference to non-static member function must be called
+   37 |         config.takeStream = [this]() { return stream; };
+      |         ~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:63:54: error: call to deleted constructor of 'SourceLineInfo'
+   63 |     TestCaseInfo testInfo("ClassName", {"testName"}, SourceLineInfo());
+      |                                                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:63:18: error: no matching constructor for initialization of 'TestCaseInfo'
+   63 |     TestCaseInfo testInfo("ClassName", {"testName"}, SourceLineInfo());
+      |                  ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:75:54: error: call to deleted constructor of 'SourceLineInfo'
+   75 |     TestCaseInfo testInfo("ClassName", {"testName"}, SourceLineInfo());
+      |                                                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:75:18: error: no matching constructor for initialization of 'TestCaseInfo'
+   75 |     TestCaseInfo testInfo("ClassName", {"testName"}, SourceLineInfo());
+      |                  ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:89:54: error: call to deleted constructor of 'SourceLineInfo'
+   89 |     TestCaseInfo testInfo("ClassName", {"", "tag1"}, SourceLineInfo());
+      |                                                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:89:18: error: no matching constructor for initialization of 'TestCaseInfo'
+   89 |     TestCaseInfo testInfo("ClassName", {"", "tag1"}, SourceLineInfo());
+      |                  ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:101:77: error: call to deleted constructor of 'SourceLineInfo'
+  101 |     TestCaseInfo testInfo("ClassName", {"test|name\\[with special chars]"}, SourceLineInfo());
+      |                                                                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp:101:18: error: no matching constructor for initialization of 'TestCaseInfo'
+  101 |     TestCaseInfo testInfo("ClassName", {"test|name\\[with special chars]"}, SourceLineInfo());
+      |                  ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_784.dir/build.make:79: generated_build/CMakeFiles/test_784.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_784.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:6905: generated_build/CMakeFiles/test_784.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:6912: generated_build/CMakeFiles/test_784.dir/rule] 오류 2
+gmake: *** [Makefile:1541: test_784] 오류 2

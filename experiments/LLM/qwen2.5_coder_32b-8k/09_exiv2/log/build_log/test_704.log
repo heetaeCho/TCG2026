@@ -1,0 +1,39 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_704.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp:25:35: error: use of undeclared identifier 'stringType'
+   25 |         value.reset(Value::create(stringType));
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp:27:16: error: no matching member function for call to 'read'
+   27 |         value->read("testValue", ByteOrder::bigEndian);
+      |         ~~~~~~~^~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: candidate function not viable: requires single argument 'buf', but 2 arguments were provided
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^    ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: candidate function not viable: requires 3 arguments, but 2 were provided
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp:97:12: error: no matching member function for call to 'read'
+   97 |     value->read(largeValue.c_str(), ByteOrder::bigEndian);
+      |     ~~~~~~~^~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: candidate function not viable: requires single argument 'buf', but 2 arguments were provided
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^    ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: candidate function not viable: requires 3 arguments, but 2 were provided
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp:151:45: error: use of undeclared identifier 'unsignedLongType'
+  151 |     Value::UniquePtr intVal = Value::create(unsignedLongType);
+      |                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp:153:48: error: cannot take the address of an rvalue of type 'int'
+  153 |     intVal->read(reinterpret_cast<const byte*>(&LARGE_INT), sizeof(LARGE_INT), ByteOrder::bigEndian);
+      |                                                ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp:179:48: error: use of undeclared identifier 'stringType'
+  179 |     Value::UniquePtr nullValue = Value::create(stringType);
+      |                                                ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_704.dir/build.make:79: generated_build/CMakeFiles/test_704.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_704.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:23555: generated_build/CMakeFiles/test_704.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:23562: generated_build/CMakeFiles/test_704.dir/rule] 오류 2
+gmake: *** [Makefile:6601: test_704] 오류 2

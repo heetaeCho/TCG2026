@@ -1,0 +1,23 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from SetTest_232
+[ RUN      ] SetTest_232.AddValidPattern_ReturnsIndex_232
+[       OK ] SetTest_232.AddValidPattern_ReturnsIndex_232 (0 ms)
+[ RUN      ] SetTest_232.AddInvalidPattern_SetsError_ReturnsNegativeOne_232
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1774677326.971052 1679227 set.cc:78] Error parsing '*(': no argument for repetition operator: *
+[       OK ] SetTest_232.AddInvalidPattern_SetsError_ReturnsNegativeOne_232 (0 ms)
+[ RUN      ] SetTest_232.AddMultiplePatterns_IncreasesIndex_232
+[       OK ] SetTest_232.AddMultiplePatterns_IncreasesIndex_232 (0 ms)
+[ RUN      ] SetTest_232.AddAfterCompile_ReturnsNegativeOne_232
+F0000 00:00:1774677326.971512 1679227 set.cc:66] RE2::Set::Add() called after compiling
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x5641a9f7cca7  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x5641a9f7c6af  absl::log_internal::LogMessage::SendToLog()
+    @     0x5641a9f7c66b  absl::log_internal::LogMessage::Flush()
+    @     0x5641a9ef57c9  absl::log_internal::Voidify::operator&&<>()
+    @     0x5641a9ef32d6  re2::RE2::Set::Add()
+    @     0x5641a9ebe777  SetTest_232_AddAfterCompile_ReturnsNegativeOne_232_Test::TestBody()
+    @     0x5641a9ef249f  testing::internal::HandleExceptionsInMethodIfSupported<>()

@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1073.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:23:15: error: incomplete type 'Exiv2::BasicIo' named in nested name specifier
+   23 |         io_ = BasicIo::createMemIo();
+      |               ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:25:22: error: allocating an object of abstract class type 'Image'
+   25 |         image_ = new Image(imageTypeJpeg, supportedExifMetadata, std::move(io_));
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:45:13: error: variable has incomplete type 'ExifKey'
+   45 |     ExifKey key("Exif.Image.Artist");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:47:24: error: unknown type name 'StringValue'
+   47 |     Value* value = new StringValue("ArtistName");
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:51:5: warning: deleting pointer to incomplete type 'Value' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   51 |     delete value;
+      |     ^      ~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:11:7: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   11 | class ImageTest_1073 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:25:28: error: use of undeclared identifier 'imageTypeJpeg'
+   25 |         image_ = new Image(imageTypeJpeg, supportedExifMetadata, std::move(io_));
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp:25:43: error: use of undeclared identifier 'supportedExifMetadata'
+   25 |         image_ = new Image(imageTypeJpeg, supportedExifMetadata, std::move(io_));
+      |                                           ^
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1073.dir/build.make:79: generated_build/CMakeFiles/test_1073.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1073.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:30253: generated_build/CMakeFiles/test_1073.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:30260: generated_build/CMakeFiles/test_1073.dir/rule] 오류 2
+gmake: *** [Makefile:9162: test_1073] 오류 2

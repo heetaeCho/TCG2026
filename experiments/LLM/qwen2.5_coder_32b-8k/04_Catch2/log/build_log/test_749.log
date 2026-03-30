@@ -1,0 +1,116 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_749.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:23:5: error: constructor for 'JunitReporterTest_749' must explicitly initialize the member 'config' which does not have a default constructor
+   23 |     JunitReporterTest_749() : reporter(std::move(config)) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:17:20: note: member is declared here
+   17 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: 'Catch::ReporterConfig' declared here
+   35 |     struct ReporterConfig {
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:23:50: warning: field 'config' is uninitialized when used here [-Wuninitialized]
+   23 |     JunitReporterTest_749() : reporter(std::move(config)) {}
+      |                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:43:46: error: no matching constructor for initialization of 'TestRunInfo'
+   43 |     EXPECT_NO_THROW(reporter.testRunStarting(TestRunInfo("dummy_run_name", 1)));
+      |                                              ^           ~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:16:19: note: candidate constructor not viable: requires single argument '_name', but 2 arguments were provided
+   16 |         constexpr TestRunInfo(StringRef _name) : name(_name) {}
+      |                   ^           ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:53:47: error: invalid use of incomplete type 'TestCaseInfo'
+   53 |     EXPECT_NO_THROW(reporter.testCaseStarting(TestCaseInfo("dummy_test_case", "", 0, SourceLineInfo("", 1))));
+      |                                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:63:45: error: no matching constructor for initialization of 'AssertionStats'
+   63 |     EXPECT_NO_THROW(reporter.assertionEnded(AssertionStats()));
+      |                                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:62:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   62 |         AssertionStats( AssertionStats const& )              = default;
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:63:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |         AssertionStats( AssertionStats && )                  = default;
+      |         ^               ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:58:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   58 |         AssertionStats( AssertionResult const& _assertionResult,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   59 |                         std::vector<MessageInfo> const& _infoMessages,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   60 |                         Totals const& _totals );
+      |                         ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:73:58: error: invalid use of incomplete type 'TestCaseInfo'
+   73 |     EXPECT_NO_THROW(reporter.testCaseEnded(TestCaseStats(TestCaseInfo("dummy_test_case", "", 0, SourceLineInfo("", 1)), true)));
+      |                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp:73:44: error: no matching constructor for initialization of 'TestCaseStats'
+   73 |     EXPECT_NO_THROW(reporter.testCaseEnded(TestCaseStats(TestCaseInfo("dummy_test_case", "", 0, SourceLineInfo("", 1)), true)));
+      |                                            ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:85:9: note: candidate constructor not viable: requires 5 arguments, but 2 were provided
+   85 |         TestCaseStats(  TestCaseInfo const& _testInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |                         Totals const& _totals,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   87 |                         std::string&& _stdOut,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   88 |                         std::string&& _stdErr,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   89 |                         bool _aborting );
+      |                         ~~~~~~~~~~~~~~
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_749.dir/build.make:79: generated_build/CMakeFiles/test_749.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_749.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:34130: generated_build/CMakeFiles/test_749.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:34137: generated_build/CMakeFiles/test_749.dir/rule] 오류 2
+gmake: *** [Makefile:12266: test_749] 오류 2

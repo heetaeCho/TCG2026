@@ -1,0 +1,54 @@
+[ 80%] Built target Catch2
+[ 80%] Built target Catch2WithMain
+[ 80%] Building CXX object generated_build/CMakeFiles/test_377.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp:49:22: error: 'm_value' is a protected member of 'Catch::Clara::Detail::ResultValueBase<Catch::Clara::ParseResultType>'
+   49 |     EXPECT_EQ(result.m_value, 42); // This assumes m_value is publicly accessible for testing purposes
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:223:23: note: declared protected here
+  223 |                     T m_value;
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp:81:24: error: no member named 'isError' in 'Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>'
+   81 |     EXPECT_TRUE(result.isError()); // This assumes isError() method exists for checking errors
+      |                 ~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp:95:24: error: no member named 'isError' in 'Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>'
+   95 |     EXPECT_TRUE(result.isError()); // This assumes isError() method exists for checking errors
+      |                 ~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp:99:1: error: expected unqualified-id
+   99 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const Catch::Clara::ParseResultType' and 'const int')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Catch::Clara::ParseResultType, int>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp:49:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Catch::Clara::ParseResultType, int, nullptr>' requested here
+   49 |     EXPECT_EQ(result.m_value, 42); // This assumes m_value is publicly accessible for testing purposes
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_377.dir/build.make:79: generated_build/CMakeFiles/test_377.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_377.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:17465: generated_build/CMakeFiles/test_377.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:17472: generated_build/CMakeFiles/test_377.dir/rule] 오류 2
+gmake: *** [Makefile:5701: test_377] 오류 2

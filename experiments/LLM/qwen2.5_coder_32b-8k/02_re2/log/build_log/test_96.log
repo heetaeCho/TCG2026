@@ -1,0 +1,19 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_96.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_96.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_96.cpp:23:13: error: object of type 'SparseSet' (aka 'SparseSetT<void>') cannot be assigned because its copy assignment operator is implicitly deleted
+   23 |         set = SparseSet();
+      |             ^
+/home/user/TCG2026/TestProjects/re2/re2/sparse_set.h:188:17: note: copy assignment operator of 'SparseSetT<void>' is implicitly deleted because field 'sparse_' has a deleted copy assignment operator
+  188 |   PODArray<int> sparse_;
+      |                 ^
+/home/user/TCG2026/TestProjects/re2/re2/pod_array.h:50:33: note: copy assignment operator of 'PODArray<int>' is implicitly deleted because field 'ptr_' has a deleted copy assignment operator
+   50 |   std::unique_ptr<T[], Deleter> ptr_;
+      |                                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:724:19: note: 'operator=' has been explicitly marked deleted here
+  724 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_96.dir/build.make:79: generated_build/CMakeFiles/test_96.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_96.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:20201: generated_build/CMakeFiles/test_96.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:20208: generated_build/CMakeFiles/test_96.dir/rule] 오류 2
+gmake: *** [Makefile:7589: test_96] 오류 2

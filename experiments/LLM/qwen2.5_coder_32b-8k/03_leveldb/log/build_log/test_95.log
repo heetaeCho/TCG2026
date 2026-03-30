@@ -1,0 +1,22 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_95.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_95.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_95.cpp:33:5: error: constructor for 'leveldb::SkipListTest_95' must explicitly initialize the member 'skiplist_' which does not have a default constructor
+   33 |     SkipListTest_95() : it_(&skiplist_) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_95.cpp:27:31: note: member is declared here
+   27 |     SkipList<Key, Comparator> skiplist_;
+      |                               ^
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:40:7: note: 'leveldb::SkipList<int, leveldb::SkipListTest_95::Comparator>' declared here
+   40 | class SkipList {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_95.cpp:45:25: error: no member named 'Begin' in 'leveldb::SkipList<int, leveldb::SkipListTest_95::Comparator>'
+   45 |         it_ = skiplist_.Begin();
+      |               ~~~~~~~~~ ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_95.dir/build.make:76: generated_build/CMakeFiles/test_95.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_95.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5024: generated_build/CMakeFiles/test_95.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5031: generated_build/CMakeFiles/test_95.dir/rule] 오류 2
+gmake: *** [Makefile:1908: test_95] 오류 2

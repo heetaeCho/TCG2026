@@ -1,0 +1,97 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_442.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:59:26: error: no matching constructor for initialization of 'NameAndLocation'
+   59 |     MockITracker tracker{NameAndLocation("test", "file.cpp"), nullptr};
+      |                          ^               ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:29:9: note: candidate constructor not viable: no known conversion from 'const char[9]' to 'const SourceLineInfo' for 2nd argument
+   29 |         NameAndLocation( std::string&& _name, SourceLineInfo const& _location );
+      |         ^                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:25:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   25 |     struct NameAndLocation {
+      |            ^~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:67:13: error: 'm_runState' is a protected member of 'Catch::TestCaseTracking::ITracker'
+   67 |     tracker.m_runState = CycleState::CompletedSuccessfully;
+      |             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:96:20: note: declared protected here
+   96 |         CycleState m_runState = NotStarted;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:67:26: error: use of undeclared identifier 'CycleState'
+   67 |     tracker.m_runState = CycleState::CompletedSuccessfully;
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:77:13: error: 'm_runState' is a protected member of 'Catch::TestCaseTracking::ITracker'
+   77 |     tracker.m_runState = CycleState::Failed;
+      |             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:96:20: note: declared protected here
+   96 |         CycleState m_runState = NotStarted;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:77:26: error: use of undeclared identifier 'CycleState'
+   77 |     tracker.m_runState = CycleState::Failed;
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:159:24: error: no matching constructor for initialization of 'NameAndLocationRef'
+  159 |     NameAndLocationRef nameAndLocation;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:51:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   51 |     struct NameAndLocationRef {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:55:19: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+   55 |         constexpr NameAndLocationRef( StringRef name_ CATCH_ATTR_LIFETIMEBOUND,
+      |                   ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |                                       SourceLineInfo location_ ):
+      |                                       ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:203:31: error: 'm_nameAndLocation' is a private member of 'Catch::TestCaseTracking::ITracker'
+  203 |     EXPECT_EQ(result, tracker.m_nameAndLocation);
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:80:25: note: implicitly declared private here
+   80 |         NameAndLocation m_nameAndLocation;
+      |                         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:1:
+In file included from /usr/include/gtest/gtest.h:64:
+In file included from /usr/include/gtest/gtest-death-test.h:41:
+In file included from /usr/include/gtest/internal/gtest-death-test-internal.h:39:
+/usr/include/gtest/gtest-matchers.h:179:60: error: invalid operands to binary expression ('const Catch::TestCaseTracking::NameAndLocationRef' and 'const Catch::TestCaseTracking::NameAndLocationRef')
+  179 |   bool operator()(const A& a, const B& b) const { return a == b; }
+      |                                                          ~ ^  ~
+/usr/include/gtest/gtest-matchers.h:716:12: note: in instantiation of function template specialization 'testing::internal::AnyEq::operator()<Catch::TestCaseTracking::NameAndLocationRef, Catch::TestCaseTracking::NameAndLocationRef>' requested here
+  716 |     return Op()(lhs, Unwrap(rhs_));
+      |            ^
+/usr/include/gtest/gtest-matchers.h:352:22: note: in instantiation of function template specialization 'testing::internal::ComparisonBase<testing::internal::EqMatcher<Catch::TestCaseTracking::NameAndLocationRef>, Catch::TestCaseTracking::NameAndLocationRef, testing::internal::AnyEq>::MatchAndExplain<Catch::TestCaseTracking::NameAndLocationRef>' requested here
+  352 |     return P::Get(m).MatchAndExplain(value, listener->stream());
+      |                      ^
+/usr/include/gtest/gtest-matchers.h:390:41: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Catch::TestCaseTracking::NameAndLocationRef &>::MatchAndExplainImpl<testing::internal::MatcherBase<const Catch::TestCaseTracking::NameAndLocationRef &>::ValuePolicy<testing::internal::EqMatcher<Catch::TestCaseTracking::NameAndLocationRef>>>' requested here
+  390 |     static constexpr VTable kVTable = {&MatchAndExplainImpl<P>,
+      |                                         ^
+/usr/include/gtest/gtest-matchers.h:464:15: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Catch::TestCaseTracking::NameAndLocationRef &>::GetVTable<testing::internal::MatcherBase<const Catch::TestCaseTracking::NameAndLocationRef &>::ValuePolicy<testing::internal::EqMatcher<Catch::TestCaseTracking::NameAndLocationRef>>>' requested here
+  464 |     vtable_ = GetVTable<Policy>();
+      |               ^
+/usr/include/gtest/gtest-matchers.h:298:5: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Catch::TestCaseTracking::NameAndLocationRef &>::Init<testing::internal::EqMatcher<Catch::TestCaseTracking::NameAndLocationRef>>' requested here
+  298 |     Init(std::forward<M>(m));
+      |     ^
+/usr/include/gtest/gtest-matchers.h:499:20: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Catch::TestCaseTracking::NameAndLocationRef &>::MatcherBase<testing::internal::EqMatcher<Catch::TestCaseTracking::NameAndLocationRef>, void>' requested here
+  499 |   Matcher(M&& m) : internal::MatcherBase<T>(std::forward<M>(m)) {}  // NOLINT
+      |                    ^
+/usr/include/gtest/gtest-matchers.h:880:40: note: in instantiation of function template specialization 'testing::Matcher<const Catch::TestCaseTracking::NameAndLocationRef &>::Matcher<testing::internal::EqMatcher<Catch::TestCaseTracking::NameAndLocationRef>, void>' requested here
+  880 | Matcher<T>::Matcher(T value) { *this = Eq(value); }
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp:161:36: note: in instantiation of member function 'testing::Matcher<const Catch::TestCaseTracking::NameAndLocationRef &>::Matcher' requested here
+  161 |     EXPECT_CALL(tracker, findChild(nameAndLocation)).Times(1);
+      |                                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:69:21: note: candidate function not viable: no known conversion from 'const Catch::TestCaseTracking::NameAndLocationRef' to 'const NameAndLocation' for 2nd argument
+   69 |         friend bool operator==( NameAndLocationRef const& lhs,
+      |                     ^
+   70 |                                 NameAndLocation const& rhs ) {
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_case_tracker.hpp:59:21: note: candidate function not viable: no known conversion from 'const Catch::TestCaseTracking::NameAndLocationRef' to 'const NameAndLocation' for 1st argument
+   59 |         friend bool operator==( NameAndLocation const& lhs,
+      |                     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_442.dir/build.make:79: generated_build/CMakeFiles/test_442.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_442.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18785: generated_build/CMakeFiles/test_442.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18792: generated_build/CMakeFiles/test_442.dir/rule] 오류 2
+gmake: *** [Makefile:6221: test_442] 오류 2

@@ -1,0 +1,50 @@
+[ 80%] Built target Catch2
+[ 80%] Built target Catch2WithMain
+[ 80%] Building CXX object generated_build/CMakeFiles/test_861.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_861.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_861.cpp:45:20: error: no matching constructor for initialization of 'ReporterConfig'
+   45 |         : reporter(ReporterConfig{}),
+      |                    ^             ~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_861.cpp:47:19: error: no matching constructor for initialization of 'TestRunInfo'
+   47 |           runInfo(TestRunInfo{"test suite", "description"}),
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:16:19: note: candidate constructor not viable: requires single argument '_name', but 2 arguments were provided
+   16 |         constexpr TestRunInfo(StringRef _name) : name(_name) {}
+      |                   ^           ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_861.cpp:73:31: error: no matching constructor for initialization of 'TestRunInfo'
+   73 |     TestRunStats testRunStats(TestRunInfo{}, Totals{}, false);
+      |                               ^          ~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:16:19: note: candidate constructor not viable: requires single argument '_name', but no arguments were provided
+   16 |         constexpr TestRunInfo(StringRef _name) : name(_name) {}
+      |                   ^           ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_861.dir/build.make:79: generated_build/CMakeFiles/test_861.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_861.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:30071: generated_build/CMakeFiles/test_861.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:30078: generated_build/CMakeFiles/test_861.dir/rule] 오류 2
+gmake: *** [Makefile:10667: test_861] 오류 2

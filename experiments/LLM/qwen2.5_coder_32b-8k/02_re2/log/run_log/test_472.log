@@ -1,0 +1,24 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from FilteredRE2Test_472
+[ RUN      ] FilteredRE2Test_472.AddValidPattern_ReturnsNoError_472
+[       OK ] FilteredRE2Test_472.AddValidPattern_ReturnsNoError_472 (0 ms)
+[ RUN      ] FilteredRE2Test_472.AddInvalidPattern_ReturnsNonZeroErrorCode_472
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1774677327.674082 1679253 re2.cc:242] Error parsing '(*': no argument for repetition operator: *
+E0000 00:00:1774677327.674695 1679253 filtered_re2.cc:58] Couldn't compile regular expression, skipping: (* due to error no argument for repetition operator: *
+[       OK ] FilteredRE2Test_472.AddInvalidPattern_ReturnsNonZeroErrorCode_472 (0 ms)
+[ RUN      ] FilteredRE2Test_472.AddMultiplePatterns_IncrementsId_472
+[       OK ] FilteredRE2Test_472.AddMultiplePatterns_IncrementsId_472 (0 ms)
+[ RUN      ] FilteredRE2Test_472.AddPatternWithLoggingEnabled_LogsError_472
+E0000 00:00:1774677327.674761 1679253 re2.cc:242] Error parsing '(*': no argument for repetition operator: *
+E0000 00:00:1774677327.674769 1679253 filtered_re2.cc:58] Couldn't compile regular expression, skipping: (* due to error no argument for repetition operator: *
+[       OK ] FilteredRE2Test_472.AddPatternWithLoggingEnabled_LogsError_472 (0 ms)
+[ RUN      ] FilteredRE2Test_472.AddPatternWithLoggingDisabled_DoesNotLogError_472
+[       OK ] FilteredRE2Test_472.AddPatternWithLoggingDisabled_DoesNotLogError_472 (0 ms)
+[ RUN      ] FilteredRE2Test_472.AddEmptyPattern_ReturnsNonZeroErrorCode_472
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_472.cpp:115: Failure
+Expected: (code) != (re2::RE2::NoError), actual: 0 vs 0
+[  FAILED  ] FilteredRE2Test_472.AddEmptyPattern_ReturnsNonZeroErrorCode_472 (0 ms)
+[ RUN      ] FilteredRE2Test_472.AddPatternWithNullIdPointer_ReturnsError_472

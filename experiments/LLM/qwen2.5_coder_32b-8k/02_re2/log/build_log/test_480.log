@@ -1,0 +1,43 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_480.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_480.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_480.cpp:17:5: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   17 |     ParseState state{ParseFlags{}, "test_regex", &status};
+      |     ^~~~~~~~~~
+      |     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_480.cpp:17:22: error: use of undeclared identifier 'ParseFlags'; did you mean 'absl::ParseFlag'?
+   17 |     ParseState state{ParseFlags{}, "test_regex", &status};
+      |                      ^~~~~~~~~~
+      |                      absl::ParseFlag
+/usr/local/include/absl/time/time.h:742:6: note: 'absl::ParseFlag' declared here
+  742 | bool ParseFlag(const std::string& text, Duration* dst, std::string* error);
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_480.cpp:17:32: error: expected '}'
+   17 |     ParseState state{ParseFlags{}, "test_regex", &status};
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_480.cpp:17:21: note: to match this '{'
+   17 |     ParseState state{ParseFlags{}, "test_regex", &status};
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_480.cpp:189:46: error: use of undeclared identifier 'ParseFlags'; did you mean 'absl::ParseFlag'?
+  189 |     EXPECT_TRUE(state.MaybeConcatString('a', ParseFlags{}));
+      |                                              ^~~~~~~~~~
+      |                                              absl::ParseFlag
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^
+/usr/local/include/absl/time/time.h:742:6: note: 'absl::ParseFlag' declared here
+  742 | bool ParseFlag(const std::string& text, Duration* dst, std::string* error);
+      |      ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_480.dir/build.make:79: generated_build/CMakeFiles/test_480.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_480.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:9865: generated_build/CMakeFiles/test_480.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:9872: generated_build/CMakeFiles/test_480.dir/rule] 오류 2
+gmake: *** [Makefile:3390: test_480] 오류 2

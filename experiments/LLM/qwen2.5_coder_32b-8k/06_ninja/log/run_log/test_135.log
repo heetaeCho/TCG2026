@@ -1,0 +1,117 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from CanonicalizePathTest_135
+[ RUN      ] CanonicalizePathTest_135.EmptyPath_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:41: Failure
+Expected equality of these values:
+  len
+    Which is: 0
+  1u
+    Which is: 1
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:43: Failure
+Expected equality of these values:
+  path
+    Which is: ""
+  "."
+[  FAILED  ] CanonicalizePathTest_135.EmptyPath_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.SingleSlash_135
+[       OK ] CanonicalizePathTest_135.SingleSlash_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.MultipleSlashes_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:87: Failure
+Expected equality of these values:
+  path
+    Which is: "///"
+  "/"
+[  FAILED  ] CanonicalizePathTest_135.MultipleSlashes_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.DotInPath_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:113: Failure
+Expected equality of these values:
+  path
+    Which is: "foo/barar"
+  "foo/bar"
+[  FAILED  ] CanonicalizePathTest_135.DotInPath_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.DotDotInPath_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:137: Failure
+Expected equality of these values:
+  len
+    Which is: 3
+  4u
+    Which is: 4
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:139: Failure
+Expected equality of these values:
+  path
+    Which is: "bar/../bar"
+  "bar"
+[  FAILED  ] CanonicalizePathTest_135.DotDotInPath_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.DotDotAtStart_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:163: Failure
+Expected equality of these values:
+  len
+    Which is: 6
+  4u
+    Which is: 4
+[  FAILED  ] CanonicalizePathTest_135.DotDotAtStart_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.DotDotPastRoot_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:189: Failure
+Expected equality of these values:
+  len
+    Which is: 6
+  4u
+    Which is: 4
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:191: Failure
+Expected equality of these values:
+  path
+    Which is: "../bar/../bar"
+  "../bar"
+[  FAILED  ] CanonicalizePathTest_135.DotDotPastRoot_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.ComplexPath_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:215: Failure
+Expected equality of these values:
+  len
+    Which is: 5
+  7u
+    Which is: 7
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:217: Failure
+Expected equality of these values:
+  path
+    Which is: "a/d/f/../../d/e/../f"
+  "a/d/f"
+[  FAILED  ] CanonicalizePathTest_135.ComplexPath_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.TrailingDot_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:241: Failure
+Expected equality of these values:
+  len
+    Which is: 8
+  7u
+    Which is: 7
+[  FAILED  ] CanonicalizePathTest_135.TrailingDot_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.TrailingDotDot_135
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_135.cpp:267: Failure
+Expected equality of these values:
+  len
+    Which is: 9
+  8u
+    Which is: 8
+[  FAILED  ] CanonicalizePathTest_135.TrailingDotDot_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.WindowsStylePath_135
+[       OK ] CanonicalizePathTest_135.WindowsStylePath_135 (0 ms)
+[ RUN      ] CanonicalizePathTest_135.WindowsStyleDoubleSlashes_135
+[       OK ] CanonicalizePathTest_135.WindowsStyleDoubleSlashes_135 (0 ms)
+[----------] 12 tests from CanonicalizePathTest_135 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 9 tests, listed below:
+[  FAILED  ] CanonicalizePathTest_135.EmptyPath_135
+[  FAILED  ] CanonicalizePathTest_135.MultipleSlashes_135
+[  FAILED  ] CanonicalizePathTest_135.DotInPath_135
+[  FAILED  ] CanonicalizePathTest_135.DotDotInPath_135
+[  FAILED  ] CanonicalizePathTest_135.DotDotAtStart_135
+[  FAILED  ] CanonicalizePathTest_135.DotDotPastRoot_135
+[  FAILED  ] CanonicalizePathTest_135.ComplexPath_135
+[  FAILED  ] CanonicalizePathTest_135.TrailingDot_135
+[  FAILED  ] CanonicalizePathTest_135.TrailingDotDot_135
+
+ 9 FAILED TESTS

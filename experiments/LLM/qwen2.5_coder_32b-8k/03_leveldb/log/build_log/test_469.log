@@ -1,0 +1,366 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_469.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:27:1: error: only virtual member functions can be marked 'override'
+   27 | TEST_F(MockEnv, WriteStringToFile_Success_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1500:21: note: expanded from macro 'GTEST_TEST_'
+ 1500 |     void TestBody() override;                                                  \
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:29:13: error: variable type 'MockEnv' is an abstract class
+   29 |     MockEnv mock_env;
+      |             ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'MockEnv'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'MockEnv'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'MockEnv'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:114:16: note: unimplemented pure virtual method 'FileExists' in 'MockEnv'
+  114 |   virtual bool FileExists(const std::string& fname) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:119:18: note: unimplemented pure virtual method 'GetChildren' in 'MockEnv'
+  119 |   virtual Status GetChildren(const std::string& dir,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'MockEnv'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'MockEnv'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'MockEnv'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:185:18: note: unimplemented pure virtual method 'LockFile' in 'MockEnv'
+  185 |   virtual Status LockFile(const std::string& fname, FileLock** lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:190:18: note: unimplemented pure virtual method 'UnlockFile' in 'MockEnv'
+  190 |   virtual Status UnlockFile(FileLock* lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'MockEnv'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'MockEnv'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'MockEnv'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'MockEnv'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'MockEnv'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'MockEnv'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:39:26: error: use of undeclared identifier 'OK'; did you mean 'leveldb::Status::OK'?
+   39 |         .WillOnce(Return(OK()));
+      |                          ^~
+      |                          leveldb::Status::OK
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:37:17: note: 'leveldb::Status::OK' declared here
+   37 |   static Status OK() { return Status(); }
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:51:1: error: only virtual member functions can be marked 'override'
+   51 | TEST_F(MockEnv, WriteStringToFile_EmptyData_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1500:21: note: expanded from macro 'GTEST_TEST_'
+ 1500 |     void TestBody() override;                                                  \
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:53:13: error: variable type 'MockEnv' is an abstract class
+   53 |     MockEnv mock_env;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:63:26: error: use of undeclared identifier 'OK'; did you mean 'leveldb::Status::OK'?
+   63 |         .WillOnce(Return(OK()));
+      |                          ^~
+      |                          leveldb::Status::OK
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:37:17: note: 'leveldb::Status::OK' declared here
+   37 |   static Status OK() { return Status(); }
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:75:1: error: only virtual member functions can be marked 'override'
+   75 | TEST_F(MockEnv, WriteStringToFile_Failure_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1500:21: note: expanded from macro 'GTEST_TEST_'
+ 1500 |     void TestBody() override;                                                  \
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:77:13: error: variable type 'MockEnv' is an abstract class
+   77 |     MockEnv mock_env;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:87:42: error: too few arguments to function call, at least argument 'msg' must be specified
+   87 |         .WillOnce(Return(Status::IOError()));
+      |                          ~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:52:17: note: 'IOError' declared here
+   52 |   static Status IOError(const Slice& msg, const Slice& msg2 = Slice()) {
+      |                 ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:502:33: error: no member named 'SetUpTestCase' in 'MockEnv'
+  502 |         GetNotDefaultOrNull(&T::SetUpTestCase, &Test::SetUpTestCase);
+      |                              ~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:27:1: note: in instantiation of member function 'testing::internal::SuiteApiResolver<MockEnv>::GetSetUpCaseOrSuite' requested here
+   27 | TEST_F(MockEnv, WriteStringToFile_Success_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1510:30: note: expanded from macro 'GTEST_TEST_'
+ 1510 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),          \
+      |                              ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:504:33: error: no member named 'SetUpTestSuite' in 'MockEnv'
+  504 |         GetNotDefaultOrNull(&T::SetUpTestSuite, &Test::SetUpTestSuite);
+      |                              ~~~^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:523:33: error: no member named 'TearDownTestCase' in 'MockEnv'
+  523 |         GetNotDefaultOrNull(&T::TearDownTestCase, &Test::TearDownTestCase);
+      |                              ~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:27:1: note: in instantiation of member function 'testing::internal::SuiteApiResolver<MockEnv>::GetTearDownCaseOrSuite' requested here
+   27 | TEST_F(MockEnv, WriteStringToFile_Success_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1512:30: note: expanded from macro 'GTEST_TEST_'
+ 1512 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),       \
+      |                              ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:525:33: error: no member named 'TearDownTestSuite' in 'MockEnv'
+  525 |         GetNotDefaultOrNull(&T::TearDownTestSuite, &Test::TearDownTestSuite);
+      |                              ~~~^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: allocating an object of abstract class type 'MockEnv_WriteStringToFile_Success_469_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:27:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MockEnv_WriteStringToFile_Success_469_Test>::CreateTest' requested here
+   27 | TEST_F(MockEnv, WriteStringToFile_Success_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'MockEnv_WriteStringToFile_Success_469_Test'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'MockEnv_WriteStringToFile_Success_469_Test'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'MockEnv_WriteStringToFile_Success_469_Test'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:114:16: note: unimplemented pure virtual method 'FileExists' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  114 |   virtual bool FileExists(const std::string& fname) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:119:18: note: unimplemented pure virtual method 'GetChildren' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  119 |   virtual Status GetChildren(const std::string& dir,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:185:18: note: unimplemented pure virtual method 'LockFile' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  185 |   virtual Status LockFile(const std::string& fname, FileLock** lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:190:18: note: unimplemented pure virtual method 'UnlockFile' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  190 |   virtual Status UnlockFile(FileLock* lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'MockEnv_WriteStringToFile_Success_469_Test'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: allocating an object of abstract class type 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:51:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MockEnv_WriteStringToFile_EmptyData_469_Test>::CreateTest' requested here
+   51 | TEST_F(MockEnv, WriteStringToFile_EmptyData_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:114:16: note: unimplemented pure virtual method 'FileExists' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  114 |   virtual bool FileExists(const std::string& fname) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:119:18: note: unimplemented pure virtual method 'GetChildren' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  119 |   virtual Status GetChildren(const std::string& dir,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:185:18: note: unimplemented pure virtual method 'LockFile' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  185 |   virtual Status LockFile(const std::string& fname, FileLock** lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:190:18: note: unimplemented pure virtual method 'UnlockFile' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  190 |   virtual Status UnlockFile(FileLock* lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'MockEnv_WriteStringToFile_EmptyData_469_Test'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:44: error: allocating an object of abstract class type 'MockEnv_WriteStringToFile_Failure_469_Test'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp:75:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<MockEnv_WriteStringToFile_Failure_469_Test>::CreateTest' requested here
+   75 | TEST_F(MockEnv, WriteStringToFile_Failure_469) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:114:16: note: unimplemented pure virtual method 'FileExists' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  114 |   virtual bool FileExists(const std::string& fname) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:119:18: note: unimplemented pure virtual method 'GetChildren' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  119 |   virtual Status GetChildren(const std::string& dir,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:185:18: note: unimplemented pure virtual method 'LockFile' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  185 |   virtual Status LockFile(const std::string& fname, FileLock** lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:190:18: note: unimplemented pure virtual method 'UnlockFile' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  190 |   virtual Status UnlockFile(FileLock* lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'MockEnv_WriteStringToFile_Failure_469_Test'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_469.dir/build.make:76: generated_build/CMakeFiles/test_469.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_469.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:2385: generated_build/CMakeFiles/test_469.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:2392: generated_build/CMakeFiles/test_469.dir/rule] 오류 2
+gmake: *** [Makefile:725: test_469] 오류 2

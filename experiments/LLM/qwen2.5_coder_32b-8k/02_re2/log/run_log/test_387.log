@@ -1,0 +1,22 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from Bitmap256Test_387
+[ RUN      ] Bitmap256Test_387.ClearResetsAllBits_387
+[       OK ] Bitmap256Test_387.ClearResetsAllBits_387 (0 ms)
+[ RUN      ] Bitmap256Test_387.SetAndTestSpecificBit_387
+[       OK ] Bitmap256Test_387.SetAndTestSpecificBit_387 (0 ms)
+[ RUN      ] Bitmap256Test_387.FindNextSetBitReturnsCorrectPosition_387
+[       OK ] Bitmap256Test_387.FindNextSetBitReturnsCorrectPosition_387 (0 ms)
+[ RUN      ] Bitmap256Test_387.FindNextSetBitBoundaryConditions_387
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+F0000 00:00:1774677331.934399 1679425 bitmap256.cc:14] Check failed: c >= 0 (-1 vs. 0) 
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x55e34d829bf7  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x55e34d8295ff  absl::log_internal::LogMessage::SendToLog()
+    @     0x55e34d8295bb  absl::log_internal::LogMessage::Flush()
+    @     0x55e34d7f2669  absl::log_internal::Voidify::operator&&<>()
+    @     0x55e34d8258e3  re2::Bitmap256::FindNextSetBit()
+    @     0x55e34d7f0ab0  Bitmap256Test_387_FindNextSetBitBoundaryConditions_387_Test::TestBody()
+    @     0x55e34d824dcf  testing::internal::HandleExceptionsInMethodIfSupported<>()

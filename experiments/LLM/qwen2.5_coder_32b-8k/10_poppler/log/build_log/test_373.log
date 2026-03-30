@@ -1,0 +1,49 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_373.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_373.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_373.cpp:107:5: error: cannot use 'try' with exceptions disabled
+  107 |     EXPECT_NO_THROW(func->transform(input, output));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_373.cpp:125:34: error: no member named 'getE' in 'Function'
+  125 |     EXPECT_DOUBLE_EQ(copiedFunc->getE(), e_value);
+      |                      ~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2150:23: note: expanded from macro 'EXPECT_DOUBLE_EQ'
+ 2150 |                       val1, val2)
+      |                       ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_373.cpp:9:7: warning: 'ExponentialFunctionTest_373' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class ExponentialFunctionTest_373 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_373.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to constructor of 'ExponentialFunction' is ambiguous
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_373.cpp:21:21: note: in instantiation of function template specialization 'std::make_unique<ExponentialFunction, std::nullptr_t>' requested here
+   21 |         func = std::make_unique<ExponentialFunction>(nullptr);
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:179:14: note: candidate constructor
+  179 |     explicit ExponentialFunction(Dict *dict);
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:190:14: note: candidate constructor
+  190 |     explicit ExponentialFunction(const ExponentialFunction *func, PrivateTag /*unused*/ = {});
+      |              ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_373.dir/build.make:79: generated_build/CMakeFiles/test_373.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_373.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:22506: generated_build/CMakeFiles/test_373.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:22513: generated_build/CMakeFiles/test_373.dir/rule] 오류 2
+gmake: *** [Makefile:5613: test_373] 오류 2

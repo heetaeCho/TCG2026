@@ -1,0 +1,308 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1048.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:35:43: error: no matching constructor for initialization of 'AssertionInfo'
+   35 |         assertionResult = AssertionResult(AssertionInfo("MacroName", sourceInfo), AssertionResultData());
+      |                                           ^             ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 2 were provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:35:83: error: call to deleted constructor of 'AssertionResultData'
+   35 |         assertionResult = AssertionResult(AssertionInfo("MacroName", sourceInfo), AssertionResultData());
+      |                                                                                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:35:25: error: object of type 'AssertionResult' cannot be assigned because its copy assignment operator is implicitly deleted
+   35 |         assertionResult = AssertionResult(AssertionInfo("MacroName", sourceInfo), AssertionResultData());
+      |                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:55:29: note: copy assignment operator of 'AssertionResult' is implicitly deleted because field 'm_resultData' has a deleted copy assignment operator
+   55 |         AssertionResultData m_resultData;
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:39:27: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+   39 |         totals.assertions.total = 1;
+      |         ~~~~~~~~~~~~~~~~~~^~~~~
+      |                                ()
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:39:33: error: expression is not assignable
+   39 |         totals.assertions.total = 1;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:41:26: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+   41 |         totals.testCases.total = 1;
+      |         ~~~~~~~~~~~~~~~~~^~~~~
+      |                               ()
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:41:32: error: expression is not assignable
+   41 |         totals.testCases.total = 1;
+      |         ~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:49:8: error: unknown class name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   49 | TEST_F(AssertionStatsTest_1048, ConstructorWithNoMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:49:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   49 | TEST_F(AssertionStatsTest_1048, ConstructorWithNoMessage_1048) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:294:1: note: expanded from here
+  294 | AssertionStatsTest_1048_ConstructorWithNoMessage_1048_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:49:1: note: default constructor of 'AssertionStatsTest_1048_ConstructorWithNoMessage_1048_Test' is implicitly deleted because base class 'AssertionStatsTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:25:21: note: default constructor of 'AssertionStatsTest' is implicitly deleted because field 'assertionResult' has a deleted default constructor
+   25 |     AssertionResult assertionResult;
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: 'AssertionResult' has been explicitly marked deleted here
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:49:1: note: replace 'default' with 'delete'
+   49 | TEST_F(AssertionStatsTest_1048, ConstructorWithNoMessage_1048) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:49:8: error: unknown type name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   49 | TEST_F(AssertionStatsTest_1048, ConstructorWithNoMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:49:8: error: unknown type name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   49 | TEST_F(AssertionStatsTest_1048, ConstructorWithNoMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:49:8: error: unknown type name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   49 | TEST_F(AssertionStatsTest_1048, ConstructorWithNoMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:51:40: error: no matching constructor for initialization of 'AssertionInfo'
+   51 |     AssertionResult noMessageAssertion(AssertionInfo("MacroName", sourceInfo), AssertionResultData());
+      |                                        ^             ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 2 were provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:51:80: error: call to deleted constructor of 'AssertionResultData'
+   51 |     AssertionResult noMessageAssertion(AssertionInfo("MacroName", sourceInfo), AssertionResultData());
+      |                                                                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:65:8: error: unknown class name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   65 | TEST_F(AssertionStatsTest_1048, ConstructorWithMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:65:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   65 | TEST_F(AssertionStatsTest_1048, ConstructorWithMessage_1048) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:30:1: note: expanded from here
+   30 | AssertionStatsTest_1048_ConstructorWithMessage_1048_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:65:1: note: default constructor of 'AssertionStatsTest_1048_ConstructorWithMessage_1048_Test' is implicitly deleted because base class 'AssertionStatsTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:25:21: note: default constructor of 'AssertionStatsTest' is implicitly deleted because field 'assertionResult' has a deleted default constructor
+   25 |     AssertionResult assertionResult;
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: 'AssertionResult' has been explicitly marked deleted here
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:65:1: note: replace 'default' with 'delete'
+   65 | TEST_F(AssertionStatsTest_1048, ConstructorWithMessage_1048) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:65:8: error: unknown type name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   65 | TEST_F(AssertionStatsTest_1048, ConstructorWithMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:65:8: error: unknown type name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   65 | TEST_F(AssertionStatsTest_1048, ConstructorWithMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:65:8: error: unknown type name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   65 | TEST_F(AssertionStatsTest_1048, ConstructorWithMessage_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:77:8: error: unknown class name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   77 | TEST_F(AssertionStatsTest_1048, ConstructorWithEmptyMessageVector_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:77:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   77 | TEST_F(AssertionStatsTest_1048, ConstructorWithEmptyMessageVector_1048) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:68:1: note: expanded from here
+   68 | AssertionStatsTest_1048_ConstructorWithEmptyMessageVector_1048_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:77:1: note: default constructor of 'AssertionStatsTest_1048_ConstructorWithEmptyMessageVector_1048_Test' is implicitly deleted because base class 'AssertionStatsTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:25:21: note: default constructor of 'AssertionStatsTest' is implicitly deleted because field 'assertionResult' has a deleted default constructor
+   25 |     AssertionResult assertionResult;
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: 'AssertionResult' has been explicitly marked deleted here
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:77:1: note: replace 'default' with 'delete'
+   77 | TEST_F(AssertionStatsTest_1048, ConstructorWithEmptyMessageVector_1048) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:77:8: error: unknown type name 'AssertionStatsTest_1048'; did you mean 'AssertionStatsTest'?
+   77 | TEST_F(AssertionStatsTest_1048, ConstructorWithEmptyMessageVector_1048) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        AssertionStatsTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp:19:7: note: 'AssertionStatsTest' declared here
+   19 | class AssertionStatsTest : public ::testing::Test {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+3 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1048.dir/build.make:79: generated_build/CMakeFiles/test_1048.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1048.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:21128: generated_build/CMakeFiles/test_1048.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:21135: generated_build/CMakeFiles/test_1048.dir/rule] 오류 2
+gmake: *** [Makefile:7144: test_1048] 오류 2

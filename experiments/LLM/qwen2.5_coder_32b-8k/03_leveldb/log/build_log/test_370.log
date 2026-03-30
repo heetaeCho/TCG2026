@@ -1,0 +1,91 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_370.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp:7:
+In file included from /home/user/TCG2026/TestProjects/leveldb/./helpers/memenv/memenv.cc:17:
+/home/user/TCG2026/TestProjects/leveldb/./util/mutexlock.h:25:22: error: use of undeclared identifier 'port'
+   25 |   explicit MutexLock(port::Mutex* mu) EXCLUSIVE_LOCK_FUNCTION(mu) : mu_(mu) {
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/./util/mutexlock.h:34:3: error: use of undeclared identifier 'port'
+   34 |   port::Mutex* const mu_;
+      |   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp:7:
+/home/user/TCG2026/TestProjects/leveldb/./helpers/memenv/memenv.cc:144:3: error: use of undeclared identifier 'port'
+  144 |   port::Mutex refs_mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./helpers/memenv/memenv.cc:147:11: error: use of undeclared identifier 'port'
+  147 |   mutable port::Mutex blocks_mutex_;
+      |           ^
+/home/user/TCG2026/TestProjects/leveldb/./helpers/memenv/memenv.cc:382:3: error: use of undeclared identifier 'port'
+  382 |   port::Mutex mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./helpers/memenv/memenv.cc:388:40: error: cannot initialize return object of type 'Env *' with an rvalue of type 'InMemoryEnv *'
+  388 | Env* NewMemEnv(Env* base_env) { return new InMemoryEnv(base_env); }
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp:23:24: error: allocating an object of abstract class type 'Env'
+   23 |         base_env = new Env();
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'Env'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'Env'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'Env'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:114:16: note: unimplemented pure virtual method 'FileExists' in 'Env'
+  114 |   virtual bool FileExists(const std::string& fname) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:119:18: note: unimplemented pure virtual method 'GetChildren' in 'Env'
+  119 |   virtual Status GetChildren(const std::string& dir,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'Env'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'Env'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'Env'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:185:18: note: unimplemented pure virtual method 'LockFile' in 'Env'
+  185 |   virtual Status LockFile(const std::string& fname, FileLock** lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:190:18: note: unimplemented pure virtual method 'UnlockFile' in 'Env'
+  190 |   virtual Status UnlockFile(FileLock* lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'Env'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'Env'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'Env'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'Env'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'Env'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'Env'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp:25:19: error: use of dynamic_cast requires -frtti
+   25 |         mem_env = dynamic_cast<InMemoryEnv*>(NewMemEnv(base_env));
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp:139:21: error: cannot initialize object parameter of type 'leveldb::Env' with an expression of type 'InMemoryEnv'
+  139 |     Status status = mem_env->DeleteFile("nonexistentfile");
+      |                     ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp:169:21: error: cannot initialize object parameter of type 'leveldb::Env' with an expression of type 'InMemoryEnv'
+  169 |     Status status = mem_env->DeleteDir("nonexistentdir");
+      |                     ^~~~~~~
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_370.dir/build.make:76: generated_build/CMakeFiles/test_370.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_370.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:12883: generated_build/CMakeFiles/test_370.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:12890: generated_build/CMakeFiles/test_370.dir/rule] 오류 2
+gmake: *** [Makefile:5431: test_370] 오류 2

@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_694.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_694.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_694.cpp:147:20: error: no viable conversion from 'int' to 'iterator' (aka '__normal_iterator<Exiv2::Iptcdatum *, std::vector<Exiv2::Iptcdatum, std::allocator<Exiv2::Iptcdatum>>>')
+  147 |     iptcData.erase(it);
+      |                    ^~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1004:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const __normal_iterator<Iptcdatum *, vector<Iptcdatum>> &' for 1st argument
+ 1004 |     class __normal_iterator
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1004:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to '__normal_iterator<Iptcdatum *, vector<Iptcdatum>> &&' for 1st argument
+ 1004 |     class __normal_iterator
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1033:9: note: candidate template ignored: could not match '__normal_iterator<_Iter, typename __enable_if<(std::__are_same<_Iter, typename vector<Iptcdatum, allocator<Iptcdatum>>::pointer>::__value), vector<Iptcdatum, allocator<Iptcdatum>>>::__type>' against 'int'
+ 1033 |         __normal_iterator(const __normal_iterator<_Iter,
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:1027:7: note: explicit constructor is not a candidate
+ 1027 |       __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+      |       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:195:27: note: passing argument to parameter 'pos' here
+  195 |   iterator erase(iterator pos);
+      |                           ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_694.dir/build.make:79: generated_build/CMakeFiles/test_694.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_694.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:79859: generated_build/CMakeFiles/test_694.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:79866: generated_build/CMakeFiles/test_694.dir/rule] 오류 2
+gmake: *** [Makefile:28129: test_694] 오류 2

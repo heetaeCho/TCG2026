@@ -1,0 +1,29 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_475.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_475.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_475.cpp:13:59: error: use of undeclared identifier 'GfxDeviceGray'; did you mean 'csDeviceGray'?
+   13 |     std::unique_ptr<GfxColorSpace> alt = std::make_unique<GfxDeviceGray>();
+      |                                                           ^~~~~~~~~~~~~
+      |                                                           csDeviceGray
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:209:5: note: 'csDeviceGray' declared here
+  209 |     csDeviceGray,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_475.cpp:13:42: error: no matching function for call to 'make_unique'
+   13 |     std::unique_ptr<GfxColorSpace> alt = std::make_unique<GfxDeviceGray>();
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:961:5: note: candidate template ignored: invalid explicitly-specified argument for template parameter '_Tp'
+  961 |     make_unique(_Args&&... __args)
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:973:5: note: candidate template ignored: invalid explicitly-specified argument for template parameter '_Tp'
+  973 |     make_unique(_Args&&...) = delete;
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:967:5: note: candidate function template not viable: requires single argument '__num', but no arguments were provided
+  967 |     make_unique(size_t __num)
+      |     ^           ~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_475.cpp:7:7: warning: 'GfxSeparationColorSpaceTest_475' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class GfxSeparationColorSpaceTest_475 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_475.dir/build.make:79: generated_build/CMakeFiles/test_475.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_475.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:60010: generated_build/CMakeFiles/test_475.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:60017: generated_build/CMakeFiles/test_475.dir/rule] 오류 2
+gmake: *** [Makefile:20849: test_475] 오류 2

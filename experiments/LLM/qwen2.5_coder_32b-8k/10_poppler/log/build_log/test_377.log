@@ -1,0 +1,70 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_377.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:43:53: error: reference to 'MockFunction' is ambiguous
+   43 |             mockFuncs.emplace_back(std::make_unique<MockFunction>());
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:9:7: note: candidate found by name lookup is 'MockFunction'
+    9 | class MockFunction : public Function {
+      |       ^
+/usr/include/gmock/gmock-spec-builders.h:1925:7: note: candidate found by name lookup is 'testing::MockFunction'
+ 1925 | class MockFunction : public internal::MockFunction<internal::SignatureOfT<F>> {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:43:53: error: reference to 'MockFunction' is ambiguous
+   43 |             mockFuncs.emplace_back(std::make_unique<MockFunction>());
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:9:7: note: candidate found by name lookup is 'MockFunction'
+    9 | class MockFunction : public Function {
+      |       ^
+/usr/include/gmock/gmock-spec-builders.h:1925:7: note: candidate found by name lookup is 'testing::MockFunction'
+ 1925 | class MockFunction : public internal::MockFunction<internal::SignatureOfT<F>> {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:25:7: warning: 'StitchingFunctionTest_377' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   25 | class StitchingFunctionTest_377 : public Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockFunction'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:43:41: note: in instantiation of function template specialization 'std::make_unique<MockFunction>' requested here
+   43 |             mockFuncs.emplace_back(std::make_unique<MockFunction>());
+      |                                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:62:39: note: unimplemented pure virtual method 'copy' in 'MockFunction'
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |                                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:87:18: note: unimplemented pure virtual method 'transform' in 'MockFunction'
+   87 |     virtual void transform(const double *in, double *out) const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:9:7: warning: 'MockFunction' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class MockFunction : public Function {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<MockFunction>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:43:36: note: in instantiation of member function 'std::unique_ptr<MockFunction>::~unique_ptr' requested here
+   43 |             mockFuncs.emplace_back(std::make_unique<MockFunction>());
+      |                                    ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'StitchingFunction'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp:53:21: note: in instantiation of function template specialization 'std::make_unique<StitchingFunction, std::vector<std::unique_ptr<Function>> &, double (&)[2], double (&)[2], double (&)[2]>' requested here
+   53 |         return std::make_unique<StitchingFunction>(mockFuncs, bounds, encode, scale);
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:211:5: note: candidate constructor not viable: requires 2 arguments, but 4 were provided
+  211 |     StitchingFunction(Dict *dict, RefRecursionChecker &usedParents);
+      |     ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:224:14: note: candidate constructor not viable: requires at most 2 arguments, but 4 were provided
+  224 |     explicit StitchingFunction(const StitchingFunction *func, PrivateTag /*unused*/ = {});
+      |              ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:204:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+  204 | class StitchingFunction : public Function
+      |       ^~~~~~~~~~~~~~~~~
+2 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_377.dir/build.make:79: generated_build/CMakeFiles/test_377.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_377.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:47882: generated_build/CMakeFiles/test_377.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:47889: generated_build/CMakeFiles/test_377.dir/rule] 오류 2
+gmake: *** [Makefile:15922: test_377] 오류 2

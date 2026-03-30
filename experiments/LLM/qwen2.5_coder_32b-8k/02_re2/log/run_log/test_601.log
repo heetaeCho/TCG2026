@@ -1,0 +1,33 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from Bitmap256Test_601
+[ RUN      ] Bitmap256Test_601.ClearInitializesAllBitsToZero_601
+[       OK ] Bitmap256Test_601.ClearInitializesAllBitsToZero_601 (0 ms)
+[ RUN      ] Bitmap256Test_601.SetAndTestBit_601
+[       OK ] Bitmap256Test_601.SetAndTestBit_601 (0 ms)
+[ RUN      ] Bitmap256Test_601.SetMultipleBits_601
+[       OK ] Bitmap256Test_601.SetMultipleBits_601 (0 ms)
+[ RUN      ] Bitmap256Test_601.FindNextSetBitOnEmptyBitmap_601
+[       OK ] Bitmap256Test_601.FindNextSetBitOnEmptyBitmap_601 (0 ms)
+[ RUN      ] Bitmap256Test_601.FindNextSetBitAfterSettingSingleBit_601
+[       OK ] Bitmap256Test_601.FindNextSetBitAfterSettingSingleBit_601 (0 ms)
+[ RUN      ] Bitmap256Test_601.FindNextSetBitAfterSettingMultipleBits_601
+[       OK ] Bitmap256Test_601.FindNextSetBitAfterSettingMultipleBits_601 (0 ms)
+[ RUN      ] Bitmap256Test_601.FindNextSetBitOnBoundaryConditions_601
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_601.cpp:129: Failure
+Expected equality of these values:
+  bitmap_.FindNextSetBit(1)
+    Which is: 255
+  -1
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+F0000 00:00:1774677328.062830 1679267 bitmap256.cc:15] Check failed: c <= 255 (256 vs. 255) 
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x55bb498ecf37  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x55bb498ec93f  absl::log_internal::LogMessage::SendToLog()
+    @     0x55bb498ec8fb  absl::log_internal::LogMessage::Flush()
+    @     0x55bb498b55a9  absl::log_internal::Voidify::operator&&<>()
+    @     0x55bb498e8cef  re2::Bitmap256::FindNextSetBit()
+    @     0x55bb498b3ceb  re2::Bitmap256Test_601_FindNextSetBitOnBoundaryConditions_601_Test::TestBody()
+    @     0x55bb498e810f  testing::internal::HandleExceptionsInMethodIfSupported<>()

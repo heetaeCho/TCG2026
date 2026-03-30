@@ -1,0 +1,49 @@
+[ 50%] Built target re2
+[ 50%] Building CXX object generated_build/CMakeFiles/test_501.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:45:5: error: unknown type name 'ParseFlags'; did you mean 're2::Regexp::ParseFlags'?
+   45 |     ParseFlags flags_;
+      |     ^~~~~~~~~~
+      |     re2::Regexp::ParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 're2::Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:51:21: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   51 |     std::unique_ptr<ParseState> parse_state_;
+      |                     ^~~~~~~~~~
+      |                     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:23:11: error: cannot initialize a member subobject of type 're2::Regexp::ParseFlags' with an rvalue of type 'int'
+   23 |         : flags_(0), whole_regexp_(""), status_(nullptr) {}
+      |           ^      ~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:31:41: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   31 |         parse_state_ = std::make_unique<ParseState>(flags_, whole_regexp_, status_);
+      |                                         ^~~~~~~~~~
+      |                                         ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:59:31: error: member reference base type 're2::ParseStatus' is not a structure or union
+   59 |     bool result = parse_state_->DoLeftParen("test_name");
+      |                   ~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:71:31: error: member reference base type 're2::ParseStatus' is not a structure or union
+   71 |     bool result = parse_state_->DoLeftParen("");
+      |                   ~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:83:31: error: member reference base type 're2::ParseStatus' is not a structure or union
+   83 |     bool result = parse_state_->DoLeftParen("");
+      |                   ~~~~~~~~~~~~^~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: excess elements in scalar initializer
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^                              
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp:31:29: note: in instantiation of function template specialization 'std::make_unique<re2::ParseStatus, re2::Regexp::ParseFlags &, std::basic_string_view<char> &, re2::RegexpStatus *&>' requested here
+   31 |         parse_state_ = std::make_unique<ParseState>(flags_, whole_regexp_, status_);
+      |                             ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_501.dir/build.make:79: generated_build/CMakeFiles/test_501.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_501.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:16329: generated_build/CMakeFiles/test_501.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:16336: generated_build/CMakeFiles/test_501.dir/rule] 오류 2
+gmake: *** [Makefile:6016: test_501] 오류 2

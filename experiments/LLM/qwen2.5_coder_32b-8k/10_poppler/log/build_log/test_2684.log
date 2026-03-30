@@ -1,0 +1,170 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2684.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:17:59: error: expected class name
+   17 | class MockCryptoSignBackend : public CryptoSign::Factory::Active {
+      |                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:21:5: error: only virtual member functions can be marked 'override'
+   21 |     MOCK_METHOD(std::vector<std::unique_ptr<X509CertificateInfo>>, getAvailableSigningCertificates, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:219:1: note: expanded from here
+  219 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:31:28: error: no member named 'Active' in 'CryptoSign::Factory'; did you mean 'ctime'?
+   31 |     static std::shared_ptr<CryptoSign::Factory::Active> createActive() {
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                            ctime
+/usr/include/time.h:183:14: note: 'ctime' declared here
+  183 | extern char *ctime (const time_t *__timer) __THROW;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:31:49: error: template argument for template type parameter must be a type
+   31 |     static std::shared_ptr<CryptoSign::Factory::Active> createActive() {
+      |                                                 ^~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:121:21: note: template parameter is declared here
+  121 |   template<typename _Tp>
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:33:16: error: no viable conversion from returned value of type 'std::shared_ptr<MockCryptoSignBackend>' to function return type 'int'
+   33 |         return mockBackend;
+      |                ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:85:46: error: no member named 'Active' in 'CryptoSign::Factory'; did you mean 'ctime'?
+   85 |     using CreateActiveFunc = std::shared_ptr<CryptoSign::Factory::Active> (*)();
+      |                                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                              ctime
+/usr/include/time.h:183:14: note: 'ctime' declared here
+  183 | extern char *ctime (const time_t *__timer) __THROW;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:85:67: error: template argument for template type parameter must be a type
+   85 |     using CreateActiveFunc = std::shared_ptr<CryptoSign::Factory::Active> (*)();
+      |                                                                   ^~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:121:21: note: template parameter is declared here
+  121 |   template<typename _Tp>
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:87:5: error: unknown type name 'CreateActiveFunc'
+   87 |     CreateActiveFunc originalCreateActive;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:79:9: error: no member named 'nssPassword' in 'GooString'; did you mean simply 'nssPassword'?
+   79 |         GooString::nssPassword.clear();
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+      |         nssPassword
+/home/user/TCG2026/TestProjects/poppler/utils/pdfsig.cc:184:18: note: 'nssPassword' declared here
+  184 | static GooString nssPassword;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:143:65: error: no member named 'Active' in 'CryptoSign::Factory'; did you mean 'ctime'?
+  143 |     CryptoSign::Factory::createActive = []() -> std::shared_ptr<CryptoSign::Factory::Active> {
+      |                                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                                 ctime
+/usr/include/time.h:183:14: note: 'ctime' declared here
+  183 | extern char *ctime (const time_t *__timer) __THROW;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:143:86: error: template argument for template type parameter must be a type
+  143 |     CryptoSign::Factory::createActive = []() -> std::shared_ptr<CryptoSign::Factory::Active> {
+      |                                                                                      ^~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:121:21: note: template parameter is declared here
+  121 |   template<typename _Tp>
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:145:16: error: cannot initialize return object of type 'int' with an rvalue of type 'std::nullptr_t'
+  145 |         return nullptr;
+      |                ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:167:16: error: no member named 'nssPassword' in 'GooString'
+  167 |     GooString::nssPassword = "wrong_password";
+      |     ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:199:16: error: no member named 'nssPassword' in 'GooString'
+  199 |     GooString::nssPassword = "wrong_password";
+      |     ~~~~~~~~~~~^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:66:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:138:21: error: static assertion failed due to requirement 'is_constructible<std::unique_ptr<X509CertificateInfo, std::default_delete<X509CertificateInfo>>, const std::unique_ptr<X509CertificateInfo, std::default_delete<X509CertificateInfo>> &>::value': result type must be constructible from value type of input range
+  138 |       static_assert(is_constructible<_ValueType2, decltype(*__first)>::value,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:333:19: note: in instantiation of function template specialization 'std::uninitialized_copy<__gnu_cxx::__normal_iterator<const std::unique_ptr<X509CertificateInfo> *, std::vector<std::unique_ptr<X509CertificateInfo>>>, std::unique_ptr<X509CertificateInfo> *>' requested here
+  333 |     { return std::uninitialized_copy(__first, __last, __result); }
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:558:9: note: in instantiation of function template specialization 'std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<const std::unique_ptr<X509CertificateInfo> *, std::vector<std::unique_ptr<X509CertificateInfo>>>, std::unique_ptr<X509CertificateInfo> *, std::unique_ptr<X509CertificateInfo>>' requested here
+  558 |           std::__uninitialized_copy_a(__x.begin(), __x.end(),
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:111:26: note: in instantiation of member function 'std::vector<std::unique_ptr<X509CertificateInfo>>::vector' requested here
+  111 |         .WillOnce(Return(expectedCerts));
+      |                          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:67:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:85:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:115:4: error: no matching function for call to 'construct_at'
+  115 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:92:8: note: in instantiation of function template specialization 'std::_Construct<std::unique_ptr<X509CertificateInfo>, const std::unique_ptr<X509CertificateInfo> &>' requested here
+   92 |                 std::_Construct(std::__addressof(*__cur), *__first);
+      |                      ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:151:2: note: in instantiation of function template specialization 'std::__uninitialized_copy<false>::__uninit_copy<__gnu_cxx::__normal_iterator<const std::unique_ptr<X509CertificateInfo> *, std::vector<std::unique_ptr<X509CertificateInfo>>>, std::unique_ptr<X509CertificateInfo> *>' requested here
+  151 |         __uninit_copy(__first, __last, __result);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:333:19: note: in instantiation of function template specialization 'std::uninitialized_copy<__gnu_cxx::__normal_iterator<const std::unique_ptr<X509CertificateInfo> *, std::vector<std::unique_ptr<X509CertificateInfo>>>, std::unique_ptr<X509CertificateInfo> *>' requested here
+  333 |     { return std::uninitialized_copy(__first, __last, __result); }
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:558:9: note: in instantiation of function template specialization 'std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<const std::unique_ptr<X509CertificateInfo> *, std::vector<std::unique_ptr<X509CertificateInfo>>>, std::unique_ptr<X509CertificateInfo> *, std::unique_ptr<X509CertificateInfo>>' requested here
+  558 |           std::__uninitialized_copy_a(__x.begin(), __x.end(),
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:111:26: note: in instantiation of member function 'std::vector<std::unique_ptr<X509CertificateInfo>>::vector' requested here
+  111 |         .WillOnce(Return(expectedCerts));
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = std::unique_ptr<X509CertificateInfo>, _Args = <const std::unique_ptr<X509CertificateInfo> &>]: call to deleted constructor of 'std::unique_ptr<X509CertificateInfo>'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:119:25: error: call to deleted constructor of 'std::unique_ptr<X509CertificateInfo>'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'PdfSigTest_GetAvailableSigningCertificates_Success_2684_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:93:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<PdfSigTest_GetAvailableSigningCertificates_Success_2684_Test>::CreateTest' requested here
+   93 | TEST_F(PdfSigTest, GetAvailableSigningCertificates_Success_2684) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'PdfSigTest_GetAvailableSigningCertificates_NoBackends_2684_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp:129:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<PdfSigTest_GetAvailableSigningCertificates_NoBackends_2684_Test>::CreateTest' requested here
+  129 | TEST_F(PdfSigTest, GetAvailableSigningCertificates_NoBackends_2684) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2684.dir/build.make:79: generated_build/CMakeFiles/test_2684.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2684.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:80746: generated_build/CMakeFiles/test_2684.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:80753: generated_build/CMakeFiles/test_2684.dir/rule] 오류 2
+gmake: *** [Makefile:29273: test_2684] 오류 2

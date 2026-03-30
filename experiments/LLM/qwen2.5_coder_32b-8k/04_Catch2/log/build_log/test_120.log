@@ -1,0 +1,78 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_120.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:25:5: error: use of class template 'BinaryExpr' requires template arguments; argument deduction not allowed in non-static class member
+   25 |     BinaryExpr expr;
+      |     ^~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_decomposer.hpp:196:11: note: template is declared here
+  196 |     class BinaryExpr  : public ITransientExpression {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:39:31: error: too many arguments provided to function-like macro invocation
+   39 |             int a = 5, b = 3, c = 8;
+      |                               ^
+/usr/include/gtest/gtest-death-test.h:188:10: note: macro 'EXPECT_DEATH' defined here
+  188 | # define EXPECT_DEATH(statement, matcher) \
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:35:5: note: cannot use initializer list at the beginning of a macro argument
+   35 |     EXPECT_DEATH(
+      |     ^
+   36 | 
+   37 |         {
+      |         ~
+   38 | 
+   39 |             int a = 5, b = 3, c = 8;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~
+   40 | 
+   41 |             BinaryExpr expr;
+      |             ~~~~~~~~~~~~~~~~
+   42 | 
+   43 |             (void)(expr == a == b);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~
+   44 | 
+   45 |         },
+      |         ~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:35:5: error: use of undeclared identifier 'EXPECT_DEATH'
+   35 |     EXPECT_DEATH(
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:61:16: error: no viable constructor or deduction guide for deduction of template arguments of 'BinaryExpr'
+   61 |     BinaryExpr expr;
+      |                ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_decomposer.hpp:196:11: note: candidate function template not viable: requires 1 argument, but 0 were provided
+  196 |     class BinaryExpr  : public ITransientExpression {
+      |           ^~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_decomposer.hpp:196:11: note: implicit deduction guide declared as 'template <typename LhsT, typename RhsT> BinaryExpr(BinaryExpr<LhsT, RhsT>) -> BinaryExpr<LhsT, RhsT>'
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_decomposer.hpp:207:19: note: candidate function template not viable: requires 4 arguments, but 0 were provided
+  207 |         constexpr BinaryExpr( bool comparisonResult, LhsT lhs, StringRef op, RhsT rhs )
+      |                   ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_decomposer.hpp:207:19: note: implicit deduction guide declared as 'template <typename LhsT, typename RhsT> BinaryExpr(bool comparisonResult, LhsT lhs, StringRef op, RhsT rhs) -> BinaryExpr<LhsT, RhsT>'
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BinaryExprTest_120_ChainedComparison_StaticAssertionFailure_120_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:31:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BinaryExprTest_120_ChainedComparison_StaticAssertionFailure_120_Test>::CreateTest' requested here
+   31 | TEST_F(BinaryExprTest_120, ChainedComparison_StaticAssertionFailure_120) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BinaryExprTest_120_ValidComparison_NoStaticAssertionFailure_120_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp:55:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BinaryExprTest_120_ValidComparison_NoStaticAssertionFailure_120_Test>::CreateTest' requested here
+   55 | TEST_F(BinaryExprTest_120, ValidComparison_NoStaticAssertionFailure_120) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_120.dir/build.make:79: generated_build/CMakeFiles/test_120.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_120.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:30764: generated_build/CMakeFiles/test_120.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:30771: generated_build/CMakeFiles/test_120.dir/rule] 오류 2
+gmake: *** [Makefile:10940: test_120] 오류 2

@@ -1,0 +1,314 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_783.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:27:30: error: no matching constructor for initialization of 'TestCaseInfo'
+   27 |     TestCaseInfo testCaseInfo{"ClassName", {"TestName", ""}, SourceLineInfo{"filename.cpp", 10}};
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:37:9: error: use of undeclared identifier 'currentTestCaseInfo'
+   37 |         currentTestCaseInfo = &testCaseInfo;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:45:57: error: call to deleted constructor of 'SourceLineInfo'
+   45 |         assertionResult = AssertionResult{AssertionInfo{}, AssertionResultData{}};
+      |                                                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: in implicit initialization of field 'lineInfo' with omitted initializer
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:45:60: error: call to deleted constructor of 'AssertionResultData'
+   45 |         assertionResult = AssertionResult{AssertionInfo{}, AssertionResultData{}};
+      |                                                            ^                  ~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:45:25: error: object of type 'AssertionResult' cannot be assigned because its copy assignment operator is implicitly deleted
+   45 |         assertionResult = AssertionResult{AssertionInfo{}, AssertionResultData{}};
+      |                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:55:29: note: copy assignment operator of 'AssertionResult' is implicitly deleted because field 'm_resultData' has a deleted copy assignment operator
+   55 |         AssertionResultData m_resultData;
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:49:38: error: no member named 'ok' in 'Catch::AssertionResultData'
+   49 |         assertionResult.m_resultData.ok = isOk;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:61:8: error: unknown class name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   61 | TEST_F(TeamCityReporterTest_783, ExpressionFailedReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:61:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   61 | TEST_F(TeamCityReporterTest_783, ExpressionFailedReportsCorrectly_783) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:294:1: note: expanded from here
+  294 | TeamCityReporterTest_783_ExpressionFailedReportsCorrectly_783_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:61:1: note: default constructor of 'TeamCityReporterTest_783_ExpressionFailedReportsCorrectly_783_Test' is implicitly deleted because base class 'TeamCityReporterTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:21:20: note: default constructor of 'TeamCityReporterTest' is implicitly deleted because field 'config' has no default constructor
+   21 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:61:1: note: replace 'default' with 'delete'
+   61 | TEST_F(TeamCityReporterTest_783, ExpressionFailedReportsCorrectly_783) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:61:8: error: unknown type name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   61 | TEST_F(TeamCityReporterTest_783, ExpressionFailedReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:61:8: error: unknown type name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   61 | TEST_F(TeamCityReporterTest_783, ExpressionFailedReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:61:8: error: unknown type name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   61 | TEST_F(TeamCityReporterTest_783, ExpressionFailedReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:73:24: error: 'm_stream' is a protected member of 'Catch::ReporterBase'
+   73 |     EXPECT_EQ(reporter.m_stream.str(), expectedOutput);
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:35:23: note: declared protected here
+   35 |         std::ostream& m_stream;
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:73:33: error: no member named 'str' in 'std::basic_ostream<char>'
+   73 |     EXPECT_EQ(reporter.m_stream.str(), expectedOutput);
+      |               ~~~~~~~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:79:8: error: unknown class name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   79 | TEST_F(TeamCityReporterTest_783, ThrewExceptionReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:79:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   79 | TEST_F(TeamCityReporterTest_783, ThrewExceptionReportsCorrectly_783) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:27:1: note: expanded from here
+   27 | TeamCityReporterTest_783_ThrewExceptionReportsCorrectly_783_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:79:1: note: default constructor of 'TeamCityReporterTest_783_ThrewExceptionReportsCorrectly_783_Test' is implicitly deleted because base class 'TeamCityReporterTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:21:20: note: default constructor of 'TeamCityReporterTest' is implicitly deleted because field 'config' has no default constructor
+   21 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:79:1: note: replace 'default' with 'delete'
+   79 | TEST_F(TeamCityReporterTest_783, ThrewExceptionReportsCorrectly_783) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:79:8: error: unknown type name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   79 | TEST_F(TeamCityReporterTest_783, ThrewExceptionReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:79:8: error: unknown type name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   79 | TEST_F(TeamCityReporterTest_783, ThrewExceptionReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:79:8: error: unknown type name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   79 | TEST_F(TeamCityReporterTest_783, ThrewExceptionReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:89:24: error: 'm_stream' is a protected member of 'Catch::ReporterBase'
+   89 |     EXPECT_EQ(reporter.m_stream.str(), expectedOutput);
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:35:23: note: declared protected here
+   35 |         std::ostream& m_stream;
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:89:33: error: no member named 'str' in 'std::basic_ostream<char>'
+   89 |     EXPECT_EQ(reporter.m_stream.str(), expectedOutput);
+      |               ~~~~~~~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:95:8: error: unknown class name 'TeamCityReporterTest_783'; did you mean 'TeamCityReporterTest'?
+   95 | TEST_F(TeamCityReporterTest_783, FatalErrorConditionReportsCorrectly_783) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~~
+      |        TeamCityReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:17:7: note: 'TeamCityReporterTest' declared here
+   17 | class TeamCityReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:95:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   95 | TEST_F(TeamCityReporterTest_783, FatalErrorConditionReportsCorrectly_783) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:65:1: note: expanded from here
+   65 | TeamCityReporterTest_783_FatalErrorConditionReportsCorrectly_783_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:95:1: note: default constructor of 'TeamCityReporterTest_783_FatalErrorConditionReportsCorrectly_783_Test' is implicitly deleted because base class 'TeamCityReporterTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:21:20: note: default constructor of 'TeamCityReporterTest' is implicitly deleted because field 'config' has no default constructor
+   21 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp:95:1: note: replace 'default' with 'delete'
+   95 | TEST_F(TeamCityReporterTest_783, FatalErrorConditionReportsCorrectly_783) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+3 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_783.dir/build.make:79: generated_build/CMakeFiles/test_783.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_783.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:26012: generated_build/CMakeFiles/test_783.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:26019: generated_build/CMakeFiles/test_783.dir/rule] 오류 2
+gmake: *** [Makefile:9068: test_783] 오류 2

@@ -1,0 +1,98 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[ 80%] Building CXX object generated_build/CMakeFiles/test_297.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:5:
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:174:3: error: use of undeclared identifier 'port'
+  174 |   port::Mutex mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.h:176:3: error: use of undeclared identifier 'port'
+  176 |   port::CondVar background_work_finished_signal_ GUARDED_BY(mutex_);
+      |   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:23:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:36:
+/home/user/TCG2026/TestProjects/leveldb/./util/mutexlock.h:25:22: error: use of undeclared identifier 'port'
+   25 |   explicit MutexLock(port::Mutex* mu) EXCLUSIVE_LOCK_FUNCTION(mu) : mu_(mu) {
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/./util/mutexlock.h:34:3: error: use of undeclared identifier 'port'
+   34 |   port::Mutex* const mu_;
+      |   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:44:19: error: use of undeclared identifier 'port'
+   44 |   explicit Writer(port::Mutex* mu)
+      |                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:51:3: error: use of undeclared identifier 'port'
+   51 |   port::CondVar cv;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:1062:3: error: use of undeclared identifier 'port'
+ 1062 |   port::Mutex* const mu;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:1067:13: error: use of undeclared identifier 'port'
+ 1067 |   IterState(port::Mutex* mutex, MemTable* mem, MemTable* imm, Version* version)
+      |             ^
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:1199:14: error: cannot initialize object parameter of type 'leveldb::DB' with an expression of type 'leveldb::DBImpl'
+ 1199 |   return DB::Put(o, key, val);
+      |              ^~~
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:1203:14: error: cannot initialize object parameter of type 'leveldb::DB' with an expression of type 'leveldb::DBImpl'
+ 1203 |   return DB::Delete(options, key);
+      |              ^~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/db_impl.cc:1539:14: error: incompatible pointer types assigning to 'DB *' from 'DBImpl *'
+ 1539 |     *dbptr = impl;
+      |              ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:19:5: error: unknown type name 'CompactionState'; did you mean 'Compaction'?
+   19 |     CompactionState* compaction_state;
+      |     ^~~~~~~~~~~~~~~
+      |     Compaction
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:319:7: note: 'Compaction' declared here
+  319 | class Compaction {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:25:32: error: unknown type name 'CompactionState'; did you mean 'Compaction'?
+   25 |         compaction_state = new CompactionState(&compaction);
+      |                                ^~~~~~~~~~~~~~~
+      |                                Compaction
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:319:7: note: 'Compaction' declared here
+  319 | class Compaction {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:25:32: error: no matching constructor for initialization of 'Compaction'
+   25 |         compaction_state = new CompactionState(&compaction);
+      |                                ^               ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:319:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Compaction *' to 'const Compaction' for 1st argument; remove &
+  319 | class Compaction {
+      |       ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:364:3: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  364 |   Compaction(const Options* options, int level);
+      |   ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:43:5: error: unknown type name 'Output'
+   43 |     Output output1;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:45:5: error: use of undeclared identifier 'Output'; did you mean 'output1'?
+   45 |     Output output2;
+      |     ^~~~~~
+      |     output1
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:43:12: note: 'output1' declared here
+   43 |     Output output1;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:45:11: error: expected ';' after expression
+   45 |     Output output2;
+      |           ^
+      |           ;
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:45:12: error: use of undeclared identifier 'output2'; did you mean 'output1'?
+   45 |     Output output2;
+      |            ^~~~~~~
+      |            output1
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp:43:12: note: 'output1' declared here
+   43 |     Output output1;
+      |            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_297.dir/build.make:76: generated_build/CMakeFiles/test_297.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_297.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7721: generated_build/CMakeFiles/test_297.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7728: generated_build/CMakeFiles/test_297.dir/rule] 오류 2
+gmake: *** [Makefile:3117: test_297] 오류 2

@@ -1,0 +1,72 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from AnsiSkippingStringTest_612
+[ RUN      ] AnsiSkippingStringTest_612.ConstructorFromString_612
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_612.cpp:33: Failure
+Expected equality of these values:
+  ans.size()
+    Which is: 12
+  11
+[  FAILED  ] AnsiSkippingStringTest_612.ConstructorFromString_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.ConstructorFromRValueString_612
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_612.cpp:45: Failure
+Expected equality of these values:
+  ans.size()
+    Which is: 12
+  11
+[  FAILED  ] AnsiSkippingStringTest_612.ConstructorFromRValueString_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.SubstringWithoutAnsiCodes_612
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_612.cpp:63: Failure
+Expected equality of these values:
+  ans.substring(begin, end)
+    Which is: "World\x1B"
+  "World"
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringWithoutAnsiCodes_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.SubstringWithEntireString_612
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_612.cpp:79: Failure
+Expected equality of these values:
+  ans.substring(begin, end)
+    Which is: "Hello\x1B[31mWorld\x1B"
+  "HelloWorld"
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringWithEntireString_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.SubstringEmptyRange_612
+[       OK ] AnsiSkippingStringTest_612.SubstringEmptyRange_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.SubstringSingleCharacter_612
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_612.cpp:111: Failure
+Expected equality of these values:
+  ans.substring(begin, end)
+    Which is: "r"
+  "W"
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringSingleCharacter_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.SubstringBoundaryConditionStart_612
+[       OK ] AnsiSkippingStringTest_612.SubstringBoundaryConditionStart_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.SubstringBoundaryConditionEnd_612
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_612.cpp:145: Failure
+Expected equality of these values:
+  ans.substring(begin, end)
+    Which is: "\x1B"
+  "m"
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringBoundaryConditionEnd_612 (0 ms)
+[ RUN      ] AnsiSkippingStringTest_612.SubstringEntireWithSentinelReplaced_612
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_612.cpp:161: Failure
+Expected equality of these values:
+  ans.substring(begin, end)
+    Which is: "Hello\x1B[31mWorld\x1B"
+  "HelloWorld"
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringEntireWithSentinelReplaced_612 (0 ms)
+[----------] 9 tests from AnsiSkippingStringTest_612 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 7 tests, listed below:
+[  FAILED  ] AnsiSkippingStringTest_612.ConstructorFromString_612
+[  FAILED  ] AnsiSkippingStringTest_612.ConstructorFromRValueString_612
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringWithoutAnsiCodes_612
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringWithEntireString_612
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringSingleCharacter_612
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringBoundaryConditionEnd_612
+[  FAILED  ] AnsiSkippingStringTest_612.SubstringEntireWithSentinelReplaced_612
+
+ 7 FAILED TESTS

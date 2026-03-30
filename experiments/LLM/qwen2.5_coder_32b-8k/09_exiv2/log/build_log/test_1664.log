@@ -1,0 +1,57 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1664.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:23:39: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   23 |     MockTiffBinaryArray(uint16_t tag, IfdId group, const ArrayCfg & arrayCfg, const ArrayDef * arrayDef, size_t defSize)
+      |                                       ^~~~~
+      |                                       Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:43:25: error: use of undeclared identifier 'ExifData'; did you mean 'Exiv2::ExifData'?
+   43 |     TiffDecoder decoder{ExifData(), IptcData(), XmpData(), nullptr, nullptr};
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:381:16: note: 'Exiv2::ExifData' declared here
+  381 | class EXIV2API ExifData {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:43:37: error: use of undeclared identifier 'IptcData'; did you mean 'Exiv2::IptcData'?
+   43 |     TiffDecoder decoder{ExifData(), IptcData(), XmpData(), nullptr, nullptr};
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: 'Exiv2::IptcData' declared here
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:43:49: error: use of undeclared identifier 'XmpData'; did you mean 'Exiv2::XmpData'?
+   43 |     TiffDecoder decoder{ExifData(), IptcData(), XmpData(), nullptr, nullptr};
+      |                                                 ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: 'Exiv2::XmpData' declared here
+   24 | class XmpData;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:3:
+In file included from /usr/include/gmock/gmock.h:65:
+/usr/include/gmock/gmock-nice-strict.h:145:16: error: no matching constructor for initialization of 'MockTiffBinaryArray'
+  145 |   NiceMock() : MockClass() {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:37:7: note: in instantiation of member function 'testing::NiceMock<MockTiffBinaryArray>::NiceMock' requested here
+   37 | class TiffDecoderTest_1664 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:49:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffDecoderTest_1664_VisitBinaryArray_DecodedTrue_1664_Test>::CreateTest' requested here
+   49 | TEST_F(TiffDecoderTest_1664, VisitBinaryArray_DecodedTrue_1664) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:19:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   19 | class MockTiffBinaryArray : public TiffBinaryArray {
+      |       ^~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp:23:5: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+   23 |     MockTiffBinaryArray(uint16_t tag, IfdId group, const ArrayCfg & arrayCfg, const ArrayDef * arrayDef, size_t defSize)
+      |     ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1664.dir/build.make:79: generated_build/CMakeFiles/test_1664.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1664.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14715: generated_build/CMakeFiles/test_1664.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14722: generated_build/CMakeFiles/test_1664.dir/rule] 오류 2
+gmake: *** [Makefile:3221: test_1664] 오류 2

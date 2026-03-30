@@ -1,0 +1,149 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_468.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:39:43: error: use of undeclared identifier 'Op'; did you mean 're2::Prefilter::Op'?
+   39 |     Prefilter* prefilter1 = new Prefilter(Op::kOpLiteral);
+      |                                           ^~
+      |                                           re2::Prefilter::Op
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:28:8: note: 're2::Prefilter::Op' declared here
+   28 |   enum Op {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:39:47: error: no member named 'kOpLiteral' in 're2::Prefilter::Op'
+   39 |     Prefilter* prefilter1 = new Prefilter(Op::kOpLiteral);
+      |                                           ~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:41:43: error: use of undeclared identifier 'Op'; did you mean 're2::Prefilter::Op'?
+   41 |     Prefilter* prefilter2 = new Prefilter(Op::kOpLiteral);
+      |                                           ^~
+      |                                           re2::Prefilter::Op
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:28:8: note: 're2::Prefilter::Op' declared here
+   28 |   enum Op {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:41:47: error: no member named 'kOpLiteral' in 're2::Prefilter::Op'
+   41 |     Prefilter* prefilter2 = new Prefilter(Op::kOpLiteral);
+      |                                           ~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:51:5: error: use of undeclared identifier 'PrefilterTree'; did you mean 'Prefilter'?
+   51 |     PrefilterTree::PrefilterHash hash_function;
+      |     ^~~~~~~~~~~~~
+      |     Prefilter
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:25:7: note: 'Prefilter' declared here
+   25 | class Prefilter {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:51:34: error: use of undeclared identifier 'hash_function'; did you mean 'absl::is_function'?
+   51 |     PrefilterTree::PrefilterHash hash_function;
+      |                                  ^~~~~~~~~~~~~
+      |                                  absl::is_function
+/usr/local/include/absl/meta/type_traits.h:131:12: note: 'absl::is_function' declared here
+  131 | using std::is_function;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:51:20: error: no type named 'PrefilterHash' in 're2::Prefilter'; did you mean 'Prefilter'?
+   51 |     PrefilterTree::PrefilterHash hash_function;
+      |     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+      |                    Prefilter
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:25:7: note: 'Prefilter' declared here
+   25 | class Prefilter {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:51:20: error: qualified reference to 'Prefilter' is a constructor name rather than a type in this context
+   51 |     PrefilterTree::PrefilterHash hash_function;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:51:34: error: no matching constructor for initialization of 'Prefilter::Prefilter'
+   51 |     PrefilterTree::PrefilterHash hash_function;
+      |                                  ^
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:36:12: note: candidate constructor not viable: requires single argument 'op', but no arguments were provided
+   36 |   explicit Prefilter(Op op);
+      |            ^         ~~~~~
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:162:3: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  162 |   Prefilter(const Prefilter&) = delete;
+      |   ^         ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:55:15: error: type 'Prefilter::Prefilter' does not provide a call operator
+   55 |     EXPECT_NE(hash_function(prefilter1), hash_function(prefilter2));
+      |               ^~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:2046:57: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                         ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:55:42: error: type 'Prefilter::Prefilter' does not provide a call operator
+   55 |     EXPECT_NE(hash_function(prefilter1), hash_function(prefilter2));
+      |                                          ^~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:2046:63: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:69:42: error: use of undeclared identifier 'Op'; did you mean 're2::Prefilter::Op'?
+   69 |     Prefilter* prefilter = new Prefilter(Op::kOpLiteral);
+      |                                          ^~
+      |                                          re2::Prefilter::Op
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:28:8: note: 're2::Prefilter::Op' declared here
+   28 |   enum Op {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:69:46: error: no member named 'kOpLiteral' in 're2::Prefilter::Op'
+   69 |     Prefilter* prefilter = new Prefilter(Op::kOpLiteral);
+      |                                          ~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:75:5: error: use of undeclared identifier 'PrefilterTree'; did you mean 'Prefilter'?
+   75 |     PrefilterTree::PrefilterHash hash_function;
+      |     ^~~~~~~~~~~~~
+      |     Prefilter
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:25:7: note: 'Prefilter' declared here
+   25 | class Prefilter {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:75:34: error: use of undeclared identifier 'hash_function'; did you mean 'absl::is_function'?
+   75 |     PrefilterTree::PrefilterHash hash_function;
+      |                                  ^~~~~~~~~~~~~
+      |                                  absl::is_function
+/usr/local/include/absl/meta/type_traits.h:131:12: note: 'absl::is_function' declared here
+  131 | using std::is_function;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:75:20: error: no type named 'PrefilterHash' in 're2::Prefilter'; did you mean 'Prefilter'?
+   75 |     PrefilterTree::PrefilterHash hash_function;
+      |     ~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+      |                    Prefilter
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:25:7: note: 'Prefilter' declared here
+   25 | class Prefilter {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:75:20: error: qualified reference to 'Prefilter' is a constructor name rather than a type in this context
+   75 |     PrefilterTree::PrefilterHash hash_function;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:75:34: error: no matching constructor for initialization of 'Prefilter::Prefilter'
+   75 |     PrefilterTree::PrefilterHash hash_function;
+      |                                  ^
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:36:12: note: candidate constructor not viable: requires single argument 'op', but no arguments were provided
+   36 |   explicit Prefilter(Op op);
+      |            ^         ~~~~~
+/home/user/TCG2026/./TestProjects/re2/re2/prefilter.h:162:3: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  162 |   Prefilter(const Prefilter&) = delete;
+      |   ^         ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp:79:15: error: type 'Prefilter::Prefilter' does not provide a call operator
+   79 |     EXPECT_EQ(hash_function(prefilter), hash_function(prefilter));
+      |               ^~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_468.dir/build.make:79: generated_build/CMakeFiles/test_468.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_468.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14729: generated_build/CMakeFiles/test_468.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14736: generated_build/CMakeFiles/test_468.dir/rule] 오류 2
+gmake: *** [Makefile:5366: test_468] 오류 2

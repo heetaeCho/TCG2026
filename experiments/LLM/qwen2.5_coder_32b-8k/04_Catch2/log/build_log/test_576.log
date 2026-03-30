@@ -1,0 +1,376 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_576.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:15:41: error: base class has incomplete type
+   15 | class MockEventListenerFactory : public EventListenerFactory {
+      |                                  ~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: forward declaration of 'Catch::EventListenerFactory'
+   25 |     class EventListenerFactory;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:19:5: error: only virtual member functions can be marked 'override'
+   19 |     MOCK_METHOD(IEventListenerPtr, create, (ReporterConfig&& config), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:65:1: note: expanded from here
+   65 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:51:32: error: no matching conversion for functional-style cast from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::Detail::unique_ptr<EventListenerFactory>'
+   51 |     registry_.registerListener(Catch::Detail::unique_ptr<EventListenerFactory>(mockFactory1_.release()));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::EventListenerFactory *' for 1st argument
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'const unique_ptr<EventListenerFactory>' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'unique_ptr<EventListenerFactory>' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr<U>' against 'pointer' (aka 'MockEventListenerFactory *')
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:65:32: error: no matching conversion for functional-style cast from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::Detail::unique_ptr<EventListenerFactory>'
+   65 |     registry_.registerListener(Catch::Detail::unique_ptr<EventListenerFactory>(mockFactory1_.release()));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::EventListenerFactory *' for 1st argument
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'const unique_ptr<EventListenerFactory>' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'unique_ptr<EventListenerFactory>' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr<U>' against 'pointer' (aka 'MockEventListenerFactory *')
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:67:32: error: no matching conversion for functional-style cast from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::Detail::unique_ptr<EventListenerFactory>'
+   67 |     registry_.registerListener(Catch::Detail::unique_ptr<EventListenerFactory>(mockFactory2_.release()));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::EventListenerFactory *' for 1st argument
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'const unique_ptr<EventListenerFactory>' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'unique_ptr<EventListenerFactory>' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr<U>' against 'pointer' (aka 'MockEventListenerFactory *')
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:95:32: error: no matching conversion for functional-style cast from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::Detail::unique_ptr<EventListenerFactory>'
+   95 |     registry_.registerListener(Catch::Detail::unique_ptr<EventListenerFactory>(mockFactory1_.release()));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::EventListenerFactory *' for 1st argument
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'const unique_ptr<EventListenerFactory>' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'unique_ptr<EventListenerFactory>' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr<U>' against 'pointer' (aka 'MockEventListenerFactory *')
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:113:32: error: no matching conversion for functional-style cast from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::Detail::unique_ptr<EventListenerFactory>'
+  113 |     registry_.registerListener(Catch::Detail::unique_ptr<EventListenerFactory>(mockFactory1_.release()));
+      |                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'Catch::EventListenerFactory *' for 1st argument
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'const unique_ptr<EventListenerFactory>' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'pointer' (aka 'MockEventListenerFactory *') to 'unique_ptr<EventListenerFactory>' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr<U>' against 'pointer' (aka 'MockEventListenerFactory *')
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:59:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/move.h:57:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:946:30: error: incomplete type 'Catch::ReporterConfig' used in type trait expression
+  946 |     : public __bool_constant<__is_constructible(_Tp, _Args...)>
+      |                              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:953:16: note: in instantiation of template class 'std::__is_constructible_impl<Catch::ReporterConfig &&, Catch::ReporterConfig>' requested here
+  953 |       : public __is_constructible_impl<_Tp, _Args...>
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:153:26: note: in instantiation of template class 'std::is_constructible<Catch::ReporterConfig &&, Catch::ReporterConfig>' requested here
+  153 |     : public conditional<_B1::value, _B2, _B1>::type
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:562:11: note: in instantiation of template class 'std::__and_<std::is_constructible<Catch::ReporterConfig &&, Catch::ReporterConfig>, std::is_convertible<Catch::ReporterConfig, Catch::ReporterConfig &&>>' requested here
+  562 |           return __and_<is_constructible<_Types, _UTypes>...,
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:631:26: note: in instantiation of function template specialization 'std::_TupleConstraints<true, Catch::ReporterConfig &&>::__is_implicitly_constructible<Catch::ReporterConfig>' requested here
+  631 |           _TCC<_Cond>::template __is_implicitly_constructible<_Args...>(),
+      |                                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:740:46: note: in instantiation of template type alias '_ImplicitCtor' requested here
+  740 |                _ImplicitCtor<_Valid, _UElements...> = true>
+      |                                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:742:2: note: while substituting prior template arguments into non-type template parameter [with _UElements = <Catch::ReporterConfig>, _Valid = true]
+  742 |         tuple(_UElements&&... __elements)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  743 |         noexcept(__nothrow_constructible<_UElements...>())
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  744 |         : _Inherited(std::forward<_UElements>(__elements)...) { }
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1597:19: note: while substituting deduced template arguments into function template 'tuple' [with _UElements = <Catch::ReporterConfig>, _Valid = (no value), $2 = (no value)]
+ 1597 |     ArgumentTuple tuple(std::forward<Args>(args)...);
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:19:5: note: in instantiation of member function 'testing::internal::FunctionMocker<Catch::Detail::unique_ptr<Catch::IEventListener> (Catch::ReporterConfig &&)>::Invoke' requested here
+   19 |     MOCK_METHOD(IEventListenerPtr, create, (ReporterConfig&& config), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:65:1: note: expanded from here
+   65 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:10: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |          ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:24:12: note: forward declaration of 'Catch::ReporterConfig'
+   24 |     struct ReporterConfig;
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:3:
+In file included from /usr/include/gmock/gmock.h:61:
+In file included from /usr/include/gmock/gmock-function-mocker.h:42:
+/usr/include/gmock/gmock-spec-builders.h:1597:19: error: no matching constructor for initialization of 'ArgumentTuple' (aka 'tuple<Catch::ReporterConfig &&>')
+ 1597 |     ArgumentTuple tuple(std::forward<Args>(args)...);
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:19:5: note: in instantiation of member function 'testing::internal::FunctionMocker<Catch::Detail::unique_ptr<Catch::IEventListener> (Catch::ReporterConfig &&)>::Invoke' requested here
+   19 |     MOCK_METHOD(IEventListenerPtr, create, (ReporterConfig&& config), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:65:1: note: expanded from here
+   65 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:10: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:754:17: note: candidate constructor not viable: cannot convert argument of incomplete type 'Catch::ReporterConfig' to 'const tuple<ReporterConfig &&>' for 1st argument
+  754 |       constexpr tuple(const tuple&) = default;
+      |                 ^     ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:756:17: note: candidate constructor not viable: cannot convert argument of incomplete type 'Catch::ReporterConfig' to 'tuple<ReporterConfig &&>' for 1st argument
+  756 |       constexpr tuple(tuple&&) = default;
+      |                 ^     ~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:727:2: note: candidate template ignored: requirement '_TupleConstraints<true, Catch::ReporterConfig &&>::__is_implicitly_constructible()' was not satisfied [with _NotEmpty = true]
+  727 |         tuple(const _Elements&... __elements)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:734:2: note: candidate template ignored: requirement '_TupleConstraints<true, Catch::ReporterConfig &&>::__is_explicitly_constructible()' was not satisfied [with _NotEmpty = true]
+  734 |         tuple(const _Elements&... __elements)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:742:2: note: candidate template ignored: requirement '_TupleConstraints<true, Catch::ReporterConfig &&>::__is_implicitly_constructible()' was not satisfied [with _UElements = <Catch::ReporterConfig>, _Valid = true]
+  742 |         tuple(_UElements&&... __elements)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:750:2: note: candidate template ignored: requirement '_TupleConstraints<true, Catch::ReporterConfig &&>::__is_explicitly_constructible()' was not satisfied [with _UElements = <Catch::ReporterConfig>, _Valid = true]
+  750 |         tuple(_UElements&&... __elements)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:763:2: note: candidate template ignored: could not match 'tuple<_UElements...>' against 'Catch::ReporterConfig'
+  763 |         tuple(const tuple<_UElements...>& __in)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:773:2: note: candidate template ignored: could not match 'tuple<_UElements...>' against 'Catch::ReporterConfig'
+  773 |         tuple(const tuple<_UElements...>& __in)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:783:2: note: candidate template ignored: could not match 'tuple<_UElements...>' against 'Catch::ReporterConfig'
+  783 |         tuple(tuple<_UElements...>&& __in)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:792:2: note: candidate template ignored: could not match 'tuple<_UElements...>' against 'Catch::ReporterConfig'
+  792 |         tuple(tuple<_UElements...>&& __in)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:713:2: note: candidate constructor template not viable: requires 0 arguments, but 1 was provided
+  713 |         tuple()
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:720:2: note: candidate constructor template not viable: requires 0 arguments, but 1 was provided
+  720 |         tuple()
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:801:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  801 |         tuple(allocator_arg_t __tag, const _Alloc& __a)
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:807:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  807 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  808 |               const _Elements&... __elements)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:815:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  815 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  816 |               const _Elements&... __elements)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:823:2: note: candidate constructor template not viable: requires at least 2 arguments, but 1 was provided
+  823 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  824 |               _UElements&&... __elements)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:833:2: note: candidate constructor template not viable: requires at least 2 arguments, but 1 was provided
+  833 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  834 |               _UElements&&... __elements)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:840:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  840 |         tuple(allocator_arg_t __tag, const _Alloc& __a, const tuple& __in)
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:845:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  845 |         tuple(allocator_arg_t __tag, const _Alloc& __a, tuple&& __in)
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:853:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  853 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  854 |               const tuple<_UElements...>& __in)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:865:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  865 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  866 |               const tuple<_UElements...>& __in)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:876:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  876 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  877 |               tuple<_UElements...>&& __in)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:888:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  888 |         tuple(allocator_arg_t __tag, const _Alloc& __a,
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  889 |               tuple<_UElements...>&& __in)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:5:
+In file included from /home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:12:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IEventListener' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:19:5: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IEventListener>::~unique_ptr' requested here
+   19 |     MOCK_METHOD(IEventListenerPtr, create, (ReporterConfig&& config), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:65:1: note: expanded from here
+   65 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:10: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |          ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:20:11: note: forward declaration of 'Catch::IEventListener'
+   20 |     class IEventListener;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:66:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:138:21: error: static assertion failed due to requirement 'is_constructible<Catch::Detail::unique_ptr<Catch::EventListenerFactory>, const Catch::Detail::unique_ptr<Catch::EventListenerFactory> &>::value': result type must be constructible from value type of input range
+  138 |       static_assert(is_constructible<_ValueType2, decltype(*__first)>::value,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:333:19: note: in instantiation of function template specialization 'std::uninitialized_copy<__gnu_cxx::__normal_iterator<const Catch::Detail::unique_ptr<Catch::EventListenerFactory> *, std::vector<Catch::Detail::unique_ptr<Catch::EventListenerFactory>>>, Catch::Detail::unique_ptr<Catch::EventListenerFactory> *>' requested here
+  333 |     { return std::uninitialized_copy(__first, __last, __result); }
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:558:9: note: in instantiation of function template specialization 'std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<const Catch::Detail::unique_ptr<Catch::EventListenerFactory> *, std::vector<Catch::Detail::unique_ptr<Catch::EventListenerFactory>>>, Catch::Detail::unique_ptr<Catch::EventListenerFactory> *, Catch::Detail::unique_ptr<Catch::EventListenerFactory>>' requested here
+  558 |           std::__uninitialized_copy_a(__x.begin(), __x.end(),
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:55:22: note: in instantiation of member function 'std::vector<Catch::Detail::unique_ptr<Catch::EventListenerFactory>>::vector' requested here
+   55 |     auto listeners = registry_.getListeners();
+      |                      ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:65:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:119:25: error: call to deleted constructor of 'Catch::Detail::unique_ptr<Catch::EventListenerFactory>'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:92:8: note: in instantiation of function template specialization 'std::_Construct<Catch::Detail::unique_ptr<Catch::EventListenerFactory>, const Catch::Detail::unique_ptr<Catch::EventListenerFactory> &>' requested here
+   92 |                 std::_Construct(std::__addressof(*__cur), *__first);
+      |                      ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:151:2: note: in instantiation of function template specialization 'std::__uninitialized_copy<false>::__uninit_copy<__gnu_cxx::__normal_iterator<const Catch::Detail::unique_ptr<Catch::EventListenerFactory> *, std::vector<Catch::Detail::unique_ptr<Catch::EventListenerFactory>>>, Catch::Detail::unique_ptr<Catch::EventListenerFactory> *>' requested here
+  151 |         __uninit_copy(__first, __last, __result);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:333:19: note: in instantiation of function template specialization 'std::uninitialized_copy<__gnu_cxx::__normal_iterator<const Catch::Detail::unique_ptr<Catch::EventListenerFactory> *, std::vector<Catch::Detail::unique_ptr<Catch::EventListenerFactory>>>, Catch::Detail::unique_ptr<Catch::EventListenerFactory> *>' requested here
+  333 |     { return std::uninitialized_copy(__first, __last, __result); }
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:558:9: note: in instantiation of function template specialization 'std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<const Catch::Detail::unique_ptr<Catch::EventListenerFactory> *, std::vector<Catch::Detail::unique_ptr<Catch::EventListenerFactory>>>, Catch::Detail::unique_ptr<Catch::EventListenerFactory> *, Catch::Detail::unique_ptr<Catch::EventListenerFactory>>' requested here
+  558 |           std::__uninitialized_copy_a(__x.begin(), __x.end(),
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:55:22: note: in instantiation of member function 'std::vector<Catch::Detail::unique_ptr<Catch::EventListenerFactory>>::vector' requested here
+   55 |     auto listeners = registry_.getListeners();
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: 'unique_ptr' has been explicitly marked deleted here
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::EventListenerFactory' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp:81:32: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::EventListenerFactory>::~unique_ptr' requested here
+   81 |     registry_.registerListener(Catch::Detail::unique_ptr<EventListenerFactory>(nullptr));
+      |                                ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: forward declaration of 'Catch::EventListenerFactory'
+   25 |     class EventListenerFactory;
+      |           ^
+2 warnings and 11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_576.dir/build.make:79: generated_build/CMakeFiles/test_576.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_576.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:34691: generated_build/CMakeFiles/test_576.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:34698: generated_build/CMakeFiles/test_576.dir/rule] 오류 2
+gmake: *** [Makefile:12487: test_576] 오류 2

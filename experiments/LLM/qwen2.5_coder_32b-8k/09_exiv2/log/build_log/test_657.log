@@ -1,0 +1,102 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_657.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:33:5: error: only virtual member functions can be marked 'override'
+   33 |     MOCK_METHOD(void, readOrThrow, (byte * buf, size_t rcount, ErrorCode err), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:59:1: note: expanded from here
+   59 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:41:5: error: only virtual member functions can be marked 'override'
+   41 |     MOCK_METHOD(void, seekOrThrow, (int64_t offset, Position pos, ErrorCode err), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:125:1: note: expanded from here
+  125 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:57:38: error: exception specification of overriding function is more lax than base version
+   57 |     MOCK_METHOD(const std::string &, path, (), (const, override));
+      |                                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:103:31: error: 'xmpData_' is a protected member of 'Exiv2::Image'
+  103 |     EXPECT_EQ(quickTimeVideo->xmpData_["Xmp.video.FileSize"].toFloat(), 1.0);
+      |                               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:479:11: note: declared protected here
+  479 |   XmpData xmpData_;                   //!< XMP data container
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Exiv2::MockBasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:69:23: note: in instantiation of function template specialization 'std::make_unique<Exiv2::MockBasicIo>' requested here
+   69 |         mockIo = std::make_unique<MockBasicIo>();
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MockBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:658:9: error: static assertion failed due to requirement '!std::is_reference<const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &>::value': use_ReturnRef_instead_of_Return_to_return_a_reference
+  658 |         !std::is_reference<Result>::value,
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:882:56: note: expanded from macro 'GTEST_COMPILE_ASSERT_'
+  882 | #define GTEST_COMPILE_ASSERT_(expr, msg) static_assert(expr, #msg)
+      |                                                        ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:91:49: note: in instantiation of function template specialization 'testing::internal::ReturnAction<const char *>::operator Action<const std::basic_string<char> &()>' requested here
+   91 |     EXPECT_CALL(*mockIo, path()).WillRepeatedly(testing::Return("test.mp4"));
+      |                                                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:687:27: error: static assertion failed due to requirement '!std::is_reference<const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &>::value': Result_cannot_be_a_reference_type
+  687 |     GTEST_COMPILE_ASSERT_(!std::is_reference<Result>::value,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:882:56: note: expanded from macro 'GTEST_COMPILE_ASSERT_'
+  882 | #define GTEST_COMPILE_ASSERT_(expr, msg) static_assert(expr, #msg)
+      |                                                        ^~~~
+/usr/include/gmock/gmock-actions.h:662:26: note: in instantiation of template class 'testing::internal::ReturnAction<const char *>::Impl<const char *, const std::basic_string<char> &()>' requested here
+  662 |     return Action<F>(new Impl<R, F>(value_));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp:91:49: note: in instantiation of function template specialization 'testing::internal::ReturnAction<const char *>::operator Action<const std::basic_string<char> &()>' requested here
+   91 |     EXPECT_CALL(*mockIo, path()).WillRepeatedly(testing::Return("test.mp4"));
+      |                                                 ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_657.dir/build.make:79: generated_build/CMakeFiles/test_657.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_657.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:24949: generated_build/CMakeFiles/test_657.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:24956: generated_build/CMakeFiles/test_657.dir/rule] 오류 2
+gmake: *** [Makefile:7134: test_657] 오류 2

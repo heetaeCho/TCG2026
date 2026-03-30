@@ -1,0 +1,38 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_566.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_566.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_566.cpp:19:62: error: 'Zombie' is a private member of 'YAML::Node'
+   19 |         NodeTest_566() : validNode(), invalidNode(Node(Node::Zombie{})) {}
+      |                                                              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:118:8: note: declared private here
+  118 |   enum Zombie { ZombieNode };
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_566.cpp:19:51: error: calling a private constructor of class 'YAML::Node'
+   19 |         NodeTest_566() : validNode(), invalidNode(Node(Node::Zombie{})) {}
+      |                                                   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:119:12: note: declared private here
+  119 |   explicit Node(Zombie);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_566.cpp:61:18: error: no member named 'set_null' in 'YAML::Node'
+   61 |         nullNode.set_null();
+      |         ~~~~~~~~ ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_566.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:243:14: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  243 |   AssignData(convert<T>::encode(rhs));
+      |              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:36:3: note: in instantiation of function template specialization 'YAML::Node::Assign<int>' requested here
+   36 |   Assign(rhs);
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:323:13: note: in instantiation of function template specialization 'YAML::Node::Node<int>' requested here
+  323 |   push_back(Node(rhs));
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_566.cpp:49:19: note: in instantiation of function template specialization 'YAML::Node::push_back<int>' requested here
+   49 |         validNode.push_back(1);
+      |                   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_566.dir/build.make:79: generated_build/CMakeFiles/test_566.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_566.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:9678: generated_build/CMakeFiles/test_566.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:9685: generated_build/CMakeFiles/test_566.dir/rule] 오류 2
+gmake: *** [Makefile:3209: test_566] 오류 2

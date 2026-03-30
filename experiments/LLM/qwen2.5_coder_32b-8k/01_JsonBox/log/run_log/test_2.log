@@ -1,0 +1,39 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from ConvertTest_2
+[ RUN      ] ConvertTest_2.EncodeToUTF8_SingleASCIICharacter_2
+[       OK ] ConvertTest_2.EncodeToUTF8_SingleASCIICharacter_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_MultipleASCIICharacters_2
+[       OK ] ConvertTest_2.EncodeToUTF8_MultipleASCIICharacters_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_TwoByteCharacter_2
+[       OK ] ConvertTest_2.EncodeToUTF8_TwoByteCharacter_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_ThreeByteCharacter_2
+[       OK ] ConvertTest_2.EncodeToUTF8_ThreeByteCharacter_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_FourByteCharacter_2
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/01_JsonBox/test_files/test_2.cpp:75: Failure
+Expected equality of these values:
+  Convert::encodeToUTF8(utf32String)
+    Which is: "\xF0\x90\x90\x80"
+    As Text: "𐐀"
+  expected
+    Which is: "\xF0\x90\x80\x80"
+    As Text: "𐀀"
+[  FAILED  ] ConvertTest_2.EncodeToUTF8_FourByteCharacter_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_MultipleUnicodeCharacters_2
+[       OK ] ConvertTest_2.EncodeToUTF8_MultipleUnicodeCharacters_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_EmptyString_2
+[       OK ] ConvertTest_2.EncodeToUTF8_EmptyString_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_HighestValidUnicode_2
+[       OK ] ConvertTest_2.EncodeToUTF8_HighestValidUnicode_2 (0 ms)
+[ RUN      ] ConvertTest_2.EncodeToUTF8_OutOfRangeUnicode_2
+[       OK ] ConvertTest_2.EncodeToUTF8_OutOfRangeUnicode_2 (0 ms)
+[----------] 9 tests from ConvertTest_2 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 8 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] ConvertTest_2.EncodeToUTF8_FourByteCharacter_2
+
+ 1 FAILED TEST

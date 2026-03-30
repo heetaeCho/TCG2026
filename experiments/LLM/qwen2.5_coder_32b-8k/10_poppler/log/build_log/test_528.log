@@ -1,0 +1,66 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_528.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:23:36: error: use of undeclared identifier 'getDomainMax'
+   23 |         EXPECT_CALL(*functions[0], getDomainMax(0)).WillRepeatedly(testing::Return(1.0));
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:23:77: error: no member named 'Return' in namespace 'testing'
+   23 |         EXPECT_CALL(*functions[0], getDomainMax(0)).WillRepeatedly(testing::Return(1.0));
+      |                                                                    ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:25:36: error: use of undeclared identifier 'isOk'
+   25 |         EXPECT_CALL(*functions[0], isOk()).WillRepeatedly(testing::Return(true));
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:25:68: error: no member named 'Return' in namespace 'testing'
+   25 |         EXPECT_CALL(*functions[0], isOk()).WillRepeatedly(testing::Return(true));
+      |                                                           ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:35:74: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   35 |         shading = make_unique<GfxPatchMeshShading>(1, patches, nPatches, move(functions));
+      |                                                                          ^
+      |                                                                          std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:89:32: error: use of undeclared identifier 'isOk'
+   89 |     EXPECT_CALL(*functions[0], isOk()).WillOnce(testing::Return(false));
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:89:58: error: no member named 'Return' in namespace 'testing'
+   89 |     EXPECT_CALL(*functions[0], isOk()).WillOnce(testing::Return(false));
+      |                                                 ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:91:65: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   91 |     shading.reset(new GfxPatchMeshShading(1, patches, nPatches, move(functions)));
+      |                                                                 ^
+      |                                                                 std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:93:5: error: cannot use 'try' with exceptions disabled
+   93 |     EXPECT_THROW(shading->getParameterDomainMax(), logic_error);
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:13:7: warning: 'GfxPatchMeshShadingTest_528' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class GfxPatchMeshShadingTest_528 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Function'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp:21:29: note: in instantiation of function template specialization 'std::make_unique<Function>' requested here
+   21 |         functions.push_back(make_unique<Function>());
+      |                             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:62:39: note: unimplemented pure virtual method 'copy' in 'Function'
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |                                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:73:18: note: unimplemented pure virtual method 'getType' in 'Function'
+   73 |     virtual Type getType() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:87:18: note: unimplemented pure virtual method 'transform' in 'Function'
+   87 |     virtual void transform(const double *in, double *out) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:89:18: note: unimplemented pure virtual method 'isOk' in 'Function'
+   89 |     virtual bool isOk() const = 0;
+      |                  ^
+3 warnings and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_528.dir/build.make:79: generated_build/CMakeFiles/test_528.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_528.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:72618: generated_build/CMakeFiles/test_528.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:72625: generated_build/CMakeFiles/test_528.dir/rule] 오류 2
+gmake: *** [Makefile:25971: test_528] 오류 2

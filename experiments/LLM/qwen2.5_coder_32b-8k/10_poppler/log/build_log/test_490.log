@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_490.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_490.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_490.cpp:9:7: warning: 'GfxPatternTest_490' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxPatternTest_490 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_490.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'GfxPattern'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_490.cpp:19:24: note: in instantiation of function template specialization 'std::make_unique<GfxPattern, int, int>' requested here
+   19 |         pattern = std::make_unique<GfxPattern>(1, 2);
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:826:41: note: unimplemented pure virtual method 'copy' in 'GfxPattern'
+  826 |     virtual std::unique_ptr<GfxPattern> copy() const = 0;
+      |                                         ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_490.dir/build.make:79: generated_build/CMakeFiles/test_490.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_490.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:29930: generated_build/CMakeFiles/test_490.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:29937: generated_build/CMakeFiles/test_490.dir/rule] 오류 2
+gmake: *** [Makefile:8629: test_490] 오류 2

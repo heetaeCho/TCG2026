@@ -1,0 +1,77 @@
+Built target tinyxml2
+Building CXX object generated_build/CMakeFiles/test_67.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp:23:32: error: calling a protected constructor of class 'tinyxml2::XMLDeclaration'
+   23 |     XMLDeclaration* decl = new XMLDeclaration(doc);
+      |                                ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1088:14: note: declared protected here
+ 1088 |     explicit XMLDeclaration( XMLDocument* doc );
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp:29:16: error: calling a protected destructor of class 'XMLDeclaration'
+   29 |         delete decl;
+      |                ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1089:13: note: declared protected here
+ 1089 |     virtual ~XMLDeclaration();
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp:55:12: error: calling a protected destructor of class 'XMLNode'
+   55 |     delete clone;
+      |            ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:951:13: note: declared protected here
+  951 |     virtual ~XMLNode();
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp:77:39: error: calling a protected constructor of class 'tinyxml2::XMLDeclaration'
+   77 |     XMLDeclaration* anotherDecl = new XMLDeclaration(anotherDoc);
+      |                                       ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1088:14: note: declared protected here
+ 1088 |     explicit XMLDeclaration( XMLDocument* doc );
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp:81:12: error: calling a protected destructor of class 'XMLDeclaration'
+   81 |     delete anotherDecl;
+      |            ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1089:13: note: declared protected here
+ 1089 |     virtual ~XMLDeclaration();
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp:95:5: error: non-virtual member function marked 'override' hides virtual member functions
+   95 |     MOCK_METHOD(bool, VisitEnter, (const XMLElement &), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:12:1: note: expanded from here
+   12 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:482:18: note: hidden overloaded virtual function 'tinyxml2::XMLVisitor::VisitEnter' declared here: type mismatch at 1st parameter ('const XMLDocument &' vs 'typename ::testing::internal::Function< ::testing::internal::identity_t<bool> (const XMLElement &)>::template template Arg<0>::type' (aka 'const tinyxml2::XMLElement &'))
+  482 |     virtual bool VisitEnter( const XMLDocument& /*doc*/ )                       {
+      |                  ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:491:18: note: hidden overloaded virtual function 'tinyxml2::XMLVisitor::VisitEnter' declared here: different number of parameters (2 vs 1)
+  491 |     virtual bool VisitEnter( const XMLElement& /*element*/, const XMLAttribute* /*firstAttribute*/ )    {
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp:107:5: error: no member named 'gmock_VisitDeclaration' in 'MockXMLVisitor'
+  107 |     EXPECT_CALL(mockVisitor, VisitDeclaration(_)).WillOnce(Return(true));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:14:1: note: expanded from here
+   14 | gmock_VisitDeclaration
+      | ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_67.dir/build.make:79: generated_build/CMakeFiles/test_67.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_67.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:12001: generated_build/CMakeFiles/test_67.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:12008: generated_build/CMakeFiles/test_67.dir/rule] 오류 2
+gmake: *** [Makefile:4599: test_67] 오류 2

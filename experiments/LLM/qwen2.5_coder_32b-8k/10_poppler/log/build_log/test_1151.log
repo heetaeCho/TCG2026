@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1151.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1151.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1151.cpp:23:34: error: only virtual member functions can be marked 'override'
+   23 |             int getFlags() const override { return flags; }
+      |                                  ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1151.cpp:21:70: error: use of undeclared identifier 'gfxFontType1'
+   21 |             explicit MockGfxFont(int flags) : GfxFont("", Ref(), "", gfxFontType1, Ref()), flags(flags) {}
+      |                                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1151.cpp:7:7: warning: 'GfxFontTest_1151' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class GfxFontTest_1151 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1151.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockGfxFont'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1151.cpp:31:21: note: in instantiation of function template specialization 'std::make_unique<MockGfxFont, int>' requested here
+   31 |         return std::make_unique<MockGfxFont>(fixedWidth ? fontFixedWidth : 0);
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:256:38: note: unimplemented pure virtual method 'getToUnicode' in 'MockGfxFont'
+  256 |     virtual const CharCodeToUnicode *getToUnicode() const = 0;
+      |                                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:291:17: note: unimplemented pure virtual method 'getNextChar' in 'MockGfxFont'
+  291 |     virtual int getNextChar(const char *s, int len, CharCode *code, Unicode const **u, int *uLen, double *dx, double *dy, double *ox, double *oy) const = 0;
+      |                 ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1151.dir/build.make:79: generated_build/CMakeFiles/test_1151.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1151.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:99210: generated_build/CMakeFiles/test_1151.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:99217: generated_build/CMakeFiles/test_1151.dir/rule] 오류 2
+gmake: *** [Makefile:36774: test_1151] 오류 2

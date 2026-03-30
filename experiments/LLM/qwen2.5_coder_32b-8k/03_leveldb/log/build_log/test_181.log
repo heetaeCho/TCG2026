@@ -1,0 +1,101 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_181.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:5:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:33:20: error: field type 'MockComparator' is an abstract class
+   33 |     MockComparator mock_comparator;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/comparator.h:28:15: note: unimplemented pure virtual method 'Compare' in 'MockComparator'
+   28 |   virtual int Compare(const Slice& a, const Slice& b) const = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/comparator.h:40:23: note: unimplemented pure virtual method 'Name' in 'MockComparator'
+   40 |   virtual const char* Name() const = 0;
+      |                       ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/comparator.h:48:16: note: unimplemented pure virtual method 'FindShortestSeparator' in 'MockComparator'
+   48 |   virtual void FindShortestSeparator(std::string* start,
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/comparator.h:54:16: note: unimplemented pure virtual method 'FindShortSuccessor' in 'MockComparator'
+   54 |   virtual void FindShortSuccessor(std::string* key) const = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:35:33: error: a type specifier is required for all declarations
+   35 |     InternalKeyComparator icmp(&mock_comparator);
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:37:21: error: expected parameter declarator
+   37 |     Version version(nullptr);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:37:21: error: expected ')'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:37:20: note: to match this '('
+   37 |     Version version(nullptr);
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:39:27: error: expected parameter declarator
+   39 |     Compaction compaction(nullptr, 3); // Assuming level 3 for testing
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:39:27: error: expected ')'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:39:26: note: to match this '('
+   39 |     Compaction compaction(nullptr, 3); // Assuming level 3 for testing
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:45:9: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+   45 |         compaction.input_version_ = &version;
+      |         ^~~~~~~~~~
+      |                   ()
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:45:20: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   45 |         compaction.input_version_ = &version;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:45:37: error: must explicitly qualify name of member function when taking its address
+   45 |         compaction.input_version_ = &version;
+      |                                     ^~~~~~~~
+      |                                      CompactionTest_181::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:45:35: error: expression is not assignable
+   45 |         compaction.input_version_ = &version;
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:47:9: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+   47 |         version.files_[5].push_back(new FileMetaData());
+      |         ^~~~~~~
+      |                ()
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:47:9: error: temporary of type 'Version' has private destructor
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:136:3: note: declared private here
+  136 |   ~Version();
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:47:17: error: 'files_' is a private member of 'leveldb::Version'
+   47 |         version.files_[5].push_back(new FileMetaData());
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:154:30: note: declared private here
+  154 |   std::vector<FileMetaData*> files_[config::kNumLevels];
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:49:9: error: reference to non-static member function must be called; did you mean to call it with no arguments?
+   49 |         version.files_[5].back()->smallest.user_key().data_ = "key1";
+      |         ^~~~~~~
+      |                ()
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:49:9: error: temporary of type 'Version' has private destructor
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:136:3: note: declared private here
+  136 |   ~Version();
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:49:17: error: 'files_' is a private member of 'leveldb::Version'
+   49 |         version.files_[5].back()->smallest.user_key().data_ = "key1";
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:154:30: note: declared private here
+  154 |   std::vector<FileMetaData*> files_[config::kNumLevels];
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:49:55: error: 'data_' is a private member of 'leveldb::Slice'
+   49 |         version.files_[5].back()->smallest.user_key().data_ = "key1";
+      |                                                       ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/slice.h:92:15: note: declared private here
+   92 |   const char* data_;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp:49:61: error: expression is not assignable
+   49 |         version.files_[5].back()->smallest.user_key().data_ = "key1";
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_181.dir/build.make:76: generated_build/CMakeFiles/test_181.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_181.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4647: generated_build/CMakeFiles/test_181.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4654: generated_build/CMakeFiles/test_181.dir/rule] 오류 2
+gmake: *** [Makefile:1739: test_181] 오류 2

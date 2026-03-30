@@ -1,0 +1,23 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_72.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_72.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_72.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const re2::SparseArray<int>::IndexValue' and 'const int')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<re2::SparseArray<int>::IndexValue, int>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_72.cpp:57:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<re2::SparseArray<int>::IndexValue, int, nullptr>' requested here
+   57 |     EXPECT_EQ(*it, 42);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const re2::SparseArray<int>::IndexValue' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_72.dir/build.make:79: generated_build/CMakeFiles/test_72.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_72.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7273: generated_build/CMakeFiles/test_72.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7280: generated_build/CMakeFiles/test_72.dir/rule] 오류 2
+gmake: *** [Makefile:2337: test_72] 오류 2

@@ -1,0 +1,85 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_584.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp:21:18: warning: 'MockGfxColorSpace::getDeviceN' hides overloaded virtual function [-Woverloaded-virtual]
+   21 |     MOCK_METHOD2(getDeviceN, void(const GfxColor* color, GfxColor* deviceN));
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: hidden overloaded virtual function 'GfxColorSpace::getDeviceN' declared here: different qualifiers ('const' vs unqualified)
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp:31:33: error: field type 'NiceMock<MockGfxColorSpace>' is an abstract class
+   31 |     NiceMock<MockGfxColorSpace> mockStrokeColorSpace;
+      |                                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:263:44: note: unimplemented pure virtual method 'copy' in 'NiceMock'
+  263 |     virtual std::unique_ptr<GfxColorSpace> copy() const = 0;
+      |                                            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:264:31: note: unimplemented pure virtual method 'getMode' in 'NiceMock'
+  264 |     virtual GfxColorSpaceMode getMode() const = 0;
+      |                               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:270:18: note: unimplemented pure virtual method 'getGray' in 'NiceMock'
+  270 |     virtual void getGray(const GfxColor *color, GfxGray *gray) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:271:18: note: unimplemented pure virtual method 'getRGB' in 'NiceMock'
+  271 |     virtual void getRGB(const GfxColor *color, GfxRGB *rgb) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:272:18: note: unimplemented pure virtual method 'getCMYK' in 'NiceMock'
+  272 |     virtual void getCMYK(const GfxColor *color, GfxCMYK *cmyk) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: unimplemented pure virtual method 'getDeviceN' in 'NiceMock'
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:295:17: note: unimplemented pure virtual method 'getNComps' in 'NiceMock'
+  295 |     virtual int getNComps() const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:298:18: note: unimplemented pure virtual method 'getDefaultColor' in 'NiceMock'
+  298 |     virtual void getDefaultColor(GfxColor *color) const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp:83:5: error: cannot use 'try' with exceptions disabled
+   83 |     EXPECT_NO_THROW(state.getStrokeDeviceN(nullptr));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'GfxStateTest_584_GetStrokeDeviceN_CallsGetDeviceNOnStrokeColorSpace_584_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp:51:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxStateTest_584_GetStrokeDeviceN_CallsGetDeviceNOnStrokeColorSpace_584_Test>::CreateTest' requested here
+   51 | TEST_F(GfxStateTest_584, GetStrokeDeviceN_CallsGetDeviceNOnStrokeColorSpace_584) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'GfxStateTest_584_GetStrokeDeviceN_PassesCorrectStrokeColor_584_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp:65:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxStateTest_584_GetStrokeDeviceN_PassesCorrectStrokeColor_584_Test>::CreateTest' requested here
+   65 | TEST_F(GfxStateTest_584, GetStrokeDeviceN_PassesCorrectStrokeColor_584) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'GfxStateTest_584_GetStrokeDeviceN_HandlesNullPointerGracefully_584_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp:79:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxStateTest_584_GetStrokeDeviceN_HandlesNullPointerGracefully_584_Test>::CreateTest' requested here
+   79 | TEST_F(GfxStateTest_584, GetStrokeDeviceN_HandlesNullPointerGracefully_584) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_584.dir/build.make:79: generated_build/CMakeFiles/test_584.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_584.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14858: generated_build/CMakeFiles/test_584.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14865: generated_build/CMakeFiles/test_584.dir/rule] 오류 2
+gmake: *** [Makefile:2506: test_584] 오류 2

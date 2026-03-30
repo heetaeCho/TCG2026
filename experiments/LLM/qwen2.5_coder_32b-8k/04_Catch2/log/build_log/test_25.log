@@ -1,0 +1,50 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_25.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_25.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_25.cpp:35:19: error: member reference base type 'int' is not a structure or union
+   35 |     EXPECT_EQ(*ptr->operator->(), 42);
+      |                ~~~^~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_25.cpp:145:30: error: overload resolution selected deleted operator '='
+  145 |     EXPECT_DEATH(another_ptr = ptr, ""); // This should trigger a compilation error
+      |                  ~~~~~~~~~~~ ^ ~~~
+/usr/include/gtest/gtest-death-test.h:189:17: note: expanded from macro 'EXPECT_DEATH'
+  189 |     EXPECT_EXIT(statement, ::testing::internal::ExitedUnsuccessfully, matcher)
+      |                 ^~~~~~~~~
+/usr/include/gtest/gtest-death-test.h:178:23: note: expanded from macro 'EXPECT_EXIT'
+  178 |     GTEST_DEATH_TEST_(statement, predicate, matcher, GTEST_NONFATAL_FAILURE_)
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-death-test-internal.h:235:47: note: expanded from macro 'GTEST_DEATH_TEST_'
+  235 |           GTEST_EXECUTE_DEATH_TEST_STATEMENT_(statement, gtest_dt);            \
+      |                                               ^~~~~~~~~
+/usr/include/gtest/internal/gtest-death-test-internal.h:192:52: note: expanded from macro 'GTEST_EXECUTE_DEATH_TEST_STATEMENT_'
+  192 |     GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:47:21: note: candidate function has been explicitly deleted
+   47 |         unique_ptr& operator=(unique_ptr const&) = delete;
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:40:21: note: candidate template ignored: requirement 'std::is_base_of<int, int>::value' was not satisfied [with U = int]
+   40 |         unique_ptr& operator=(unique_ptr<U>&& from) {
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:53:21: note: candidate function not viable: expects an rvalue for 1st argument
+   53 |         unique_ptr& operator=(unique_ptr&& rhs) noexcept {
+      |                     ^         ~~~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_25.dir/build.make:79: generated_build/CMakeFiles/test_25.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_25.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:16211: generated_build/CMakeFiles/test_25.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:16218: generated_build/CMakeFiles/test_25.dir/rule] 오류 2
+gmake: *** [Makefile:5207: test_25] 오류 2

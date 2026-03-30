@@ -1,0 +1,57 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_798.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_798.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_798.cpp:27:16: error: variable has incomplete type 'PDFDoc'
+   27 |         PDFDoc doc(nullptr);
+      |                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_798.cpp:29:22: error: variable has incomplete type 'PDFRectangle'
+   29 |         PDFRectangle rect(0, 0, 10, 10);
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_798.cpp:13:7: warning: 'AnnotMarkupTest_798' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class AnnotMarkupTest_798 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_798.cpp:3:
+In file included from /usr/include/gmock/gmock.h:65:
+/usr/include/gmock/gmock-nice-strict.h:145:16: error: no matching constructor for initialization of 'AnnotPopup'
+  145 |   NiceMock() : MockClass() {
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:97:39: note: in instantiation of member function 'testing::NiceMock<AnnotPopup>::NiceMock' requested here
+   97 |     { return ::new((void*)__location) _Tp(std::forward<_Args>(__args)...); }
+      |                                       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:651:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<testing::NiceMock<AnnotPopup>, std::allocator<testing::NiceMock<AnnotPopup>>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<>' requested here
+  651 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<testing::NiceMock<AnnotPopup>, std::allocator<testing::NiceMock<AnnotPopup>>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<testing::NiceMock<AnnotPopup>>::__shared_ptr<std::allocator<testing::NiceMock<AnnotPopup>>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<testing::NiceMock<AnnotPopup>>::shared_ptr<std::allocator<testing::NiceMock<AnnotPopup>>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<testing::NiceMock<AnnotPopup>, std::allocator<testing::NiceMock<AnnotPopup>>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_798.cpp:25:27: note: in instantiation of function template specialization 'std::make_shared<testing::NiceMock<AnnotPopup>>' requested here
+   25 |         mock_popup = std::make_shared<NiceMock<AnnotPopup>>();
+      |                           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:844:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  844 | class POPPLER_PRIVATE_EXPORT AnnotPopup : public Annot
+      |                              ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:847:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  847 |     AnnotPopup(PDFDoc *docA, PDFRectangle *rect);
+      |     ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:848:5: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  848 |     AnnotPopup(PDFDoc *docA, Object &&dictObject, const Object *obj);
+      |     ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_798.dir/build.make:79: generated_build/CMakeFiles/test_798.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_798.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:41866: generated_build/CMakeFiles/test_798.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:41873: generated_build/CMakeFiles/test_798.dir/rule] 오류 2
+gmake: *** [Makefile:13478: test_798] 오류 2

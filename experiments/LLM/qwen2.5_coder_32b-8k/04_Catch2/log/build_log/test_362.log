@@ -1,0 +1,134 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_362.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:41:9: error: field type 'RVB' (aka 'ResultValueBase<MockType>') is an abstract class
+   41 |     RVB okResult_{ResultType::Ok, MockType{}};
+      |         ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:159:30: note: unimplemented pure virtual method 'enforceOk' in 'ResultValueBase'
+  159 |                 virtual void enforceOk() const = 0;
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:43:9: error: field type 'RVB' (aka 'ResultValueBase<MockType>') is an abstract class
+   43 |     RVB logicErrorResult_{ResultType::LogicError};
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:45:9: error: field type 'RVB' (aka 'ResultValueBase<MockType>') is an abstract class
+   45 |     RVB runtimeErrorResult_{ResultType::RuntimeError};
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:55:9: error: variable type 'RVB' (aka 'ResultValueBase<MockType>') is an abstract class
+   55 |     RVB newResult{ResultType::LogicError};
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:69:9: error: variable type 'RVB' (aka 'ResultValueBase<MockType>') is an abstract class
+   69 |     RVB original{std::move(okResult_)};
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:83:9: error: variable type 'RVB' (aka 'ResultValueBase<MockType>') is an abstract class
+   83 |     RVB newResult{ResultType::Ok, MockType{}};
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:97:9: error: variable type 'RVB' (aka 'ResultValueBase<MockType>') is an abstract class
+   97 |     RVB newResult{ResultType::Ok, MockType{}};
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:135:23: error: allocating an object of abstract class type 'RVB' (aka 'ResultValueBase<MockType>')
+  135 |     RVB* result = new RVB{ResultType::Ok, MockType{}};
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:137:12: error: calling a protected destructor of class 'RVB' (aka 'ResultValueBase<MockType>')
+  137 |     delete result;
+      |            ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:217:17: note: declared protected here
+  217 |                 ~ResultValueBase() override {
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:147:23: error: allocating an object of abstract class type 'RVB' (aka 'ResultValueBase<MockType>')
+  147 |     RVB* result = new RVB{ResultType::LogicError};
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:149:12: error: calling a protected destructor of class 'RVB' (aka 'ResultValueBase<MockType>')
+  149 |     delete result;
+      |            ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:217:17: note: declared protected here
+  217 |                 ~ResultValueBase() override {
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:159:23: error: allocating an object of abstract class type 'RVB' (aka 'ResultValueBase<MockType>')
+  159 |     RVB* result = new RVB{ResultType::RuntimeError};
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:161:12: error: calling a protected destructor of class 'RVB' (aka 'ResultValueBase<MockType>')
+  161 |     delete result;
+      |            ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:217:17: note: declared protected here
+  217 |                 ~ResultValueBase() override {
+      |                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ResultValueBaseTest_362_MoveAssignmentWithOkResult_362_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ResultValueBaseTest_362_MoveAssignmentWithOkResult_362_Test>::CreateTest' requested here
+   53 | TEST_F(ResultValueBaseTest_362, MoveAssignmentWithOkResult_362) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ResultValueBaseTest_362_SelfMoveAssignment_362_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:67:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ResultValueBaseTest_362_SelfMoveAssignment_362_Test>::CreateTest' requested here
+   67 | TEST_F(ResultValueBaseTest_362, SelfMoveAssignment_362) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ResultValueBaseTest_362_MoveAssignmentWithLogicErrorResult_362_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:81:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ResultValueBaseTest_362_MoveAssignmentWithLogicErrorResult_362_Test>::CreateTest' requested here
+   81 | TEST_F(ResultValueBaseTest_362, MoveAssignmentWithLogicErrorResult_362) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ResultValueBaseTest_362_MoveAssignmentWithRuntimeErrorResult_362_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:95:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ResultValueBaseTest_362_MoveAssignmentWithRuntimeErrorResult_362_Test>::CreateTest' requested here
+   95 | TEST_F(ResultValueBaseTest_362, MoveAssignmentWithRuntimeErrorResult_362) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ResultValueBaseTest_362_RetrieveValueFromOkResult_362_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:109:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ResultValueBaseTest_362_RetrieveValueFromOkResult_362_Test>::CreateTest' requested here
+  109 | TEST_F(ResultValueBaseTest_362, RetrieveValueFromOkResult_362) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ResultValueBaseTest_362_RetrieveValueFromNonOkResult_ShouldNotCompile_362_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp:121:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ResultValueBaseTest_362_RetrieveValueFromNonOkResult_ShouldNotCompile_362_Test>::CreateTest' requested here
+  121 | TEST_F(ResultValueBaseTest_362, RetrieveValueFromNonOkResult_ShouldNotCompile_362) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_362.dir/build.make:79: generated_build/CMakeFiles/test_362.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_362.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:34064: generated_build/CMakeFiles/test_362.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:34071: generated_build/CMakeFiles/test_362.dir/rule] 오류 2
+gmake: *** [Makefile:12240: test_362] 오류 2

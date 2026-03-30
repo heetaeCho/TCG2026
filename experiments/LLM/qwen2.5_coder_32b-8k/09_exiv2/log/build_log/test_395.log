@@ -1,0 +1,121 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_395.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:23:42: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   23 |         tba = new TiffBinaryArray(0x123, IfdId::ExifIFD, arrayCfg, &arrayDef, 1);
+      |                                          ^~~~~
+      |                                          Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:23:42: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   23 |         tba = new TiffBinaryArray(0x123, IfdId::ExifIFD, arrayCfg, &arrayDef, 1);
+      |                                          ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:51:20: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffBinaryArray'
+   51 |     EXPECT_EQ(tba->doSize(), 0);
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1371:24: note: declared protected here
+ 1371 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:63:20: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffBinaryArray'
+   63 |     EXPECT_EQ(tba->doSize(), arrayCfg.tagStep());
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1371:24: note: declared protected here
+ 1371 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:77:20: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffBinaryArray'
+   77 |     EXPECT_EQ(tba->doSize(), 2 * arrayCfg.tagStep());
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1371:24: note: declared protected here
+ 1371 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:87:38: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   87 |     arrayDef.size = [](uint16_t tag, IfdId group) { return 10; };
+      |                                      ^~~~~
+      |                                      Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:87:33: warning: unused parameter 'tag' [-Wunused-parameter]
+   87 |     arrayDef.size = [](uint16_t tag, IfdId group) { return 10; };
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:87:44: warning: unused parameter 'group' [-Wunused-parameter]
+   87 |     arrayDef.size = [](uint16_t tag, IfdId group) { return 10; };
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:87:14: error: reference to non-static member function must be called
+   87 |     arrayDef.size = [](uint16_t tag, IfdId group) { return 10; };
+      |     ~~~~~~~~~^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:91:20: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffBinaryArray'
+   91 |     EXPECT_EQ(tba->doSize(), std::max<size_t>(2 * arrayCfg.tagStep(), 10));
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1371:24: note: declared protected here
+ 1371 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:99:10: error: 'arrayCfg_' is a private member of 'Exiv2::Internal::TiffBinaryArray'
+   99 |     tba->arrayCfg_ = nullptr;
+      |          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1380:19: note: declared private here
+ 1380 |   const ArrayCfg* arrayCfg_{};  //!< Pointer to the array configuration (must not be 0, except for
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:101:20: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffBinaryArray'
+  101 |     EXPECT_EQ(tba->doSize(), TiffEntryBase::doSize());
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1371:24: note: declared protected here
+ 1371 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:101:45: error: call to non-static member function without an object argument
+  101 |     EXPECT_EQ(tba->doSize(), TiffEntryBase::doSize());
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:101:45: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:529:24: note: declared protected here
+  529 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:109:10: error: 'decoded_' is a private member of 'Exiv2::Internal::TiffBinaryArray'
+  109 |     tba->decoded_ = false;
+      |          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1389:8: note: declared private here
+ 1389 |   bool decoded_{};              //!< Flag to indicate if the array was decoded
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:111:20: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffBinaryArray'
+  111 |     EXPECT_EQ(tba->doSize(), TiffEntryBase::doSize());
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1371:24: note: declared protected here
+ 1371 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:111:45: error: call to non-static member function without an object argument
+  111 |     EXPECT_EQ(tba->doSize(), TiffEntryBase::doSize());
+      |                              ~~~~~~~~~~~~~~~^~~~~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp:111:45: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:529:24: note: declared protected here
+  529 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+2 warnings and 16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_395.dir/build.make:79: generated_build/CMakeFiles/test_395.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_395.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:61839: generated_build/CMakeFiles/test_395.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:61846: generated_build/CMakeFiles/test_395.dir/rule] 오류 2
+gmake: *** [Makefile:21239: test_395] 오류 2

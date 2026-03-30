@@ -1,0 +1,88 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1660.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:19:31: error: no member named 'image' in 'Exiv2::SectionId'
+   19 |         tags[0] = {SectionId::image, TypeId::unsignedShort, 1, nullptr};
+      |                    ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:21:20: error: no member named 'exif' in 'Exiv2::SectionId'; did you mean 'exit'?
+   21 |         tags[1] = {SectionId::exif, TypeId::asciiString, 5, nullptr};
+      |                    ^~~~~~~~~~~~~~~
+      |                    exit
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/stdlib.h:40:12: note: 'exit' declared here
+   40 | using std::exit;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:21:17: error: no viable overloaded '='
+   21 |         tags[1] = {SectionId::exif, TypeId::asciiString, 5, nullptr};
+      |         ~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:224:17: note: candidate function (the implicit copy assignment operator) not viable: cannot convert initializer list argument to 'const TagInfo'
+  224 | struct EXIV2API TagInfo {
+      |                 ^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:224:17: note: candidate function (the implicit move assignment operator) not viable: cannot convert initializer list argument to 'TagInfo'
+  224 | struct EXIV2API TagInfo {
+      |                 ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:23:31: error: no member named 'gps' in 'Exiv2::SectionId'
+   23 |         tags[2] = {SectionId::gps, TypeId::rational, 3, nullptr};
+      |                    ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:23:44: error: no member named 'rational' in 'Exiv2::TypeId'
+   23 |         tags[2] = {SectionId::gps, TypeId::rational, 3, nullptr};
+      |                                    ~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:25:17: error: no viable overloaded '='
+   25 |         tags[3] = {0xffff, TypeId::undefined, 0, nullptr}; // End marker
+      |         ~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:224:17: note: candidate function (the implicit copy assignment operator) not viable: cannot convert initializer list argument to 'const TagInfo'
+  224 | struct EXIV2API TagInfo {
+      |                 ^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:224:17: note: candidate function (the implicit move assignment operator) not viable: cannot convert initializer list argument to 'TagInfo'
+  224 | struct EXIV2API TagInfo {
+      |                 ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:47:29: error: use of undeclared identifier 'findTag'
+   47 |     const TagInfo* result = findTag(mockTagList.tags, 0);
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:59:29: error: use of undeclared identifier 'findTag'
+   59 |     const TagInfo* result = findTag(mockTagList.tags, 99);
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:69:29: error: use of undeclared identifier 'findTag'
+   69 |     const TagInfo* result = findTag(mockTagList.tags, mockTagList.tags[0].tag_);
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:73:46: error: no member named 'image' in 'Exiv2::SectionId'
+   73 |     EXPECT_EQ(result->sectionId_, SectionId::image);
+      |                                   ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:81:29: error: use of undeclared identifier 'findTag'
+   81 |     const TagInfo* result = findTag(mockTagList.tags, mockTagList.tags[2].tag_);
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:85:46: error: no member named 'gps' in 'Exiv2::SectionId'
+   85 |     EXPECT_EQ(result->sectionId_, SectionId::gps);
+      |                                   ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp:93:29: error: use of undeclared identifier 'findTag'
+   93 |     const TagInfo* result = findTag(mockTagList.tags, 0xffff);
+      |                             ^
+13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1660.dir/build.make:79: generated_build/CMakeFiles/test_1660.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1660.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:59289: generated_build/CMakeFiles/test_1660.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:59296: generated_build/CMakeFiles/test_1660.dir/rule] 오류 2
+gmake: *** [Makefile:20264: test_1660] 오류 2

@@ -1,0 +1,42 @@
+[ 66%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_79.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp:29:8: error: class template specialization of 'streamable_to_string' must occur at global scope
+   29 | struct streamable_to_string<MockKey, true> {
+      |        ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/traits.h:121:8: note: explicitly specialized declaration is here
+  121 | struct streamable_to_string {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp:35:16: error: 'this' argument to member function 'ToString' has type 'const MockKey', but function is not marked const
+   35 |         return key.ToString();
+      |                ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp:17:18: note: 'ToString' declared here
+   17 |     MOCK_METHOD0(ToString, std::string());
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp:57:26: error: no template named 'streamable_to_string' in namespace 'YAML'; did you mean simply 'streamable_to_string'?
+   57 |     std::string result = YAML::streamable_to_string<MockKey, true>::impl(mockKey);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                          streamable_to_string
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/traits.h:121:8: note: 'streamable_to_string' declared here
+  121 | struct streamable_to_string {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp:73:26: error: no template named 'streamable_to_string' in namespace 'YAML'; did you mean simply 'streamable_to_string'?
+   73 |     std::string result = YAML::streamable_to_string<MockKey, true>::impl(mockKey);
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                          streamable_to_string
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/traits.h:121:8: note: 'streamable_to_string' declared here
+  121 | struct streamable_to_string {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp:89:76: error: too many arguments provided to function-like macro invocation
+   89 |     EXPECT_THROW(YAML::streamable_to_string<MockKey, true>::impl(mockKey), std::runtime_error);
+      |                                                                            ^
+/usr/include/gtest/gtest.h:1949:9: note: macro 'EXPECT_THROW' defined here
+ 1949 | #define EXPECT_THROW(statement, expected_exception) \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp:89:5: error: use of undeclared identifier 'EXPECT_THROW'
+   89 |     EXPECT_THROW(YAML::streamable_to_string<MockKey, true>::impl(mockKey), std::runtime_error);
+      |     ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_79.dir/build.make:79: generated_build/CMakeFiles/test_79.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_79.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8398: generated_build/CMakeFiles/test_79.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8405: generated_build/CMakeFiles/test_79.dir/rule] 오류 2
+gmake: *** [Makefile:2689: test_79] 오류 2

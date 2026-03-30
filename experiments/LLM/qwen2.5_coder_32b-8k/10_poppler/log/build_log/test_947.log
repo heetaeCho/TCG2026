@@ -1,0 +1,29 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_947.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_947.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_947.cpp:67:16: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   67 |     PDFDoc doc(move(fileName), nullopt, nullopt, [](){});
+      |                ^
+      |                std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_947.cpp:69:37: error: no member named 'getCString' in 'GooString'
+   69 |     EXPECT_STREQ(doc.getFileName()->getCString(), "testfile.pdf");
+      |                  ~~~~~~~~~~~~~~~~~  ^
+/usr/include/gtest/gtest.h:2113:60: note: expanded from macro 'EXPECT_STREQ'
+ 2113 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_947.cpp:11:7: warning: 'PDFDocTest_947' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class PDFDocTest_947 : public ::testing::Test {
+      |       ^
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_947.dir/build.make:79: generated_build/CMakeFiles/test_947.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_947.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:60042: generated_build/CMakeFiles/test_947.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:60049: generated_build/CMakeFiles/test_947.dir/rule] 오류 2
+gmake: *** [Makefile:20862: test_947] 오류 2

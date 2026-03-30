@@ -1,0 +1,29 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1080.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1080.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1080.cpp:17:25: error: allocating an object of abstract class type 'OutputDev'
+   17 |         outputDev = new OutputDev();
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/OutputDev.h:79:18: note: unimplemented pure virtual method 'upsideDown' in 'OutputDev'
+   79 |     virtual bool upsideDown() = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/OutputDev.h:82:18: note: unimplemented pure virtual method 'useDrawChar' in 'OutputDev'
+   82 |     virtual bool useDrawChar() = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/OutputDev.h:102:18: note: unimplemented pure virtual method 'interpretType3Chars' in 'OutputDev'
+  102 |     virtual bool interpretType3Chars() = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1080.cpp:35:50: error: unknown type name 'GfxLCMSProfile'; did you mean 'GfxLCMSProfilePtr'?
+   35 |     GfxLCMSProfilePtr profile = std::make_shared<GfxLCMSProfile>();
+      |                                                  ^~~~~~~~~~~~~~
+      |                                                  GfxLCMSProfilePtr
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:226:7: note: 'GfxLCMSProfilePtr' declared here
+  226 | using GfxLCMSProfilePtr = std::shared_ptr<void>;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1080.cpp:7:7: warning: 'OutputDevTest_1080' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class OutputDevTest_1080 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1080.dir/build.make:79: generated_build/CMakeFiles/test_1080.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1080.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:59082: generated_build/CMakeFiles/test_1080.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:59089: generated_build/CMakeFiles/test_1080.dir/rule] 오류 2
+gmake: *** [Makefile:20472: test_1080] 오류 2

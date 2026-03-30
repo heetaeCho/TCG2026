@@ -1,0 +1,47 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1482.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1482.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1482.cpp:31:20: error: no matching constructor for initialization of 'JBIG2Stream'
+   31 |         return new JBIG2Stream(0, std::move(*globalsStream), &globalsStreamRef);
+      |                    ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/JBIG2Stream.h:51:5: note: candidate constructor not viable: no known conversion from 'Ref *' to 'Object *' for 3rd argument
+   51 |     JBIG2Stream(std::unique_ptr<Stream> strA, Object &&globalsStreamA, Object *globalsStreamRefA);
+      |     ^                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/JBIG2Stream.h:48:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   48 | class JBIG2Stream : public OwnedFilterStream
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1482.cpp:81:1: error: expected unqualified-id
+   81 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1482.cpp:9:7: warning: 'JBIG2StreamTest_1482' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class JBIG2StreamTest_1482 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1482.cpp:1:
+/usr/include/gtest/gtest.h:1624:28: error: invalid operands to binary expression ('const Ref' and 'const std::nullptr_t')
+ 1624 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/gtest/gtest.h:1614:12: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1614 |   if (val1 op val2) {\
+      |       ~~~~ ^  ~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1482.cpp:71:5: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<Ref, std::nullptr_t>' requested here
+   71 |     EXPECT_NE(stream->getGlobalsStreamRef(), nullptr);
+      |     ^
+/usr/include/gtest/gtest.h:2046:44: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:102:13: note: candidate function not viable: no known conversion from 'const std::nullptr_t' to 'const Ref' for 2nd argument
+  102 | inline bool operator==(const Ref lhs, const Ref rhs) noexcept
+      |             ^                         ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:107:13: note: candidate function not viable: no known conversion from 'const std::nullptr_t' to 'const Ref' for 2nd argument
+  107 | inline bool operator!=(const Ref lhs, const Ref rhs) noexcept
+      |             ^                         ~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const Ref' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+/usr/include/gtest/gtest.h:1537:13: note: candidate function not viable: no known conversion from 'const Ref' to 'faketype' for 1st argument
+ 1537 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1482.dir/build.make:79: generated_build/CMakeFiles/test_1482.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1482.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15818: generated_build/CMakeFiles/test_1482.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15825: generated_build/CMakeFiles/test_1482.dir/rule] 오류 2
+gmake: *** [Makefile:2896: test_1482] 오류 2

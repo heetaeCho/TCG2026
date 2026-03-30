@@ -1,0 +1,78 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_595.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_595.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_595.cpp:93:42: error: too few arguments to function call, expected 3, have 2
+   93 |     EXPECT_TRUE(re.Replace(&result, "xyz"));
+      |                 ~~~~~~~~~~               ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/re2/re2/re2.h:480:15: note: 'Replace' declared here
+  480 |   static bool Replace(std::string* str,
+      |               ^       ~~~~~~~~~~~~~~~~~
+  481 |                       const RE2& re,
+      |                       ~~~~~~~~~~~~~~
+  482 |                       absl::string_view rewrite);
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_595.cpp:107:46: error: too few arguments to function call, expected 3, have 2
+  107 |     int count = re.GlobalReplace(&result, "x");
+      |                 ~~~~~~~~~~~~~~~~             ^
+/home/user/TCG2026/TestProjects/re2/re2/re2.h:497:14: note: 'GlobalReplace' declared here
+  497 |   static int GlobalReplace(std::string* str,
+      |              ^             ~~~~~~~~~~~~~~~~~
+  498 |                            const RE2& re,
+      |                            ~~~~~~~~~~~~~~
+  499 |                            absl::string_view rewrite);
+      |                            ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_595.cpp:123:58: error: too few arguments to function call, expected 4, have 3
+  123 |     EXPECT_TRUE(re.Extract("123-456", "$1-$2=$0", &result));
+      |                 ~~~~~~~~~~                               ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/re2/re2/re2.h:509:15: note: 'Extract' declared here
+  509 |   static bool Extract(absl::string_view text,
+      |               ^       ~~~~~~~~~~~~~~~~~~~~~~~
+  510 |                       const RE2& re,
+      |                       ~~~~~~~~~~~~~~
+  511 |                       absl::string_view rewrite,
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  512 |                       std::string* out);
+      |                       ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_595.cpp:137:59: error: too few arguments to function call, expected 4, have 3
+  137 |     EXPECT_FALSE(re.Extract("abc-def", "$1-$2=$0", &result));
+      |                  ~~~~~~~~~~                               ^
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/re2/re2/re2.h:509:15: note: 'Extract' declared here
+  509 |   static bool Extract(absl::string_view text,
+      |               ^       ~~~~~~~~~~~~~~~~~~~~~~~
+  510 |                       const RE2& re,
+      |                       ~~~~~~~~~~~~~~
+  511 |                       absl::string_view rewrite,
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~
+  512 |                       std::string* out);
+      |                       ~~~~~~~~~~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_595.dir/build.make:79: generated_build/CMakeFiles/test_595.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_595.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7529: generated_build/CMakeFiles/test_595.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7536: generated_build/CMakeFiles/test_595.dir/rule] 오류 2
+gmake: *** [Makefile:2441: test_595] 오류 2

@@ -1,0 +1,24 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_50.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_50.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_50.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const Catch::TextFlow::Column' and 'const Catch::TextFlow::Column')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Catch::TextFlow::Column, Catch::TextFlow::Column>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_50.cpp:67:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Catch::TextFlow::Column, Catch::TextFlow::Column, nullptr>' requested here
+   67 |     EXPECT_EQ(column->indent(10), *column);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const Catch::TextFlow::Column' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_50.dir/build.make:79: generated_build/CMakeFiles/test_50.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_50.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:36110: generated_build/CMakeFiles/test_50.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:36117: generated_build/CMakeFiles/test_50.dir/rule] 오류 2
+gmake: *** [Makefile:13046: test_50] 오류 2

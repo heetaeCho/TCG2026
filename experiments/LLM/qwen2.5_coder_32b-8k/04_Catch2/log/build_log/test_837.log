@@ -1,0 +1,265 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_837.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:63:5: error: only virtual member functions can be marked 'override'
+   63 |     MOCK_METHOD(const std::vector<std::string> &, getSectionsToRun, (), (const, override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:33:1: note: expanded from here
+   33 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:87:16: error: field type 'MockConfig' is an abstract class
+   87 |     MockConfig mockConfig;
+      |                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:77:22: note: unimplemented pure virtual method 'warnAboutInfiniteGenerators' in 'MockConfig'
+   77 |         virtual bool warnAboutInfiniteGenerators() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:91:48: note: unimplemented pure virtual method 'getPathFilters' in 'MockConfig'
+   91 |         virtual std::vector<PathFilter> const& getPathFilters() const = 0;
+      |                                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:92:22: note: unimplemented pure virtual method 'useNewFilterBehaviour' in 'MockConfig'
+   92 |         virtual bool useNewFilterBehaviour() const = 0;
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:91:26: error: no matching constructor for initialization of 'ReporterConfig'
+   91 |     ReporterConfig config{oss};
+      |                          ^~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::ostringstream' (aka 'basic_ostringstream<char>') to 'const ReporterConfig' for 1st argument
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: no known conversion from 'std::ostringstream' (aka 'basic_ostringstream<char>') to 'ReporterConfig' for 1st argument
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:97:29: error: no matching constructor for initialization of 'TestCaseInfo'
+   97 |     TestCaseInfo testInfo = TestCaseInfo{"ClassName"_sr, {"TestName", "Tag1 Tag2"}, SourceLineInfo{"file.cpp", 42}};
+      |                             ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:115:8: error: unknown class name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  115 | TEST_F(XmlReporterTest_837, TestCaseStartingWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:115:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  115 | TEST_F(XmlReporterTest_837, TestCaseStartingWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:115:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  115 | TEST_F(XmlReporterTest_837, TestCaseStartingWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:115:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  115 | TEST_F(XmlReporterTest_837, TestCaseStartingWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:127:8: error: unknown class name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  127 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoTagsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:127:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  127 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoTagsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:127:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  127 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoTagsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:127:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  127 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoTagsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:129:18: error: no matching constructor for initialization of 'TestCaseInfo'
+  129 |     TestCaseInfo testInfoWithoutTags{"ClassName"_sr, {"TestName", ""}, SourceLineInfo{"file.cpp", 42}};
+      |                  ^                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:141:8: error: unknown class name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  141 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoShowDurationsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:141:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  141 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoShowDurationsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:141:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  141 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoShowDurationsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:141:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  141 | TEST_F(XmlReporterTest_837, TestCaseStartingWithNoShowDurationsWritesCorrectXml_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:159:8: error: unknown class name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  159 | TEST_F(XmlReporterTest_837, TestCaseStartingWithWhitespaceTrimsCorrectly_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:159:8: error: unknown type name 'XmlReporterTest_837'; did you mean 'XmlReporterTest'?
+  159 | TEST_F(XmlReporterTest_837, TestCaseStartingWithWhitespaceTrimsCorrectly_837) {
+      |        ^~~~~~~~~~~~~~~~~~~
+      |        XmlReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp:83:7: note: 'XmlReporterTest' declared here
+   83 | class XmlReporterTest : public Test {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_837.dir/build.make:79: generated_build/CMakeFiles/test_837.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_837.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7070: generated_build/CMakeFiles/test_837.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7077: generated_build/CMakeFiles/test_837.dir/rule] 오류 2
+gmake: *** [Makefile:1606: test_837] 오류 2

@@ -1,0 +1,142 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_208.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:31:16: error: field type 'MockStream' is an abstract class
+   31 |     MockStream mockStream;
+      |                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'MockStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'MockStream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'MockStream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'MockStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'MockStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'MockStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:107:24: error: too few arguments to function call, expected 1, have 0; did you mean 'FilterStream::isBinary'?
+  107 |     EXPECT_EQ(encoder->isBinary(), expectedBinary);
+      |                        ^~~~~~~~
+      |                        FilterStream::isBinary
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: 'FilterStream::isBinary' declared here
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ASCIIHexEncoderTest_208_GetKindReturnsStrWeird_208_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ASCIIHexEncoderTest_208_GetKindReturnsStrWeird_208_Test>::CreateTest' requested here
+   47 | TEST_F(ASCIIHexEncoderTest_208, GetKindReturnsStrWeird_208) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ASCIIHexEncoderTest_208_RewindDelegatesToUnderlyingStream_208_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:55:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ASCIIHexEncoderTest_208_RewindDelegatesToUnderlyingStream_208_Test>::CreateTest' requested here
+   55 | TEST_F(ASCIIHexEncoderTest_208, RewindDelegatesToUnderlyingStream_208) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ASCIIHexEncoderTest_208_GetCharDelegatesToUnderlyingStream_208_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:65:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ASCIIHexEncoderTest_208_GetCharDelegatesToUnderlyingStream_208_Test>::CreateTest' requested here
+   65 | TEST_F(ASCIIHexEncoderTest_208, GetCharDelegatesToUnderlyingStream_208) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ASCIIHexEncoderTest_208_LookCharDelegatesToUnderlyingStream_208_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:77:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ASCIIHexEncoderTest_208_LookCharDelegatesToUnderlyingStream_208_Test>::CreateTest' requested here
+   77 | TEST_F(ASCIIHexEncoderTest_208, LookCharDelegatesToUnderlyingStream_208) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ASCIIHexEncoderTest_208_GetPSFilterDelegatesToUnderlyingStream_208_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:89:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ASCIIHexEncoderTest_208_GetPSFilterDelegatesToUnderlyingStream_208_Test>::CreateTest' requested here
+   89 | TEST_F(ASCIIHexEncoderTest_208, GetPSFilterDelegatesToUnderlyingStream_208) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ASCIIHexEncoderTest_208_IsBinaryDelegatesToUnderlyingStream_208_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:101:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ASCIIHexEncoderTest_208_IsBinaryDelegatesToUnderlyingStream_208_Test>::CreateTest' requested here
+  101 | TEST_F(ASCIIHexEncoderTest_208, IsBinaryDelegatesToUnderlyingStream_208) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ASCIIHexEncoderTest_208_IsEncoderReturnsTrue_208_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp:113:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ASCIIHexEncoderTest_208_IsEncoderReturnsTrue_208_Test>::CreateTest' requested here
+  113 | TEST_F(ASCIIHexEncoderTest_208, IsEncoderReturnsTrue_208) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_208.dir/build.make:79: generated_build/CMakeFiles/test_208.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_208.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:100426: generated_build/CMakeFiles/test_208.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:100433: generated_build/CMakeFiles/test_208.dir/rule] 오류 2
+gmake: *** [Makefile:37268: test_208] 오류 2

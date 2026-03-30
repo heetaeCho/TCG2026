@@ -1,0 +1,39 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1288.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1288.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1288.cpp:49:5: error: member access into incomplete type 'Exiv2::Value'
+   49 |     EXPECT_CALL(*xmpDatum.getValue().get(), size()).WillOnce(Return(5));
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1288.cpp:129:34: error: use of undeclared identifier 'unknownTypeId'
+  129 |     EXPECT_EQ(xmpDatum.typeId(), unknownTypeId);
+      |                                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1288.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1288.cpp:49:27: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::~unique_ptr' requested here
+   49 |     EXPECT_CALL(*xmpDatum.getValue().get(), size()).WillOnce(Return(5));
+      |                           ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1288.dir/build.make:79: generated_build/CMakeFiles/test_1288.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1288.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:69795: generated_build/CMakeFiles/test_1288.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:69802: generated_build/CMakeFiles/test_1288.dir/rule] 오류 2
+gmake: *** [Makefile:24281: test_1288] 오류 2

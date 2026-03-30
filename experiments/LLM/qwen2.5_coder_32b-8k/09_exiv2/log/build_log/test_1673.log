@@ -1,0 +1,196 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1673.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:21:34: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   21 |     MockTiffSubIfd(uint16_t tag, IfdId group, IfdId newGroup) : TiffSubIfd(tag, group, newGroup) {}
+      |                                  ^~~~~
+      |                                  Exiv2::IfdId
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:21:47: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   21 |     MockTiffSubIfd(uint16_t tag, IfdId group, IfdId newGroup) : TiffSubIfd(tag, group, newGroup) {}
+      |                                               ^~~~~
+      |                                               Exiv2::IfdId
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:45:45: error: use of undeclared identifier 'ifdExif'
+   45 |         subIfd = new MockTiffSubIfd(0x1234, ifdExif, ifdGps);
+      |                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:45:54: error: use of undeclared identifier 'ifdGps'
+   45 |         subIfd = new MockTiffSubIfd(0x1234, ifdExif, ifdGps);
+      |                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:47:9: error: no member named 'gmock_doAccept' in 'Exiv2::Internal::TiffSubIfd'
+   47 |         EXPECT_CALL(*subIfd, doAccept(::testing::_))
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:117:1: note: expanded from here
+  117 | gmock_doAccept
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:49:61: warning: unused parameter 'visitor' [-Wunused-parameter]
+   49 |             .WillOnce(::testing::Invoke([this](TiffVisitor& visitor) {
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:69:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   69 | TEST_F(TiffEncoderTest_1673, VisitSubIfdCallsDoAccept_1673) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:129:1: note: expanded from here
+  129 | TiffEncoderTest_1673_VisitSubIfdCallsDoAccept_1673_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:69:1: note: default constructor of 'TiffEncoderTest_1673_VisitSubIfdCallsDoAccept_1673_Test' is implicitly deleted because base class 'TiffEncoderTest_1673' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:39:17: note: default constructor of 'TiffEncoderTest_1673' is implicitly deleted because field 'encoder' has no default constructor
+   39 |     TiffEncoder encoder;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:69:1: note: replace 'default' with 'delete'
+   69 | TEST_F(TiffEncoderTest_1673, VisitSubIfdCallsDoAccept_1673) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:71:5: error: no member named 'gmock_doAccept' in 'Exiv2::Internal::TiffSubIfd'
+   71 |     EXPECT_CALL(*subIfd, doAccept(::testing::_)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:14:1: note: expanded from here
+   14 | gmock_doAccept
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:79:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   79 | TEST_F(TiffEncoderTest_1673, EncodeTiffComponentCalledOnVisit_1673) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:26:1: note: expanded from here
+   26 | TiffEncoderTest_1673_EncodeTiffComponentCalledOnVisit_1673_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:79:1: note: default constructor of 'TiffEncoderTest_1673_EncodeTiffComponentCalledOnVisit_1673_Test' is implicitly deleted because base class 'TiffEncoderTest_1673' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:39:17: note: default constructor of 'TiffEncoderTest_1673' is implicitly deleted because field 'encoder' has no default constructor
+   39 |     TiffEncoder encoder;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:79:1: note: replace 'default' with 'delete'
+   79 | TEST_F(TiffEncoderTest_1673, EncodeTiffComponentCalledOnVisit_1673) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'TiffEncoderTest_1673_VisitSubIfdCallsDoAccept_1673_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:69:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEncoderTest_1673_VisitSubIfdCallsDoAccept_1673_Test>::CreateTest' requested here
+   69 | TEST_F(TiffEncoderTest_1673, VisitSubIfdCallsDoAccept_1673) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:69:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:129:1: note: expanded from here
+  129 | TiffEncoderTest_1673_VisitSubIfdCallsDoAccept_1673_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:69:1: note: default constructor of 'TiffEncoderTest_1673_VisitSubIfdCallsDoAccept_1673_Test' is implicitly deleted because base class 'TiffEncoderTest_1673' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:39:17: note: default constructor of 'TiffEncoderTest_1673' is implicitly deleted because field 'encoder' has no default constructor
+   39 |     TiffEncoder encoder;
+      |                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'TiffEncoderTest_1673_EncodeTiffComponentCalledOnVisit_1673_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:79:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEncoderTest_1673_EncodeTiffComponentCalledOnVisit_1673_Test>::CreateTest' requested here
+   79 | TEST_F(TiffEncoderTest_1673, EncodeTiffComponentCalledOnVisit_1673) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:79:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:26:1: note: expanded from here
+   26 | TiffEncoderTest_1673_EncodeTiffComponentCalledOnVisit_1673_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:79:1: note: default constructor of 'TiffEncoderTest_1673_EncodeTiffComponentCalledOnVisit_1673_Test' is implicitly deleted because base class 'TiffEncoderTest_1673' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp:39:17: note: default constructor of 'TiffEncoderTest_1673' is implicitly deleted because field 'encoder' has no default constructor
+   39 |     TiffEncoder encoder;
+      |                 ^
+3 warnings and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1673.dir/build.make:79: generated_build/CMakeFiles/test_1673.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1673.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:25119: generated_build/CMakeFiles/test_1673.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:25126: generated_build/CMakeFiles/test_1673.dir/rule] 오류 2
+gmake: *** [Makefile:7199: test_1673] 오류 2

@@ -1,0 +1,84 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1481.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp:27:37: error: allocating an object of abstract class type 'Stream'
+   27 |         unique_ptr<Stream> strA(new Stream());  // Assuming Stream can be instantiated this way for testing
+      |                                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'Stream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'Stream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'Stream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'Stream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'Stream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'Stream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'Stream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'Stream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'Stream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'Stream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'Stream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'Stream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'Stream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp:29:48: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   29 |         jbig2Stream = make_unique<JBIG2Stream>(move(strA), move(globalsStreamA), &globalsStreamRefA);
+      |                                                ^
+      |                                                std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp:29:60: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   29 |         jbig2Stream = make_unique<JBIG2Stream>(move(strA), move(globalsStreamA), &globalsStreamRefA);
+      |                                                            ^
+      |                                                            std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp:67:5: error: cannot use 'try' with exceptions disabled
+   67 |     EXPECT_NO_THROW(jbig2Stream->close());
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp:15:7: warning: 'JBIG2StreamTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class JBIG2StreamTest : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'JBIG2Stream'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp:29:23: note: in instantiation of function template specialization 'std::make_unique<JBIG2Stream, std::unique_ptr<Stream>, Object, Ref *>' requested here
+   29 |         jbig2Stream = make_unique<JBIG2Stream>(move(strA), move(globalsStreamA), &globalsStreamRefA);
+      |                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/JBIG2Stream.h:51:5: note: candidate constructor not viable: no known conversion from 'Ref *' to 'Object *' for 3rd argument
+   51 |     JBIG2Stream(std::unique_ptr<Stream> strA, Object &&globalsStreamA, Object *globalsStreamRefA);
+      |     ^                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/JBIG2Stream.h:48:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   48 | class JBIG2Stream : public OwnedFilterStream
+      |       ^~~~~~~~~~~
+3 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1481.dir/build.make:79: generated_build/CMakeFiles/test_1481.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1481.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:101066: generated_build/CMakeFiles/test_1481.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:101073: generated_build/CMakeFiles/test_1481.dir/rule] 오류 2
+gmake: *** [Makefile:37528: test_1481] 오류 2

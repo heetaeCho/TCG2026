@@ -1,0 +1,45 @@
+Running main() from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from PutVarint64Test_443
+[ RUN      ] PutVarint64Test_443.NormalOperation_SmallValue_443
+[       OK ] PutVarint64Test_443.NormalOperation_SmallValue_443 (0 ms)
+[ RUN      ] PutVarint64Test_443.NormalOperation_MediumValue_443
+[       OK ] PutVarint64Test_443.NormalOperation_MediumValue_443 (0 ms)
+[ RUN      ] PutVarint64Test_443.NormalOperation_MaxValue_443
+[       OK ] PutVarint64Test_443.NormalOperation_MaxValue_443 (0 ms)
+[ RUN      ] PutVarint64Test_443.BoundaryCondition_Zero_443
+[       OK ] PutVarint64Test_443.BoundaryCondition_Zero_443 (0 ms)
+[ RUN      ] PutVarint64Test_443.BoundaryCondition_MaxSingleByte_443
+[       OK ] PutVarint64Test_443.BoundaryCondition_MaxSingleByte_443 (0 ms)
+[ RUN      ] PutVarint64Test_443.BoundaryCondition_MinMultiByte_443
+[       OK ] PutVarint64Test_443.BoundaryCondition_MinMultiByte_443 (0 ms)
+[ RUN      ] PutVarint64Test_443.BoundaryCondition_MaxMultiByte_443
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_443.cpp:119: Failure
+Expected equality of these values:
+  dst.size()
+    Which is: 8
+  9
+
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_443.cpp:123: Failure
+Expected equality of these values:
+  static_cast<unsigned char>(dst[i])
+    Which is: '\x7F' (127)
+  255
+
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_443.cpp:127: Failure
+Expected equality of these values:
+  static_cast<unsigned char>(dst[8])
+    Which is: '\0'
+  1
+
+[  FAILED  ] PutVarint64Test_443.BoundaryCondition_MaxMultiByte_443 (0 ms)
+[----------] 7 tests from PutVarint64Test_443 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] PutVarint64Test_443.BoundaryCondition_MaxMultiByte_443
+
+ 1 FAILED TEST

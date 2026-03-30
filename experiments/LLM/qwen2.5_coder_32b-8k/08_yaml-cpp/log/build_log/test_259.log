@@ -1,0 +1,68 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_259.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:31:10: error: call to deleted constructor of 'node'
+   31 |     auto result = n.get("existing_key", pMemory);
+      |          ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: 'node' has been explicitly marked deleted here
+   28 |   node(const node&) = delete;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:43:10: error: call to deleted constructor of 'node'
+   43 |     auto result = n.get("non_existing_key", pMemory);
+      |          ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: 'node' has been explicitly marked deleted here
+   28 |   node(const node&) = delete;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:55:10: error: call to deleted constructor of 'node'
+   55 |     auto result = n.get("", pMemory);
+      |          ^        ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: 'node' has been explicitly marked deleted here
+   28 |   node(const node&) = delete;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:73:10: error: call to deleted constructor of 'node'
+   73 |     auto result = n.get(max_size_key, pMemory);
+      |          ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: 'node' has been explicitly marked deleted here
+   28 |   node(const node&) = delete;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:87:10: error: call to deleted constructor of 'node'
+   87 |     auto result = n.get(null_key, pMemory);
+      |          ^        ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: 'node' has been explicitly marked deleted here
+   28 |   node(const node&) = delete;
+      |   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:1:
+/usr/include/gtest/gtest.h:1624:28: error: invalid operands to binary expression ('const YAML::detail::node' and 'const std::nullptr_t')
+ 1624 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/gtest/gtest.h:1614:12: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1614 |   if (val1 op val2) {\
+      |       ~~~~ ^  ~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:33:5: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<YAML::detail::node, std::nullptr_t>' requested here
+   33 |     EXPECT_NE(result, nullptr);
+      |     ^
+/usr/include/gtest/gtest.h:2046:44: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/include/gtest/gtest.h:1537:13: note: candidate function not viable: no known conversion from 'const YAML::detail::node' to 'faketype' for 1st argument
+ 1537 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const YAML::detail::node' and 'const std::nullptr_t')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<YAML::detail::node, std::nullptr_t>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp:45:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<YAML::detail::node, std::nullptr_t, nullptr>' requested here
+   45 |     EXPECT_EQ(result, nullptr);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const YAML::detail::node' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_259.dir/build.make:79: generated_build/CMakeFiles/test_259.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_259.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:20142: generated_build/CMakeFiles/test_259.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:20149: generated_build/CMakeFiles/test_259.dir/rule] 오류 2
+gmake: *** [Makefile:7460: test_259] 오류 2

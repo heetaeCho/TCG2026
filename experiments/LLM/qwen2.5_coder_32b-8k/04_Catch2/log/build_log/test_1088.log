@@ -1,0 +1,415 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1088.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:63:41: error: unknown type name 'MockIReporterFactory'; did you mean 'IReporterFactory'?
+   63 |     auto mockFactory = std::make_shared<MockIReporterFactory>();
+      |                                         ^~~~~~~~~~~~~~~~~~~~
+      |                                         IReporterFactory
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:22:11: note: 'IReporterFactory' declared here
+   22 |     class IReporterFactory;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:65:51: error: no viable conversion from 'shared_ptr<IReporterFactory>' to 'IReporterFactoryPtr' (aka 'unique_ptr<IReporterFactory>')
+   65 |     registry.registerReporter("MyCustomReporter", mockFactory);
+      |                                                   ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'shared_ptr<IReporterFactory>' to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'shared_ptr<IReporterFactory>' to 'const unique_ptr<IReporterFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'shared_ptr<IReporterFactory>' to 'unique_ptr<IReporterFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::shared_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:39:52: note: passing argument to parameter 'factory' here
+   39 |                                IReporterFactoryPtr factory );
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:81:44: error: unknown type name 'MockEventListenerFactory'; did you mean 'EventListenerFactory'?
+   81 |     auto mockFactory = Detail::make_unique<MockEventListenerFactory>();
+      |                                            ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                            EventListenerFactory
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: 'EventListenerFactory' declared here
+   25 |     class EventListenerFactory;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:97:20: error: variable has incomplete type 'ReporterConfig'
+   97 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:24:12: note: forward declaration of 'Catch::ReporterConfig'
+   24 |     struct ReporterConfig;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:109:37: error: base class has incomplete type
+  109 | class MockIReporterFactory : public IReporterFactory {
+      |                              ~~~~~~~^~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:22:11: note: forward declaration of 'Catch::IReporterFactory'
+   22 |     class IReporterFactory;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:113:5: error: only virtual member functions can be marked 'override'
+  113 |     MOCK_METHOD(IEventListenerPtr, create, (ReporterConfig &&config), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:7:1: note: expanded from here
+    7 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:119:41: error: base class has incomplete type
+  119 | class MockEventListenerFactory : public EventListenerFactory {
+      |                                  ~~~~~~~^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: forward declaration of 'Catch::EventListenerFactory'
+   25 |     class EventListenerFactory;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:17: error: unknown type name 'EventListenerPtr'; did you mean 'IEventListenerPtr'?
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |                 ^~~~~~~~~~~~~~~~
+      |                 IEventListenerPtr
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |                                                           ^
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |                                                        ^
+/usr/include/gmock/gmock-function-mocker.h:93:54: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   93 |       GMOCK_PP_NARG0 _Args, GMOCK_INTERNAL_SIGNATURE(_Ret, _Args));           \
+      |                                                      ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/usr/include/gmock/gmock-function-mocker.h:126:24: note: expanded from macro 'GMOCK_INTERNAL_ASSERT_VALID_SIGNATURE'
+  126 |       std::is_function<__VA_ARGS__>::value,                            \
+      |                        ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:21:11: note: 'IEventListenerPtr' declared here
+   21 |     using IEventListenerPtr = Detail::unique_ptr<IEventListener>;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:17: error: unknown type name 'EventListenerPtr'; did you mean 'IEventListenerPtr'?
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |                 ^~~~~~~~~~~~~~~~
+      |                 IEventListenerPtr
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |                                                           ^
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |                                                        ^
+/usr/include/gmock/gmock-function-mocker.h:93:54: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   93 |       GMOCK_PP_NARG0 _Args, GMOCK_INTERNAL_SIGNATURE(_Ret, _Args));           \
+      |                                                      ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/usr/include/gmock/gmock-function-mocker.h:131:15: note: expanded from macro 'GMOCK_INTERNAL_ASSERT_VALID_SIGNATURE'
+  131 |               __VA_ARGS__>::ArgumentTuple>::value == _N,               \
+      |               ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:21:11: note: 'IEventListenerPtr' declared here
+   21 |     using IEventListenerPtr = Detail::unique_ptr<IEventListener>;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:17: error: unknown type name 'EventListenerPtr'; did you mean 'IEventListenerPtr'?
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |                 ^~~~~~~~~~~~~~~~
+      |                 IEventListenerPtr
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |                                                           ^
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |                                                        ^
+/usr/include/gmock/gmock-function-mocker.h:100:33: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  100 |       (GMOCK_INTERNAL_SIGNATURE(_Ret, _Args)))
+      |                                 ^
+note: (skipping 3 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/internal/gmock-pp.h:125:69: note: expanded from macro 'GMOCK_PP_REMOVE_PARENS'
+  125 | #define GMOCK_PP_REMOVE_PARENS(...) GMOCK_PP_INTERNAL_REMOVE_PARENS __VA_ARGS__
+      |                                                                     ^
+/usr/include/gmock/internal/gmock-pp.h:184:46: note: expanded from macro 'GMOCK_PP_INTERNAL_REMOVE_PARENS'
+  184 | #define GMOCK_PP_INTERNAL_REMOVE_PARENS(...) __VA_ARGS__
+      |                                              ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:21:11: note: 'IEventListenerPtr' declared here
+   21 |     using IEventListenerPtr = Detail::unique_ptr<IEventListener>;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:5: error: only virtual member functions can be marked 'override'
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:72:1: note: expanded from here
+   72 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:17: error: unknown type name 'EventListenerPtr'; did you mean 'IEventListenerPtr'?
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |                 ^~~~~~~~~~~~~~~~
+      |                 IEventListenerPtr
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |                                                           ^
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |                                                        ^
+/usr/include/gmock/gmock-function-mocker.h:100:33: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  100 |       (GMOCK_INTERNAL_SIGNATURE(_Ret, _Args)))
+      |                                 ^
+note: (skipping 3 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/internal/gmock-pp.h:125:69: note: expanded from macro 'GMOCK_PP_REMOVE_PARENS'
+  125 | #define GMOCK_PP_REMOVE_PARENS(...) GMOCK_PP_INTERNAL_REMOVE_PARENS __VA_ARGS__
+      |                                                                     ^
+/usr/include/gmock/internal/gmock-pp.h:184:46: note: expanded from macro 'GMOCK_PP_INTERNAL_REMOVE_PARENS'
+  184 | #define GMOCK_PP_INTERNAL_REMOVE_PARENS(...) __VA_ARGS__
+      |                                              ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:21:11: note: 'IEventListenerPtr' declared here
+   21 |     using IEventListenerPtr = Detail::unique_ptr<IEventListener>;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:17: error: unknown type name 'EventListenerPtr'; did you mean 'IEventListenerPtr'?
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |                 ^~~~~~~~~~~~~~~~
+      |                 IEventListenerPtr
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |                                                           ^
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |                                                        ^
+/usr/include/gmock/gmock-function-mocker.h:100:33: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  100 |       (GMOCK_INTERNAL_SIGNATURE(_Ret, _Args)))
+      |                                 ^
+note: (skipping 3 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/internal/gmock-pp.h:125:69: note: expanded from macro 'GMOCK_PP_REMOVE_PARENS'
+  125 | #define GMOCK_PP_REMOVE_PARENS(...) GMOCK_PP_INTERNAL_REMOVE_PARENS __VA_ARGS__
+      |                                                                     ^
+/usr/include/gmock/internal/gmock-pp.h:184:46: note: expanded from macro 'GMOCK_PP_INTERNAL_REMOVE_PARENS'
+  184 | #define GMOCK_PP_INTERNAL_REMOVE_PARENS(...) __VA_ARGS__
+      |                                              ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:21:11: note: 'IEventListenerPtr' declared here
+   21 |     using IEventListenerPtr = Detail::unique_ptr<IEventListener>;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:17: error: unknown type name 'EventListenerPtr'; did you mean 'IEventListenerPtr'?
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |                 ^~~~~~~~~~~~~~~~
+      |                 IEventListenerPtr
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |                                                           ^
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |                                                        ^
+/usr/include/gmock/gmock-function-mocker.h:100:33: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  100 |       (GMOCK_INTERNAL_SIGNATURE(_Ret, _Args)))
+      |                                 ^
+note: (skipping 3 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/internal/gmock-pp.h:125:69: note: expanded from macro 'GMOCK_PP_REMOVE_PARENS'
+  125 | #define GMOCK_PP_REMOVE_PARENS(...) GMOCK_PP_INTERNAL_REMOVE_PARENS __VA_ARGS__
+      |                                                                     ^
+/usr/include/gmock/internal/gmock-pp.h:184:46: note: expanded from macro 'GMOCK_PP_INTERNAL_REMOVE_PARENS'
+  184 | #define GMOCK_PP_INTERNAL_REMOVE_PARENS(...) __VA_ARGS__
+      |                                              ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:21:11: note: 'IEventListenerPtr' declared here
+   21 |     using IEventListenerPtr = Detail::unique_ptr<IEventListener>;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:123:17: error: unknown type name 'EventListenerPtr'; did you mean 'IEventListenerPtr'?
+  123 |     MOCK_METHOD(EventListenerPtr, create, (), (const, override));
+      |                 ^~~~~~~~~~~~~~~~
+      |                 IEventListenerPtr
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |                                                           ^
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |                                                        ^
+/usr/include/gmock/gmock-function-mocker.h:100:33: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  100 |       (GMOCK_INTERNAL_SIGNATURE(_Ret, _Args)))
+      |                                 ^
+note: (skipping 3 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/internal/gmock-pp.h:125:69: note: expanded from macro 'GMOCK_PP_REMOVE_PARENS'
+  125 | #define GMOCK_PP_REMOVE_PARENS(...) GMOCK_PP_INTERNAL_REMOVE_PARENS __VA_ARGS__
+      |                                                                     ^
+/usr/include/gmock/internal/gmock-pp.h:184:46: note: expanded from macro 'GMOCK_PP_INTERNAL_REMOVE_PARENS'
+  184 | #define GMOCK_PP_INTERNAL_REMOVE_PARENS(...) __VA_ARGS__
+      |                                              ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:21:11: note: 'IEventListenerPtr' declared here
+   21 |     using IEventListenerPtr = Detail::unique_ptr<IEventListener>;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:77:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:53:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:60:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h:91:28: error: invalid application of 'sizeof' to an incomplete type 'Catch::IReporterFactory'
+   91 |     : std::aligned_storage<sizeof(_Tp), __alignof__(_Tp)>
+      |                            ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:506:35: note: in instantiation of template class '__gnu_cxx::__aligned_buffer<Catch::IReporterFactory>' requested here
+  506 |         __gnu_cxx::__aligned_buffer<_Tp> _M_storage;
+      |                                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:567:13: note: in instantiation of member class 'std::_Sp_counted_ptr_inplace<Catch::IReporterFactory, std::allocator<Catch::IReporterFactory>, __gnu_cxx::_S_atomic>::_Impl' requested here
+  567 |       _Impl _M_impl;
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:647:13: note: in instantiation of template class 'std::_Sp_counted_ptr_inplace<Catch::IReporterFactory, std::allocator<Catch::IReporterFactory>, __gnu_cxx::_S_atomic>' requested here
+  647 |           typename _Sp_cp_type::__allocator_type __a2(__a._M_a);
+      |                    ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<Catch::IReporterFactory, std::allocator<Catch::IReporterFactory>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<Catch::IReporterFactory>::__shared_ptr<std::allocator<Catch::IReporterFactory>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<Catch::IReporterFactory>::shared_ptr<std::allocator<Catch::IReporterFactory>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<Catch::IReporterFactory, std::allocator<Catch::IReporterFactory>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:63:29: note: in instantiation of function template specialization 'std::make_shared<Catch::IReporterFactory>' requested here
+   63 |     auto mockFactory = std::make_shared<MockIReporterFactory>();
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:22:11: note: forward declaration of 'Catch::IReporterFactory'
+   22 |     class IReporterFactory;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:77:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:53:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:60:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h:94:23: error: invalid application of 'sizeof' to an incomplete type 'Catch::IReporterFactory'
+   94 |         std::aligned_storage<sizeof(_Tp), __alignof__(_Tp)>::type _M_storage;
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:22:11: note: forward declaration of 'Catch::IReporterFactory'
+   22 |     class IReporterFactory;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:5:
+In file included from /home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:12:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:111:34: error: allocation of incomplete type 'Catch::EventListenerFactory'
+  111 |         return unique_ptr<T>(new T(CATCH_FORWARD(args)...));
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:81:32: note: in instantiation of function template specialization 'Catch::Detail::make_unique<Catch::EventListenerFactory>' requested here
+   81 |     auto mockFactory = Detail::make_unique<MockEventListenerFactory>();
+      |                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: forward declaration of 'Catch::EventListenerFactory'
+   25 |     class EventListenerFactory;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:5:
+In file included from /home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:12:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::EventListenerFactory' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:81:24: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::EventListenerFactory>::~unique_ptr' requested here
+   81 |     auto mockFactory = Detail::make_unique<MockEventListenerFactory>();
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: forward declaration of 'Catch::EventListenerFactory'
+   25 |     class EventListenerFactory;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:59:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/move.h:57:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:946:30: error: incomplete type 'Catch::ReporterConfig' used in type trait expression
+  946 |     : public __bool_constant<__is_constructible(_Tp, _Args...)>
+      |                              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:953:16: note: in instantiation of template class 'std::__is_constructible_impl<Catch::ReporterConfig &&, Catch::ReporterConfig>' requested here
+  953 |       : public __is_constructible_impl<_Tp, _Args...>
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:153:26: note: in instantiation of template class 'std::is_constructible<Catch::ReporterConfig &&, Catch::ReporterConfig>' requested here
+  153 |     : public conditional<_B1::value, _B2, _B1>::type
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:562:11: note: in instantiation of template class 'std::__and_<std::is_constructible<Catch::ReporterConfig &&, Catch::ReporterConfig>, std::is_convertible<Catch::ReporterConfig, Catch::ReporterConfig &&>>' requested here
+  562 |           return __and_<is_constructible<_Types, _UTypes>...,
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:631:26: note: in instantiation of function template specialization 'std::_TupleConstraints<true, Catch::ReporterConfig &&>::__is_implicitly_constructible<Catch::ReporterConfig>' requested here
+  631 |           _TCC<_Cond>::template __is_implicitly_constructible<_Args...>(),
+      |                                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:740:46: note: in instantiation of template type alias '_ImplicitCtor' requested here
+  740 |                _ImplicitCtor<_Valid, _UElements...> = true>
+      |                                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/tuple:742:2: note: while substituting prior template arguments into non-type template parameter [with _UElements = <Catch::ReporterConfig>, _Valid = true]
+  742 |         tuple(_UElements&&... __elements)
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  743 |         noexcept(__nothrow_constructible<_UElements...>())
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  744 |         : _Inherited(std::forward<_UElements>(__elements)...) { }
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1597:19: note: while substituting deduced template arguments into function template 'tuple' [with _UElements = <Catch::ReporterConfig>, _Valid = (no value), $2 = (no value)]
+ 1597 |     ArgumentTuple tuple(std::forward<Args>(args)...);
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp:113:5: note: in instantiation of member function 'testing::internal::FunctionMocker<Catch::Detail::unique_ptr<Catch::IEventListener> (Catch::ReporterConfig &&)>::Invoke' requested here
+  113 |     MOCK_METHOD(IEventListenerPtr, create, (ReporterConfig &&config), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:7:1: note: expanded from here
+    7 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:10: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:24:12: note: forward declaration of 'Catch::ReporterConfig'
+   24 |     struct ReporterConfig;
+      |            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1088.dir/build.make:79: generated_build/CMakeFiles/test_1088.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1088.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:13868: generated_build/CMakeFiles/test_1088.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:13875: generated_build/CMakeFiles/test_1088.dir/rule] 오류 2
+gmake: *** [Makefile:4284: test_1088] 오류 2

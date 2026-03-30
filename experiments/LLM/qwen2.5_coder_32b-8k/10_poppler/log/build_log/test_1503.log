@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1503.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1503.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1503.cpp:113:17: error: no matching function for call to 'parse'
+  113 |     auto cmap = CMap::parse(&cache, "testCollection", stream);
+      |                 ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/CMap.h:54:34: note: candidate function not viable: no known conversion from 'Stream *' to 'const std::string' (aka 'const basic_string<char>') for 3rd argument
+   54 |     static std::shared_ptr<CMap> parse(CMapCache *cache, const std::string &collectionA, const std::string &cMapNameA);
+      |                                  ^                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/CMap.h:81:34: note: candidate function not viable: no known conversion from 'CMapCache *' to 'const std::string' (aka 'const basic_string<char>') for 1st argument
+   81 |     static std::shared_ptr<CMap> parse(const std::string &collectionA, Object *obj, RefRecursionChecker &recursion);
+      |                                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/CMap.h:50:34: note: candidate function not viable: requires 2 arguments, but 3 were provided
+   50 |     static std::shared_ptr<CMap> parse(const std::string &collectionA, Object *obj);
+      |                                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/CMap.h:82:34: note: candidate function not viable: requires 4 arguments, but 3 were provided
+   82 |     static std::shared_ptr<CMap> parse(CMapCache *cache, const std::string &collectionA, Stream *str, RefRecursionChecker &recursion);
+      |                                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1503.cpp:131:1: error: expected unqualified-id
+  131 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1503.cpp:7:7: warning: 'CMapTest_1503' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class CMapTest_1503 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1503.dir/build.make:79: generated_build/CMakeFiles/test_1503.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1503.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:56298: generated_build/CMakeFiles/test_1503.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:56305: generated_build/CMakeFiles/test_1503.dir/rule] 오류 2
+gmake: *** [Makefile:19341: test_1503] 오류 2

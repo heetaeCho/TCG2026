@@ -1,0 +1,89 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_768.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp:15:34: error: expected class name
+   15 |     class MockThumbnail : public Thumbnail {
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp:19:9: error: only virtual member functions can be marked 'override'
+   19 |         MOCK_METHOD(const char*, mimeType, (), (const, override));
+      |         ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:26:1: note: expanded from here
+   26 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp:21:16: error: unknown type name 'UniquePtr'; did you mean 'Key::UniquePtr'?
+   21 |         static UniquePtr create(const ExifData & exifData) {
+      |                ^~~~~~~~~
+      |                Key::UniquePtr
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:33:9: note: 'Key::UniquePtr' declared here
+   33 |   using UniquePtr = std::unique_ptr<Key>;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp:25:20: error: no viable conversion from returned value of type 'unique_ptr<Exiv2::MockThumbnail>' to function return type 'unique_ptr<Key>'
+   25 |             return mock;
+      |                    ^~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:320:12: note: candidate constructor template not viable: no known conversion from 'typename _MakeUniq<MockThumbnail>::__single_object' (aka 'unique_ptr<Exiv2::MockThumbnail>') to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  320 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:327:7: note: candidate constructor not viable: no known conversion from 'typename _MakeUniq<MockThumbnail>::__single_object' (aka 'unique_ptr<Exiv2::MockThumbnail>') to 'unique_ptr<Key> &&' for 1st argument
+  327 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: candidate constructor not viable: no known conversion from 'typename _MakeUniq<MockThumbnail>::__single_object' (aka 'unique_ptr<Exiv2::MockThumbnail>') to 'const unique_ptr<Key> &' for 1st argument
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:340:2: note: candidate template ignored: requirement '__and_<std::__and_<std::is_convertible<Exiv2::MockThumbnail *, Exiv2::Key *>, std::__not_<std::is_array<Exiv2::MockThumbnail>>>, std::is_convertible<std::default_delete<Exiv2::MockThumbnail>, std::default_delete<Exiv2::Key>>>::value' was not satisfied [with _Up = Exiv2::MockThumbnail, _Ep = std::default_delete<Exiv2::MockThumbnail>]
+  340 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:350:2: note: candidate template ignored: could not match 'auto_ptr' against 'std::unique_ptr'
+  350 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:281:2: note: explicit constructor is not a candidate
+  281 |         unique_ptr(pointer __p) noexcept
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp:21:50: warning: unused parameter 'exifData' [-Wunused-parameter]
+   21 |         static UniquePtr create(const ExifData & exifData) {
+      |                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp:41:33: error: no matching constructor for initialization of 'Exiv2::ExifThumbC'
+   41 |     Exiv2::ExifThumbC exifThumbC{exifData};
+      |                                 ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:219:16: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'MockExifData' to 'const ExifThumbC' for 1st argument
+  219 | class EXIV2API ExifThumbC {
+      |                ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:219:16: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'MockExifData' to 'ExifThumbC' for 1st argument
+  219 | class EXIV2API ExifThumbC {
+      |                ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:224:12: note: candidate constructor not viable: no known conversion from 'MockExifData' to 'const ExifData' for 1st argument
+  224 |   explicit ExifThumbC(const ExifData& exifData);
+      |            ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp:89:18: error: no matching constructor for initialization of 'Exiv2::ExifThumbC'
+   89 |     exifThumbC = Exiv2::ExifThumbC{exifData};
+      |                  ^                ~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:219:16: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'MockExifData' to 'const ExifThumbC' for 1st argument
+  219 | class EXIV2API ExifThumbC {
+      |                ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:219:16: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'MockExifData' to 'ExifThumbC' for 1st argument
+  219 | class EXIV2API ExifThumbC {
+      |                ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:224:12: note: candidate constructor not viable: no known conversion from 'MockExifData' to 'const ExifData' for 1st argument
+  224 |   explicit ExifThumbC(const ExifData& exifData);
+      |            ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_768.dir/build.make:79: generated_build/CMakeFiles/test_768.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_768.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:23759: generated_build/CMakeFiles/test_768.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:23766: generated_build/CMakeFiles/test_768.dir/rule] 오류 2
+gmake: *** [Makefile:6679: test_768] 오류 2

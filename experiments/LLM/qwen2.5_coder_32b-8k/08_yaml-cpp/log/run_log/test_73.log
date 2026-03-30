@@ -1,0 +1,81 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from StreamTest_73
+[ RUN      ] StreamTest_73.EofReturnsCorrectValue_73
+[       OK ] StreamTest_73.EofReturnsCorrectValue_73 (0 ms)
+[ RUN      ] StreamTest_73.PeekOnEmptyStreamReturnsEof_73
+[       OK ] StreamTest_73.PeekOnEmptyStreamReturnsEof_73 (0 ms)
+[ RUN      ] StreamTest_73.GetOnEmptyStreamReturnsEof_73
+[       OK ] StreamTest_73.GetOnEmptyStreamReturnsEof_73 (0 ms)
+[ RUN      ] StreamTest_73.EatZeroCharactersDoesNothing_73
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_73.cpp:61: Failure
+Expected equality of these values:
+  'a'
+    Which is: 'a' (97, 0x61)
+  stream.peek()
+    Which is: '\x4' (4)
+[  FAILED  ] StreamTest_73.EatZeroCharactersDoesNothing_73 (0 ms)
+[ RUN      ] StreamTest_73.EatMoreCharactersThanAvailableReturnsEof_73
+[       OK ] StreamTest_73.EatMoreCharactersThanAvailableReturnsEof_73 (0 ms)
+[ RUN      ] StreamTest_73.GetSingleCharacterFromStream_73
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_73.cpp:83: Failure
+Expected equality of these values:
+  'a'
+    Which is: 'a' (97, 0x61)
+  stream.get()
+    Which is: '\x4' (4)
+[  FAILED  ] StreamTest_73.GetSingleCharacterFromStream_73 (0 ms)
+[ RUN      ] StreamTest_73.PeekMultipleTimesReturnsSameCharacter_73
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_73.cpp:93: Failure
+Expected equality of these values:
+  'b'
+    Which is: 'b' (98, 0x62)
+  stream.peek()
+    Which is: '\x4' (4)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_73.cpp:95: Failure
+Expected equality of these values:
+  'b'
+    Which is: 'b' (98, 0x62)
+  stream.peek()
+    Which is: '\x4' (4)
+[  FAILED  ] StreamTest_73.PeekMultipleTimesReturnsSameCharacter_73 (0 ms)
+[ RUN      ] StreamTest_73.GetMultipleCharactersFromStream_73
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_73.cpp:107: Failure
+Expected equality of these values:
+  "abc"
+  result
+    Which is: "\x4\x4\x4"
+[  FAILED  ] StreamTest_73.GetMultipleCharactersFromStream_73 (0 ms)
+[ RUN      ] StreamTest_73.EatSpecificNumberOfCharacters_73
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_73.cpp:119: Failure
+Expected equality of these values:
+  'c'
+    Which is: 'c' (99, 0x63)
+  stream.peek()
+    Which is: '\x4' (4)
+[  FAILED  ] StreamTest_73.EatSpecificNumberOfCharacters_73 (0 ms)
+[ RUN      ] StreamTest_73.GetWithNegativeNumberReturnsEmptyString_73
+[       OK ] StreamTest_73.GetWithNegativeNumberReturnsEmptyString_73 (0 ms)
+[ RUN      ] StreamTest_73.StreamBoolOperatorOnNonEmptyStream_73
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_73.cpp:141: Failure
+Value of: static_cast<bool>(stream)
+  Actual: false
+Expected: true
+[  FAILED  ] StreamTest_73.StreamBoolOperatorOnNonEmptyStream_73 (0 ms)
+[ RUN      ] StreamTest_73.StreamBoolOperatorOnEmptyStreamAfterEat_73
+[       OK ] StreamTest_73.StreamBoolOperatorOnEmptyStreamAfterEat_73 (0 ms)
+[----------] 12 tests from StreamTest_73 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] StreamTest_73.EatZeroCharactersDoesNothing_73
+[  FAILED  ] StreamTest_73.GetSingleCharacterFromStream_73
+[  FAILED  ] StreamTest_73.PeekMultipleTimesReturnsSameCharacter_73
+[  FAILED  ] StreamTest_73.GetMultipleCharactersFromStream_73
+[  FAILED  ] StreamTest_73.EatSpecificNumberOfCharacters_73
+[  FAILED  ] StreamTest_73.StreamBoolOperatorOnNonEmptyStream_73
+
+ 6 FAILED TESTS

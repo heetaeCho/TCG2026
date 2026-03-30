@@ -1,0 +1,29 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_29.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_29.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_29.cpp:111:39: error: reference to local variable 'isDeleted' declared in enclosing function 'UniquePtrTest_29_DestructorReleasesMemory_29_Test::TestBody'
+  111 |     struct Deletable { ~Deletable() { isDeleted = true; } };
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_29.cpp:109:10: note: 'isDeleted' declared here
+  109 |     bool isDeleted = false;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_29.cpp:135:18: error: member reference base type 'int' is not a structure or union
+  135 |     EXPECT_EQ(ptr->operator*(), 84);
+      |               ~~~^~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_29.dir/build.make:79: generated_build/CMakeFiles/test_29.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_29.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:29675: generated_build/CMakeFiles/test_29.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:29682: generated_build/CMakeFiles/test_29.dir/rule] 오류 2
+gmake: *** [Makefile:10511: test_29] 오류 2

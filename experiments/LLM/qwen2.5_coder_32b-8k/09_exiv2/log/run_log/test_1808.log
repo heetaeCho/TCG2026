@@ -1,0 +1,52 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from UriTest_1808
+[ RUN      ] UriTest_1808.Decode_EmptyUriComponents_1808
+[       OK ] UriTest_1808.Decode_EmptyUriComponents_1808 (0 ms)
+[ RUN      ] UriTest_1808.Decode_PercentEncodedUriComponents_1808
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1808.cpp:99: Failure
+Expected equality of these values:
+  "user%name"
+  uri.Username
+    Which is: "userzme"
+[  FAILED  ] UriTest_1808.Decode_PercentEncodedUriComponents_1808 (0 ms)
+[ RUN      ] UriTest_1808.Decode_UriWithNoPercentEncoding_1808
+[       OK ] UriTest_1808.Decode_UriWithNoPercentEncoding_1808 (0 ms)
+[ RUN      ] UriTest_1808.Decode_BoundaryCases_1808
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1808.cpp:161: Failure
+Expected equality of these values:
+  "%"
+  uri.QueryString
+    Which is: ""
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1808.cpp:163: Failure
+Expected equality of these values:
+  "/%"
+  uri.Path
+    Which is: "/"
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1808.cpp:165: Failure
+Expected equality of these values:
+  "ex%ample.com"
+  uri.Host
+    Which is: "ex\xA6ple.com"
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1808.cpp:167: Failure
+Expected equality of these values:
+  "%user"
+  uri.Username
+    Which is: "\xEC" "er"
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1808.cpp:169: Failure
+Expected equality of these values:
+  "p%"
+  uri.Password
+    Which is: "p"
+[  FAILED  ] UriTest_1808.Decode_BoundaryCases_1808 (0 ms)
+[----------] 4 tests from UriTest_1808 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] UriTest_1808.Decode_PercentEncodedUriComponents_1808
+[  FAILED  ] UriTest_1808.Decode_BoundaryCases_1808
+
+ 2 FAILED TESTS

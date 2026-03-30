@@ -1,0 +1,50 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_335.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:17:48: error: use of undeclared identifier 'ParseFlags'; did you mean 'Regexp::ParseFlags'?
+   17 |         regexp = new Regexp(RegexpOp::kConcat, ParseFlags::None);
+      |                                                ^~~~~~~~~~
+      |                                                Regexp::ParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:281:8: note: 'Regexp::ParseFlags' declared here
+  281 |   enum ParseFlags {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:17:39: error: no member named 'kConcat' in 're2::RegexpOp'
+   17 |         regexp = new Regexp(RegexpOp::kConcat, ParseFlags::None);
+      |                             ~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:17:60: error: no member named 'None' in 're2::Regexp::ParseFlags'
+   17 |         regexp = new Regexp(RegexpOp::kConcat, ParseFlags::None);
+      |                                                ~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:25:16: error: calling a private destructor of class 'Regexp'
+   25 |         delete regexp;
+      |                ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:490:3: note: declared private here
+  490 |   ~Regexp();
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:77:33: error: 'kMaxRef' is a private member of 're2::Regexp'
+   77 |     for (int i = 1; i < Regexp::kMaxRef; ++i) {
+      |                                 ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:582:25: note: declared private here
+  582 |   static const uint16_t kMaxRef = 0xffff;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:83:38: error: 'kMaxRef' is a private member of 're2::Regexp'
+   83 |     EXPECT_EQ(regexp->Ref(), Regexp::kMaxRef);
+      |                                      ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:582:25: note: declared private here
+  582 |   static const uint16_t kMaxRef = 0xffff;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:93:34: error: 'kMaxRef' is a private member of 're2::Regexp'
+   93 |     for (int i = 1; i <= Regexp::kMaxRef + 10; ++i) {
+      |                                  ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:582:25: note: declared private here
+  582 |   static const uint16_t kMaxRef = 0xffff;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp:99:38: error: 'kMaxRef' is a private member of 're2::Regexp'
+   99 |     EXPECT_EQ(regexp->Ref(), Regexp::kMaxRef);
+      |                                      ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:582:25: note: declared private here
+  582 |   static const uint16_t kMaxRef = 0xffff;
+      |                         ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_335.dir/build.make:79: generated_build/CMakeFiles/test_335.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_335.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:18729: generated_build/CMakeFiles/test_335.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:18736: generated_build/CMakeFiles/test_335.dir/rule] 오류 2
+gmake: *** [Makefile:6991: test_335] 오류 2

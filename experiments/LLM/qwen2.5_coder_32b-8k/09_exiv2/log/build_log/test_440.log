@@ -1,0 +1,37 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_440.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_440.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_440.cpp:15:5: warning: 'ExifData' defined as a struct here but previously declared as a class; this is valid, but may result in linker errors under the Microsoft C++ ABI [-Wmismatched-tags]
+   15 |     struct ExifData {};
+      |     ^
+/home/user/TCG2026/TestProjects/exiv2/src/nikonmn_int.hpp:26:1: note: did you mean struct here?
+   26 | class ExifData;
+      | ^~~~~
+      | struct
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_440.cpp:43:11: error: non-const lvalue reference to type 'const TagInfo *' cannot bind to a temporary of type 'const TagInfo *'
+   43 |     auto& tagList = Nikon3MakerNote::tagListCb1();
+      |           ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_440.cpp:45:47: error: 'tagInfoCb1_' is a private member of 'Exiv2::Internal::Nikon3MakerNote'
+   45 |     EXPECT_TRUE(&tagList == &Nikon3MakerNote::tagInfoCb1_);
+      |                                               ^
+/home/user/TCG2026/TestProjects/exiv2/src/nikonmn_int.hpp:360:24: note: declared private here
+  360 |   static const TagInfo tagInfoCb1_[];
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_440.cpp:45:26: error: comparison of distinct pointer types ('const TagInfo **' and 'const TagInfo (*)[]')
+   45 |     EXPECT_TRUE(&tagList == &Nikon3MakerNote::tagInfoCb1_);
+      |                 ~~~~~~~~ ^  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_440.dir/build.make:79: generated_build/CMakeFiles/test_440.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_440.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:48239: generated_build/CMakeFiles/test_440.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:48246: generated_build/CMakeFiles/test_440.dir/rule] 오류 2
+gmake: *** [Makefile:16039: test_440] 오류 2

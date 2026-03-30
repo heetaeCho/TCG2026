@@ -1,0 +1,43 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from DblToByteTest_390
+[ RUN      ] DblToByteTest_390.NormalOperation_390
+[       OK ] DblToByteTest_390.NormalOperation_390 (0 ms)
+[ RUN      ] DblToByteTest_390.BoundaryConditions_390
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_390.cpp:35: Failure
+Expected equality of these values:
+  dblToByte(-0.1)
+    Which is: '\xE7' (231)
+  0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_390.cpp:37: Failure
+Expected equality of these values:
+  dblToByte(1.1)
+    Which is: '\x18' (24)
+  255
+[  FAILED  ] DblToByteTest_390.BoundaryConditions_390 (0 ms)
+[ RUN      ] DblToByteTest_390.EdgeCases_390
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_390.cpp:47: Failure
+Expected equality of these values:
+  dblToByte(0.999999)
+    Which is: '\xFE' (254)
+  255
+[  FAILED  ] DblToByteTest_390.EdgeCases_390 (0 ms)
+[ RUN      ] DblToByteTest_390.MaxMinValues_390
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_390.cpp:57: Failure
+Expected equality of these values:
+  dblToByte(std::numeric_limits<double>::max())
+    Which is: '\0'
+  255
+[  FAILED  ] DblToByteTest_390.MaxMinValues_390 (0 ms)
+[----------] 4 tests from DblToByteTest_390 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] DblToByteTest_390.BoundaryConditions_390
+[  FAILED  ] DblToByteTest_390.EdgeCases_390
+[  FAILED  ] DblToByteTest_390.MaxMinValues_390
+
+ 3 FAILED TESTS

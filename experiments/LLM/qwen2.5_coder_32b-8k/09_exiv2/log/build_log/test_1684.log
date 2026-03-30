@@ -1,0 +1,112 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1684.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:3:1: error: expected unqualified-id
+    3 | ```cpp
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:53:18: error: virtual function 'value' has a different return type ('const Value *') than the function it overrides (which has return type 'const Value &')
+   53 |     const Value* value() const override { return pValue_; }
+      |           ~~~~~~ ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:183:30: note: overridden virtual function is here
+  183 |   [[nodiscard]] const Value& value() const override;
+      |                       ~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:49:11: error: no matching constructor for initialization of 'Exifdatum'
+   49 |         : Exifdatum(tag, group), pValue_(nullptr) {}
+      |           ^         ~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:61:12: note: candidate constructor not viable: no known conversion from 'uint16_t' (aka 'unsigned short') to 'const ExifKey' for 1st argument
+   61 |   explicit Exifdatum(const ExifKey& key, const Value* pValue = nullptr);
+      |            ^         ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:63:3: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+   63 |   Exifdatum(const Exifdatum& rhs);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:53:50: error: no viable conversion from returned value of type 'const std::unique_ptr<Value>' to function return type 'const Value *'
+   53 |     const Value* value() const override { return pValue_; }
+      |                                                  ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:77:43: error: use of undeclared identifier 'ifdExif'
+   77 |     MockTiffImageEntry imageEntry(0x011A, ifdExif, 0x0128, ifdExif);
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:77:60: error: use of undeclared identifier 'ifdExif'
+   77 |     MockTiffImageEntry imageEntry(0x011A, ifdExif, 0x0128, ifdExif);
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:79:37: error: use of undeclared identifier 'ifdExif'
+   79 |     MockExifdatum exifDatum(0x011A, ifdExif);
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:87:29: error: no type named 'RationalValue' in namespace 'Exiv2'
+   87 |     auto pSize = new Exiv2::RationalValue(sizes.begin(), sizes.end());
+      |                      ~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:97:37: error: use of undeclared identifier 'IptcData'
+   97 |     TiffEncoder encoder(ExifData(), IptcData(), XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:97:49: error: use of undeclared identifier 'XmpData'
+   97 |     TiffEncoder encoder(ExifData(), IptcData(), XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:97:17: error: variable has incomplete type 'TiffEncoder'
+   97 |     TiffEncoder encoder(ExifData(), IptcData(), XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:41:7: note: forward declaration of 'Exiv2::Internal::TiffEncoder'
+   41 | class TiffEncoder;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:115:26: error: 'strips_' is a private member of 'Exiv2::Internal::TiffImageEntry'
+  115 |     EXPECT_EQ(imageEntry.strips_.size(), 1);
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:769:10: note: declared private here
+  769 |   Strips strips_;  //!< Image strips data (never alloc'd) and sizes
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:117:26: error: 'strips_' is a private member of 'Exiv2::Internal::TiffImageEntry'
+  117 |     EXPECT_EQ(imageEntry.strips_[0].pData_, data);
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:769:10: note: declared private here
+  769 |   Strips strips_;  //!< Image strips data (never alloc'd) and sizes
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:117:37: error: no member named 'pData_' in 'std::pair<const unsigned char *, unsigned long>'
+  117 |     EXPECT_EQ(imageEntry.strips_[0].pData_, data);
+      |               ~~~~~~~~~~~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:119:26: error: 'strips_' is a private member of 'Exiv2::Internal::TiffImageEntry'
+  119 |     EXPECT_EQ(imageEntry.strips_[0].size_, 100);
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:769:10: note: declared private here
+  769 |   Strips strips_;  //!< Image strips data (never alloc'd) and sizes
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:119:37: error: no member named 'size_' in 'std::pair<const unsigned char *, unsigned long>'
+  119 |     EXPECT_EQ(imageEntry.strips_[0].size_, 100);
+      |               ~~~~~~~~~~~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:129:43: error: use of undeclared identifier 'ifdExif'
+  129 |     MockTiffImageEntry imageEntry(0x011A, ifdExif, 0x0128, ifdExif);
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:129:60: error: use of undeclared identifier 'ifdExif'
+  129 |     MockTiffImageEntry imageEntry(0x011A, ifdExif, 0x0128, ifdExif);
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp:131:37: error: use of undeclared identifier 'ifdExif'
+  131 |     MockExifdatum exifDatum(0x011A, ifdExif);
+      |                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1684.dir/build.make:79: generated_build/CMakeFiles/test_1684.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1684.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:54971: generated_build/CMakeFiles/test_1684.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:54978: generated_build/CMakeFiles/test_1684.dir/rule] 오류 2
+gmake: *** [Makefile:18613: test_1684] 오류 2

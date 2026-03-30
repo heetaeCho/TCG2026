@@ -1,0 +1,125 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_360.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:21:9: error: only virtual member functions can be marked 'override'
+   21 |         MOCK_METHOD(void, SeekToLast, (), (override));
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:24:1: note: expanded from here
+   24 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:29:22: error: field has incomplete type 'MemTableIterator'
+   29 |     MemTableIterator iterator;
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.h:18:7: note: forward declaration of 'leveldb::MemTableIterator'
+   18 | class MemTableIterator;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:91:20: error: no member named 'SetStatus' in 'leveldb::MemTableIteratorTest_360::MockMemTable'
+   91 |         mock_table.SetStatus(Status::IOError("Simulated error"));
+      |         ~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:87:61: error: 'Invoke<(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:87:68)>' is deprecated: Actions can now be implicitly constructed from callables. No need to create wrapper objects using Invoke(). [-Werror,-Wdeprecated-declarations]
+   87 |     EXPECT_CALL(mock_table, SeekToLast()).WillOnce(testing::Invoke([&]() {
+      |                                                             ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-actions.h:2056:1: note: 'Invoke<(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:87:68)>' has been explicitly marked deprecated here
+ 2056 | GTEST_INTERNAL_DEPRECATE_AND_INLINE(
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-port.h:2337:5: note: expanded from macro 'GTEST_INTERNAL_DEPRECATE_AND_INLINE'
+ 2337 |   [[deprecated(msg), clang::annotate("inline-me")]]
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:13:7: error: attempt to use a deleted function
+   13 | class MemTableIteratorTest_360 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:33:5: note: in implicit destructor for 'leveldb::MemTableIteratorTest_360' first required here
+   33 |     MemTableIteratorTest_360() : iterator(&mock_table) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:17:26: note: destructor of 'MockMemTable' is implicitly deleted because base class 'MemTable' has an inaccessible destructor
+   17 |     class MockMemTable : public MemTable {
+      |                          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::MemTableIteratorTest_360_SeekToLast_CallsUnderlyingSeekToLast_360_Test *'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:39:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::MemTableIteratorTest_360_SeekToLast_CallsUnderlyingSeekToLast_360_Test>::CreateTest' requested here
+   39 | TEST_F(MemTableIteratorTest_360, SeekToLast_CallsUnderlyingSeekToLast_360) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::MemTableIteratorTest_360_Valid_ReturnsFalse_WhenNoElements_360_Test *'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::MemTableIteratorTest_360_Valid_ReturnsFalse_WhenNoElements_360_Test>::CreateTest' requested here
+   53 | TEST_F(MemTableIteratorTest_360, Valid_ReturnsFalse_WhenNoElements_360) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::MemTableIteratorTest_360_Status_ReturnsOk_AfterSeekToLast_360_Test *'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:67:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::MemTableIteratorTest_360_Status_ReturnsOk_AfterSeekToLast_360_Test>::CreateTest' requested here
+   67 | TEST_F(MemTableIteratorTest_360, Status_ReturnsOk_AfterSeekToLast_360) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'leveldb::MemTableIteratorTest_360_Status_ReturnsError_WhenSeekFails_360_Test *'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp:83:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<leveldb::MemTableIteratorTest_360_Status_ReturnsError_WhenSeekFails_360_Test>::CreateTest' requested here
+   83 | TEST_F(MemTableIteratorTest_360, Status_ReturnsError_WhenSeekFails_360) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_360.dir/build.make:76: generated_build/CMakeFiles/test_360.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_360.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3458: generated_build/CMakeFiles/test_360.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3465: generated_build/CMakeFiles/test_360.dir/rule] 오류 2
+gmake: *** [Makefile:1206: test_360] 오류 2

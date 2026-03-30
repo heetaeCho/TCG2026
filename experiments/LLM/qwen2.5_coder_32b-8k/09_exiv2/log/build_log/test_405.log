@@ -1,0 +1,98 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_405.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:23:40: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   23 |         dir = new TiffDirectory(0x123, IfdId::rootIFD, false);
+      |                                        ^~~~~
+      |                                        Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:23:40: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   23 |         dir = new TiffDirectory(0x123, IfdId::rootIFD, false);
+      |                                        ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:41:20: error: 'doSizeImage' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   41 |     EXPECT_EQ(dir->doSizeImage(), 0ul);
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:904:24: note: declared protected here
+  904 |   [[nodiscard]] size_t doSizeImage() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:49:61: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   49 |     auto component = std::make_shared<TiffComponent>(0x123, IfdId::rootIFD);
+      |                                                             ^~~~~
+      |                                                             Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:49:61: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   49 |     auto component = std::make_shared<TiffComponent>(0x123, IfdId::rootIFD);
+      |                                                             ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:51:29: error: use of undeclared identifier 'sizeImage'
+   51 |     EXPECT_CALL(*component, sizeImage()).WillOnce(::testing::Return(42ul));
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:51:62: error: no member named 'Return' in namespace 'testing'
+   51 |     EXPECT_CALL(*component, sizeImage()).WillOnce(::testing::Return(42ul));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:53:10: error: 'doAddChild' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   53 |     dir->doAddChild(component);
+      |          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:857:18: note: declared protected here
+  857 |   TiffComponent* doAddChild(SharedPtr tiffComponent) override;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:55:20: error: 'doSizeImage' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   55 |     EXPECT_EQ(dir->doSizeImage(), 42ul);
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:904:24: note: declared protected here
+  904 |   [[nodiscard]] size_t doSizeImage() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:63:62: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   63 |     auto component1 = std::make_shared<TiffComponent>(0x123, IfdId::rootIFD);
+      |                                                              ^~~~~
+      |                                                              Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:63:62: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   63 |     auto component1 = std::make_shared<TiffComponent>(0x123, IfdId::rootIFD);
+      |                                                              ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:65:30: error: use of undeclared identifier 'sizeImage'
+   65 |     EXPECT_CALL(*component1, sizeImage()).WillOnce(::testing::Return(42ul));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:65:63: error: no member named 'Return' in namespace 'testing'
+   65 |     EXPECT_CALL(*component1, sizeImage()).WillOnce(::testing::Return(42ul));
+      |                                                    ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:69:62: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   69 |     auto component2 = std::make_shared<TiffComponent>(0x456, IfdId::exifIFD);
+      |                                                              ^~~~~
+      |                                                              Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:69:62: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   69 |     auto component2 = std::make_shared<TiffComponent>(0x456, IfdId::exifIFD);
+      |                                                              ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:71:30: error: use of undeclared identifier 'sizeImage'
+   71 |     EXPECT_CALL(*component2, sizeImage()).WillOnce(::testing::Return(24ul));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:71:63: error: no member named 'Return' in namespace 'testing'
+   71 |     EXPECT_CALL(*component2, sizeImage()).WillOnce(::testing::Return(24ul));
+      |                                                    ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:75:10: error: 'doAddChild' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   75 |     dir->doAddChild(component1);
+      |          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:857:18: note: declared protected here
+  857 |   TiffComponent* doAddChild(SharedPtr tiffComponent) override;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp:77:10: error: 'doAddChild' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   77 |     dir->doAddChild(component2);
+      |          ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:857:18: note: declared protected here
+  857 |   TiffComponent* doAddChild(SharedPtr tiffComponent) override;
+      |                  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_405.dir/build.make:79: generated_build/CMakeFiles/test_405.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_405.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:30593: generated_build/CMakeFiles/test_405.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:30600: generated_build/CMakeFiles/test_405.dir/rule] 오류 2
+gmake: *** [Makefile:9292: test_405] 오류 2

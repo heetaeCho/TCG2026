@@ -1,0 +1,194 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1841.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:51:5: error: unknown type name 'Converter'
+   51 |     Converter converter{mockExifData, mockXmpData};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:89: error: 'this' cannot be implicitly captured in this context
+   59 |         ON_CALL(mockExifData, findKey(_)).WillByDefault([](const ExifKey& key) { return mockExifData.end(); });
+      |                                                                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:58: note: explicitly capture 'this'
+   59 |         ON_CALL(mockExifData, findKey(_)).WillByDefault([](const ExifKey& key) { return mockExifData.end(); });
+      |                                                          ^
+      |                                                          this
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:57: error: no viable conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:57)' to 'const Action<_List_iterator<Exifdatum> (const ExifKey &)>'
+   59 |         ON_CALL(mockExifData, findKey(_)).WillByDefault([](const ExifKey& key) { return mockExifData.end(); });
+      |                                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:57)' to 'const Action<_List_iterator<Exifdatum> (const ExifKey &)> &' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/usr/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:57)' to 'Action<_List_iterator<Exifdatum> (const ExifKey &)> &&' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/usr/include/gmock/gmock-actions.h:471:3: note: candidate template ignored: requirement 'internal::is_constructible<std::function<std::_List_iterator<Exiv2::Exifdatum> ()>, (lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:57)>::value' was not satisfied [with G = (lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:59:57)]
+  471 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/include/gmock/gmock-actions.h:476:12: note: explicit constructor is not a candidate
+  476 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/include/gmock/gmock-actions.h:483:12: note: explicit constructor is not a candidate
+  483 |   explicit Action(const Action<Func>& action) : fun_(action.fun_) {}
+      |            ^
+/usr/include/gmock/gmock-spec-builders.h:331:46: note: passing argument to parameter 'action' here
+  331 |   OnCallSpec& WillByDefault(const Action<F>& action) {
+      |                                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:71:13: error: variable has incomplete type 'ExifKey'
+   71 |     ExifKey key("Exif.Image.Flash");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:89:13: error: variable has incomplete type 'ExifKey'
+   89 |     ExifKey key("Exif.Image.Flash");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:93:72: error: use of undeclared identifier 'exifData_'
+   93 |     EXPECT_CALL(mockExifData, findKey(key)).WillOnce(::testing::Return(exifData_.insert({key, *exifDatum}).first));
+      |                                                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:111:13: error: variable has incomplete type 'ExifKey'
+  111 |     ExifKey key("Exif.Image.Flash");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:113:22: error: allocating an object of abstract class type 'Value'
+  113 |     auto value = new Value(Exiv2::unsignedLong);
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'Value'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'Value'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'Value'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'Value'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'Value'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'Value'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'Value'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'Value'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'Value'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'Value'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'Value'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:119:72: error: use of undeclared identifier 'exifData_'
+  119 |     EXPECT_CALL(mockExifData, findKey(key)).WillOnce(::testing::Return(exifData_.insert({key, *exifDatum}).first));
+      |                                                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:139:13: error: variable has incomplete type 'ExifKey'
+  139 |     ExifKey key("Exif.Image.Flash");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:141:22: error: allocating an object of abstract class type 'Value'
+  141 |     auto value = new Value(Exiv2::unsignedLong);
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:149:72: error: use of undeclared identifier 'exifData_'
+  149 |     EXPECT_CALL(mockExifData, findKey(key)).WillOnce(::testing::Return(exifData_.insert({key, *exifDatum}).first));
+      |                                                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:177:13: error: variable has incomplete type 'ExifKey'
+  177 |     ExifKey key("Exif.Image.Flash");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:179:22: error: allocating an object of abstract class type 'Value'
+  179 |     auto value = new Value(Exiv2::unsignedLong);
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:187:72: error: use of undeclared identifier 'exifData_'
+  187 |     EXPECT_CALL(mockExifData, findKey(key)).WillOnce(::testing::Return(exifData_.insert({key, *exifDatum}).first));
+      |                                                                        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:1:
+In file included from /usr/include/gtest/gtest.h:64:
+In file included from /usr/include/gtest/gtest-death-test.h:41:
+In file included from /usr/include/gtest/internal/gtest-death-test-internal.h:39:
+/usr/include/gtest/gtest-matchers.h:179:60: error: invalid operands to binary expression ('const Exiv2::XmpKey' and 'const Exiv2::XmpKey')
+  179 |   bool operator()(const A& a, const B& b) const { return a == b; }
+      |                                                          ~ ^  ~
+/usr/include/gtest/gtest-matchers.h:716:12: note: in instantiation of function template specialization 'testing::internal::AnyEq::operator()<Exiv2::XmpKey, Exiv2::XmpKey>' requested here
+  716 |     return Op()(lhs, Unwrap(rhs_));
+      |            ^
+/usr/include/gtest/gtest-matchers.h:352:22: note: in instantiation of function template specialization 'testing::internal::ComparisonBase<testing::internal::EqMatcher<Exiv2::XmpKey>, Exiv2::XmpKey, testing::internal::AnyEq>::MatchAndExplain<Exiv2::XmpKey>' requested here
+  352 |     return P::Get(m).MatchAndExplain(value, listener->stream());
+      |                      ^
+/usr/include/gtest/gtest-matchers.h:390:41: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Exiv2::XmpKey &>::MatchAndExplainImpl<testing::internal::MatcherBase<const Exiv2::XmpKey &>::ValuePolicy<testing::internal::EqMatcher<Exiv2::XmpKey>>>' requested here
+  390 |     static constexpr VTable kVTable = {&MatchAndExplainImpl<P>,
+      |                                         ^
+/usr/include/gtest/gtest-matchers.h:464:15: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Exiv2::XmpKey &>::GetVTable<testing::internal::MatcherBase<const Exiv2::XmpKey &>::ValuePolicy<testing::internal::EqMatcher<Exiv2::XmpKey>>>' requested here
+  464 |     vtable_ = GetVTable<Policy>();
+      |               ^
+/usr/include/gtest/gtest-matchers.h:298:5: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Exiv2::XmpKey &>::Init<testing::internal::EqMatcher<Exiv2::XmpKey>>' requested here
+  298 |     Init(std::forward<M>(m));
+      |     ^
+/usr/include/gtest/gtest-matchers.h:499:20: note: in instantiation of function template specialization 'testing::internal::MatcherBase<const Exiv2::XmpKey &>::MatcherBase<testing::internal::EqMatcher<Exiv2::XmpKey>, void>' requested here
+  499 |   Matcher(M&& m) : internal::MatcherBase<T>(std::forward<M>(m)) {}  // NOLINT
+      |                    ^
+/usr/include/gtest/gtest-matchers.h:880:40: note: in instantiation of function template specialization 'testing::Matcher<const Exiv2::XmpKey &>::Matcher<testing::internal::EqMatcher<Exiv2::XmpKey>, void>' requested here
+  880 | Matcher<T>::Matcher(T value) { *this = Eq(value); }
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:157:34: note: in instantiation of member function 'testing::Matcher<const Exiv2::XmpKey &>::Matcher' requested here
+  157 |     EXPECT_CALL(mockXmpData, add(XmpKey("Xmp.exif.Flash/exif:Fired"), _)).Times(1);
+      |                                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ConverterTest_1841_cnvExifFlash_ValueNotFound_1841_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:69:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ConverterTest_1841_cnvExifFlash_ValueNotFound_1841_Test>::CreateTest' requested here
+   69 | TEST_F(ConverterTest_1841, cnvExifFlash_ValueNotFound_1841) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ConverterTest_1841_cnvExifFlash_ValueCountZero_1841_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:87:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ConverterTest_1841_cnvExifFlash_ValueCountZero_1841_Test>::CreateTest' requested here
+   87 | TEST_F(ConverterTest_1841, cnvExifFlash_ValueCountZero_1841) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ConverterTest_1841_cnvExifFlash_ValueInvalid_1841_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp:109:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ConverterTest_1841_cnvExifFlash_ValueInvalid_1841_Test>::CreateTest' requested here
+  109 | TEST_F(ConverterTest_1841, cnvExifFlash_ValueInvalid_1841) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1841.dir/build.make:79: generated_build/CMakeFiles/test_1841.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1841.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:70169: generated_build/CMakeFiles/test_1841.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:70176: generated_build/CMakeFiles/test_1841.dir/rule] 오류 2
+gmake: *** [Makefile:24424: test_1841] 오류 2

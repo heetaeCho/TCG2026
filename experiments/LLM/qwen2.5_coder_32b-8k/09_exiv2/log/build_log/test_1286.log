@@ -1,0 +1,91 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1286.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:19:24: error: unknown type name 'clone'
+   19 |     MOCK_CONST_METHOD0(clone, XmpKey::UniquePtr());
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:19:5: error: a type specifier is required for all declarations
+   19 |     MOCK_CONST_METHOD0(clone, XmpKey::UniquePtr());
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:31:24: error: unknown type name 'typeId'; did you mean 'TypeId'?
+   31 |     MOCK_CONST_METHOD0(typeId, TypeId());
+      |                        ^~~~~~
+      |                        TypeId
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:68:6: note: 'TypeId' declared here
+   68 | enum TypeId {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:31:5: error: a type specifier is required for all declarations
+   31 |     MOCK_CONST_METHOD0(typeId, TypeId());
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:79:25: error: use of undeclared identifier 'typeId'
+   79 |     EXPECT_CALL(*value, typeId()).WillOnce(::testing::Return(Exiv2::asciiString));
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:79:55: error: no member named 'Return' in namespace 'testing'
+   79 |     EXPECT_CALL(*value, typeId()).WillOnce(::testing::Return(Exiv2::asciiString));
+      |                                            ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:103:25: error: use of undeclared identifier 'typeId'
+  103 |     EXPECT_CALL(*value, typeId()).WillOnce(::testing::Return(static_cast<TypeId>(Exiv2::lastTypeId + 1)));
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:103:55: error: no member named 'Return' in namespace 'testing'
+  103 |     EXPECT_CALL(*value, typeId()).WillOnce(::testing::Return(static_cast<TypeId>(Exiv2::lastTypeId + 1)));
+      |                                            ~~~~~~~~~~~^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'MockXmpKey'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:47:20: note: in instantiation of function template specialization 'std::make_unique<MockXmpKey>' requested here
+   47 |         key = std::make_unique<MockXmpKey>();
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:15:20: note: default constructor of 'MockXmpKey' is implicitly deleted because base class 'XmpKey' has no default constructor
+   15 | class MockXmpKey : public XmpKey {
+      |                    ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockValue'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp:49:22: note: in instantiation of function template specialization 'std::make_unique<MockValue, Exiv2::TypeId>' requested here
+   49 |         value = std::make_unique<MockValue>(Exiv2::asciiString);
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'MockValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'MockValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'MockValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'MockValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'MockValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'MockValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'MockValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'MockValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'MockValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1286.dir/build.make:79: generated_build/CMakeFiles/test_1286.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1286.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:32157: generated_build/CMakeFiles/test_1286.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:32164: generated_build/CMakeFiles/test_1286.dir/rule] 오류 2
+gmake: *** [Makefile:9890: test_1286] 오류 2

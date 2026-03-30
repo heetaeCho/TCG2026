@@ -1,0 +1,64 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1198.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:19:5: error: constructor for 'TextWordTest_1198' must explicitly initialize the member 'state' which does not have a default constructor
+   19 |     TextWordTest_1198() : word(&state, 0, 12.0) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:13:14: note: member is declared here
+   13 |     GfxState state;
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1463:30: note: 'GfxState' declared here
+ 1463 | class POPPLER_PRIVATE_EXPORT GfxState
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:29:18: error: no matching constructor for initialization of 'TextFontInfo'
+   29 |     TextFontInfo font;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:92:14: note: candidate constructor not viable: requires single argument 'state', but no arguments were provided
+   92 |     explicit TextFontInfo(const GfxState *state);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:95:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   95 |     TextFontInfo(const TextFontInfo &) = delete;
+      |     ^            ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:55:14: error: no matching constructor for initialization of 'GfxState'
+   55 |     GfxState state2;
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1545:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+ 1545 |     GfxState(const GfxState &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1833:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+ 1833 |     GfxState(const GfxState *state, bool copyPath);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1540:5: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+ 1540 |     GfxState(double hDPIA, double vDPIA, const PDFRectangle *pageBox, int rotateA, bool upsideDown);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:61:18: error: no matching constructor for initialization of 'TextFontInfo'
+   61 |     TextFontInfo font;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:92:14: note: candidate constructor not viable: requires single argument 'state', but no arguments were provided
+   92 |     explicit TextFontInfo(const GfxState *state);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:95:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   95 |     TextFontInfo(const TextFontInfo &) = delete;
+      |     ^            ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:103:18: error: no matching constructor for initialization of 'TextFontInfo'
+  103 |     TextFontInfo font;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:92:14: note: candidate constructor not viable: requires single argument 'state', but no arguments were provided
+   92 |     explicit TextFontInfo(const GfxState *state);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/TextOutputDev.h:95:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   95 |     TextFontInfo(const TextFontInfo &) = delete;
+      |     ^            ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:109:18: error: character too large for enclosing character literal type
+  109 |     CharCode c = '\u0301'; // Combining acute accent
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:111:17: error: character too large for enclosing character literal type
+  111 |     Unicode u = '\u0301';
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp:9:7: warning: 'TextWordTest_1198' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class TextWordTest_1198 : public ::testing::Test {
+      |       ^
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1198.dir/build.make:79: generated_build/CMakeFiles/test_1198.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1198.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:73578: generated_build/CMakeFiles/test_1198.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:73585: generated_build/CMakeFiles/test_1198.dir/rule] 오류 2
+gmake: *** [Makefile:26361: test_1198] 오류 2

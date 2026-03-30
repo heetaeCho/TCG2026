@@ -1,0 +1,32 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from SetTest_231
+[ RUN      ] SetTest_231.AddPattern_Success_231
+[       OK ] SetTest_231.AddPattern_Success_231 (0 ms)
+[ RUN      ] SetTest_231.AddInvalidPattern_Error_231
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1774677329.405743 1679347 set.cc:78] Error parsing '[z-a]': invalid character class range: z-a
+[       OK ] SetTest_231.AddInvalidPattern_Error_231 (1 ms)
+[ RUN      ] SetTest_231.Compile_Success_231
+[       OK ] SetTest_231.Compile_Success_231 (0 ms)
+[ RUN      ] SetTest_231.Compile_NoPatterns_Error_231
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_231.cpp:83: Failure
+Value of: compiled
+  Actual: true
+Expected: false
+[  FAILED  ] SetTest_231.Compile_NoPatterns_Error_231 (0 ms)
+[ RUN      ] SetTest_231.Match_Success_231
+[       OK ] SetTest_231.Match_Success_231 (0 ms)
+[ RUN      ] SetTest_231.Match_NoPatterns_Error_231
+F0000 00:00:1774677329.407698 1679347 set.cc:142] RE2::Set::Match() called before compiling
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x56015bcadb77  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x56015bcad57f  absl::log_internal::LogMessage::SendToLog()
+    @     0x56015bcad53b  absl::log_internal::LogMessage::Flush()
+    @     0x56015bc26aa9  absl::log_internal::Voidify::operator&&<>()
+    @     0x56015bc2500e  re2::RE2::Set::Match()
+    @     0x56015bc24f14  re2::RE2::Set::Match()
+    @     0x56015bbed2d1  SetTest_231_Match_NoPatterns_Error_231_Test::TestBody()
+    @     0x56015bc2377f  testing::internal::HandleExceptionsInMethodIfSupported<>()

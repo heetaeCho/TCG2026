@@ -1,0 +1,40 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from describe_multi_matcher_Test_194
+[ RUN      ] describe_multi_matcher_Test_194.NoDescriptions_194
+[       OK ] describe_multi_matcher_Test_194.NoDescriptions_194 (0 ms)
+[ RUN      ] describe_multi_matcher_Test_194.SingleDescription_194
+[       OK ] describe_multi_matcher_Test_194.SingleDescription_194 (0 ms)
+[ RUN      ] describe_multi_matcher_Test_194.MultipleDescriptions_194
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_194.cpp:47: Failure
+Expected equality of these values:
+  describe_multi_matcher(combine, descriptions.data(), descriptions.data() + 3)
+    Which is: "( description1anddescription2anddescription3 )"
+  "( description1 and description2 and description3 )"
+[  FAILED  ] describe_multi_matcher_Test_194.MultipleDescriptions_194 (0 ms)
+[ RUN      ] describe_multi_matcher_Test_194.DifferentCombineString_194
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_194.cpp:59: Failure
+Expected equality of these values:
+  describe_multi_matcher(combine, descriptions.data(), descriptions.data() + 2)
+    Which is: "( description1ordescription2 )"
+  "( description1 or description2 )"
+[  FAILED  ] describe_multi_matcher_Test_194.DifferentCombineString_194 (0 ms)
+[ RUN      ] describe_multi_matcher_Test_194.EmptyDescriptions_194
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_194.cpp:71: Failure
+Expected equality of these values:
+  describe_multi_matcher(combine, descriptions.data(), descriptions.data() + 2)
+    Which is: "( and )"
+  "(  and  )"
+[  FAILED  ] describe_multi_matcher_Test_194.EmptyDescriptions_194 (0 ms)
+[----------] 5 tests from describe_multi_matcher_Test_194 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] describe_multi_matcher_Test_194.MultipleDescriptions_194
+[  FAILED  ] describe_multi_matcher_Test_194.DifferentCombineString_194
+[  FAILED  ] describe_multi_matcher_Test_194.EmptyDescriptions_194
+
+ 3 FAILED TESTS

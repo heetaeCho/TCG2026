@@ -1,0 +1,848 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_292.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:13:12: error: redefinition of 'LazyExpression'
+   13 |     struct LazyExpression {};
+      |            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:17:11: note: previous definition is here
+   17 |     class LazyExpression {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:17:15: error: redefinition of 'ResultWas' as different kind of symbol
+   17 |     namespace ResultWas {
+      |               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_result_type.hpp:14:12: note: previous definition is here
+   14 |     struct ResultWas { enum OfType {
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:23:15: error: redefinition of 'ResultDisposition' as different kind of symbol
+   23 |     namespace ResultDisposition {
+      |               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_result_type.hpp:43:12: note: previous definition is here
+   43 |     struct ResultDisposition { enum Flags {
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:43:46: error: call to deleted constructor of 'SourceLineInfo'
+   43 |         assertionInfo = Catch::AssertionInfo{};
+      |                                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: in implicit initialization of field 'lineInfo' with omitted initializer
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:45:26: error: no matching constructor for initialization of 'Catch::LazyExpression'
+   45 |         lazyExpression = Catch::LazyExpression{};
+      |                          ^                    ~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:25:19: note: candidate constructor not viable: requires single argument 'isNegated', but no arguments were provided
+   25 |         constexpr LazyExpression( bool isNegated ):
+      |                   ^               ~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:28:19: note: candidate constructor not viable: requires single argument 'other', but no arguments were provided
+   28 |         constexpr LazyExpression(LazyExpression const& other) = default;
+      |                   ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:45:24: error: overload resolution selected deleted operator '='
+   45 |         lazyExpression = Catch::LazyExpression{};
+      |         ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: candidate function has been explicitly deleted
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:47:75: error: no member named 'Success' in 'Catch::ResultWas::OfType'
+   47 |         resultData = Catch::AssertionResultData{Catch::ResultWas::OfType::Success, lazyExpression};
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:49:25: error: object of type 'Catch::AssertionResult' cannot be assigned because its copy assignment operator is implicitly deleted
+   49 |         assertionResult = Catch::AssertionResult(assertionInfo, std::move(resultData));
+      |                         ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:55:29: note: copy assignment operator of 'AssertionResult' is implicitly deleted because field 'm_resultData' has a deleted copy assignment operator
+   55 |         AssertionResultData m_resultData;
+      |                             ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:67:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   67 | TEST_F(AssertionResultTest_292, IsOk_ReturnsTrueForSuccess_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:59:1: note: expanded from here
+   59 | AssertionResultTest_292_IsOk_ReturnsTrueForSuccess_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:67:1: note: default constructor of 'AssertionResultTest_292_IsOk_ReturnsTrueForSuccess_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:67:1: note: replace 'default' with 'delete'
+   67 | TEST_F(AssertionResultTest_292, IsOk_ReturnsTrueForSuccess_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:75:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   75 | TEST_F(AssertionResultTest_292, Succeeded_ReturnsTrueForSuccess_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:98:1: note: expanded from here
+   98 | AssertionResultTest_292_Succeeded_ReturnsTrueForSuccess_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:75:1: note: default constructor of 'AssertionResultTest_292_Succeeded_ReturnsTrueForSuccess_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:75:1: note: replace 'default' with 'delete'
+   75 | TEST_F(AssertionResultTest_292, Succeeded_ReturnsTrueForSuccess_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:83:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   83 | TEST_F(AssertionResultTest_292, GetResultType_ReturnsSuccess_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:15:1: note: expanded from here
+   15 | AssertionResultTest_292_GetResultType_ReturnsSuccess_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:83:1: note: default constructor of 'AssertionResultTest_292_GetResultType_ReturnsSuccess_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:83:1: note: replace 'default' with 'delete'
+   83 | TEST_F(AssertionResultTest_292, GetResultType_ReturnsSuccess_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:85:74: error: no member named 'Success' in 'Catch::ResultWas::OfType'
+   85 |     EXPECT_EQ(assertionResult.getResultType(), Catch::ResultWas::OfType::Success);
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:91:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   91 | TEST_F(AssertionResultTest_292, HasExpression_ReturnsFalseWhenNoExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:53:1: note: expanded from here
+   53 | AssertionResultTest_292_HasExpression_ReturnsFalseWhenNoExpression_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:91:1: note: default constructor of 'AssertionResultTest_292_HasExpression_ReturnsFalseWhenNoExpression_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:91:1: note: replace 'default' with 'delete'
+   91 | TEST_F(AssertionResultTest_292, HasExpression_ReturnsFalseWhenNoExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:99:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   99 | TEST_F(AssertionResultTest_292, HasMessage_ReturnsFalseWhenNoMessage_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:6:1: note: expanded from here
+    6 | AssertionResultTest_292_HasMessage_ReturnsFalseWhenNoMessage_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:99:1: note: default constructor of 'AssertionResultTest_292_HasMessage_ReturnsFalseWhenNoMessage_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:99:1: note: replace 'default' with 'delete'
+   99 | TEST_F(AssertionResultTest_292, HasMessage_ReturnsFalseWhenNoMessage_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:107:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  107 | TEST_F(AssertionResultTest_292, GetExpression_ReturnsEmptyStringWhenNoExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:45:1: note: expanded from here
+   45 | AssertionResultTest_292_GetExpression_ReturnsEmptyStringWhenNoExpression_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:107:1: note: default constructor of 'AssertionResultTest_292_GetExpression_ReturnsEmptyStringWhenNoExpression_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:107:1: note: replace 'default' with 'delete'
+  107 | TEST_F(AssertionResultTest_292, GetExpression_ReturnsEmptyStringWhenNoExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:115:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  115 | TEST_F(AssertionResultTest_292, GetExpressionInMacro_ReturnsEmptyStringWhenNoExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:6:1: note: expanded from here
+    6 | AssertionResultTest_292_GetExpressionInMacro_ReturnsEmptyStringWhenNoExpression_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:115:1: note: default constructor of 'AssertionResultTest_292_GetExpressionInMacro_ReturnsEmptyStringWhenNoExpression_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:115:1: note: replace 'default' with 'delete'
+  115 | TEST_F(AssertionResultTest_292, GetExpressionInMacro_ReturnsEmptyStringWhenNoExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:123:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  123 | TEST_F(AssertionResultTest_292, HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:44:1: note: expanded from here
+   44 | AssertionResultTest_292_HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:123:1: note: default constructor of 'AssertionResultTest_292_HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:123:1: note: replace 'default' with 'delete'
+  123 | TEST_F(AssertionResultTest_292, HasExpandedExpression_ReturnsFalseWhenNoExpandedExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:131:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  131 | TEST_F(AssertionResultTest_292, GetExpandedExpression_ReturnsEmptyStringWhenNoExpandedExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:18:1: note: expanded from here
+   18 | AssertionResultTest_292_GetExpandedExpression_ReturnsEmptyStringWhenNoExpandedExpression_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:131:1: note: default constructor of 'AssertionResultTest_292_GetExpandedExpression_ReturnsEmptyStringWhenNoExpandedExpression_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:131:1: note: replace 'default' with 'delete'
+  131 | TEST_F(AssertionResultTest_292, GetExpandedExpression_ReturnsEmptyStringWhenNoExpandedExpression_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:139:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  139 | TEST_F(AssertionResultTest_292, GetMessage_ReturnsEmptyStringWhenNoMessage_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:56:1: note: expanded from here
+   56 | AssertionResultTest_292_GetMessage_ReturnsEmptyStringWhenNoMessage_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:139:1: note: default constructor of 'AssertionResultTest_292_GetMessage_ReturnsEmptyStringWhenNoMessage_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:139:1: note: replace 'default' with 'delete'
+  139 | TEST_F(AssertionResultTest_292, GetMessage_ReturnsEmptyStringWhenNoMessage_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:147:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  147 | TEST_F(AssertionResultTest_292, GetSourceInfo_ReturnsDefaultConstructedSourceLineInfo_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:25:1: note: expanded from here
+   25 | AssertionResultTest_292_GetSourceInfo_ReturnsDefaultConstructedSourceLineInfo_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:147:1: note: default constructor of 'AssertionResultTest_292_GetSourceInfo_ReturnsDefaultConstructedSourceLineInfo_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:147:1: note: replace 'default' with 'delete'
+  147 | TEST_F(AssertionResultTest_292, GetSourceInfo_ReturnsDefaultConstructedSourceLineInfo_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:149:27: error: call to deleted constructor of 'Catch::SourceLineInfo'
+  149 |     Catch::SourceLineInfo defaultSourceLineInfo;
+      |                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:157:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  157 | TEST_F(AssertionResultTest_292, GetTestMacroName_ReturnsEmptyStringWhenNoMacroName_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:63:1: note: expanded from here
+   63 | AssertionResultTest_292_GetTestMacroName_ReturnsEmptyStringWhenNoMacroName_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:157:1: note: default constructor of 'AssertionResultTest_292_GetTestMacroName_ReturnsEmptyStringWhenNoMacroName_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:157:1: note: replace 'default' with 'delete'
+  157 | TEST_F(AssertionResultTest_292, GetTestMacroName_ReturnsEmptyStringWhenNoMacroName_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:165:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  165 | TEST_F(AssertionResultTest_292, IsOk_ReturnsFalseForFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:29:1: note: expanded from here
+   29 | AssertionResultTest_292_IsOk_ReturnsFalseForFailure_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:165:1: note: default constructor of 'AssertionResultTest_292_IsOk_ReturnsFalseForFailure_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:165:1: note: replace 'default' with 'delete'
+  165 | TEST_F(AssertionResultTest_292, IsOk_ReturnsFalseForFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:167:71: error: no member named 'Failure' in 'Catch::ResultWas::OfType'
+  167 |     resultData = Catch::AssertionResultData{Catch::ResultWas::OfType::Failure, lazyExpression};
+      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:169:21: error: object of type 'Catch::AssertionResult' cannot be assigned because its copy assignment operator is implicitly deleted
+  169 |     assertionResult = Catch::AssertionResult(assertionInfo, std::move(resultData));
+      |                     ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:55:29: note: copy assignment operator of 'AssertionResult' is implicitly deleted because field 'm_resultData' has a deleted copy assignment operator
+   55 |         AssertionResultData m_resultData;
+      |                             ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:177:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  177 | TEST_F(AssertionResultTest_292, Succeeded_ReturnsFalseForFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:68:1: note: expanded from here
+   68 | AssertionResultTest_292_Succeeded_ReturnsFalseForFailure_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:177:1: note: default constructor of 'AssertionResultTest_292_Succeeded_ReturnsFalseForFailure_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:177:1: note: replace 'default' with 'delete'
+  177 | TEST_F(AssertionResultTest_292, Succeeded_ReturnsFalseForFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:179:71: error: no member named 'Failure' in 'Catch::ResultWas::OfType'
+  179 |     resultData = Catch::AssertionResultData{Catch::ResultWas::OfType::Failure, lazyExpression};
+      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:181:21: error: object of type 'Catch::AssertionResult' cannot be assigned because its copy assignment operator is implicitly deleted
+  181 |     assertionResult = Catch::AssertionResult(assertionInfo, std::move(resultData));
+      |                     ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:55:29: note: copy assignment operator of 'AssertionResult' is implicitly deleted because field 'm_resultData' has a deleted copy assignment operator
+   55 |         AssertionResultData m_resultData;
+      |                             ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:189:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  189 | TEST_F(AssertionResultTest_292, GetResultType_ReturnsFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:24:1: note: expanded from here
+   24 | AssertionResultTest_292_GetResultType_ReturnsFailure_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:189:1: note: default constructor of 'AssertionResultTest_292_GetResultType_ReturnsFailure_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:189:1: note: replace 'default' with 'delete'
+  189 | TEST_F(AssertionResultTest_292, GetResultType_ReturnsFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:191:71: error: no member named 'Failure' in 'Catch::ResultWas::OfType'
+  191 |     resultData = Catch::AssertionResultData{Catch::ResultWas::OfType::Failure, lazyExpression};
+      |                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:193:21: error: object of type 'Catch::AssertionResult' cannot be assigned because its copy assignment operator is implicitly deleted
+  193 |     assertionResult = Catch::AssertionResult(assertionInfo, std::move(resultData));
+      |                     ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:55:29: note: copy assignment operator of 'AssertionResult' is implicitly deleted because field 'm_resultData' has a deleted copy assignment operator
+   55 |         AssertionResultData m_resultData;
+      |                             ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:195:74: error: no member named 'Failure' in 'Catch::ResultWas::OfType'
+  195 |     EXPECT_EQ(assertionResult.getResultType(), Catch::ResultWas::OfType::Failure);
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:201:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  201 | TEST_F(AssertionResultTest_292, IsOk_ReturnsFalseForExplicitFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:62:1: note: expanded from here
+   62 | AssertionResultTest_292_IsOk_ReturnsFalseForExplicitFailure_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:201:1: note: default constructor of 'AssertionResultTest_292_IsOk_ReturnsFalseForExplicitFailure_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:201:1: note: replace 'default' with 'delete'
+  201 | TEST_F(AssertionResultTest_292, IsOk_ReturnsFalseForExplicitFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:203:16: error: object of type 'Catch::AssertionResultData' cannot be assigned because its copy assignment operator is implicitly deleted
+  203 |     resultData = Catch::AssertionResultData{Catch::ResultWas::OfType::ExplicitFailure, lazyExpression};
+      |                ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:205:21: error: object of type 'Catch::AssertionResult' cannot be assigned because its copy assignment operator is implicitly deleted
+  205 |     assertionResult = Catch::AssertionResult(assertionInfo, std::move(resultData));
+      |                     ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:55:29: note: copy assignment operator of 'AssertionResult' is implicitly deleted because field 'm_resultData' has a deleted copy assignment operator
+   55 |         AssertionResultData m_resultData;
+      |                             ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:29:24: note: copy assignment operator of 'AssertionResultData' is implicitly deleted because field 'lazyExpression' has a deleted copy assignment operator
+   29 |         LazyExpression lazyExpression;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_lazy_expr.hpp:29:25: note: 'operator=' has been explicitly marked deleted here
+   29 |         LazyExpression& operator = ( LazyExpression const& ) = delete;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:213:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  213 | TEST_F(AssertionResultTest_292, Succeeded_ReturnsFalseForExplicitFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:16:1: note: expanded from here
+   16 | AssertionResultTest_292_Succeeded_ReturnsFalseForExplicitFailure_292_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:213:1: note: default constructor of 'AssertionResultTest_292_Succeeded_ReturnsFalseForExplicitFailure_292_Test' is implicitly deleted because base class 'AssertionResultTest_292' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:55:26: note: default constructor of 'AssertionResultTest_292' is implicitly deleted because field 'assertionInfo' has a deleted default constructor
+   55 |     Catch::AssertionInfo assertionInfo;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp:213:1: note: replace 'default' with 'delete'
+  213 | TEST_F(AssertionResultTest_292, Succeeded_ReturnsFalseForExplicitFailure_292) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+17 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_292.dir/build.make:79: generated_build/CMakeFiles/test_292.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_292.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:19511: generated_build/CMakeFiles/test_292.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:19518: generated_build/CMakeFiles/test_292.dir/rule] 오류 2
+gmake: *** [Makefile:6507: test_292] 오류 2

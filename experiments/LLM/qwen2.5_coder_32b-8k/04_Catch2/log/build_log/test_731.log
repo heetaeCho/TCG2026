@@ -1,0 +1,102 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_731.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:29:16: error: object of type 'Config' cannot be assigned because its copy assignment operator is implicitly deleted
+   29 |         config = Config(data);
+      |                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_config.hpp:97:20: note: copy assignment operator of 'Config' is implicitly deleted because base class 'IConfig' has a deleted copy assignment operator
+   97 |     class Config : public IConfig {
+      |                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:67:21: note: copy assignment operator of 'IConfig' is implicitly deleted because base class 'Detail::NonCopyable' has a deleted copy assignment operator
+   67 |     class IConfig : public Detail::NonCopyable {
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_noncopyable.hpp:19:26: note: 'operator=' has been explicitly marked deleted here
+   19 |             NonCopyable& operator=( NonCopyable const& ) = delete;
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:51:35: error: no member named 'Random' in 'Catch::TestRunOrder'
+   51 |     data.runOrder = TestRunOrder::Random;
+      |                     ~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:55:44: error: no member named 'Random' in 'Catch::TestRunOrder'; did you mean 'random'?
+   55 |     EXPECT_EQ(configWithRandom.runOrder(), TestRunOrder::Random);
+      |                                            ^~~~~~~~~~~~~~~~~~~~
+      |                                            random
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/usr/include/stdlib.h:402:17: note: 'random' declared here
+  402 | extern long int random (void) __THROW;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:99:18: error: no matching constructor for initialization of 'ReporterSpec'
+   99 |     ReporterSpec spec;
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_spec_parser.hpp:38:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   38 |     class ReporterSpec {
+      |           ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_spec_parser.hpp:38:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   38 |     class ReporterSpec {
+      |           ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_spec_parser.hpp:52:9: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+   52 |         ReporterSpec(
+      |         ^
+   53 |             std::string name,
+      |             ~~~~~~~~~~~~~~~~~
+   54 |             Optional<std::string> outputFileName,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   55 |             Optional<ColourMode> colourMode,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 |             std::map<std::string, std::string> customOptions );
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:139:24: error: no member named 'getSectionsToRun' in 'Catch::Config'
+  139 |     EXPECT_TRUE(config.getSectionsToRun().empty());
+      |                 ~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:149:10: error: no member named 'sectionsToRun' in 'Catch::ConfigData'
+  149 |     data.sectionsToRun.push_back("section");
+      |     ~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:153:37: error: no member named 'getSectionsToRun' in 'Catch::Config'
+  153 |     EXPECT_FALSE(configWithSections.getSectionsToRun().empty());
+      |                  ~~~~~~~~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const Catch::TestRunOrder' and 'long () noexcept')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Catch::TestRunOrder, long () noexcept>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp:55:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Catch::TestRunOrder, long () noexcept, nullptr>' requested here
+   55 |     EXPECT_EQ(configWithRandom.runOrder(), TestRunOrder::Random);
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_731.dir/build.make:79: generated_build/CMakeFiles/test_731.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_731.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:20732: generated_build/CMakeFiles/test_731.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:20739: generated_build/CMakeFiles/test_731.dir/rule] 오류 2
+gmake: *** [Makefile:6988: test_731] 오류 2

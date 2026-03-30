@@ -1,0 +1,118 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1622.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:23:11: error: field type 'Value' is an abstract class
+   23 |     Value value_;
+      |           ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'Value'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'Value'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'Value'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'Value'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'Value'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'Value'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'Value'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'Value'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'Value'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'Value'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'Value'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:33:18: error: allocating an object of abstract class type 'Value'
+   33 |         value_ = Value(unsignedShort);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:41:29: error: no matching member function for call to 'findKey'
+   41 |         auto it = metadata->findKey("Exif.Image.Model");
+      |                   ~~~~~~~~~~^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:465:32: note: candidate function not viable: no known conversion from 'const char[17]' to 'const ExifKey' for 1st argument
+  465 |   [[nodiscard]] const_iterator findKey(const ExifKey& key) const;
+      |                                ^       ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:448:12: note: candidate function not viable: 'this' argument has type 'const ExifData', but method is not marked const
+  448 |   iterator findKey(const ExifKey& key);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:63:54: error: cannot take the address of an rvalue of type 'uint16_t' (aka 'unsigned short')
+   63 |     value_.setDataArea(reinterpret_cast<const byte*>(&static_cast<uint16_t>(10)), sizeof(uint16_t));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:65:19: error: 'ExifKey' is an incomplete type
+   65 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("ILCE-7M4"));
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:65:77: error: no member named 'setValue' in 'Exiv2::Value'
+   65 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("ILCE-7M4"));
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:77:54: error: cannot take the address of an rvalue of type 'uint16_t' (aka 'unsigned short')
+   77 |     value_.setDataArea(reinterpret_cast<const byte*>(&static_cast<uint16_t>(10)), sizeof(uint16_t));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:79:19: error: 'ExifKey' is an incomplete type
+   79 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("Unknown Model"));
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:79:77: error: no member named 'setValue' in 'Exiv2::Value'
+   79 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("Unknown Model"));
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:91:54: error: cannot take the address of an rvalue of type 'uint16_t' (aka 'unsigned short')
+   91 |     value_.setDataArea(reinterpret_cast<const byte*>(&static_cast<uint16_t>(10)), 2 * sizeof(uint16_t));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:103:14: error: allocating an object of abstract class type 'Value'
+  103 |     value_ = Value(unsignedByte);
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:105:54: error: cannot take the address of an rvalue of type 'uint8_t' (aka 'unsigned char')
+  105 |     value_.setDataArea(reinterpret_cast<const byte*>(&static_cast<uint8_t>(10)), sizeof(uint8_t));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:117:54: error: cannot take the address of an rvalue of type 'uint16_t' (aka 'unsigned short')
+  117 |     value_.setDataArea(reinterpret_cast<const byte*>(&static_cast<uint16_t>(10)), sizeof(uint16_t));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:129:54: error: cannot take the address of an rvalue of type 'uint16_t' (aka 'unsigned short')
+  129 |     value_.setDataArea(reinterpret_cast<const byte*>(&static_cast<uint16_t>(10)), sizeof(uint16_t));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:141:54: error: cannot take the address of an rvalue of type 'uint16_t' (aka 'unsigned short')
+  141 |     value_.setDataArea(reinterpret_cast<const byte*>(&static_cast<uint16_t>(0)), sizeof(uint16_t));
+      |                                                      ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:143:19: error: 'ExifKey' is an incomplete type
+  143 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("Unknown Model"));
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:143:77: error: no member named 'setValue' in 'Exiv2::Value'
+  143 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("Unknown Model"));
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:159:19: error: 'ExifKey' is an incomplete type
+  159 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("Unknown Model"));
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp:159:77: error: no member named 'setValue' in 'Exiv2::Value'
+  159 |     metadata_.add(ExifKey("Exif.Image.Model"), Value::create(unsignedByte)->setValue("Unknown Model"));
+      |                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1622.dir/build.make:79: generated_build/CMakeFiles/test_1622.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1622.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:76051: generated_build/CMakeFiles/test_1622.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:76058: generated_build/CMakeFiles/test_1622.dir/rule] 오류 2
+gmake: *** [Makefile:26673: test_1622] 오류 2

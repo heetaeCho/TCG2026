@@ -1,0 +1,45 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_666.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:13:28: error: unknown type name 'recordName'
+   13 |         MOCK_CONST_METHOD0(recordName, std::string());
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:13:9: error: a type specifier is required for all declarations
+   13 |         MOCK_CONST_METHOD0(recordName, std::string());
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:31:5: error: call to implicitly-deleted default constructor of 'Exiv2::MockIptcKey'
+   31 |     IptcdatumTest_666() : iptcdatum(mockKey, nullptr) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:9:25: note: default constructor of 'MockIptcKey' is implicitly deleted because base class 'IptcKey' has no default constructor
+    9 |     class MockIptcKey : public IptcKey {
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:39:26: error: use of undeclared identifier 'recordName'
+   39 |     EXPECT_CALL(mockKey, recordName()).WillOnce(::testing::Return(""));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:39:60: error: no member named 'Return' in namespace 'testing'
+   39 |     EXPECT_CALL(mockKey, recordName()).WillOnce(::testing::Return(""));
+      |                                                 ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:41:25: warning: 'recordName' is deprecated [-Wdeprecated-declarations]
+   41 |     EXPECT_EQ(iptcdatum.recordName(), "");
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:103:5: note: 'recordName' has been explicitly marked deprecated here
+  103 |   [[deprecated]] [[nodiscard]] std::string recordName() const;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:49:26: error: use of undeclared identifier 'recordName'
+   49 |     EXPECT_CALL(mockKey, recordName()).WillOnce(::testing::Return("expectedRecordName"));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:49:60: error: no member named 'Return' in namespace 'testing'
+   49 |     EXPECT_CALL(mockKey, recordName()).WillOnce(::testing::Return("expectedRecordName"));
+      |                                                 ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp:51:25: warning: 'recordName' is deprecated [-Wdeprecated-declarations]
+   51 |     EXPECT_EQ(iptcdatum.recordName(), "expectedRecordName");
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:103:5: note: 'recordName' has been explicitly marked deprecated here
+  103 |   [[deprecated]] [[nodiscard]] std::string recordName() const;
+      |     ^
+2 warnings and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_666.dir/build.make:79: generated_build/CMakeFiles/test_666.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_666.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:39467: generated_build/CMakeFiles/test_666.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:39474: generated_build/CMakeFiles/test_666.dir/rule] 오류 2
+gmake: *** [Makefile:12685: test_666] 오류 2

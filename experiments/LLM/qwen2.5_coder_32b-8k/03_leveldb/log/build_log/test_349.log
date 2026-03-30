@@ -1,0 +1,129 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_349.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:21:23: error: virtual function 'Insert' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<void> (const Slice &, void *, size_t, void (*)(const Slice &, void *))>::Result' (aka 'void')) than the function it overrides (which has return type 'Handle *')
+   21 |     MOCK_METHOD(void, Insert, (const Slice& key, void* value, size_t charge,
+      |     ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   22 | 
+   23 |                                 void (*deleter)(const Slice& key, void* value)), (override));
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:59: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:134:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  134 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),  \
+      |                             ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:183:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  183 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/cache.h:57:19: note: overridden virtual function is here
+   57 |   virtual Handle* Insert(const Slice& key, void* value, size_t charge,
+      |           ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:35:24: error: base class has incomplete type
+   35 | class MockEnv : public Env {
+      |                 ~~~~~~~^~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/options.h:16:7: note: forward declaration of 'leveldb::Env'
+   16 | class Env;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+   39 |     MOCK_METHOD(Status, NewSequentialFile, (const std::string& fname, SequentialFile** result), (override));
+      |                                                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:5: error: only virtual member functions can be marked 'override'
+   39 |     MOCK_METHOD(Status, NewSequentialFile, (const std::string& fname, SequentialFile** result), (override));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:59:1: note: expanded from here
+   59 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+   39 |     MOCK_METHOD(Status, NewSequentialFile, (const std::string& fname, SequentialFile** result), (override));
+      |                                                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:41:5: error: only virtual member functions can be marked 'override'
+   41 |     MOCK_METHOD(Status, NewRandomAccessFile, (const std::string& fname, RandomAccessFile** result), (override));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:111:1: note: expanded from here
+  111 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:43:5: error: only virtual member functions can be marked 'override'
+   43 |     MOCK_METHOD(Status, NewWritableFile, (const std::string& fname, WritableFile** result), (override));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:19:1: note: expanded from here
+   19 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+   39 |     MOCK_METHOD(Status, NewSequentialFile, (const std::string& fname, SequentialFile** result), (override));
+      |                                                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp:39:71: error: unknown type name 'SequentialFile'
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_349.dir/build.make:76: generated_build/CMakeFiles/test_349.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_349.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7170: generated_build/CMakeFiles/test_349.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7177: generated_build/CMakeFiles/test_349.dir/rule] 오류 2
+gmake: *** [Makefile:2870: test_349] 오류 2

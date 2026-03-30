@@ -1,0 +1,65 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 8 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 8 tests from EmitterTest_534
+[ RUN      ] EmitterTest_534.WriteIncreasesSize_534
+[       OK ] EmitterTest_534.WriteIncreasesSize_534 (0 ms)
+[ RUN      ] EmitterTest_534.WritePlainText_534
+[       OK ] EmitterTest_534.WritePlainText_534 (0 ms)
+[ RUN      ] EmitterTest_534.WriteSingleQuotedText_534
+[       OK ] EmitterTest_534.WriteSingleQuotedText_534 (0 ms)
+[ RUN      ] EmitterTest_534.WriteDoubleQuotedText_534
+[       OK ] EmitterTest_534.WriteDoubleQuotedText_534 (0 ms)
+[ RUN      ] EmitterTest_534.WriteLiteralTextShort_534
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_534.cpp:89: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "|\n  literal_text\n  short"
+  "|-\nliteral_text\nshort"
+With diff:
+@@ -1,3 +1,3 @@
+-|
+-  literal_text
+-  short
++|-
++literal_text
++short
+
+[  FAILED  ] EmitterTest_534.WriteLiteralTextShort_534 (0 ms)
+[ RUN      ] EmitterTest_534.WriteLiteralTextLong_534
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_534.cpp:101: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long"
+  "|-\na_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long"
+With diff:
+@@ +1,2 @@
++|-
+ a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long_a_long_string_that_needs_to_be_written_in_literal_format_because_it_is_more_than_one_kilobyte_long
+
+[  FAILED  ] EmitterTest_534.WriteLiteralTextLong_534 (0 ms)
+[ RUN      ] EmitterTest_534.WriteEmptyString_534
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_534.cpp:113: Failure
+Expected equality of these values:
+  output.str()
+    Which is: "\"\""
+  ""
+[  FAILED  ] EmitterTest_534.WriteEmptyString_534 (0 ms)
+[ RUN      ] EmitterTest_534.WriteNullStream_534
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_534.cpp:127: Failure
+Value of: nullEmitter.good()
+  Actual: true
+Expected: false
+[  FAILED  ] EmitterTest_534.WriteNullStream_534 (0 ms)
+[----------] 8 tests from EmitterTest_534 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] EmitterTest_534.WriteLiteralTextShort_534
+[  FAILED  ] EmitterTest_534.WriteLiteralTextLong_534
+[  FAILED  ] EmitterTest_534.WriteEmptyString_534
+[  FAILED  ] EmitterTest_534.WriteNullStream_534
+
+ 4 FAILED TESTS

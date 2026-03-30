@@ -1,0 +1,156 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1550.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:31:25: error: virtual function 'read' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<size_t> (size_t)>::Result' (aka 'unsigned long')) than the function it overrides (which has return type 'DataBuf')
+   31 |     MOCK_METHOD(size_t, read, (size_t rcount), (override));
+      |     ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: overridden virtual function is here
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |           ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:53:37: error: exception specification of overriding function is more lax than base version
+   53 |     MOCK_METHOD(const std::string&, path, (), (const, override));
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:139:5: error: no member named 'gmock_imageType' in 'Exiv2::OrfImage'
+  139 |     ON_CALL(*orfImage, imageType()).WillByDefault(Return(ImageType::none));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2033:3: note: expanded from macro 'ON_CALL'
+ 2033 |   GMOCK_ON_CALL_IMPL_(obj, InternalDefaultActionSetAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:39:1: note: expanded from here
+   39 | gmock_imageType
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:141:5: error: no member named 'gmock_isOrfType' in 'Exiv2::OrfImage'
+  141 |     EXPECT_CALL(*orfImage, isOrfType(_, _)).WillOnce(Return(false));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:44:1: note: expanded from here
+   44 | gmock_isOrfType
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:169:5: error: no member named 'gmock_imageType' in 'Exiv2::OrfImage'
+  169 |     ON_CALL(*orfImage, imageType()).WillByDefault(Return(ImageType::none));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2033:3: note: expanded from macro 'ON_CALL'
+ 2033 |   GMOCK_ON_CALL_IMPL_(obj, InternalDefaultActionSetAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:4:1: note: expanded from here
+    4 | gmock_imageType
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:171:5: error: no member named 'gmock_isOrfType' in 'Exiv2::OrfImage'
+  171 |     EXPECT_CALL(*orfImage, isOrfType(_, _)).WillOnce(Return(false));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:9:1: note: expanded from here
+    9 | gmock_isOrfType
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:201:5: error: no member named 'gmock_imageType' in 'Exiv2::OrfImage'
+  201 |     ON_CALL(*orfImage, imageType()).WillByDefault(Return(ImageType::none));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2033:3: note: expanded from macro 'ON_CALL'
+ 2033 |   GMOCK_ON_CALL_IMPL_(obj, InternalDefaultActionSetAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:84:1: note: expanded from here
+   84 | gmock_imageType
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:203:5: error: no member named 'gmock_isOrfType' in 'Exiv2::OrfImage'
+  203 |     EXPECT_CALL(*orfImage, isOrfType(_, _)).WillOnce(Return(false));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:89:1: note: expanded from here
+   89 | gmock_isOrfType
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockBasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:65:23: note: in instantiation of function template specialization 'std::make_unique<MockBasicIo>' requested here
+   65 |         mockIo = std::make_unique<MockBasicIo>();
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:184:17: note: unimplemented pure virtual method 'mmap' in 'MockBasicIo'
+  184 |   virtual byte* mmap(bool isWriteable = false) = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:191:15: note: unimplemented pure virtual method 'munmap' in 'MockBasicIo'
+  191 |   virtual int munmap() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MockBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:658:9: error: static assertion failed due to requirement '!std::is_reference<const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &>::value': use_ReturnRef_instead_of_Return_to_return_a_reference
+  658 |         !std::is_reference<Result>::value,
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:882:56: note: expanded from macro 'GTEST_COMPILE_ASSERT_'
+  882 | #define GTEST_COMPILE_ASSERT_(expr, msg) static_assert(expr, #msg)
+      |                                                        ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:85:49: note: in instantiation of function template specialization 'testing::internal::ReturnAction<const char *>::operator Action<const std::basic_string<char> &()>' requested here
+   85 |     EXPECT_CALL(*mockIo, path()).WillRepeatedly(Return("test.orf"));
+      |                                                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:687:27: error: static assertion failed due to requirement '!std::is_reference<const std::basic_string<char, std::char_traits<char>, std::allocator<char>> &>::value': Result_cannot_be_a_reference_type
+  687 |     GTEST_COMPILE_ASSERT_(!std::is_reference<Result>::value,
+      |                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-port.h:882:56: note: expanded from macro 'GTEST_COMPILE_ASSERT_'
+  882 | #define GTEST_COMPILE_ASSERT_(expr, msg) static_assert(expr, #msg)
+      |                                                        ^~~~
+/usr/include/gmock/gmock-actions.h:662:26: note: in instantiation of template class 'testing::internal::ReturnAction<const char *>::Impl<const char *, const std::basic_string<char> &()>' requested here
+  662 |     return Action<F>(new Impl<R, F>(value_));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp:85:49: note: in instantiation of function template specialization 'testing::internal::ReturnAction<const char *>::operator Action<const std::basic_string<char> &()>' requested here
+   85 |     EXPECT_CALL(*mockIo, path()).WillRepeatedly(Return("test.orf"));
+      |                                                 ^
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1550.dir/build.make:79: generated_build/CMakeFiles/test_1550.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1550.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:57861: generated_build/CMakeFiles/test_1550.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:57868: generated_build/CMakeFiles/test_1550.dir/rule] 오류 2
+gmake: *** [Makefile:19718: test_1550] 오류 2

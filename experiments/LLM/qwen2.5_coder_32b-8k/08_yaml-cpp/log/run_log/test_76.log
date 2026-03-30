@@ -1,0 +1,65 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from StreamTest_76
+[ RUN      ] StreamTest_76.LineInitiallyZero_76
+[       OK ] StreamTest_76.LineInitiallyZero_76 (0 ms)
+[ RUN      ] StreamTest_76.PosInitiallyZero_76
+[       OK ] StreamTest_76.PosInitiallyZero_76 (0 ms)
+[ RUN      ] StreamTest_76.ColumnInitiallyZero_76
+[       OK ] StreamTest_76.ColumnInitiallyZero_76 (0 ms)
+[ RUN      ] StreamTest_76.GetIncreasesPosAndLine_76
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_76.cpp:105: Failure
+Expected equality of these values:
+  stream.line()
+    Which is: 0
+  1
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_76.cpp:113: Failure
+Expected equality of these values:
+  stream.line()
+    Which is: 0
+  1
+[  FAILED  ] StreamTest_76.GetIncreasesPosAndLine_76 (0 ms)
+[ RUN      ] StreamTest_76.PeekDoesNotChangePosOrLine_76
+[       OK ] StreamTest_76.PeekDoesNotChangePosOrLine_76 (0 ms)
+[ RUN      ] StreamTest_76.EatIncreasesPosAndLine_76
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_76.cpp:149: Failure
+Expected equality of these values:
+  stream.line()
+    Which is: 0
+  1
+[  FAILED  ] StreamTest_76.EatIncreasesPosAndLine_76 (0 ms)
+[ RUN      ] StreamTest_76.ResetColumnResetsColumn_76
+[       OK ] StreamTest_76.ResetColumnResetsColumn_76 (0 ms)
+[ RUN      ] StreamTest_76.GetWithNegativeNThrowsInvalidArgument_76
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_76.cpp:179: Failure
+Expected: stream.get(-1) throws an exception of type std::invalid_argument.
+  Actual: it throws nothing.
+[  FAILED  ] StreamTest_76.GetWithNegativeNThrowsInvalidArgument_76 (0 ms)
+[ RUN      ] StreamTest_76.EatWithNegativeNThrowsInvalidArgument_76
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_76.cpp:187: Failure
+Expected: stream.eat(-1) throws an exception of type std::invalid_argument.
+  Actual: it throws nothing.
+[  FAILED  ] StreamTest_76.EatWithNegativeNThrowsInvalidArgument_76 (0 ms)
+[ RUN      ] StreamTest_76.GetAtEofReturnsEmptyString_76
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_76.cpp:197: Failure
+Expected equality of these values:
+  stream.get(5)
+    Which is: "\x4\x4\x4\x4\x4"
+  ""
+[  FAILED  ] StreamTest_76.GetAtEofReturnsEmptyString_76 (0 ms)
+[ RUN      ] StreamTest_76.EatAtEofDoesNothing_76
+[       OK ] StreamTest_76.EatAtEofDoesNothing_76 (0 ms)
+[----------] 11 tests from StreamTest_76 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 5 tests, listed below:
+[  FAILED  ] StreamTest_76.GetIncreasesPosAndLine_76
+[  FAILED  ] StreamTest_76.EatIncreasesPosAndLine_76
+[  FAILED  ] StreamTest_76.GetWithNegativeNThrowsInvalidArgument_76
+[  FAILED  ] StreamTest_76.EatWithNegativeNThrowsInvalidArgument_76
+[  FAILED  ] StreamTest_76.GetAtEofReturnsEmptyString_76
+
+ 5 FAILED TESTS

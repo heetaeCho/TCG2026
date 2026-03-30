@@ -1,0 +1,105 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1721.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:23:24: error: virtual function 'count' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<long ()>>::Result' (aka 'long')) than the function it overrides (which has return type 'size_t' (aka 'unsigned long'))
+   23 |     MOCK_CONST_METHOD0(count, long());
+      |     ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:331:40: note: expanded from macro 'MOCK_CONST_METHOD0'
+  331 |   GMOCK_INTERNAL_MOCK_METHODN(const, , m, 0, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:473:17: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHODN'
+  472 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  473 |       args_num, Method, GMOCK_PP_NARG0(constness), 0, 0, , ct, ,          \
+      |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  474 |       (::testing::internal::identity_t<__VA_ARGS__>))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  141 |   typename ::testing::internal::Function<GMOCK_PP_REMOVE_PARENS(               \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  142 |       _Signature)>::Result                                                     \
+      |       ~~~~~~~~~~~~~~~~~~~~
+  143 |   GMOCK_INTERNAL_EXPAND(_CallType)                                             \
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: overridden virtual function is here
+  108 |   virtual size_t count() const = 0;
+      |           ~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:27:24: warning: 'MockValue::toFloat' hides overloaded virtual function [-Woverloaded-virtual]
+   27 |     MOCK_CONST_METHOD0(toFloat, float());
+      |                        ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: hidden overloaded virtual function 'Exiv2::Value::toFloat' declared here: different number of parameters (1 vs 0)
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:35:15: error: variable type 'MockValue' is an abstract class
+   35 |     MockValue mockValue;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'MockValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:110:18: note: unimplemented pure virtual method 'size' in 'MockValue'
+  110 |   virtual size_t size() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'MockValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'MockValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'MockValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'MockValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'MockValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'MockValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:43:65: error: use of undeclared identifier 'signedRational'; did you mean 'Exiv2::signedRational'?
+   43 |     EXPECT_CALL(mockValue, typeId()).WillOnce(::testing::Return(signedRational));
+      |                                                                 ^~~~~~~~~~~~~~
+      |                                                                 Exiv2::signedRational
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:78:3: note: 'Exiv2::signedRational' declared here
+   78 |   signedRational = 10,      //!< Exif SRATIONAL type, two SLONGs: numerator and denominator of a fraction.
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:61:15: error: variable type 'MockValue' is an abstract class
+   61 |     MockValue mockValue;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:85:15: error: variable type 'MockValue' is an abstract class
+   85 |     MockValue mockValue;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:109:15: error: variable type 'MockValue' is an abstract class
+  109 |     MockValue mockValue;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:117:65: error: use of undeclared identifier 'unsignedShort'; did you mean 'Exiv2::unsignedShort'?
+  117 |     EXPECT_CALL(mockValue, typeId()).WillOnce(::testing::Return(unsignedShort));
+      |                                                                 ^~~~~~~~~~~~~
+      |                                                                 Exiv2::unsignedShort
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:71:3: note: 'Exiv2::unsignedShort' declared here
+   71 |   unsignedShort = 3,        //!< Exif SHORT type, 16-bit (2-byte) unsigned integer.
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:135:15: error: variable type 'MockValue' is an abstract class
+  135 |     MockValue mockValue;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp:143:65: error: use of undeclared identifier 'signedRational'; did you mean 'Exiv2::signedRational'?
+  143 |     EXPECT_CALL(mockValue, typeId()).WillOnce(::testing::Return(signedRational));
+      |                                                                 ^~~~~~~~~~~~~~
+      |                                                                 Exiv2::signedRational
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:78:3: note: 'Exiv2::signedRational' declared here
+   78 |   signedRational = 10,      //!< Exif SRATIONAL type, two SLONGs: numerator and denominator of a fraction.
+      |   ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1721.dir/build.make:79: generated_build/CMakeFiles/test_1721.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1721.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:51979: generated_build/CMakeFiles/test_1721.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:51986: generated_build/CMakeFiles/test_1721.dir/rule] 오류 2
+gmake: *** [Makefile:17469: test_1721] 오류 2

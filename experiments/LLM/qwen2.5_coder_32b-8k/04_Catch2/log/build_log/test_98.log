@@ -1,0 +1,38 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_98.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp:19:25: error: unknown type name 'symbol'
+   19 |     MOCK_STATIC_METHOD0(symbol, char());
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp:19:5: error: a type specifier is required for all declarations
+   19 |     MOCK_STATIC_METHOD0(symbol, char());
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp:29:10: error: no viable conversion from 'std::string' (aka 'basic_string<char>') to 'char'
+   29 |     char result = ratio_string<std::ratio<1>>::symbol();
+      |          ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:806:7: note: candidate function
+  806 |       operator __sv_type() const noexcept
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp:53:17: error: indirection requires pointer operand ('std::string' (aka 'basic_string<char>') invalid)
+   53 |     EXPECT_CALL(*MockRatioString::symbol(), symbol()).WillOnce(Return('u'));
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:23: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                       ^~~
+/usr/include/gmock/gmock-spec-builders.h:2028:5: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp:59:10: error: no viable conversion from 'std::string' (aka 'basic_string<char>') to 'char'
+   59 |     char result = MockRatioString::symbol();
+      |          ^        ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.h:806:7: note: candidate function
+  806 |       operator __sv_type() const noexcept
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp:69:1: error: expected unqualified-id
+   69 | ```
+      | ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_98.dir/build.make:79: generated_build/CMakeFiles/test_98.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_98.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:25781: generated_build/CMakeFiles/test_98.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:25788: generated_build/CMakeFiles/test_98.dir/rule] 오류 2
+gmake: *** [Makefile:8977: test_98] 오류 2

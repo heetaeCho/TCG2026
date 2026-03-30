@@ -1,0 +1,29 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_504.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_504.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_504.cpp:57:5: error: unknown type name 'ShadingType'; did you mean 'GfxAxialShading::ShadingType'?
+   57 |     ShadingType type = shading->getType();
+      |     ^~~~~~~~~~~
+      |     GfxAxialShading::ShadingType
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:899:10: note: 'GfxAxialShading::ShadingType' declared here
+  899 |     enum ShadingType
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_504.cpp:7:7: warning: 'GfxShadingTest_504' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class GfxShadingTest_504 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_504.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'GfxShading'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_504.cpp:17:24: note: in instantiation of function template specialization 'std::make_unique<GfxShading, int>' requested here
+   17 |         shading = std::make_unique<GfxShading>(1); // Assuming 1 is a valid ShadingType
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'GfxShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_504.dir/build.make:79: generated_build/CMakeFiles/test_504.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_504.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:30730: generated_build/CMakeFiles/test_504.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:30737: generated_build/CMakeFiles/test_504.dir/rule] 오류 2
+gmake: *** [Makefile:8954: test_504] 오류 2

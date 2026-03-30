@@ -1,0 +1,243 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1069.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:17:11: error: field type 'Image' is an abstract class
+   17 |     Image image_;
+      |           ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:23:15: error: incomplete type 'Exiv2::BasicIo' named in nested name specifier
+   23 |         io_ = BasicIo::createMemIo();
+      |               ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:25:18: error: allocating an object of abstract class type 'Image'
+   25 |         image_ = Image(ImageType::jpeg, 0x7FFFU, std::move(io_));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:51:21: error: no matching constructor for initialization of 'Exiv2::IptcKey'
+   51 |     initialData.add(Exiv2::IptcKey("Iptc.Application2.Caption", "iptc"), "Initial Caption");
+      |                     ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:260:3: note: candidate constructor not viable: no known conversion from 'const char[26]' to 'uint16_t' (aka 'unsigned short') for 1st argument
+  260 |   IptcKey(uint16_t tag, uint16_t record);
+      |   ^       ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:254:12: note: candidate constructor not viable: requires single argument 'key', but 2 arguments were provided
+  254 |   explicit IptcKey(std::string key);
+      |            ^       ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:51:17: error: no matching member function for call to 'add'
+   51 |     initialData.add(Exiv2::IptcKey("Iptc.Application2.Caption", "iptc"), "Initial Caption");
+      |     ~~~~~~~~~~~~^~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:181:7: note: candidate function not viable: no known conversion from 'const char[16]' to 'const Value *' for 2nd argument
+  181 |   int add(const IptcKey& key, const Value* value);
+      |       ^                       ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:188:7: note: candidate function not viable: requires single argument 'iptcDatum', but 2 arguments were provided
+  188 |   int add(const Iptcdatum& iptcDatum);
+      |       ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:61:35: error: no matching constructor for initialization of 'Exiv2::IptcKey'
+   61 |     EXPECT_EQ(iptcDataRef.findKey(Exiv2::IptcKey("Iptc.Application2.Caption", "iptc"))->value(), "Initial Caption");
+      |                                   ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:260:3: note: candidate constructor not viable: no known conversion from 'const char[26]' to 'uint16_t' (aka 'unsigned short') for 1st argument
+  260 |   IptcKey(uint16_t tag, uint16_t record);
+      |   ^       ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:254:12: note: candidate constructor not viable: requires single argument 'key', but 2 arguments were provided
+  254 |   explicit IptcKey(std::string key);
+      |            ^       ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/datasets.hpp:239:16: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+  239 | class EXIV2API IptcKey : public Key {
+      |                ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:77:41: error: no member named 'exif' in 'Exiv2::MetadataId'; did you mean 'exit'?
+   77 |     EXPECT_TRUE(image_.supportsMetadata(MetadataId::exif));
+      |                                         ^~~~~~~~~~~~~~~~
+      |                                         exit
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/stdlib.h:40:12: note: 'exit' declared here
+   40 | using std::exit;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:79:32: error: no member named 'exif' in 'Exiv2::MetadataId'; did you mean 'exit'?
+   79 |     EXPECT_EQ(image_.checkMode(MetadataId::exif), AccessMode::write);
+      |                                ^~~~~~~~~~~~~~~~
+      |                                exit
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/stdlib.h:40:12: note: 'exit' declared here
+   40 | using std::exit;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:79:51: error: no member named 'write' in 'Exiv2::AccessMode'; did you mean simply 'write'?
+   79 |     EXPECT_EQ(image_.checkMode(MetadataId::exif), AccessMode::write);
+      |                                                   ^~~~~~~~~~~~~~~~~
+      |                                                   write
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/usr/include/unistd.h:378:16: note: 'write' declared here
+  378 | extern ssize_t write (int __fd, const void *__buf, size_t __n) __wur
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:85:54: error: no member named 'xmp' in 'Exiv2::MetadataId'
+   85 |     EXPECT_FALSE(image_.supportsMetadata(MetadataId::xmp));
+      |                                          ~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:87:44: error: no member named 'xmp' in 'Exiv2::MetadataId'
+   87 |     EXPECT_EQ(image_.checkMode(MetadataId::xmp), AccessMode::none);
+      |                                ~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:87:62: error: no member named 'none' in 'Exiv2::AccessMode'
+   87 |     EXPECT_EQ(image_.checkMode(MetadataId::xmp), AccessMode::none);
+      |                                                  ~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const Exiv2::Value' and 'const char[16]')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Exiv2::Value, char[16]>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:61:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Exiv2::Value, char[16], nullptr>' requested here
+   61 |     EXPECT_EQ(iptcDataRef.findKey(Exiv2::IptcKey("Iptc.Application2.Caption", "iptc"))->value(), "Initial Caption");
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: cannot convert argument of incomplete type 'const Exiv2::Value' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1069_IptcDataReferenceReturned_1069_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:33:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1069_IptcDataReferenceReturned_1069_Test>::CreateTest' requested here
+   33 | TEST_F(ImageTest_1069, IptcDataReferenceReturned_1069) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1069_SetAndClearIptcData_1069_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1069_SetAndClearIptcData_1069_Test>::CreateTest' requested here
+   47 | TEST_F(ImageTest_1069, SetAndClearIptcData_1069) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1069_CheckModeForSupportedMetadata_1069_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:73:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1069_CheckModeForSupportedMetadata_1069_Test>::CreateTest' requested here
+   73 | TEST_F(ImageTest_1069, CheckModeForSupportedMetadata_1069) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1069_GoodMethodReturnsTrueAfterInitialization_1069_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp:93:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1069_GoodMethodReturnsTrueAfterInitialization_1069_Test>::CreateTest' requested here
+   93 | TEST_F(ImageTest_1069, GoodMethodReturnsTrueAfterInitialization_1069) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+17 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1069.dir/build.make:79: generated_build/CMakeFiles/test_1069.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1069.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:36135: generated_build/CMakeFiles/test_1069.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:36142: generated_build/CMakeFiles/test_1069.dir/rule] 오류 2
+gmake: *** [Makefile:11411: test_1069] 오류 2

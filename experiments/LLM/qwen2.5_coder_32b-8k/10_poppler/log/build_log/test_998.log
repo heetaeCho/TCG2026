@@ -1,0 +1,25 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_998.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_998.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_998.cpp:17:5: error: constructor for 'FontInfoTest_998' must explicitly initialize the member 'fontInfoWithName' which does not have a default constructor
+   17 |     FontInfoTest_998() : fontInfoWithoutName(nullptr, nullptr) {
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_998.cpp:13:14: note: member is declared here
+   13 |     FontInfo fontInfoWithName;
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/FontInfo.h:40:30: note: 'FontInfo' declared here
+   40 | class POPPLER_PRIVATE_EXPORT FontInfo
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_998.cpp:29:26: error: overload resolution selected deleted operator '='
+   29 |         fontInfoWithName = FontInfo(nullptr, nullptr); // Assuming constructor initializes with empty or default values
+      |         ~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/FontInfo.h:64:15: note: candidate function has been explicitly deleted
+   64 |     FontInfo &operator=(const FontInfo &) = delete;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_998.cpp:7:7: warning: 'FontInfoTest_998' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class FontInfoTest_998 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_998.dir/build.make:79: generated_build/CMakeFiles/test_998.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_998.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:32682: generated_build/CMakeFiles/test_998.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:32689: generated_build/CMakeFiles/test_998.dir/rule] 오류 2
+gmake: *** [Makefile:9747: test_998] 오류 2

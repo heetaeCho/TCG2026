@@ -1,0 +1,135 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_176.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:17:12: error: field type 'Stream' is an abstract class
+   17 |     Stream mock_stream;
+      |            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'Stream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'Stream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'Stream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'Stream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'Stream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'Stream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'Stream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'Stream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'Stream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'Stream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'Stream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'Stream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'Stream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:35:63: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   35 |         embed_stream = make_unique<EmbedStream>(&mock_stream, move(dict), limited, length, reusable);
+      |                                                               ^
+      |                                                               std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:45:30: error: use of undeclared identifier 'getKind'
+   45 |     EXPECT_CALL(mock_stream, getKind()).WillOnce(::testing::Return(strFile));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:45:61: error: no member named 'Return' in namespace 'testing'
+   45 |     EXPECT_CALL(mock_stream, getKind()).WillOnce(::testing::Return(strFile));
+      |                                                  ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:55:30: error: no matching function for call to 'rewind'
+   55 |     EXPECT_CALL(mock_stream, rewind()).WillOnce(::testing::Return(true));
+      |                              ^~~~~~
+/usr/include/stdio.h:723:13: note: candidate function not viable: requires single argument '__stream', but no arguments were provided
+  723 | extern void rewind (FILE *__stream);
+      |             ^       ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:55:60: error: no member named 'Return' in namespace 'testing'
+   55 |     EXPECT_CALL(mock_stream, rewind()).WillOnce(::testing::Return(true));
+      |                                                 ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:65:30: error: use of undeclared identifier 'getChar'; did you mean 'getchar'?
+   65 |     EXPECT_CALL(mock_stream, getChar()).WillOnce(::testing::Return('a'));
+      |                              ^~~~~~~
+      |                              getchar
+/usr/include/stdio.h:520:12: note: 'getchar' declared here
+  520 | extern int getchar (void);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:65:61: error: no member named 'Return' in namespace 'testing'
+   65 |     EXPECT_CALL(mock_stream, getChar()).WillOnce(::testing::Return('a'));
+      |                                                  ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:75:30: error: use of undeclared identifier 'lookChar'
+   75 |     EXPECT_CALL(mock_stream, lookChar()).WillOnce(::testing::Return('b'));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:75:62: error: no member named 'Return' in namespace 'testing'
+   75 |     EXPECT_CALL(mock_stream, lookChar()).WillOnce(::testing::Return('b'));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:85:30: error: use of undeclared identifier 'getPos'
+   85 |     EXPECT_CALL(mock_stream, getPos()).WillOnce(::testing::Return(Goffset{0}));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:85:60: error: no member named 'Return' in namespace 'testing'
+   85 |     EXPECT_CALL(mock_stream, getPos()).WillOnce(::testing::Return(Goffset{0}));
+      |                                                 ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:95:30: error: use of undeclared identifier 'setPos'
+   95 |     EXPECT_CALL(mock_stream, setPos(Goffset{5}, 0)).WillOnce(::testing::Return());
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:95:73: error: no member named 'Return' in namespace 'testing'
+   95 |     EXPECT_CALL(mock_stream, setPos(Goffset{5}, 0)).WillOnce(::testing::Return());
+      |                                                              ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:105:30: error: use of undeclared identifier 'getUnfilteredChar'
+  105 |     EXPECT_CALL(mock_stream, getUnfilteredChar()).WillOnce(::testing::Return('c'));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:105:71: error: no member named 'Return' in namespace 'testing'
+  105 |     EXPECT_CALL(mock_stream, getUnfilteredChar()).WillOnce(::testing::Return('c'));
+      |                                                            ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:115:30: error: use of undeclared identifier 'unfilteredRewind'
+  115 |     EXPECT_CALL(mock_stream, unfilteredRewind()).WillOnce(::testing::Return(true));
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:115:70: error: no member named 'Return' in namespace 'testing'
+  115 |     EXPECT_CALL(mock_stream, unfilteredRewind()).WillOnce(::testing::Return(true));
+      |                                                           ~~~~~~~~~~~^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'EmbedStreamTest_176_GetKindDelegatesToUnderlyingStream_176_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:43:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<EmbedStreamTest_176_GetKindDelegatesToUnderlyingStream_176_Test>::CreateTest' requested here
+   43 | TEST_F(EmbedStreamTest_176, GetKindDelegatesToUnderlyingStream_176) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'EmbedStreamTest_176_RewindCallsUnderlyingStreamRewind_176_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<EmbedStreamTest_176_RewindCallsUnderlyingStreamRewind_176_Test>::CreateTest' requested here
+   53 | TEST_F(EmbedStreamTest_176, RewindCallsUnderlyingStreamRewind_176) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_176.dir/build.make:79: generated_build/CMakeFiles/test_176.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_176.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:32394: generated_build/CMakeFiles/test_176.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:32401: generated_build/CMakeFiles/test_176.dir/rule] 오류 2
+gmake: *** [Makefile:9630: test_176] 오류 2

@@ -1,0 +1,31 @@
+[ 66%] Built target poppler
+[ 66%] Building CXX object generated_build/CMakeFiles/test_2714.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2714.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2714.cpp:17:41: error: no matching constructor for initialization of 'SplashOutputDevNoText'
+   17 |         splash_output_dev_no_text = new SplashOutputDevNoText();
+      |                                         ^
+/home/user/TCG2026/TestProjects/poppler/utils/pdftohtml.cc:136:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  136 | class SplashOutputDevNoText : public SplashOutputDev
+      |       ^~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/utils/pdftohtml.cc:139:5: note: candidate constructor not viable: requires at least 3 arguments, but 0 were provided
+  139 |     SplashOutputDevNoText(SplashColorMode colorModeA, int bitmapRowPadA, SplashColorPtr paperColorA, bool bitmapTopDownA = true) : SplashOutputDev(colorModeA, bitmapRowPadA, paperColorA, bitmapTopDownA) { }
+      |     ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2714.cpp:35:14: error: no matching constructor for initialization of 'GfxState'
+   35 |     GfxState state; // Mock or dummy object as we do not interact with it internally
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1545:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+ 1545 |     GfxState(const GfxState &) = delete;
+      |     ^        ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1833:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+ 1833 |     GfxState(const GfxState *state, bool copyPath);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:1540:5: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+ 1540 |     GfxState(double hDPIA, double vDPIA, const PDFRectangle *pageBox, int rotateA, bool upsideDown);
+      |     ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2714.cpp:7:7: warning: 'SplashOutputDevNoTextTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class SplashOutputDevNoTextTest : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2714.dir/build.make:79: generated_build/CMakeFiles/test_2714.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2714.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:48778: generated_build/CMakeFiles/test_2714.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:48785: generated_build/CMakeFiles/test_2714.dir/rule] 오류 2
+gmake: *** [Makefile:16286: test_2714] 오류 2

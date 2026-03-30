@@ -1,0 +1,86 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_747.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:25:33: error: no matching constructor for initialization of 'Catch::ReporterConfig'
+   25 |     Catch::TAPReporter reporter{Catch::ReporterConfig{}};
+      |                                 ^                    ~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:29:49: error: no matching constructor for initialization of 'Catch::MockAssertionStats'
+   29 |     Catch::MockAssertionStats assertionStatsPass{Catch::ResultWas::Ok};
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:11:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Catch::ResultWas::OfType' to 'const MockAssertionStats' for 1st argument
+   11 |     struct MockAssertionStats : AssertionStats {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:11:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Catch::ResultWas::OfType' to 'MockAssertionStats' for 1st argument
+   11 |     struct MockAssertionStats : AssertionStats {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:13:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultWas::OfType' to 'AssertionResult' for 1st argument
+   13 |         MockAssertionStats(AssertionResult result) : AssertionStats(result, {}, Totals{}) {}
+      |         ^                  ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:31:49: error: no matching constructor for initialization of 'Catch::MockAssertionStats'
+   31 |     Catch::MockAssertionStats assertionStatsFail{Catch::ResultWas::ExpressionFailed};
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:11:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Catch::ResultWas::OfType' to 'const MockAssertionStats' for 1st argument
+   11 |     struct MockAssertionStats : AssertionStats {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:11:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Catch::ResultWas::OfType' to 'MockAssertionStats' for 1st argument
+   11 |     struct MockAssertionStats : AssertionStats {
+      |            ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:13:9: note: candidate constructor not viable: no known conversion from 'Catch::ResultWas::OfType' to 'AssertionResult' for 1st argument
+   13 |         MockAssertionStats(AssertionResult result) : AssertionStats(result, {}, Totals{}) {}
+      |         ^                  ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:37:18: error: 'm_stream' is a protected member of 'Catch::ReporterBase'
+   37 |         reporter.m_stream.rdbuf(outputStream.rdbuf());
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:35:23: note: declared protected here
+   35 |         std::ostream& m_stream;
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:85:14: error: 'currentTestCaseInfo' is a protected member of 'Catch::StreamingReporterBase'
+   85 |     reporter.currentTestCaseInfo = nullptr;
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_streaming_base.hpp:65:29: note: declared protected here
+   65 |         TestCaseInfo const* currentTestCaseInfo = nullptr;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:95:25: error: variable has incomplete type 'Catch::TestCaseInfo'
+   95 |     Catch::TestCaseInfo testCaseInfo("ClassName", {"TestName"}, {});
+      |                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:97:14: error: 'currentTestCaseInfo' is a protected member of 'Catch::StreamingReporterBase'
+   97 |     reporter.currentTestCaseInfo = &testCaseInfo;
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_streaming_base.hpp:65:29: note: declared protected here
+   65 |         TestCaseInfo const* currentTestCaseInfo = nullptr;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:113:25: error: variable has incomplete type 'Catch::TestCaseInfo'
+  113 |     Catch::TestCaseInfo testCaseInfo("ClassName", {"", ""}, {});
+      |                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp:115:14: error: 'currentTestCaseInfo' is a protected member of 'Catch::StreamingReporterBase'
+  115 |     reporter.currentTestCaseInfo = &testCaseInfo;
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_streaming_base.hpp:65:29: note: declared protected here
+   65 |         TestCaseInfo const* currentTestCaseInfo = nullptr;
+      |                             ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_747.dir/build.make:79: generated_build/CMakeFiles/test_747.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_747.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:9215: generated_build/CMakeFiles/test_747.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:9222: generated_build/CMakeFiles/test_747.dir/rule] 오류 2
+gmake: *** [Makefile:2451: test_747] 오류 2

@@ -1,0 +1,78 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1162.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:19:23: error: cannot initialize a member subobject of type 'IfdId' with an rvalue of type 'int'
+   19 |     IfdId testIfdId = 0x8769; // Example IFD ID
+      |                       ^~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:29:36: error: invalid use of incomplete type 'ExifKey'
+   29 |         : exifDatumWithMatchingIfd(ExifKey(), nullptr),
+      |                                    ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:31:39: error: invalid use of incomplete type 'ExifKey'
+   31 |           exifDatumWithNonMatchingIfd(ExifKey(), nullptr) {
+      |                                       ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:35:47: error: use of undeclared identifier 'ifdId'; did you mean 'IfdId'?
+   35 |         EXPECT_CALL(exifDatumWithMatchingIfd, ifdId()).WillRepeatedly(::testing::Return(testIfdId));
+      |                                               ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:35:82: error: no member named 'Return' in namespace 'testing'
+   35 |         EXPECT_CALL(exifDatumWithMatchingIfd, ifdId()).WillRepeatedly(::testing::Return(testIfdId));
+      |                                                                       ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:39:50: error: use of undeclared identifier 'ifdId'; did you mean 'IfdId'?
+   39 |         EXPECT_CALL(exifDatumWithNonMatchingIfd, ifdId()).WillRepeatedly(::testing::Return(0x8768));
+      |                                                  ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:39:85: error: no member named 'Return' in namespace 'testing'
+   39 |         EXPECT_CALL(exifDatumWithNonMatchingIfd, ifdId()).WillRepeatedly(::testing::Return(0x8768));
+      |                                                                          ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:69:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+   69 |     IfdId boundaryIfdId = 0x0000; // Boundary condition: minimum possible IFD ID
+      |           ^               ~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:73:40: error: invalid use of incomplete type 'ExifKey'
+   73 |     Exifdatum exifDatumWithBoundaryIfd(ExifKey(), nullptr);
+      |                                        ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:75:43: error: use of undeclared identifier 'ifdId'; did you mean 'IfdId'?
+   75 |     EXPECT_CALL(exifDatumWithBoundaryIfd, ifdId()).WillRepeatedly(::testing::Return(boundaryIfdId));
+      |                                           ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:75:78: error: no member named 'Return' in namespace 'testing'
+   75 |     EXPECT_CALL(exifDatumWithBoundaryIfd, ifdId()).WillRepeatedly(::testing::Return(boundaryIfdId));
+      |                                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:85:11: error: cannot initialize a variable of type 'IfdId' with an rvalue of type 'int'
+   85 |     IfdId boundaryIfdId = 0x0000; // Boundary condition: minimum possible IFD ID
+      |           ^               ~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:89:43: error: invalid use of incomplete type 'ExifKey'
+   89 |     Exifdatum exifDatumWithNonBoundaryIfd(ExifKey(), nullptr);
+      |                                           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:91:46: error: use of undeclared identifier 'ifdId'; did you mean 'IfdId'?
+   91 |     EXPECT_CALL(exifDatumWithNonBoundaryIfd, ifdId()).WillRepeatedly(::testing::Return(testIfdId));
+      |                                              ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp:91:81: error: no member named 'Return' in namespace 'testing'
+   91 |     EXPECT_CALL(exifDatumWithNonBoundaryIfd, ifdId()).WillRepeatedly(::testing::Return(testIfdId));
+      |                                                                      ~~~~~~~~~~~^
+15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1162.dir/build.make:79: generated_build/CMakeFiles/test_1162.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1162.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:39773: generated_build/CMakeFiles/test_1162.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:39780: generated_build/CMakeFiles/test_1162.dir/rule] 오류 2
+gmake: *** [Makefile:12802: test_1162] 오류 2

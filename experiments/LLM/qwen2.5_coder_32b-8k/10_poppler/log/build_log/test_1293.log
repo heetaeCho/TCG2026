@@ -1,0 +1,70 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1293.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp:9:27: error: base class has incomplete type
+    9 | class MockPDFDoc : public PDFDoc {
+      |                    ~~~~~~~^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:57:7: note: forward declaration of 'PDFDoc'
+   57 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp:13:5: error: only virtual member functions can be marked 'override'
+   13 |     MOCK_METHOD(bool, ok, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:40:1: note: expanded from here
+   40 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp:31:16: error: use of undeclared identifier 'psModeNormal'; did you mean 'psModeForm'?
+   31 |         mode = psModeNormal;
+      |                ^~~~~~~~~~~~
+      |                psModeForm
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:90:5: note: 'psModeForm' declared here
+   90 |     psModeForm
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp:49:26: error: use of undeclared identifier 'psForceRasterizeNone'; did you mean 'forceRasterize'?
+   49 |         forceRasterize = psForceRasterizeNone;
+      |                          ^~~~~~~~~~~~~~~~~~~~
+      |                          forceRasterize
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp:97:22: note: 'forceRasterize' declared here
+   97 |     PSForceRasterize forceRasterize;
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp:55:27: error: no matching constructor for initialization of 'PSOutputDev'
+   55 |         psOutputDev = new PSOutputDev("test_output.ps", doc, const_cast<char*>(psTitle.c_str()), pages, mode, paperWidth, paperHeight,
+      |                           ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   56 | 
+   57 |                                      noCrop, duplex, imgLLX, imgLLY, imgURX, imgURY, forceRasterize, manualCtrl, nullptr, nullptr, psLevel2);
+      |                                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:121:5: note: candidate constructor not viable: no known conversion from 'MockPDFDoc *' to 'PDFDoc *' for 2nd argument
+  121 |     PSOutputDev(const char *fileName, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0,
+      |     ^                                 ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:131:5: note: candidate constructor not viable: no known conversion from 'const char[15]' to 'FoFiOutputFunc' (aka 'void (*)(void *, const char *, unsigned long)') for 1st argument
+  131 |     PSOutputDev(FoFiOutputFunc outputFuncA, void *outputStreamA, char *psTitleA, PDFDoc *docA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true,
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:126:5: note: candidate constructor not viable: no known conversion from 'const char[15]' to 'int' for 1st argument
+  126 |     PSOutputDev(int fdA, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0, int imgURXA = 0,
+      |     ^           ~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:116:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 18 were provided
+  116 | class POPPLER_PRIVATE_EXPORT PSOutputDev : public OutputDev
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp:19:7: warning: 'PSOutputDevTest_1293' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   19 | class PSOutputDevTest_1293 : public ::testing::Test {
+      |       ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1293.dir/build.make:79: generated_build/CMakeFiles/test_1293.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1293.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:27402: generated_build/CMakeFiles/test_1293.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:27409: generated_build/CMakeFiles/test_1293.dir/rule] 오류 2
+gmake: *** [Makefile:7602: test_1293] 오류 2

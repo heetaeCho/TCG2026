@@ -1,0 +1,76 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_930.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:25:22: error: allocation of incomplete type 'PDFDoc'
+   25 |         pdfDoc = new PDFDoc();
+      |                      ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:43:127: error: no member named 'getRootFields' in 'Form'
+   43 |         std::vector<std::unique_ptr<FormField>>* formRootFields = const_cast<std::vector<std::unique_ptr<FormField>>*>(&form->getRootFields());
+      |                                                                                                                         ~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:45:25: error: no viable overloaded '='
+   45 |         *formRootFields = std::move(rootFields);
+      |         ~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:695:7: note: candidate function not viable: no known conversion from 'vector<unique_ptr<FormTest_930::MockFormField, default_delete<FormTest_930::MockFormField>>, allocator<unique_ptr<FormTest_930::MockFormField, default_delete<FormTest_930::MockFormField>>>>' to 'const vector<unique_ptr<FormField, default_delete<FormField>>, allocator<unique_ptr<FormField, default_delete<FormField>>>>' for 1st argument
+  695 |       operator=(const vector& __x);
+      |       ^         ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:709:7: note: candidate function not viable: no known conversion from 'vector<unique_ptr<FormTest_930::MockFormField, default_delete<FormTest_930::MockFormField>>, allocator<unique_ptr<FormTest_930::MockFormField, default_delete<FormTest_930::MockFormField>>>>' to 'vector<unique_ptr<FormField, default_delete<FormField>>, allocator<unique_ptr<FormField, default_delete<FormField>>>>' for 1st argument
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:730:7: note: candidate function not viable: no known conversion from 'typename std::remove_reference<vector<unique_ptr<MockFormField>> &>::type' (aka 'std::vector<std::unique_ptr<FormTest_930::MockFormField>>') to 'initializer_list<value_type>' (aka 'initializer_list<std::unique_ptr<FormField, std::default_delete<FormField>>>') for 1st argument
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:55:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   55 |         delete pdfDoc;
+      |         ^      ~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:107:5: error: cannot use 'try' with exceptions disabled
+  107 |     EXPECT_THROW(form->getRootField(-1), std::out_of_range);
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:117:5: error: cannot use 'try' with exceptions disabled
+  117 |     EXPECT_THROW(form->getRootField(form->getNumFields()), std::out_of_range);
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:9:7: warning: 'FormTest_930' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class FormTest_930 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'FormTest_930::MockFormField'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:33:35: note: in instantiation of function template specialization 'std::make_unique<FormTest_930::MockFormField>' requested here
+   33 |         rootFields.push_back(std::make_unique<MockFormField>());
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:13:27: note: default constructor of 'MockFormField' is implicitly deleted because base class 'FormField' has an inaccessible default constructor
+   13 |     class MockFormField : public FormField {
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:13:11: warning: 'MockFormField' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 |     class MockFormField : public FormField {
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<FormTest_930::MockFormField>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp:33:30: note: in instantiation of member function 'std::unique_ptr<FormTest_930::MockFormField>::~unique_ptr' requested here
+   33 |         rootFields.push_back(std::make_unique<MockFormField>());
+      |                              ^
+3 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_930.dir/build.make:79: generated_build/CMakeFiles/test_930.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_930.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:45610: generated_build/CMakeFiles/test_930.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:45617: generated_build/CMakeFiles/test_930.dir/rule] 오류 2
+gmake: *** [Makefile:14999: test_930] 오류 2

@@ -1,0 +1,118 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_179.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:17:43: error: expected ';' at end of declaration list
+   17 |     MOCK_METHOD1(NumFiles, int(int level)) const;
+      |                                           ^
+      |                                           ;
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:31:29: error: call to implicitly-deleted default constructor of 'MockVersion'
+   31 |         input_version = new MockVersion();
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:13:21: note: default constructor of 'MockVersion' is implicitly deleted because base class 'Version' has no default constructor
+   13 | class MockVersion : public Version {
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:33:26: error: calling a private constructor of class 'leveldb::Compaction'
+   33 |         compaction = new Compaction(options, 0);
+      |                          ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:364:3: note: declared private here
+  364 |   Compaction(const Options* options, int level);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:35:21: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   35 |         compaction->input_version_ = input_version;
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:45:9: error: attempt to use a deleted function
+   45 |         delete input_version;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:13:21: note: destructor of 'MockVersion' is implicitly deleted because base class 'Version' has an inaccessible destructor
+   13 | class MockVersion : public Version {
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:71:17: error: 'grandparents_' is a private member of 'leveldb::Compaction'
+   71 |     compaction->grandparents_.clear(); // Ensure no grandparents
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:376:30: note: declared private here
+  376 |   std::vector<FileMetaData*> grandparents_;
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:93:17: error: 'grandparents_' is a private member of 'leveldb::Compaction'
+   93 |     compaction->grandparents_.push_back(grandparent_file);
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:376:30: note: declared private here
+  376 |   std::vector<FileMetaData*> grandparents_;
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:95:17: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   95 |     compaction->input_version_->vset_ = new VersionSet("dbname", options, nullptr, nullptr);
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:95:33: error: 'vset_' is a private member of 'leveldb::Version'
+   95 |     compaction->input_version_->vset_ = new VersionSet("dbname", options, nullptr, nullptr);
+      |                                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:148:15: note: declared private here
+  148 |   VersionSet* vset_;  // VersionSet to which this Version belongs
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:97:17: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   97 |     compaction->input_version_->vset_->options_->max_grandparent_overlap_bytes = 1024;
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:97:33: error: 'vset_' is a private member of 'leveldb::Version'
+   97 |     compaction->input_version_->vset_->options_->max_grandparent_overlap_bytes = 1024;
+      |                                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:148:15: note: declared private here
+  148 |   VersionSet* vset_;  // VersionSet to which this Version belongs
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:97:40: error: 'options_' is a private member of 'leveldb::VersionSet'
+   97 |     compaction->input_version_->vset_->options_->max_grandparent_overlap_bytes = 1024;
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:298:24: note: declared private here
+  298 |   const Options* const options_;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:97:50: error: no member named 'max_grandparent_overlap_bytes' in 'leveldb::Options'
+   97 |     compaction->input_version_->vset_->options_->max_grandparent_overlap_bytes = 1024;
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:111:24: error: 'input_version_' is a private member of 'leveldb::Compaction'
+  111 |     delete compaction->input_version_->vset_;
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:111:40: error: 'vset_' is a private member of 'leveldb::Version'
+  111 |     delete compaction->input_version_->vset_;
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:148:15: note: declared private here
+  148 |   VersionSet* vset_;  // VersionSet to which this Version belongs
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:127:17: error: 'grandparents_' is a private member of 'leveldb::Compaction'
+  127 |     compaction->grandparents_.push_back(grandparent_file);
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:376:30: note: declared private here
+  376 |   std::vector<FileMetaData*> grandparents_;
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:129:17: error: 'input_version_' is a private member of 'leveldb::Compaction'
+  129 |     compaction->input_version_->vset_ = new VersionSet("dbname", options, nullptr, nullptr);
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp:129:33: error: 'vset_' is a private member of 'leveldb::Version'
+  129 |     compaction->input_version_->vset_ = new VersionSet("dbname", options, nullptr, nullptr);
+      |                                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:148:15: note: declared private here
+  148 |   VersionSet* vset_;  // VersionSet to which this Version belongs
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_179.dir/build.make:76: generated_build/CMakeFiles/test_179.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_179.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:9693: generated_build/CMakeFiles/test_179.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:9700: generated_build/CMakeFiles/test_179.dir/rule] 오류 2
+gmake: *** [Makefile:4001: test_179] 오류 2

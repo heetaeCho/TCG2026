@@ -1,0 +1,200 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_575.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:11:41: error: base class has incomplete type
+   11 |     class MockIReporterFactory : public IReporterFactory {
+      |                                  ~~~~~~~^~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:22:11: note: forward declaration of 'Catch::IReporterFactory'
+   22 |     class IReporterFactory;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:15:22: error: unknown type name 'create'
+   15 |         MOCK_METHOD1(create, IEventListenerPtr(ReporterConfig&&));
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:15:9: error: a type specifier is required for all declarations
+   15 |         MOCK_METHOD1(create, IEventListenerPtr(ReporterConfig&&));
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:39:65: error: no viable conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'IReporterFactoryPtr' (aka 'unique_ptr<IReporterFactory>')
+   39 |         EXPECT_NO_THROW(registry.registerReporter("valid_name", std::move(factory)));
+      |                                                                 ^~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'const unique_ptr<IReporterFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'unique_ptr<IReporterFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::remove_reference<unique_ptr<MockIReporterFactory> &>::unique_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:39:52: note: passing argument to parameter 'factory' here
+   39 |                                IReporterFactoryPtr factory );
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:49:53: error: no viable conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'IReporterFactoryPtr' (aka 'unique_ptr<IReporterFactory>')
+   49 |         registry.registerReporter("duplicate_name", std::move(factory1));
+      |                                                     ^~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'const unique_ptr<IReporterFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'unique_ptr<IReporterFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::remove_reference<unique_ptr<MockIReporterFactory> &>::unique_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:39:52: note: passing argument to parameter 'factory' here
+   39 |                                IReporterFactoryPtr factory );
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:55:66: error: no viable conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'IReporterFactoryPtr' (aka 'unique_ptr<IReporterFactory>')
+   55 |         EXPECT_THROW(registry.registerReporter("duplicate_name", std::move(factory2)), std::logic_error);
+      |                                                                  ^~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'const unique_ptr<IReporterFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'unique_ptr<IReporterFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::remove_reference<unique_ptr<MockIReporterFactory> &>::unique_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:39:52: note: passing argument to parameter 'factory' here
+   39 |                                IReporterFactoryPtr factory );
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:65:64: error: no viable conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'IReporterFactoryPtr' (aka 'unique_ptr<IReporterFactory>')
+   65 |         EXPECT_THROW(registry.registerReporter("invalid:name", std::move(factory)), std::logic_error);
+      |                                                                ^~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'const unique_ptr<IReporterFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'unique_ptr<IReporterFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::remove_reference<unique_ptr<MockIReporterFactory> &>::unique_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:39:52: note: passing argument to parameter 'factory' here
+   39 |                                IReporterFactoryPtr factory );
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:85:52: error: no viable conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'IReporterFactoryPtr' (aka 'unique_ptr<IReporterFactory>')
+   85 |         registry.registerReporter("test_reporter", std::move(factory));
+      |                                                    ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'const unique_ptr<IReporterFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockIReporterFactory> &>::type' (aka 'std::unique_ptr<Catch::MockIReporterFactory>') to 'unique_ptr<IReporterFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::remove_reference<unique_ptr<MockIReporterFactory> &>::unique_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:39:52: note: passing argument to parameter 'factory' here
+   39 |                                IReporterFactoryPtr factory );
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:103:35: error: no viable conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'std::unique_ptr<Catch::EventListenerFactory>') to 'Detail::unique_ptr<EventListenerFactory>'
+  103 |         registry.registerListener(std::move(listenerFactory));
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'std::unique_ptr<Catch::EventListenerFactory>') to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'std::unique_ptr<Catch::EventListenerFactory>') to 'const unique_ptr<EventListenerFactory> &' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<unique_ptr<EventListenerFactory> &>::type' (aka 'std::unique_ptr<Catch::EventListenerFactory>') to 'unique_ptr<EventListenerFactory> &&' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr' against 'std::remove_reference<unique_ptr<EventListenerFactory> &>::unique_ptr'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: explicit constructor is not a candidate
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:42:68: note: passing argument to parameter 'factory' here
+   42 |         registerListener( Detail::unique_ptr<EventListenerFactory> factory );
+      |                                                                    ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Catch::EventListenerFactory'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:101:37: note: in instantiation of function template specialization 'std::make_unique<Catch::EventListenerFactory>' requested here
+  101 |         auto listenerFactory = std::make_unique<EventListenerFactory>();
+      |                                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: forward declaration of 'Catch::EventListenerFactory'
+   25 |     class EventListenerFactory;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Catch::EventListenerFactory'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Catch::EventListenerFactory>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp:101:32: note: in instantiation of member function 'std::unique_ptr<Catch::EventListenerFactory>::~unique_ptr' requested here
+  101 |         auto listenerFactory = std::make_unique<EventListenerFactory>();
+      |                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:25:11: note: forward declaration of 'Catch::EventListenerFactory'
+   25 |     class EventListenerFactory;
+      |           ^
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_575.dir/build.make:79: generated_build/CMakeFiles/test_575.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_575.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:6080: generated_build/CMakeFiles/test_575.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:6087: generated_build/CMakeFiles/test_575.dir/rule] 오류 2
+gmake: *** [Makefile:1216: test_575] 오류 2

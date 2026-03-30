@@ -1,0 +1,47 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from CommentValueTest_822
+[ RUN      ] CommentValueTest_822.WriteWithUndefinedCharset_822
+[       OK ] CommentValueTest_822.WriteWithUndefinedCharset_822 (0 ms)
+[ RUN      ] CommentValueTest_822.WriteWithAsciiCharset_822
+Warning: Invalid charset: `ascii'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_822.cpp:61: Failure
+Expected equality of these values:
+  os.str()
+    Which is: "Sample comment"
+  "charset=ascii Sample comment"
+[  FAILED  ] CommentValueTest_822.WriteWithAsciiCharset_822 (0 ms)
+[ RUN      ] CommentValueTest_822.WriteWithUnicodeCharset_822
+Warning: Invalid charset: `unicode'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_822.cpp:77: Failure
+Expected equality of these values:
+  os.str()
+    Which is: "Sample comment"
+  "charset=unicode Sample comment"
+[  FAILED  ] CommentValueTest_822.WriteWithUnicodeCharset_822 (0 ms)
+[ RUN      ] CommentValueTest_822.WriteWithEmptyComment_822
+[       OK ] CommentValueTest_822.WriteWithEmptyComment_822 (0 ms)
+[ RUN      ] CommentValueTest_822.WriteWithSpecialCharacters_822
+[       OK ] CommentValueTest_822.WriteWithSpecialCharacters_822 (0 ms)
+[ RUN      ] CommentValueTest_822.WriteWithLongComment_822
+[       OK ] CommentValueTest_822.WriteWithLongComment_822 (0 ms)
+[ RUN      ] CommentValueTest_822.WriteWithCharsetDetection_822
+Warning: Invalid charset: `jis'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_822.cpp:133: Failure
+Expected equality of these values:
+  os.str()
+    Which is: ""
+  "charset=jis Sample comment"
+[  FAILED  ] CommentValueTest_822.WriteWithCharsetDetection_822 (0 ms)
+[----------] 7 tests from CommentValueTest_822 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] CommentValueTest_822.WriteWithAsciiCharset_822
+[  FAILED  ] CommentValueTest_822.WriteWithUnicodeCharset_822
+[  FAILED  ] CommentValueTest_822.WriteWithCharsetDetection_822
+
+ 3 FAILED TESTS

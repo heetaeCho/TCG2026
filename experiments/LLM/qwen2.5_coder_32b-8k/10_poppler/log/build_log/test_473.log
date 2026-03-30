@@ -1,0 +1,77 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_473.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_473.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_473.cpp:3:
+In file included from /usr/include/gmock/gmock.h:65:
+/usr/include/gmock/gmock-nice-strict.h:140:17: error: static assertion failed due to requirement '!internal::HasStrictnessModifier()': Can't apply NiceMock to a class hierarchy that already has a strictness modifier. See https://google.github.io/googletest/gmock_cook_book.html#NiceStrictNaggy
+  140 |   static_assert(!internal::HasStrictnessModifier<MockClass>(),
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:1442:46: note: in instantiation of template class 'testing::NiceMock<testing::StrictMock<GfxColorSpace>>' requested here
+ 1442 |                typename = decltype(__test_aux<_To1>(std::declval<_From1>()))>
+      |                                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:1442:29: note: while substituting deduced template arguments into function template '__test_aux' [with _To1 = GfxColorSpace *]
+ 1442 |                typename = decltype(__test_aux<_To1>(std::declval<_From1>()))>
+      |                                    ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:1444:2: note: in instantiation of default argument for '__test<testing::NiceMock<testing::StrictMock<GfxColorSpace>> *, GfxColorSpace *>' required here
+ 1444 |         __test(int);
+      |         ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:1451:24: note: while substituting deduced template arguments into function template '__test' [with _From1 = testing::NiceMock<testing::StrictMock<GfxColorSpace>> *, _To1 = GfxColorSpace *, $2 = (no value)]
+ 1451 |       typedef decltype(__test<_From, _To>(0)) type;
+      |                        ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:1458:14: note: in instantiation of template class 'std::__is_convertible_helper<testing::NiceMock<testing::StrictMock<GfxColorSpace>> *, GfxColorSpace *>' requested here
+ 1458 |     : public __is_convertible_helper<_From, _To>::type
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:153:26: note: (skipping 1 context in backtrace; use -ftemplate-backtrace-limit=0 to see all)
+  153 |     : public conditional<_B1::value, _B2, _B1>::type
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:153:26: note: in instantiation of template class 'std::__and_<std::is_convertible<testing::NiceMock<testing::StrictMock<GfxColorSpace>> *, GfxColorSpace *>, std::__not_<std::is_array<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>>>' requested here
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:2209:36: note: in instantiation of template class 'std::__and_<std::__and_<std::is_convertible<testing::NiceMock<testing::StrictMock<GfxColorSpace>> *, GfxColorSpace *>, std::__not_<std::is_array<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>>>, std::is_convertible<std::default_delete<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>, std::default_delete<GfxColorSpace>>>' requested here
+ 2209 |     using _Require = __enable_if_t<__and_<_Cond...>::value>;
+      |                                    ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:335:55: note: in instantiation of template type alias '_Require' requested here
+  335 |       template<typename _Up, typename _Ep, typename = _Require<
+      |                                                       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:340:2: note: in instantiation of default argument for 'unique_ptr<testing::NiceMock<testing::StrictMock<GfxColorSpace>>, std::default_delete<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>>' required here
+  340 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  341 |         : _M_t(__u.release(), std::forward<_Ep>(__u.get_deleter()))
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  342 |         { }
+      |         ~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_473.cpp:25:26: note: while substituting deduced template arguments into function template 'unique_ptr' [with _Up = testing::NiceMock<testing::StrictMock<GfxColorSpace>>, _Ep = std::default_delete<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>, $2 = (no value)]
+   25 |         baseColorSpace = std::make_unique<NiceMock<StrictMock<GfxColorSpace>>>();
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_473.cpp:25:24: error: no viable overloaded '='
+   25 |         baseColorSpace = std::make_unique<NiceMock<StrictMock<GfxColorSpace>>>();
+      |         ~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:371:19: note: candidate function not viable: no known conversion from 'unique_ptr<testing::NiceMock<testing::StrictMock<GfxColorSpace>>, default_delete<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>>' to 'unique_ptr<GfxColorSpace, default_delete<GfxColorSpace>>' for 1st argument
+  371 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:386:2: note: candidate template ignored: requirement '__and_<std::__and_<std::is_convertible<testing::NiceMock<testing::StrictMock<GfxColorSpace>> *, GfxColorSpace *>, std::__not_<std::is_array<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>>>, std::is_assignable<std::default_delete<GfxColorSpace> &, std::default_delete<testing::NiceMock<testing::StrictMock<GfxColorSpace>>> &&>>::value' was not satisfied [with _Up = testing::NiceMock<testing::StrictMock<GfxColorSpace>>, _Ep = std::default_delete<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>]
+  386 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:395:7: note: candidate function not viable: no known conversion from 'typename _MakeUniq<NiceMock<StrictMock<GfxColorSpace>>>::__single_object' (aka 'unique_ptr<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>') to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  395 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:469:19: note: candidate function not viable: no known conversion from 'unique_ptr<testing::NiceMock<testing::StrictMock<GfxColorSpace>>, default_delete<testing::NiceMock<testing::StrictMock<GfxColorSpace>>>>' to 'const unique_ptr<GfxColorSpace, default_delete<GfxColorSpace>>' for 1st argument
+  469 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_473.cpp:47:5: error: no member named 'gmock_getOverprintMask' in 'GfxColorSpace'
+   47 |     EXPECT_CALL(*baseColorSpace, getOverprintMask()).WillOnce(Return(expectedMask));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:23:1: note: expanded from here
+   23 | gmock_getOverprintMask
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_473.cpp:13:7: warning: 'GfxIndexedColorSpaceTest_473' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class GfxIndexedColorSpaceTest_473 : public Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_473.dir/build.make:79: generated_build/CMakeFiles/test_473.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_473.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:67434: generated_build/CMakeFiles/test_473.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:67441: generated_build/CMakeFiles/test_473.dir/rule] 오류 2
+gmake: *** [Makefile:23865: test_473] 오류 2

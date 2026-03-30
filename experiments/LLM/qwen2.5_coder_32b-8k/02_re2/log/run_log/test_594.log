@@ -1,0 +1,24 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from SetTest
+[ RUN      ] SetTest.Constructor_DefaultValues_594
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_594.cpp:35: Failure
+Expected equality of these values:
+  set.Compile()
+    Which is: true
+  false
+[  FAILED  ] SetTest.Constructor_DefaultValues_594 (0 ms)
+[ RUN      ] SetTest.MoveConstructor_MovesData_594
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+F0000 00:00:1774677332.775324 1679507 set.cc:142] RE2::Set::Match() called before compiling
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x559ebcc69147  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x559ebcc68b4f  absl::log_internal::LogMessage::SendToLog()
+    @     0x559ebcc68b0b  absl::log_internal::LogMessage::Flush()
+    @     0x559ebcbe1c69  absl::log_internal::Voidify::operator&&<>()
+    @     0x559ebcbe01ce  re2::RE2::Set::Match()
+    @     0x559ebcbe00d4  re2::RE2::Set::Match()
+    @     0x559ebcba93b7  SetTest_MoveConstructor_MovesData_594_Test::TestBody()
+    @     0x559ebcbde93f  testing::internal::HandleExceptionsInMethodIfSupported<>()

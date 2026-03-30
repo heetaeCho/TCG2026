@@ -1,0 +1,23 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1924.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1924.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1924.cpp:19:16: error: use of undeclared identifier 'cairo_surface_create_similar_clip'; did you mean 'cairo_surface_create_observer'?
+   19 |         return cairo_surface_create_similar_clip(cr, content);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                cairo_surface_create_observer
+/usr/include/cairo/cairo.h:2255:1: note: 'cairo_surface_create_observer' declared here
+ 2255 | cairo_surface_create_observer (cairo_surface_t *target,
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1924.cpp:19:50: error: cannot initialize a parameter of type 'cairo_surface_t *' (aka '_cairo_surface *') with an lvalue of type 'cairo_t *' (aka '_cairo *')
+   19 |         return cairo_surface_create_similar_clip(cr, content);
+      |                                                  ^~
+/usr/include/cairo/cairo.h:124:16: note: '_cairo' is not defined, but forward declared here; conversion would be valid if it was derived from '_cairo_surface'
+  124 | typedef struct _cairo cairo_t;
+      |                ^
+/usr/include/cairo/cairo.h:2255:49: note: passing argument to parameter 'target' here
+ 2255 | cairo_surface_create_observer (cairo_surface_t *target,
+      |                                                 ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1924.dir/build.make:79: generated_build/CMakeFiles/test_1924.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1924.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:101642: generated_build/CMakeFiles/test_1924.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:101649: generated_build/CMakeFiles/test_1924.dir/rule] 오류 2
+gmake: *** [Makefile:37762: test_1924] 오류 2

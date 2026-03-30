@@ -1,0 +1,58 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_863.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:17:104: error: use of undeclared identifier 'formFieldTypeText'
+   17 |         field = new FormField(nullptr, Object(), Ref(), nullptr, static_cast<std::set<int>*>(nullptr), formFieldTypeText);
+      |                                                                                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:19:27: error: no matching constructor for initialization of 'AnnotWidget'
+   19 |         annotWidget = new AnnotWidget(nullptr, Object(Object::null()), Object(Object::null()));
+      |                           ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1464:5: note: candidate constructor not viable: no known conversion from 'Object' to 'const Object *' for 3rd argument
+ 1464 |     AnnotWidget(PDFDoc *docA, Object &&dictObject, const Object *obj);
+      |     ^                                              ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1465:5: note: candidate constructor not viable: requires 4 arguments, but 3 were provided
+ 1465 |     AnnotWidget(PDFDoc *docA, Object *dictObject, Object *obj, FormField *fieldA);
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1453:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+ 1453 | class POPPLER_PRIVATE_EXPORT AnnotWidget : public Annot
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:47:35: error: 'field' is a private member of 'AnnotWidget'
+   47 |     EXPECT_NE(field, annotWidget->field); // Initially pointers should be different
+      |                                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1489:16: note: declared private here
+ 1489 |     FormField *field; // FormField object for this annotation
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:51:35: error: 'field' is a private member of 'AnnotWidget'
+   51 |     EXPECT_EQ(field, annotWidget->field); // After setField, they should be the same
+      |                                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1489:16: note: declared private here
+ 1489 |     FormField *field; // FormField object for this annotation
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:61:37: error: 'field' is a private member of 'AnnotWidget'
+   61 |     EXPECT_EQ(nullptr, annotWidget->field); // Setting to nullptr should update field pointer correctly
+      |                                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1489:16: note: declared private here
+ 1489 |     FormField *field; // FormField object for this annotation
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:69:114: error: use of undeclared identifier 'formFieldTypeText'
+   69 |     FormField* newField = new FormField(nullptr, Object(), Ref(), nullptr, static_cast<std::set<int>*>(nullptr), formFieldTypeText);
+      |                                                                                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:73:35: error: 'field' is a private member of 'AnnotWidget'
+   73 |     EXPECT_EQ(field, annotWidget->field); // Initially set to field
+      |                                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1489:16: note: declared private here
+ 1489 |     FormField *field; // FormField object for this annotation
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:77:38: error: 'field' is a private member of 'AnnotWidget'
+   77 |     EXPECT_EQ(newField, annotWidget->field); // After second call, should be updated to newField
+      |                                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1489:16: note: declared private here
+ 1489 |     FormField *field; // FormField object for this annotation
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp:9:7: warning: 'AnnotWidgetTest_863' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class AnnotWidgetTest_863 : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_863.dir/build.make:79: generated_build/CMakeFiles/test_863.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_863.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:27370: generated_build/CMakeFiles/test_863.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:27377: generated_build/CMakeFiles/test_863.dir/rule] 오류 2
+gmake: *** [Makefile:7589: test_863] 오류 2

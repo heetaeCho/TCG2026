@@ -1,0 +1,51 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_91.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp:53:42: error: cannot initialize a parameter of type 'char' with an lvalue of type 'const char[6]'
+   53 |     EXPECT_EQ(StringMaker<char>::convert(arr), "World");
+      |                                          ^~~
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/catch_tostring.hpp:276:41: note: passing argument to parameter 'c' here
+  276 |         static std::string convert(char c);
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp:197:91: error: too many arguments provided to function-like macro invocation
+  197 |     EXPECT_EQ(StringMaker<std::chrono::duration<int, std::ratio<60>>>::convert(duration), "3m");
+      |                                                                                           ^
+/usr/include/gtest/gtest.h:2043:9: note: macro 'EXPECT_EQ' defined here
+ 2043 | #define EXPECT_EQ(val1, val2) \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp:197:5: error: use of undeclared identifier 'EXPECT_EQ'
+  197 |     EXPECT_EQ(StringMaker<std::chrono::duration<int, std::ratio<60>>>::convert(duration), "3m");
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp:207:93: error: too many arguments provided to function-like macro invocation
+  207 |     EXPECT_EQ(StringMaker<std::chrono::duration<int, std::ratio<3600>>>::convert(duration), "2h");
+      |                                                                                             ^
+/usr/include/gtest/gtest.h:2043:9: note: macro 'EXPECT_EQ' defined here
+ 2043 | #define EXPECT_EQ(val1, val2) \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp:207:5: error: use of undeclared identifier 'EXPECT_EQ'
+  207 |     EXPECT_EQ(StringMaker<std::chrono::duration<int, std::ratio<3600>>>::convert(duration), "2h");
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp:215:23: error: use of undeclared identifier 'system_clock'; did you mean 'std::chrono::system_clock'?
+  215 |     auto time_point = system_clock::now();
+      |                       ^~~~~~~~~~~~
+      |                       std::chrono::system_clock
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/chrono:1125:12: note: 'std::chrono::system_clock' declared here
+ 1125 |     struct system_clock
+      |            ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_91.dir/build.make:79: generated_build/CMakeFiles/test_91.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_91.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4001: generated_build/CMakeFiles/test_91.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4008: generated_build/CMakeFiles/test_91.dir/rule] 오류 2
+gmake: *** [Makefile:397: test_91] 오류 2

@@ -1,0 +1,108 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2008.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:21:5: error: only virtual member functions can be marked 'override'
+   21 |     MOCK_METHOD(XRef*, getXRef, (), (const, override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:300:1: note: expanded from here
+  300 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:29:9: error: expected unqualified-id
+   29 |     Mock<XRef> mockXRef;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:31:17: error: use of undeclared identifier 'mockXRef'
+   31 |     EXPECT_CALL(mockXRef, getXRef()).WillRepeatedly(Return(&mockXRef));
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:31:61: error: use of undeclared identifier 'mockXRef'
+   31 |     EXPECT_CALL(mockXRef, getXRef()).WillRepeatedly(Return(&mockXRef));
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:35:16: error: call to implicitly-deleted default constructor of 'PDFDocMock'
+   35 |     PDFDocMock pdfDoc;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:17:20: note: default constructor of 'PDFDocMock' is implicitly deleted because base class 'PDFDoc' has an inaccessible default constructor
+   17 | class PDFDocMock : public PDFDoc {
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:37:54: error: use of undeclared identifier 'mockXRef'
+   37 |     ON_CALL(pdfDoc, getXRef()).WillByDefault(Return(&mockXRef));
+      |                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:41:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+   41 |     Dict* result = getExpiredStampExtGStateDict(&pdfDoc);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:47:18: error: call to deleted constructor of 'const Object'
+   47 |     const Object a0Obj = result->lookupNF("a0");
+      |                  ^       ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:53:18: error: call to deleted constructor of 'const Object'
+   53 |     const Object caA0Obj = a0Obj.getDict()->lookupNF("CA");
+      |                  ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:59:18: error: call to deleted constructor of 'const Object'
+   59 |     const Object ca1A0Obj = a0Obj.getDict()->lookupNF("ca");
+      |                  ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:65:18: error: call to deleted constructor of 'const Object'
+   65 |     const Object a1Obj = result->lookupNF("a1");
+      |                  ^       ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:71:18: error: call to deleted constructor of 'const Object'
+   71 |     const Object caA1Obj = a1Obj.getDict()->lookupNF("CA");
+      |                  ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:77:18: error: call to deleted constructor of 'const Object'
+   77 |     const Object ca1A1Obj = a1Obj.getDict()->lookupNF("ca");
+      |                  ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:91:9: error: expected unqualified-id
+   91 |     Mock<XRef> mockXRef;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:93:17: error: use of undeclared identifier 'mockXRef'
+   93 |     EXPECT_CALL(mockXRef, getXRef()).WillRepeatedly(Return(&mockXRef));
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:93:61: error: use of undeclared identifier 'mockXRef'
+   93 |     EXPECT_CALL(mockXRef, getXRef()).WillRepeatedly(Return(&mockXRef));
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:97:16: error: call to implicitly-deleted default constructor of 'PDFDocMock'
+   97 |     PDFDocMock pdfDoc;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:17:20: note: default constructor of 'PDFDocMock' is implicitly deleted because base class 'PDFDoc' has an inaccessible default constructor
+   17 | class PDFDocMock : public PDFDoc {
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:99:54: error: use of undeclared identifier 'mockXRef'
+   99 |     ON_CALL(pdfDoc, getXRef()).WillByDefault(Return(&mockXRef));
+      |                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp:103:49: error: use of undeclared identifier 's1'
+  103 |     int initialAllocations = _CrtMemCheckpoint(&s1);
+      |                                                 ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2008.dir/build.make:79: generated_build/CMakeFiles/test_2008.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2008.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:92234: generated_build/CMakeFiles/test_2008.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:92241: generated_build/CMakeFiles/test_2008.dir/rule] 오류 2
+gmake: *** [Makefile:33940: test_2008] 오류 2

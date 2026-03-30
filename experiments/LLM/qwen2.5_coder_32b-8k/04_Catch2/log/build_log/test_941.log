@@ -1,0 +1,39 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_941.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:61:40: error: unknown type name 'WriteBatchImpl'; did you mean 'WriteBatch'?
+   61 |         write_batch = std::make_unique<WriteBatchImpl>();  // Replace with actual implementation
+      |                                        ^~~~~~~~~~~~~~
+      |                                        WriteBatch
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:13:7: note: 'WriteBatch' declared here
+   13 | class WriteBatch {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:151:1: error: expected unqualified-id
+  151 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'WriteBatch'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:61:28: note: in instantiation of function template specialization 'std::make_unique<WriteBatch>' requested here
+   61 |         write_batch = std::make_unique<WriteBatchImpl>();  // Replace with actual implementation
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:19:18: note: unimplemented pure virtual method 'Put' in 'WriteBatch'
+   19 |     virtual void Put(const std::string& key, const std::string& value) = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:21:20: note: unimplemented pure virtual method 'GetCount' in 'WriteBatch'
+   21 |     virtual size_t GetCount() const = 0;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:23:18: note: unimplemented pure virtual method 'Delete' in 'WriteBatch'
+   23 |     virtual bool Delete(const std::string& key) = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp:25:18: note: unimplemented pure virtual method 'Clear' in 'WriteBatch'
+   25 |     virtual void Clear() = 0;
+      |                  ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_941.dir/build.make:79: generated_build/CMakeFiles/test_941.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_941.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:28751: generated_build/CMakeFiles/test_941.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:28758: generated_build/CMakeFiles/test_941.dir/rule] 오류 2
+gmake: *** [Makefile:10147: test_941] 오류 2

@@ -1,0 +1,47 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1981.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1981.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1981.cpp:19:5: error: only virtual member functions can be marked 'override'
+   19 |     MOCK_METHOD(size_t, writeData, (const char *ptr, size_t size), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:234:1: note: expanded from here
+  234 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1981.cpp:51:30: error: call to implicitly-deleted default constructor of 'MockCachedFile'
+   51 |         mockCachedFile = new MockCachedFile();
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1981.cpp:15:24: note: default constructor of 'MockCachedFile' is implicitly deleted because base class 'CachedFile' has no default constructor
+   15 | class MockCachedFile : public CachedFile {
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1981.cpp:61:31: error: no matching constructor for initialization of 'CachedFileWriter'
+   61 |         writerFromArray = new CachedFileWriter(mockCachedFile, chunksArray->data);
+      |                               ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/CachedFile.h:98:5: note: candidate constructor not viable: no known conversion from 'int[10]' to 'std::vector<int> *' for 2nd argument
+   98 |     CachedFileWriter(CachedFile *cachedFile, std::vector<int> *chunksA);
+      |     ^                                        ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/CachedFile.h:92:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   92 | class POPPLER_PRIVATE_EXPORT CachedFileWriter
+      |                              ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1981.cpp:45:7: warning: 'CachedFileWriterTest_1981' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   45 | class CachedFileWriterTest_1981 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1981.dir/build.make:79: generated_build/CMakeFiles/test_1981.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1981.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:58250: generated_build/CMakeFiles/test_1981.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:58257: generated_build/CMakeFiles/test_1981.dir/rule] 오류 2
+gmake: *** [Makefile:20134: test_1981] 오류 2

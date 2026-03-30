@@ -1,0 +1,58 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_556.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:21:55: error: 'Zombie' is a private member of 'YAML::Node'
+   21 |     NodeTest_556() : validNode(42), invalidNode(Node::Zombie{}) {}
+      |                                                       ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:118:8: note: declared private here
+  118 |   enum Zombie { ZombieNode };
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:21:37: error: field of type 'Node' has private constructor
+   21 |     NodeTest_556() : validNode(42), invalidNode(Node::Zombie{}) {}
+      |                                     ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:119:12: note: declared private here
+  119 |   explicit Node(Zombie);
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:243:14: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  243 |   AssignData(convert<T>::encode(rhs));
+      |              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:36:3: note: in instantiation of function template specialization 'YAML::Node::Assign<int>' requested here
+   36 |   Assign(rhs);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:21:22: note: in instantiation of function template specialization 'YAML::Node::Node<int>' requested here
+   21 |     NodeTest_556() : validNode(42), invalidNode(Node::Zombie{}) {}
+      |                      ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:137:9: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  137 |     if (convert<T>::decode(node, t))
+      |         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:164:10: note: in instantiation of member function 'YAML::as_if<int, void>::operator()' requested here
+  164 |   return as_if<T, void>(*this)();
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:29:28: note: in instantiation of function template specialization 'YAML::Node::as<int>' requested here
+   29 |     int result = validNode.as<int>();
+      |                            ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:107:9: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  107 |     if (convert<T>::decode(node, t))
+      |         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:171:10: note: in instantiation of member function 'YAML::as_if<int, int>::operator()' requested here
+  171 |   return as_if<T, S>(*this)(fallback);
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp:41:30: note: in instantiation of function template specialization 'YAML::Node::as<int, int>' requested here
+   41 |     int result = invalidNode.as<int>(fallback);
+      |                              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_556.dir/build.make:79: generated_build/CMakeFiles/test_556.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_556.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15854: generated_build/CMakeFiles/test_556.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15861: generated_build/CMakeFiles/test_556.dir/rule] 오류 2
+gmake: *** [Makefile:5718: test_556] 오류 2

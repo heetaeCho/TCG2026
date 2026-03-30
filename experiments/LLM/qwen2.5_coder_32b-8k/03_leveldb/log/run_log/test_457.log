@@ -1,0 +1,51 @@
+Running main() from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from AppendEscapedStringToTest_457
+[ RUN      ] AppendEscapedStringToTest_457.EmptyString_457
+[       OK ] AppendEscapedStringToTest_457.EmptyString_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.PlainText_457
+[       OK ] AppendEscapedStringToTest_457.PlainText_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.SingleSpace_457
+[       OK ] AppendEscapedStringToTest_457.SingleSpace_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.SpecialCharacters_457
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_457.cpp:61: Failure
+Expected equality of these values:
+  result
+    Which is: "\\x01\\x02\\x09\\x0a\\x0d"
+  "\\x01\\x02\\t\\n\\r"
+
+[  FAILED  ] AppendEscapedStringToTest_457.SpecialCharacters_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.MixedContent_457
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_457.cpp:73: Failure
+Expected equality of these values:
+  result
+    Which is: "Hello\\x01World\\x0a!"
+  "Hello\\x01World\\n!"
+
+[  FAILED  ] AppendEscapedStringToTest_457.MixedContent_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.PrintableCharacters_457
+[       OK ] AppendEscapedStringToTest_457.PrintableCharacters_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.NonPrintableCharacters_457
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_457.cpp:97: Failure
+Expected equality of these values:
+  result
+    Which is: ""
+  "\\x00\\x0f\\x1f\\x7f"
+
+[  FAILED  ] AppendEscapedStringToTest_457.NonPrintableCharacters_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.LongString_457
+[       OK ] AppendEscapedStringToTest_457.LongString_457 (0 ms)
+[ RUN      ] AppendEscapedStringToTest_457.BoundaryCharacters_457
+[       OK ] AppendEscapedStringToTest_457.BoundaryCharacters_457 (0 ms)
+[----------] 9 tests from AppendEscapedStringToTest_457 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] AppendEscapedStringToTest_457.SpecialCharacters_457
+[  FAILED  ] AppendEscapedStringToTest_457.MixedContent_457
+[  FAILED  ] AppendEscapedStringToTest_457.NonPrintableCharacters_457
+
+ 3 FAILED TESTS

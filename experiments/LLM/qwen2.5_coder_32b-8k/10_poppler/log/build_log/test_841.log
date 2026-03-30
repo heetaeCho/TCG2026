@@ -1,0 +1,126 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_841.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:13:18: error: field has incomplete type 'PDFRectangle'
+   13 |     PDFRectangle rect;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:21:19: error: allocation of incomplete type 'PDFDoc'
+   21 |         doc = new PDFDoc();
+      |                   ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:31:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   31 |         delete doc;
+      |         ^      ~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:61:5: error: cannot use 'try' with exceptions disabled
+   61 |     EXPECT_NO_THROW(annot_stamp->setCustomImage(std::move(image_helper)));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:71:49: error: reference to type 'std::unique_ptr<AnnotStampImageHelper>' could not bind to an rvalue of type 'typename std::remove_reference<int &>::type' (aka 'int')
+   71 |     EXPECT_NO_THROW(annot_stamp->setCustomImage(std::move(image_helper_id)));
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1233:66: note: passing argument to parameter 'stampImageHelperA' here
+ 1233 |     void setCustomImage(std::unique_ptr<AnnotStampImageHelper> &&stampImageHelperA);
+      |                                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:71:5: error: cannot use 'try' with exceptions disabled
+   71 |     EXPECT_NO_THROW(annot_stamp->setCustomImage(std::move(image_helper_id)));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'AnnotStampImageHelper'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:59:30: note: in instantiation of function template specialization 'std::make_unique<AnnotStampImageHelper>' requested here
+   59 |     auto image_helper = std::make_unique<AnnotStampImageHelper>();
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:38:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   38 | class POPPLER_PRIVATE_EXPORT AnnotStampImageHelper
+      |                              ^~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:41:5: note: candidate constructor not viable: requires 7 arguments, but 0 were provided
+   41 |     AnnotStampImageHelper(PDFDoc *docA, int widthA, int heightA, ColorSpace colorSpace, int bitsPerComponent, char *data, int dataLength);
+      |     ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:42:5: note: candidate constructor not viable: requires 8 arguments, but 0 were provided
+   42 |     AnnotStampImageHelper(PDFDoc *docA, int widthA, int heightA, ColorSpace colorSpace, int bitsPerComponent, char *data, int dataLength, Ref softMaskRef);
+      |     ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotStampTest_841_InitialIconIsEmpty_841_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:39:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotStampTest_841_InitialIconIsEmpty_841_Test>::CreateTest' requested here
+   39 | TEST_F(AnnotStampTest_841, InitialIconIsEmpty_841) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotStampTest_841_SetIconAndGetIcon_841_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotStampTest_841_SetIconAndGetIcon_841_Test>::CreateTest' requested here
+   47 | TEST_F(AnnotStampTest_841, SetIconAndGetIcon_841) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotStampTest_841_SetCustomImageUniquePtr_841_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:57:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotStampTest_841_SetCustomImageUniquePtr_841_Test>::CreateTest' requested here
+   57 | TEST_F(AnnotStampTest_841, SetCustomImageUniquePtr_841) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotStampTest_841_SetCustomImageInt_841_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp:67:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotStampTest_841_SetCustomImageInt_841_Test>::CreateTest' requested here
+   67 | TEST_F(AnnotStampTest_841, SetCustomImageInt_841) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_841.dir/build.make:79: generated_build/CMakeFiles/test_841.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_841.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:98634: generated_build/CMakeFiles/test_841.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:98641: generated_build/CMakeFiles/test_841.dir/rule] 오류 2
+gmake: *** [Makefile:36540: test_841] 오류 2

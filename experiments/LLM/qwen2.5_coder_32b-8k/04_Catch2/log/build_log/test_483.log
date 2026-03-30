@@ -1,0 +1,33 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_483.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp:55:16: error: use of undeclared identifier 'global_mock_signal_handler'
+   55 |         return global_mock_signal_handler->mock_sigaction(signum, act, oldact);
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp:63:16: error: use of undeclared identifier 'global_mock_signal_handler'
+   63 |         return global_mock_signal_handler->mock_sigaltstack(ss, oss);
+      |                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:660:19: error: static assertion failed due to requirement '!std::is_void<void>::value': Can't use Return() on an action expected to return `void`.
+  660 |     static_assert(!std::is_void<Result>::value,
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp:131:112: note: in instantiation of function template specialization 'testing::internal::ReturnAction<int>::operator Action<void (int, const sigaction *, sigaction *)>' requested here
+  131 |         EXPECT_CALL(mock, mock_sigaction(Catch::signalDefs[i].id, &Catch::oldSigActions[i], nullptr)).WillOnce(::testing::Return(-1));
+      |                                                                                                                ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:692:12: error: field has incomplete type 'Result' (aka 'void')
+  692 |     Result value_;
+      |            ^
+/usr/include/gmock/gmock-actions.h:662:26: note: in instantiation of template class 'testing::internal::ReturnAction<int>::Impl<int, void (int, const sigaction *, sigaction *)>' requested here
+  662 |     return Action<F>(new Impl<R, F>(value_));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp:131:112: note: in instantiation of function template specialization 'testing::internal::ReturnAction<int>::operator Action<void (int, const sigaction *, sigaction *)>' requested here
+  131 |         EXPECT_CALL(mock, mock_sigaction(Catch::signalDefs[i].id, &Catch::oldSigActions[i], nullptr)).WillOnce(::testing::Return(-1));
+      |                                                                                                                ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_483.dir/build.make:79: generated_build/CMakeFiles/test_483.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_483.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:20105: generated_build/CMakeFiles/test_483.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:20112: generated_build/CMakeFiles/test_483.dir/rule] 오류 2
+gmake: *** [Makefile:6741: test_483] 오류 2

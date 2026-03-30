@@ -1,0 +1,50 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_223.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_223.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_223.cpp:55:32: error: must use 'struct' tag to refer to type 'leveldb_t' in this scope
+   55 |     leveldb_t* leveldb_t = new leveldb_t();
+      |                                ^
+      |                                struct 
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_223.cpp:55:16: note: struct 'leveldb_t' is hidden by a non-type declaration of 'leveldb_t' here
+   55 |     leveldb_t* leveldb_t = new leveldb_t();
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_223.cpp:35:18: error: allocating an object of abstract class type 'MockDB'
+   35 |         db = new MockDB();
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:66:18: note: unimplemented pure virtual method 'Put' in 'MockDB'
+   66 |   virtual Status Put(const WriteOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:73:18: note: unimplemented pure virtual method 'Delete' in 'MockDB'
+   73 |   virtual Status Delete(const WriteOptions& options, const Slice& key) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:78:18: note: unimplemented pure virtual method 'Write' in 'MockDB'
+   78 |   virtual Status Write(const WriteOptions& options, WriteBatch* updates) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:87:18: note: unimplemented pure virtual method 'Get' in 'MockDB'
+   87 |   virtual Status Get(const ReadOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:96:21: note: unimplemented pure virtual method 'NewIterator' in 'MockDB'
+   96 |   virtual Iterator* NewIterator(const ReadOptions& options) = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:102:27: note: unimplemented pure virtual method 'GetSnapshot' in 'MockDB'
+  102 |   virtual const Snapshot* GetSnapshot() = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:106:16: note: unimplemented pure virtual method 'ReleaseSnapshot' in 'MockDB'
+  106 |   virtual void ReleaseSnapshot(const Snapshot* snapshot) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:124:16: note: unimplemented pure virtual method 'GetProperty' in 'MockDB'
+  124 |   virtual bool GetProperty(const Slice& property, std::string* value) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:134:16: note: unimplemented pure virtual method 'GetApproximateSizes' in 'MockDB'
+  134 |   virtual void GetApproximateSizes(const Range* range, int n,
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:147:16: note: unimplemented pure virtual method 'CompactRange' in 'MockDB'
+  147 |   virtual void CompactRange(const Slice* begin, const Slice* end) = 0;
+      |                ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_223.dir/build.make:76: generated_build/CMakeFiles/test_223.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_223.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14739: generated_build/CMakeFiles/test_223.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14746: generated_build/CMakeFiles/test_223.dir/rule] 오류 2
+gmake: *** [Makefile:6263: test_223] 오류 2

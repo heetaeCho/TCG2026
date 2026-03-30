@@ -1,0 +1,46 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1170.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:17:25: error: use of undeclared identifier 'gfxFontCID'
+   17 |     GfxFontType typeA = gfxFontCID;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:87:80: error: use of undeclared identifier 'expected_return_value'
+   87 |     EXPECT_EQ(font->getNextChar(s, len, &code, &u, &uLen, &dx, &dy, &ox, &oy), expected_return_value);
+      |                                                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:115:80: error: use of undeclared identifier 'expected_return_value_for_empty'
+  115 |     EXPECT_EQ(font->getNextChar(s, len, &code, &u, &uLen, &dx, &dy, &ox, &oy), expected_return_value_for_empty);
+      |                                                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:125:33: error: use of undeclared identifier 'expected_writing_mode'
+  125 |     EXPECT_EQ(font->getWMode(), expected_writing_mode);
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:185:46: error: use of undeclared identifier 'expected_width_value'
+  185 |     EXPECT_DOUBLE_EQ(font->getWidth(s, len), expected_width_value);
+      |                                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:201:46: error: use of undeclared identifier 'expected_width_value_for_empty'
+  201 |     EXPECT_DOUBLE_EQ(font->getWidth(s, len), expected_width_value_for_empty);
+      |                                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:235:1: error: expected unqualified-id
+  235 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:9:7: warning: 'GfxCIDFontTest_1170' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxCIDFontTest_1170 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'GfxCIDFont'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp:31:21: note: in instantiation of function template specialization 'std::make_unique<GfxCIDFont, const char (&)[4], Ref &, std::optional<std::basic_string<char>>, GfxFontType &, Ref &, Dict *&>' requested here
+   31 |         font = std::make_unique<GfxCIDFont>("tag", idA, std::move(nameA), typeA, embFontIDA, fontDict);
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:401:5: note: candidate constructor not viable: no known conversion from 'Dict *' to 'const Dict' for 6th argument; dereference the argument with *
+  401 |     GfxCIDFont(const char *tagA, Ref idA, std::optional<std::string> &&nameA, GfxFontType typeA, Ref embFontIDA, const Dict &fontDict);
+      |     ^                                                                                                            ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:398:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+  398 | class POPPLER_PRIVATE_EXPORT GfxCIDFont : public GfxFont
+      |                              ^~~~~~~~~~
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1170.dir/build.make:79: generated_build/CMakeFiles/test_1170.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1170.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:45482: generated_build/CMakeFiles/test_1170.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:45489: generated_build/CMakeFiles/test_1170.dir/rule] 오류 2
+gmake: *** [Makefile:14947: test_1170] 오류 2

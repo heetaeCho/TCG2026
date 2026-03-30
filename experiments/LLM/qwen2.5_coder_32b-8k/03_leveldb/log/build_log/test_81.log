@@ -1,0 +1,59 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_81.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:51:17: error: 'inputs_' is a private member of 'leveldb::Compaction'
+   51 |     compaction->inputs_[0].push_back(new FileMetaData());
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:372:30: note: declared private here
+  372 |   std::vector<FileMetaData*> inputs_[2];  // The two sets of inputs
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:53:17: error: 'inputs_' is a private member of 'leveldb::Compaction'
+   53 |     compaction->inputs_[1].push_back(new FileMetaData());
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:372:30: note: declared private here
+  372 |   std::vector<FileMetaData*> inputs_[2];  // The two sets of inputs
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:67:5: error: cannot use 'try' with exceptions disabled
+   67 |     EXPECT_THROW({ compaction->num_input_files(-1); }, std::exception);
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1799:3: note: expanded from macro 'EXPECT_THROW'
+ 1799 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1369:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1369 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:69:5: error: cannot use 'try' with exceptions disabled
+   69 |     EXPECT_THROW({ compaction->num_input_files(2); }, std::exception);
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1799:3: note: expanded from macro 'EXPECT_THROW'
+ 1799 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1369:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1369 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:95:30: error: use of undeclared identifier 'MaxFileSizeForLevel'
+   95 |     uint64_t expected_size = MaxFileSizeForLevel(&options, level);
+      |                              ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: calling a private constructor of class 'leveldb::Compaction'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp:27:27: note: in instantiation of function template specialization 'std::make_unique<leveldb::Compaction, leveldb::Options *, int &>' requested here
+   27 |         compaction = std::make_unique<Compaction>(&options, level);
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:364:3: note: declared private here
+  364 |   Compaction(const Options* options, int level);
+      |   ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_81.dir/build.make:76: generated_build/CMakeFiles/test_81.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_81.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5227: generated_build/CMakeFiles/test_81.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5234: generated_build/CMakeFiles/test_81.dir/rule] 오류 2
+gmake: *** [Makefile:1999: test_81] 오류 2

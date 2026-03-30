@@ -1,0 +1,47 @@
+Running main() from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from ExtractUserKeyTest_48
+[ RUN      ] ExtractUserKeyTest_48.NormalOperation_48
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_48.cpp:43: Failure
+Expected equality of these values:
+  user_key.ToString()
+    Which is: "user_key_dat"
+  "user_key_data"
+
+[  FAILED  ] ExtractUserKeyTest_48.NormalOperation_48 (0 ms)
+[ RUN      ] ExtractUserKeyTest_48.BoundaryConditionMinimumSize_48
+[       OK ] ExtractUserKeyTest_48.BoundaryConditionMinimumSize_48 (0 ms)
+[ RUN      ] ExtractUserKeyTest_48.BoundaryConditionExactSize_48
+[       OK ] ExtractUserKeyTest_48.BoundaryConditionExactSize_48 (0 ms)
+[ RUN      ] ExtractUserKeyTest_48.ExceptionalCaseTooShort_48
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_48.cpp:83: Failure
+Death test: ExtractUserKey(internal_key)
+    Result: died but not with expected error.
+  Expected: contains regular expression ".*assert.*internal_key.size() >= 8"
+Actual msg:
+[  DEATH   ] test_48: /home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:96: Slice leveldb::ExtractUserKey(const Slice &): Assertion `internal_key.size() >= 8' failed.
+[  DEATH   ] 
+
+[  FAILED  ] ExtractUserKeyTest_48.ExceptionalCaseTooShort_48 (50 ms)
+[ RUN      ] ExtractUserKeyTest_48.EmptySlice_48
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_48.cpp:95: Failure
+Death test: ExtractUserKey(internal_key)
+    Result: died but not with expected error.
+  Expected: contains regular expression ".*assert.*internal_key.size() >= 8"
+Actual msg:
+[  DEATH   ] test_48: /home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:96: Slice leveldb::ExtractUserKey(const Slice &): Assertion `internal_key.size() >= 8' failed.
+[  DEATH   ] 
+
+[  FAILED  ] ExtractUserKeyTest_48.EmptySlice_48 (51 ms)
+[----------] 5 tests from ExtractUserKeyTest_48 (102 ms total)
+
+[----------] Global test environment tear-down
+[==========] 5 tests from 1 test suite ran. (102 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] ExtractUserKeyTest_48.NormalOperation_48
+[  FAILED  ] ExtractUserKeyTest_48.ExceptionalCaseTooShort_48
+[  FAILED  ] ExtractUserKeyTest_48.EmptySlice_48
+
+ 3 FAILED TESTS

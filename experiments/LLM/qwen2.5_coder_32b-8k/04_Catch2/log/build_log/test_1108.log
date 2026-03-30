@@ -1,0 +1,110 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1108.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6463:11: warning: 'FAIL' macro redefined [-Wmacro-redefined]
+ 6463 |   #define FAIL( ... ) do { \
+      |           ^
+/usr/include/gtest/gtest.h:1928:10: note: previous definition is here
+ 1928 | # define FAIL() GTEST_FAIL()
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6468:11: warning: 'SUCCEED' macro redefined [-Wmacro-redefined]
+ 6468 |   #define SUCCEED( ... ) INTERNAL_CATCH_MSG( "SUCCEED", Catch::ResultWas::Ok, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |           ^
+/usr/include/gtest/gtest.h:1937:10: note: previous definition is here
+ 1937 | # define SUCCEED() GTEST_SUCCEED()
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:35:21: error: reference to 'Generators' is ambiguous
+   35 |         : generator(Generators::FixedValues<int>{1, 2, 3, 4}),
+      |                     ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:8961:11: note: candidate found by name lookup is 'Catch::Generators'
+ 8961 | namespace Generators {
+      |           ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7805:11: note: candidate found by name lookup is 'Catch::Generators::Generators'
+ 7805 |     class Generators : public IGenerator<T> {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:35:48: error: expected '(' for function-style cast or type construction
+   35 |         : generator(Generators::FixedValues<int>{1, 2, 3, 4}),
+      |                                             ~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:35:48: error: initializer list cannot be used on the right hand side of operator '>'
+   35 |         : generator(Generators::FixedValues<int>{1, 2, 3, 4}),
+      |                                                ^~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:37:55: warning: field 'generator' is uninitialized when used here [-Wuninitialized]
+   37 |           filter_generator(TestPredicate{}, std::move(generator)) {}
+      |                                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:75:41: error: reference to 'Generators' is ambiguous
+   75 |     GeneratorWrapper<int> odd_generator(Generators::FixedValues<int>{1, 3, 5});
+      |                                         ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:8961:11: note: candidate found by name lookup is 'Catch::Generators'
+ 8961 | namespace Generators {
+      |           ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7805:11: note: candidate found by name lookup is 'Catch::Generators::Generators'
+ 7805 |     class Generators : public IGenerator<T> {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:75:68: error: expected '(' for function-style cast or type construction
+   75 |     GeneratorWrapper<int> odd_generator(Generators::FixedValues<int>{1, 3, 5});
+      |                                                                 ~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:75:68: error: initializer list cannot be used on the right hand side of operator '>'
+   75 |     GeneratorWrapper<int> odd_generator(Generators::FixedValues<int>{1, 3, 5});
+      |                                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:79:40: error: no type named 'generatorexception' in namespace 'Catch::Detail'; did you mean 'GeneratorException'?
+   79 |     EXPECT_THROW(no_even_filter.get(), Catch::Detail::generatorexception);
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                        GeneratorException
+/usr/include/gtest/gtest.h:1950:32: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                                ^~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1423:14: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1423 |     } catch (expected_exception const&) {                                   \
+      |              ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7551:11: note: 'GeneratorException' declared here
+ 7551 |     class GeneratorException : public std::exception {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:79:55: error: no member named 'generatorexception' in namespace 'Catch::Detail'
+   79 |     EXPECT_THROW(no_even_filter.get(), Catch::Detail::generatorexception);
+      |                                        ~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:1950:32: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                                ^~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1426:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1426 |     GTEST_TEST_THROW_CATCH_STD_EXCEPTION_(statement, expected_exception)    \
+      |                                                      ^~~~~~~~~~~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1397:27: note: expanded from macro 'GTEST_TEST_THROW_CATCH_STD_EXCEPTION_'
+ 1397 |                           expected_exception>::type>::type,                    \
+      |                           ^~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:87:49: error: reference to 'Generators' is ambiguous
+   87 |     GeneratorWrapper<int> single_even_generator(Generators::FixedValues<int>{1, 2});
+      |                                                 ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:8961:11: note: candidate found by name lookup is 'Catch::Generators'
+ 8961 | namespace Generators {
+      |           ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7805:11: note: candidate found by name lookup is 'Catch::Generators::Generators'
+ 7805 |     class Generators : public IGenerator<T> {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:87:76: error: expected '(' for function-style cast or type construction
+   87 |     GeneratorWrapper<int> single_even_generator(Generators::FixedValues<int>{1, 2});
+      |                                                                         ~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:87:76: error: initializer list cannot be used on the right hand side of operator '>'
+   87 |     GeneratorWrapper<int> single_even_generator(Generators::FixedValues<int>{1, 2});
+      |                                                                            ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:101:42: error: reference to 'Generators' is ambiguous
+  101 |     GeneratorWrapper<int> multiple_evens(Generators::FixedValues<int>{1, 2, 4, 6, 8});
+      |                                          ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:8961:11: note: candidate found by name lookup is 'Catch::Generators'
+ 8961 | namespace Generators {
+      |           ^
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:7805:11: note: candidate found by name lookup is 'Catch::Generators::Generators'
+ 7805 |     class Generators : public IGenerator<T> {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:101:69: error: expected '(' for function-style cast or type construction
+  101 |     GeneratorWrapper<int> multiple_evens(Generators::FixedValues<int>{1, 2, 4, 6, 8});
+      |                                                                  ~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp:101:69: error: initializer list cannot be used on the right hand side of operator '>'
+  101 |     GeneratorWrapper<int> multiple_evens(Generators::FixedValues<int>{1, 2, 4, 6, 8});
+      |                                                                     ^~~~~~~~~~~~~~~~
+3 warnings and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1108.dir/build.make:79: generated_build/CMakeFiles/test_1108.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1108.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:22217: generated_build/CMakeFiles/test_1108.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:22224: generated_build/CMakeFiles/test_1108.dir/rule] 오류 2
+gmake: *** [Makefile:7573: test_1108] 오류 2

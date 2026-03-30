@@ -1,0 +1,61 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_391.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:43:19: error: no matching function for call to 'get_cache'
+   43 |     auto result = compact_t::get_cache<FloatFormat, ShiftAmountType>(k);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/yaml-cpp/src/contrib/dragonbox.h:2849:21: note: candidate template ignored: substitution failure [with FloatFormat = FloatFormat, ShiftAmountType = ShiftAmountType]: implicit instantiation of undefined template 'YAML::jkj::dragonbox::cache_holder<float>'
+ 2848 |                     static JKJ_CONSTEXPR20 typename cache_holder<FloatFormat>::cache_entry_type
+      |                                            ~~~~~~~~
+ 2849 |                     get_cache(DecimalExponentType k) noexcept {
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:59:39: error: implicit instantiation of undefined template 'YAML::jkj::dragonbox::cache_holder<float>'
+   59 |     constexpr DecimalExponentType k = cache_holder<FloatFormat>::min_k;
+      |                                       ^
+/home/user/TCG2026/./TestProjects/yaml-cpp/src/contrib/dragonbox.h:1341:16: note: template is declared here
+ 1341 |         struct cache_holder;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:65:19: error: no matching function for call to 'get_cache'
+   65 |     auto result = compact_t::get_cache<FloatFormat, ShiftAmountType>(k);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/yaml-cpp/src/contrib/dragonbox.h:2849:21: note: candidate template ignored: substitution failure [with FloatFormat = FloatFormat, ShiftAmountType = ShiftAmountType]: implicit instantiation of undefined template 'YAML::jkj::dragonbox::cache_holder<float>'
+ 2848 |                     static JKJ_CONSTEXPR20 typename cache_holder<FloatFormat>::cache_entry_type
+      |                                            ~~~~~~~~
+ 2849 |                     get_cache(DecimalExponentType k) noexcept {
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:81:39: error: implicit instantiation of undefined template 'YAML::jkj::dragonbox::cache_holder<float>'
+   81 |     constexpr DecimalExponentType k = cache_holder<FloatFormat>::max_k;
+      |                                       ^
+/home/user/TCG2026/./TestProjects/yaml-cpp/src/contrib/dragonbox.h:1341:16: note: template is declared here
+ 1341 |         struct cache_holder;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:87:19: error: no matching function for call to 'get_cache'
+   87 |     auto result = compact_t::get_cache<FloatFormat, ShiftAmountType>(k);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/yaml-cpp/src/contrib/dragonbox.h:2849:21: note: candidate template ignored: substitution failure [with FloatFormat = FloatFormat, ShiftAmountType = ShiftAmountType]: implicit instantiation of undefined template 'YAML::jkj::dragonbox::cache_holder<float>'
+ 2848 |                     static JKJ_CONSTEXPR20 typename cache_holder<FloatFormat>::cache_entry_type
+      |                                            ~~~~~~~~
+ 2849 |                     get_cache(DecimalExponentType k) noexcept {
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:111:55: error: too many arguments provided to function-like macro invocation
+  111 |     EXPECT_NO_THROW(compact_t::get_cache<FloatFormat, ShiftAmountType>(cache_holder<FloatFormat>::min_k - 1));
+      |                                                       ^
+/usr/include/gtest/gtest.h:1951:9: note: macro 'EXPECT_NO_THROW' defined here
+ 1951 | #define EXPECT_NO_THROW(statement) \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:111:5: error: use of undeclared identifier 'EXPECT_NO_THROW'
+  111 |     EXPECT_NO_THROW(compact_t::get_cache<FloatFormat, ShiftAmountType>(cache_holder<FloatFormat>::min_k - 1));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:113:55: error: too many arguments provided to function-like macro invocation
+  113 |     EXPECT_NO_THROW(compact_t::get_cache<FloatFormat, ShiftAmountType>(cache_holder<FloatFormat>::max_k + 1));
+      |                                                       ^
+/usr/include/gtest/gtest.h:1951:9: note: macro 'EXPECT_NO_THROW' defined here
+ 1951 | #define EXPECT_NO_THROW(statement) \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp:113:5: error: use of undeclared identifier 'EXPECT_NO_THROW'
+  113 |     EXPECT_NO_THROW(compact_t::get_cache<FloatFormat, ShiftAmountType>(cache_holder<FloatFormat>::max_k + 1));
+      |     ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_391.dir/build.make:79: generated_build/CMakeFiles/test_391.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_391.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:21742: generated_build/CMakeFiles/test_391.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:21749: generated_build/CMakeFiles/test_391.dir/rule] 오류 2
+gmake: *** [Makefile:8110: test_391] 오류 2

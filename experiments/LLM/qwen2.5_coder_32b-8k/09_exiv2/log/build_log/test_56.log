@@ -1,0 +1,75 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_56.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:27:21: error: allocating an object of abstract class type 'Image'
+   27 |         image = new Image(imageJpeg, 0x1F, std::move(io));
+      |                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:45:29: error: use of undeclared identifier 'imageTiff'
+   45 |     image->setTypeSupported(imageTiff, 0xFF);
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:47:35: error: use of undeclared identifier 'imageTiff'
+   47 |     EXPECT_EQ(image->imageType(), imageTiff);
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:55:29: error: use of undeclared identifier 'imageJpeg'
+   55 |     image->setTypeSupported(imageJpeg, 0x1F);
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:57:24: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+   57 |     EXPECT_TRUE(image->supportsMetadata(mdExif));
+      |                        ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:65:29: error: use of undeclared identifier 'imageJpeg'
+   65 |     image->setTypeSupported(imageJpeg, 0x1F);
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:67:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+   67 |     EXPECT_FALSE(image->supportsMetadata(mdXmp));
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::BasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:25:19: note: in instantiation of function template specialization 'std::make_unique<Exiv2::BasicIo>' requested here
+   25 |         io = std::make_unique<BasicIo>();
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:25:14: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   25 |         io = std::make_unique<BasicIo>();
+      |              ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp:27:27: error: use of undeclared identifier 'imageJpeg'
+   27 |         image = new Image(imageJpeg, 0x1F, std::move(io));
+      |                           ^
+2 warnings and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_56.dir/build.make:79: generated_build/CMakeFiles/test_56.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_56.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:56501: generated_build/CMakeFiles/test_56.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:56508: generated_build/CMakeFiles/test_56.dir/rule] 오류 2
+gmake: *** [Makefile:19198: test_56] 오류 2

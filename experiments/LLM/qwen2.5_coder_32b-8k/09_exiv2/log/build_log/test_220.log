@@ -1,0 +1,168 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_220.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:29:5: error: only virtual member functions can be marked 'override'
+   29 |     MOCK_METHOD(void, readOrThrow, (byte* buf, size_t rcount, ErrorCode err), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:132:1: note: expanded from here
+  132 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:33:37: error: exception specification of overriding function is more lax than base version
+   33 |     MOCK_METHOD(const std::string&, path, (), (const override));
+      |                                     ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:49:27: error: field type 'NiceMock<MockBasicIo>' is an abstract class
+   49 |     NiceMock<MockBasicIo> mock_io;
+      |                           ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:70:15: note: unimplemented pure virtual method 'close' in 'NiceMock'
+   70 |   virtual int close() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:80:18: note: unimplemented pure virtual method 'write' in 'NiceMock'
+   80 |   virtual size_t write(const byte* data, size_t wcount) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'NiceMock'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:98:15: note: unimplemented pure virtual method 'putb' in 'NiceMock'
+   98 |   virtual int putb(byte data) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: unimplemented pure virtual method 'read' in 'NiceMock'
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:140:15: note: unimplemented pure virtual method 'getb' in 'NiceMock'
+  140 |   virtual int getb() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:154:16: note: unimplemented pure virtual method 'transfer' in 'NiceMock'
+  154 |   virtual void transfer(BasicIo& src) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:184:17: note: unimplemented pure virtual method 'mmap' in 'NiceMock'
+  184 |   virtual byte* mmap(bool isWriteable = false) = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:191:15: note: unimplemented pure virtual method 'munmap' in 'NiceMock'
+  191 |   virtual int munmap() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:201:32: note: unimplemented pure virtual method 'tell' in 'NiceMock'
+  201 |   [[nodiscard]] virtual size_t tell() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:207:32: note: unimplemented pure virtual method 'size' in 'NiceMock'
+  207 |   [[nodiscard]] virtual size_t size() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'NiceMock'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:153:66: warning: unused parameter 'buf' [-Wunused-parameter]
+  153 |     EXPECT_CALL(mock_io, readOrThrow(_, _, _)).WillOnce([](byte* buf, size_t rcount, ErrorCode err) -> void {
+      |                                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:153:78: warning: unused parameter 'rcount' [-Wunused-parameter]
+  153 |     EXPECT_CALL(mock_io, readOrThrow(_, _, _)).WillOnce([](byte* buf, size_t rcount, ErrorCode err) -> void {
+      |                                                                              ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RafImageTest_PrintStructure_SuccessfulPrint_220_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:59:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RafImageTest_PrintStructure_SuccessfulPrint_220_Test>::CreateTest' requested here
+   59 | TEST_F(RafImageTest, PrintStructure_SuccessfulPrint_220) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RafImageTest_PrintStructure_OpenFailed_220_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:85:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RafImageTest_PrintStructure_OpenFailed_220_Test>::CreateTest' requested here
+   85 | TEST_F(RafImageTest, PrintStructure_OpenFailed_220) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RafImageTest_PrintStructure_NotAnRafImage_220_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:99:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RafImageTest_PrintStructure_NotAnRafImage_220_Test>::CreateTest' requested here
+   99 | TEST_F(RafImageTest, PrintStructure_NotAnRafImage_220) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RafImageTest_PrintStructure_ReadFailed_220_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:123:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RafImageTest_PrintStructure_ReadFailed_220_Test>::CreateTest' requested here
+  123 | TEST_F(RafImageTest, PrintStructure_ReadFailed_220) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RafImageTest_PrintStructure_ReadOrThrowFailed_220_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:147:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RafImageTest_PrintStructure_ReadOrThrowFailed_220_Test>::CreateTest' requested here
+  147 | TEST_F(RafImageTest, PrintStructure_ReadOrThrowFailed_220) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RafImageTest_PrintStructure_PrintRecursive_220_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:169:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RafImageTest_PrintStructure_PrintRecursive_220_Test>::CreateTest' requested here
+  169 | TEST_F(RafImageTest, PrintStructure_PrintRecursive_220) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'RafImageTest_PrintStructure_PrintBasic_220_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp:195:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<RafImageTest_PrintStructure_PrintBasic_220_Test>::CreateTest' requested here
+  195 | TEST_F(RafImageTest, PrintStructure_PrintBasic_220) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+2 warnings and 10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_220.dir/build.make:79: generated_build/CMakeFiles/test_220.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_220.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:61261: generated_build/CMakeFiles/test_220.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:61268: generated_build/CMakeFiles/test_220.dir/rule] 오류 2
+gmake: *** [Makefile:21018: test_220] 오류 2

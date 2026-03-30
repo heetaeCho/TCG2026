@@ -1,0 +1,177 @@
+[ 27%] Built target faiss
+[ 39%] Built target PoseLib
+[ 48%] Built target colmap_vlfeat
+[ 51%] Built target colmap_util
+[ 51%] Built target colmap_feature_types
+[ 54%] Built target colmap_math
+[ 57%] Built target colmap_geometry
+[ 57%] Built target colmap_sensor
+[ 63%] Built target colmap_scene
+[ 66%] Built target colmap_lsd
+[ 66%] Built target colmap_image
+[ 69%] Built target colmap_optim
+[ 75%] Built target colmap_estimators
+[ 78%] Built target colmap_retrieval
+[ 81%] Built target colmap_feature
+[ 81%] Built target colmap_poisson_recon
+[ 84%] Built target colmap_mvs
+[ 87%] Built target colmap_sfm
+[ 90%] Built target colmap_controllers
+[ 90%] Built target colmap_exe
+[100%] Built target glomap
+[100%] Building CXX object generated_build/CMakeFiles/test_150.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:41:25: error: object of type 'mapped_type' (aka 'glomap::Image') cannot be assigned because its copy assignment operator is implicitly deleted
+   41 |         images_[img_id] = Image(img_id, cam_id, "dummy_file");
+      |                         ^
+/home/user/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: copy assignment operator of 'Image' is implicitly deleted because field 'image_id' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   17 |   const image_t image_id;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:45:20: error: no member named 'SetPose' in 'glomap::Frame'
+   45 |         frames_[0].SetPose(Rigid3d(center, Eigen::Quaterniond::Identity()));
+      |         ~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:45:28: error: no matching constructor for initialization of 'Rigid3d'
+   45 |         frames_[0].SetPose(Rigid3d(center, Eigen::Quaterniond::Identity()));
+      |                            ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:52:3: note: candidate constructor not viable: no known conversion from 'const Eigen::Vector3d' (aka 'const Matrix<double, 3, 1>') to 'const Eigen::Quaterniond' (aka 'const Quaternion<double>') for 1st argument
+   52 |   Rigid3d(const Eigen::Quaterniond& rotation,
+      |   ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:46:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   46 | struct Rigid3d {
+      |        ^~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:46:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   46 | struct Rigid3d {
+      |        ^~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:51:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   51 |   Rigid3d() = default;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:57:26: error: called object type 'double' is not a function or function pointer
+   57 |     EXPECT_EQ(tform.scale(), 1.0);
+      |               ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:69:26: error: called object type 'double' is not a function or function pointer
+   69 |     EXPECT_EQ(tform.scale(), 1.0);
+      |               ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:83:26: error: called object type 'double' is not a function or function pointer
+   83 |     EXPECT_EQ(tform.scale(), 1.0);
+      |               ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:97:26: error: called object type 'double' is not a function or function pointer
+   97 |     EXPECT_EQ(tform.scale(), 1.0);
+      |               ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:109:26: error: called object type 'double' is not a function or function pointer
+  109 |     EXPECT_EQ(tform.scale(), 1.0);
+      |               ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:117:16: error: object of type 'mapped_type' (aka 'glomap::Image') cannot be assigned because its copy assignment operator is implicitly deleted
+  117 |     images_[1] = Image(1, 1, "dummy_file");
+      |                ^
+/home/user/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: copy assignment operator of 'Image' is implicitly deleted because field 'image_id' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   17 |   const image_t image_id;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:121:16: error: no member named 'SetPose' in 'glomap::Frame'
+  121 |     frames_[0].SetPose(Rigid3d(Eigen::Vector3d(1.0, 2.0, 3.0), Eigen::Quaterniond::Identity()));
+      |     ~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:121:24: error: no matching constructor for initialization of 'Rigid3d'
+  121 |     frames_[0].SetPose(Rigid3d(Eigen::Vector3d(1.0, 2.0, 3.0), Eigen::Quaterniond::Identity()));
+      |                        ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:52:3: note: candidate constructor not viable: no known conversion from 'Eigen::Vector3d' (aka 'Matrix<double, 3, 1>') to 'const Eigen::Quaterniond' (aka 'const Quaternion<double>') for 1st argument
+   52 |   Rigid3d(const Eigen::Quaterniond& rotation,
+      |   ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:46:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   46 | struct Rigid3d {
+      |        ^~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:46:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   46 | struct Rigid3d {
+      |        ^~~~~~~
+/home/user/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/geometry/rigid3.h:51:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   51 |   Rigid3d() = default;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:125:26: error: called object type 'double' is not a function or function pointer
+  125 |     EXPECT_EQ(tform.scale(), 1.0);
+      |               ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp:159:28: error: called object type 'double' is not a function or function pointer
+  159 |     EXPECT_TRUE(tform.scale() > 0.0);
+      |                 ~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_150.dir/build.make:79: generated_build/CMakeFiles/test_150.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_150.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5467: generated_build/CMakeFiles/test_150.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5474: generated_build/CMakeFiles/test_150.dir/rule] 오류 2
+gmake: *** [Makefile:1391: test_150] 오류 2

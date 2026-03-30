@@ -1,0 +1,67 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_151.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:17:20: error: no matching constructor for initialization of 'VersionSet'
+   17 |         vset = new VersionSet(nullptr);
+      |                    ^          ~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:171:3: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'const VersionSet' for 1st argument
+  171 |   VersionSet(const VersionSet&) = delete;
+      |   ^          ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:169:3: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+  169 |   VersionSet(const std::string& dbname, const Options* options,
+      |   ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  170 |              TableCache* table_cache, const InternalKeyComparator*);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:19:23: error: calling a private constructor of class 'leveldb::Version'
+   19 |         version = new Version(vset);
+      |                       ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: declared private here
+  123 |   explicit Version(VersionSet* vset)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:45:33: error: 'refs_' is a private member of 'leveldb::Version'
+   45 |     int initial_refs = version->refs_;
+      |                                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:151:7: note: declared private here
+  151 |   int refs_;          // Number of live refs to this version
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:49:24: error: 'refs_' is a private member of 'leveldb::Version'
+   49 |     EXPECT_EQ(version->refs_, initial_refs + 1);
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:151:7: note: declared private here
+  151 |   int refs_;          // Number of live refs to this version
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:59:33: error: 'refs_' is a private member of 'leveldb::Version'
+   59 |     int initial_refs = version->refs_;
+      |                                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:151:7: note: declared private here
+  151 |   int refs_;          // Number of live refs to this version
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:63:24: error: 'refs_' is a private member of 'leveldb::Version'
+   63 |     EXPECT_EQ(version->refs_, initial_refs - 1);
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:151:7: note: declared private here
+  151 |   int refs_;          // Number of live refs to this version
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:89:15: error: no matching constructor for initialization of 'LookupKey'
+   89 |     LookupKey key("non_existent_key");
+      |               ^   ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:190:3: note: candidate constructor not viable: no known conversion from 'const char[17]' to 'const LookupKey' for 1st argument
+  190 |   LookupKey(const LookupKey&) = delete;
+      |   ^         ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:188:3: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  188 |   LookupKey(const Slice& user_key, SequenceNumber sequence);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp:93:5: error: unknown type name 'GetStats'
+   93 |     GetStats stats;
+      |     ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_151.dir/build.make:76: generated_build/CMakeFiles/test_151.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_151.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4096: generated_build/CMakeFiles/test_151.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4103: generated_build/CMakeFiles/test_151.dir/rule] 오류 2
+gmake: *** [Makefile:1492: test_151] 오류 2

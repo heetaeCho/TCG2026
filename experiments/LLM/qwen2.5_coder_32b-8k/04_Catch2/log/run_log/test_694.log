@@ -1,0 +1,40 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from ApproxTest_694
+[ RUN      ] ApproxTest_694.DefaultEqualityComparison_694
+[       OK ] ApproxTest_694.DefaultEqualityComparison_694 (0 ms)
+[ RUN      ] ApproxTest_694.CustomEpsilonMargin_694
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_694.cpp:45: Failure
+Value of: customApprox == 1.5
+  Actual: false
+Expected: true
+[  FAILED  ] ApproxTest_694.CustomEpsilonMargin_694 (0 ms)
+[ RUN      ] ApproxTest_694.NegativeValueComparison_694
+[       OK ] ApproxTest_694.NegativeValueComparison_694 (0 ms)
+[ RUN      ] ApproxTest_694.ZeroValueComparison_694
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_694.cpp:75: Failure
+Value of: zeroApprox.epsilon(1e-5) == 1e-6
+  Actual: false
+Expected: true
+[  FAILED  ] ApproxTest_694.ZeroValueComparison_694 (0 ms)
+[ RUN      ] ApproxTest_694.SmallValueComparison_694
+[       OK ] ApproxTest_694.SmallValueComparison_694 (0 ms)
+[ RUN      ] ApproxTest_694.ToStringRepresentation_694
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_694.cpp:101: Failure
+Expected equality of these values:
+  customApprox.toString()
+    Which is: "Approx( 0.0 )"
+  "Approx( 1.0, with margin of 0.2 and epsilon of 0.5 )"
+[  FAILED  ] ApproxTest_694.ToStringRepresentation_694 (0 ms)
+[----------] 6 tests from ApproxTest_694 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] ApproxTest_694.CustomEpsilonMargin_694
+[  FAILED  ] ApproxTest_694.ZeroValueComparison_694
+[  FAILED  ] ApproxTest_694.ToStringRepresentation_694
+
+ 3 FAILED TESTS

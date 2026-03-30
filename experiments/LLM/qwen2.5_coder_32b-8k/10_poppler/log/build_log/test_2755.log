@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2755.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2755.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2755.cpp:119:22: error: 'entries' is a private member of 'PopplerCache<std::basic_string<char>, MockItem>'
+  119 |     EXPECT_GE(cache->entries.capacity(), cacheSize);
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PopplerCache.h:72:56: note: declared private here
+   72 |     std::vector<std::pair<Key, std::unique_ptr<Item>>> entries;
+      |                                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2755.cpp:23:7: warning: 'PopplerCacheTest_2755' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   23 | class PopplerCacheTest_2755 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2755.cpp:9:7: warning: 'MockItem' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class MockItem {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:182:4: note: in instantiation of member function 'std::default_delete<MockItem>::operator()' requested here
+  182 |           _M_deleter()(__old_p);
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:167:2: note: in instantiation of member function 'std::__uniq_ptr_impl<MockItem, std::default_delete<MockItem>>::reset' requested here
+  167 |         reset(__u.release());
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:212:61: note: in instantiation of member function 'std::__uniq_ptr_impl<MockItem, std::default_delete<MockItem>>::operator=' requested here
+  212 |       __uniq_ptr_data& operator=(__uniq_ptr_data&&) = default;
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2755.cpp:53:26: note: in instantiation of member function 'PopplerCache<std::basic_string<char>, MockItem>::lookup' requested here
+   53 |     auto result = cache->lookup("nonexistent");
+      |                          ^
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2755.dir/build.make:79: generated_build/CMakeFiles/test_2755.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2755.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:55498: generated_build/CMakeFiles/test_2755.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:55505: generated_build/CMakeFiles/test_2755.dir/rule] 오류 2
+gmake: *** [Makefile:19016: test_2755] 오류 2

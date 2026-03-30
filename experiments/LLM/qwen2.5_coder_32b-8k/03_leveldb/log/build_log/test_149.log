@@ -1,0 +1,69 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_149.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:19:23: error: calling a private constructor of class 'leveldb::Version'
+   19 |         version = new Version(nullptr);
+      |                       ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: declared private here
+  123 |   explicit Version(VersionSet* vset)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:27:16: error: calling a private destructor of class 'Version'
+   27 |         delete version;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:136:3: note: declared private here
+  136 |   ~Version();
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:41:5: error: unknown type name 'GetStats'
+   41 |     GetStats stats{nullptr, 0};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:55:5: error: unknown type name 'GetStats'
+   55 |     GetStats stats{&file, 0};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:69:5: error: unknown type name 'GetStats'
+   69 |     GetStats stats{&file, 0};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:73:15: error: use of undeclared identifier 'file_to_compact'
+   73 |     EXPECT_EQ(file_to_compact(), &file);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:85:5: error: unknown type name 'GetStats'
+   85 |     GetStats stats{&file, 0};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:89:15: error: use of undeclared identifier 'file_to_compact'
+   89 |     EXPECT_EQ(file_to_compact(), &file);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:101:26: error: use of undeclared identifier 'GetStats'; did you mean 'setstate'?
+  101 |     version->UpdateStats(GetStats{&file1, 0});
+      |                          ^~~~~~~~
+      |                          setstate
+/usr/include/stdlib.h:416:14: note: 'setstate' declared here
+  416 | extern char *setstate (char *__statebuf) __THROW __nonnull ((1));
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:107:5: error: unknown type name 'GetStats'
+  107 |     GetStats stats{&file2, 0};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:115:32: error: out-of-line definition of 'file_to_compact' does not match any declaration in 'VersionTest_149'
+  115 | FileMetaData* VersionTest_149::file_to_compact() {
+      |                                ^~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:13:7: note: VersionTest_149 defined here
+   13 | class VersionTest_149 : public ::testing::Test {
+      |       ^~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:117:21: error: 'file_to_compact_' is a private member of 'leveldb::Version'
+  117 |     return version->file_to_compact_;
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:157:17: note: declared private here
+  157 |   FileMetaData* file_to_compact_;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp:121:1: error: expected unqualified-id
+  121 | ```
+      | ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_149.dir/build.make:76: generated_build/CMakeFiles/test_149.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_149.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3023: generated_build/CMakeFiles/test_149.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3030: generated_build/CMakeFiles/test_149.dir/rule] 오류 2
+gmake: *** [Makefile:1011: test_149] 오류 2

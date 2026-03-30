@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_802.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_802.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_802.cpp:33:21: error: no matching constructor for initialization of 'AnnotMarkup'
+   33 |         AnnotMarkup annot(mock_doc, mock_dictObject, mock_obj);
+      |                     ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:877:5: note: candidate constructor not viable: expects an rvalue for 2nd argument
+  877 |     AnnotMarkup(PDFDoc *docA, Object &&dictObject, const Object *obj);
+      |     ^                         ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:876:5: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+  876 |     AnnotMarkup(PDFDoc *docA, PDFRectangle *rect);
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:867:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+  867 | class POPPLER_PRIVATE_EXPORT AnnotMarkup : public Annot
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_802.cpp:41:15: error: 'inReplyTo' is a protected member of 'AnnotMarkup'
+   41 |         annot.inReplyTo = ref;
+      |               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:906:9: note: declared protected here
+  906 |     Ref inReplyTo; // IRT
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_802.cpp:43:16: error: call to implicitly-deleted copy constructor of 'AnnotMarkup'
+   43 |         return annot;
+      |                ^~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:867:44: note: copy constructor of 'AnnotMarkup' is implicitly deleted because base class 'Annot' has a deleted copy constructor
+  867 | class POPPLER_PRIVATE_EXPORT AnnotMarkup : public Annot
+      |                                            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:806:12: note: copy constructor of 'Annot' is implicitly deleted because field 'annotObj' has a deleted copy constructor
+  806 |     Object annotObj;
+      |            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_802.cpp:9:7: warning: 'AnnotMarkupTest_802' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class AnnotMarkupTest_802 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_802.dir/build.make:79: generated_build/CMakeFiles/test_802.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_802.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:49130: generated_build/CMakeFiles/test_802.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:49137: generated_build/CMakeFiles/test_802.dir/rule] 오류 2
+gmake: *** [Makefile:16429: test_802] 오류 2

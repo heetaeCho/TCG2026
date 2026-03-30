@@ -1,0 +1,36 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1280.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1280.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1280.cpp:23:41: error: incomplete type 'Exiv2::Value' named in nested name specifier
+   23 |         value = std::make_unique<Value>(Value::asciiString, "Sample Title");
+      |                                         ^~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1280.cpp:79:1: error: expected unqualified-id
+   79 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1280.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:182:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  182 |           _M_deleter()(__old_p);
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:456:7: note: in instantiation of member function 'std::__uniq_ptr_impl<Exiv2::Value, std::default_delete<Exiv2::Value>>::reset' requested here
+  456 |         _M_t.reset(std::move(__p));
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1280.cpp:37:15: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::reset' requested here
+   37 |         value.reset();
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1280.dir/build.make:79: generated_build/CMakeFiles/test_1280.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1280.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:71937: generated_build/CMakeFiles/test_1280.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:71944: generated_build/CMakeFiles/test_1280.dir/rule] 오류 2
+gmake: *** [Makefile:25100: test_1280] 오류 2

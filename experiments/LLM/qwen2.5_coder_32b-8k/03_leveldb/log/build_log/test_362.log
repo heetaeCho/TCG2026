@@ -1,0 +1,16 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_362.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_362.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_362.cpp:53:74: error: 'Table' is a private member of 'leveldb::MemTable'
+   53 |         memtable_iter_ = new MemTableIterator(reinterpret_cast<MemTable::Table*>(mock_iter_));
+      |                                                                          ^
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.h:75:48: note: declared private here
+   75 |   typedef SkipList<const char*, KeyComparator> Table;
+      |                                                ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_362.dir/build.make:76: generated_build/CMakeFiles/test_362.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_362.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:13550: generated_build/CMakeFiles/test_362.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:13557: generated_build/CMakeFiles/test_362.dir/rule] 오류 2
+gmake: *** [Makefile:5730: test_362] 오류 2

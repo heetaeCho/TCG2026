@@ -1,0 +1,161 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1921.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:45:27: error: only virtual member functions can be marked 'override'
+   45 |     XRef* getXRef() const override { return xref; }
+      |                           ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:47:33: error: only virtual member functions can be marked 'override'
+   47 |     Catalog* getCatalog() const override { return catalog; }
+      |                                 ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:49:33: error: only virtual member functions can be marked 'override'
+   49 |     Outline* getOutline() const override { return outline; }
+      |                                 ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:19:5: error: base class 'PDFDoc' has private default constructor
+   19 |     MockDocument() {
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:25:23: error: no matching constructor for initialization of 'Catalog'
+   25 |         catalog = new Catalog(xref);
+      |                       ^       ~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Catalog.h:114:14: note: candidate constructor not viable: no known conversion from 'XRef *' to 'PDFDoc *' for 1st argument
+  114 |     explicit Catalog(PDFDoc *docA);
+      |              ^       ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Catalog.h:119:5: note: candidate constructor not viable: no known conversion from 'XRef *' to 'const Catalog' for 1st argument
+  119 |     Catalog(const Catalog &) = delete;
+      |     ^       ~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:27:40: error: no member named 'getOutlineDict' in 'Catalog'
+   27 |         outline = new Outline(catalog->getOutlineDict(), xref);
+      |                               ~~~~~~~  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:83:32: error: no matching constructor for initialization of 'OutlineItem'
+   83 |     OutlineItem* newItem = new OutlineItem(&title, objName.c_str(), parentRef, destPageNum);
+      |                                ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:90:5: note: candidate constructor not viable: requires 5 arguments, but 4 were provided
+   90 |     OutlineItem(const Dict *dict, Ref refA, OutlineItem *parentA, XRef *xrefA, PDFDoc *docA);
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:92:5: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   92 |     OutlineItem(const OutlineItem &) = delete;
+      |     ^           ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:87:13: error: no member named 'insert' in 'Outline'
+   87 |     outline.insert(newItem, nullptr); // Insert at the end of the children
+      |     ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:91:23: error: no member named 'getNumItems' in 'Outline'; did you mean 'getItems'?
+   91 |     EXPECT_EQ(outline.getNumItems(), 1);
+      |                       ^~~~~~~~~~~
+      |                       getItems
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:57:39: note: 'getItems' declared here
+   57 |     const std::vector<OutlineItem *> *getItems() const
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:93:26: error: no member named 'getItem' in 'Outline'
+   93 |     EXPECT_STREQ(outline.getItem(0)->getTitle()->c_str(), title.c_str());
+      |                  ~~~~~~~ ^
+/usr/include/gtest/gtest.h:2113:60: note: expanded from macro 'EXPECT_STREQ'
+ 2113 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:119:39: error: no matching constructor for initialization of 'OutlineItem'
+  119 |     OutlineItem* searchableItem = new OutlineItem(&title, objName.c_str(), parentRef, destPageNum);
+      |                                       ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:90:5: note: candidate constructor not viable: requires 5 arguments, but 4 were provided
+   90 |     OutlineItem(const Dict *dict, Ref refA, OutlineItem *parentA, XRef *xrefA, PDFDoc *docA);
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:92:5: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   92 |     OutlineItem(const OutlineItem &) = delete;
+      |     ^           ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:121:13: error: no member named 'insert' in 'Outline'
+  121 |     outline.insert(searchableItem, nullptr); // Insert at the end of the children
+      |     ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:125:38: error: no member named 'find' in 'Outline'
+  125 |     OutlineItem* foundItem = outline.find(title.c_str());
+      |                              ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:131:39: error: member reference type 'const std::vector<Unicode>' (aka 'const vector<unsigned int>') is not a pointer; did you mean to use '.'?
+  131 |     EXPECT_STREQ(foundItem->getTitle()->c_str(), title.c_str());
+      |                  ~~~~~~~~~~~~~~~~~~~~~^~
+      |                                       .
+/usr/include/gtest/gtest.h:2113:60: note: expanded from macro 'EXPECT_STREQ'
+ 2113 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:131:41: error: no member named 'c_str' in 'std::vector<unsigned int>'
+  131 |     EXPECT_STREQ(foundItem->getTitle()->c_str(), title.c_str());
+      |                  ~~~~~~~~~~~~~~~~~~~~~  ^
+/usr/include/gtest/gtest.h:2113:60: note: expanded from macro 'EXPECT_STREQ'
+ 2113 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperSTREQ, s1, s2)
+      |                                                            ^~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:157:38: error: no matching constructor for initialization of 'OutlineItem'
+  157 |     OutlineItem* removableItem = new OutlineItem(&title, objName.c_str(), parentRef, destPageNum);
+      |                                      ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:90:5: note: candidate constructor not viable: requires 5 arguments, but 4 were provided
+   90 |     OutlineItem(const Dict *dict, Ref refA, OutlineItem *parentA, XRef *xrefA, PDFDoc *docA);
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:92:5: note: candidate constructor not viable: requires 1 argument, but 4 were provided
+   92 |     OutlineItem(const OutlineItem &) = delete;
+      |     ^           ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:159:13: error: no member named 'insert' in 'Outline'
+  159 |     outline.insert(removableItem, nullptr); // Insert at the end of the children
+      |     ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:163:13: error: no member named 'remove' in 'Outline'
+  163 |     outline.remove(removableItem);
+      |     ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp:167:23: error: no member named 'getNumItems' in 'Outline'; did you mean 'getItems'?
+  167 |     EXPECT_EQ(outline.getNumItems(), 0);
+      |                       ^~~~~~~~~~~
+      |                       getItems
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Outline.h:57:39: note: 'getItems' declared here
+   57 |     const std::vector<OutlineItem *> *getItems() const
+      |                                       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1921.dir/build.make:79: generated_build/CMakeFiles/test_1921.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1921.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:81130: generated_build/CMakeFiles/test_1921.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:81137: generated_build/CMakeFiles/test_1921.dir/rule] 오류 2
+gmake: *** [Makefile:29429: test_1921] 오류 2

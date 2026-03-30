@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_115.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_115.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_115.cpp:19:24: error: allocation of incomplete type 'XRef'
+   19 |         mockXRef = new XRef();
+      |                        ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_115.cpp:27:9: warning: deleting pointer to incomplete type 'XRef' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   27 |         delete mockXRef;
+      |         ^      ~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_115.cpp:123:12: error: call to deleted constructor of 'Object'
+  123 |     Object objString("test");
+      |            ^         ~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<const char *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_115.cpp:9:7: warning: 'DictTest_115' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class DictTest_115 : public ::testing::Test {
+      |       ^
+2 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_115.dir/build.make:79: generated_build/CMakeFiles/test_115.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_115.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:82378: generated_build/CMakeFiles/test_115.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:82385: generated_build/CMakeFiles/test_115.dir/rule] 오류 2
+gmake: *** [Makefile:29936: test_115] 오류 2

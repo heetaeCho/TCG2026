@@ -1,0 +1,67 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_182.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:5:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:43:26: error: calling a private constructor of class 'leveldb::Compaction'
+   43 |         compaction = new Compaction(options, 0);
+      |                          ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:364:3: note: declared private here
+  364 |   Compaction(const Options* options, int level);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:45:21: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   45 |         compaction->input_version_ = new Version(version_set);
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:45:42: error: calling a private constructor of class 'leveldb::Version'
+   45 |         compaction->input_version_ = new Version(version_set);
+      |                                          ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: declared private here
+  123 |   explicit Version(VersionSet* vset)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:53:40: error: expression is not assignable
+   53 |         meta1->largest.Encode().data() = "key3";
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:57:21: error: 'grandparents_' is a private member of 'leveldb::Compaction'
+   57 |         compaction->grandparents_.insert(meta1);
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:376:30: note: declared private here
+  376 |   std::vector<FileMetaData*> grandparents_;
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:57:35: error: no matching member function for call to 'insert'
+   57 |         compaction->grandparents_.insert(meta1);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1263:7: note: candidate function not viable: requires 2 arguments, but 1 was provided
+ 1263 |       insert(const_iterator __position, const value_type& __x);
+      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1293:7: note: candidate function not viable: requires 2 arguments, but 1 was provided
+ 1293 |       insert(const_iterator __position, value_type&& __x)
+      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1310:7: note: candidate function not viable: requires 2 arguments, but 1 was provided
+ 1310 |       insert(const_iterator __position, initializer_list<value_type> __l)
+      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1335:7: note: candidate function not viable: requires 3 arguments, but 1 was provided
+ 1335 |       insert(const_iterator __position, size_type __n, const value_type& __x)
+      |       ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1379:2: note: candidate function template not viable: requires 3 arguments, but 1 was provided
+ 1379 |         insert(const_iterator __position, _InputIterator __first,
+      |         ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 1380 |                _InputIterator __last)
+      |                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp:137:17: error: 'seen_key_' is a private member of 'leveldb::Compaction'
+  137 |     compaction->seen_key_ = true;
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:378:8: note: declared private here
+  378 |   bool seen_key_;             // Some output key has been seen
+      |        ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_182.dir/build.make:76: generated_build/CMakeFiles/test_182.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_182.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3719: generated_build/CMakeFiles/test_182.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3726: generated_build/CMakeFiles/test_182.dir/rule] 오류 2
+gmake: *** [Makefile:1323: test_182] 오류 2

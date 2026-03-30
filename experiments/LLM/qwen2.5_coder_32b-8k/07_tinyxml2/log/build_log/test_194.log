@@ -1,0 +1,34 @@
+[  0%] Built target tinyxml2
+[  0%] Building CXX object generated_build/CMakeFiles/test_194.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_194.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_194.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: calling a protected constructor of class 'tinyxml2::XMLText'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_194.cpp:23:24: note: in instantiation of function template specialization 'std::make_unique<tinyxml2::XMLText, tinyxml2::XMLDocument *>' requested here
+   23 |         xmlText = std::make_unique<XMLText>(&doc);
+      |                        ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1018:14: note: declared protected here
+ 1018 |     explicit XMLText( XMLDocument* doc )        : XMLNode( doc ), _isCData( false )     {}
+      |              ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_194.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:85:9: error: calling a protected destructor of class 'tinyxml2::XMLText'
+   85 |         delete __ptr;
+      |                ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<tinyxml2::XMLText>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_194.cpp:23:19: note: in instantiation of member function 'std::unique_ptr<tinyxml2::XMLText>::~unique_ptr' requested here
+   23 |         xmlText = std::make_unique<XMLText>(&doc);
+      |                   ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:1019:13: note: declared protected here
+ 1019 |     virtual ~XMLText()                                                                                          {}
+      |             ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_194.dir/build.make:79: generated_build/CMakeFiles/test_194.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_194.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8865: generated_build/CMakeFiles/test_194.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8872: generated_build/CMakeFiles/test_194.dir/rule] 오류 2
+gmake: *** [Makefile:3325: test_194] 오류 2

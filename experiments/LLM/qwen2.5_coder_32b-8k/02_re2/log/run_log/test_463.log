@@ -1,0 +1,20 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 10 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 10 tests from PrefilterTest_463
+[ RUN      ] PrefilterTest_463.SubsReturnsNonNullForAND_463
+[       OK ] PrefilterTest_463.SubsReturnsNonNullForAND_463 (0 ms)
+[ RUN      ] PrefilterTest_463.SubsReturnsNonNullForOR_463
+[       OK ] PrefilterTest_463.SubsReturnsNonNullForOR_463 (0 ms)
+[ RUN      ] PrefilterTest_463.SubsReturnsNullForATOM_463
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+F0000 00:00:1774677333.172707 1679527 prefilter.h:46] Check failed: op_ == AND || op_ == OR 
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x55652cae4837  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x55652cae423f  absl::log_internal::LogMessage::SendToLog()
+    @     0x55652cae41fb  absl::log_internal::LogMessage::Flush()
+    @     0x55652ca7a359  absl::log_internal::Voidify::operator&&<>()
+    @     0x55652ca795ed  re2::Prefilter::subs()
+    @     0x55652ca7846b  PrefilterTest_463_SubsReturnsNullForATOM_463_Test::TestBody()
+    @     0x55652caae13f  testing::internal::HandleExceptionsInMethodIfSupported<>()

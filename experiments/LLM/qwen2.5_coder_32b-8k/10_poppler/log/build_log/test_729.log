@@ -1,0 +1,43 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_729.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp:43:19: error: 'standaloneFields' is a private member of 'Page'
+   43 |             page->standaloneFields.push_back(std::make_unique<FormField>());
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:259:45: note: declared private here
+  259 |     std::vector<std::unique_ptr<FormField>> standaloneFields;
+      |                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp:7:7: warning: 'PageTest_729' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class PageTest_729 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'FormField'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp:43:51: note: in instantiation of function template specialization 'std::make_unique<FormField>' requested here
+   43 |             page->standaloneFields.push_back(std::make_unique<FormField>());
+      |                                                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:60:7: note: forward declaration of 'FormField'
+   60 | class FormField;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'FormField'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<FormField>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp:43:46: note: in instantiation of member function 'std::unique_ptr<FormField>::~unique_ptr' requested here
+   43 |             page->standaloneFields.push_back(std::make_unique<FormField>());
+      |                                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:60:7: note: forward declaration of 'FormField'
+   60 | class FormField;
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_729.dir/build.make:79: generated_build/CMakeFiles/test_729.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_729.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:64522: generated_build/CMakeFiles/test_729.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:64529: generated_build/CMakeFiles/test_729.dir/rule] 오류 2
+gmake: *** [Makefile:22682: test_729] 오류 2

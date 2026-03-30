@@ -1,0 +1,363 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_10.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:25:40: error: template argument for template template parameter must be a class template or type alias template
+   25 |     using SliceType = MutableSliceBase<StorageType, DataType>;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:29:5: error: unknown type name 'SliceType'; did you mean 'SliceBase'?
+   29 |     SliceType slice_;
+      |     ^~~~~~~~~
+      |     SliceBase
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: 'SliceBase' declared here
+   19 | struct SliceBase {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:35:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   35 | TEST_F(MutableSliceBaseTest_10, ToConstBase_ConvertsCorrectly_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:27:1: note: expanded from here
+   27 | MutableSliceBaseTest_10_ToConstBase_ConvertsCorrectly_10_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:35:1: note: default constructor of 'MutableSliceBaseTest_10_ToConstBase_ConvertsCorrectly_10_Test' is implicitly deleted because base class 'MutableSliceBaseTest_10' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:29:15: note: default constructor of 'MutableSliceBaseTest_10' is implicitly deleted because field 'slice_' has no default constructor
+   29 |     SliceType slice_;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:35:1: note: replace 'default' with 'delete'
+   35 | TEST_F(MutableSliceBaseTest_10, ToConstBase_ConvertsCorrectly_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:43:5: error: unknown type name 'SliceType'; did you mean 'SliceBase'?
+   43 |     SliceType slice(storage, begin, end);
+      |     ^~~~~~~~~
+      |     SliceBase
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: 'SliceBase' declared here
+   19 | struct SliceBase {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:43:15: error: no matching constructor for initialization of 'SliceBase'
+   43 |     SliceType slice(storage, begin, end);
+      |               ^     ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:20:3: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   20 |   SliceBase(size_t begin, size_t end) : begin_(begin), end_(end) {
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:47:20: error: template argument for template template parameter must be a class template or type alias template
+   47 |     ConstSliceBase<StorageType, const DataType> const_base = slice.to_const_base();
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:47:68: error: no member named 'to_const_base' in 'Exiv2::Internal::SliceBase'
+   47 |     ConstSliceBase<StorageType, const DataType> const_base = slice.to_const_base();
+      |                                                              ~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:61:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   61 | TEST_F(MutableSliceBaseTest_10, At_ReturnsCorrectElement_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:73:1: note: expanded from here
+   73 | MutableSliceBaseTest_10_At_ReturnsCorrectElement_10_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:61:1: note: default constructor of 'MutableSliceBaseTest_10_At_ReturnsCorrectElement_10_Test' is implicitly deleted because base class 'MutableSliceBaseTest_10' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:29:15: note: default constructor of 'MutableSliceBaseTest_10' is implicitly deleted because field 'slice_' has no default constructor
+   29 |     SliceType slice_;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:61:1: note: replace 'default' with 'delete'
+   61 | TEST_F(MutableSliceBaseTest_10, At_ReturnsCorrectElement_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:65:5: error: unknown type name 'SliceType'; did you mean 'SliceBase'?
+   65 |     SliceType slice(storage, 0, 5);
+      |     ^~~~~~~~~
+      |     SliceBase
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: 'SliceBase' declared here
+   19 | struct SliceBase {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:65:15: error: no matching constructor for initialization of 'SliceBase'
+   65 |     SliceType slice(storage, 0, 5);
+      |               ^     ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:20:3: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   20 |   SliceBase(size_t begin, size_t end) : begin_(begin), end_(end) {
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:69:21: error: no member named 'at' in 'Exiv2::Internal::SliceBase'
+   69 |     EXPECT_EQ(slice.at(0), 10);
+      |               ~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:71:21: error: no member named 'at' in 'Exiv2::Internal::SliceBase'
+   71 |     EXPECT_EQ(slice.at(2), 30);
+      |               ~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:73:21: error: no member named 'at' in 'Exiv2::Internal::SliceBase'
+   73 |     EXPECT_EQ(slice.at(4), 50);
+      |               ~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:79:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   79 | TEST_F(MutableSliceBaseTest_10, At_OutOfBounds_ThrowsException_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:10:1: note: expanded from here
+   10 | MutableSliceBaseTest_10_At_OutOfBounds_ThrowsException_10_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:79:1: note: default constructor of 'MutableSliceBaseTest_10_At_OutOfBounds_ThrowsException_10_Test' is implicitly deleted because base class 'MutableSliceBaseTest_10' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:29:15: note: default constructor of 'MutableSliceBaseTest_10' is implicitly deleted because field 'slice_' has no default constructor
+   29 |     SliceType slice_;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:79:1: note: replace 'default' with 'delete'
+   79 | TEST_F(MutableSliceBaseTest_10, At_OutOfBounds_ThrowsException_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:83:5: error: unknown type name 'SliceType'; did you mean 'SliceBase'?
+   83 |     SliceType slice(storage, 0, 3);
+      |     ^~~~~~~~~
+      |     SliceBase
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: 'SliceBase' declared here
+   19 | struct SliceBase {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:83:15: error: no matching constructor for initialization of 'SliceBase'
+   83 |     SliceType slice(storage, 0, 3);
+      |               ^     ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:20:3: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   20 |   SliceBase(size_t begin, size_t end) : begin_(begin), end_(end) {
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:87:24: error: no member named 'at' in 'Exiv2::Internal::SliceBase'
+   87 |     EXPECT_THROW(slice.at(3), std::out_of_range);
+      |                  ~~~~~ ^
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:89:24: error: no member named 'at' in 'Exiv2::Internal::SliceBase'
+   89 |     EXPECT_THROW(slice.at(-1), std::out_of_range);
+      |                  ~~~~~ ^
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:95:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   95 | TEST_F(MutableSliceBaseTest_10, Begin_ReturnsCorrectIterator_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:76:1: note: expanded from here
+   76 | MutableSliceBaseTest_10_Begin_ReturnsCorrectIterator_10_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:95:1: note: default constructor of 'MutableSliceBaseTest_10_Begin_ReturnsCorrectIterator_10_Test' is implicitly deleted because base class 'MutableSliceBaseTest_10' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:29:15: note: default constructor of 'MutableSliceBaseTest_10' is implicitly deleted because field 'slice_' has no default constructor
+   29 |     SliceType slice_;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:95:1: note: replace 'default' with 'delete'
+   95 | TEST_F(MutableSliceBaseTest_10, Begin_ReturnsCorrectIterator_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:99:5: error: unknown type name 'SliceType'; did you mean 'SliceBase'?
+   99 |     SliceType slice(storage, 0, 3);
+      |     ^~~~~~~~~
+      |     SliceBase
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: 'SliceBase' declared here
+   19 | struct SliceBase {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:99:15: error: no matching constructor for initialization of 'SliceBase'
+   99 |     SliceType slice(storage, 0, 3);
+      |               ^     ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:20:3: note: candidate constructor not viable: requires 2 arguments, but 3 were provided
+   20 |   SliceBase(size_t begin, size_t end) : begin_(begin), end_(end) {
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 3 were provided
+   19 | struct SliceBase {
+      |        ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:103:22: error: no member named 'begin' in 'Exiv2::Internal::SliceBase'
+  103 |     EXPECT_EQ(*slice.begin(), 1);
+      |                ~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:109:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  109 | TEST_F(MutableSliceBaseTest_10, End_ReturnsCorrectIterator_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:7:1: note: expanded from here
+    7 | MutableSliceBaseTest_10_End_ReturnsCorrectIterator_10_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:109:1: note: default constructor of 'MutableSliceBaseTest_10_End_ReturnsCorrectIterator_10_Test' is implicitly deleted because base class 'MutableSliceBaseTest_10' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:29:15: note: default constructor of 'MutableSliceBaseTest_10' is implicitly deleted because field 'slice_' has no default constructor
+   29 |     SliceType slice_;
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:109:1: note: replace 'default' with 'delete'
+  109 | TEST_F(MutableSliceBaseTest_10, End_ReturnsCorrectIterator_10) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp:113:5: error: unknown type name 'SliceType'; did you mean 'SliceBase'?
+  113 |     SliceType slice(storage, 0, 3);
+      |     ^~~~~~~~~
+      |     SliceBase
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:19:8: note: 'SliceBase' declared here
+   19 | struct SliceBase {
+      |        ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+5 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_10.dir/build.make:79: generated_build/CMakeFiles/test_10.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_10.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:38073: generated_build/CMakeFiles/test_10.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:38080: generated_build/CMakeFiles/test_10.dir/rule] 오류 2
+gmake: *** [Makefile:12152: test_10] 오류 2

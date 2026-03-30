@@ -1,0 +1,59 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1109.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1109.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1109.cpp:21:5: error: non-virtual member function marked 'override' hides virtual member function
+   21 |     MOCK_METHOD(int, open, (const std::string& mode), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:89:1: note: expanded from here
+   89 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:318:7: note: hidden overloaded virtual function 'Exiv2::FileIo::open' declared here: different number of parameters (0 vs 1)
+  318 |   int open() override;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1109.cpp:33:5: error: no template named 'NiceMock'; did you mean 'testing::NiceMock'?
+   33 |     NiceMock<MockFileIo> mockFileIo;
+      |     ^~~~~~~~
+      |     testing::NiceMock
+/usr/include/gmock/gmock-nice-strict.h:136:39: note: 'testing::NiceMock' declared here
+  136 | class GTEST_INTERNAL_EMPTY_BASE_CLASS NiceMock
+      |                                       ^
+/usr/include/gmock/gmock-nice-strict.h:145:16: error: call to implicitly-deleted default constructor of 'MockFileIo'
+  145 |   NiceMock() : MockClass() {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1109.cpp:29:7: note: in instantiation of member function 'testing::NiceMock<MockFileIo>::NiceMock' requested here
+   29 | class ImageFactoryTest_1109 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1109.cpp:43:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageFactoryTest_1109_CreateValidImage_1109_Test>::CreateTest' requested here
+   43 | TEST_F(ImageFactoryTest_1109, CreateValidImage_1109) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1109.cpp:17:20: note: default constructor of 'MockFileIo' is implicitly deleted because base class 'FileIo' has no default constructor
+   17 | class MockFileIo : public FileIo {
+      |                    ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1109.dir/build.make:79: generated_build/CMakeFiles/test_1109.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1109.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:74691: generated_build/CMakeFiles/test_1109.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:74698: generated_build/CMakeFiles/test_1109.dir/rule] 오류 2
+gmake: *** [Makefile:26153: test_1109] 오류 2

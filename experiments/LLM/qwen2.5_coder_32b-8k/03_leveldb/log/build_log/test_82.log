@@ -1,0 +1,38 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_82.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_82.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_82.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_82.cpp:29:30: error: calling a private constructor of class 'leveldb::Compaction'
+   29 |         compaction.reset(new Compaction(&options, level));
+      |                              ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:364:3: note: declared private here
+  364 |   Compaction(const Options* options, int level);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_82.cpp:85:5: error: cannot use 'try' with exceptions disabled
+   85 |     EXPECT_NO_THROW(compaction->AddInputDeletions(&edit));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1801:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1801 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1412:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1412 |     try {                                                                \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_82.cpp:113:5: error: cannot use 'try' with exceptions disabled
+  113 |     EXPECT_NO_THROW(compaction->ReleaseInputs());
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1801:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1801 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1412:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1412 |     try {                                                                \
+      |     ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_82.dir/build.make:76: generated_build/CMakeFiles/test_82.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_82.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:6967: generated_build/CMakeFiles/test_82.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:6974: generated_build/CMakeFiles/test_82.dir/rule] 오류 2
+gmake: *** [Makefile:2779: test_82] 오류 2

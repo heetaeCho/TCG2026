@@ -1,0 +1,68 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_398.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:17:27: error: use of undeclared identifier 'ifdIdMain'
+   17 |         : tiffDir(0x0100, ifdIdMain, false) {}
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:37:23: error: 'doSizeData' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   37 |     EXPECT_EQ(tiffDir.doSizeData(), 0u);
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:899:24: note: declared protected here
+  899 |   [[nodiscard]] size_t doSizeData() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:51:23: error: 'doSizeImage' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   51 |     EXPECT_EQ(tiffDir.doSizeImage(), 0u);
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:904:24: note: declared protected here
+  904 |   [[nodiscard]] size_t doSizeImage() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:59:23: error: 'doCount' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   59 |     EXPECT_EQ(tiffDir.doCount(), 0u);
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:894:24: note: declared protected here
+  894 |   [[nodiscard]] size_t doCount() const override;
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:69:15: error: no matching constructor for initialization of 'IoWrapper'
+   69 |     IoWrapper ioWrapper;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:109:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  109 | class IoWrapper {
+      |       ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:109:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  109 | class IoWrapper {
+      |       ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:119:3: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+  119 |   IoWrapper(BasicIo& io, const byte* pHeader, size_t size, OffsetWriter* pow);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:71:5: error: unknown type name 'ByteOrder'; did you mean 'Exiv2::ByteOrder'?
+   71 |     ByteOrder byteOrder = littleEndian;
+      |     ^~~~~~~~~
+      |     Exiv2::ByteOrder
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:32:6: note: 'Exiv2::ByteOrder' declared here
+   32 | enum ByteOrder {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:71:27: error: use of undeclared identifier 'littleEndian'; did you mean 'Exiv2::littleEndian'?
+   71 |     ByteOrder byteOrder = littleEndian;
+      |                           ^~~~~~~~~~~~
+      |                           Exiv2::littleEndian
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'Exiv2::littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:83:13: error: 'doWrite' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   83 |     tiffDir.doWrite(ioWrapper, byteOrder, offset, valueIdx, dataIdx, imageIdx);
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:865:10: note: declared protected here
+  865 |   size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp:95:23: error: 'doSize' is a protected member of 'Exiv2::Internal::TiffDirectory'
+   95 |     EXPECT_EQ(tiffDir.doSize(), 0u);
+      |                       ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:889:24: note: declared protected here
+  889 |   [[nodiscard]] size_t doSize() const override;
+      |                        ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_398.dir/build.make:79: generated_build/CMakeFiles/test_398.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_398.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:24643: generated_build/CMakeFiles/test_398.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:24650: generated_build/CMakeFiles/test_398.dir/rule] 오류 2
+gmake: *** [Makefile:7017: test_398] 오류 2

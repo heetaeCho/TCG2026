@@ -1,0 +1,58 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_521.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp:97:5: error: cannot use 'try' with exceptions disabled
+   97 |     EXPECT_NO_THROW(shading->getTriangle(-1, &x0, &y0, &color0, &x1, &y1, &color1, &x2, &y2, &color2));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp:99:5: error: cannot use 'try' with exceptions disabled
+   99 |     EXPECT_NO_THROW(shading->getTriangle(1, &x0, &y0, &color0, &x1, &y1, &color1, &x2, &y2, &color2)); // Out of bounds for 1 triangle
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp:119:5: error: cannot use 'try' with exceptions disabled
+  119 |     EXPECT_NO_THROW(shading->getParameterizedColor(t, &color));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp:7:7: warning: 'GfxGouraudTriangleShadingTest_521' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class GfxGouraudTriangleShadingTest_521 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Function'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp:37:34: note: in instantiation of function template specialization 'std::make_unique<Function>' requested here
+   37 |             funcs.push_back(std::make_unique<Function>());
+      |                                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:62:39: note: unimplemented pure virtual method 'copy' in 'Function'
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |                                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:73:18: note: unimplemented pure virtual method 'getType' in 'Function'
+   73 |     virtual Type getType() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:87:18: note: unimplemented pure virtual method 'transform' in 'Function'
+   87 |     virtual void transform(const double *in, double *out) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:89:18: note: unimplemented pure virtual method 'isOk' in 'Function'
+   89 |     virtual bool isOk() const = 0;
+      |                  ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_521.dir/build.make:79: generated_build/CMakeFiles/test_521.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_521.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:30538: generated_build/CMakeFiles/test_521.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:30545: generated_build/CMakeFiles/test_521.dir/rule] 오류 2
+gmake: *** [Makefile:8876: test_521] 오류 2

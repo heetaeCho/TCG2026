@@ -1,0 +1,70 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from FpToStringTest_432
+[ RUN      ] FpToStringTest_432.NormalOperation_432
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:25: Failure
+Expected equality of these values:
+  YAML::FpToString(1.2345f, 2)
+    Which is: "1.2"
+  "1.23"
+[  FAILED  ] FpToStringTest_432.NormalOperation_432 (0 ms)
+[ RUN      ] FpToStringTest_432.BoundaryConditions_ZeroPrecision_432
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:35: Failure
+Expected equality of these values:
+  YAML::FpToString(1.2345f, 0)
+    Which is: "1.2345"
+  "1"
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:37: Failure
+Expected equality of these values:
+  YAML::FpToString(-1.2345f, 0)
+    Which is: "-1.2345"
+  "-1"
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_ZeroPrecision_432 (0 ms)
+[ RUN      ] FpToStringTest_432.BoundaryConditions_MaxPrecision_432
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:45: Failure
+Expected equality of these values:
+  YAML::FpToString(1.23456789f, 9)
+    Which is: "1.2345679"
+  "1.234567890"
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:47: Failure
+Expected equality of these values:
+  YAML::FpToString(-1.23456789f, 9)
+    Which is: "-1.2345679"
+  "-1.234567890"
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_MaxPrecision_432 (0 ms)
+[ RUN      ] FpToStringTest_432.BoundaryConditions_LargeNumber_432
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:55: Failure
+Expected equality of these values:
+  YAML::FpToString(123456789.123456789f, 5)
+    Which is: "1.2346e+08"
+  "123456789.12346"
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_LargeNumber_432 (0 ms)
+[ RUN      ] FpToStringTest_432.BoundaryConditions_SmallNumber_432
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:63: Failure
+Expected equality of these values:
+  YAML::FpToString(0.000000001f, 10)
+    Which is: "1e-09"
+  "0.0000000010"
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_SmallNumber_432 (0 ms)
+[ RUN      ] FpToStringTest_432.Exceptional_NegativePrecision_432
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_432.cpp:73: Failure
+Expected: YAML::FpToString(1.2345f, -1) throws an exception of type std::invalid_argument.
+  Actual: it throws nothing.
+[  FAILED  ] FpToStringTest_432.Exceptional_NegativePrecision_432 (0 ms)
+[ RUN      ] FpToStringTest_432.VerificationOfExternalInteractions_432
+[       OK ] FpToStringTest_432.VerificationOfExternalInteractions_432 (0 ms)
+[----------] 7 tests from FpToStringTest_432 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] FpToStringTest_432.NormalOperation_432
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_ZeroPrecision_432
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_MaxPrecision_432
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_LargeNumber_432
+[  FAILED  ] FpToStringTest_432.BoundaryConditions_SmallNumber_432
+[  FAILED  ] FpToStringTest_432.Exceptional_NegativePrecision_432
+
+ 6 FAILED TESTS

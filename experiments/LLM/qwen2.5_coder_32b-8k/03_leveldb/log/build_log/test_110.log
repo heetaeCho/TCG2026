@@ -1,0 +1,58 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_110.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_110.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_110.cpp:37:24: error: allocating an object of abstract class type 'MockEnv'
+   37 |         mock_env = new MockEnv();
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:74:18: note: unimplemented pure virtual method 'NewSequentialFile' in 'MockEnv'
+   74 |   virtual Status NewSequentialFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:85:18: note: unimplemented pure virtual method 'NewRandomAccessFile' in 'MockEnv'
+   85 |   virtual Status NewRandomAccessFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:95:18: note: unimplemented pure virtual method 'NewWritableFile' in 'MockEnv'
+   95 |   virtual Status NewWritableFile(const std::string& fname,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:119:18: note: unimplemented pure virtual method 'GetChildren' in 'MockEnv'
+  119 |   virtual Status GetChildren(const std::string& dir,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:142:18: note: unimplemented pure virtual method 'CreateDir' in 'MockEnv'
+  142 |   virtual Status CreateDir(const std::string& dirname) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:165:18: note: unimplemented pure virtual method 'GetFileSize' in 'MockEnv'
+  165 |   virtual Status GetFileSize(const std::string& fname, uint64_t* file_size) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:168:18: note: unimplemented pure virtual method 'RenameFile' in 'MockEnv'
+  168 |   virtual Status RenameFile(const std::string& src,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:185:18: note: unimplemented pure virtual method 'LockFile' in 'MockEnv'
+  185 |   virtual Status LockFile(const std::string& fname, FileLock** lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:190:18: note: unimplemented pure virtual method 'UnlockFile' in 'MockEnv'
+  190 |   virtual Status UnlockFile(FileLock* lock) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:16: note: unimplemented pure virtual method 'Schedule' in 'MockEnv'
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:16: note: unimplemented pure virtual method 'StartThread' in 'MockEnv'
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:208:18: note: unimplemented pure virtual method 'GetTestDirectory' in 'MockEnv'
+  208 |   virtual Status GetTestDirectory(std::string* path) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:211:18: note: unimplemented pure virtual method 'NewLogger' in 'MockEnv'
+  211 |   virtual Status NewLogger(const std::string& fname, Logger** result) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:215:20: note: unimplemented pure virtual method 'NowMicros' in 'MockEnv'
+  215 |   virtual uint64_t NowMicros() = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:218:16: note: unimplemented pure virtual method 'SleepForMicroseconds' in 'MockEnv'
+  218 |   virtual void SleepForMicroseconds(int micros) = 0;
+      |                ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_110.dir/build.make:76: generated_build/CMakeFiles/test_110.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_110.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15580: generated_build/CMakeFiles/test_110.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15587: generated_build/CMakeFiles/test_110.dir/rule] 오류 2
+gmake: *** [Makefile:6640: test_110] 오류 2

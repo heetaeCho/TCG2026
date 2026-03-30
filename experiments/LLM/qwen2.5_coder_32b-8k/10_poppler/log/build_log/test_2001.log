@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2001.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp:25:26: error: call to constructor of 'PDFDoc' is ambiguous
+   25 |         pdfDocMock = new PDFDoc(nullptr, nullopt, nullopt, nullptr);
+      |                          ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp:27:21: error: 'xref' is a private member of 'PDFDoc'
+   27 |         pdfDocMock->xref = xrefMock;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:418:11: note: declared private here
+  418 |     XRef *xref = nullptr;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp:53:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+   53 |     Dict* result = getApprovedStampExtGStateDict(pdfDocMock);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp:63:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+   63 |     Dict* result = getApprovedStampExtGStateDict(pdfDocMock);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp:99:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+   99 |     Dict* result = getApprovedStampExtGStateDict(pdfDocMock);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp:135:11: error: no viable conversion from 'std::unique_ptr<Dict>' to 'Dict *'
+  135 |     Dict* result = getApprovedStampExtGStateDict(pdfDocMock);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp:15:7: warning: 'ApprovedStampExtGStateDictTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class ApprovedStampExtGStateDictTest : public ::testing::Test {
+      |       ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2001.dir/build.make:79: generated_build/CMakeFiles/test_2001.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2001.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:102890: generated_build/CMakeFiles/test_2001.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:102897: generated_build/CMakeFiles/test_2001.dir/rule] 오류 2
+gmake: *** [Makefile:38269: test_2001] 오류 2

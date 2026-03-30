@@ -1,0 +1,238 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1865.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:29:21: error: use of undeclared identifier 'JpegEmbedder'
+   29 |     std::unique_ptr<JpegEmbedder> jpegEmbedder;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:35:24: error: use of undeclared identifier 'JpegEmbedder'
+   35 |         jpegEmbedder = JpegEmbedder::create(std::move(fileContent));
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:47:28: error: unknown type name 'JpegEmbedder'
+   47 |     jpegEmbedder.reset(new JpegEmbedder(width, height, {}));
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:59:26: error: reference to 'Ref' is ambiguous
+   59 |         .WillOnce(Return(Ref{42, 0}));
+      |                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:57:5: error: no member named 'gmock_addStreamObject' in 'XRef'
+   57 |     EXPECT_CALL(xref, addStreamObject(_, fileContent, StreamCompression::None))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:54:1: note: expanded from here
+   54 | gmock_addStreamObject
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:63:5: error: reference to 'Ref' is ambiguous
+   63 |     Ref result = jpegEmbedder->embedImage(&xref);
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:65:15: error: use of undeclared identifier 'result'
+   65 |     EXPECT_EQ(result.num, 42);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:67:15: error: use of undeclared identifier 'result'
+   67 |     EXPECT_EQ(result.gen, 0);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:79:31: error: reference to 'Ref' is ambiguous
+   79 |         .WillByDefault(Return(Ref{42, 0}));
+      |                               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:77:5: error: no member named 'gmock_addStreamObject' in 'XRef'
+   77 |     ON_CALL(xref, addStreamObject(_, _, _))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2033:3: note: expanded from macro 'ON_CALL'
+ 2033 |   GMOCK_ON_CALL_IMPL_(obj, InternalDefaultActionSetAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:20:1: note: expanded from here
+   20 | gmock_addStreamObject
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:83:5: error: no member named 'gmock_add' in 'Dict'
+   83 |     EXPECT_CALL(*dictMock, add("ColorSpace", Object(objName, "DeviceRGB")))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:25:1: note: expanded from here
+   25 | gmock_add
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:87:5: error: no member named 'gmock_add' in 'Dict'
+   87 |     EXPECT_CALL(*dictMock, add("Width", Object(static_cast<int64_t>(width))))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:30:1: note: expanded from here
+   30 | gmock_add
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:87:41: error: functional-style cast from 'int64_t' (aka 'long') to 'Object' uses deleted function
+   87 |     EXPECT_CALL(*dictMock, add("Width", Object(static_cast<int64_t>(width))))
+      |                                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = long] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:223:14: note: candidate constructor
+  223 |     explicit Object(int intgA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:228:14: note: candidate constructor
+  228 |     explicit Object(double realA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:261:14: note: candidate constructor
+  261 |     explicit Object(long long int64gA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:91:5: error: no member named 'gmock_add' in 'Dict'
+   91 |     EXPECT_CALL(*dictMock, add("Height", Object(static_cast<int64_t>(height))))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:35:1: note: expanded from here
+   35 | gmock_add
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:91:42: error: functional-style cast from 'int64_t' (aka 'long') to 'Object' uses deleted function
+   91 |     EXPECT_CALL(*dictMock, add("Height", Object(static_cast<int64_t>(height))))
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = long] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:223:14: note: candidate constructor
+  223 |     explicit Object(int intgA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:228:14: note: candidate constructor
+  228 |     explicit Object(double realA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:261:14: note: candidate constructor
+  261 |     explicit Object(long long int64gA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:95:5: error: no member named 'gmock_add' in 'Dict'
+   95 |     EXPECT_CALL(*dictMock, add("BitsPerComponent", Object(static_cast<int64_t>(8))))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:40:1: note: expanded from here
+   40 | gmock_add
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:95:52: error: functional-style cast from 'int64_t' (aka 'long') to 'Object' uses deleted function
+   95 |     EXPECT_CALL(*dictMock, add("BitsPerComponent", Object(static_cast<int64_t>(8))))
+      |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = long] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:223:14: note: candidate constructor
+  223 |     explicit Object(int intgA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:228:14: note: candidate constructor
+  228 |     explicit Object(double realA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:261:14: note: candidate constructor
+  261 |     explicit Object(long long int64gA)
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:99:5: error: no member named 'gmock_add' in 'Dict'
+   99 |     EXPECT_CALL(*dictMock, add("Filter", Object(objName, "DCTDecode")))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:45:1: note: expanded from here
+   45 | gmock_add
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'JpegEmbedderTest_1865_EmbedImageReturnsInvalidRefWhenFileContentEmpty_1865_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp:45:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<JpegEmbedderTest_1865_EmbedImageReturnsInvalidRefWhenFileContentEmpty_1865_Test>::CreateTest' requested here
+   45 | TEST_F(JpegEmbedderTest_1865, EmbedImageReturnsInvalidRefWhenFileContentEmpty_1865) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1865.dir/build.make:79: generated_build/CMakeFiles/test_1865.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1865.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:57610: generated_build/CMakeFiles/test_1865.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:57617: generated_build/CMakeFiles/test_1865.dir/rule] 오류 2
+gmake: *** [Makefile:19874: test_1865] 오류 2

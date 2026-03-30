@@ -1,0 +1,219 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_384.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:19:25: error: unknown type name 'invoke'
+   19 |     MOCK_STATIC_METHOD1(invoke, ParserResult(typename UnaryLambdaTraits<L>::ReturnType));
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:19:73: error: use of undeclared identifier 'L'
+   19 |     MOCK_STATIC_METHOD1(invoke, ParserResult(typename UnaryLambdaTraits<L>::ReturnType));
+      |                                                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:19:5: error: a type specifier is required for all declarations
+   19 |     MOCK_STATIC_METHOD1(invoke, ParserResult(typename UnaryLambdaTraits<L>::ReturnType));
+      |     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:81:48: error: type 'bool (BoundFlagLambdaTest_384::DummyLambda::*)(bool)' cannot be used prior to '::' because it has no members
+   81 |                 : UnaryLambdaTraits<decltype( &L::operator() )> {};
+      |                                                ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:81:19: note: in instantiation of template class 'Catch::Clara::Detail::UnaryLambdaTraits<bool (BoundFlagLambdaTest_384::DummyLambda::*)(bool)>' requested here
+   81 |                 : UnaryLambdaTraits<decltype( &L::operator() )> {};
+      |                   ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:449:21: note: in instantiation of template class 'Catch::Clara::Detail::UnaryLambdaTraits<BoundFlagLambdaTest_384::DummyLambda>' requested here
+  449 |                     UnaryLambdaTraits<L>::isValid,
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:41:34: note: in instantiation of template class 'Catch::Clara::Detail::BoundFlagLambda<BoundFlagLambdaTest_384::DummyLambda>' requested here
+   41 |     BoundFlagLambda<DummyLambda> boundFlagLambda;
+      |                                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:452:65: error: no type named 'ArgType' in 'Catch::Clara::Detail::UnaryLambdaTraits<BoundFlagLambdaTest_384::DummyLambda>'
+  452 |                     std::is_same<typename UnaryLambdaTraits<L>::ArgType,
+      |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:41:34: note: in instantiation of template class 'Catch::Clara::Detail::BoundFlagLambda<BoundFlagLambdaTest_384::DummyLambda>' requested here
+   41 |     BoundFlagLambda<DummyLambda> boundFlagLambda;
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:55:5: error: expected expression
+   55 |     EXPECT_CALL(MockLambdaInvoker<bool>, invoke(testing::_)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:59:23: error: no matching constructor for initialization of 'ParserResult' (aka 'BasicResult<ParseResultType>')
+   59 |     EXPECT_EQ(result, ParserResult{});
+      |                       ^           ~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:69:5: error: expected expression
+   69 |     EXPECT_CALL(MockLambdaInvoker<bool>, invoke(testing::_)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:73:23: error: no matching constructor for initialization of 'ParserResult' (aka 'BasicResult<ParseResultType>')
+   73 |     EXPECT_EQ(result, ParserResult{});
+      |                       ^           ~~
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:236:26: note: candidate constructor template not viable: requires single argument 'other', but no arguments were provided
+  236 |                 explicit BasicResult( BasicResult<U> const& other ):
+      |                          ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:177:17: note: candidate inherited constructor not viable: requires single argument 'type', but no arguments were provided
+  177 |                 ResultValueBase( ResultType type ): ResultBase( type ) {}
+      |                 ^                ~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:179:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  179 |                 ResultValueBase( ResultValueBase const& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:184:17: note: candidate inherited constructor not viable: requires single argument 'other', but no arguments were provided
+  184 |                 ResultValueBase( ResultValueBase&& other ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:233:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  233 |             class BasicResult : public ResultValueBase<T> {
+      |                   ^~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:278:17: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  278 |                 BasicResult( ResultType type,
+      |                 ^            ~~~~~~~~~~~~~~~~
+  279 |                              std::string&& message ):
+      |                              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:191:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  191 |                 ResultValueBase( ResultType, T const& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:195:17: note: candidate inherited constructor not viable: requires 2 arguments, but 0 were provided
+  195 |                 ResultValueBase( ResultType, T&& value ):
+      |                 ^                ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:284:43: note: constructor from base class 'ResultValueBase<Catch::Clara::ParseResultType>' inherited here
+  284 |                 using ResultValueBase<T>::ResultValueBase;
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:83:5: error: expected expression
+   83 |     EXPECT_CALL(MockLambdaInvoker<bool>, invoke(true)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:93:5: error: expected expression
+   93 |     EXPECT_CALL(MockLambdaInvoker<bool>, invoke(false)).Times(1);
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:99:1: error: expected unqualified-id
+   99 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:461:29: error: no type named 'ReturnType' in 'Catch::Clara::Detail::UnaryLambdaTraits<BoundFlagLambdaTest_384::DummyLambda>'
+  460 |                     return LambdaInvoker<typename UnaryLambdaTraits<
+      |                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  461 |                         L>::ReturnType>::invoke( m_lambda, flag );
+      |                         ~~~~^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:57:35: note: in instantiation of member function 'Catch::Clara::Detail::BoundFlagLambda<BoundFlagLambdaTest_384::DummyLambda>::setFlag' requested here
+   57 |     auto result = boundFlagLambda.setFlag(true);
+      |                                   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: invalid operands to binary expression ('const Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>' and 'const Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>, Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp:59:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>, Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>, nullptr>' requested here
+   59 |     EXPECT_EQ(result, ParserResult{});
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/include/gtest/gtest.h:1536:13: note: candidate function not viable: no known conversion from 'const Catch::Clara::Detail::BasicResult<Catch::Clara::ParseResultType>' to 'faketype' for 1st argument
+ 1536 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_384.dir/build.make:79: generated_build/CMakeFiles/test_384.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_384.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14561: generated_build/CMakeFiles/test_384.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14568: generated_build/CMakeFiles/test_384.dir/rule] 오류 2
+gmake: *** [Makefile:4557: test_384] 오류 2

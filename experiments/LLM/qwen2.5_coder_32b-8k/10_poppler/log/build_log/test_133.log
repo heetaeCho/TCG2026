@@ -1,0 +1,88 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_133.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:7:17: error: expected namespace name
+    7 | using namespace poppler;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:19:22: error: allocating an object of abstract class type 'BaseSeekInputStream'
+   19 |         stream = new BaseSeekInputStream(0, false, 1024, Object());
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'BaseSeekInputStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'BaseSeekInputStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:417:21: note: unimplemented pure virtual method 'currentPos' in 'BaseSeekInputStream'
+  417 |     virtual Goffset currentPos() const = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:418:18: note: unimplemented pure virtual method 'setCurrentPos' in 'BaseSeekInputStream'
+  418 |     virtual void setCurrentPos(Goffset offset) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:419:21: note: unimplemented pure virtual method 'read' in 'BaseSeekInputStream'
+  419 |     virtual Goffset read(char *buf, Goffset size) = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:43:13: error: 'bufPtr' is a private member of 'BaseSeekInputStream'
+   43 |     stream->bufPtr = stream->bufEnd;
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:423:11: note: declared private here
+  423 |     char *bufPtr;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:43:30: error: 'bufEnd' is a private member of 'BaseSeekInputStream'
+   43 |     stream->bufPtr = stream->bufEnd;
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:424:11: note: declared private here
+  424 |     char *bufEnd;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:59:14: error: 'bufPtr' is a private member of 'BaseSeekInputStream'
+   59 |     *stream->bufPtr = 'A';
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:423:11: note: declared private here
+  423 |     char *bufPtr;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:75:14: error: 'bufPtr' is a private member of 'BaseSeekInputStream'
+   75 |     *stream->bufPtr = 'A';
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:423:11: note: declared private here
+  423 |     char *bufPtr;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:77:35: error: 'bufPtr' is a private member of 'BaseSeekInputStream'
+   77 |     char* initialBufPtr = stream->bufPtr;
+      |                                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:423:11: note: declared private here
+  423 |     char *bufPtr;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:83:42: error: 'bufPtr' is a private member of 'BaseSeekInputStream'
+   83 |     EXPECT_EQ(initialBufPtr + 1, stream->bufPtr);
+      |                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:423:11: note: declared private here
+  423 |     char *bufPtr;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:93:13: error: 'bufPtr' is a private member of 'BaseSeekInputStream'
+   93 |     stream->bufPtr = stream->bufEnd;
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:423:11: note: declared private here
+  423 |     char *bufPtr;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:93:30: error: 'bufEnd' is a private member of 'BaseSeekInputStream'
+   93 |     stream->bufPtr = stream->bufEnd;
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:424:11: note: declared private here
+  424 |     char *bufEnd;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:97:52: error: use of undeclared identifier 'fillBuf'
+   97 |     EXPECT_CALL(*static_cast<BaseStream*>(stream), fillBuf()).WillOnce(::testing::Return(true));
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:97:83: error: no member named 'Return' in namespace 'testing'
+   97 |     EXPECT_CALL(*static_cast<BaseStream*>(stream), fillBuf()).WillOnce(::testing::Return(true));
+      |                                                                        ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:107:1: error: expected unqualified-id
+  107 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp:11:7: warning: 'BaseSeekInputStreamTest_133' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class BaseSeekInputStreamTest_133 : public ::testing::Test {
+      |       ^
+1 warning and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_133.dir/build.make:79: generated_build/CMakeFiles/test_133.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_133.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:59210: generated_build/CMakeFiles/test_133.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:59217: generated_build/CMakeFiles/test_133.dir/rule] 오류 2
+gmake: *** [Makefile:20524: test_133] 오류 2

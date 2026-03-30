@@ -1,0 +1,50 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_317.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_317.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_317.cpp:79:31: error: no matching constructor for initialization of 'FixedValuesGenerator<int>'
+   79 |     FixedValuesGenerator<int> singleGenerator(singleValue);
+      |                               ^               ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::vector<int>' to 'const FixedValuesGenerator<int>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::vector<int>' to 'FixedValuesGenerator<int>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:104:9: note: candidate constructor not viable: no known conversion from 'std::vector<int>' to 'std::initializer_list<int>' for 1st argument
+  104 |         FixedValuesGenerator( std::initializer_list<T> values ) : m_values( values ) {}
+      |         ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_317.cpp:95:31: error: no matching constructor for initialization of 'FixedValuesGenerator<int>'
+   95 |     FixedValuesGenerator<int> emptyGenerator(emptyValues);
+      |                               ^              ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::vector<int>' to 'const FixedValuesGenerator<int>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::vector<int>' to 'FixedValuesGenerator<int>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:104:9: note: candidate constructor not viable: no known conversion from 'std::vector<int>' to 'std::initializer_list<int>' for 1st argument
+  104 |         FixedValuesGenerator( std::initializer_list<T> values ) : m_values( values ) {}
+      |         ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_317.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'Catch::Generators::FixedValuesGenerator<int>'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_317.cpp:21:26: note: in instantiation of function template specialization 'std::make_unique<Catch::Generators::FixedValuesGenerator<int>, std::vector<int> &>' requested here
+   21 |         generator = std::make_unique<FixedValuesGenerator<int>>(values);
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::vector<int>' to 'const FixedValuesGenerator<int>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::vector<int>' to 'FixedValuesGenerator<int>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:104:9: note: candidate constructor not viable: no known conversion from 'std::vector<int>' to 'std::initializer_list<int>' for 1st argument
+  104 |         FixedValuesGenerator( std::initializer_list<T> values ) : m_values( values ) {}
+      |         ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_317.dir/build.make:79: generated_build/CMakeFiles/test_317.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_317.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:31193: generated_build/CMakeFiles/test_317.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:31200: generated_build/CMakeFiles/test_317.dir/rule] 오류 2
+gmake: *** [Makefile:11109: test_317] 오류 2

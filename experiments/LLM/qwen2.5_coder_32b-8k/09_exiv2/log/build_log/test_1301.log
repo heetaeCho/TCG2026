@@ -1,0 +1,27 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1301.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1301.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1301.cpp:77:33: error: no matching constructor for initialization of 'XmpKey'
+   77 |     Xmpdatum xmpDatumWithoutKey(XmpKey(), nullptr);
+      |                                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/properties.hpp:272:12: note: candidate constructor not viable: requires single argument 'key', but no arguments were provided
+  272 |   explicit XmpKey(const std::string& key);
+      |            ^      ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/properties.hpp:284:3: note: candidate constructor not viable: requires single argument 'rhs', but no arguments were provided
+  284 |   XmpKey(const XmpKey& rhs);
+      |   ^      ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/properties.hpp:282:3: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  282 |   XmpKey(const std::string& prefix, const std::string& property);
+      |   ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/properties.hpp:327:3: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  327 |   XmpKey(const std::string& key, const XmpProperties::XmpLock&);
+      |   ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/properties.hpp:326:3: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  326 |   XmpKey(const std::string& prefix, const std::string& property, const XmpProperties::XmpLock&);
+      |   ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1301.dir/build.make:79: generated_build/CMakeFiles/test_1301.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1301.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15191: generated_build/CMakeFiles/test_1301.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15198: generated_build/CMakeFiles/test_1301.dir/rule] 오류 2
+gmake: *** [Makefile:3403: test_1301] 오류 2

@@ -1,0 +1,29 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_672.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_672.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_672.cpp:55:15: error: no matching constructor for initialization of 'Iptcdatum'
+   55 |     Iptcdatum iptcdatumNull(nullptr);
+      |               ^             ~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:49:12: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'const IptcKey' for 1st argument
+   49 |   explicit Iptcdatum(const IptcKey& key, const Value* pValue = nullptr);
+      |            ^         ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/iptc.hpp:51:3: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'const Iptcdatum' for 1st argument
+   51 |   Iptcdatum(const Iptcdatum& rhs);
+      |   ^         ~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_672.cpp:3:
+In file included from /usr/include/gmock/gmock.h:65:
+/usr/include/gmock/gmock-nice-strict.h:145:16: error: call to implicitly-deleted default constructor of 'MockIptcKey'
+  145 |   NiceMock() : MockClass() {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_672.cpp:37:5: note: in instantiation of member function 'testing::NiceMock<MockIptcKey>::NiceMock' requested here
+   37 |     IptcdatumTest_672() : iptcdatum(mockKey, nullptr) {}
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_672.cpp:17:21: note: default constructor of 'MockIptcKey' is implicitly deleted because base class 'IptcKey' has no default constructor
+   17 | class MockIptcKey : public IptcKey {
+      |                     ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_672.dir/build.make:79: generated_build/CMakeFiles/test_672.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_672.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:55787: generated_build/CMakeFiles/test_672.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:55794: generated_build/CMakeFiles/test_672.dir/rule] 오류 2
+gmake: *** [Makefile:18925: test_672] 오류 2

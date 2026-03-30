@@ -1,0 +1,194 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_202.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:119:32: error: unknown class name 'Handler'; did you mean 'leveldb::WriteBatch::Handler'?
+  119 |     class MockHandler : public Handler {
+      |                                ^~~~~~~
+      |                                leveldb::WriteBatch::Handler
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/write_batch.h:35:24: note: 'leveldb::WriteBatch::Handler' declared here
+   35 |   class LEVELDB_EXPORT Handler {
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:123:27: error: virtual function 'Put' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<bool> (const Slice &, const Slice &)>::Result' (aka 'bool')) than the function it overrides (which has return type 'void')
+  123 |         MOCK_METHOD(bool, Put, (const Slice& key, const Slice& value), (override));
+      |         ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:59: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:134:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  134 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),  \
+      |                             ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:183:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  183 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/write_batch.h:38:18: note: overridden virtual function is here
+   38 |     virtual void Put(const Slice& key, const Slice& value) = 0;
+      |             ~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:125:27: error: virtual function 'Delete' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<bool> (const Slice &)>::Result' (aka 'bool')) than the function it overrides (which has return type 'void')
+  125 |         MOCK_METHOD(bool, Delete, (const Slice& key), (override));
+      |         ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:59: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:134:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  134 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),  \
+      |                             ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:183:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  183 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/write_batch.h:39:18: note: overridden virtual function is here
+   39 |     virtual void Delete(const Slice& key) = 0;
+      |             ~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:133:30: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  133 |     EXPECT_CALL(handler, Put(_, _)).Times(0);
+      |                              ^
+      |                              testing::_
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::WithoutMatchers::Get(), \
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-matchers.h:4516:33: note: 'testing::_' declared here
+ 4516 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:133:33: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  133 |     EXPECT_CALL(handler, Put(_, _)).Times(0);
+      |                                 ^
+      |                                 testing::_
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::WithoutMatchers::Get(), \
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-matchers.h:4516:33: note: 'testing::_' declared here
+ 4516 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:135:33: error: use of undeclared identifier '_'; did you mean 'testing::_'?
+  135 |     EXPECT_CALL(handler, Delete(_)).Times(0);
+      |                                 ^
+      |                                 testing::_
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::WithoutMatchers::Get(), \
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-matchers.h:4516:33: note: 'testing::_' declared here
+ 4516 | const internal::AnythingMatcher _ = {};
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:149:32: error: expected class name
+  149 |     class MockHandler : public Handler {
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:153:9: error: only virtual member functions can be marked 'override'
+  153 |         MOCK_METHOD(bool, Put, (const Slice& key, const Slice& value), (override));
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:30:1: note: expanded from here
+   30 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:155:9: error: only virtual member functions can be marked 'override'
+  155 |         MOCK_METHOD(bool, Delete, (const Slice& key), (override));
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:117:1: note: expanded from here
+  117 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:177:30: error: use of undeclared identifier 'Eq'; did you mean 'testing::Eq'?
+  177 |     EXPECT_CALL(handler, Put(Eq(putKey), Eq(putValue))).Times(1).WillOnce(Return(true));
+      |                              ^~
+      |                              testing::Eq
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::WithoutMatchers::Get(), \
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:904:31: note: 'testing::Eq' declared here
+  904 | inline internal::EqMatcher<T> Eq(T x) {
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:177:42: error: use of undeclared identifier 'Eq'; did you mean 'testing::Eq'?
+  177 |     EXPECT_CALL(handler, Put(Eq(putKey), Eq(putValue))).Times(1).WillOnce(Return(true));
+      |                                          ^~
+      |                                          testing::Eq
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::WithoutMatchers::Get(), \
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:904:31: note: 'testing::Eq' declared here
+  904 | inline internal::EqMatcher<T> Eq(T x) {
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:179:33: error: use of undeclared identifier 'Eq'; did you mean 'testing::Eq'?
+  179 |     EXPECT_CALL(handler, Delete(Eq(deleteKey))).Times(1).WillOnce(Return(true));
+      |                                 ^~
+      |                                 testing::Eq
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2144:48: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2136:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::WithoutMatchers::Get(), \
+      |                        ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:904:31: note: 'testing::Eq' declared here
+  904 | inline internal::EqMatcher<T> Eq(T x) {
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp:183:40: error: cannot initialize a parameter of type 'Handler *' with an rvalue of type 'MockHandler *'
+  183 |     Status status = writeBatch.Iterate(&handler);
+      |                                        ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/write_batch.h:73:27: note: passing argument to parameter 'handler' here
+   73 |   Status Iterate(Handler* handler) const;
+      |                           ^
+13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_202.dir/build.make:76: generated_build/CMakeFiles/test_202.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_202.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4386: generated_build/CMakeFiles/test_202.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4393: generated_build/CMakeFiles/test_202.dir/rule] 오류 2
+gmake: *** [Makefile:1622: test_202] 오류 2

@@ -1,0 +1,33 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_212.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_212.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_212.cpp:49:5: error: no template named 'Walker'; did you mean 're2::Regexp::Walker'?
+   49 |     Walker<int>* walker;
+      |     ^~~~~~
+      |     re2::Regexp::Walker
+/home/user/TCG2026/TestProjects/re2/re2/walker-inl.h:27:36: note: 're2::Regexp::Walker' declared here
+   27 | template<typename T> class Regexp::Walker {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_212.cpp:21:60: error: called object type 're2::Regexp::ParseFlags' is not a function or function pointer
+   21 |         reg_exp = Regexp::Parse("abc", Regexp::NoParseFlags(), &status);
+      |                                        ~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_212.cpp:23:22: error: no template named 'Walker'; did you mean 're2::Regexp::Walker'?
+   23 |         walker = new Walker<int>;
+      |                      ^~~~~~
+      |                      re2::Regexp::Walker
+/home/user/TCG2026/TestProjects/re2/re2/walker-inl.h:27:36: note: 're2::Regexp::Walker' declared here
+   27 | template<typename T> class Regexp::Walker {
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_212.cpp:23:22: error: allocating an object of abstract class type 'Walker<int>'
+   23 |         walker = new Walker<int>;
+      |                      ^
+/home/user/TCG2026/TestProjects/re2/re2/walker-inl.h:67:13: note: unimplemented pure virtual method 'ShortVisit' in 'Walker'
+   67 |   virtual T ShortVisit(Regexp* re, T parent_arg) = 0;
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_212.cpp:165:67: error: called object type 're2::Regexp::ParseFlags' is not a function or function pointer
+  165 |     Regexp* empty_reg_exp = Regexp::Parse("", Regexp::NoParseFlags(), &status);
+      |                                               ~~~~~~~~~~~~~~~~~~~~^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_212.dir/build.make:79: generated_build/CMakeFiles/test_212.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_212.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:11017: generated_build/CMakeFiles/test_212.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:11024: generated_build/CMakeFiles/test_212.dir/rule] 오류 2
+gmake: *** [Makefile:3858: test_212] 오류 2

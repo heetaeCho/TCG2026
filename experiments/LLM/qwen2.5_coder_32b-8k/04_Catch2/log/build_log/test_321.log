@@ -1,0 +1,68 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_321.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_321.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_321.cpp:33:33: error: no matching conversion for functional-style cast from 'T' (aka 'int') to 'GeneratorWrapper<T>' (aka 'GeneratorWrapper<int>')
+   33 |         generators.emplace_back(GeneratorWrapper<T>(T{}));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:45:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'T' (aka 'int') to 'const GeneratorWrapper<int>' for 1st argument
+   45 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:45:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'T' (aka 'int') to 'GeneratorWrapper<int>' for 1st argument
+   45 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:49:9: note: candidate constructor not viable: no known conversion from 'T' (aka 'int') to 'IGenerator<int> *' for 1st argument
+   49 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:51:9: note: candidate constructor not viable: no known conversion from 'T' (aka 'int') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+   51 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_321.cpp:35:33: error: no matching conversion for functional-style cast from 'T' (aka 'int') to 'GeneratorWrapper<T>' (aka 'GeneratorWrapper<int>')
+   35 |         generators.emplace_back(GeneratorWrapper<T>(T{}));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:45:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'T' (aka 'int') to 'const GeneratorWrapper<int>' for 1st argument
+   45 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:45:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'T' (aka 'int') to 'GeneratorWrapper<int>' for 1st argument
+   45 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:49:9: note: candidate constructor not viable: no known conversion from 'T' (aka 'int') to 'IGenerator<int> *' for 1st argument
+   49 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:51:9: note: candidate constructor not viable: no known conversion from 'T' (aka 'int') to 'GeneratorPtr<int>' (aka 'unique_ptr<IGenerator<int>>') for 1st argument
+   51 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_321.cpp:39:17: error: 'add_generator' is a private member of 'Catch::Generators::Generators<int>'
+   39 |             gen.add_generator(std::move(generator));
+      |             ~~~~^~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:133:14: note: implicitly declared private here
+  133 |         void add_generator( GeneratorWrapper<T>&& generator ) {
+      |              ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:162:13: error: no matching member function for call to 'add_generators'
+  162 |             add_generators(CATCH_FORWARD(moreGenerators)...);
+      |             ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_321.cpp:25:32: note: in instantiation of function template specialization 'Catch::Generators::Generators<int>::Generators<>' requested here
+   25 |     GeneratorsTest_321() : gen(Generators<T>()) {}
+      |                                ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:148:36: note: candidate function template not viable: requires single argument 'valueOrGenerator', but no arguments were provided
+  148 |         template <typename U> void add_generators( U&& valueOrGenerator ) {
+      |                                    ^               ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:153:14: note: candidate function template not viable: requires at least argument 'valueOrGenerator', but no arguments were provided
+  153 |         void add_generators( U&& valueOrGenerator, Gs&&... moreGenerators ) {
+      |              ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:145:28: error: cannot convert 'Catch::Generators::GeneratorWrapper<int>' to 'int' without a conversion operator
+  145 |             add_generator( T( CATCH_FORWARD( val ) ) );
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:149:13: note: in instantiation of function template specialization 'Catch::Generators::Generators<int>::add_generator<Catch::Generators::GeneratorWrapper<int> &>' requested here
+  149 |             add_generator( CATCH_FORWARD( valueOrGenerator ) );
+      |             ^
+/home/user/TCG2026/./TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:162:13: note: in instantiation of function template specialization 'Catch::Generators::Generators<int>::add_generators<Catch::Generators::GeneratorWrapper<int> &>' requested here
+  162 |             add_generators(CATCH_FORWARD(moreGenerators)...);
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_321.cpp:93:19: note: in instantiation of function template specialization 'Catch::Generators::Generators<int>::Generators<Catch::Generators::GeneratorWrapper<int> &>' requested here
+   93 |     Generators<T> singleGen(generators[0]);
+      |                   ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_321.dir/build.make:79: generated_build/CMakeFiles/test_321.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_321.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:24527: generated_build/CMakeFiles/test_321.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:24534: generated_build/CMakeFiles/test_321.dir/rule] 오류 2
+gmake: *** [Makefile:8483: test_321] 오류 2

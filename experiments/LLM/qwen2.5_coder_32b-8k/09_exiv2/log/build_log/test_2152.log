@@ -1,0 +1,363 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_2152.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:23:26: error: virtual function 'seek' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<int64_t> (int64_t, Position)>::Result' (aka 'long')) than the function it overrides (which has return type 'int')
+   23 |     MOCK_METHOD(int64_t, seek, (int64_t offset, Position pos), (override));
+      |     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:163:15: note: overridden virtual function is here
+  163 |   virtual int seek(int64_t offset, Position pos) = 0;
+      |           ~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:25:5: error: only virtual member functions can be marked 'override'
+   25 |     MOCK_METHOD(void, readOrThrow, (byte* buf, size_t rcount, ErrorCode err), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:106:1: note: expanded from here
+  106 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:63:54: error: use of undeclared identifier 'DWORD'
+   63 |     EXPECT_CALL(*mock_io, readOrThrow(::testing::_ , DWORD, ErrorCode::kerInputDataReadFailed))
+      |                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:73:16: error: 'HeaderReader' is a protected member of 'Exiv2::RiffVideo'
+   73 |     RiffVideo::HeaderReader header_reader(mock_io);
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: declared protected here
+   47 |   class HeaderReader {
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:73:29: error: no matching constructor for initialization of 'RiffVideo::HeaderReader'
+   73 |     RiffVideo::HeaderReader header_reader(mock_io);
+      |                             ^             ~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::unique_ptr<MockBasicIo>' to 'const HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::unique_ptr<MockBasicIo>' to 'HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:52:14: note: candidate constructor not viable: no known conversion from 'unique_ptr<MockBasicIo>' to 'const unique_ptr<BasicIo>' for 1st argument
+   52 |     explicit HeaderReader(const std::unique_ptr<BasicIo>& io);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:93:29: error: 'HeaderReader' is a protected member of 'Exiv2::RiffVideo'
+   93 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: declared protected here
+   47 |   class HeaderReader {
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:93:41: warning: parentheses were disambiguated as redundant parentheses around declaration of variable named 'mock_io' [-Wvexing-parse]
+   93 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^~~~~~~~~
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:93:41: note: add a variable name to declare a 'RiffVideo::HeaderReader' initialized with 'mock_io'
+   93 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^
+      |                                          varname
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:93:18: note: add enclosing parentheses to perform a function-style cast
+   93 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                  ^
+      |                  (
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:93:41: note: remove parentheses to silence this warning
+   93 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^       ~
+      |                                          
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:93:42: error: no matching constructor for initialization of 'RiffVideo::HeaderReader'
+   93 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:52:14: note: candidate constructor not viable: requires single argument 'io', but no arguments were provided
+   52 |     explicit HeaderReader(const std::unique_ptr<BasicIo>& io);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:107:29: error: 'HeaderReader' is a protected member of 'Exiv2::RiffVideo'
+  107 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: declared protected here
+   47 |   class HeaderReader {
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:107:41: warning: parentheses were disambiguated as redundant parentheses around declaration of variable named 'mock_io' [-Wvexing-parse]
+  107 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^~~~~~~~~
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:107:41: note: add a variable name to declare a 'RiffVideo::HeaderReader' initialized with 'mock_io'
+  107 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^
+      |                                          varname
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:107:18: note: add enclosing parentheses to perform a function-style cast
+  107 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                  ^
+      |                  (
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:107:41: note: remove parentheses to silence this warning
+  107 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^       ~
+      |                                          
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:107:42: error: no matching constructor for initialization of 'RiffVideo::HeaderReader'
+  107 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:52:14: note: candidate constructor not viable: requires single argument 'io', but no arguments were provided
+   52 |     explicit HeaderReader(const std::unique_ptr<BasicIo>& io);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:125:54: error: use of undeclared identifier 'DWORD'
+  125 |     EXPECT_CALL(*mock_io, readOrThrow(::testing::_ , DWORD, ErrorCode::kerInputDataReadFailed))
+      |                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:135:29: error: 'HeaderReader' is a protected member of 'Exiv2::RiffVideo'
+  135 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: declared protected here
+   47 |   class HeaderReader {
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:135:41: warning: parentheses were disambiguated as redundant parentheses around declaration of variable named 'mock_io' [-Wvexing-parse]
+  135 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^~~~~~~~~
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:135:41: note: add a variable name to declare a 'RiffVideo::HeaderReader' initialized with 'mock_io'
+  135 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^
+      |                                          varname
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:135:18: note: add enclosing parentheses to perform a function-style cast
+  135 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                  ^
+      |                  (
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:135:41: note: remove parentheses to silence this warning
+  135 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                         ^       ~
+      |                                          
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:135:42: error: no matching constructor for initialization of 'RiffVideo::HeaderReader'
+  135 |     EXPECT_THROW(RiffVideo::HeaderReader(mock_io), Error);
+      |                                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:52:14: note: candidate constructor not viable: requires single argument 'io', but no arguments were provided
+   52 |     explicit HeaderReader(const std::unique_ptr<BasicIo>& io);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:155:54: error: use of undeclared identifier 'DWORD'
+  155 |     EXPECT_CALL(*mock_io, readOrThrow(::testing::_ , DWORD, ErrorCode::kerInputDataReadFailed))
+      |                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:165:16: error: 'HeaderReader' is a protected member of 'Exiv2::RiffVideo'
+  165 |     RiffVideo::HeaderReader header_reader(mock_io);
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: declared protected here
+   47 |   class HeaderReader {
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:165:29: error: no matching constructor for initialization of 'RiffVideo::HeaderReader'
+  165 |     RiffVideo::HeaderReader header_reader(mock_io);
+      |                             ^             ~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::unique_ptr<MockBasicIo>' to 'const HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::unique_ptr<MockBasicIo>' to 'HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:52:14: note: candidate constructor not viable: no known conversion from 'unique_ptr<MockBasicIo>' to 'const unique_ptr<BasicIo>' for 1st argument
+   52 |     explicit HeaderReader(const std::unique_ptr<BasicIo>& io);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockBasicIo'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp:41:24: note: in instantiation of function template specialization 'std::make_unique<MockBasicIo>' requested here
+   41 |         mock_io = std::make_unique<MockBasicIo>();
+      |                        ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:61:15: note: unimplemented pure virtual method 'open' in 'MockBasicIo'
+   61 |   virtual int open() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:70:15: note: unimplemented pure virtual method 'close' in 'MockBasicIo'
+   70 |   virtual int close() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:80:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   80 |   virtual size_t write(const byte* data, size_t wcount) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:90:18: note: unimplemented pure virtual method 'write' in 'MockBasicIo'
+   90 |   virtual size_t write(BasicIo& src) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:98:15: note: unimplemented pure virtual method 'putb' in 'MockBasicIo'
+   98 |   virtual int putb(byte data) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:109:19: note: unimplemented pure virtual method 'read' in 'MockBasicIo'
+  109 |   virtual DataBuf read(size_t rcount) = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:122:18: note: unimplemented pure virtual method 'read' in 'MockBasicIo'
+  122 |   virtual size_t read(byte* buf, size_t rcount) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:140:15: note: unimplemented pure virtual method 'getb' in 'MockBasicIo'
+  140 |   virtual int getb() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:154:16: note: unimplemented pure virtual method 'transfer' in 'MockBasicIo'
+  154 |   virtual void transfer(BasicIo& src) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:184:17: note: unimplemented pure virtual method 'mmap' in 'MockBasicIo'
+  184 |   virtual byte* mmap(bool isWriteable = false) = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:191:15: note: unimplemented pure virtual method 'munmap' in 'MockBasicIo'
+  191 |   virtual int munmap() = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:209:30: note: unimplemented pure virtual method 'isopen' in 'MockBasicIo'
+  209 |   [[nodiscard]] virtual bool isopen() const = 0;
+      |                              ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:211:29: note: unimplemented pure virtual method 'error' in 'MockBasicIo'
+  211 |   [[nodiscard]] virtual int error() const = 0;
+      |                             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:213:30: note: unimplemented pure virtual method 'eof' in 'MockBasicIo'
+  213 |   [[nodiscard]] virtual bool eof() const = 0;
+      |                              ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: unimplemented pure virtual method 'path' in 'MockBasicIo'
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:228:16: note: unimplemented pure virtual method 'populateFakeData' in 'MockBasicIo'
+  228 |   virtual void populateFakeData() = 0;
+      |                ^
+3 warnings and 16 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2152.dir/build.make:79: generated_build/CMakeFiles/test_2152.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_2152.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:47253: generated_build/CMakeFiles/test_2152.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:47260: generated_build/CMakeFiles/test_2152.dir/rule] 오류 2
+gmake: *** [Makefile:15662: test_2152] 오류 2

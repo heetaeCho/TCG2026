@@ -1,0 +1,197 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1008.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:39:18: error: no matching constructor for initialization of 'TestCaseInfo'
+   39 |     TestCaseInfo testCase("ClassName", {"TestCaseName", ""}, SourceLineInfo("", 1));
+      |                  ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:57:37: error: 'Filter' is a private member of 'Catch::TestSpec'
+   57 | class MockFilter : public TestSpec::Filter {
+      |                                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:71:46: error: 'Filter' is a private member of 'Catch::TestSpec'
+   71 |     std::vector<Detail::unique_ptr<TestSpec::Filter>> filters;
+      |                                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:75:14: error: 'm_filters' is a private member of 'Catch::TestSpec'
+   75 |     testSpec.m_filters = std::move(filters);
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:100:29: note: declared private here
+  100 |         std::vector<Filter> m_filters;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:75:24: error: no viable overloaded '='
+   75 |     testSpec.m_filters = std::move(filters);
+      |     ~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:695:7: note: candidate function not viable: no known conversion from 'vector<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>, allocator<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>>>' to 'const vector<Catch::TestSpec::Filter, allocator<Catch::TestSpec::Filter>>' for 1st argument
+  695 |       operator=(const vector& __x);
+      |       ^         ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:709:7: note: candidate function not viable: no known conversion from 'vector<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>, allocator<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>>>' to 'vector<Catch::TestSpec::Filter, allocator<Catch::TestSpec::Filter>>' for 1st argument
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:730:7: note: candidate function not viable: no known conversion from 'typename std::remove_reference<vector<unique_ptr<Filter>> &>::type' (aka 'std::vector<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>>') to 'initializer_list<value_type>' (aka 'initializer_list<Catch::TestSpec::Filter>') for 1st argument
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:79:18: error: no matching constructor for initialization of 'TestCaseInfo'
+   79 |     TestCaseInfo testCase("ClassName", {"TestCaseName", ""}, SourceLineInfo("", 1));
+      |                  ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:99:68: error: invalid use of incomplete type 'IConfig'
+   99 |     TestSpec::Matches result = testSpec.matchesByFilter(testCases, IConfig());
+      |                                                                    ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:25:11: note: forward declaration of 'Catch::IConfig'
+   25 |     class IConfig;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:115:46: error: 'Filter' is a private member of 'Catch::TestSpec'
+  115 |     std::vector<Detail::unique_ptr<TestSpec::Filter>> filters;
+      |                                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:69:16: note: implicitly declared private here
+   69 |         struct Filter {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:123:14: error: 'm_filters' is a private member of 'Catch::TestSpec'
+  123 |     testSpec.m_filters = std::move(filters);
+      |              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:100:29: note: declared private here
+  100 |         std::vector<Filter> m_filters;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:123:24: error: no viable overloaded '='
+  123 |     testSpec.m_filters = std::move(filters);
+      |     ~~~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:695:7: note: candidate function not viable: no known conversion from 'vector<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>, allocator<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>>>' to 'const vector<Catch::TestSpec::Filter, allocator<Catch::TestSpec::Filter>>' for 1st argument
+  695 |       operator=(const vector& __x);
+      |       ^         ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:709:7: note: candidate function not viable: no known conversion from 'vector<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>, allocator<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>>>' to 'vector<Catch::TestSpec::Filter, allocator<Catch::TestSpec::Filter>>' for 1st argument
+  709 |       operator=(vector&& __x) noexcept(_Alloc_traits::_S_nothrow_move())
+      |       ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:730:7: note: candidate function not viable: no known conversion from 'typename std::remove_reference<vector<unique_ptr<Filter>> &>::type' (aka 'std::vector<Catch::Detail::unique_ptr<Catch::TestSpec::Filter>>') to 'initializer_list<value_type>' (aka 'initializer_list<Catch::TestSpec::Filter>') for 1st argument
+  730 |       operator=(initializer_list<value_type> __l)
+      |       ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:127:20: error: no matching constructor for initialization of 'TestCaseHandle'
+  127 |     TestCaseHandle testCase1;
+      |                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:108:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  108 |     class TestCaseHandle {
+      |           ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:108:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  108 |     class TestCaseHandle {
+      |           ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:112:19: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  112 |         constexpr TestCaseHandle(TestCaseInfo* info, ITestInvoker* invoker) :
+      |                   ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:129:18: error: no matching constructor for initialization of 'TestCaseInfo'
+  129 |     TestCaseInfo info1("ClassName", {"TestCaseName1", ""}, SourceLineInfo("", 1));
+      |                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:131:15: error: no member named 'setTestCaseInfo' in 'Catch::TestCaseHandle'
+  131 |     testCase1.setTestCaseInfo(info1);
+      |     ~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:135:20: error: no matching constructor for initialization of 'TestCaseHandle'
+  135 |     TestCaseHandle testCase2;
+      |                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:108:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  108 |     class TestCaseHandle {
+      |           ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:108:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  108 |     class TestCaseHandle {
+      |           ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:112:19: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+  112 |         constexpr TestCaseHandle(TestCaseInfo* info, ITestInvoker* invoker) :
+      |                   ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:137:18: error: no matching constructor for initialization of 'TestCaseInfo'
+  137 |     TestCaseInfo info2("ClassName", {"TestCaseName2", ""}, SourceLineInfo("", 1));
+      |                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:139:15: error: no member named 'setTestCaseInfo' in 'Catch::TestCaseHandle'
+  139 |     testCase2.setTestCaseInfo(info2);
+      |     ~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:165:68: error: invalid use of incomplete type 'IConfig'
+  165 |     TestSpec::Matches result = testSpec.matchesByFilter(testCases, IConfig());
+      |                                                                    ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:25:11: note: forward declaration of 'Catch::IConfig'
+   25 |     class IConfig;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:171:25: error: no member named 'getTestCaseInfo' in 'Catch::TestSpec::FilterMatch'
+  171 |     EXPECT_EQ(result[0].getTestCaseInfo().name, "TestCaseName1");
+      |               ~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:5:
+In file included from /home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:16:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:111:34: error: call to implicitly-deleted copy constructor of 'MockFilter'
+  111 |         return unique_ptr<T>(new T(CATCH_FORWARD(args)...));
+      |                                  ^ ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:73:31: note: in instantiation of function template specialization 'Catch::Detail::make_unique<MockFilter, MockFilter &>' requested here
+   73 |     filters.push_back(Detail::make_unique<MockFilter>(mockFilter));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp:61:5: note: copy constructor of 'MockFilter' is implicitly deleted because field 'gmock11_matches_61' has a deleted copy constructor
+   61 |     MOCK_CONST_METHOD1(matches, bool(const TestCaseInfo& testCase));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:333:3: note: expanded from macro 'MOCK_CONST_METHOD1'
+  333 |   GMOCK_INTERNAL_MOCK_METHODN(const, , m, 1, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:472:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHODN'
+  472 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                        \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:169:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  169 |       GMOCK_MOCKER_(_N, _Constness, _MethodName)
+      |       ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gtest/internal/gtest-internal.h:78:39: note: expanded from macro 'GTEST_CONCAT_TOKEN_'
+   78 | #define GTEST_CONCAT_TOKEN_(foo, bar) GTEST_CONCAT_TOKEN_IMPL_(foo, bar)
+      |                                       ^
+/usr/include/gtest/internal/gtest-internal.h:79:44: note: expanded from macro 'GTEST_CONCAT_TOKEN_IMPL_'
+   79 | #define GTEST_CONCAT_TOKEN_IMPL_(foo, bar) foo ## bar
+      |                                            ^
+<scratch space>:107:1: note: expanded from here
+  107 | gmock11_matches_61
+      | ^
+/usr/include/gmock/gmock-spec-builders.h:1482:3: note: 'FunctionMocker' has been explicitly marked deleted here
+ 1482 |   FunctionMocker(const FunctionMocker&) = delete;
+      |   ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1008.dir/build.make:79: generated_build/CMakeFiles/test_1008.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1008.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:11063: generated_build/CMakeFiles/test_1008.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:11070: generated_build/CMakeFiles/test_1008.dir/rule] 오류 2
+gmake: *** [Makefile:3179: test_1008] 오류 2

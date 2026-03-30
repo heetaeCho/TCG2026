@@ -1,0 +1,194 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_870.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:19:5: error: only virtual member functions can be marked 'override'
+   19 |     MOCK_METHOD(void, someMethod, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:253:1: note: expanded from here
+  253 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:31:17: error: assigning to 'MockFormField *' from incompatible type 'typename _MakeUniq<MockFormField>::__single_object' (aka 'unique_ptr<MockFormField>')
+   31 |         field = std::make_unique<MockFormField>();
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:35:58: error: reference to 'Ref' is ambiguous
+   35 |         formWidget = new FormWidget(nullptr, nullptr, 1, Ref(), field.get());
+      |                                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:35:70: error: member reference type 'MockFormField *' is a pointer; did you mean to use '->'?
+   35 |         formWidget = new FormWidget(nullptr, nullptr, 1, Ref(), field.get());
+      |                                                                 ~~~~~^
+      |                                                                      ->
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:35:71: error: no member named 'get' in 'MockFormField'
+   35 |         formWidget = new FormWidget(nullptr, nullptr, 1, Ref(), field.get());
+      |                                                                 ~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:35:26: error: allocating an object of abstract class type 'FormWidget'
+   35 |         formWidget = new FormWidget(nullptr, nullptr, 1, Ref(), field.get());
+      |                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Form.h:149:18: note: unimplemented pure virtual method 'updateWidgetAppearance' in 'FormWidget'
+  149 |     virtual void updateWidgetAppearance() = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:137:12: error: no member named 'setFullyQualifiedName' in 'MockFormField'
+  137 |     field->setFullyQualifiedName(expected);
+      |     ~~~~~  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:187:81: error: no member named 'A' in 'Annot::FormAdditionalActionsType'
+  187 |     EXPECT_EQ(formWidget->getAdditionalAction(Annot::FormAdditionalActionsType::A), nullptr);
+      |                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:197:83: error: no member named 'A' in 'Annot::FormAdditionalActionsType'
+  197 |     EXPECT_TRUE(formWidget->setAdditionalAction(Annot::FormAdditionalActionsType::A, js));
+      |                                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:199:85: error: no member named 'A' in 'Annot::FormAdditionalActionsType'
+  199 |     auto action = formWidget->getAdditionalAction(Annot::FormAdditionalActionsType::A);
+      |                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:251:5: error: cannot use 'try' with exceptions disabled
+  251 |     EXPECT_NO_THROW(formWidget->updateWidgetAppearance());
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:259:5: error: cannot use 'try' with exceptions disabled
+  259 |     EXPECT_NO_THROW(formWidget->print(0));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:291:53: error: no member named 'unknown' in 'FormFieldType'
+  291 |     EXPECT_EQ(formWidget->getType(), FormFieldType::unknown);
+      |                                      ~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:307:5: error: reference to 'Ref' is ambiguous
+  307 |     Ref ref = formWidget->getRef();
+      |     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:94:8: note: candidate found by name lookup is 'Ref'
+   94 | struct Ref
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:309:15: error: use of undeclared identifier 'ref'
+  309 |     EXPECT_EQ(ref.num, 1);
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:311:15: error: use of undeclared identifier 'ref'
+  311 |     EXPECT_EQ(ref.gen, 0); // Assuming default generation number is 0
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:25:7: warning: 'FormWidgetTest_870' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   25 | class FormWidgetTest_870 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'MockFormField'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:31:22: note: in instantiation of function template specialization 'std::make_unique<MockFormField>' requested here
+   31 |         field = std::make_unique<MockFormField>();
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:15:23: note: default constructor of 'MockFormField' is implicitly deleted because base class 'FormField' has an inaccessible default constructor
+   15 | class MockFormField : public FormField {
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:15:7: warning: 'MockFormField' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class MockFormField : public FormField {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<MockFormField>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:31:17: note: in instantiation of member function 'std::unique_ptr<MockFormField>::~unique_ptr' requested here
+   31 |         field = std::make_unique<MockFormField>();
+      |                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:66:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/alloc_traits.h:34:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:518:4: error: no matching function for call to 'construct_at'
+  518 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:519:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<AnnotWidget>>::construct<AnnotWidget>' requested here
+  519 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:651:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<AnnotWidget, std::allocator<AnnotWidget>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<>' requested here
+  651 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<AnnotWidget, std::allocator<AnnotWidget>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<AnnotWidget>::__shared_ptr<std::allocator<AnnotWidget>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<AnnotWidget>::shared_ptr<std::allocator<AnnotWidget>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<AnnotWidget, std::allocator<AnnotWidget>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp:33:33: note: in instantiation of function template specialization 'std::make_shared<AnnotWidget>' requested here
+   33 |         widgetAnnotation = std::make_shared<AnnotWidget>();
+      |                                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = AnnotWidget, _Args = <>]: no matching constructor for initialization of 'AnnotWidget'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+2 warnings and 18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_870.dir/build.make:79: generated_build/CMakeFiles/test_870.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_870.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:80938: generated_build/CMakeFiles/test_870.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:80945: generated_build/CMakeFiles/test_870.dir/rule] 오류 2
+gmake: *** [Makefile:29351: test_870] 오류 2

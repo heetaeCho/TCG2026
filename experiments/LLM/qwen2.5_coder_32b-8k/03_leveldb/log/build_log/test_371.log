@@ -1,0 +1,89 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_371.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:13:33: error: base class has incomplete type
+   13 | class MockFilterPolicy : public FilterPolicy {
+      |                          ~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./table/filter_block.h:22:7: note: forward declaration of 'leveldb::FilterPolicy'
+   22 | class FilterPolicy;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:17:18: error: unknown type name 'CreateFilter'
+   17 |     MOCK_METHOD2(CreateFilter, void(const Slice* keys, int n, std::string* dst));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:17:5: error: a type specifier is required for all declarations
+   17 |     MOCK_METHOD2(CreateFilter, void(const Slice* keys, int n, std::string* dst));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:19:24: error: unknown type name 'KeyMayMatch'
+   19 |     MOCK_CONST_METHOD3(KeyMayMatch, bool(const Slice& key, const Slice& filter));
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:19:5: error: a type specifier is required for all declarations
+   19 |     MOCK_CONST_METHOD3(KeyMayMatch, bool(const Slice& key, const Slice& filter));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:43:30: error: use of undeclared identifier 'CreateFilter'
+   43 |     EXPECT_CALL(mock_policy, CreateFilter).Times(2);
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:45:24: error: use of undeclared identifier 'kFilterBase'
+   45 |     builder.StartBlock(kFilterBase - 1); // This should not generate a filter
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:47:24: error: use of undeclared identifier 'kFilterBase'
+   47 |     builder.StartBlock(kFilterBase);     // This should generate one filter
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:49:28: error: use of undeclared identifier 'kFilterBase'
+   49 |     builder.StartBlock(2 * kFilterBase);   // This should generate another filter
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:57:30: error: use of undeclared identifier 'CreateFilter'
+   57 |     EXPECT_CALL(mock_policy, CreateFilter).Times(1);
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:59:24: error: use of undeclared identifier 'kFilterBase'
+   59 |     builder.StartBlock(kFilterBase);
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:61:24: error: use of undeclared identifier 'kFilterBase'
+   61 |     builder.StartBlock(kFilterBase); // Should not generate a second filter for the same offset
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:69:30: error: use of undeclared identifier 'CreateFilter'
+   69 |     EXPECT_CALL(mock_policy, CreateFilter).Times(5);
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:73:32: error: use of undeclared identifier 'kFilterBase'
+   73 |         builder.StartBlock(i * kFilterBase); // Should generate a filter each time
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:83:30: error: use of undeclared identifier 'CreateFilter'
+   83 |     EXPECT_CALL(mock_policy, CreateFilter).Times(0);
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:85:28: error: use of undeclared identifier 'kFilterBase'
+   85 |     builder.StartBlock(2 * kFilterBase);
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:87:24: error: use of undeclared identifier 'kFilterBase'
+   87 |     builder.StartBlock(kFilterBase); // Should not generate a filter for a smaller offset
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:95:30: error: use of undeclared identifier 'CreateFilter'
+   95 |     EXPECT_CALL(mock_policy, CreateFilter).Times(0);
+      |                              ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:65:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-death-test.h:43:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h:47:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-matchers.h:50:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest-printers.h:126:
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:449:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'FilterBlockBuilderTest_371_StartBlock_GeneratesFiltersForBoundaryOffsets_371_Test *'
+  449 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp:41:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<FilterBlockBuilderTest_371_StartBlock_GeneratesFiltersForBoundaryOffsets_371_Test>::CreateTest' requested here
+   41 | TEST_F(FilterBlockBuilderTest_371, StartBlock_GeneratesFiltersForBoundaryOffsets_371) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1513:15: note: expanded from macro 'GTEST_TEST_'
+ 1513 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(     \
+      |               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_371.dir/build.make:76: generated_build/CMakeFiles/test_371.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_371.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:6996: generated_build/CMakeFiles/test_371.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7003: generated_build/CMakeFiles/test_371.dir/rule] 오류 2
+gmake: *** [Makefile:2792: test_371] 오류 2

@@ -1,0 +1,51 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_874.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_874.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_874.cpp:41:20: error: allocating an object of abstract class type 'FormWidget'
+   41 |         return new FormWidget(mock_doc, mock_obj, 0, mock_ref, mock_field);
+      |                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Form.h:149:18: note: unimplemented pure virtual method 'updateWidgetAppearance' in 'FormWidget'
+  149 |     virtual void updateWidgetAppearance() = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_874.cpp:7:7: warning: 'FormWidgetTest_874' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class FormWidgetTest_874 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_874.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:66:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:64:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/alloc_traits.h:34:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/alloc_traits.h:518:4: error: no matching function for call to 'construct_at'
+  518 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:519:30: note: in instantiation of function template specialization 'std::allocator_traits<std::allocator<AnnotWidget>>::construct<AnnotWidget>' requested here
+  519 |           allocator_traits<_Alloc>::construct(__a, _M_ptr(),
+      |                                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:651:6: note: in instantiation of function template specialization 'std::_Sp_counted_ptr_inplace<AnnotWidget, std::allocator<AnnotWidget>, __gnu_cxx::_S_atomic>::_Sp_counted_ptr_inplace<>' requested here
+  651 |             _Sp_cp_type(__a._M_a, std::forward<_Args>(__args)...);
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<AnnotWidget, std::allocator<AnnotWidget>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<AnnotWidget>::__shared_ptr<std::allocator<AnnotWidget>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<AnnotWidget>::shared_ptr<std::allocator<AnnotWidget>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<AnnotWidget, std::allocator<AnnotWidget>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_874.cpp:25:28: note: in instantiation of function template specialization 'std::make_shared<AnnotWidget>' requested here
+   25 |         mock_widget = std::make_shared<AnnotWidget>();
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = AnnotWidget, _Args = <>]: no matching constructor for initialization of 'AnnotWidget'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_874.dir/build.make:79: generated_build/CMakeFiles/test_874.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_874.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:101322: generated_build/CMakeFiles/test_874.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:101329: generated_build/CMakeFiles/test_874.dir/rule] 오류 2
+gmake: *** [Makefile:37632: test_874] 오류 2

@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_837.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_837.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_837.cpp:31:25: error: allocation of incomplete type 'PDFDoc'
+   31 |         auto docA = new PDFDoc(); // Assuming PDFDoc is mockable or has a default constructor
+      |                         ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_837.cpp:33:25: error: allocation of incomplete type 'PDFRectangle'
+   33 |         auto rect = new PDFRectangle(); // Assuming PDFRectangle is mockable or has a default constructor
+      |                         ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_837.cpp:39:16: error: call to implicitly-deleted copy constructor of 'AnnotLine'
+   39 |         return line;
+      |                ^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1115:42: note: copy constructor of 'AnnotLine' is implicitly deleted because base class 'AnnotMarkup' has a deleted copy constructor
+ 1115 | class POPPLER_PRIVATE_EXPORT AnnotLine : public AnnotMarkup
+      |                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:867:44: note: copy constructor of 'AnnotMarkup' is implicitly deleted because base class 'Annot' has a deleted copy constructor
+  867 | class POPPLER_PRIVATE_EXPORT AnnotMarkup : public Annot
+      |                                            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:806:12: note: copy constructor of 'Annot' is implicitly deleted because field 'annotObj' has a deleted copy constructor
+  806 |     Object annotObj;
+      |            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: 'Object' has been explicitly marked deleted here
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_837.cpp:9:7: warning: 'AnnotLineTest_837' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class AnnotLineTest_837 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_837.dir/build.make:79: generated_build/CMakeFiles/test_837.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_837.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:22442: generated_build/CMakeFiles/test_837.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:22449: generated_build/CMakeFiles/test_837.dir/rule] 오류 2
+gmake: *** [Makefile:5587: test_837] 오류 2

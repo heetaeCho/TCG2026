@@ -1,0 +1,141 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_17.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:19:18: error: redefinition of 'data' as different kind of symbol
+   19 |         const T* data() const { return data.data(); }
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:15:24: note: previous definition is here
+   15 |         std::vector<T> data;
+      |                        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:3:
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:250:59: error: no type named 'value_type' in 'Exiv2::MockContainer<int>'
+  250 |   using value_type = std::remove_cv_t<typename container::value_type>;
+      |                                       ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:83:31: note: in instantiation of template class 'Exiv2::Internal::ContainerStorage<Exiv2::MockContainer<int>>' requested here
+   83 |   using value_type = typename storage_type<data_type>::value_type;
+      |                               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:160:34: note: in instantiation of template class 'Exiv2::Internal::ConstSliceBase<Exiv2::Internal::ContainerStorage, Exiv2::MockContainer<int>>' requested here
+  160 | struct MutableSliceBase : public ConstSliceBase<storage_type, data_type> {
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:403:23: note: in instantiation of template class 'Exiv2::Internal::MutableSliceBase<Exiv2::Internal::ContainerStorage, Exiv2::MockContainer<int>>' requested here
+  403 | struct Slice : public Internal::MutableSliceBase<Internal::ContainerStorage, container> {
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:39:31: note: in instantiation of template class 'Exiv2::Slice<Exiv2::MockContainer<int>>' requested here
+   39 |     Slice<MockContainer<int>> slice_;
+      |                               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceValidRange_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:49:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceValidRange_17_Test>::CreateTest' requested here
+   49 | TEST_F(SliceTest_17, SubSliceValidRange_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceFullRange_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:65:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceFullRange_17_Test>::CreateTest' requested here
+   65 | TEST_F(SliceTest_17, SubSliceFullRange_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceSingleElement_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:81:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceSingleElement_17_Test>::CreateTest' requested here
+   81 | TEST_F(SliceTest_17, SubSliceSingleElement_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceEmptyRange_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:93:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceEmptyRange_17_Test>::CreateTest' requested here
+   93 | TEST_F(SliceTest_17, SubSliceEmptyRange_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceBoundaryStart_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:103:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceBoundaryStart_17_Test>::CreateTest' requested here
+  103 | TEST_F(SliceTest_17, SubSliceBoundaryStart_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceBoundaryEnd_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:119:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceBoundaryEnd_17_Test>::CreateTest' requested here
+  119 | TEST_F(SliceTest_17, SubSliceBoundaryEnd_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceInvalidRangeEndBeforeStart_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:135:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceInvalidRangeEndBeforeStart_17_Test>::CreateTest' requested here
+  135 | TEST_F(SliceTest_17, SubSliceInvalidRangeEndBeforeStart_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceInvalidRangeEndOutOfBounds_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:145:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceInvalidRangeEndOutOfBounds_17_Test>::CreateTest' requested here
+  145 | TEST_F(SliceTest_17, SubSliceInvalidRangeEndOutOfBounds_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'SliceTest_17_SubSliceInvalidRangeStartOutOfBounds_17_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp:161:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<SliceTest_17_SubSliceInvalidRangeStartOutOfBounds_17_Test>::CreateTest' requested here
+  161 | TEST_F(SliceTest_17, SubSliceInvalidRangeStartOutOfBounds_17) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_17.dir/build.make:79: generated_build/CMakeFiles/test_17.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_17.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:52081: generated_build/CMakeFiles/test_17.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:52088: generated_build/CMakeFiles/test_17.dir/rule] 오류 2
+gmake: *** [Makefile:17508: test_17] 오류 2

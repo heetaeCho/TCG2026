@@ -1,0 +1,27 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 5 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 5 tests from PrefilterTest_461
+[ RUN      ] PrefilterTest_461.SetAndGetUniqueId_NormalOperation_461
+[       OK ] PrefilterTest_461.SetAndGetUniqueId_NormalOperation_461 (0 ms)
+[ RUN      ] PrefilterTest_461.UniqueId_DefaultValue_461
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_461.cpp:51: Failure
+Expected equality of these values:
+  prefilter_->unique_id()
+    Which is: 42
+  0
+[  FAILED  ] PrefilterTest_461.UniqueId_DefaultValue_461 (0 ms)
+[ RUN      ] PrefilterTest_461.Atom_DefaultValue_461
+[       OK ] PrefilterTest_461.Atom_DefaultValue_461 (0 ms)
+[ RUN      ] PrefilterTest_461.Subs_DefaultValue_461
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+F0000 00:00:1774677333.040920 1679521 prefilter.h:46] Check failed: op_ == AND || op_ == OR 
+[symbolize_elf.inc : 356] RAW: Unable to get high fd: rc=0, limit=1024
+*** Check failure stack trace: ***
+    @     0x558ff622a7d7  absl::log_internal::LogMessage::PrepareToDie()
+    @     0x558ff622a1df  absl::log_internal::LogMessage::SendToLog()
+    @     0x558ff622a19b  absl::log_internal::LogMessage::Flush()
+    @     0x558ff61c1699  absl::log_internal::Voidify::operator&&<>()
+    @     0x558ff61c08ad  re2::Prefilter::subs()
+    @     0x558ff61bfe2b  PrefilterTest_461_Subs_DefaultValue_461_Test::TestBody()
+    @     0x558ff61f3dff  testing::internal::HandleExceptionsInMethodIfSupported<>()

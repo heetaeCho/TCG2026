@@ -1,0 +1,101 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1812.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:39:15: error: incomplete type 'Exiv2::BasicIo' named in nested name specifier
+   39 |         io_ = BasicIo::createMemIo();
+      |               ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:43:19: error: 'exifData_' is a protected member of 'Exiv2::Image'
+   43 |         crwImage->exifData_ = mockExifData;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:477:12: note: declared protected here
+  477 |   ExifData exifData_;                 //!< Exif data container
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:61:13: error: variable has incomplete type 'ExifKey'
+   61 |     ExifKey pixelXDimensionKey("Exif.Photo.PixelXDimension");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:63:56: error: allocation of incomplete type 'Value'
+   63 |     Exiv2::Exifdatum exifDatum(pixelXDimensionKey, new Value);
+      |                                                        ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:65:15: error: no matching member function for call to 'setValue'
+   65 |     exifDatum.setValue(3000u);
+      |     ~~~~~~~~~~^~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:112:8: note: candidate function not viable: no known conversion from 'unsigned int' to 'const Value *' for 1st argument
+  112 |   void setValue(const Value* pValue) override;
+      |        ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:120:7: note: candidate function not viable: no known conversion from 'unsigned int' to 'const std::string' (aka 'const basic_string<char>') for 1st argument
+  120 |   int setValue(const std::string& value) override;
+      |       ^        ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:83:13: error: variable has incomplete type 'ExifKey'
+   83 |     ExifKey pixelXDimensionKey("Exif.Photo.PixelXDimension");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:101:13: error: variable has incomplete type 'ExifKey'
+  101 |     ExifKey pixelXDimensionKey("Exif.Photo.PixelXDimension");
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:103:56: error: allocation of incomplete type 'Value'
+  103 |     Exiv2::Exifdatum exifDatum(pixelXDimensionKey, new Value);
+      |                                                        ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:113:5: error: no member named 'gmock_count' in 'Exiv2::Exifdatum'
+  113 |     EXPECT_CALL(exifDatum, count())
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:81:1: note: expanded from here
+   81 | gmock_count
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:41:33: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   41 |         crwImage = new CrwImage(std::move(io_), false);
+      |                                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:682:18: error: no matching function for call to 'ImplicitCast_'
+  682 |           value_(ImplicitCast_<Result>(value_before_cast_)) {}
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-actions.h:662:26: note: in instantiation of member function 'testing::internal::ReturnAction<Exiv2::Exifdatum *>::Impl<Exiv2::Exifdatum *, std::_List_iterator<Exiv2::Exifdatum> (const Exiv2::ExifKey &)>::Impl' requested here
+  662 |     return Action<F>(new Impl<R, F>(value_));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp:71:19: note: in instantiation of function template specialization 'testing::internal::ReturnAction<Exiv2::Exifdatum *>::operator Action<std::_List_iterator<Exiv2::Exifdatum> (const Exiv2::ExifKey &)>' requested here
+   71 |         .WillOnce(testing::Return(&exifDatum));
+      |                   ^
+/usr/include/gtest/internal/gtest-port.h:1070:11: note: candidate function template not viable: no known conversion from 'Exiv2::Exifdatum *' to 'Result' (aka 'std::_List_iterator<Exiv2::Exifdatum>') for 1st argument
+ 1070 | inline To ImplicitCast_(To x) { return x; }
+      |           ^             ~~~~
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1812.dir/build.make:79: generated_build/CMakeFiles/test_1812.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1812.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:22671: generated_build/CMakeFiles/test_1812.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:22678: generated_build/CMakeFiles/test_1812.dir/rule] 오류 2
+gmake: *** [Makefile:6263: test_1812] 오류 2

@@ -1,0 +1,56 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from StreamTest_176
+[ RUN      ] StreamTest_176.GetZeroCharacters_176
+[       OK ] StreamTest_176.GetZeroCharacters_176 (0 ms)
+[ RUN      ] StreamTest_176.GetOneCharacter_176
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_176.cpp:45: Failure
+Expected equality of these values:
+  stream.get(1)
+    Which is: "\x4"
+  "A"
+[  FAILED  ] StreamTest_176.GetOneCharacter_176 (0 ms)
+[ RUN      ] StreamTest_176.GetMultipleCharacters_176
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_176.cpp:55: Failure
+Expected equality of these values:
+  stream.get(3)
+    Which is: "\x4\x4\x4"
+  "Hel"
+[  FAILED  ] StreamTest_176.GetMultipleCharacters_176 (0 ms)
+[ RUN      ] StreamTest_176.GetMoreCharactersThanAvailable_176
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_176.cpp:65: Failure
+Expected equality of these values:
+  stream.get(5)
+    Which is: "\x4\x4\x4\x4\x4"
+  "Hi"
+[  FAILED  ] StreamTest_176.GetMoreCharactersThanAvailable_176 (0 ms)
+[ RUN      ] StreamTest_176.GetNegativeNumber_176
+[       OK ] StreamTest_176.GetNegativeNumber_176 (0 ms)
+[ RUN      ] StreamTest_176.GetUntilEndOfStream_176
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_176.cpp:85: Failure
+Expected equality of these values:
+  stream.get(5)
+    Which is: "\x4\x4\x4\x4\x4"
+  "World"
+[  FAILED  ] StreamTest_176.GetUntilEndOfStream_176 (0 ms)
+[ RUN      ] StreamTest_176.GetEmptyString_176
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_176.cpp:95: Failure
+Expected equality of these values:
+  stream.get(10)
+    Which is: "\x4\x4\x4\x4\x4\x4\x4\x4\x4\x4"
+  ""
+[  FAILED  ] StreamTest_176.GetEmptyString_176 (0 ms)
+[----------] 7 tests from StreamTest_176 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 5 tests, listed below:
+[  FAILED  ] StreamTest_176.GetOneCharacter_176
+[  FAILED  ] StreamTest_176.GetMultipleCharacters_176
+[  FAILED  ] StreamTest_176.GetMoreCharactersThanAvailable_176
+[  FAILED  ] StreamTest_176.GetUntilEndOfStream_176
+[  FAILED  ] StreamTest_176.GetEmptyString_176
+
+ 5 FAILED TESTS

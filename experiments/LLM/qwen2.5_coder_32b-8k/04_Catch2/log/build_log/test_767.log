@@ -1,0 +1,247 @@
+[ 80%] Built target Catch2
+[ 80%] Built target Catch2WithMain
+[ 80%] Building CXX object generated_build/CMakeFiles/test_767.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:23:27: error: base class has incomplete type
+   23 | class MockStream : public IStream {
+      |                    ~~~~~~~^~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:32:11: note: forward declaration of 'Catch::IStream'
+   32 |     class IStream;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:33:33: error: base class has incomplete type
+   33 | class MockTablePrinter : public TablePrinter {
+      |                          ~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_console.hpp:16:11: note: forward declaration of 'Catch::TablePrinter'
+   16 |     class TablePrinter;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:37:11: error: incomplete type 'Catch::TablePrinter' named in nested name specifier
+   37 |     using TablePrinter::TablePrinter;
+      |           ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_console.hpp:16:11: note: forward declaration of 'Catch::TablePrinter'
+   16 |     class TablePrinter;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:81:91: error: use of undeclared identifier 'ColumnInfo'
+   81 |         mock_table_printer = std::make_shared<MockTablePrinter>(*mock_stream, std::vector<ColumnInfo>());
+      |                                                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:87:31: error: allocation of incomplete type 'IConfig'
+   87 |         config.fullConfig(new IConfig());
+      |                               ^~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:31:11: note: forward declaration of 'Catch::IConfig'
+   31 |     class IConfig;
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:89:9: error: 'this' argument to member function 'takeStream' is an lvalue, but function has rvalue ref-qualifier
+   89 |         config.takeStream(std::move(mock_stream));
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:45:37: note: 'takeStream' declared here
+   45 |         Detail::unique_ptr<IStream> takeStream() &&;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:91:18: error: object of type 'ConsoleReporter' cannot be assigned because its copy assignment operator is implicitly deleted
+   91 |         reporter = ConsoleReporter(std::move(config));
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_console.hpp:18:35: note: copy assignment operator of 'ConsoleReporter' is implicitly deleted because base class 'StreamingReporterBase' has a deleted copy assignment operator
+   18 |     class ConsoleReporter final : public StreamingReporterBase {
+      |                                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_streaming_base.hpp:18:35: note: copy assignment operator of 'StreamingReporterBase' is implicitly deleted because base class 'ReporterBase' has a deleted copy assignment operator
+   18 |     class StreamingReporterBase : public ReporterBase {
+      |                                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:32:37: note: copy assignment operator of 'ReporterBase' is implicitly deleted because field 'm_wrapped_stream' has a deleted copy assignment operator
+   32 |         Detail::unique_ptr<IStream> m_wrapped_stream;
+      |                                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:47:21: note: 'operator=' has been explicitly marked deleted here
+   47 |         unique_ptr& operator=(unique_ptr const&) = delete;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:95:18: error: 'm_tablePrinter' is a private member of 'Catch::ConsoleReporter'
+   95 |         reporter.m_tablePrinter = Detail::unique_ptr<TablePrinter>(mock_table_printer.release());
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_console.hpp:19:42: note: implicitly declared private here
+   19 |         Detail::unique_ptr<TablePrinter> m_tablePrinter;
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:95:87: error: no member named 'release' in 'std::shared_ptr<MockTablePrinter>'
+   95 |         reporter.m_tablePrinter = Detail::unique_ptr<TablePrinter>(mock_table_printer.release());
+      |                                                                    ~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:97:18: error: 'm_colour' is a protected member of 'Catch::ReporterBase'
+   97 |         reporter.m_colour = Detail::unique_ptr<ColourImpl>(mock_colour_impl.release());
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:37:40: note: declared protected here
+   37 |         Detail::unique_ptr<ColourImpl> m_colour;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:97:77: error: no member named 'release' in 'std::shared_ptr<MockColourImpl>'
+   97 |         reporter.m_colour = Detail::unique_ptr<ColourImpl>(mock_colour_impl.release());
+      |                                                            ~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:105:8: error: unknown class name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  105 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInSection_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:105:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  105 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInSection_767) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:87:1: note: expanded from here
+   87 | ConsoleReporterTest_767_SectionEnded_NoAssertionsInSection_767_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:105:1: note: default constructor of 'ConsoleReporterTest_767_SectionEnded_NoAssertionsInSection_767_Test' is implicitly deleted because base class 'ConsoleReporterTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:71:20: note: default constructor of 'ConsoleReporterTest' is implicitly deleted because field 'config' has no default constructor
+   71 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:105:1: note: replace 'default' with 'delete'
+  105 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInSection_767) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:105:8: error: unknown type name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  105 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInSection_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:105:8: error: unknown type name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  105 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInSection_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:105:8: error: unknown type name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  105 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInSection_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:127:8: error: unknown class name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  127 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInTestCase_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:127:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  127 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInTestCase_767) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:2:1: note: expanded from here
+    2 | ConsoleReporterTest_767_SectionEnded_NoAssertionsInTestCase_767_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:127:1: note: default constructor of 'ConsoleReporterTest_767_SectionEnded_NoAssertionsInTestCase_767_Test' is implicitly deleted because base class 'ConsoleReporterTest' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:71:20: note: default constructor of 'ConsoleReporterTest' is implicitly deleted because field 'config' has no default constructor
+   71 |     ReporterConfig config;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:127:1: note: replace 'default' with 'delete'
+  127 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInTestCase_767) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:127:8: error: unknown type name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  127 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInTestCase_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:127:8: error: unknown type name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  127 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInTestCase_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:127:8: error: unknown type name 'ConsoleReporterTest_767'; did you mean 'ConsoleReporterTest'?
+  127 | TEST_F(ConsoleReporterTest_767, SectionEnded_NoAssertionsInTestCase_767) {
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        ConsoleReporterTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp:59:7: note: 'ConsoleReporterTest' declared here
+   59 | class ConsoleReporterTest : public ::testing::Test {
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+2 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_767.dir/build.make:79: generated_build/CMakeFiles/test_767.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_767.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:26705: generated_build/CMakeFiles/test_767.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:26712: generated_build/CMakeFiles/test_767.dir/rule] 오류 2
+gmake: *** [Makefile:9341: test_767] 오류 2

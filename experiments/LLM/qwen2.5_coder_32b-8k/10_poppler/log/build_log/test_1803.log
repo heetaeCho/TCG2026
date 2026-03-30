@@ -1,0 +1,72 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1803.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:5:
+/home/user/TCG2026/TestProjects/poppler/poppler/NSSCryptoSignBackend.cc:688:63: error: no member named 'contains' in 'std::basic_string<char>'
+  688 |             if (entry.is_directory() && entry.path().string().contains("default")) {
+      |                                         ~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:23:13: error: redefinition of 'PasswordFunction' with a different type: 'char *(*)(const char *)' vs 'std::function<char *(const char *)>'
+   23 |     char *(*PasswordFunction)(const char*) = nullptr;
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/NSSCryptoSignBackend.cc:763:44: note: previous definition is here
+  763 | static std::function<char *(const char *)> PasswordFunction;
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:41:20: error: 'this' cannot be implicitly captured in this context
+   41 |             return password_function_mock->Call(name);
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:29: note: explicitly capture 'this'
+   39 |         PasswordFunction = [](const char* name) -> char* {
+      |                             ^
+      |                             this
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:26: error: no viable overloaded '='
+   39 |         PasswordFunction = [](const char* name) -> char* {
+      |         ~~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   40 | 
+   41 |             return password_function_mock->Call(name);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   42 | 
+   43 |         };
+      |         ~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:469:7: note: candidate function not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28)' to 'const function<char *(const char *)>' for 1st argument
+  469 |       operator=(const function& __x)
+      |       ^         ~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:487:7: note: candidate function not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28)' to 'function<char *(const char *)>' for 1st argument
+  487 |       operator=(function&& __x) noexcept
+      |       ^         ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:501:7: note: candidate function not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28)' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  501 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:530:2: note: candidate template ignored: requirement '_Callable<(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28), (lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28), std::__invoke_result<(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28) &, const char *>>::value' was not satisfied [with _Functor = (lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28)]
+  530 |         operator=(_Functor&& __f)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/std_function.h:540:2: note: candidate template ignored: could not match 'reference_wrapper<_Functor>' against '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:39:28)'
+  540 |         operator=(reference_wrapper<_Functor> __f) noexcept
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:69:18: error: variable has incomplete type 'PK11SlotInfo' (aka 'PK11SlotInfoStr')
+   69 |     PK11SlotInfo slot;  // Assuming PK11SlotInfo is a struct or class with appropriate constructors
+      |                  ^
+/usr/include/nss/secmodt.h:32:16: note: forward declaration of 'PK11SlotInfoStr'
+   32 | typedef struct PK11SlotInfoStr PK11SlotInfo;          /* defined in secmodti.h */
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:97:18: error: variable has incomplete type 'PK11SlotInfo' (aka 'PK11SlotInfoStr')
+   97 |     PK11SlotInfo slot;  // Assuming PK11SlotInfo is a struct or class with appropriate constructors
+      |                  ^
+/usr/include/nss/secmodt.h:32:16: note: forward declaration of 'PK11SlotInfoStr'
+   32 | typedef struct PK11SlotInfoStr PK11SlotInfo;          /* defined in secmodti.h */
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:121:18: error: variable has incomplete type 'PK11SlotInfo' (aka 'PK11SlotInfoStr')
+  121 |     PK11SlotInfo slot;  // Assuming PK11SlotInfo is a struct or class with appropriate constructors
+      |                  ^
+/usr/include/nss/secmodt.h:32:16: note: forward declaration of 'PK11SlotInfoStr'
+   32 | typedef struct PK11SlotInfoStr PK11SlotInfo;          /* defined in secmodti.h */
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:141:1: error: expected unqualified-id
+  141 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp:29:7: warning: 'NSSCryptoSignBackendTest_1803' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   29 | class NSSCryptoSignBackendTest_1803 : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1803.dir/build.make:79: generated_build/CMakeFiles/test_1803.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1803.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:53866: generated_build/CMakeFiles/test_1803.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:53873: generated_build/CMakeFiles/test_1803.dir/rule] 오류 2
+gmake: *** [Makefile:18353: test_1803] 오류 2

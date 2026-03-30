@@ -1,0 +1,79 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_956.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:31:61: error: reference to 'Ref' is ambiguous
+   31 |         MockPage(PDFDoc* docA, int numA, Object&& pageDict, Ref pageRefA, std::unique_ptr<PageAttrs> attrsA)
+      |                                                             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Catalog.h:63:8: note: candidate found by name lookup is 'Ref'
+   63 | struct Ref;
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:77:15: error: class member cannot be redeclared
+   77 |         Page* getPage(int page) override {
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:69:22: note: previous definition is here
+   69 |         MOCK_METHOD1(getPage, Page*(int page));
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:47:93: error: reference to 'Ref' is ambiguous
+   47 |             auto mockPage = std::make_unique<NiceMock<MockPage>>(pdfDoc.get(), i, Object(), Ref(1, i), nullptr);
+      |                                                                                             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Catalog.h:63:8: note: candidate found by name lookup is 'Ref'
+   63 | struct Ref;
+      |        ^
+/usr/include/gmock/gmock-matchers.h:4098:33: note: candidate found by name lookup is 'testing::Ref'
+ 4098 | inline internal::RefMatcher<T&> Ref(T& x) {  // NOLINT
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:65:24: error: call to constructor of 'PDFDoc' is ambiguous
+   65 |         MockPDFDoc() : PDFDoc(nullptr, std::nullopt, std::nullopt, nullptr) {}
+      |                        ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:99:26: error: 'pageCache' is a private member of 'PDFDoc'
+   99 |     EXPECT_CALL(*pdfDoc->pageCache[0], getCropWidth()).WillOnce(Return(595.0));
+      |                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:423:40: note: declared private here
+  423 |     std::vector<std::unique_ptr<Page>> pageCache;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:99:5: error: no member named 'gmock_getCropWidth' in 'Page'
+   99 |     EXPECT_CALL(*pdfDoc->pageCache[0], getCropWidth()).WillOnce(Return(595.0));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:184:1: note: expanded from here
+  184 | gmock_getCropWidth
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:133:26: error: 'pageCache' is a private member of 'PDFDoc'
+  133 |     EXPECT_CALL(*pdfDoc->pageCache[0], isOk()).WillOnce(Return(false));
+      |                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:423:40: note: declared private here
+  423 |     std::vector<std::unique_ptr<Page>> pageCache;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:133:5: error: no member named 'gmock_isOk' in 'Page'
+  133 |     EXPECT_CALL(*pdfDoc->pageCache[0], isOk()).WillOnce(Return(false));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:80:1: note: expanded from here
+   80 | gmock_isOk
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp:15:7: warning: 'PDFDocTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class PDFDocTest : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_956.dir/build.make:79: generated_build/CMakeFiles/test_956.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_956.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:80298: generated_build/CMakeFiles/test_956.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:80305: generated_build/CMakeFiles/test_956.dir/rule] 오류 2
+gmake: *** [Makefile:29091: test_956] 오류 2

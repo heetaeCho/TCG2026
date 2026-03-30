@@ -1,0 +1,26 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_325.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_325.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_325.cpp:83:5: error: no matching function for call to 'makeGenerators'
+   83 |     Catch::Generators::makeGenerators();
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:205:10: note: candidate function template not viable: requires single argument 'generator', but no arguments were provided
+  205 |     auto makeGenerators( GeneratorWrapper<T>&& generator ) -> Generators<T> {
+      |          ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:201:10: note: candidate function template not viable: requires at least argument 'generator', but no arguments were provided
+  201 |     auto makeGenerators( GeneratorWrapper<T>&& generator, Gs &&... moreGenerators ) -> Generators<T> {
+      |          ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:209:10: note: candidate function template not viable: requires at least argument 'val', but no arguments were provided
+  209 |     auto makeGenerators( T&& val, Gs &&... moreGenerators ) -> Generators<std::decay_t<T>> {
+      |          ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:213:10: note: candidate function template not viable: requires at least 2 arguments, but 0 were provided
+  213 |     auto makeGenerators( as<T>, U&& val, Gs &&... moreGenerators ) -> Generators<T> {
+      |          ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_325.cpp:115:1: error: expected unqualified-id
+  115 | ```
+      | ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_325.dir/build.make:79: generated_build/CMakeFiles/test_325.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_325.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:30236: generated_build/CMakeFiles/test_325.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:30243: generated_build/CMakeFiles/test_325.dir/rule] 오류 2
+gmake: *** [Makefile:10732: test_325] 오류 2

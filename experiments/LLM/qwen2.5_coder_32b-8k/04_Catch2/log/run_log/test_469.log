@@ -1,0 +1,78 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from XmlWriterTest_469
+[ RUN      ] XmlWriterTest_469.StartElementWritesTag_469
+[       OK ] XmlWriterTest_469.StartElementWritesTag_469 (0 ms)
+[ RUN      ] XmlWriterTest_469.EndElementClosesTag_469
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_469.cpp:45: Failure
+Expected equality of these values:
+  oss.str()
+    Which is: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<test/>"
+  "<test></test>"
+With diff:
+@@ -1,2 +1,1 @@
+-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+-<test/>
++<test></test>
+
+[  FAILED  ] XmlWriterTest_469.EndElementClosesTag_469 (0 ms)
+[ RUN      ] XmlWriterTest_469.ScopedElementAutoClosesTagOnDestruction_469
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_469.cpp:59: Failure
+Expected equality of these values:
+  oss.str()
+    Which is: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<test/>"
+  "<test></test>"
+With diff:
+@@ -1,2 +1,1 @@
+-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+-<test/>
++<test></test>
+
+[  FAILED  ] XmlWriterTest_469.ScopedElementAutoClosesTagOnDestruction_469 (0 ms)
+[ RUN      ] XmlWriterTest_469.WriteAttributeIncludesAttributeInTag_469
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_469.cpp:71: Failure
+Value of: oss.str()
+Expected: has substring "<test attr=\"value\"></test>"
+  Actual: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<test attr=\"value\"/>"
+[  FAILED  ] XmlWriterTest_469.WriteAttributeIncludesAttributeInTag_469 (0 ms)
+[ RUN      ] XmlWriterTest_469.WriteTextIncludesTextInTag_469
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_469.cpp:83: Failure
+Expected equality of these values:
+  oss.str()
+    Which is: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<test>content</test>"
+  "<test>content</test>"
+With diff:
+@@ -1,2 @@
+-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+ <test>content</test>
+
+[  FAILED  ] XmlWriterTest_469.WriteTextIncludesTextInTag_469 (0 ms)
+[ RUN      ] XmlWriterTest_469.WriteCommentIncludesComment_469
+[       OK ] XmlWriterTest_469.WriteCommentIncludesComment_469 (0 ms)
+[ RUN      ] XmlWriterTest_469.WriteStylesheetRefIncludesPI_469
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_469.cpp:103: Failure
+Expected equality of these values:
+  oss.str()
+    Which is: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<?xml-stylesheet type=\"text/xsl\" href=\"http://example.com/style.xsl\"?>\n"
+  "<?xml-stylesheet href=\"http://example.com/style.xsl\"?>\n"
+With diff:
+@@ -1,2 +1,1 @@
+-<?xml version=\"1.0\" encoding=\"UTF-8\"?>
+-<?xml-stylesheet type=\"text/xsl\" href=\"http://example.com/style.xsl\"?>\n
++<?xml-stylesheet href=\"http://example.com/style.xsl\"?>\n
+
+[  FAILED  ] XmlWriterTest_469.WriteStylesheetRefIncludesPI_469 (0 ms)
+[----------] 7 tests from XmlWriterTest_469 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+[  FAILED  ] 5 tests, listed below:
+[  FAILED  ] XmlWriterTest_469.EndElementClosesTag_469
+[  FAILED  ] XmlWriterTest_469.ScopedElementAutoClosesTagOnDestruction_469
+[  FAILED  ] XmlWriterTest_469.WriteAttributeIncludesAttributeInTag_469
+[  FAILED  ] XmlWriterTest_469.WriteTextIncludesTextInTag_469
+[  FAILED  ] XmlWriterTest_469.WriteStylesheetRefIncludesPI_469
+
+ 5 FAILED TESTS

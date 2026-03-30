@@ -1,0 +1,100 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_499.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:19:5: error: unknown type name 'ParseState'; did you mean 'ParseStatus'?
+   19 |     ParseState parse_state{NoParseFlags, "", &status};
+      |     ^~~~~~~~~~
+      |     ParseStatus
+/home/user/TCG2026/TestProjects/re2/re2/parse.cc:1762:6: note: 'ParseStatus' declared here
+ 1762 | enum ParseStatus {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:19:28: error: use of undeclared identifier 'NoParseFlags'; did you mean 're2::Regexp::NoParseFlags'?
+   19 |     ParseState parse_state{NoParseFlags, "", &status};
+      |                            ^~~~~~~~~~~~
+      |                            re2::Regexp::NoParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:282:5: note: 're2::Regexp::NoParseFlags' declared here
+  282 |     NoParseFlags  = 0,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:19:27: error: excess elements in scalar initializer
+   19 |     ParseState parse_state{NoParseFlags, "", &status};
+      |                           ^            ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:69:38: error: use of undeclared identifier 'NoParseFlags'; did you mean 're2::Regexp::NoParseFlags'?
+   69 |     Regexp marker{kRegexpEmptyMatch, NoParseFlags};
+      |                                      ^~~~~~~~~~~~
+      |                                      re2::Regexp::NoParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:282:5: note: 're2::Regexp::NoParseFlags' declared here
+  282 |     NoParseFlags  = 0,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:69:12: error: calling a private constructor of class 're2::Regexp'
+   69 |     Regexp marker{kRegexpEmptyMatch, NoParseFlags};
+      |            ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:486:12: note: declared private here
+  486 |   explicit Regexp(RegexpOp op, ParseFlags parse_flags);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:69:12: error: variable of type 'Regexp' has private destructor
+   69 |     Regexp marker{kRegexpEmptyMatch, NoParseFlags};
+      |            ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:490:3: note: declared private here
+  490 |   ~Regexp();
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:85:36: error: use of undeclared identifier 'NonGreedy'; did you mean 're2::Regexp::NonGreedy'?
+   85 |     EXPECT_NE(parse_state.flags_ & NonGreedy, 0);
+      |                                    ^~~~~~~~~
+      |                                    re2::Regexp::NonGreedy
+/usr/include/gtest/gtest.h:2046:57: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                         ^
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:293:5: note: 're2::Regexp::NonGreedy' declared here
+  293 |     NonGreedy     = 1<<6,   // Repetition operators are non-greedy by default.
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:95:30: error: use of undeclared identifier 'NoParseFlags'; did you mean 're2::Regexp::NoParseFlags'?
+   95 |     Regexp re{kRegexpRepeat, NoParseFlags};
+      |                              ^~~~~~~~~~~~
+      |                              re2::Regexp::NoParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:282:5: note: 're2::Regexp::NoParseFlags' declared here
+  282 |     NoParseFlags  = 0,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:95:12: error: calling a private constructor of class 're2::Regexp'
+   95 |     Regexp re{kRegexpRepeat, NoParseFlags};
+      |            ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:486:12: note: declared private here
+  486 |   explicit Regexp(RegexpOp op, ParseFlags parse_flags);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:95:12: error: variable of type 'Regexp' has private destructor
+   95 |     Regexp re{kRegexpRepeat, NoParseFlags};
+      |            ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:490:3: note: declared private here
+  490 |   ~Regexp();
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:111:30: error: use of undeclared identifier 'NoParseFlags'; did you mean 're2::Regexp::NoParseFlags'?
+  111 |     Regexp re{kRegexpRepeat, NoParseFlags};
+      |                              ^~~~~~~~~~~~
+      |                              re2::Regexp::NoParseFlags
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:282:5: note: 're2::Regexp::NoParseFlags' declared here
+  282 |     NoParseFlags  = 0,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:111:12: error: calling a private constructor of class 're2::Regexp'
+  111 |     Regexp re{kRegexpRepeat, NoParseFlags};
+      |            ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:486:12: note: declared private here
+  486 |   explicit Regexp(RegexpOp op, ParseFlags parse_flags);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp:111:12: error: variable of type 'Regexp' has private destructor
+  111 |     Regexp re{kRegexpRepeat, NoParseFlags};
+      |            ^
+/home/user/TCG2026/TestProjects/re2/re2/regexp.h:490:3: note: declared private here
+  490 |   ~Regexp();
+      |   ^
+13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_499.dir/build.make:79: generated_build/CMakeFiles/test_499.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_499.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:17193: generated_build/CMakeFiles/test_499.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:17200: generated_build/CMakeFiles/test_499.dir/rule] 오류 2
+gmake: *** [Makefile:6367: test_499] 오류 2

@@ -1,0 +1,157 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1493.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:31:21: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   31 |     std::unique_ptr<BaseStreamStream> baseStreamStream;
+      |                     ^~~~~~~~~~~~~~~~
+      |                     BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:31:21: error: use of undeclared identifier 'BaseStreamStream'
+   31 |     std::unique_ptr<BaseStreamStream> baseStreamStream;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:39:45: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   39 |         baseStreamStream = std::make_unique<BaseStreamStream>(std::move(mockBaseStream));
+      |                                             ^~~~~~~~~~~~~~~~
+      |                                             BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:39:45: error: use of undeclared identifier 'BaseStreamStream'
+   39 |         baseStreamStream = std::make_unique<BaseStreamStream>(std::move(mockBaseStream));
+      |                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:51:5: error: no member named 'gmock_unfilteredRewind' in 'BaseStream'
+   51 |     EXPECT_CALL(*mockBaseStream->getBaseStream(), unfilteredRewind()).WillOnce(Return(true));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:68:1: note: expanded from here
+   68 | gmock_unfilteredRewind
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:69:5: error: no member named 'gmock_unfilteredRewind' in 'BaseStream'
+   69 |     EXPECT_CALL(*mockBaseStream->getBaseStream(), unfilteredRewind()).WillOnce(Return(false));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:22:1: note: expanded from here
+   22 | gmock_unfilteredRewind
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:85:17: error: cannot initialize a variable of type 'BaseStream *' with an rvalue of type 'pointer' (aka 'MockBaseStream *')
+   85 |     BaseStream* expectedBaseStream = mockBaseStream.get();
+      |                 ^                    ~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockBaseStream'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:37:31: note: in instantiation of function template specialization 'std::make_unique<MockBaseStream>' requested here
+   37 |         mockBaseStream = std::make_unique<MockBaseStream>();
+      |                               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockBaseStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockBaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'MockBaseStream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'MockBaseStream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockBaseStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'MockBaseStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'MockBaseStream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'MockBaseStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'MockBaseStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'MockBaseStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'MockBaseStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:13:7: warning: 'MockBaseStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class MockBaseStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<MockBaseStream>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:37:26: note: in instantiation of member function 'std::unique_ptr<MockBaseStream>::~unique_ptr' requested here
+   37 |         mockBaseStream = std::make_unique<MockBaseStream>();
+      |                          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:682:18: error: no matching function for call to 'ImplicitCast_'
+  682 |           value_(ImplicitCast_<Result>(value_before_cast_)) {}
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-actions.h:662:26: note: in instantiation of member function 'testing::internal::ReturnAction<MockBaseStream *>::Impl<MockBaseStream *, BaseStream *()>::Impl' requested here
+  662 |     return Action<F>(new Impl<R, F>(value_));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:49:60: note: in instantiation of function template specialization 'testing::internal::ReturnAction<MockBaseStream *>::operator Action<BaseStream *()>' requested here
+   49 |     EXPECT_CALL(*mockBaseStream, getBaseStream()).WillOnce(Return(mockBaseStream.get()));
+      |                                                            ^
+/usr/include/gtest/internal/gtest-port.h:1070:11: note: candidate function template not viable: no known conversion from 'MockBaseStream *' to 'Result' (aka 'BaseStream *') for 1st argument
+ 1070 | inline To ImplicitCast_(To x) { return x; }
+      |           ^             ~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1493_UnfilteredRewind_DelegatesToBaseStream_1493_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1493_UnfilteredRewind_DelegatesToBaseStream_1493_Test>::CreateTest' requested here
+   47 | TEST_F(BaseStreamStreamTest_1493, UnfilteredRewind_DelegatesToBaseStream_1493) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1493_UnfilteredRewind_ReturnsFalseIfBaseStreamFails_1493_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:65:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1493_UnfilteredRewind_ReturnsFalseIfBaseStreamFails_1493_Test>::CreateTest' requested here
+   65 | TEST_F(BaseStreamStreamTest_1493, UnfilteredRewind_ReturnsFalseIfBaseStreamFails_1493) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1493_GetBaseStream_DelegatesToBaseStream_1493_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp:83:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1493_GetBaseStream_DelegatesToBaseStream_1493_Test>::CreateTest' requested here
+   83 | TEST_F(BaseStreamStreamTest_1493, GetBaseStream_DelegatesToBaseStream_1493) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 12 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1493.dir/build.make:79: generated_build/CMakeFiles/test_1493.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1493.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:35562: generated_build/CMakeFiles/test_1493.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:35569: generated_build/CMakeFiles/test_1493.dir/rule] 오류 2
+gmake: *** [Makefile:10917: test_1493] 오류 2

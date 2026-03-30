@@ -1,0 +1,87 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_516.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp:9:7: warning: 'GfxFunctionShadingTest_516' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxFunctionShadingTest_516 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Function'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp:23:30: note: in instantiation of function template specialization 'std::make_unique<Function>' requested here
+   23 |         funcs.push_back(std::make_unique<Function>());
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:62:39: note: unimplemented pure virtual method 'copy' in 'Function'
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |                                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:73:18: note: unimplemented pure virtual method 'getType' in 'Function'
+   73 |     virtual Type getType() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:87:18: note: unimplemented pure virtual method 'transform' in 'Function'
+   87 |     virtual void transform(const double *in, double *out) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:89:18: note: unimplemented pure virtual method 'isOk' in 'Function'
+   89 |     virtual bool isOk() const = 0;
+      |                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:66:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:138:21: error: static assertion failed due to requirement 'is_constructible<std::unique_ptr<Function, std::default_delete<Function>>, const std::unique_ptr<Function, std::default_delete<Function>> &>::value': result type must be constructible from value type of input range
+  138 |       static_assert(is_constructible<_ValueType2, decltype(*__first)>::value,
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:333:19: note: in instantiation of function template specialization 'std::uninitialized_copy<const std::unique_ptr<Function> *, std::unique_ptr<Function> *>' requested here
+  333 |     { return std::uninitialized_copy(__first, __last, __result); }
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1585:11: note: in instantiation of function template specialization 'std::__uninitialized_copy_a<const std::unique_ptr<Function> *, std::unique_ptr<Function> *, std::unique_ptr<Function>>' requested here
+ 1585 |             std::__uninitialized_copy_a(__first, __last,
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:629:2: note: in instantiation of function template specialization 'std::vector<std::unique_ptr<Function>>::_M_range_initialize<const std::unique_ptr<Function> *>' requested here
+  629 |         _M_range_initialize(__l.begin(), __l.end(),
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp:35:81: note: in instantiation of member function 'std::vector<std::unique_ptr<Function>>::vector' requested here
+   35 |             return std::make_unique<GfxFunctionShading>(x0, y0, x1, y1, matrix, std::vector<std::unique_ptr<Function>>{std::move(funcs[0])});
+      |                                                                                 ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:63:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:67:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_iterator.h:85:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:115:4: error: no matching function for call to 'construct_at'
+  115 |           std::construct_at(__p, std::forward<_Args>(__args)...);
+      |           ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:92:8: note: in instantiation of function template specialization 'std::_Construct<std::unique_ptr<Function>, const std::unique_ptr<Function> &>' requested here
+   92 |                 std::_Construct(std::__addressof(*__cur), *__first);
+      |                      ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:151:2: note: in instantiation of function template specialization 'std::__uninitialized_copy<false>::__uninit_copy<const std::unique_ptr<Function> *, std::unique_ptr<Function> *>' requested here
+  151 |         __uninit_copy(__first, __last, __result);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h:333:19: note: in instantiation of function template specialization 'std::uninitialized_copy<const std::unique_ptr<Function> *, std::unique_ptr<Function> *>' requested here
+  333 |     { return std::uninitialized_copy(__first, __last, __result); }
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:1585:11: note: in instantiation of function template specialization 'std::__uninitialized_copy_a<const std::unique_ptr<Function> *, std::unique_ptr<Function> *, std::unique_ptr<Function>>' requested here
+ 1585 |             std::__uninitialized_copy_a(__first, __last,
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h:629:2: note: in instantiation of function template specialization 'std::vector<std::unique_ptr<Function>>::_M_range_initialize<const std::unique_ptr<Function> *>' requested here
+  629 |         _M_range_initialize(__l.begin(), __l.end(),
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp:35:81: note: in instantiation of member function 'std::vector<std::unique_ptr<Function>>::vector' requested here
+   35 |             return std::make_unique<GfxFunctionShading>(x0, y0, x1, y1, matrix, std::vector<std::unique_ptr<Function>>{std::move(funcs[0])});
+      |                                                                                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:94:5: note: candidate template ignored: substitution failure [with _Tp = std::unique_ptr<Function>, _Args = <const std::unique_ptr<Function> &>]: call to deleted constructor of 'std::unique_ptr<Function>'
+   94 |     construct_at(_Tp* __location, _Args&&... __args)
+      |     ^
+   95 |     noexcept(noexcept(::new((void*)0) _Tp(std::declval<_Args>()...)))
+   96 |     -> decltype(::new((void*)0) _Tp(std::declval<_Args>()...))
+      |                                 ~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_construct.h:119:25: error: call to deleted constructor of 'std::unique_ptr<Function>'
+  119 |       ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+      |                         ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_516.dir/build.make:79: generated_build/CMakeFiles/test_516.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_516.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:91530: generated_build/CMakeFiles/test_516.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:91537: generated_build/CMakeFiles/test_516.dir/rule] 오류 2
+gmake: *** [Makefile:33654: test_516] 오류 2

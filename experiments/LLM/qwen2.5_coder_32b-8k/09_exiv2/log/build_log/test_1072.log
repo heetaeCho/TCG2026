@@ -1,0 +1,119 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1072.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:31:18: warning: 'MockImage::setIccProfile' hides overloaded virtual function [-Woverloaded-virtual]
+   31 |     MOCK_METHOD1(setIccProfile, void(DataBuf&&));
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:195:16: note: hidden overloaded virtual function 'Exiv2::Image::setIccProfile' declared here: different number of parameters (2 vs 1)
+  195 |   virtual void setIccProfile(DataBuf&& iccProfile, bool bTestValid = true);
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:47:15: error: field type 'MockImage' is an abstract class
+   47 |     MockImage image{ImageType::jpeg, 0};
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'MockImage'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'MockImage'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'MockImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:49:15: error: field type 'MockImage' is an abstract class
+   49 |     MockImage sourceImage{ImageType::jpeg, mdExif | mdIptc | mdXmp | mdIccProfile | mdComment};
+      |               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::BasicIo'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::BasicIo>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:37:42: note: in instantiation of member function 'std::unique_ptr<Exiv2::BasicIo>::~unique_ptr' requested here
+   37 |         : Image(type, supportedMetadata, nullptr) {}
+      |                                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1072_SetMetadata_NoWritePermissions_1072_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:55:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1072_SetMetadata_NoWritePermissions_1072_Test>::CreateTest' requested here
+   55 | TEST_F(ImageTest_1072, SetMetadata_NoWritePermissions_1072) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1072_SetMetadata_ExifWritePermission_1072_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:79:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1072_SetMetadata_ExifWritePermission_1072_Test>::CreateTest' requested here
+   79 | TEST_F(ImageTest_1072, SetMetadata_ExifWritePermission_1072) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1072_SetMetadata_IptcWritePermission_1072_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:93:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1072_SetMetadata_IptcWritePermission_1072_Test>::CreateTest' requested here
+   93 | TEST_F(ImageTest_1072, SetMetadata_IptcWritePermission_1072) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1072_SetMetadata_XmpWritePermission_1072_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:107:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1072_SetMetadata_XmpWritePermission_1072_Test>::CreateTest' requested here
+  107 | TEST_F(ImageTest_1072, SetMetadata_XmpWritePermission_1072) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1072_SetMetadata_IccProfileWritePermission_1072_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:123:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1072_SetMetadata_IccProfileWritePermission_1072_Test>::CreateTest' requested here
+  123 | TEST_F(ImageTest_1072, SetMetadata_IccProfileWritePermission_1072) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1072_SetMetadata_CommentWritePermission_1072_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp:137:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1072_SetMetadata_CommentWritePermission_1072_Test>::CreateTest' requested here
+  137 | TEST_F(ImageTest_1072, SetMetadata_CommentWritePermission_1072) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1072.dir/build.make:79: generated_build/CMakeFiles/test_1072.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1072.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:37053: generated_build/CMakeFiles/test_1072.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:37060: generated_build/CMakeFiles/test_1072.dir/rule] 오류 2
+gmake: *** [Makefile:11762: test_1072] 오류 2

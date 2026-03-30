@@ -1,0 +1,53 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_486.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:33:92: warning: declaration shadows a field of 'GfxDeviceNColorSpaceTest_486' [-Wshadow]
+   33 |     GfxDeviceNColorSpace createGfxDeviceNColorSpace(int nComps, std::vector<std::string>&& names, std::unique_ptr<GfxColorSpace>&& alt, std::unique_ptr<Function> func, std::vector<std::unique_ptr<GfxSeparationColorSpace>>&& sepsCS) {
+      |                                                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:17:30: note: previous declaration is here
+   17 |     std::vector<std::string> names = {"name1", "name2"};
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:33:225: warning: declaration shadows a field of 'GfxDeviceNColorSpaceTest_486' [-Wshadow]
+   33 |     GfxDeviceNColorSpace createGfxDeviceNColorSpace(int nComps, std::vector<std::string>&& names, std::unique_ptr<GfxColorSpace>&& alt, std::unique_ptr<Function> func, std::vector<std::unique_ptr<GfxSeparationColorSpace>>&& sepsCS) {
+      |                                                                                                                                                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:19:59: note: previous declaration is here
+   19 |     std::vector<std::unique_ptr<GfxSeparationColorSpace>> sepsCS;
+      |                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:111:30: error: use of undeclared identifier 'GfxCalGray'; did you mean 'csCalGray'?
+  111 |     altCS = std::make_unique<GfxCalGray>(GfxRenderingIntent::AbsoluteColorimetric); // Assuming GfxCalGray is a valid alternative
+      |                              ^~~~~~~~~~
+      |                              csCalGray
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:210:5: note: 'csCalGray' declared here
+  210 |     csCalGray,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:111:42: error: use of undeclared identifier 'GfxRenderingIntent'
+  111 |     altCS = std::make_unique<GfxCalGray>(GfxRenderingIntent::AbsoluteColorimetric); // Assuming GfxCalGray is a valid alternative
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:9:7: warning: 'GfxDeviceNColorSpaceTest_486' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxDeviceNColorSpaceTest_486 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'Function'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp:55:30: note: in instantiation of function template specialization 'std::make_unique<Function>' requested here
+   55 |     tintTransformFunc = std::make_unique<Function>(); // Assuming Function is default constructible
+      |                              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:62:39: note: unimplemented pure virtual method 'copy' in 'Function'
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |                                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:73:18: note: unimplemented pure virtual method 'getType' in 'Function'
+   73 |     virtual Type getType() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:87:18: note: unimplemented pure virtual method 'transform' in 'Function'
+   87 |     virtual void transform(const double *in, double *out) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:89:18: note: unimplemented pure virtual method 'isOk' in 'Function'
+   89 |     virtual bool isOk() const = 0;
+      |                  ^
+3 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_486.dir/build.make:79: generated_build/CMakeFiles/test_486.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_486.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:92202: generated_build/CMakeFiles/test_486.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:92209: generated_build/CMakeFiles/test_486.dir/rule] 오류 2
+gmake: *** [Makefile:33927: test_486] 오류 2

@@ -1,0 +1,82 @@
+[ 66%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_563.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:77:24: error: use of undeclared identifier 'Zombie'
+   77 |     Node undefinedNode(Zombie{});
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:159:10: error: no matching constructor for initialization of 'Node'
+  159 |     Node mapNode({{"key", "value"}});
+      |          ^       ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:22:14: note: candidate constructor not viable: cannot convert initializer list argument to 'NodeType::value'
+   22 | inline Node::Node(NodeType::value type)
+      |              ^    ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:39:14: note: candidate constructor not viable: cannot convert initializer list argument to 'const detail::iterator_value'
+   39 | inline Node::Node(const detail::iterator_value& rhs)
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:45:14: note: candidate constructor not viable: cannot convert initializer list argument to 'const Node'
+   45 | inline Node::Node(const Node&) = default;
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:47:14: note: candidate constructor not viable: cannot convert initializer list argument to 'Zombie'
+   47 | inline Node::Node(Zombie)
+      |              ^    ~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:31:14: note: candidate template ignored: couldn't infer template argument 'T'
+   31 | inline Node::Node(const T& rhs)
+      |              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:19:14: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+   19 | inline Node::Node()
+      |              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:50:14: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   50 | inline Node::Node(Zombie, const std::string& key)
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:53:14: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+   53 | inline Node::Node(detail::node& node, detail::shared_memory_holder pMemory)
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:175:22: error: use of undeclared identifier 'Zombie'
+  175 |     Node invalidNode(Zombie{});
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:191:22: error: use of undeclared identifier 'Zombie'
+  191 |     Node invalidNode(Zombie{});
+      |                      ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:243:14: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  243 |   AssignData(convert<T>::encode(rhs));
+      |              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:36:3: note: in instantiation of function template specialization 'YAML::Node::Assign<int>' requested here
+   36 |   Assign(rhs);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:33:10: note: in instantiation of function template specialization 'YAML::Node::Node<int>' requested here
+   33 |     Node intNode(42);
+      |          ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:137:9: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  137 |     if (convert<T>::decode(node, t))
+      |         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:164:10: note: in instantiation of member function 'YAML::as_if<int, void>::operator()' requested here
+  164 |   return as_if<T, void>(*this)();
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:51:20: note: in instantiation of function template specialization 'YAML::Node::as<int>' requested here
+   51 |     EXPECT_EQ(node.as<int>(), 10);
+      |                    ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:243:14: error: implicit instantiation of undefined template 'YAML::convert<std::vector<int>>'
+  243 |   AssignData(convert<T>::encode(rhs));
+      |              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:36:3: note: in instantiation of function template specialization 'YAML::Node::Assign<std::vector<int>>' requested here
+   36 |   Assign(rhs);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp:153:10: note: in instantiation of function template specialization 'YAML::Node::Node<std::vector<int>>' requested here
+  153 |     Node sequenceNode(std::vector<int>{1, 2, 3});
+      |          ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_563.dir/build.make:79: generated_build/CMakeFiles/test_563.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_563.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:10670: generated_build/CMakeFiles/test_563.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:10677: generated_build/CMakeFiles/test_563.dir/rule] 오류 2
+gmake: *** [Makefile:3612: test_563] 오류 2

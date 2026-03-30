@@ -1,0 +1,19 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_440.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_440.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_440.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'YAML::SettingChangeBase'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_440.cpp:29:24: note: in instantiation of function template specialization 'std::make_unique<YAML::SettingChangeBase>' requested here
+   29 |     settings.push(std::make_unique<SettingChangeBase>()); // Assuming SettingChangeBase is a mockable class
+      |                        ^
+/home/user/TCG2026/TestProjects/yaml-cpp/src/setting.h:20:16: note: unimplemented pure virtual method 'pop' in 'SettingChangeBase'
+   20 |   virtual void pop() = 0;
+      |                ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_440.dir/build.make:79: generated_build/CMakeFiles/test_440.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_440.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14638: generated_build/CMakeFiles/test_440.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14645: generated_build/CMakeFiles/test_440.dir/rule] 오류 2
+gmake: *** [Makefile:5224: test_440] 오류 2

@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_376.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_376.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_376.cpp:13:7: warning: 'StitchingFunctionTest_376' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class StitchingFunctionTest_376 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_376.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'StitchingFunction'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_376.cpp:37:21: note: in instantiation of function template specialization 'std::make_unique<StitchingFunction, std::nullptr_t, RefRecursionChecker>' requested here
+   37 |         return std::make_unique<StitchingFunction>(nullptr, RefRecursionChecker());
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:211:5: note: candidate constructor not viable: expects an lvalue for 2nd argument
+  211 |     StitchingFunction(Dict *dict, RefRecursionChecker &usedParents);
+      |     ^                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:224:14: note: candidate constructor not viable: no known conversion from 'RefRecursionChecker' to 'PrivateTag' for 2nd argument
+  224 |     explicit StitchingFunction(const StitchingFunction *func, PrivateTag /*unused*/ = {});
+      |              ^                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Function.h:204:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  204 | class StitchingFunction : public Function
+      |       ^~~~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_376.dir/build.make:79: generated_build/CMakeFiles/test_376.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_376.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:101834: generated_build/CMakeFiles/test_376.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:101841: generated_build/CMakeFiles/test_376.dir/rule] 오류 2
+gmake: *** [Makefile:37840: test_376] 오류 2

@@ -1,0 +1,89 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_485.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp:57:26: error: no matching constructor for initialization of 'GfxDeviceNColorSpace'
+   57 |     GfxDeviceNColorSpace deviceN(2, names, std::move(alt), std::move(func), std::move(sepsCS));
+      |                          ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:744:5: note: candidate constructor not viable: expects an rvalue for 2nd argument
+  744 |     GfxDeviceNColorSpace(int nCompsA, std::vector<std::string> &&namesA, std::unique_ptr<GfxColorSpace> &&alt, std::unique_ptr<Function> func, std::vector<std::unique_ptr<GfxSeparationColorSpace>> &&sepsCS);
+      |     ^                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:737:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 5 were provided
+  737 | class GfxDeviceNColorSpace : public GfxColorSpace
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:769:5: note: candidate constructor not viable: requires at least 8 arguments, but 5 were provided
+  769 |     GfxDeviceNColorSpace(int nCompsA, const std::vector<std::string> &namesA, std::unique_ptr<GfxColorSpace> &&alt, std::unique_ptr<Function> func, std::vector<std::unique_ptr<GfxSeparationColorSpace>> &&sepsCSA,
+      |     ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  770 |                          const std::vector<int> &mappingA, bool nonMarkingA, unsigned int overprintMaskA, PrivateTag /*unused*/ = {});
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp:69:26: error: no matching constructor for initialization of 'GfxDeviceNColorSpace'
+   69 |     GfxDeviceNColorSpace deviceN(2, names, std::move(alt), std::move(func), std::move(sepsCS));
+      |                          ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:744:5: note: candidate constructor not viable: expects an rvalue for 2nd argument
+  744 |     GfxDeviceNColorSpace(int nCompsA, std::vector<std::string> &&namesA, std::unique_ptr<GfxColorSpace> &&alt, std::unique_ptr<Function> func, std::vector<std::unique_ptr<GfxSeparationColorSpace>> &&sepsCS);
+      |     ^                                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:737:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 5 were provided
+  737 | class GfxDeviceNColorSpace : public GfxColorSpace
+      |       ^~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:769:5: note: candidate constructor not viable: requires at least 8 arguments, but 5 were provided
+  769 |     GfxDeviceNColorSpace(int nCompsA, const std::vector<std::string> &namesA, std::unique_ptr<GfxColorSpace> &&alt, std::unique_ptr<Function> func, std::vector<std::unique_ptr<GfxSeparationColorSpace>> &&sepsCSA,
+      |     ^                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  770 |                          const std::vector<int> &mappingA, bool nonMarkingA, unsigned int overprintMaskA, PrivateTag /*unused*/ = {});
+      |                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp:71:5: error: cannot use 'try' with exceptions disabled
+   71 |     EXPECT_THROW(deviceN.getColorantName(-1), std::out_of_range);
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp:73:5: error: cannot use 'try' with exceptions disabled
+   73 |     EXPECT_THROW(deviceN.getColorantName(2), std::out_of_range); // Out of bounds
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp:7:7: warning: 'GfxDeviceNColorSpaceTest_485' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class GfxDeviceNColorSpaceTest_485 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'GfxColorSpace'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp:45:24: note: in instantiation of function template specialization 'std::make_unique<GfxColorSpace>' requested here
+   45 |     auto altPtr = std::make_unique<GfxColorSpace>();
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:263:44: note: unimplemented pure virtual method 'copy' in 'GfxColorSpace'
+  263 |     virtual std::unique_ptr<GfxColorSpace> copy() const = 0;
+      |                                            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:264:31: note: unimplemented pure virtual method 'getMode' in 'GfxColorSpace'
+  264 |     virtual GfxColorSpaceMode getMode() const = 0;
+      |                               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:270:18: note: unimplemented pure virtual method 'getGray' in 'GfxColorSpace'
+  270 |     virtual void getGray(const GfxColor *color, GfxGray *gray) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:271:18: note: unimplemented pure virtual method 'getRGB' in 'GfxColorSpace'
+  271 |     virtual void getRGB(const GfxColor *color, GfxRGB *rgb) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:272:18: note: unimplemented pure virtual method 'getCMYK' in 'GfxColorSpace'
+  272 |     virtual void getCMYK(const GfxColor *color, GfxCMYK *cmyk) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:273:18: note: unimplemented pure virtual method 'getDeviceN' in 'GfxColorSpace'
+  273 |     virtual void getDeviceN(const GfxColor *color, GfxColor *deviceN) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:295:17: note: unimplemented pure virtual method 'getNComps' in 'GfxColorSpace'
+  295 |     virtual int getNComps() const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:298:18: note: unimplemented pure virtual method 'getDefaultColor' in 'GfxColorSpace'
+  298 |     virtual void getDefaultColor(GfxColor *color) const = 0;
+      |                  ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_485.dir/build.make:79: generated_build/CMakeFiles/test_485.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_485.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:72458: generated_build/CMakeFiles/test_485.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:72465: generated_build/CMakeFiles/test_485.dir/rule] 오류 2
+gmake: *** [Makefile:25906: test_485] 오류 2

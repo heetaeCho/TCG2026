@@ -1,0 +1,71 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from FpToStringTest_433
+[ RUN      ] FpToStringTest_433.NormalOperation_433
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_433.cpp:31: Failure
+Expected equality of these values:
+  YAML::FpToString(123.456, 2)
+    Which is: "1.2e+02"
+  "123.46"
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_433.cpp:33: Failure
+Expected equality of these values:
+  YAML::FpToString(-987.654, 3)
+    Which is: "-988"
+  "-987.654"
+[  FAILED  ] FpToStringTest_433.NormalOperation_433 (0 ms)
+[ RUN      ] FpToStringTest_433.BoundaryConditions_433
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_433.cpp:43: Failure
+Expected equality of these values:
+  YAML::FpToString(123.456, 0)
+    Which is: "123.456"
+  "123"
+[  FAILED  ] FpToStringTest_433.BoundaryConditions_433 (0 ms)
+[ RUN      ] FpToStringTest_433.LargePrecision_433
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_433.cpp:51: Failure
+Expected equality of these values:
+  YAML::FpToString(123.456789, 10)
+    Which is: "123.456789"
+  "123.4567890000"
+[  FAILED  ] FpToStringTest_433.LargePrecision_433 (0 ms)
+[ RUN      ] FpToStringTest_433.VeryLargeNumber_433
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_433.cpp:59: Failure
+Expected equality of these values:
+  YAML::FpToString(1e10, 2)
+    Which is: "1e+10"
+  "10000000000.00"
+[  FAILED  ] FpToStringTest_433.VeryLargeNumber_433 (0 ms)
+[ RUN      ] FpToStringTest_433.VerySmallNumber_433
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_433.cpp:67: Failure
+Expected equality of these values:
+  YAML::FpToString(1e-10, 5)
+    Which is: "1e-10"
+  "0.00000"
+[  FAILED  ] FpToStringTest_433.VerySmallNumber_433 (0 ms)
+[ RUN      ] FpToStringTest_433.NegativeVeryLargePrecision_433
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_433.cpp:75: Failure
+Expected equality of these values:
+  YAML::FpToString(123.456, 100)
+    Which is: "123.456"
+  "123.456000000000005684341886080801486968994140625"
+[  FAILED  ] FpToStringTest_433.NegativeVeryLargePrecision_433 (0 ms)
+[ RUN      ] FpToStringTest_433.NaNValue_433
+[       OK ] FpToStringTest_433.NaNValue_433 (0 ms)
+[ RUN      ] FpToStringTest_433.PositiveInfinity_433
+[       OK ] FpToStringTest_433.PositiveInfinity_433 (0 ms)
+[ RUN      ] FpToStringTest_433.NegativeInfinity_433
+[       OK ] FpToStringTest_433.NegativeInfinity_433 (0 ms)
+[----------] 9 tests from FpToStringTest_433 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 9 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] FpToStringTest_433.NormalOperation_433
+[  FAILED  ] FpToStringTest_433.BoundaryConditions_433
+[  FAILED  ] FpToStringTest_433.LargePrecision_433
+[  FAILED  ] FpToStringTest_433.VeryLargeNumber_433
+[  FAILED  ] FpToStringTest_433.VerySmallNumber_433
+[  FAILED  ] FpToStringTest_433.NegativeVeryLargePrecision_433
+
+ 6 FAILED TESTS

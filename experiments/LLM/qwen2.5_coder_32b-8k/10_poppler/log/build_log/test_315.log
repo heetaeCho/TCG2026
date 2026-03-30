@@ -1,0 +1,135 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_315.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:11:26: error: base class has incomplete type
+   11 | class MockSound : public Sound {
+      |                   ~~~~~~~^~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:46:7: note: forward declaration of 'Sound'
+   46 | class Sound;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:15:5: error: only virtual member functions can be marked 'override'
+   15 |     MOCK_METHOD(void, someMethod, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:238:1: note: expanded from here
+  238 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:21:8: error: expected class name
+   21 | TEST_F(LinkSoundTest_315, IsOk_ReturnsTrueWhenSoundIsNotNull_315) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:21:1: error: only virtual member functions can be marked 'override'
+   21 | TEST_F(LinkSoundTest_315, IsOk_ReturnsTrueWhenSoundIsNotNull_315) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1536:59: note: expanded from macro 'GTEST_TEST_'
+ 1536 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default; \
+      |                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:21:1: error: only virtual member functions can be marked 'override'
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1543:21: note: expanded from macro 'GTEST_TEST_'
+ 1543 |     void TestBody() override;                                                 \
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:21:8: error: use of undeclared identifier 'LinkSoundTest_315'
+   21 | TEST_F(LinkSoundTest_315, IsOk_ReturnsTrueWhenSoundIsNotNull_315) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:21:8: error: use of undeclared identifier 'LinkSoundTest_315'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:21:8: error: use of undeclared identifier 'LinkSoundTest_315'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:27:15: error: 'sound' is a private member of 'LinkSound'
+   27 |     linkSound.sound = std::move(sound);
+      |               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:398:28: note: declared private here
+  398 |     std::unique_ptr<Sound> sound;
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:27:21: error: no viable overloaded '='
+   27 |     linkSound.sound = std::move(sound);
+      |     ~~~~~~~~~~~~~~~ ^ ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:371:19: note: candidate function not viable: no known conversion from 'unique_ptr<MockSound, default_delete<MockSound>>' to 'unique_ptr<Sound, default_delete<Sound>>' for 1st argument
+  371 |       unique_ptr& operator=(unique_ptr&&) = default;
+      |                   ^         ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:386:2: note: candidate template ignored: requirement '__and_<std::__and_<std::is_convertible<MockSound *, Sound *>, std::__not_<std::is_array<MockSound>>>, std::is_assignable<std::default_delete<Sound> &, std::default_delete<MockSound> &&>>::value' was not satisfied [with _Up = MockSound, _Ep = std::default_delete<MockSound>]
+  386 |         operator=(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:395:7: note: candidate function not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockSound> &>::type' (aka 'std::unique_ptr<MockSound>') to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  395 |       operator=(nullptr_t) noexcept
+      |       ^         ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:469:19: note: candidate function not viable: no known conversion from 'unique_ptr<MockSound, default_delete<MockSound>>' to 'const unique_ptr<Sound, default_delete<Sound>>' for 1st argument
+  469 |       unique_ptr& operator=(const unique_ptr&) = delete;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:37:8: error: expected class name
+   37 | TEST_F(LinkSoundTest_315, IsOk_ReturnsFalseWhenSoundIsNull_315) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:37:1: error: only virtual member functions can be marked 'override'
+   37 | TEST_F(LinkSoundTest_315, IsOk_ReturnsFalseWhenSoundIsNull_315) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1536:59: note: expanded from macro 'GTEST_TEST_'
+ 1536 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default; \
+      |                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:37:1: error: only virtual member functions can be marked 'override'
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1543:21: note: expanded from macro 'GTEST_TEST_'
+ 1543 |     void TestBody() override;                                                 \
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:37:8: error: use of undeclared identifier 'LinkSoundTest_315'
+   37 | TEST_F(LinkSoundTest_315, IsOk_ReturnsFalseWhenSoundIsNull_315) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:37:8: error: use of undeclared identifier 'LinkSoundTest_315'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:37:8: error: use of undeclared identifier 'LinkSoundTest_315'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:41:15: error: 'sound' is a private member of 'LinkSound'
+   41 |     linkSound.sound = nullptr;
+      |               ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:398:28: note: declared private here
+  398 |     std::unique_ptr<Sound> sound;
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:49:1: error: expected unqualified-id
+   49 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Sound'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:182:4: note: in instantiation of member function 'std::default_delete<Sound>::operator()' requested here
+  182 |           _M_deleter()(__old_p);
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:456:7: note: in instantiation of member function 'std::__uniq_ptr_impl<Sound, std::default_delete<Sound>>::reset' requested here
+  456 |         _M_t.reset(std::move(__p));
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:397:2: note: in instantiation of member function 'std::unique_ptr<Sound>::reset' requested here
+  397 |         reset();
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp:41:21: note: in instantiation of member function 'std::unique_ptr<Sound>::operator=' requested here
+   41 |     linkSound.sound = nullptr;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:46:7: note: forward declaration of 'Sound'
+   46 | class Sound;
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_315.dir/build.make:79: generated_build/CMakeFiles/test_315.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_315.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:33002: generated_build/CMakeFiles/test_315.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:33009: generated_build/CMakeFiles/test_315.dir/rule] 오류 2
+gmake: *** [Makefile:9877: test_315] 오류 2

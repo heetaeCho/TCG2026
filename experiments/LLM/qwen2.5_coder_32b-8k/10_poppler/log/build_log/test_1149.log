@@ -1,0 +1,147 @@
+[ 66%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1149.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:41:24: error: no matching constructor for initialization of 'Dict'
+   41 |         mockDict = new Dict();
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:43:31: error: no matching constructor for initialization of 'PSOutputDev'
+   43 |         mockPSOutputDev = new PSOutputDev(nullptr, false);
+      |                               ^           ~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:116:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  116 | class POPPLER_PRIVATE_EXPORT PSOutputDev : public OutputDev
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:121:5: note: candidate constructor not viable: requires at least 5 arguments, but 2 were provided
+  121 |     PSOutputDev(const char *fileName, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0,
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  122 |                 int imgURXA = 0, int imgURYA = 0, PSForceRasterize forceRasterizeA = psRasterizeWhenNeeded, bool manualCtrlA = false, PSOutCustomCodeCbk customCodeCbkA = nullptr, void *customCodeCbkDataA = nullptr,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  123 |                 PSLevel levelA = psLevel2);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:126:5: note: candidate constructor not viable: requires at least 5 arguments, but 2 were provided
+  126 |     PSOutputDev(int fdA, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0, int imgURXA = 0,
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  127 |                 int imgURYA = 0, PSForceRasterize forceRasterizeA = psRasterizeWhenNeeded, bool manualCtrlA = false, PSOutCustomCodeCbk customCodeCbkA = nullptr, void *customCodeCbkDataA = nullptr, PSLevel levelA = psLevel2);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:131:5: note: candidate constructor not viable: requires at least 6 arguments, but 2 were provided
+  131 |     PSOutputDev(FoFiOutputFunc outputFuncA, void *outputStreamA, char *psTitleA, PDFDoc *docA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true,
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  132 |                 int imgLLXA = 0, int imgLLYA = 0, int imgURXA = 0, int imgURYA = 0, PSForceRasterize forceRasterizeA = psRasterizeWhenNeeded, bool manualCtrlA = false, PSOutCustomCodeCbk customCodeCbkA = nullptr,
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  133 |                 void *customCodeCbkDataA = nullptr, PSLevel levelA = psLevel2);
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:65:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+   65 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:77:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+   77 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:81:42: error: no member named 'isEmpty' in 'GooString'
+   81 |     EXPECT_TRUE(name != nullptr && name->isEmpty()); // Assuming it returns an empty GooString if no name is set
+      |                                    ~~~~  ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:89:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+   89 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:101:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  101 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:113:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  113 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:123:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  123 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:133:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  133 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:143:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  143 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:155:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  155 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:167:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  167 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:179:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  179 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:181:35: error: use of undeclared identifier 'StretchNormal'
+  181 |     EXPECT_EQ(font->getStretch(), StretchNormal); // Assuming default value is StretchNormal
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:189:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  189 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:191:34: error: use of undeclared identifier 'WeightNormal'
+  191 |     EXPECT_EQ(font->getWeight(), WeightNormal); // Assuming default value is WeightNormal
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:199:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  199 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp:209:63: error: reference to type 'const Dict' could not bind to an lvalue of type 'Dict *'
+  209 |     auto font = GfxFont::makeFont(mockXRef, "tag", Ref(1, 0), mockDict);
+      |                                                               ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:185:97: note: passing argument to parameter 'fontDict' here
+  185 |     static std::unique_ptr<GfxFont> makeFont(XRef *xref, const char *tagA, Ref idA, const Dict &fontDict);
+      |                                                                                                 ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1149.dir/build.make:79: generated_build/CMakeFiles/test_1149.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1149.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:91466: generated_build/CMakeFiles/test_1149.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:91473: generated_build/CMakeFiles/test_1149.dir/rule] 오류 2
+gmake: *** [Makefile:33628: test_1149] 오류 2

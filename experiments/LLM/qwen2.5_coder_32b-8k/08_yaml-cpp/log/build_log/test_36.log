@@ -1,0 +1,21 @@
+[ 66%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_36.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_36.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_36.cpp:149:19: error: no matching conversion for functional-style cast from 'const char[5]' to '_Tag'
+  149 |     emitter.Write(_Tag("!tag"));
+      |                   ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:93:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[5]' to 'const _Tag' for 1st argument
+   93 | struct _Tag {
+      |        ^~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:93:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[5]' to '_Tag' for 1st argument
+   93 | struct _Tag {
+      |        ^~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:98:12: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+   98 |   explicit _Tag(const std::string& prefix_, const std::string& content_,
+      |            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   99 |                 Type::value type_)
+      |                 ~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_36.dir/build.make:79: generated_build/CMakeFiles/test_36.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_36.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:22094: generated_build/CMakeFiles/test_36.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:22101: generated_build/CMakeFiles/test_36.dir/rule] 오류 2
+gmake: *** [Makefile:8253: test_36] 오류 2

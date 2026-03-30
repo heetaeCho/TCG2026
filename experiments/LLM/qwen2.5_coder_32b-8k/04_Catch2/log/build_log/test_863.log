@@ -1,0 +1,147 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_863.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:21:50: error: only virtual member functions can be marked 'override'
+   21 |         Detail::unique_ptr<IStream> takeStream() override { return m_wrapped_stream; }
+      |                                                  ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:19:41: error: no matching constructor for initialization of 'ReporterConfig'
+   19 |         explicit ReporterConfigMock() : ReporterConfig(nullptr) {}
+      |                                         ^              ~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::nullptr_t' to 'const ReporterConfig' for 1st argument
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'ReporterConfig' for 1st argument
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:21:68: error: use of undeclared identifier 'm_wrapped_stream'; did you mean 'setWrappedStream'?
+   21 |         Detail::unique_ptr<IStream> takeStream() override { return m_wrapped_stream; }
+      |                                                                    ^~~~~~~~~~~~~~~~
+      |                                                                    setWrappedStream
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:23:14: note: 'setWrappedStream' declared here
+   23 |         void setWrappedStream(Detail::unique_ptr<IStream>&& stream) { m_wrapped_stream = std::move(stream); }
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:21:68: error: reference to non-static member function must be called
+   21 |         Detail::unique_ptr<IStream> takeStream() override { return m_wrapped_stream; }
+      |                                                                    ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:23:71: error: use of undeclared identifier 'm_wrapped_stream'
+   23 |         void setWrappedStream(Detail::unique_ptr<IStream>&& stream) { m_wrapped_stream = std::move(stream); }
+      |                                                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:41:75: error: use of undeclared identifier 'MockIStream'; did you mean 'mockStream'?
+   41 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^~~~~~~~~~~
+      |                                                                           mockStream
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:41:10: note: 'mockStream' declared here
+   41 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:41:75: error: variable 'mockStream' declared with deduced type 'auto' cannot appear in its own initializer
+   41 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:61:75: error: use of undeclared identifier 'MockIStream'; did you mean 'mockStream'?
+   61 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^~~~~~~~~~~
+      |                                                                           mockStream
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:61:10: note: 'mockStream' declared here
+   61 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:61:75: error: variable 'mockStream' declared with deduced type 'auto' cannot appear in its own initializer
+   61 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:73:17: error: no matching constructor for initialization of 'TestRunInfo'
+   73 |     TestRunInfo runInfo{"Test Run", "Build Info"};
+      |                 ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:16:19: note: candidate constructor not viable: requires single argument '_name', but 2 arguments were provided
+   16 |         constexpr TestRunInfo(StringRef _name) : name(_name) {}
+      |                   ^           ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_test_run_info.hpp:15:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   15 |     struct TestRunInfo {
+      |            ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:85:75: error: use of undeclared identifier 'MockIStream'; did you mean 'mockStream'?
+   85 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^~~~~~~~~~~
+      |                                                                           mockStream
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:85:10: note: 'mockStream' declared here
+   85 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:85:75: error: variable 'mockStream' declared with deduced type 'auto' cannot appear in its own initializer
+   85 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:97:18: error: no matching constructor for initialization of 'TestRunStats'
+   97 |     TestRunStats runStats{};
+      |                  ^       ~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:98:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   98 |     struct TestRunStats {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:98:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   98 |     struct TestRunStats {
+      |            ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:99:9: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+   99 |         TestRunStats(   TestRunInfo const& _runInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  100 |                         Totals const& _totals,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+  101 |                         bool _aborting );
+      |                         ~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:109:75: error: use of undeclared identifier 'MockIStream'; did you mean 'mockStream'?
+  109 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^~~~~~~~~~~
+      |                                                                           mockStream
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:109:10: note: 'mockStream' declared here
+  109 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:109:75: error: variable 'mockStream' declared with deduced type 'auto' cannot appear in its own initializer
+  109 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:121:18: error: variable has incomplete type 'TestCaseInfo'
+  121 |     TestCaseInfo tcInfo{"Test Case", "Filename", 0};
+      |                  ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:29:12: note: forward declaration of 'Catch::TestCaseInfo'
+   29 |     struct TestCaseInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:133:75: error: use of undeclared identifier 'MockIStream'; did you mean 'mockStream'?
+  133 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^~~~~~~~~~~
+      |                                                                           mockStream
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:133:10: note: 'mockStream' declared here
+  133 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:133:75: error: variable 'mockStream' declared with deduced type 'auto' cannot appear in its own initializer
+  133 |     auto mockStream = Detail::unique_ptr<IStream>(new ::testing::NiceMock<MockIStream>());
+      |                                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp:145:19: error: no matching constructor for initialization of 'TestCaseStats'
+  145 |     TestCaseStats tcStats{};
+      |                   ^      ~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:84:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+   84 |     struct TestCaseStats {
+      |            ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:85:9: note: candidate constructor not viable: requires 5 arguments, but 0 were provided
+   85 |         TestCaseStats(  TestCaseInfo const& _testInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   86 |                         Totals const& _totals,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   87 |                         std::string&& _stdOut,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   88 |                         std::string&& _stdErr,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   89 |                         bool _aborting );
+      |                         ~~~~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_863.dir/build.make:79: generated_build/CMakeFiles/test_863.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_863.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8951: generated_build/CMakeFiles/test_863.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8958: generated_build/CMakeFiles/test_863.dir/rule] 오류 2
+gmake: *** [Makefile:2347: test_863] 오류 2

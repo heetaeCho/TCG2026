@@ -1,0 +1,67 @@
+[  0%] Built target tinyxml2
+[  0%] Building CXX object generated_build/CMakeFiles/test_188.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:25:22: error: allocating an object of abstract class type 'XMLNode'
+   25 |         parent = new XMLNode(&doc);
+      |                      ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:886:22: note: unimplemented pure virtual method 'ShallowClone' in 'XMLNode'
+  886 |     virtual XMLNode* ShallowClone( XMLDocument* document ) const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:909:18: note: unimplemented pure virtual method 'ShallowEqual' in 'XMLNode'
+  909 |     virtual bool ShallowEqual( const XMLNode* compare ) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:933:18: note: unimplemented pure virtual method 'Accept' in 'XMLNode'
+  933 |     virtual bool Accept( XMLVisitor* visitor ) const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:27:21: error: allocating an object of abstract class type 'XMLNode'
+   27 |         child = new XMLNode(&doc);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:37:16: error: calling a protected destructor of class 'XMLNode'
+   37 |         delete parent;
+      |                ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:951:13: note: declared protected here
+  951 |     virtual ~XMLNode();
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:61:22: error: '_prev' is a protected member of 'tinyxml2::XMLNode'
+   61 |     EXPECT_EQ(child->_prev, nullptr);
+      |                      ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:963:15: note: declared protected here
+  963 |     XMLNode*            _prev;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:63:22: error: '_next' is a protected member of 'tinyxml2::XMLNode'
+   63 |     EXPECT_EQ(child->_next, nullptr);
+      |                      ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:964:15: note: declared protected here
+  964 |     XMLNode*            _next;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:65:22: error: '_parent' is a protected member of 'tinyxml2::XMLNode'
+   65 |     EXPECT_EQ(child->_parent, nullptr);
+      |                      ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:956:15: note: declared protected here
+  956 |     XMLNode*            _parent;
+      |                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:73:37: error: allocating an object of abstract class type 'XMLNode'
+   73 |     XMLNode* nonExistingChild = new XMLNode(&doc);
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:79:12: error: calling a protected destructor of class 'XMLNode'
+   79 |     delete nonExistingChild;
+      |            ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:951:13: note: declared protected here
+  951 |     virtual ~XMLNode();
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:89:39: error: allocating an object of abstract class type 'XMLNode'
+   89 |     XMLNode* wrongDocumentChild = new XMLNode(&otherDoc);
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:93:12: error: calling a protected destructor of class 'XMLNode'
+   93 |     delete wrongDocumentChild;
+      |            ^
+/home/user/TCG2026/TestProjects/tinyxml2/tinyxml2.h:951:13: note: declared protected here
+  951 |     virtual ~XMLNode();
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp:101:13: error: variable type 'XMLNode' is an abstract class
+  101 |     XMLNode otherParent(&doc);
+      |             ^
+11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_188.dir/build.make:79: generated_build/CMakeFiles/test_188.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/07_tinyxml2/test_files/test_188.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3969: generated_build/CMakeFiles/test_188.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3976: generated_build/CMakeFiles/test_188.dir/rule] 오류 2
+gmake: *** [Makefile:1336: test_188] 오류 2

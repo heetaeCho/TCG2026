@@ -1,0 +1,101 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1076.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:19:11: error: field type 'Image' is an abstract class
+   19 |     Image image {ImageType::jpeg, MetadataId::all, std::move(io)};
+      |           ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:92:16: note: unimplemented pure virtual method 'readMetadata' in 'Image'
+   92 |   virtual void readMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:105:16: note: unimplemented pure virtual method 'writeMetadata' in 'Image'
+  105 |   virtual void writeMetadata() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'Image'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:17:35: error: incomplete type 'Exiv2::BasicIo' named in nested name specifier
+   17 |     std::unique_ptr<BasicIo> io = BasicIo::createMemIo();
+      |                                   ^~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:20:7: note: forward declaration of 'Exiv2::BasicIo'
+   20 | class BasicIo;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:39:61: error: allocation of incomplete type 'Value'
+   39 |     iptcData.add(IptcKey("Iptc.Application2.Keywords"), new Value(U"testKeyword"));
+      |                                                             ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:51:62: error: allocation of incomplete type 'Value'
+   51 |     iptcData1.add(IptcKey("Iptc.Application2.Keywords"), new Value(U"testKeyword1"));
+      |                                                              ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:57:62: error: allocation of incomplete type 'Value'
+   57 |     iptcData2.add(IptcKey("Iptc.Application2.Keywords"), new Value(U"testKeyword2"));
+      |                                                              ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:77:40: error: allocation of incomplete type 'Value'
+   77 |         iptcData.add(IptcKey(key), new Value(U"largeKeyword"));
+      |                                        ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1076_SetIptcDataWithEmptyIptcData_1076_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:25:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1076_SetIptcDataWithEmptyIptcData_1076_Test>::CreateTest' requested here
+   25 | TEST_F(ImageTest_1076, SetIptcDataWithEmptyIptcData_1076) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1076_SetIptcDataWithNonEmptyIptcData_1076_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:35:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1076_SetIptcDataWithNonEmptyIptcData_1076_Test>::CreateTest' requested here
+   35 | TEST_F(ImageTest_1076, SetIptcDataWithNonEmptyIptcData_1076) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1076_SetIptcDataMultipleTimes_1076_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1076_SetIptcDataMultipleTimes_1076_Test>::CreateTest' requested here
+   47 | TEST_F(ImageTest_1076, SetIptcDataMultipleTimes_1076) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ImageTest_1076_SetIptcDataWithLargeData_1076_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp:69:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ImageTest_1076_SetIptcDataWithLargeData_1076_Test>::CreateTest' requested here
+   69 | TEST_F(ImageTest_1076, SetIptcDataWithLargeData_1076) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1076.dir/build.make:79: generated_build/CMakeFiles/test_1076.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1076.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:17945: generated_build/CMakeFiles/test_1076.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:17952: generated_build/CMakeFiles/test_1076.dir/rule] 오류 2
+gmake: *** [Makefile:4456: test_1076] 오류 2

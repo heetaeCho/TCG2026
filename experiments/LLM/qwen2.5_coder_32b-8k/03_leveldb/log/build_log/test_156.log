@@ -1,0 +1,56 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_156.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_156.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_156.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_156.cpp:29:23: error: calling a private constructor of class 'leveldb::Version'
+   29 |         version = new Version(nullptr);  // Replace nullptr with appropriate arguments if needed.
+      |                       ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: declared private here
+  123 |   explicit Version(VersionSet* vset)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_156.cpp:37:16: error: calling a private destructor of class 'Version'
+   37 |         delete version;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:136:3: note: declared private here
+  136 |   ~Version();
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_156.cpp:105:17: error: no matching constructor for initialization of 'InternalKey'
+  105 |     InternalKey begin("a");
+      |                 ^     ~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[2]' to 'const InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[2]' to 'InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:139:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  139 |   InternalKey() {}  // Leave rep_ as empty to indicate it is invalid
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:140:3: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+  140 |   InternalKey(const Slice& user_key, SequenceNumber s, ValueType t) {
+      |   ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_156.cpp:107:17: error: no matching constructor for initialization of 'InternalKey'
+  107 |     InternalKey end("b");
+      |                 ^   ~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[2]' to 'const InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[2]' to 'InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:139:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  139 |   InternalKey() {}  // Leave rep_ as empty to indicate it is invalid
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:140:3: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+  140 |   InternalKey(const Slice& user_key, SequenceNumber s, ValueType t) {
+      |   ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_156.dir/build.make:76: generated_build/CMakeFiles/test_156.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_156.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:2443: generated_build/CMakeFiles/test_156.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:2450: generated_build/CMakeFiles/test_156.dir/rule] 오류 2
+gmake: *** [Makefile:751: test_156] 오류 2

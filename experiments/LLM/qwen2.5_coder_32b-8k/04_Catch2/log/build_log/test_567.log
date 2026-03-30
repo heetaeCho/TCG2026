@@ -1,0 +1,105 @@
+[ 80%] Built target Catch2
+[ 80%] Built target Catch2WithMain
+[ 80%] Building CXX object generated_build/CMakeFiles/test_567.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:29:30: error: field type 'MockEventListenerFactory' is an abstract class
+   29 |     MockEventListenerFactory mockFactory;
+      |                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:39:27: note: unimplemented pure virtual method 'getName' in 'MockEventListenerFactory'
+   39 |         virtual StringRef getName() const = 0;
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:33:5: error: unknown type name 'TypedListenerFactory'; did you mean 'EventListenerFactory'?
+   33 |     TypedListenerFactory typedFactory{StringRef(listenerName)};
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     EventListenerFactory
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:34:11: note: 'EventListenerFactory' declared here
+   34 |     class EventListenerFactory {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:33:26: error: field type 'EventListenerFactory' is an abstract class
+   33 |     TypedListenerFactory typedFactory{StringRef(listenerName)};
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:37:35: note: unimplemented pure virtual method 'create' in 'EventListenerFactory'
+   37 |         virtual IEventListenerPtr create( IConfig const* config ) const = 0;
+      |                                   ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:39:27: note: unimplemented pure virtual method 'getName' in 'EventListenerFactory'
+   39 |         virtual StringRef getName() const = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:41:29: note: unimplemented pure virtual method 'getDescription' in 'EventListenerFactory'
+   41 |         virtual std::string getDescription() const = 0;
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:51:37: error: use of undeclared identifier 'mocking'
+   51 |     EXPECT_CALL(mockFactory, create(mocking::Eq(mockConfig)))
+      |                                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:3:
+In file included from /home/user/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_registrars.hpp:11:
+In file included from /home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:11:
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IEventListener' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:17:5: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IEventListener>::~unique_ptr' requested here
+   17 |     MOCK_METHOD(IEventListenerPtr, create, (IConfig const* config), (const, override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:77:1: note: expanded from here
+   77 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:10: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:20:11: note: forward declaration of 'Catch::IEventListener'
+   20 |     class IEventListener;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ListenerRegistrarTest_567_GetName_ReturnsCorrectName_567_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:39:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ListenerRegistrarTest_567_GetName_ReturnsCorrectName_567_Test>::CreateTest' requested here
+   39 | TEST_F(ListenerRegistrarTest_567, GetName_ReturnsCorrectName_567) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ListenerRegistrarTest_567_Create_DelegatesToEventListenerFactoryCreate_567_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:47:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ListenerRegistrarTest_567_Create_DelegatesToEventListenerFactoryCreate_567_Test>::CreateTest' requested here
+   47 | TEST_F(ListenerRegistrarTest_567, Create_DelegatesToEventListenerFactoryCreate_567) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'ListenerRegistrarTest_567_GetDescription_DelegatesToEventListenerFactoryGetDescription_567_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp:63:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<ListenerRegistrarTest_567_GetDescription_DelegatesToEventListenerFactoryGetDescription_567_Test>::CreateTest' requested here
+   63 | TEST_F(ListenerRegistrarTest_567, GetDescription_DelegatesToEventListenerFactoryGetDescription_567) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_567.dir/build.make:79: generated_build/CMakeFiles/test_567.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_567.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:36605: generated_build/CMakeFiles/test_567.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:36612: generated_build/CMakeFiles/test_567.dir/rule] 오류 2
+gmake: *** [Makefile:13241: test_567] 오류 2

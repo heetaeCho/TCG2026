@@ -1,0 +1,66 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from DumpTest_97
+[ RUN      ] DumpTest_97.EmptyNode_ReturnsEmptyString_97
+[       OK ] DumpTest_97.EmptyNode_ReturnsEmptyString_97 (0 ms)
+[ RUN      ] DumpTest_97.ScalarNode_ReturnsScalarValue_97
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_97.cpp:33: Failure
+Expected equality of these values:
+  "test\n"
+  Dump(node)
+    Which is: "test"
+[  FAILED  ] DumpTest_97.ScalarNode_ReturnsScalarValue_97 (0 ms)
+[ RUN      ] DumpTest_97.SequenceNode_ReturnsSequenceString_97
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_97.cpp:47: Failure
+Expected equality of these values:
+  "- 1\n- 2\n- 3\n"
+  Dump(node)
+    Which is: "- 1\n- 2\n- 3"
+With diff:
+@@ -1,3 +1,3 @@
+ - 1
+ - 2
+-- 3\n
++- 3
+
+[  FAILED  ] DumpTest_97.SequenceNode_ReturnsSequenceString_97 (0 ms)
+[ RUN      ] DumpTest_97.MapNode_ReturnsMapString_97
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_97.cpp:59: Failure
+Value of: Dump(node) == "key1: value1\nkey2: value2\n" || Dump(node) == "key2: value2\nkey1: value1\n"
+  Actual: false
+Expected: true
+[  FAILED  ] DumpTest_97.MapNode_ReturnsMapString_97 (0 ms)
+[ RUN      ] DumpTest_97.NestedMap_ReturnsNestedString_97
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_97.cpp:73: Failure
+Value of: Dump(node) == "outerkey:\n  subkey: subvalue\n" || Dump(node) == "outerkey:\n  subkey: subvalue\n"
+  Actual: false
+Expected: true
+[  FAILED  ] DumpTest_97.NestedMap_ReturnsNestedString_97 (0 ms)
+[ RUN      ] DumpTest_97.ComplexNested_ReturnsComplexString_97
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_97.cpp:93: Failure
+Value of: Dump(node) == "anotherkey: 3.14\nouterkey:\n  subkey1: 42\n  subkey2: nested\n" || Dump(node) == "outerkey:\n  subkey1: 42\n  subkey2: nested\nanotherkey: 3.14\n"
+  Actual: false
+Expected: true
+[  FAILED  ] DumpTest_97.ComplexNested_ReturnsComplexString_97 (0 ms)
+[ RUN      ] DumpTest_97.NodeWithNull_ReturnsNullString_97
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_97.cpp:103: Failure
+Expected equality of these values:
+  "~\n"
+  Dump(node)
+    Which is: "~"
+[  FAILED  ] DumpTest_97.NodeWithNull_ReturnsNullString_97 (0 ms)
+[----------] 7 tests from DumpTest_97 (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 6 tests, listed below:
+[  FAILED  ] DumpTest_97.ScalarNode_ReturnsScalarValue_97
+[  FAILED  ] DumpTest_97.SequenceNode_ReturnsSequenceString_97
+[  FAILED  ] DumpTest_97.MapNode_ReturnsMapString_97
+[  FAILED  ] DumpTest_97.NestedMap_ReturnsNestedString_97
+[  FAILED  ] DumpTest_97.ComplexNested_ReturnsComplexString_97
+[  FAILED  ] DumpTest_97.NodeWithNull_ReturnsNullString_97
+
+ 6 FAILED TESTS

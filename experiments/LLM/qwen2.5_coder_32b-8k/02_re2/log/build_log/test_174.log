@@ -1,0 +1,23 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_174.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_174.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_174.cpp:179:36: error: use of undeclared identifier 'Anchor'; did you mean 're2::PCRE::Anchor'?
+  179 |     EXPECT_TRUE(pcre.DoMatch(text, Anchor::UNANCHORED, &consumed, nullptr, 0));
+      |                                    ^~~~~~
+      |                                    re2::PCRE::Anchor
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^
+/home/user/TCG2026/TestProjects/re2/util/pcre.h:440:8: note: 're2::PCRE::Anchor' declared here
+  440 |   enum Anchor {
+      |        ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_174.dir/build.make:79: generated_build/CMakeFiles/test_174.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_174.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:16233: generated_build/CMakeFiles/test_174.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:16240: generated_build/CMakeFiles/test_174.dir/rule] 오류 2
+gmake: *** [Makefile:5977: test_174] 오류 2

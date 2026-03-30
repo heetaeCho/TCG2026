@@ -1,0 +1,346 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_962.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:39:24: error: assigning to 'MockCatalog *' from incompatible type 'typename _MakeUniq<MockCatalog>::__single_object' (aka 'unique_ptr<MockCatalog>')
+   39 |         mock_catalog = std::make_unique<MockCatalog>();
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:41:17: error: 'catalog' is a private member of 'PDFDoc'
+   41 |         pdf_doc.catalog = mock_catalog.get();
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:420:14: note: declared private here
+  420 |     Catalog *catalog = nullptr;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:41:39: error: member reference type 'MockCatalog *' is a pointer; did you mean to use '->'?
+   41 |         pdf_doc.catalog = mock_catalog.get();
+      |                           ~~~~~~~~~~~~^
+      |                                       ->
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:41:40: error: no member named 'get' in 'MockCatalog'
+   41 |         pdf_doc.catalog = mock_catalog.get();
+      |                           ~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:51:17: error: 'catalog' is a private member of 'PDFDoc'
+   51 |         pdf_doc.catalog = nullptr;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:420:14: note: declared private here
+  420 |     Catalog *catalog = nullptr;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:67:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   67 | TEST_F(PDFDocTest_962, FindDest_ReturnsValidLinkDest_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:37:1: note: expanded from here
+   37 | PDFDocTest_962_FindDest_ReturnsValidLinkDest_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:67:1: note: default constructor of 'PDFDocTest_962_FindDest_ReturnsValidLinkDest_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:67:1: note: replace 'default' with 'delete'
+   67 | TEST_F(PDFDocTest_962, FindDest_ReturnsValidLinkDest_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:87:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   87 | TEST_F(PDFDocTest_962, FindDest_EmptyDestinationName_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:80:1: note: expanded from here
+   80 | PDFDocTest_962_FindDest_EmptyDestinationName_ReturnsNullptr_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:87:1: note: default constructor of 'PDFDocTest_962_FindDest_EmptyDestinationName_ReturnsNullptr_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:87:1: note: replace 'default' with 'delete'
+   87 | TEST_F(PDFDocTest_962, FindDest_EmptyDestinationName_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:105:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  105 | TEST_F(PDFDocTest_962, FindDest_NullDestinationName_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:10:1: note: expanded from here
+   10 | PDFDocTest_962_FindDest_NullDestinationName_ReturnsNullptr_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:105:1: note: default constructor of 'PDFDocTest_962_FindDest_NullDestinationName_ReturnsNullptr_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:105:1: note: replace 'default' with 'delete'
+  105 | TEST_F(PDFDocTest_962, FindDest_NullDestinationName_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:123:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  123 | TEST_F(PDFDocTest_962, FindDest_DestinationNotFound_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:53:1: note: expanded from here
+   53 | PDFDocTest_962_FindDest_DestinationNotFound_ReturnsNullptr_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:123:1: note: default constructor of 'PDFDocTest_962_FindDest_DestinationNotFound_ReturnsNullptr_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:123:1: note: replace 'default' with 'delete'
+  123 | TEST_F(PDFDocTest_962, FindDest_DestinationNotFound_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:31:7: warning: 'PDFDocTest_962' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   31 | class PDFDocTest_962 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'MockCatalog'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:39:29: note: in instantiation of function template specialization 'std::make_unique<MockCatalog>' requested here
+   39 |         mock_catalog = std::make_unique<MockCatalog>();
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:19:21: note: default constructor of 'MockCatalog' is implicitly deleted because base class 'Catalog' has no default constructor
+   19 | class MockCatalog : public Catalog {
+      |                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'LinkDest'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:71:32: note: in instantiation of function template specialization 'std::make_unique<LinkDest>' requested here
+   71 |     auto mock_link_dest = std::make_unique<LinkDest>();
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:124:14: note: candidate constructor not viable: requires single argument 'a', but no arguments were provided
+  124 |     explicit LinkDest(const Array &a);
+      |              ^        ~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:120:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  120 | class POPPLER_PRIVATE_EXPORT LinkDest
+      |                              ^~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Link.h:120:30: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 0 were provided
+  120 | class POPPLER_PRIVATE_EXPORT LinkDest
+      |                              ^~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'PDFDocTest_962_FindDest_ReturnsValidLinkDest_962_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:67:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<PDFDocTest_962_FindDest_ReturnsValidLinkDest_962_Test>::CreateTest' requested here
+   67 | TEST_F(PDFDocTest_962, FindDest_ReturnsValidLinkDest_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:67:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:37:1: note: expanded from here
+   37 | PDFDocTest_962_FindDest_ReturnsValidLinkDest_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:67:1: note: default constructor of 'PDFDocTest_962_FindDest_ReturnsValidLinkDest_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'PDFDocTest_962_FindDest_EmptyDestinationName_ReturnsNullptr_962_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:87:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<PDFDocTest_962_FindDest_EmptyDestinationName_ReturnsNullptr_962_Test>::CreateTest' requested here
+   87 | TEST_F(PDFDocTest_962, FindDest_EmptyDestinationName_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:87:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:80:1: note: expanded from here
+   80 | PDFDocTest_962_FindDest_EmptyDestinationName_ReturnsNullptr_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:87:1: note: default constructor of 'PDFDocTest_962_FindDest_EmptyDestinationName_ReturnsNullptr_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'PDFDocTest_962_FindDest_NullDestinationName_ReturnsNullptr_962_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:105:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<PDFDocTest_962_FindDest_NullDestinationName_ReturnsNullptr_962_Test>::CreateTest' requested here
+  105 | TEST_F(PDFDocTest_962, FindDest_NullDestinationName_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:105:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:10:1: note: expanded from here
+   10 | PDFDocTest_962_FindDest_NullDestinationName_ReturnsNullptr_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:105:1: note: default constructor of 'PDFDocTest_962_FindDest_NullDestinationName_ReturnsNullptr_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'PDFDocTest_962_FindDest_DestinationNotFound_ReturnsNullptr_962_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:123:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<PDFDocTest_962_FindDest_DestinationNotFound_ReturnsNullptr_962_Test>::CreateTest' requested here
+  123 | TEST_F(PDFDocTest_962, FindDest_DestinationNotFound_ReturnsNullptr_962) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:123:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:53:1: note: expanded from here
+   53 | PDFDocTest_962_FindDest_DestinationNotFound_ReturnsNullptr_962_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:123:1: note: default constructor of 'PDFDocTest_962_FindDest_DestinationNotFound_ReturnsNullptr_962_Test' is implicitly deleted because base class 'PDFDocTest_962' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp:59:12: note: default constructor of 'PDFDocTest_962' is implicitly deleted because field 'pdf_doc' has an inaccessible default constructor
+   59 |     PDFDoc pdf_doc;  // This is a simplified PDFDoc instance for testing purposes.
+      |            ^
+5 warnings and 11 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_962.dir/build.make:79: generated_build/CMakeFiles/test_962.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_962.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:97514: generated_build/CMakeFiles/test_962.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:97521: generated_build/CMakeFiles/test_962.dir/rule] 오류 2
+gmake: *** [Makefile:36085: test_962] 오류 2

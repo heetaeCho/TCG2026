@@ -1,0 +1,43 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from FactoryTest_1965
+[ RUN      ] FactoryTest_1965.CreateActiveReturnsNullptrWhenNoPreferredBackendSet_1965
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1965.cpp:27: Failure
+Expected equality of these values:
+  nullptr
+    Which is: (nullptr)
+  Factory::createActive()
+    Which is: (ptr = 0x559f462050a0, value = 8-byte object <30-91 A3-B4 9B-7F 00-00>)
+[  FAILED  ] FactoryTest_1965.CreateActiveReturnsNullptrWhenNoPreferredBackendSet_1965 (0 ms)
+[ RUN      ] FactoryTest_1965.SetPreferredBackendAndGetActiveConsistent_1965
+[       OK ] FactoryTest_1965.SetPreferredBackendAndGetActiveConsistent_1965 (0 ms)
+[ RUN      ] FactoryTest_1965.TypeFromStringReturnsCorrectEnumValues_1965
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1965.cpp:61: Failure
+Value of: typeFromStr.has_value()
+  Actual: false
+Expected: true
+[  FAILED  ] FactoryTest_1965.TypeFromStringReturnsCorrectEnumValues_1965 (0 ms)
+[ RUN      ] FactoryTest_1965.TypeFromStringReturnsNulloptForUnknownString_1965
+[       OK ] FactoryTest_1965.TypeFromStringReturnsNulloptForUnknownString_1965 (0 ms)
+[ RUN      ] FactoryTest_1965.CreateWithValidTypeReturnsNonNullPtr_1965
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1965.cpp:103: Failure
+Expected equality of these values:
+  nullptr
+    Which is: NULL
+  backendNSS3.get()
+    Which is: 0x559f46204a80
+[  FAILED  ] FactoryTest_1965.CreateWithValidTypeReturnsNonNullPtr_1965 (0 ms)
+[ RUN      ] FactoryTest_1965.CreateWithInvalidTypeReturnsNullptr_1965
+[       OK ] FactoryTest_1965.CreateWithInvalidTypeReturnsNullptr_1965 (0 ms)
+[----------] 6 tests from FactoryTest_1965 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] FactoryTest_1965.CreateActiveReturnsNullptrWhenNoPreferredBackendSet_1965
+[  FAILED  ] FactoryTest_1965.TypeFromStringReturnsCorrectEnumValues_1965
+[  FAILED  ] FactoryTest_1965.CreateWithValidTypeReturnsNonNullPtr_1965
+
+ 3 FAILED TESTS

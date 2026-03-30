@@ -1,0 +1,44 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_2331.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:17:5: error: unknown type name 'GDateTime'
+   17 |     GDateTime* poppler_signature_info_get_local_signing_time(const PopplerSignatureInfo *siginfo);
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:29:64: error: invalid application of 'sizeof' to an incomplete type 'PopplerSignatureInfo' (aka '_PopplerSignatureInfo')
+   29 |         siginfo = static_cast<PopplerSignatureInfo*>(g_malloc0(sizeof(PopplerSignatureInfo)));
+      |                                                                ^     ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:13:12: note: forward declaration of '_PopplerSignatureInfo'
+   13 |     struct _PopplerSignatureInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:39:9: error: use of undeclared identifier 'g_free'; did you mean 'free'?
+   39 |         g_free(siginfo);
+      |         ^~~~~~
+      |         free
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/stdlib.h:61:12: note: 'free' declared here
+   61 | using std::free;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:53:5: error: unknown type name 'GDateTime'
+   53 |     GDateTime* result = poppler_signature_info_get_local_signing_time(nullptr);
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:63:5: error: unknown type name 'GDateTime'
+   63 |     GDateTime* expectedTime = reinterpret_cast<GDateTime*>(0x12345678); // Mock address
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:63:48: error: unknown type name 'GDateTime'
+   63 |     GDateTime* expectedTime = reinterpret_cast<GDateTime*>(0x12345678); // Mock address
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:65:12: error: member access into incomplete type 'PopplerSignatureInfo' (aka '_PopplerSignatureInfo')
+   65 |     siginfo->local_signing_time = reinterpret_cast<int*>(expectedTime);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:13:12: note: forward declaration of '_PopplerSignatureInfo'
+   13 |     struct _PopplerSignatureInfo;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:69:5: error: unknown type name 'GDateTime'
+   69 |     GDateTime* result = poppler_signature_info_get_local_signing_time(siginfo);
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp:23:7: warning: 'PopplerSignatureInfoTest_2331' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   23 | class PopplerSignatureInfoTest_2331 : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_2331.dir/build.make:79: generated_build/CMakeFiles/test_2331.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_2331.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:33962: generated_build/CMakeFiles/test_2331.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:33969: generated_build/CMakeFiles/test_2331.dir/rule] 오류 2
+gmake: *** [Makefile:10267: test_2331] 오류 2

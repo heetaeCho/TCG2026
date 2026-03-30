@@ -1,0 +1,25 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_720.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_720.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_720.cpp:21:23: error: calling a private constructor of class 'PDFDoc'
+   21 |         mockDoc = new PDFDoc();
+      |                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_720.cpp:23:85: error: no matching constructor for initialization of 'PageAttrs'
+   23 |         page = new Page(mockDoc, 1, Object(), Ref(), std::unique_ptr<PageAttrs>(new PageAttrs()));
+      |                                                                                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:66:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   66 | class PageAttrs
+      |       ^~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:72:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+   72 |     PageAttrs(const PageAttrs *attrs, Dict *dict);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_720.cpp:9:7: warning: 'PageTest_720' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class PageTest_720 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_720.dir/build.make:79: generated_build/CMakeFiles/test_720.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_720.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:37322: generated_build/CMakeFiles/test_720.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:37329: generated_build/CMakeFiles/test_720.dir/rule] 오류 2
+gmake: *** [Makefile:11632: test_720] 오류 2

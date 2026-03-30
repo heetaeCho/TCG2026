@@ -1,0 +1,115 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1778.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:21:5: error: unknown type name 'Blob'; did you mean 'Exiv2::Blob'?
+   21 |     Blob blob;
+      |     ^~~~
+      |     Exiv2::Blob
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:100:7: note: 'Exiv2::Blob' declared here
+  100 | using Blob = std::vector<byte>;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:23:5: error: unknown type name 'ByteOrder'; did you mean 'Exiv2::ByteOrder'?
+   23 |     ByteOrder byteOrder = littleEndian; // or bigEndian, depending on the test
+      |     ^~~~~~~~~
+      |     Exiv2::ByteOrder
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:32:6: note: 'Exiv2::ByteOrder' declared here
+   32 | enum ByteOrder {
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:27:19: error: field type 'CiffComponent' is an abstract class
+   27 |     CiffComponent component;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:23:27: error: use of undeclared identifier 'littleEndian'; did you mean 'Exiv2::littleEndian'?
+   23 |     ByteOrder byteOrder = littleEndian; // or bigEndian, depending on the test
+      |                           ^~~~~~~~~~~~
+      |                           Exiv2::littleEndian
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:34:3: note: 'Exiv2::littleEndian' declared here
+   34 |   littleEndian,
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:53:5: error: use of undeclared identifier 'Blob'; did you mean 'blob'?
+   53 |     Blob emptyBlob;
+      |     ^~~~
+      |     blob
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:21:10: note: 'blob' declared here
+   21 |     Blob blob;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:53:9: error: expected ';' after expression
+   53 |     Blob emptyBlob;
+      |         ^
+      |         ;
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:53:10: error: use of undeclared identifier 'emptyBlob'
+   53 |     Blob emptyBlob;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:55:31: error: use of undeclared identifier 'emptyBlob'
+   55 |     EXPECT_GE(component.write(emptyBlob, byteOrder, offset), 0);
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:53:5: warning: expression result unused [-Wunused-value]
+   53 |     Blob emptyBlob;
+      |     ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:99:1: error: expected unqualified-id
+   99 | ```
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CiffComponentTest_1778_WriteReturnsValidSize_1778_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:33:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CiffComponentTest_1778_WriteReturnsValidSize_1778_Test>::CreateTest' requested here
+   33 | TEST_F(CiffComponentTest_1778, WriteReturnsValidSize_1778) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CiffComponentTest_1778_WriteOffsetBoundaryCondition_1778_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:41:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CiffComponentTest_1778_WriteOffsetBoundaryCondition_1778_Test>::CreateTest' requested here
+   41 | TEST_F(CiffComponentTest_1778, WriteOffsetBoundaryCondition_1778) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CiffComponentTest_1778_WriteWithEmptyBlob_1778_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:51:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CiffComponentTest_1778_WriteWithEmptyBlob_1778_Test>::CreateTest' requested here
+   51 | TEST_F(CiffComponentTest_1778, WriteWithEmptyBlob_1778) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'CiffComponentTest_1778_WriteDoesNotModifyOffsetParameter_1778_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp:75:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<CiffComponentTest_1778_WriteDoesNotModifyOffsetParameter_1778_Test>::CreateTest' requested here
+   75 | TEST_F(CiffComponentTest_1778, WriteDoesNotModifyOffsetParameter_1778) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1778.dir/build.make:79: generated_build/CMakeFiles/test_1778.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1778.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:28281: generated_build/CMakeFiles/test_1778.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:28288: generated_build/CMakeFiles/test_1778.dir/rule] 오류 2
+gmake: *** [Makefile:8408: test_1778] 오류 2

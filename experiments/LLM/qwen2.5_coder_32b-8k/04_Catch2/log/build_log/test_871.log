@@ -1,0 +1,109 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_871.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:27:26: error: no matching constructor for initialization of 'ReporterConfig'
+   27 |     ReporterConfig config{oss};
+      |                          ^~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:35:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::ostringstream' (aka 'basic_ostringstream<char>') to 'const ReporterConfig' for 1st argument
+   35 |     struct ReporterConfig {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:41:9: note: candidate constructor not viable: no known conversion from 'std::ostringstream' (aka 'basic_ostringstream<char>') to 'ReporterConfig' for 1st argument
+   41 |         ReporterConfig( ReporterConfig&& ) = default;
+      |         ^               ~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:36:9: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+   36 |         ReporterConfig( IConfig const* _fullConfig,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   37 |                         Detail::unique_ptr<IStream> _stream,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |                         ColourMode colourMode,
+      |                         ~~~~~~~~~~~~~~~~~~~~~~
+   39 |                         std::map<std::string, std::string> customOptions );
+      |                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:35:44: error: no viable conversion from 'const char[9]' to 'SourceLineInfo'
+   35 |         return AssertionInfo{"Expression", "File.cpp", 42, "Macro"};
+      |                                            ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[9]' to 'const SourceLineInfo &' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:16:12: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[9]' to 'SourceLineInfo &&' for 1st argument
+   16 |     struct SourceLineInfo {
+      |            ^~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:35:56: error: no viable conversion from 'int' to 'StringRef'
+   35 |         return AssertionInfo{"Expression", "File.cpp", 42, "Macro"};
+      |                                                        ^~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const StringRef &' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:24:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to 'StringRef &&' for 1st argument
+   24 |     class StringRef {
+      |           ^~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:40:9: note: candidate constructor not viable: no known conversion from 'int' to 'const char *' for 1st argument
+   40 |         StringRef( char const* rawChars CATCH_ATTR_LIFETIMEBOUND ) noexcept;
+      |         ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_stringref.hpp:48:9: note: candidate constructor not viable: no known conversion from 'int' to 'const std::string &' (aka 'const basic_string<char> &') for 1st argument
+   48 |         StringRef(
+      |         ^
+   49 |             std::string const& stdString CATCH_ATTR_LIFETIMEBOUND ) noexcept
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:35:60: error: cannot initialize a member subobject of type 'ResultDisposition::Flags' with an lvalue of type 'const char[6]'
+   35 |         return AssertionInfo{"Expression", "File.cpp", 42, "Macro"};
+      |                                                            ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:43:29: error: call to deleted constructor of 'AssertionResultData'
+   43 |         AssertionResultData data;
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:45:9: error: no member named 'gmock_isOk' in 'Catch::AssertionResultData'
+   45 |         ON_CALL(data, isOk()).WillByDefault(Return(isOk));
+      |         ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2033:3: note: expanded from macro 'ON_CALL'
+ 2033 |   GMOCK_ON_CALL_IMPL_(obj, InternalDefaultActionSetAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:135:1: note: expanded from here
+  135 | gmock_isOk
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:59:9: error: reference to 'AssertionResult' is ambiguous
+   59 |         AssertionResult assertionResult(info, std::move(resultData));
+      |         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate found by name lookup is 'Catch::AssertionResult'
+   35 |     class AssertionResult {
+      |           ^
+/usr/include/gtest/gtest.h:283:18: note: candidate found by name lookup is 'testing::AssertionResult'
+  283 | class GTEST_API_ AssertionResult {
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:61:31: error: use of undeclared identifier 'assertionResult'
+   61 |         return AssertionStats(assertionResult, {}, Totals{});
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:93:5: error: no member named 'gmock_getFile' in 'Catch::SourceLineInfo'
+   93 |     EXPECT_CALL(stats.assertionResult.getSourceInfo(), getFile()).WillOnce(Return("File.cpp"));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:42:1: note: expanded from here
+   42 | gmock_getFile
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp:95:5: error: no member named 'gmock_getLine' in 'Catch::SourceLineInfo'
+   95 |     EXPECT_CALL(stats.assertionResult.getSourceInfo(), getLine()).WillOnce(Return(42));
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:47:1: note: expanded from here
+   47 | gmock_getLine
+      | ^
+10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_871.dir/build.make:79: generated_build/CMakeFiles/test_871.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_871.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:38255: generated_build/CMakeFiles/test_871.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:38262: generated_build/CMakeFiles/test_871.dir/rule] 오류 2
+gmake: *** [Makefile:13891: test_871] 오류 2

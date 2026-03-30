@@ -1,0 +1,47 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_534.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_534.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_534.cpp:27:91: error: use of undeclared identifier 'GfxDeviceGray'; did you mean 'csDeviceGray'?
+   27 |         colorMap = std::make_unique<GfxImageColorMap>(bitsA, mockDecode, std::make_unique<GfxDeviceGray>());
+      |                                                                                           ^~~~~~~~~~~~~
+      |                                                                                           csDeviceGray
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:209:5: note: 'csDeviceGray' declared here
+  209 |     csDeviceGray,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_534.cpp:27:74: error: no matching function for call to 'make_unique'
+   27 |         colorMap = std::make_unique<GfxImageColorMap>(bitsA, mockDecode, std::make_unique<GfxDeviceGray>());
+      |                                                                          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:961:5: note: candidate template ignored: invalid explicitly-specified argument for template parameter '_Tp'
+  961 |     make_unique(_Args&&... __args)
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:973:5: note: candidate template ignored: invalid explicitly-specified argument for template parameter '_Tp'
+  973 |     make_unique(_Args&&...) = delete;
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:967:5: note: candidate function template not viable: requires single argument '__num', but no arguments were provided
+  967 |     make_unique(size_t __num)
+      |     ^           ~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_534.cpp:63:5: error: cannot use 'try' with exceptions disabled
+   63 |     EXPECT_THROW(colorMap->getDecodeLow(-1), std::out_of_range); // Assuming out_of_range exception or similar is thrown.
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_534.cpp:65:5: error: cannot use 'try' with exceptions disabled
+   65 |     EXPECT_THROW(colorMap->getDecodeLow(nCompsA), std::out_of_range); // Assuming out_of_range exception or similar is thrown.
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_534.cpp:9:7: warning: 'GfxImageColorMapTest_534' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxImageColorMapTest_534 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_534.dir/build.make:79: generated_build/CMakeFiles/test_534.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_534.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:24682: generated_build/CMakeFiles/test_534.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:24689: generated_build/CMakeFiles/test_534.dir/rule] 오류 2
+gmake: *** [Makefile:6497: test_534] 오류 2

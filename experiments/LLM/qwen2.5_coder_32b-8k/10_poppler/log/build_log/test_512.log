@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_512.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_512.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_512.cpp:43:23: error: allocating an object of abstract class type 'GfxUnivariateShading'
+   43 |         shading = new GfxUnivariateShading(1, t0, t1, std::move(funcs), extend0, extend1);
+      |                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'GfxUnivariateShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:968:18: note: unimplemented pure virtual method 'getParameterRange' in 'GfxUnivariateShading'
+  968 |     virtual void getParameterRange(double *lower, double *upper, double xMin, double yMin, double xMax, double yMax) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxState.h:970:20: note: unimplemented pure virtual method 'getDistance' in 'GfxUnivariateShading'
+  970 |     virtual double getDistance(double sMin, double sMax) const = 0;
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_512.cpp:141:5: error: cannot use 'try' with exceptions disabled
+  141 |     EXPECT_NO_THROW(shading->setupCache(&ctm, 0.0, 0.0, 1.0, 1.0));
+      |     ^
+/usr/include/gtest/gtest.h:1952:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1464:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1464 |     try { \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_512.cpp:15:7: warning: 'GfxUnivariateShadingTest_512' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class GfxUnivariateShadingTest_512 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_512.dir/build.make:79: generated_build/CMakeFiles/test_512.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_512.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:55146: generated_build/CMakeFiles/test_512.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:55153: generated_build/CMakeFiles/test_512.dir/rule] 오류 2
+gmake: *** [Makefile:18873: test_512] 오류 2

@@ -1,0 +1,41 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_287.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_287.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_287.cpp:3:
+/home/user/TCG2026/TestProjects/re2/re2/compile.cc:528:3: warning: unsupported MC/DC boolean expression; contains an operation with a nested boolean expression. Expression will not be covered
+  528 |   ABSL_DCHECK(inst_[root].opcode() == kInstAlt ||
+      |   ^
+/usr/local/include/absl/log/absl_check.h:47:3: note: expanded from macro 'ABSL_DCHECK'
+   47 |   ABSL_LOG_INTERNAL_DCHECK_IMPL((condition), #condition)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:41:3: note: expanded from macro 'ABSL_LOG_INTERNAL_DCHECK_IMPL'
+   41 |   ABSL_LOG_INTERNAL_CHECK_IMPL(condition, condition_text)
+      |   ^
+/usr/local/include/absl/log/internal/check_impl.h:28:37: note: expanded from macro 'ABSL_LOG_INTERNAL_CHECK_IMPL'
+   28 |                                     ABSL_PREDICT_FALSE(!(condition))) \
+      |                                     ^
+/usr/local/include/absl/base/optimization.h:189:49: note: expanded from macro 'ABSL_PREDICT_FALSE'
+  189 | #define ABSL_PREDICT_FALSE(x) (__builtin_expect(false || (x), false))
+      |                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_287.cpp:71:11: error: 'set_out' is a private member of 're2::Prog::Inst'
+   71 |     inst0.set_out(9); // Mocking the internal state of Inst for testing
+      |           ^
+/home/user/TCG2026/TestProjects/re2/re2/prog.h:152:10: note: declared private here
+  152 |     void set_out(int out) {
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_287.cpp:83:21: error: 'out1_' is a private member of 're2::Prog::Inst'
+   83 |     EXPECT_EQ(inst0.out1_, 4); // Verify that out1_ was updated
+      |                     ^
+/home/user/TCG2026/TestProjects/re2/re2/prog.h:162:16: note: declared private here
+  162 |       uint32_t out1_;      // opcode == kInstAlt
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_287.cpp:91:11: error: 'set_out' is a private member of 're2::Prog::Inst'
+   91 |     inst0.set_out(9); // Mocking the internal state of Inst for testing
+      |           ^
+/home/user/TCG2026/TestProjects/re2/re2/prog.h:152:10: note: declared private here
+  152 |     void set_out(int out) {
+      |          ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_287.dir/build.make:79: generated_build/CMakeFiles/test_287.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_287.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:20297: generated_build/CMakeFiles/test_287.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:20304: generated_build/CMakeFiles/test_287.dir/rule] 오류 2
+gmake: *** [Makefile:7628: test_287] 오류 2

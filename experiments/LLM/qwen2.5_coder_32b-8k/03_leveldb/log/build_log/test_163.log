@@ -1,0 +1,134 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_163.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:5:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:23:24: error: base class has incomplete type
+   23 | class MockEnv : public Env {
+      |                 ~~~~~~~^~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/options.h:16:7: note: forward declaration of 'leveldb::Env'
+   16 | class Env;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:35:30: error: base class has incomplete type
+   35 | class MockLogWriter : public log::Writer {
+      |                       ~~~~~~~^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:30:7: note: forward declaration of 'leveldb::log::Writer'
+   30 | class Writer;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:73:16: error: field has incomplete type 'TableCache'
+   73 |     TableCache table_cache_{nullptr};
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:37:7: note: forward declaration of 'leveldb::TableCache'
+   37 | class TableCache;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:157:35: error: allocation of incomplete type 'WritableFile'
+  157 |     WritableFile* mock_file = new WritableFile();
+      |                                   ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/table_builder.h:26:7: note: forward declaration of 'leveldb::WritableFile'
+   26 | class WritableFile;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:159:42: error: no matching constructor for initialization of 'MockLogWriter'
+  159 |     MockLogWriter* mock_log_writer = new MockLogWriter(mock_file);
+      |                                          ^             ~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:35:7: note: candidate constructor (the implicit copy constructor) not viable: cannot convert argument of incomplete type 'WritableFile *' to 'const MockLogWriter' for 1st argument
+   35 | class MockLogWriter : public log::Writer {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:35:7: note: candidate constructor (the implicit move constructor) not viable: cannot convert argument of incomplete type 'WritableFile *' to 'MockLogWriter' for 1st argument
+   35 | class MockLogWriter : public log::Writer {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:35:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:167:5: error: member access into incomplete type 'WritableFile'
+  167 |     EXPECT_CALL(*mock_file, Sync()).WillOnce(Return(Status::OK()));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2144:3: note: expanded from macro 'EXPECT_CALL'
+ 2144 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googlemock/include/gmock/gmock-spec-builders.h:2136:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2136 |   ((mock_expr).gmock_##call)(::testing::internal::WithoutMatchers::Get(), \
+      |               ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/table_builder.h:26:7: note: forward declaration of 'leveldb::WritableFile'
+   26 | class WritableFile;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:171:19: error: 'env_' is a private member of 'leveldb::VersionSet'
+  171 |     version_set_->env_ = &mock_env_;
+      |                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:296:14: note: declared private here
+  296 |   Env* const env_;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:173:19: error: 'descriptor_file_' is a private member of 'leveldb::VersionSet'
+  173 |     version_set_->descriptor_file_ = mock_file;
+      |                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:308:17: note: declared private here
+  308 |   WritableFile* descriptor_file_;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:175:19: error: 'descriptor_log_' is a private member of 'leveldb::VersionSet'
+  175 |     version_set_->descriptor_log_ = mock_log_writer;
+      |                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:309:16: note: declared private here
+  309 |   log::Writer* descriptor_log_;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:175:37: error: incompatible pointer types assigning to 'log::Writer *' from 'MockLogWriter *'
+  175 |     version_set_->descriptor_log_ = mock_log_writer;
+      |                                     ^~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:185:5: error: deleting pointer to incomplete type 'WritableFile' is incompatible with C++2c and may cause undefined behavior [-Werror,-Wdelete-incomplete]
+  185 |     delete mock_file;
+      |     ^      ~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/table_builder.h:26:7: note: forward declaration of 'leveldb::WritableFile'
+   26 | class WritableFile;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:195:35: error: allocation of incomplete type 'WritableFile'
+  195 |     WritableFile* mock_file = new WritableFile();
+      |                                   ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/table_builder.h:26:7: note: forward declaration of 'leveldb::WritableFile'
+   26 | class WritableFile;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:201:86: error: too few arguments to function call, at least argument 'msg' must be specified
+  201 |     EXPECT_CALL(mock_env_, NewWritableFile(_, _, _)).WillOnce(Return(Status::IOError()));
+      |                                                                      ~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/status.h:52:17: note: 'IOError' declared here
+   52 |   static Status IOError(const Slice& msg, const Slice& msg2 = Slice()) {
+      |                 ^       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:205:19: error: 'env_' is a private member of 'leveldb::VersionSet'
+  205 |     version_set_->env_ = &mock_env_;
+      |                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:296:14: note: declared private here
+  296 |   Env* const env_;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:207:19: error: 'descriptor_file_' is a private member of 'leveldb::VersionSet'
+  207 |     version_set_->descriptor_file_ = mock_file;
+      |                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:308:17: note: declared private here
+  308 |   WritableFile* descriptor_file_;
+      |                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:217:5: error: deleting pointer to incomplete type 'WritableFile' is incompatible with C++2c and may cause undefined behavior [-Werror,-Wdelete-incomplete]
+  217 |     delete mock_file;
+      |     ^      ~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/table_builder.h:26:7: note: forward declaration of 'leveldb::WritableFile'
+   26 | class WritableFile;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:225:35: error: allocation of incomplete type 'WritableFile'
+  225 |     WritableFile* mock_file = new WritableFile();
+      |                                   ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/table_builder.h:26:7: note: forward declaration of 'leveldb::WritableFile'
+   26 | class WritableFile;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:227:42: error: no matching constructor for initialization of 'MockLogWriter'
+  227 |     MockLogWriter* mock_log_writer = new MockLogWriter(mock_file);
+      |                                          ^             ~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:35:7: note: candidate constructor (the implicit copy constructor) not viable: cannot convert argument of incomplete type 'WritableFile *' to 'const MockLogWriter' for 1st argument
+   35 | class MockLogWriter : public log::Writer {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:35:7: note: candidate constructor (the implicit move constructor) not viable: cannot convert argument of incomplete type 'WritableFile *' to 'MockLogWriter' for 1st argument
+   35 | class MockLogWriter : public log::Writer {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp:35:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_163.dir/build.make:76: generated_build/CMakeFiles/test_163.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_163.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7257: generated_build/CMakeFiles/test_163.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7264: generated_build/CMakeFiles/test_163.dir/rule] 오류 2
+gmake: *** [Makefile:2909: test_163] 오류 2

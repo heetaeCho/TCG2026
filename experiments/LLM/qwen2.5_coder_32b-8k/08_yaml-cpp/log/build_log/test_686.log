@@ -1,0 +1,58 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_686.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp:23:29: error: no member named 'IsValid' in 'YAML::Node'
+   23 |     EXPECT_TRUE(defaultNode.IsValid());
+      |                 ~~~~~~~~~~~ ^
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:243:14: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  243 |   AssignData(convert<T>::encode(rhs));
+      |              ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:221:3: note: in instantiation of function template specialization 'YAML::Node::Assign<int>' requested here
+  221 |   Assign(rhs);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp:43:11: note: in instantiation of function template specialization 'YAML::Node::operator=<int>' requested here
+   43 |     node1 = 42;
+      |           ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:137:9: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  137 |     if (convert<T>::decode(node, t))
+      |         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:164:10: note: in instantiation of member function 'YAML::as_if<int, void>::operator()' requested here
+  164 |   return as_if<T, void>(*this)();
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp:45:21: note: in instantiation of function template specialization 'YAML::Node::as<int>' requested here
+   45 |     EXPECT_EQ(node1.as<int>(), 42);
+      |                     ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp:3:
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:107:9: error: implicit instantiation of undefined template 'YAML::convert<int>'
+  107 |     if (convert<T>::decode(node, t))
+      |         ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:171:10: note: in instantiation of member function 'YAML::as_if<int, int>::operator()' requested here
+  171 |   return as_if<T, S>(*this)(fallback);
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp:123:27: note: in instantiation of function template specialization 'YAML::Node::as<int, int>' requested here
+  123 |     EXPECT_EQ(invalidNode.as<int>(456), 456);
+      |                           ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:147:8: note: template is declared here
+  147 | struct convert;
+      |        ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_686.dir/build.make:79: generated_build/CMakeFiles/test_686.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_686.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:13070: generated_build/CMakeFiles/test_686.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:13077: generated_build/CMakeFiles/test_686.dir/rule] 오류 2
+gmake: *** [Makefile:4587: test_686] 오류 2

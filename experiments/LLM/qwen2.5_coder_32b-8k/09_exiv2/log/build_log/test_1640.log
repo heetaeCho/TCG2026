@@ -1,0 +1,50 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1640.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp:25:5: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   25 |     IfdId group = ifdExif; // Example group
+      |     ^~~~~
+      |     Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp:25:19: error: use of undeclared identifier 'ifdExif'
+   25 |     IfdId group = ifdExif; // Example group
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp:67:5: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   67 |     IfdId newGroup = ifdGps;
+      |     ^~~~~
+      |     Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp:67:22: error: use of undeclared identifier 'ifdGps'
+   67 |     IfdId newGroup = ifdGps;
+      |                      ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'Exiv2::Internal::TiffBinaryElement'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp:29:61: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffBinaryElement>' requested here
+   29 |     std::unique_ptr<TiffBinaryElement> binaryElement = std::make_unique<TiffBinaryElement>();
+      |                                                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp:35:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffFinderTest_1640_VisitBinaryElement_SetsResult_1640_Test>::CreateTest' requested here
+   35 | TEST_F(TiffFinderTest_1640, VisitBinaryElement_SetsResult_1640) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:1395:27: note: default constructor of 'TiffBinaryElement' is implicitly deleted because base class 'TiffEntryBase' has no default constructor
+ 1395 | class TiffBinaryElement : public TiffEntryBase {
+      |                           ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1640.dir/build.make:79: generated_build/CMakeFiles/test_1640.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1640.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8357: generated_build/CMakeFiles/test_1640.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8364: generated_build/CMakeFiles/test_1640.dir/rule] 오류 2
+gmake: *** [Makefile:790: test_1640] 오류 2

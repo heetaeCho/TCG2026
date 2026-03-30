@@ -1,0 +1,70 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_418.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp:37:26: error: base class has incomplete type
+   37 | class MockValue : public Exiv2::Value {
+      |                   ~~~~~~~^~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:27:7: note: forward declaration of 'Exiv2::Value'
+   27 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp:41:5: error: only virtual member functions can be marked 'override'
+   41 |     MOCK_METHOD(std::string, toString, (), (const, override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:51:1: note: expanded from here
+   51 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp:47:29: error: base class has incomplete type
+   47 | class MockExifData : public Exiv2::ExifData {
+      |                      ~~~~~~~^~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:26:7: note: forward declaration of 'Exiv2::ExifData'
+   26 | class ExifData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp:71:37: error: no viable conversion from 'MockValue' to incomplete type 'const Value'
+   71 |     nikon2MakerNote.print0x000a(os, mockValue, &mockExifData);
+      |                                     ^~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:27:7: note: forward declaration of 'Exiv2::Value'
+   27 | class Value;
+      |       ^
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:78:67: note: passing argument to parameter 'value' here
+   78 |   static std::ostream& print0x000a(std::ostream& os, const Value& value, const ExifData*);
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp:95:37: error: no viable conversion from 'MockValue' to incomplete type 'const Value'
+   95 |     nikon2MakerNote.print0x000a(os, mockValue, &mockExifData);
+      |                                     ^~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:27:7: note: forward declaration of 'Exiv2::Value'
+   27 | class Value;
+      |       ^
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:78:67: note: passing argument to parameter 'value' here
+   78 |   static std::ostream& print0x000a(std::ostream& os, const Value& value, const ExifData*);
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp:117:37: error: no viable conversion from 'MockValue' to incomplete type 'const Value'
+  117 |     nikon2MakerNote.print0x000a(os, mockValue, nullptr);
+      |                                     ^~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:27:7: note: forward declaration of 'Exiv2::Value'
+   27 | class Value;
+      |       ^
+/home/user/TCG2026/./TestProjects/exiv2/src/nikonmn_int.hpp:78:67: note: passing argument to parameter 'value' here
+   78 |   static std::ostream& print0x000a(std::ostream& os, const Value& value, const ExifData*);
+      |                                                                   ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_418.dir/build.make:79: generated_build/CMakeFiles/test_418.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_418.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:58745: generated_build/CMakeFiles/test_418.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:58752: generated_build/CMakeFiles/test_418.dir/rule] 오류 2
+gmake: *** [Makefile:20056: test_418] 오류 2

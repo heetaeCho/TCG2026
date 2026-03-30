@@ -1,0 +1,135 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_815.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:25:18: error: field has incomplete type 'PDFRectangle'
+   25 |     PDFRectangle rect;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:33:19: error: allocation of incomplete type 'PDFDoc'
+   33 |         doc = new PDFDoc();
+      |                   ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:35:16: error: invalid use of incomplete type 'PDFRectangle'
+   35 |         rect = PDFRectangle(0, 0, 100, 100);
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:43:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   43 |         delete doc;
+      |         ^      ~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:55:37: error: use of undeclared identifier 'noLinkEffect'
+   55 |     EXPECT_EQ(link.getLinkEffect(), noLinkEffect); // Assuming default value is noLinkEffect
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:65:10: error: 'linkEffect' is a protected member of 'AnnotLink'
+   65 |     link.linkEffect = invertBox; // Directly setting for testing purpose only
+      |          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1044:21: note: declared protected here
+ 1044 |     AnnotLinkEffect linkEffect; // H          (Default I)
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:65:23: error: use of undeclared identifier 'invertBox'
+   65 |     link.linkEffect = invertBox; // Directly setting for testing purpose only
+      |                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:67:37: error: use of undeclared identifier 'invertBox'
+   67 |     EXPECT_EQ(link.getLinkEffect(), invertBox);
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:83:22: error: no matching constructor for initialization of 'Dict'
+   83 |     Dict* dict = new Dict();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:85:11: error: no member named 'dictAdd' in 'Dict'
+   85 |     dict->dictAdd(copyString("Subtype"), copyName("Link"));
+      |     ~~~~  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:85:19: error: use of undeclared identifier 'copyString'; did you mean 'GooString'?
+   85 |     dict->dictAdd(copyString("Subtype"), copyName("Link"));
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/goo/gfile.h:61:7: note: 'GooString' declared here
+   61 | class GooString;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:85:42: error: use of undeclared identifier 'copyName'
+   85 |     dict->dictAdd(copyString("Subtype"), copyName("Link"));
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:87:11: error: no member named 'dictAdd' in 'Dict'
+   87 |     dict->dictAdd(copyString("H"), copyName("Invert")); // Assuming "Invert" maps to invertBox
+      |     ~~~~  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:87:19: error: use of undeclared identifier 'copyString'; did you mean 'GooString'?
+   87 |     dict->dictAdd(copyString("H"), copyName("Invert")); // Assuming "Invert" maps to invertBox
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/goo/gfile.h:61:7: note: 'GooString' declared here
+   61 | class GooString;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:87:36: error: use of undeclared identifier 'copyName'
+   87 |     dict->dictAdd(copyString("H"), copyName("Invert")); // Assuming "Invert" maps to invertBox
+      |                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:93:37: error: use of undeclared identifier 'invertBox'
+   93 |     EXPECT_EQ(link.getLinkEffect(), invertBox);
+      |                                     ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotLinkTest_815_GetLinkEffect_DefaultValue_815_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:51:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotLinkTest_815_GetLinkEffect_DefaultValue_815_Test>::CreateTest' requested here
+   51 | TEST_F(AnnotLinkTest_815, GetLinkEffect_DefaultValue_815) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotLinkTest_815_GetLinkEffect_SetValue_815_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:61:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotLinkTest_815_GetLinkEffect_SetValue_815_Test>::CreateTest' requested here
+   61 | TEST_F(AnnotLinkTest_815, GetLinkEffect_SetValue_815) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotLinkTest_815_GetLinkEffect_FromDictionary_815_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:75:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotLinkTest_815_GetLinkEffect_FromDictionary_815_Test>::CreateTest' requested here
+   75 | TEST_F(AnnotLinkTest_815, GetLinkEffect_FromDictionary_815) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'AnnotLinkTest_815_GetQuadrilaterals_NotNull_815_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp:103:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<AnnotLinkTest_815_GetQuadrilaterals_NotNull_815_Test>::CreateTest' requested here
+  103 | TEST_F(AnnotLinkTest_815, GetQuadrilaterals_NotNull_815) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 19 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_815.dir/build.make:79: generated_build/CMakeFiles/test_815.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_815.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:31786: generated_build/CMakeFiles/test_815.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:31793: generated_build/CMakeFiles/test_815.dir/rule] 오류 2
+gmake: *** [Makefile:9383: test_815] 오류 2

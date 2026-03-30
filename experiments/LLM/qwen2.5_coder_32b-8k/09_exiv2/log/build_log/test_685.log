@@ -1,0 +1,45 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_685.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_685.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_685.cpp:31:24: error: allocation of incomplete type 'Value'
+   31 |         valuePtr = new Value();
+      |                        ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_685.cpp:43:9: warning: deleting pointer to incomplete type 'Value' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   43 |         delete valuePtr;
+      |         ^      ~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_685.cpp:57:13: error: member access into incomplete type 'Value'
+   57 |     valuePtr->read(expectedValue);
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_685.cpp:63:33: error: member access into incomplete type 'const Value'
+   63 |     EXPECT_EQ(iptcdatum->value().toString(), expectedValue);
+      |                                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_685.cpp:81:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   81 |     EXPECT_THROW(iptcdatum->value(), Error);
+      |                  ^~~~~~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+2 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_685.dir/build.make:79: generated_build/CMakeFiles/test_685.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_685.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:71597: generated_build/CMakeFiles/test_685.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:71604: generated_build/CMakeFiles/test_685.dir/rule] 오류 2
+gmake: *** [Makefile:24970: test_685] 오류 2

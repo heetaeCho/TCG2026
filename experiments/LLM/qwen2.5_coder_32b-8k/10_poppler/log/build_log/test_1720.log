@@ -1,0 +1,375 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1720.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:37:30: error: no matching constructor for initialization of 'StructTreeRoot'
+   37 |         structTreeRoot = new StructTreeRoot(&mockPdfDoc, rootDict);
+      |                              ^              ~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructTreeRoot.h:28:5: note: candidate constructor not viable: no known conversion from 'StrictMock<MockPDFDoc> *' to 'PDFDoc *' for 1st argument
+   28 |     StructTreeRoot(PDFDoc *docA, const Dict &rootDict);
+      |     ^              ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructTreeRoot.h:32:5: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   32 |     StructTreeRoot(const StructTreeRoot &) = delete;
+      |     ^              ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:53:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   53 | TEST_F(StructTreeRootTest_1720, FindParentElement_NormalOperation_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:9:1: note: expanded from here
+    9 | StructTreeRootTest_1720_FindParentElement_NormalOperation_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:53:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_NormalOperation_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:53:1: note: replace 'default' with 'delete'
+   53 | TEST_F(StructTreeRootTest_1720, FindParentElement_NormalOperation_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:59:42: error: no matching constructor for initialization of 'StructElement'
+   59 |     StructElement* expectedElement = new StructElement();
+      |                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:164:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  164 | class POPPLER_PRIVATE_EXPORT StructElement
+      |                              ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:391:5: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  391 |     StructElement(int mcid, StructTreeRoot *treeRootA, StructElement *parentA);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:392:5: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  392 |     StructElement(Ref ref, StructTreeRoot *treeRootA, StructElement *parentA);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:390:5: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+  390 |     StructElement(Dict *elementDict, StructTreeRoot *treeRootA, StructElement *parentA, RefRecursionChecker &seen);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:61:5: error: unknown type name 'Parent'
+   61 |     Parent parent = {Ref::INVALID(), expectedElement};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:63:21: error: 'parentTree' is a private member of 'StructTreeRoot'
+   63 |     structTreeRoot->parentTree[key].push_back(parent);
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/StructTreeRoot.h:74:40: note: declared private here
+   74 |     std::map<int, std::vector<Parent>> parentTree;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:79:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   79 | TEST_F(StructTreeRootTest_1720, FindParentElement_KeyNotFound_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:47:1: note: expanded from here
+   47 | StructTreeRootTest_1720_FindParentElement_KeyNotFound_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:79:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_KeyNotFound_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:79:1: note: replace 'default' with 'delete'
+   79 | TEST_F(StructTreeRootTest_1720, FindParentElement_KeyNotFound_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:95:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+   95 | TEST_F(StructTreeRootTest_1720, FindParentElement_McidOutOfRange_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:85:1: note: expanded from here
+   85 | StructTreeRootTest_1720_FindParentElement_McidOutOfRange_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:95:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_McidOutOfRange_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:95:1: note: replace 'default' with 'delete'
+   95 | TEST_F(StructTreeRootTest_1720, FindParentElement_McidOutOfRange_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:101:42: error: no matching constructor for initialization of 'StructElement'
+  101 |     StructElement* expectedElement = new StructElement();
+      |                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:164:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  164 | class POPPLER_PRIVATE_EXPORT StructElement
+      |                              ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:391:5: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  391 |     StructElement(int mcid, StructTreeRoot *treeRootA, StructElement *parentA);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:392:5: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  392 |     StructElement(Ref ref, StructTreeRoot *treeRootA, StructElement *parentA);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:390:5: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+  390 |     StructElement(Dict *elementDict, StructTreeRoot *treeRootA, StructElement *parentA, RefRecursionChecker &seen);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:103:5: error: unknown type name 'Parent'
+  103 |     Parent parent = {Ref::INVALID(), expectedElement};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:105:21: error: 'parentTree' is a private member of 'StructTreeRoot'
+  105 |     structTreeRoot->parentTree[key].push_back(parent);
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/StructTreeRoot.h:74:40: note: declared private here
+   74 |     std::map<int, std::vector<Parent>> parentTree;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:121:1: warning: explicitly defaulted default constructor is implicitly deleted [-Wdefaulted-function-deleted]
+  121 | TEST_F(StructTreeRootTest_1720, FindParentElement_McidBoundaryCondition_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:37:1: note: expanded from here
+   37 | StructTreeRootTest_1720_FindParentElement_McidBoundaryCondition_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:121:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_McidBoundaryCondition_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:121:1: note: replace 'default' with 'delete'
+  121 | TEST_F(StructTreeRootTest_1720, FindParentElement_McidBoundaryCondition_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:60: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:127:42: error: no matching constructor for initialization of 'StructElement'
+  127 |     StructElement* expectedElement = new StructElement();
+      |                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:164:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+  164 | class POPPLER_PRIVATE_EXPORT StructElement
+      |                              ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:391:5: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  391 |     StructElement(int mcid, StructTreeRoot *treeRootA, StructElement *parentA);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:392:5: note: candidate constructor not viable: requires 3 arguments, but 0 were provided
+  392 |     StructElement(Ref ref, StructTreeRoot *treeRootA, StructElement *parentA);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/StructElement.h:390:5: note: candidate constructor not viable: requires 4 arguments, but 0 were provided
+  390 |     StructElement(Dict *elementDict, StructTreeRoot *treeRootA, StructElement *parentA, RefRecursionChecker &seen);
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:129:5: error: unknown type name 'Parent'
+  129 |     Parent parent = {Ref::INVALID(), expectedElement};
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:131:21: error: 'parentTree' is a private member of 'StructTreeRoot'
+  131 |     structTreeRoot->parentTree[key].push_back(parent);
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/StructTreeRoot.h:74:40: note: declared private here
+   74 |     std::map<int, std::vector<Parent>> parentTree;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:23:7: warning: 'StructTreeRootTest_1720' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   23 | class StructTreeRootTest_1720 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'StructTreeRootTest_1720_FindParentElement_NormalOperation_1720_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StructTreeRootTest_1720_FindParentElement_NormalOperation_1720_Test>::CreateTest' requested here
+   53 | TEST_F(StructTreeRootTest_1720, FindParentElement_NormalOperation_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:53:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:9:1: note: expanded from here
+    9 | StructTreeRootTest_1720_FindParentElement_NormalOperation_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:53:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_NormalOperation_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'StructTreeRootTest_1720_FindParentElement_KeyNotFound_1720_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:79:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StructTreeRootTest_1720_FindParentElement_KeyNotFound_1720_Test>::CreateTest' requested here
+   79 | TEST_F(StructTreeRootTest_1720, FindParentElement_KeyNotFound_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:79:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:47:1: note: expanded from here
+   47 | StructTreeRootTest_1720_FindParentElement_KeyNotFound_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:79:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_KeyNotFound_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'StructTreeRootTest_1720_FindParentElement_McidOutOfRange_1720_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:95:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StructTreeRootTest_1720_FindParentElement_McidOutOfRange_1720_Test>::CreateTest' requested here
+   95 | TEST_F(StructTreeRootTest_1720, FindParentElement_McidOutOfRange_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:95:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:85:1: note: expanded from here
+   85 | StructTreeRootTest_1720_FindParentElement_McidOutOfRange_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:95:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_McidOutOfRange_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:44: error: call to implicitly-deleted default constructor of 'StructTreeRootTest_1720_FindParentElement_McidBoundaryCondition_1720_Test'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:121:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<StructTreeRootTest_1720_FindParentElement_McidBoundaryCondition_1720_Test>::CreateTest' requested here
+  121 | TEST_F(StructTreeRootTest_1720, FindParentElement_McidBoundaryCondition_1720) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:121:1: note: explicitly defaulted function was implicitly deleted here
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1535:5: note: expanded from macro 'GTEST_TEST_'
+ 1535 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;           \
+      |     ^
+/usr/include/gtest/internal/gtest-internal.h:1524:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1524 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:37:1: note: expanded from here
+   37 | StructTreeRootTest_1720_FindParentElement_McidBoundaryCondition_1720_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:121:1: note: default constructor of 'StructTreeRootTest_1720_FindParentElement_McidBoundaryCondition_1720_Test' is implicitly deleted because base class 'StructTreeRootTest_1720' has a deleted default constructor
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1533:9: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp:29:10: note: default constructor of 'StructTreeRootTest_1720' is implicitly deleted because field 'rootDict' has no default constructor
+   29 |     Dict rootDict;
+      |          ^
+5 warnings and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1720.dir/build.make:79: generated_build/CMakeFiles/test_1720.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1720.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:66218: generated_build/CMakeFiles/test_1720.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:66225: generated_build/CMakeFiles/test_1720.dir/rule] 오류 2
+gmake: *** [Makefile:23371: test_1720] 오류 2

@@ -1,0 +1,248 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1336.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:19:19: error: no matching constructor for initialization of 'PDFDoc'
+   19 |         doc = new PDFDoc("dummy.pdf");
+      |                   ^      ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'const char[10]' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'const char[10]' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'const char[10]' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:21:27: error: no matching constructor for initialization of 'PSOutputDev'
+   21 |         psOutputDev = new PSOutputDev(nullptr, doc, "title", 1, (PSOutMode)0, 595, 842, false, false, 0, 0, 595, 842, (PSForceRasterize)0, false, nullptr, nullptr, (PSLevel)0);
+      |                           ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:121:5: note: candidate constructor not viable: no known conversion from 'int' to 'const std::vector<int>' for 4th argument
+  121 |     PSOutputDev(const char *fileName, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0,
+      |     ^                                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:131:5: note: candidate constructor not viable: no known conversion from 'int' to 'PDFDoc *' for 4th argument
+  131 |     PSOutputDev(FoFiOutputFunc outputFuncA, void *outputStreamA, char *psTitleA, PDFDoc *docA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true,
+      |     ^                                                                            ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:126:5: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'int' for 1st argument
+  126 |     PSOutputDev(int fdA, PDFDoc *docA, char *psTitleA, const std::vector<int> &pages, PSOutMode modeA, int paperWidthA = -1, int paperHeightA = -1, bool noCrop = false, bool duplexA = true, int imgLLXA = 0, int imgLLYA = 0, int imgURXA = 0,
+      |     ^           ~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/PSOutputDev.h:116:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 18 were provided
+  116 | class POPPLER_PRIVATE_EXPORT PSOutputDev : public OutputDev
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:45:8: error: unknown class name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   45 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_DefaultState_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:45:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   45 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_DefaultState_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:45:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   45 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_DefaultState_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:45:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   45 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_DefaultState_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:53:8: error: unknown class name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   53 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Enable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:53:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   53 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Enable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:53:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   53 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Enable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:53:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   53 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Enable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:63:8: error: unknown class name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   63 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Disable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:63:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   63 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Disable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:63:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   63 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Disable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:63:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   63 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_Disable_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:73:8: error: unknown class name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   73 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_ToggleTwice_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1533:16: note: expanded from macro 'GTEST_TEST_'
+ 1533 |       : public parent_class {                                                 \
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:73:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   73 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_ToggleTwice_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2386:46: note: expanded from macro 'TEST_F'
+ 2386 |               ::testing::internal::GetTypeId<test_fixture>())
+      |                                              ^
+/usr/include/gtest/internal/gtest-internal.h:1551:67: note: expanded from macro 'GTEST_TEST_'
+ 1551 |           ::testing::internal::CodeLocation(__FILE__, __LINE__), (parent_id), \
+      |                                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:73:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   73 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_ToggleTwice_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1553:15: note: expanded from macro 'GTEST_TEST_'
+ 1553 |               parent_class>::GetSetUpCaseOrSuite(__FILE__, __LINE__),         \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:73:8: error: unknown type name 'PSOutputDevTest_1336'; did you mean 'PSOutputDevTest'?
+   73 | TEST_F(PSOutputDevTest_1336, SetEnableLZW_ToggleTwice_1336) {
+      |        ^~~~~~~~~~~~~~~~~~~~
+      |        PSOutputDevTest
+/usr/include/gtest/gtest.h:2385:40: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |                                        ^
+/usr/include/gtest/internal/gtest-internal.h:1555:15: note: expanded from macro 'GTEST_TEST_'
+ 1555 |               parent_class>::GetTearDownCaseOrSuite(__FILE__, __LINE__),      \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: note: 'PSOutputDevTest' declared here
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp:9:7: warning: 'PSOutputDevTest' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class PSOutputDevTest : public ::testing::Test {
+      |       ^
+1 warning and 18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1336.dir/build.make:79: generated_build/CMakeFiles/test_1336.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1336.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:54698: generated_build/CMakeFiles/test_1336.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:54705: generated_build/CMakeFiles/test_1336.dir/rule] 오류 2
+gmake: *** [Makefile:18691: test_1336] 오류 2

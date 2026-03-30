@@ -1,0 +1,40 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from RotUpToAngleTest_132
+[ RUN      ] RotUpToAngleTest_132.NormalOperation_132
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_132.cpp:39: Failure
+Expected equality of these values:
+  glomap::RotUpToAngle(rot_x_pi_over_2)
+    Which is: 0
+  3.14159265358979323846/2
+    Which is: 1.5707963267948966
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_132.cpp:63: Failure
+Expected equality of these values:
+  glomap::RotUpToAngle(rot_z_pi_over_2)
+    Which is: 0
+  3.14159265358979323846/2
+    Which is: 1.5707963267948966
+[  FAILED  ] RotUpToAngleTest_132.NormalOperation_132 (0 ms)
+[ RUN      ] RotUpToAngleTest_132.BoundaryConditions_132
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_132.cpp:73: Failure
+Value of: std::isnan(glomap::RotUpToAngle(zero_matrix))
+  Actual: false
+Expected: true
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/05_glomap/test_files/test_132.cpp:85: Failure
+Value of: std::isnan(glomap::RotUpToAngle(invalid_rot))
+  Actual: false
+Expected: true
+[  FAILED  ] RotUpToAngleTest_132.BoundaryConditions_132 (0 ms)
+[ RUN      ] RotUpToAngleTest_132.ExceptionalCases_132
+[       OK ] RotUpToAngleTest_132.ExceptionalCases_132 (0 ms)
+[----------] 3 tests from RotUpToAngleTest_132 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] RotUpToAngleTest_132.NormalOperation_132
+[  FAILED  ] RotUpToAngleTest_132.BoundaryConditions_132
+
+ 2 FAILED TESTS

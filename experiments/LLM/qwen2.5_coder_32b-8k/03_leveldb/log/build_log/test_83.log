@@ -1,0 +1,44 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_83.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_83.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_83.cpp:5:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_83.cpp:27:27: error: calling a private constructor of class 'leveldb::Compaction'
+   27 |         compaction_ = new Compaction(&options_, 1); // Assuming level 1 for setup
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:364:3: note: declared private here
+  364 |   Compaction(const Options* options, int level);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_83.cpp:47:43: error: 'max_output_file_size_' is a private member of 'leveldb::Compaction'
+   47 |     EXPECT_EQ(expected_size, compaction_->max_output_file_size_);
+      |                                           ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:367:12: note: declared private here
+  367 |   uint64_t max_output_file_size_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_83.cpp:65:5: error: cannot use 'try' with exceptions disabled
+   65 |     EXPECT_NO_THROW(compaction_->AddInputDeletions(&edit));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1801:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1801 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1412:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1412 |     try {                                                                \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_83.cpp:93:5: error: cannot use 'try' with exceptions disabled
+   93 |     EXPECT_NO_THROW(compaction_->ReleaseInputs());
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1801:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1801 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1412:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1412 |     try {                                                                \
+      |     ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_83.dir/build.make:76: generated_build/CMakeFiles/test_83.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_83.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5923: generated_build/CMakeFiles/test_83.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5930: generated_build/CMakeFiles/test_83.dir/rule] 오류 2
+gmake: *** [Makefile:2311: test_83] 오류 2

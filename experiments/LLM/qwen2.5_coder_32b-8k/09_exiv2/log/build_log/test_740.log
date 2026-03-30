@@ -1,0 +1,48 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_740.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp:69:29: error: no matching member function for call to 'setValue'
+   69 |     int result = exifdatum->setValue(static_cast<const std::string*>(nullptr));
+      |                  ~~~~~~~~~~~^~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:112:8: note: candidate function not viable: no known conversion from 'const std::string *' (aka 'const basic_string<char> *') to 'const Value *' for 1st argument
+  112 |   void setValue(const Value* pValue) override;
+      |        ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:120:7: note: candidate function not viable: no known conversion from 'const std::string *' (aka 'const basic_string<char> *') to 'const std::string' (aka 'const basic_string<char>') for 1st argument
+  120 |   int setValue(const std::string& value) override;
+      |       ^        ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp:81:27: error: use of undeclared identifier 'LARGE_INT'
+   81 |     std::string longValue(LARGE_INT, 'a');  // Assuming LARGE_INT is defined as 1000000
+      |                           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::Value'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp:23:22: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Value, Exiv2::TypeId>' requested here
+   23 |         value = std::make_unique<Value>(TypeId::asciiString);
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp:23:17: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::~unique_ptr' requested here
+   23 |         value = std::make_unique<Value>(TypeId::asciiString);
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_740.dir/build.make:79: generated_build/CMakeFiles/test_740.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_740.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:24609: generated_build/CMakeFiles/test_740.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:24616: generated_build/CMakeFiles/test_740.dir/rule] 오류 2
+gmake: *** [Makefile:7004: test_740] 오류 2

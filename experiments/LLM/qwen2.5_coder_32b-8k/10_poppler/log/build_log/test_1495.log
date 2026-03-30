@@ -1,0 +1,98 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1495.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:35:21: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   35 |     std::unique_ptr<BaseStreamStream> base_stream_stream;
+      |                     ^~~~~~~~~~~~~~~~
+      |                     BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:35:21: error: use of undeclared identifier 'BaseStreamStream'
+   35 |     std::unique_ptr<BaseStreamStream> base_stream_stream;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:45:47: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   45 |         base_stream_stream = std::make_unique<BaseStreamStream>(std::move(mock_base_stream));
+      |                                               ^~~~~~~~~~~~~~~~
+      |                                               BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:45:47: error: use of undeclared identifier 'BaseStreamStream'
+   45 |         base_stream_stream = std::make_unique<BaseStreamStream>(std::move(mock_base_stream));
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:13:7: warning: 'MockBaseStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class MockBaseStream : public BaseStream {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockBaseStream'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:43:33: note: in instantiation of function template specialization 'std::make_unique<MockBaseStream, Object, int>' requested here
+   43 |         mock_base_stream = std::make_unique<MockBaseStream>(std::move(dict), 1024);
+      |                                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockBaseStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockBaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'MockBaseStream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'MockBaseStream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockBaseStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockBaseStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'MockBaseStream'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'MockBaseStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'MockBaseStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:368:21: note: unimplemented pure virtual method 'getStart' in 'MockBaseStream'
+  368 |     virtual Goffset getStart() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:369:18: note: unimplemented pure virtual method 'moveStart' in 'MockBaseStream'
+  369 |     virtual void moveStart(Goffset delta) = 0;
+      |                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1495_SetPosDelegatesToBaseStream_1495_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:53:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1495_SetPosDelegatesToBaseStream_1495_Test>::CreateTest' requested here
+   53 | TEST_F(BaseStreamStreamTest_1495, SetPosDelegatesToBaseStream_1495) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'BaseStreamStreamTest_1495_GetBaseStreamDelegatesToBaseStream_1495_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp:73:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<BaseStreamStreamTest_1495_GetBaseStreamDelegatesToBaseStream_1495_Test>::CreateTest' requested here
+   73 | TEST_F(BaseStreamStreamTest_1495, GetBaseStreamDelegatesToBaseStream_1495) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1495.dir/build.make:79: generated_build/CMakeFiles/test_1495.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1495.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:95658: generated_build/CMakeFiles/test_1495.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:95665: generated_build/CMakeFiles/test_1495.dir/rule] 오류 2
+gmake: *** [Makefile:35331: test_1495] 오류 2

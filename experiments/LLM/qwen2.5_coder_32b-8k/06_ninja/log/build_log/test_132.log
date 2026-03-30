@@ -1,0 +1,23 @@
+[ 77%] Built target libninja
+[ 88%] Built target libninja-re2c
+[ 88%] Building CXX object generated_build/CMakeFiles/test_132.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_132.cpp.o
+[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_132.cpp:21:17: [0m[0;1;31merror: [0m[1mdeclaration of 'Info' has a different language linkage[0m
+   21 | [0;34mextern[0m [0;32m"C"[0m [0;34mvoid[0m Info([0;34mconst[0m [0;34mchar[0m* msg, ...) {[0m
+      | [0;1;32m                ^
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/util.cc:117:6: [0m[0;1;36mnote: [0mprevious definition is here[0m
+  117 | [0;34mvoid[0m Info([0;34mconst[0m [0;34mchar[0m* msg, ...) {[0m
+      | [0;1;32m     ^
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_132.cpp:51:45: [0m[0;1;31merror: [0m[1mreinterpret_cast cannot resolve overloaded function 'Info' to type 'MockHandler **'[0m
+   51 |     [0;34mstatic[0m MockHandler** mock_handler_ptr = [0;34mreinterpret_cast[0m<MockHandler**>(&Info);[0m
+      | [0;1;32m                                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/util.cc:111:6: [0m[0;1;36mnote: [0mcandidate function[0m
+  111 | [0;34mvoid[0m Info([0;34mconst[0m [0;34mchar[0m* msg, va_list ap) {[0m
+      | [0;1;32m     ^
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/util.cc:117:6: [0m[0;1;36mnote: [0mcandidate function[0m
+  117 | [0;34mvoid[0m Info([0;34mconst[0m [0;34mchar[0m* msg, ...) {[0m
+      | [0;1;32m     ^
+[0m2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_132.dir/build.make:79: generated_build/CMakeFiles/test_132.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_132.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5991: generated_build/CMakeFiles/test_132.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5998: generated_build/CMakeFiles/test_132.dir/rule] 오류 2
+gmake: *** [Makefile:2285: test_132] 오류 2

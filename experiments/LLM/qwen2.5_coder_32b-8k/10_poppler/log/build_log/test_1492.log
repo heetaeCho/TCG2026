@@ -1,0 +1,89 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1492.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:17:35: error: virtual function 'getKind' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<const StreamKind> ()>::Result' (aka 'const StreamKind')) than the function it overrides (which has return type 'StreamKind')
+   17 |     MOCK_METHOD(const StreamKind, getKind, (), (const, override));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: overridden virtual function is here
+  129 |     virtual StreamKind getKind() const = 0;
+      |             ~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:53:5: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+   53 |     BaseStreamStream* baseStreamStream;
+      |     ^~~~~~~~~~~~~~~~
+      |     AutoFreeMemStream::BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:61:32: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+   61 |         baseStreamStream = new BaseStreamStream(std::move(mockBaseStream));
+      |                                ^~~~~~~~~~~~~~~~
+      |                                AutoFreeMemStream::BaseMemStream
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:61:32: error: no matching constructor for initialization of 'AutoFreeMemStream::BaseMemStream<const char>'
+   61 |         baseStreamStream = new BaseStreamStream(std::move(mockBaseStream));
+      |                                ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockBaseStream> &>::type' (aka 'std::unique_ptr<MockBaseStream>') to 'const BaseMemStream<const char>' for 1st argument
+  665 | class BaseMemStream : public BaseStream
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:668:5: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+  668 |     BaseMemStream(T *bufA, Goffset startA, Goffset lengthA, Object &&dictA) : BaseStream(std::move(dictA), lengthA)
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:47:7: warning: 'BaseStreamStreamTest_1492' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   47 | class BaseStreamStreamTest_1492 : public Test {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:13:7: warning: 'MockBaseStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class MockBaseStream : public Stream {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:59:31: note: in instantiation of function template specialization 'std::make_unique<MockBaseStream>' requested here
+   59 |         mockBaseStream = std::make_unique<MockBaseStream>();
+      |                               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:3:
+In file included from /usr/include/gmock/gmock.h:59:
+/usr/include/gmock/gmock-actions.h:682:18: error: no matching function for call to 'ImplicitCast_'
+  682 |           value_(ImplicitCast_<Result>(value_before_cast_)) {}
+      |                  ^~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-actions.h:662:26: note: in instantiation of member function 'testing::internal::ReturnAction<MockBaseStream *>::Impl<MockBaseStream *, BaseStream *()>::Impl' requested here
+  662 |     return Action<F>(new Impl<R, F>(value_));
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:81:26: note: in instantiation of function template specialization 'testing::internal::ReturnAction<MockBaseStream *>::operator Action<BaseStream *()>' requested here
+   81 |                .WillOnce(Return(mockBaseStream.get()));
+      |                          ^
+/usr/include/gtest/internal/gtest-port.h:1070:11: note: candidate function template not viable: no known conversion from 'MockBaseStream *' to 'Result' (aka 'BaseStream *') for 1st argument
+ 1070 | inline To ImplicitCast_(To x) { return x; }
+      |           ^             ~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:1:
+/usr/include/gtest/gtest.h:1545:11: error: comparison of distinct pointer types ('BaseStream *' and 'MockBaseStream *')
+ 1545 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/include/gtest/gtest.h:1564:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<BaseStream *, MockBaseStream *>' requested here
+ 1564 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp:219:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<BaseStream *, MockBaseStream *, nullptr>' requested here
+  219 |     EXPECT_EQ(result, mockBaseStream.get());
+      |     ^
+/usr/include/gtest/gtest.h:2044:54: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+2 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1492.dir/build.make:79: generated_build/CMakeFiles/test_1492.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1492.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:35306: generated_build/CMakeFiles/test_1492.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:35313: generated_build/CMakeFiles/test_1492.dir/rule] 오류 2
+gmake: *** [Makefile:10813: test_1492] 오류 2

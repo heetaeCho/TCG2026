@@ -1,0 +1,50 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1790.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:43:17: error: typedef redefinition with different types ('int' vs 'enum SECOidTag')
+   43 |     typedef int SECOidTag;
+      |                 ^
+/usr/include/nss/secoidt.h:518:3: note: previous definition is here
+  518 | } SECOidTag;
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:45:12: error: definition of type 'SECOidData' conflicts with typedef of the same name
+   45 |     struct SECOidData { int offset; };
+      |            ^
+/usr/include/nss/secoidt.h:16:30: note: 'SECOidData' declared here
+   16 | typedef struct SECOidDataStr SECOidData;
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:47:12: error: definition of type 'SECItem' conflicts with typedef of the same name
+   47 |     struct SECItem { /* ... */ };
+      |            ^
+/usr/include/nss/seccomon.h:48:27: note: 'SECItem' declared here
+   48 | typedef struct SECItemStr SECItem;
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:49:12: error: definition of type 'NSSCMSAttribute' conflicts with typedef of the same name
+   49 |     struct NSSCMSAttribute { SECItem type; };
+      |            ^
+/usr/include/nss/cmst.h:69:35: note: 'NSSCMSAttribute' declared here
+   69 | typedef struct NSSCMSAttributeStr NSSCMSAttribute;
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:89:27: error: cannot initialize a member subobject of type 'SECItemType' with an rvalue of type 'int'
+   89 |     SECOidData typetag = {42};  // Example offset value
+      |                           ^~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:89:29: warning: missing field 'data' initializer [-Wmissing-field-initializers]
+   89 |     SECOidData typetag = {42};  // Example offset value
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:89:27: warning: suggest braces around initialization of subobject [-Wmissing-braces]
+   89 |     SECOidData typetag = {42};  // Example offset value
+      |                           ^~
+      |                           { }
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:89:29: warning: missing field 'offset' initializer [-Wmissing-field-initializers]
+   89 |     SECOidData typetag = {42};  // Example offset value
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:145:1: error: expected unqualified-id
+  145 | ```
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp:57:7: warning: 'NSSCryptoSignBackendTest_1790' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   57 | class NSSCryptoSignBackendTest_1790 : public ::testing::Test {
+      |       ^
+4 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1790.dir/build.make:79: generated_build/CMakeFiles/test_1790.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1790.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:80842: generated_build/CMakeFiles/test_1790.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:80849: generated_build/CMakeFiles/test_1790.dir/rule] 오류 2
+gmake: *** [Makefile:29312: test_1790] 오류 2

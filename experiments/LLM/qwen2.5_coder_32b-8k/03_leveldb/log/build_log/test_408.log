@@ -1,0 +1,118 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_408.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:11:31: error: base class has incomplete type
+   11 | class MockComparator : public Comparator {
+      |                        ~~~~~~~^~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:16:7: note: forward declaration of 'leveldb::Comparator'
+   16 | class Comparator;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:15:64: error: only virtual member functions can be marked 'override'
+   15 |     MOCK_METHOD2(Compare, int(const Slice& a, const Slice& b)) override;
+      |                                                                ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:17:45: error: only virtual member functions can be marked 'override'
+   17 |     MOCK_CONST_METHOD0(Name, const char*()) override;
+      |                                             ^~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:59:28: error: 'Iter' is a private member of 'leveldb::Block'
+   59 |     std::unique_ptr<Block::Iter> iter;
+      |                            ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: declared private here
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:37:40: error: 'Iter' is a private member of 'leveldb::Block'
+   37 |         iter = std::make_unique<Block::Iter>(comparator.get(), data, restarts, num_restarts);
+      |                                        ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: declared private here
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:45:18: error: reinterpret_cast from 'const char *' to 'uint8_t *' (aka 'unsigned char *') casts away qualifiers
+   45 |         delete[] reinterpret_cast<uint8_t*>(data);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:67:19: error: member access into incomplete type 'leveldb::Block::Iter'
+   67 |     EXPECT_EQ(iter->status(), Status::OK());
+      |                   ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:75:22: error: member access into incomplete type 'leveldb::Block::Iter'
+   75 |     EXPECT_FALSE(iter->Valid());
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:83:21: error: member access into incomplete type 'leveldb::Block::Iter'
+   83 |     Slice key = iter->key();
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:93:23: error: member access into incomplete type 'leveldb::Block::Iter'
+   93 |     Slice value = iter->value();
+      |                       ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:103:9: error: member access into incomplete type 'leveldb::Block::Iter'
+  103 |     iter->Next();
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:113:9: error: member access into incomplete type 'leveldb::Block::Iter'
+  113 |     iter->Prev();
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:123:9: error: member access into incomplete type 'leveldb::Block::Iter'
+  123 |     iter->SeekToFirst();
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:133:9: error: member access into incomplete type 'leveldb::Block::Iter'
+  133 |     iter->SeekToLast();
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:145:9: error: member access into incomplete type 'leveldb::Block::Iter'
+  145 |     iter->Seek(target);
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'leveldb::Block::Iter'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:37:21: note: in instantiation of function template specialization 'std::make_unique<leveldb::Block::Iter, leveldb::MockComparator *, const char *&, unsigned int &, unsigned int &>' requested here
+   37 |         iter = std::make_unique<Block::Iter>(comparator.get(), data, restarts, num_restarts);
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:1:
+In file included from /home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'leveldb::Block::Iter'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<leveldb::Block::Iter>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp:37:16: note: in instantiation of member function 'std::unique_ptr<leveldb::Block::Iter>::~unique_ptr' requested here
+   37 |         iter = std::make_unique<Block::Iter>(comparator.get(), data, restarts, num_restarts);
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/./table/block.h:32:9: note: forward declaration of 'leveldb::Block::Iter'
+   32 |   class Iter;
+      |         ^
+17 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_408.dir/build.make:76: generated_build/CMakeFiles/test_408.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_408.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15638: generated_build/CMakeFiles/test_408.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15645: generated_build/CMakeFiles/test_408.dir/rule] 오류 2
+gmake: *** [Makefile:6666: test_408] 오류 2

@@ -1,0 +1,208 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_300.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:23:5: error: non-virtual member function marked 'override' hides virtual member function
+   23 |     MOCK_METHOD(size_t, copy, (byte *buf, ByteOrder byteOrder), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:134:1: note: expanded from here
+  134 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: hidden overloaded virtual function 'Exiv2::Value::copy' declared here: different qualifiers ('const' vs unqualified)
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:35:19: error: field type 'TiffEntryBase' is an abstract class
+   35 |     TiffEntryBase tiffEntry;
+      |                   ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffEntryBase'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffEntryBase'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:495:16: note: unimplemented pure virtual method 'doEncode' in 'TiffEntryBase'
+  495 |   virtual void doEncode(TiffEncoder& encoder, const Exifdatum* datum) = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:43:24: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   43 |           tiffEntry(0, IfdId::ifdExif, TiffType::undefined) {}
+      |                        ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:43:40: error: no member named 'undefined' in 'Exiv2::Internal::TiffType'; did you mean simply 'undefined'?
+   43 |           tiffEntry(0, IfdId::ifdExif, TiffType::undefined) {}
+      |                                        ^~~~~~~~~~~~~~~~~~~
+      |                                        undefined
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:75:3: note: 'undefined' declared here
+   75 |   undefined = 7,            //!< Exif UNDEFINED type, an 8-bit byte that may contain anything.
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:51:47: error: no member named 'big' in 'Exiv2::ByteOrder'
+   51 |     tiffEntry.updateValue(nullptr, ByteOrder::big);
+      |                                    ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:71:67: error: no member named 'big' in 'Exiv2::ByteOrder'
+   71 |     EXPECT_CALL(*mockValue, copy(::testing::NotNull(), ByteOrder::big)).WillOnce(::testing::Return(5));
+      |                                                        ~~~~~~~~~~~^
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:75:60: error: no member named 'big' in 'Exiv2::ByteOrder'
+   75 |     tiffEntry.updateValue(std::move(mockValue), ByteOrder::big);
+      |                                                 ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:93:67: error: no member named 'big' in 'Exiv2::ByteOrder'
+   93 |     EXPECT_CALL(*mockValue, copy(::testing::NotNull(), ByteOrder::big)).WillOnce(::testing::Return(initialSize));
+      |                                                        ~~~~~~~~~~~^
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:97:60: error: no member named 'big' in 'Exiv2::ByteOrder'
+   97 |     tiffEntry.updateValue(std::move(mockValue), ByteOrder::big);
+      |                                                 ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:115:67: error: no member named 'big' in 'Exiv2::ByteOrder'
+  115 |     EXPECT_CALL(*mockValue, copy(::testing::NotNull(), ByteOrder::big)).WillOnce(::testing::Return(20));
+      |                                                        ~~~~~~~~~~~^
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:119:60: error: no member named 'big' in 'Exiv2::ByteOrder'
+  119 |     tiffEntry.updateValue(std::move(mockValue), ByteOrder::big);
+      |                                                 ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:137:67: error: no member named 'big' in 'Exiv2::ByteOrder'
+  137 |     EXPECT_CALL(*mockValue, copy(::testing::NotNull(), ByteOrder::big)).WillOnce(::testing::Return(20));
+      |                                                        ~~~~~~~~~~~^
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:141:60: error: no member named 'big' in 'Exiv2::ByteOrder'
+  141 |     tiffEntry.updateValue(std::move(mockValue), ByteOrder::big);
+      |                                                 ~~~~~~~~~~~^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockValue'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:41:26: note: in instantiation of function template specialization 'std::make_unique<MockValue>' requested here
+   41 |         : mockValue(std::make_unique<MockValue>()),
+      |                          ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:54:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   54 |   virtual int read(const byte* buf, size_t len, ByteOrder byteOrder) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:66:15: note: unimplemented pure virtual method 'read' in 'MockValue'
+   66 |   virtual int read(const std::string& buf) = 0;
+      |               ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:106:18: note: unimplemented pure virtual method 'copy' in 'MockValue'
+  106 |   virtual size_t copy(byte* buf, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:108:18: note: unimplemented pure virtual method 'count' in 'MockValue'
+  108 |   virtual size_t count() const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:117:25: note: unimplemented pure virtual method 'write' in 'MockValue'
+  117 |   virtual std::ostream& write(std::ostream& os) const = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:137:19: note: unimplemented pure virtual method 'toInt64' in 'MockValue'
+  137 |   virtual int64_t toInt64(size_t n = 0) const = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:145:20: note: unimplemented pure virtual method 'toUint32' in 'MockValue'
+  145 |   virtual uint32_t toUint32(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:153:17: note: unimplemented pure virtual method 'toFloat' in 'MockValue'
+  153 |   virtual float toFloat(size_t n = 0) const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:161:20: note: unimplemented pure virtual method 'toRational' in 'MockValue'
+  161 |   virtual Rational toRational(size_t n = 0) const = 0;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:236:18: note: unimplemented pure virtual method 'clone_' in 'MockValue'
+  236 |   virtual Value* clone_() const = 0;
+      |                  ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryBaseTest_300_UpdateValueWithNullPtr_300_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:49:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryBaseTest_300_UpdateValueWithNullPtr_300_Test>::CreateTest' requested here
+   49 | TEST_F(TiffEntryBaseTest_300, UpdateValueWithNullPtr_300) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryBaseTest_300_UpdateValueWithSmallerSize_300_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:59:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryBaseTest_300_UpdateValueWithSmallerSize_300_Test>::CreateTest' requested here
+   59 | TEST_F(TiffEntryBaseTest_300, UpdateValueWithSmallerSize_300) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryBaseTest_300_UpdateValueWithSameSize_300_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:81:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryBaseTest_300_UpdateValueWithSameSize_300_Test>::CreateTest' requested here
+   81 | TEST_F(TiffEntryBaseTest_300, UpdateValueWithSameSize_300) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryBaseTest_300_UpdateValueWithLargerSize_300_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:103:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryBaseTest_300_UpdateValueWithLargerSize_300_Test>::CreateTest' requested here
+  103 | TEST_F(TiffEntryBaseTest_300, UpdateValueWithLargerSize_300) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEntryBaseTest_300_UpdateValueResizesStorage_300_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp:125:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEntryBaseTest_300_UpdateValueResizesStorage_300_Test>::CreateTest' requested here
+  125 | TEST_F(TiffEntryBaseTest_300, UpdateValueResizesStorage_300) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+19 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_300.dir/build.make:79: generated_build/CMakeFiles/test_300.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_300.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:69659: generated_build/CMakeFiles/test_300.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:69666: generated_build/CMakeFiles/test_300.dir/rule] 오류 2
+gmake: *** [Makefile:24229: test_300] 오류 2

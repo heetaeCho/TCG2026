@@ -1,0 +1,90 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_202.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:21:5: error: unknown type name 'base_type'; did you mean 'std::false_type'?
+   21 |     base_type m_iterator;
+      |     ^~~~~~~~~
+      |     std::false_type
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:86:9: note: 'std::false_type' declared here
+   86 |   using false_type = integral_constant<bool, false>;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:31:20: error: no viable overloaded '='
+   31 |         m_iterator = 0; // Assuming base_type is an integral type for simplicity
+      |         ~~~~~~~~~~ ^ ~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:65:12: note: candidate function (the implicit copy assignment operator) not viable: no known conversion from 'int' to 'const integral_constant<bool, false>' for 1st argument
+   65 |     struct integral_constant
+      |            ^~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:65:12: note: candidate function (the implicit move assignment operator) not viable: no known conversion from 'int' to 'integral_constant<bool, false>' for 1st argument
+   65 |     struct integral_constant
+      |            ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:33:17: error: no matching member function for call to 'reset'
+   33 |         pMemory.reset(new int(42)); // Example memory holder
+      |         ~~~~~~~~^~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1276:2: note: candidate template ignored: requirement '__sp_is_constructible<YAML::detail::memory_holder, int>::value' was not satisfied [with _Yp = int]
+ 1276 |         reset(_Yp* __p) // _Yp must be complete.
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1271:7: note: candidate function not viable: requires 0 arguments, but 1 was provided
+ 1271 |       reset() noexcept
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1285:2: note: candidate function template not viable: requires 2 arguments, but 1 was provided
+ 1285 |         reset(_Yp* __p, _Deleter __d)
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1290:2: note: candidate function template not viable: requires 3 arguments, but 1 was provided
+ 1290 |         reset(_Yp* __p, _Deleter __d, _Alloc __a)
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:37:26: error: no matching constructor for initialization of 'IteratorType' (aka 'iterator_base<int>')
+   37 |         customIterator = IteratorType(m_iterator, pMemory);
+      |                          ^            ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:52:12: note: candidate constructor not viable: no known conversion from 'std::false_type' (aka 'integral_constant<bool, false>') to 'base_type' (aka 'node_iterator_base<node>') for 1st argument
+   52 |   explicit iterator_base(base_type rhs, shared_memory_holder pMemory)
+      |            ^             ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:56:3: note: candidate template ignored: could not match 'iterator_base' against 'std::integral_constant'
+   56 |   iterator_base(const iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:51:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   51 |   iterator_base() : m_iterator(), m_pMemory() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:69:18: error: no matching constructor for initialization of 'IteratorType' (aka 'iterator_base<int>')
+   69 |     IteratorType sameIterator(m_iterator, pMemory);
+      |                  ^            ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:52:12: note: candidate constructor not viable: no known conversion from 'std::false_type' (aka 'integral_constant<bool, false>') to 'base_type' (aka 'node_iterator_base<node>') for 1st argument
+   52 |   explicit iterator_base(base_type rhs, shared_memory_holder pMemory)
+      |            ^             ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:56:3: note: candidate template ignored: could not match 'iterator_base' against 'std::integral_constant'
+   56 |   iterator_base(const iterator_base<W>& rhs,
+      |   ^
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:23:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   23 | class iterator_base {
+      |       ^~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/iterator.h:51:3: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   51 |   iterator_base() : m_iterator(), m_pMemory() {}
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:77:60: error: too few arguments provided to function-like macro invocation
+   77 | TEST_F(IteratorBaseDereferenceOperatorReturnsValidValue_202) {
+      |                                                            ^
+/usr/include/gtest/gtest.h:2384:9: note: macro 'TEST_F' defined here
+ 2384 | #define TEST_F(test_fixture, test_name)\
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:77:1: error: a type specifier is required for all declarations
+   77 | TEST_F(IteratorBaseDereferenceOperatorReturnsValidValue_202) {
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:81:6: error: use of undeclared identifier 'pMemory'
+   81 |     *pMemory = 42;
+      |      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp:85:2: error: expected ';' after top level declarator
+   85 | }
+      |  ^
+      |  ;
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_202.dir/build.make:79: generated_build/CMakeFiles/test_202.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_202.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7534: generated_build/CMakeFiles/test_202.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7541: generated_build/CMakeFiles/test_202.dir/rule] 오류 2
+gmake: *** [Makefile:2338: test_202] 오류 2

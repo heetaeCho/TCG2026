@@ -1,0 +1,115 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_226.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:9:18: error: no member named 'Return' in namespace 'testing'
+    9 | using ::testing::Return;
+      |       ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:11:18: error: no member named '_' in namespace 'testing'
+   11 | using ::testing::_;
+      |       ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:25:23: error: allocating an object of abstract class type 'leveldb::DB'
+   25 |         db->rep = new leveldb::DB();
+      |                       ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:66:18: note: unimplemented pure virtual method 'Put' in 'DB'
+   66 |   virtual Status Put(const WriteOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:73:18: note: unimplemented pure virtual method 'Delete' in 'DB'
+   73 |   virtual Status Delete(const WriteOptions& options, const Slice& key) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:78:18: note: unimplemented pure virtual method 'Write' in 'DB'
+   78 |   virtual Status Write(const WriteOptions& options, WriteBatch* updates) = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:87:18: note: unimplemented pure virtual method 'Get' in 'DB'
+   87 |   virtual Status Get(const ReadOptions& options, const Slice& key,
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:96:21: note: unimplemented pure virtual method 'NewIterator' in 'DB'
+   96 |   virtual Iterator* NewIterator(const ReadOptions& options) = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:102:27: note: unimplemented pure virtual method 'GetSnapshot' in 'DB'
+  102 |   virtual const Snapshot* GetSnapshot() = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:106:16: note: unimplemented pure virtual method 'ReleaseSnapshot' in 'DB'
+  106 |   virtual void ReleaseSnapshot(const Snapshot* snapshot) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:124:16: note: unimplemented pure virtual method 'GetProperty' in 'DB'
+  124 |   virtual bool GetProperty(const Slice& property, std::string* value) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:134:16: note: unimplemented pure virtual method 'GetApproximateSizes' in 'DB'
+  134 |   virtual void GetApproximateSizes(const Range* range, int n,
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/db.h:147:16: note: unimplemented pure virtual method 'CompactRange' in 'DB'
+  147 |   virtual void CompactRange(const Slice* begin, const Slice* end) = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:65:5: error: cannot use 'try' with exceptions disabled
+   65 |     EXPECT_NO_THROW(iterator = leveldb_create_iterator(db, read_options));
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1801:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1801 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1412:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1412 |     try {                                                                \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:99:46: error: no member named 'NiceMock' in namespace 'testing'
+   99 |     auto mock_db = std::make_unique<testing::NiceMock<leveldb::DB>>();
+      |                                     ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:99:66: error: expected '(' for function-style cast or type construction
+   99 |     auto mock_db = std::make_unique<testing::NiceMock<leveldb::DB>>();
+      |                                                       ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:99:69: error: expected expression
+   99 |     auto mock_db = std::make_unique<testing::NiceMock<leveldb::DB>>();
+      |                                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:105:30: error: allocating an object of abstract class type 'leveldb::Iterator'
+  105 |         .WillOnce(Return(new leveldb::Iterator()));
+      |                              ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:35:16: note: unimplemented pure virtual method 'Valid' in 'Iterator'
+   35 |   virtual bool Valid() const = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:39:16: note: unimplemented pure virtual method 'SeekToFirst' in 'Iterator'
+   39 |   virtual void SeekToFirst() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:43:16: note: unimplemented pure virtual method 'SeekToLast' in 'Iterator'
+   43 |   virtual void SeekToLast() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:48:16: note: unimplemented pure virtual method 'Seek' in 'Iterator'
+   48 |   virtual void Seek(const Slice& target) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:53:16: note: unimplemented pure virtual method 'Next' in 'Iterator'
+   53 |   virtual void Next() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:58:16: note: unimplemented pure virtual method 'Prev' in 'Iterator'
+   58 |   virtual void Prev() = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:64:17: note: unimplemented pure virtual method 'key' in 'Iterator'
+   64 |   virtual Slice key() const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:70:17: note: unimplemented pure virtual method 'value' in 'Iterator'
+   70 |   virtual Slice value() const = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/iterator.h:73:18: note: unimplemented pure virtual method 'status' in 'Iterator'
+   73 |   virtual Status status() const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:103:39: error: use of undeclared identifier '_'
+  103 |     EXPECT_CALL(*mock_db, NewIterator(_))
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:119:46: error: no member named 'NiceMock' in namespace 'testing'
+  119 |     auto mock_db = std::make_unique<testing::NiceMock<leveldb::DB>>();
+      |                                     ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:119:66: error: expected '(' for function-style cast or type construction
+  119 |     auto mock_db = std::make_unique<testing::NiceMock<leveldb::DB>>();
+      |                                                       ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:119:69: error: expected expression
+  119 |     auto mock_db = std::make_unique<testing::NiceMock<leveldb::DB>>();
+      |                                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:125:19: error: use of undeclared identifier 'Return'
+  125 |         .WillOnce(Return(nullptr));
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp:123:39: error: use of undeclared identifier '_'
+  123 |     EXPECT_CALL(*mock_db, NewIterator(_))
+      |                                       ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_226.dir/build.make:76: generated_build/CMakeFiles/test_226.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_226.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:5720: generated_build/CMakeFiles/test_226.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:5727: generated_build/CMakeFiles/test_226.dir/rule] 오류 2
+gmake: *** [Makefile:2220: test_226] 오류 2

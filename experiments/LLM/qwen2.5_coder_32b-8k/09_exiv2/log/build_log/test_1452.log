@@ -1,0 +1,70 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1452.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:17:26: error: unknown type name 'IoWrapper'
+   17 |             size_t write(IoWrapper& ioWrapper, ByteOrder) const;
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:17:48: error: unknown type name 'ByteOrder'
+   17 |             size_t write(IoWrapper& ioWrapper, ByteOrder) const;
+      |                                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:31:30: error: expected class name
+   31 | class MockIoWrapper : public IoWrapper {
+      |                              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:35:5: error: only virtual member functions can be marked 'override'
+   35 |     MOCK_METHOD(size_t, write, (const uint8_t* data, size_t length), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:10:1: note: expanded from here
+   10 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:55:51: error: no member named 'sizeOfSignature' in 'Exiv2::Internal::OMSystemMnHeader'
+   55 |     EXPECT_CALL(mockIoWrapper, write(_, Eq(header.sizeOfSignature())))
+      |                                            ~~~~~~ ^
+/usr/include/gmock/gmock-spec-builders.h:2036:48: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |                                                ^~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:24: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |                        ^~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:61:33: error: use of undeclared identifier 'littleEndian'
+   61 |     header.write(mockIoWrapper, littleEndian);
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:69:49: error: use of undeclared identifier 'littleEndian'
+   69 |     size_t result = header.write(mockIoWrapper, littleEndian);
+      |                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp:71:30: error: no member named 'sizeOfSignature' in 'Exiv2::Internal::OMSystemMnHeader'
+   71 |     EXPECT_EQ(result, header.sizeOfSignature());
+      |                       ~~~~~~ ^
+/usr/include/gtest/gtest.h:2044:69: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1452.dir/build.make:79: generated_build/CMakeFiles/test_1452.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1452.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:38447: generated_build/CMakeFiles/test_1452.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:38454: generated_build/CMakeFiles/test_1452.dir/rule] 오류 2
+gmake: *** [Makefile:12295: test_1452] 오류 2

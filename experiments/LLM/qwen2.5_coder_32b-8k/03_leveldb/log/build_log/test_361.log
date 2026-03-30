@@ -1,0 +1,376 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_361.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:25:7: error: deleted function '~MemTableIteratorTest_361' cannot override a non-deleted function
+   25 | class MemTableIteratorTest_361 : public ::testing::Test {
+      |       ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:248:11: note: overridden virtual function is here
+  248 |   virtual ~Test();
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: destructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has an inaccessible destructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:37:24: error: no matching constructor for initialization of 'MemTableIterator'
+   37 |         iterator = new MemTableIterator(&table);
+      |                        ^                ~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.cc:48:12: note: candidate constructor not viable: no known conversion from 'MemTable *' to 'MemTable::Table *' (aka 'SkipList<const char *, KeyComparator> *') for 1st argument
+   48 |   explicit MemTableIterator(MemTable::Table* table) : iter_(table) {}
+      |            ^                ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/memtable.cc:50:3: note: candidate constructor not viable: no known conversion from 'MemTable *' to 'const MemTableIterator' for 1st argument
+   50 |   MemTableIterator(const MemTableIterator&) = delete;
+      |   ^                ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:55:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   55 | TEST_F(MemTableIteratorTest_361, NextAdvancesPosition_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:55:1: note: destructor of 'MemTableIteratorTest_361_NextAdvancesPosition_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted destructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: destructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has an inaccessible destructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:55:1: note: replace 'default' with 'delete'
+   55 | TEST_F(MemTableIteratorTest_361, NextAdvancesPosition_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:55:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   55 | TEST_F(MemTableIteratorTest_361, NextAdvancesPosition_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:78:1: note: expanded from here
+   78 | MemTableIteratorTest_361_NextAdvancesPosition_361_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:55:1: note: default constructor of 'MemTableIteratorTest_361_NextAdvancesPosition_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted default constructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: default constructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has no default constructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:55:1: note: replace 'default' with 'delete'
+   55 | TEST_F(MemTableIteratorTest_361, NextAdvancesPosition_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:59:23: error: no member named 'Iterator' in 'leveldb::MemTable'
+   59 |     EXPECT_CALL(table.Iterator(), Valid()).WillOnce(::testing::Return(true));
+      |                 ~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:59:35: error: use of undeclared identifier 'Valid'
+   59 |     EXPECT_CALL(table.Iterator(), Valid()).WillOnce(::testing::Return(true));
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:59:64: error: no member named 'Return' in namespace 'testing'
+   59 |     EXPECT_CALL(table.Iterator(), Valid()).WillOnce(::testing::Return(true));
+      |                                                     ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:71:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   71 | TEST_F(MemTableIteratorTest_361, SeekToFirstPositionsAtStart_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:71:1: note: destructor of 'MemTableIteratorTest_361_SeekToFirstPositionsAtStart_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted destructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: destructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has an inaccessible destructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:71:1: note: replace 'default' with 'delete'
+   71 | TEST_F(MemTableIteratorTest_361, SeekToFirstPositionsAtStart_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:71:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   71 | TEST_F(MemTableIteratorTest_361, SeekToFirstPositionsAtStart_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:8:1: note: expanded from here
+    8 | MemTableIteratorTest_361_SeekToFirstPositionsAtStart_361_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:71:1: note: default constructor of 'MemTableIteratorTest_361_SeekToFirstPositionsAtStart_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted default constructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: default constructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has no default constructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:71:1: note: replace 'default' with 'delete'
+   71 | TEST_F(MemTableIteratorTest_361, SeekToFirstPositionsAtStart_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:77:23: error: no member named 'Iterator' in 'leveldb::MemTable'
+   77 |     EXPECT_CALL(table.Iterator(), key()).WillOnce(::testing::Return(MockSlice("first_key")));
+      |                 ~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:77:35: error: use of undeclared identifier 'key'
+   77 |     EXPECT_CALL(table.Iterator(), key()).WillOnce(::testing::Return(MockSlice("first_key")));
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:77:62: error: no member named 'Return' in namespace 'testing'
+   77 |     EXPECT_CALL(table.Iterator(), key()).WillOnce(::testing::Return(MockSlice("first_key")));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:85:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   85 | TEST_F(MemTableIteratorTest_361, SeekToLastPositionsAtEnd_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:85:1: note: destructor of 'MemTableIteratorTest_361_SeekToLastPositionsAtEnd_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted destructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: destructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has an inaccessible destructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:85:1: note: replace 'default' with 'delete'
+   85 | TEST_F(MemTableIteratorTest_361, SeekToLastPositionsAtEnd_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:85:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   85 | TEST_F(MemTableIteratorTest_361, SeekToLastPositionsAtEnd_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:60:1: note: expanded from here
+   60 | MemTableIteratorTest_361_SeekToLastPositionsAtEnd_361_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:85:1: note: default constructor of 'MemTableIteratorTest_361_SeekToLastPositionsAtEnd_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted default constructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: default constructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has no default constructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:85:1: note: replace 'default' with 'delete'
+   85 | TEST_F(MemTableIteratorTest_361, SeekToLastPositionsAtEnd_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:91:23: error: no member named 'Iterator' in 'leveldb::MemTable'
+   91 |     EXPECT_CALL(table.Iterator(), key()).WillOnce(::testing::Return(MockSlice("last_key")));
+      |                 ~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:91:35: error: use of undeclared identifier 'key'
+   91 |     EXPECT_CALL(table.Iterator(), key()).WillOnce(::testing::Return(MockSlice("last_key")));
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:91:62: error: no member named 'Return' in namespace 'testing'
+   91 |     EXPECT_CALL(table.Iterator(), key()).WillOnce(::testing::Return(MockSlice("last_key")));
+      |                                                   ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:99:1: error: explicitly defaulted destructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   99 | TEST_F(MemTableIteratorTest_361, ValidReturnsFalseWhenExhausted_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:5: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:99:1: note: destructor of 'MemTableIteratorTest_361_ValidReturnsFalseWhenExhausted_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted destructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: destructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has an inaccessible destructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:99:1: note: replace 'default' with 'delete'
+   99 | TEST_F(MemTableIteratorTest_361, ValidReturnsFalseWhenExhausted_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1487:70: note: expanded from macro 'GTEST_TEST_'
+ 1487 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default;  \
+      |                                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:99:1: error: explicitly defaulted default constructor is implicitly deleted [-Werror,-Wdefaulted-function-deleted]
+   99 | TEST_F(MemTableIteratorTest_361, ValidReturnsFalseWhenExhausted_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:5: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |     ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1475:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1475 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:27:1: note: expanded from here
+   27 | MemTableIteratorTest_361_ValidReturnsFalseWhenExhausted_361_Test
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:99:1: note: default constructor of 'MemTableIteratorTest_361_ValidReturnsFalseWhenExhausted_361_Test' is implicitly deleted because base class 'MemTableIteratorTest_361' has a deleted default constructor
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1484:9: note: expanded from macro 'GTEST_TEST_'
+ 1484 |       : public parent_class {                                                  \
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:29:14: note: default constructor of 'MemTableIteratorTest_361' is implicitly deleted because field 'table' has no default constructor
+   29 |     MemTable table; // Assuming MemTable is a class that can be instantiated
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp:99:1: note: replace 'default' with 'delete'
+   99 | TEST_F(MemTableIteratorTest_361, ValidReturnsFalseWhenExhausted_361) {
+      | ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2231:41: note: expanded from macro 'TEST_F'
+ 2231 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:2228:3: note: expanded from macro 'GTEST_TEST_F'
+ 2228 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1486:60: note: expanded from macro 'GTEST_TEST_'
+ 1486 |     GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() = default;            \
+      |                                                            ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_361.dir/build.make:76: generated_build/CMakeFiles/test_361.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_361.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:3777: generated_build/CMakeFiles/test_361.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:3784: generated_build/CMakeFiles/test_361.dir/rule] 오류 2
+gmake: *** [Makefile:1349: test_361] 오류 2

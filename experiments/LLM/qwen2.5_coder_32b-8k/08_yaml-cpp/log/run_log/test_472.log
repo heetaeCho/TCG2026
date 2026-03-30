@@ -1,0 +1,48 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from EmitterStateTest_472
+[ RUN      ] EmitterStateTest_472.SetLongKeyWithEmptyGroups_472
+[       OK ] EmitterStateTest_472.SetLongKeyWithEmptyGroups_472 (64 ms)
+[ RUN      ] EmitterStateTest_472.SetLongKeyWithNonMapGroup_472
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_472.cpp:47: Failure
+Death test: state.SetLongKey()
+    Result: died but not with expected error.
+  Expected: contains regular expression ".*m_groups.back()->type == GroupType::Map.*"
+Actual msg:
+[  DEATH   ] test_472: /home/user/TCG2026/TestProjects/yaml-cpp/src/emitterstate.cpp:70: void YAML::EmitterState::SetLongKey(): Assertion `m_groups.back()->type == GroupType::Map' failed.
+[  DEATH   ] 
+[  FAILED  ] EmitterStateTest_472.SetLongKeyWithNonMapGroup_472 (51 ms)
+[ RUN      ] EmitterStateTest_472.SetLongKeyWithValidMapGroup_472
+[       OK ] EmitterStateTest_472.SetLongKeyWithValidMapGroup_472 (0 ms)
+[ RUN      ] EmitterStateTest_472.SetLongKeyMultipleTimes_472
+[       OK ] EmitterStateTest_472.SetLongKeyMultipleTimes_472 (0 ms)
+[ RUN      ] EmitterStateTest_472.SetLongKeyAndCheckState_472
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_472.cpp:123: Failure
+Expected equality of these values:
+  state.CurGroupIndent()
+    Which is: 2
+  0
+[  FAILED  ] EmitterStateTest_472.SetLongKeyAndCheckState_472 (0 ms)
+[ RUN      ] EmitterStateTest_472.SetLongKeyNestedGroups_472
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_472.cpp:143: Failure
+Death test: state.SetLongKey()
+    Result: died but not with expected error.
+  Expected: contains regular expression ".*m_groups.back()->type == GroupType::Map.*"
+Actual msg:
+[  DEATH   ] test_472: /home/user/TCG2026/TestProjects/yaml-cpp/src/emitterstate.cpp:70: void YAML::EmitterState::SetLongKey(): Assertion `m_groups.back()->type == GroupType::Map' failed.
+[  DEATH   ] 
+[  FAILED  ] EmitterStateTest_472.SetLongKeyNestedGroups_472 (51 ms)
+[ RUN      ] EmitterStateTest_472.SetLongKeyAndEndGroup_472
+[       OK ] EmitterStateTest_472.SetLongKeyAndEndGroup_472 (0 ms)
+[----------] 7 tests from EmitterStateTest_472 (167 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (167 ms total)
+[  PASSED  ] 4 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] EmitterStateTest_472.SetLongKeyWithNonMapGroup_472
+[  FAILED  ] EmitterStateTest_472.SetLongKeyAndCheckState_472
+[  FAILED  ] EmitterStateTest_472.SetLongKeyNestedGroups_472
+
+ 3 FAILED TESTS

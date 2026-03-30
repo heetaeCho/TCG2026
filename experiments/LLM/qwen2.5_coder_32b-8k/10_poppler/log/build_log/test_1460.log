@@ -1,0 +1,82 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1460.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:75:11: error: 'curStr' is a private member of 'Lexer'
+   75 |     lexer.curStr.setToNull();
+      |           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Lexer.h:108:12: note: declared private here
+  108 |     Object curStr; // current stream
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:89:11: error: 'curStr' is a private member of 'Lexer'
+   89 |     lexer.curStr = Object(ObjType::objName); // Assuming objName is not a stream type
+      |           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Lexer.h:108:12: note: declared private here
+  108 |     Object curStr; // current stream
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:89:20: error: calling a private constructor of class 'Object'
+   89 |     lexer.curStr = Object(ObjType::objName); // Assuming objName is not a stream type
+      |                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:27:7: warning: 'LexerTest_1460' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   27 | class LexerTest_1460 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'testing::NiceMock<MockStream>'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:39:40: note: in instantiation of function template specialization 'std::make_unique<testing::NiceMock<MockStream>>' requested here
+   39 |     LexerTest_1460() : mockStream(std::make_unique<NiceMock<MockStream>>()), lexer(xref, std::move(mockStream)) {}
+      |                                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'NiceMock'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'NiceMock'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'NiceMock'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'NiceMock'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'NiceMock'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'NiceMock'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: unimplemented pure virtual method 'getPos' in 'NiceMock'
+  234 |     virtual Goffset getPos() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'NiceMock'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'NiceMock'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'NiceMock'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'NiceMock'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'NiceMock'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:17:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<testing::NiceMock<MockStream>>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp:39:35: note: in instantiation of member function 'std::unique_ptr<testing::NiceMock<MockStream>>::~unique_ptr' requested here
+   39 |     LexerTest_1460() : mockStream(std::make_unique<NiceMock<MockStream>>()), lexer(xref, std::move(mockStream)) {}
+      |                                   ^
+2 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1460.dir/build.make:79: generated_build/CMakeFiles/test_1460.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1460.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:97674: generated_build/CMakeFiles/test_1460.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:97681: generated_build/CMakeFiles/test_1460.dir/rule] 오류 2
+gmake: *** [Makefile:36150: test_1460] 오류 2

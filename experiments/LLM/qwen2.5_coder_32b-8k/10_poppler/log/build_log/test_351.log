@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_351.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_351.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_351.cpp:35:7: warning: 'FunctionTest_351' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   35 | class FunctionTest_351 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_351.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'MockFunction'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_351.cpp:45:25: note: in instantiation of function template specialization 'std::make_unique<MockFunction>' requested here
+   45 |         function = std::make_unique<MockFunction>();
+      |                         ^
+/home/user/TCG2026/./TestProjects/poppler/poppler/Function.h:62:39: note: unimplemented pure virtual method 'copy' in 'MockFunction'
+   62 |     virtual std::unique_ptr<Function> copy() const = 0;
+      |                                       ^
+/home/user/TCG2026/./TestProjects/poppler/poppler/Function.h:73:18: note: unimplemented pure virtual method 'getType' in 'MockFunction'
+   73 |     virtual Type getType() const = 0;
+      |                  ^
+/home/user/TCG2026/./TestProjects/poppler/poppler/Function.h:87:18: note: unimplemented pure virtual method 'transform' in 'MockFunction'
+   87 |     virtual void transform(const double *in, double *out) const = 0;
+      |                  ^
+/home/user/TCG2026/./TestProjects/poppler/poppler/Function.h:89:18: note: unimplemented pure virtual method 'isOk' in 'MockFunction'
+   89 |     virtual bool isOk() const = 0;
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_351.cpp:13:7: warning: 'MockFunction' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class MockFunction : public Function {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<MockFunction>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_351.cpp:45:20: note: in instantiation of member function 'std::unique_ptr<MockFunction>::~unique_ptr' requested here
+   45 |         function = std::make_unique<MockFunction>();
+      |                    ^
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_351.dir/build.make:79: generated_build/CMakeFiles/test_351.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_351.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:15946: generated_build/CMakeFiles/test_351.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:15953: generated_build/CMakeFiles/test_351.dir/rule] 오류 2
+gmake: *** [Makefile:2948: test_351] 오류 2

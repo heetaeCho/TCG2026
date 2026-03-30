@@ -1,0 +1,74 @@
+[ 77%] Built target libninja
+[ 88%] Built target libninja-re2c
+[100%] Building CXX object generated_build/CMakeFiles/test_84.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp.o
+[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:9:25: [0m[0;1;31merror: [0m[1mbase class has incomplete type[0m
+    9 | [0;34mclass[0m MockNode : [0;34mpublic[0m Node {[0m
+      | [0;1;32m                 ~~~~~~~^~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/deps_log.h:26:8: [0m[0;1;36mnote: [0mforward declaration of 'Node'[0m
+   26 | [0;34mstruct[0m Node;[0m
+      | [0;1;32m       ^
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:17:26: [0m[0;1;31merror: [0m[1mbase class has incomplete type[0m
+   17 | [0;34mclass[0m MockState : [0;34mpublic[0m State {[0m
+      | [0;1;32m                  ~~~~~~~^~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/deps_log.h:27:8: [0m[0;1;36mnote: [0mforward declaration of 'State'[0m
+   27 | [0;34mstruct[0m State;[0m
+      | [0;1;32m       ^
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:35:19: [0m[0;1;31merror: [0m[1mcannot initialize a member subobject of type 'Node *' with an rvalue of type 'MockNode *'[0m
+   35 |     Node* node1 = [0;34mnew[0m MockNode();[0m
+      | [0;1;32m                  ^~~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:37:19: [0m[0;1;31merror: [0m[1mcannot initialize a member subobject of type 'Node *' with an rvalue of type 'MockNode *'[0m
+   37 |     Node* node2 = [0;34mnew[0m MockNode();[0m
+      | [0;1;32m                  ^~~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:115:44: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'State *' with an rvalue of type 'MockState *'[0m
+  115 |     EXPECT_TRUE(deps_log.Load([0;32m"test.deps"[0m, &state, &err));[0m
+      | [0;1;32m                                           ^~~~~~
+[0m[1m/usr/include/gtest/gtest.h:1982:50: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_TRUE'[0m
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)[0m
+      | [0;1;32m                                                 ^~~~~~~~~
+[0m[1m/usr/include/gtest/gtest.h:1966:23: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_EXPECT_TRUE'[0m
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, [0;32mfalse[0m, [0;32mtrue[0m, \[0m
+      | [0;1;32m                      ^~~~~~~~~
+[0m[1m/usr/include/gtest/internal/gtest-internal.h:1502:34: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_TEST_BOOLEAN_'[0m
+ 1502 |       ::testing::AssertionResult(expression)) \[0m
+      | [0;1;32m                                 ^~~~~~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/deps_log.h:88:51: [0m[0;1;36mnote: [0mpassing argument to parameter 'state' here[0m
+   88 |   LoadStatus Load([0;34mconst[0m std::string& path, State* state, std::string* err);[0m
+      | [0;1;32m                                                  ^
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:125:63: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'State *' with an rvalue of type 'MockState *'[0m
+  125 |     EXPECT_FALSE(deps_log.Load([0;32m"/nonexistent/path/test.deps"[0m, &state, &err));[0m
+      | [0;1;32m                                                              ^~~~~~
+[0m[1m/usr/include/gtest/gtest.h:1986:52: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_FALSE'[0m
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)[0m
+      | [0;1;32m                                                   ^~~~~~~~~
+[0m[1m/usr/include/gtest/gtest.h:1969:25: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_EXPECT_FALSE'[0m
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, [0;32mtrue[0m, [0;32mfalse[0m, \[0m
+      | [0;1;32m                        ^~~~~~~~~
+[0m[1m/usr/include/gtest/internal/gtest-internal.h:1502:34: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_TEST_BOOLEAN_'[0m
+ 1502 |       ::testing::AssertionResult(expression)) \[0m
+      | [0;1;32m                                 ^~~~~~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/deps_log.h:88:51: [0m[0;1;36mnote: [0mpassing argument to parameter 'state' here[0m
+   88 |   LoadStatus Load([0;34mconst[0m std::string& path, State* state, std::string* err);[0m
+      | [0;1;32m                                                  ^
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:145:11: [0m[0;1;31merror: [0m[1mcannot initialize a variable of type 'Node *' with an rvalue of type 'MockNode *'[0m
+  145 |     Node* invalid_node = [0;34mnew[0m MockNode();[0m
+      | [0;1;32m          ^              ~~~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:149:5: [0m[0;1;35mwarning: [0m[1mdeleting pointer to incomplete type 'Node' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete][0m
+  149 |     [0;34mdelete[0m invalid_node;[0m
+      | [0;1;32m    ^      ~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/deps_log.h:26:8: [0m[0;1;36mnote: [0mforward declaration of 'Node'[0m
+   26 | [0;34mstruct[0m Node;[0m
+      | [0;1;32m       ^
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:169:11: [0m[0;1;31merror: [0m[1mcannot initialize a variable of type 'Node *' with an rvalue of type 'MockNode *'[0m
+  169 |     Node* invalid_node = [0;34mnew[0m MockNode();[0m
+      | [0;1;32m          ^              ~~~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp:173:5: [0m[0;1;35mwarning: [0m[1mdeleting pointer to incomplete type 'Node' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete][0m
+  173 |     [0;34mdelete[0m invalid_node;[0m
+      | [0;1;32m    ^      ~~~~~~~~~~~~
+[0m[1m/home/user/TCG2026/TestProjects/ninja/src/deps_log.h:26:8: [0m[0;1;36mnote: [0mforward declaration of 'Node'[0m
+   26 | [0;34mstruct[0m Node;[0m
+      | [0;1;32m       ^
+[0m2 warnings and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_84.dir/build.make:79: generated_build/CMakeFiles/test_84.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_84.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:4638: generated_build/CMakeFiles/test_84.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:4645: generated_build/CMakeFiles/test_84.dir/rule] 오류 2
+gmake: *** [Makefile:1752: test_84] 오류 2

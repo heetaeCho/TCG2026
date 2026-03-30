@@ -1,0 +1,110 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[ 50%] Built target exiv2lib
+[ 50%] Building CXX object generated_build/CMakeFiles/test_1647.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:37:22: error: allocating an object of abstract class type 'TiffComponent'
+   37 |         pRoot_ = new TiffComponent();
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffComponent'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:312:18: note: unimplemented pure virtual method 'doWrite' in 'TiffComponent'
+  312 |   virtual size_t doWrite(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t valueIdx, size_t dataIdx,
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffComponent'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:321:18: note: unimplemented pure virtual method 'doWriteData' in 'TiffComponent'
+  321 |   virtual size_t doWriteData(IoWrapper& ioWrapper, ByteOrder byteOrder, size_t offset, size_t dataIdx,
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:324:18: note: unimplemented pure virtual method 'doWriteImage' in 'TiffComponent'
+  324 |   virtual size_t doWriteImage(IoWrapper& ioWrapper, ByteOrder byteOrder) const = 0;
+      |                  ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:326:32: note: unimplemented pure virtual method 'doSize' in 'TiffComponent'
+  326 |   [[nodiscard]] virtual size_t doSize() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:328:32: note: unimplemented pure virtual method 'doCount' in 'TiffComponent'
+  328 |   [[nodiscard]] virtual size_t doCount() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:330:32: note: unimplemented pure virtual method 'doSizeData' in 'TiffComponent'
+  330 |   [[nodiscard]] virtual size_t doSizeData() const = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:332:32: note: unimplemented pure virtual method 'doSizeImage' in 'TiffComponent'
+  332 |   [[nodiscard]] virtual size_t doSizeImage() const = 0;
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:41:57: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   41 |         tiffMnEntry_ = std::make_unique<TiffMnEntry>(1, IfdId::rootIfd, IfdId::mnExif);
+      |                                                         ^~~~~
+      |                                                         Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:41:57: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   41 |         tiffMnEntry_ = std::make_unique<TiffMnEntry>(1, IfdId::rootIfd, IfdId::mnExif);
+      |                                                         ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:41:73: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   41 |         tiffMnEntry_ = std::make_unique<TiffMnEntry>(1, IfdId::rootIfd, IfdId::mnExif);
+      |                                                                         ^~~~~
+      |                                                                         Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:41:73: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   41 |         tiffMnEntry_ = std::make_unique<TiffMnEntry>(1, IfdId::rootIfd, IfdId::mnExif);
+      |                                                                         ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:61:5: error: no member named 'gmock_doAccept' in 'Exiv2::Internal::TiffMnEntry'
+   61 |     EXPECT_CALL(*tiffMnEntry_, doAccept(::testing::_)).WillOnce([this](TiffVisitor& visitor) {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:120:1: note: expanded from here
+  120 | gmock_doAccept
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:69:5: error: no member named 'gmock_copyObject' in 'Exiv2::Internal::TiffCopier'
+   69 |     EXPECT_CALL(copier, copyObject(::testing::_)).Times(1);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:125:1: note: expanded from here
+  125 | gmock_copyObject
+      | ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::Internal::TiffHeaderBase'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:33:25: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffHeaderBase>' requested here
+   33 |         pHeader_ = std::make_unique<TiffHeaderBase>();
+      |                         ^
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:21:7: note: forward declaration of 'Exiv2::Internal::TiffHeaderBase'
+   21 | class TiffHeaderBase;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Internal::TiffHeaderBase'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::Internal::TiffHeaderBase>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp:33:20: note: in instantiation of member function 'std::unique_ptr<Exiv2::Internal::TiffHeaderBase>::~unique_ptr' requested here
+   33 |         pHeader_ = std::make_unique<TiffHeaderBase>();
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:21:7: note: forward declaration of 'Exiv2::Internal::TiffHeaderBase'
+   21 | class TiffHeaderBase;
+      |       ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1647.dir/build.make:79: generated_build/CMakeFiles/test_1647.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1647.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:46675: generated_build/CMakeFiles/test_1647.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:46682: generated_build/CMakeFiles/test_1647.dir/rule] 오류 2
+gmake: *** [Makefile:15441: test_1647] 오류 2

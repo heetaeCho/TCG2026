@@ -1,0 +1,125 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1655.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:25:34: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   25 |     MockTiffSubIfd(uint16_t tag, IfdId group, IfdId newGroup)
+      |                                  ^~~~~
+      |                                  Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:25:47: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   25 |     MockTiffSubIfd(uint16_t tag, IfdId group, IfdId newGroup)
+      |                                               ^~~~~
+      |                                               Exiv2::IfdId
+/home/user/TCG2026/TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:43:5: error: unknown type name 'ExifData'; did you mean 'Exiv2::ExifData'?
+   43 |     ExifData exifData_;
+      |     ^~~~~~~~
+      |     Exiv2::ExifData
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:381:16: note: 'Exiv2::ExifData' declared here
+  381 | class EXIV2API ExifData {
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:45:5: error: unknown type name 'IptcData'; did you mean 'Exiv2::IptcData'?
+   45 |     IptcData iptcData_;
+      |     ^~~~~~~~
+      |     Exiv2::IptcData
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: 'Exiv2::IptcData' declared here
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:45:14: error: field has incomplete type 'Exiv2::IptcData'
+   45 |     IptcData iptcData_;
+      |              ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:47:5: error: unknown type name 'XmpData'; did you mean 'Exiv2::XmpData'?
+   47 |     XmpData xmpData_;
+      |     ^~~~~~~
+      |     Exiv2::XmpData
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: 'Exiv2::XmpData' declared here
+   24 | class XmpData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:47:13: error: field has incomplete type 'Exiv2::XmpData'
+   47 |     XmpData xmpData_;
+      |             ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:57:50: error: use of undeclared identifier 'ifdExif'
+   57 |         mockSubIfd_ = new MockTiffSubIfd(0x1234, ifdExif, ifdGps);
+      |                                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:57:59: error: use of undeclared identifier 'ifdGps'
+   57 |         mockSubIfd_ = new MockTiffSubIfd(0x1234, ifdExif, ifdGps);
+      |                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:83:17: error: no member named 'decodeTiffEntry' in 'Exiv2::Internal::TiffVisitor'
+   83 |         visitor.decodeTiffEntry(mockSubIfd_);
+      |         ~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:83:33: error: 'this' cannot be implicitly captured in this context
+   83 |         visitor.decodeTiffEntry(mockSubIfd_);
+      |                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:81:54: note: explicitly capture 'this'
+   81 |     EXPECT_CALL(*mockSubIfd_, doAccept(_)).WillOnce([](TiffVisitor& visitor) {
+      |                                                      ^
+      |                                                      this
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:81:53: error: no viable conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:81:53)' to 'const Action<void (TiffVisitor &)>'
+   81 |     EXPECT_CALL(*mockSubIfd_, doAccept(_)).WillOnce([](TiffVisitor& visitor) {
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+   82 | 
+   83 |         visitor.decodeTiffEntry(mockSubIfd_);
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   84 | 
+   85 |     });
+      |     ~
+/usr/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:81:53)' to 'const Action<void (TiffVisitor &)> &' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/usr/include/gmock/gmock-actions.h:438:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:81:53)' to 'Action<void (TiffVisitor &)> &&' for 1st argument
+  438 | class Action {
+      |       ^~~~~~
+/usr/include/gmock/gmock-actions.h:471:3: note: candidate template ignored: requirement 'internal::is_constructible<std::function<void ()>, (lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:81:53)>::value' was not satisfied [with G = (lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:81:53)]
+  471 |   Action(G&& fun) {  // NOLINT
+      |   ^
+/usr/include/gmock/gmock-actions.h:476:12: note: explicit constructor is not a candidate
+  476 |   explicit Action(ActionInterface<F>* impl)
+      |            ^
+/usr/include/gmock/gmock-actions.h:483:12: note: explicit constructor is not a candidate
+  483 |   explicit Action(const Action<Func>& action) : fun_(action.fun_) {}
+      |            ^
+/usr/include/gmock/gmock-spec-builders.h:1011:47: note: passing argument to parameter 'action' here
+ 1011 |   TypedExpectation& WillOnce(const Action<F>& action) {
+      |                                               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffDecoderTest_1655_VisitSubIfdCallsDecodeTiffEntry_1655_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:79:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffDecoderTest_1655_VisitSubIfdCallsDecodeTiffEntry_1655_Test>::CreateTest' requested here
+   79 | TEST_F(TiffDecoderTest_1655, VisitSubIfdCallsDecodeTiffEntry_1655) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffDecoderTest_1655_VisitSubIfdWithNullptr_1655_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp:97:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffDecoderTest_1655_VisitSubIfdWithNullptr_1655_Test>::CreateTest' requested here
+   97 | TEST_F(TiffDecoderTest_1655, VisitSubIfdWithNullptr_1655) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1655.dir/build.make:79: generated_build/CMakeFiles/test_1655.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1655.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:66871: generated_build/CMakeFiles/test_1655.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:66878: generated_build/CMakeFiles/test_1655.dir/rule] 오류 2
+gmake: *** [Makefile:23163: test_1655] 오류 2

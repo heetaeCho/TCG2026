@@ -1,0 +1,157 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1680.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:25:39: error: unknown type name 'IfdId'; did you mean 'Exiv2::IfdId'?
+   25 |     MockTiffBinaryArray(uint16_t tag, IfdId group, const ArrayCfg& arrayCfg, const ArrayDef* arrayDef, size_t defSize)
+      |                                       ^~~~~
+      |                                       Exiv2::IfdId
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:85:20: error: field has incomplete type 'Exiv2::ExifKey'
+   85 |     Exiv2::ExifKey exifKey;
+      |                    ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:57:19: error: invalid use of incomplete type 'Exiv2::ExifKey'
+   57 |         exifKey = Exiv2::ExifKey("SampleTag", 1, 1);
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:63:50: error: use of undeclared identifier 'IfdId'; did you mean 'Exiv2::IfdId'?
+   63 |         binaryArray = new MockTiffBinaryArray(1, IfdId::rootIFD, arrayCfg, &arrayDef, 0);
+      |                                                  ^~~~~
+      |                                                  Exiv2::IfdId
+/home/user/TCG2026/./TestProjects/exiv2/src/tifffwd_int.hpp:17:12: note: 'Exiv2::IfdId' declared here
+   17 | enum class IfdId : uint32_t;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:63:50: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   63 |         binaryArray = new MockTiffBinaryArray(1, IfdId::rootIFD, arrayCfg, &arrayDef, 0);
+      |                                                  ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:99:44: error: invalid use of incomplete type 'Exiv2::IptcData'
+   99 |     TiffEncoder encoder(Exiv2::ExifData(), Exiv2::IptcData(), Exiv2::XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                            ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:99:63: error: invalid use of incomplete type 'Exiv2::XmpData'
+   99 |     TiffEncoder encoder(Exiv2::ExifData(), Exiv2::IptcData(), Exiv2::XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                                               ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:103:5: error: no member named 'gmock_doEncode' in 'MockTiffBinaryArray'
+  103 |     EXPECT_CALL(*binaryArray, doEncode(_, _)).WillOnce([this](TiffEncoder& encoder, const Exifdatum* datum) {
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:120:1: note: expanded from here
+  120 | gmock_doEncode
+      | ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:103:91: error: unknown type name 'Exifdatum'
+  103 |     EXPECT_CALL(*binaryArray, doEncode(_, _)).WillOnce([this](TiffEncoder& encoder, const Exifdatum* datum) {
+      |                                                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:103:102: warning: unused parameter 'datum' [-Wunused-parameter]
+  103 |     EXPECT_CALL(*binaryArray, doEncode(_, _)).WillOnce([this](TiffEncoder& encoder, const Exifdatum* datum) {
+      |                                                                                                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:119:44: error: invalid use of incomplete type 'Exiv2::IptcData'
+  119 |     TiffEncoder encoder(Exiv2::ExifData(), Exiv2::IptcData(), Exiv2::XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                            ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:119:63: error: invalid use of incomplete type 'Exiv2::XmpData'
+  119 |     TiffEncoder encoder(Exiv2::ExifData(), Exiv2::IptcData(), Exiv2::XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                                               ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:131:44: error: invalid use of incomplete type 'Exiv2::IptcData'
+  131 |     TiffEncoder encoder(Exiv2::ExifData(), Exiv2::IptcData(), Exiv2::XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                            ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:131:63: error: invalid use of incomplete type 'Exiv2::XmpData'
+  131 |     TiffEncoder encoder(Exiv2::ExifData(), Exiv2::IptcData(), Exiv2::XmpData(), nullptr, false, PrimaryGroups(), nullptr, nullptr);
+      |                                                               ^~~~~~~~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocation of incomplete type 'Exiv2::Value'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:59:22: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Value>' requested here
+   59 |         value = std::make_unique<Exiv2::Value>();
+      |                      ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:83:16: error: invalid application of 'sizeof' to an incomplete type 'Exiv2::Value'
+   83 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:361:4: note: in instantiation of member function 'std::default_delete<Exiv2::Value>::operator()' requested here
+  361 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:59:17: note: in instantiation of member function 'std::unique_ptr<Exiv2::Value>::~unique_ptr' requested here
+   59 |         value = std::make_unique<Exiv2::Value>();
+      |                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:1:
+In file included from /usr/include/gtest/gtest.h:62:
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEncoderTest_1680_EncodeBinaryArrayCallsEncodeOffsetEntry_1680_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:97:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEncoderTest_1680_EncodeBinaryArrayCallsEncodeOffsetEntry_1680_Test>::CreateTest' requested here
+   97 | TEST_F(TiffEncoderTest_1680, EncodeBinaryArrayCallsEncodeOffsetEntry_1680) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEncoderTest_1680_EncodeBinaryArrayWithNullDatum_1680_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:117:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEncoderTest_1680_EncodeBinaryArrayWithNullDatum_1680_Test>::CreateTest' requested here
+  117 | TEST_F(TiffEncoderTest_1680, EncodeBinaryArrayWithNullDatum_1680) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/usr/include/gtest/internal/gtest-internal.h:472:40: error: cannot initialize return object of type 'Test *' with an rvalue of type 'TiffEncoderTest_1680_EncodeBinaryArrayWithNullObject_1680_Test *'
+  472 |   Test* CreateTest() override { return new TestClass; }
+      |                                        ^~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp:129:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<TiffEncoderTest_1680_EncodeBinaryArrayWithNullObject_1680_Test>::CreateTest' requested here
+  129 | TEST_F(TiffEncoderTest_1680, EncodeBinaryArrayWithNullObject_1680) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+1 warning and 18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1680.dir/build.make:79: generated_build/CMakeFiles/test_1680.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1680.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:36203: generated_build/CMakeFiles/test_1680.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:36210: generated_build/CMakeFiles/test_1680.dir/rule] 오류 2
+gmake: *** [Makefile:11437: test_1680] 오류 2

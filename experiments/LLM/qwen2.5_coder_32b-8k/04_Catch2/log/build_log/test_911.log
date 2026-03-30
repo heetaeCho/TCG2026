@@ -1,0 +1,72 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_911.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6463:11: warning: 'FAIL' macro redefined [-Wmacro-redefined]
+ 6463 |   #define FAIL( ... ) do { \
+      |           ^
+/usr/include/gtest/gtest.h:1928:10: note: previous definition is here
+ 1928 | # define FAIL() GTEST_FAIL()
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp:5:
+/home/user/TCG2026/./TestProjects/Catch2/extras/catch_amalgamated.hpp:6468:11: warning: 'SUCCEED' macro redefined [-Wmacro-redefined]
+ 6468 |   #define SUCCEED( ... ) INTERNAL_CATCH_MSG( "SUCCEED", Catch::ResultWas::Ok, Catch::ResultDisposition::ContinueOnFailure, __VA_ARGS__ )
+      |           ^
+/usr/include/gtest/gtest.h:1937:10: note: previous definition is here
+ 1937 | # define SUCCEED() GTEST_SUCCEED()
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp:21:32: error: unknown class name 'Environment'; did you mean 'testing::Environment'?
+   21 | class EnvironmentMock : public Environment {
+      |                                ^~~~~~~~~~~
+      |                                testing::Environment
+/usr/include/gtest/gtest.h:1062:7: note: 'testing::Environment' declared here
+ 1062 | class Environment {
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp:25:5: error: only virtual member functions can be marked 'override'
+   25 |     MOCK_METHOD(void, someMethod, (), (override));
+      |     ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:233:1: note: expanded from here
+  233 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:146:34: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  146 |           GMOCK_PP_IF(_Override, override, ) GMOCK_PP_IF(_Final, final, ) {    \
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp:51:11: error: non-const lvalue reference to type 'Environment' cannot bind to a temporary of type 'Environment'
+   51 |     auto& first_env = measure_environment<std::chrono::steady_clock>();
+      |           ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp:57:11: error: non-const lvalue reference to type 'Environment' cannot bind to a temporary of type 'Environment'
+   57 |     auto& second_env = measure_environment<std::chrono::steady_clock>();
+      |           ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp:79:19: error: no member named 'get' in 'Catch::Benchmark::Environment'
+   79 |     EXPECT_NE(env.get(), nullptr);
+      |               ~~~ ^
+/usr/include/gtest/gtest.h:2046:57: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                         ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+2 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_911.dir/build.make:79: generated_build/CMakeFiles/test_911.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_911.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:16838: generated_build/CMakeFiles/test_911.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:16845: generated_build/CMakeFiles/test_911.dir/rule] 오류 2
+gmake: *** [Makefile:5454: test_911] 오류 2

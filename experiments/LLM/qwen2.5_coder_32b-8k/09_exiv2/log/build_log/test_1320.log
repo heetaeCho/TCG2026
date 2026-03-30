@@ -1,0 +1,62 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1320.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1320.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1320.cpp:23:28: error: assigning to 'IfdId' from incompatible type 'int'
+   23 |         groupInfo.ifdId_ = 0x8769; // Example IfdId value
+      |                            ^~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1320.cpp:41:27: error: invalid operands to binary expression ('GroupInfo' and 'int')
+   41 |     EXPECT_TRUE(groupInfo == 0x8769);
+      |                 ~~~~~~~~~ ^  ~~~~~~
+/usr/include/gtest/gtest.h:1982:50: note: expanded from macro 'EXPECT_TRUE'
+ 1982 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/include/gtest/gtest.h:1966:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1966 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:186:8: note: candidate function not viable: no known conversion from 'int' to 'IfdId' for 1st argument
+  186 |   bool operator==(IfdId ifdId) const;                 //!< Comparison operator for IFD id
+      |        ^          ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:187:8: note: candidate function not viable: no known conversion from 'int' to 'const GroupName' (aka 'const basic_string<char>') for 1st argument
+  187 |   bool operator==(const GroupName& groupName) const;  //!< Comparison operator for group name
+      |        ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1320.cpp:51:28: error: invalid operands to binary expression ('GroupInfo' and 'int')
+   51 |     EXPECT_FALSE(groupInfo == 0x8768);
+      |                  ~~~~~~~~~ ^  ~~~~~~
+/usr/include/gtest/gtest.h:1986:52: note: expanded from macro 'EXPECT_FALSE'
+ 1986 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/include/gtest/gtest.h:1969:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1969 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1502:34: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1502 |       ::testing::AssertionResult(expression)) \
+      |                                  ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:186:8: note: candidate function not viable: no known conversion from 'int' to 'IfdId' for 1st argument
+  186 |   bool operator==(IfdId ifdId) const;                 //!< Comparison operator for IFD id
+      |        ^          ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:187:8: note: candidate function not viable: no known conversion from 'int' to 'const GroupName' (aka 'const basic_string<char>') for 1st argument
+  187 |   bool operator==(const GroupName& groupName) const;  //!< Comparison operator for group name
+      |        ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1320.cpp:61:5: error: unknown type name 'GroupName'; did you mean 'Exiv2::GroupInfo::GroupName'?
+   61 |     GroupName groupName("Exif");
+      |     ^~~~~~~~~
+      |     Exiv2::GroupInfo::GroupName
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:185:9: note: 'Exiv2::GroupInfo::GroupName' declared here
+  185 |   using GroupName = std::string;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1320.cpp:73:5: error: unknown type name 'GroupName'; did you mean 'Exiv2::GroupInfo::GroupName'?
+   73 |     GroupName groupName("IFD0");
+      |     ^~~~~~~~~
+      |     Exiv2::GroupInfo::GroupName
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:185:9: note: 'Exiv2::GroupInfo::GroupName' declared here
+  185 |   using GroupName = std::string;
+      |         ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1320.dir/build.make:79: generated_build/CMakeFiles/test_1320.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1320.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:79893: generated_build/CMakeFiles/test_1320.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:79900: generated_build/CMakeFiles/test_1320.dir/rule] 오류 2
+gmake: *** [Makefile:28142: test_1320] 오류 2

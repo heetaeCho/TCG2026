@@ -1,0 +1,76 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_68.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:33:12: error: calling a private constructor of class 'Object'
+   33 |     Object obj(ObjType::objInt);
+      |            ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:143:24: error: no matching constructor for initialization of 'Array'
+  143 |     Array* array = new Array();
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Array.h:50:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   50 |     explicit Array(XRef *xrefA);
+      |              ^     ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Array.h:55:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   55 |     Array(const Array &) = delete;
+      |     ^     ~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:145:12: error: call to deleted constructor of 'Object'
+  145 |     Object obj(array);
+      |            ^   ~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:159:22: error: no matching constructor for initialization of 'Dict'
+  159 |     Dict* dict = new Dict();
+      |                      ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor not viable: requires single argument 'xrefA', but no arguments were provided
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^    ~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:63:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+   63 |     Dict(const Dict &) = delete;
+      |     ^    ~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor not viable: requires at least argument 'dictA', but no arguments were provided
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:161:12: error: call to deleted constructor of 'Object'
+  161 |     Object obj(dict);
+      |            ^   ~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Dict *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:223:5: error: cannot use 'try' with exceptions disabled
+  223 |     EXPECT_THROW(obj.getInt(), std::runtime_error); // Assuming some exception is thrown if type mismatch occurs
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:235:5: error: cannot use 'try' with exceptions disabled
+  235 |     EXPECT_THROW(obj.getReal(), std::runtime_error); // Assuming some exception is thrown if type mismatch occurs
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:247:5: error: cannot use 'try' with exceptions disabled
+  247 |     EXPECT_THROW(obj.getString(), std::runtime_error); // Assuming some exception is thrown if type mismatch occurs
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp:7:7: warning: 'ObjectTest_68' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class ObjectTest_68 : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_68.dir/build.make:79: generated_build/CMakeFiles/test_68.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_68.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:55338: generated_build/CMakeFiles/test_68.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:55345: generated_build/CMakeFiles/test_68.dir/rule] 오류 2
+gmake: *** [Makefile:18951: test_68] 오류 2

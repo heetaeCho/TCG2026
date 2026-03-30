@@ -1,0 +1,89 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_994.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:13:21: error: use of undeclared identifier 'MockCatalog'
+   13 |     std::unique_ptr<MockCatalog> mockCatalog;
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:23:28: error: unknown type name 'getPDFMajorVersion'
+   23 |         MOCK_CONST_METHOD0(getPDFMajorVersion, int());
+      |                            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:23:9: error: a type specifier is required for all declarations
+   23 |         MOCK_CONST_METHOD0(getPDFMajorVersion, int());
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:29:52: error: no viable conversion from 'std::nullptr_t' to 'Catalog'
+   29 |     PDFDocTest_994() : mockCatalog(new MockCatalog(nullptr)), pdfDoc(new PDFDoc()) {
+      |                                                    ^~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Catalog.h:119:5: note: candidate constructor not viable: no known conversion from 'std::nullptr_t' to 'const Catalog &' for 1st argument
+  119 |     Catalog(const Catalog &) = delete;
+      |     ^       ~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Catalog.h:114:14: note: explicit constructor is not a candidate
+  114 |     explicit Catalog(PDFDoc *docA);
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:29:74: error: calling a private constructor of class 'PDFDoc'
+   29 |     PDFDocTest_994() : mockCatalog(new MockCatalog(nullptr)), pdfDoc(new PDFDoc()) {
+      |                                                                          ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: declared private here
+  388 |     PDFDoc();
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:31:17: error: 'catalog' is a private member of 'PDFDoc'
+   31 |         pdfDoc->catalog = mockCatalog.get();
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:420:14: note: declared private here
+  420 |     Catalog *catalog = nullptr;
+      |              ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:41:31: error: use of undeclared identifier 'getPDFMajorVersion'
+   41 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(1));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:41:71: error: no member named 'Return' in namespace 'testing'
+   41 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(1));
+      |                                                              ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:51:13: error: 'headerPdfMajorVersion' is a private member of 'PDFDoc'
+   51 |     pdfDoc->headerPdfMajorVersion = 2;
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:408:9: note: declared private here
+  408 |     int headerPdfMajorVersion;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:53:31: error: use of undeclared identifier 'getPDFMajorVersion'
+   53 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(1));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:53:71: error: no member named 'Return' in namespace 'testing'
+   53 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(1));
+      |                                                              ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:63:13: error: 'headerPdfMajorVersion' is a private member of 'PDFDoc'
+   63 |     pdfDoc->headerPdfMajorVersion = 1;
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:408:9: note: declared private here
+  408 |     int headerPdfMajorVersion;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:65:31: error: use of undeclared identifier 'getPDFMajorVersion'
+   65 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(2));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:65:71: error: no member named 'Return' in namespace 'testing'
+   65 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(2));
+      |                                                              ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:75:13: error: 'headerPdfMajorVersion' is a private member of 'PDFDoc'
+   75 |     pdfDoc->headerPdfMajorVersion = 1;
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:408:9: note: declared private here
+  408 |     int headerPdfMajorVersion;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:77:31: error: use of undeclared identifier 'getPDFMajorVersion'
+   77 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(1));
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:77:71: error: no member named 'Return' in namespace 'testing'
+   77 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(1));
+      |                                                              ~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:87:13: error: 'headerPdfMajorVersion' is a private member of 'PDFDoc'
+   87 |     pdfDoc->headerPdfMajorVersion = -1;
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:408:9: note: declared private here
+  408 |     int headerPdfMajorVersion;
+      |         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp:89:31: error: use of undeclared identifier 'getPDFMajorVersion'
+   89 |     EXPECT_CALL(*mockCatalog, getPDFMajorVersion()).WillOnce(testing::Return(1));
+      |                               ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_994.dir/build.make:79: generated_build/CMakeFiles/test_994.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_994.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:78666: generated_build/CMakeFiles/test_994.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:78673: generated_build/CMakeFiles/test_994.dir/rule] 오류 2
+gmake: *** [Makefile:28428: test_994] 오류 2

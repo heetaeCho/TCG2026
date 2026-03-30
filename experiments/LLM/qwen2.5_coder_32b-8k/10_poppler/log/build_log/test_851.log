@@ -1,0 +1,57 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_851.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:21:24: error: allocation of incomplete type 'PDFRectangle'
+   21 |         mockRect = new PDFRectangle(); // Using a simple allocation for demonstration, assuming no specific setup is required.
+      |                        ^~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:29:9: warning: deleting pointer to incomplete type 'PDFRectangle' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   29 |         delete mockRect;
+      |         ^      ~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:82:7: note: forward declaration of 'PDFRectangle'
+   82 | class PDFRectangle;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:41:34: error: use of undeclared identifier 'caretSymbolNone'
+   41 |     EXPECT_EQ(annot.getSymbol(), caretSymbolNone); // Assuming caretSymbolNone is the default symbol.
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:51:21: error: use of undeclared identifier 'caretSymbolCheck'
+   51 |     annot.setSymbol(caretSymbolCheck);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:53:34: error: use of undeclared identifier 'caretSymbolCheck'
+   53 |     EXPECT_EQ(annot.getSymbol(), caretSymbolCheck);
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:63:33: error: unknown type name 'AnnotCaretSymbol'; did you mean 'AnnotCaret::AnnotCaretSymbol'?
+   63 |     annot.setSymbol(static_cast<AnnotCaretSymbol>(-1)); // Assuming -1 is out of bounds for symbol.
+      |                                 ^~~~~~~~~~~~~~~~
+      |                                 AnnotCaret::AnnotCaretSymbol
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1337:10: note: 'AnnotCaret::AnnotCaretSymbol' declared here
+ 1337 |     enum AnnotCaretSymbol
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:65:46: error: unknown type name 'AnnotCaretSymbol'; did you mean 'AnnotCaret::AnnotCaretSymbol'?
+   65 |     EXPECT_NE(annot.getSymbol(), static_cast<AnnotCaretSymbol>(-1));
+      |                                              ^~~~~~~~~~~~~~~~
+      |                                              AnnotCaret::AnnotCaretSymbol
+/usr/include/gtest/gtest.h:2046:63: note: expanded from macro 'EXPECT_NE'
+ 2046 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                                               ^
+/usr/include/gtest/gtest_pred_impl.h:164:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/include/gtest/gtest_pred_impl.h:149:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                           ^
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1337:10: note: 'AnnotCaret::AnnotCaretSymbol' declared here
+ 1337 |     enum AnnotCaretSymbol
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp:7:7: warning: 'AnnotCaretTest_851' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class AnnotCaretTest_851 : public ::testing::Test {
+      |       ^
+2 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_851.dir/build.make:79: generated_build/CMakeFiles/test_851.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_851.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:42442: generated_build/CMakeFiles/test_851.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:42449: generated_build/CMakeFiles/test_851.dir/rule] 오류 2
+gmake: *** [Makefile:13712: test_851] 오류 2

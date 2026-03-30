@@ -1,0 +1,66 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_479.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:13:31: error: expected class name
+   13 | class ComparatorMock : public Comparator {
+      |                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:17:18: error: unknown type name 'Compare'
+   17 |     MOCK_METHOD2(Compare, int(const Key& a, const Key& b));
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:17:37: error: unknown type name 'Key'
+   17 |     MOCK_METHOD2(Compare, int(const Key& a, const Key& b));
+      |                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:17:51: error: unknown type name 'Key'
+   17 |     MOCK_METHOD2(Compare, int(const Key& a, const Key& b));
+      |                                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:17:5: error: a type specifier is required for all declarations
+   17 |     MOCK_METHOD2(Compare, int(const Key& a, const Key& b));
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:19:24: error: unknown type name 'Name'
+   19 |     MOCK_CONST_METHOD1(Name, const char*());
+      |                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:19:5: error: a type specifier is required for all declarations
+   19 |     MOCK_CONST_METHOD1(Name, const char*());
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:97:21: error: use of undeclared identifier 'INT_MIN'
+   97 |     skiplist.Insert(INT_MIN);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:99:35: error: use of undeclared identifier 'INT_MIN'
+   99 |     EXPECT_TRUE(skiplist.Contains(INT_MIN));
+      |                                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:107:21: error: use of undeclared identifier 'INT_MAX'
+  107 |     skiplist.Insert(INT_MAX);
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:109:35: error: use of undeclared identifier 'INT_MAX'
+  109 |     EXPECT_TRUE(skiplist.Contains(INT_MAX));
+      |                                   ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:255:29: error: type 'const leveldb::ComparatorMock' does not provide a call operator
+  255 |   return (n != nullptr) && (compare_(n->key, key) < 0);
+      |                             ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:266:9: note: in instantiation of member function 'leveldb::SkipList<int, leveldb::ComparatorMock>::KeyIsAfterNode' requested here
+  266 |     if (KeyIsAfterNode(key, next)) {
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:339:13: note: in instantiation of member function 'leveldb::SkipList<int, leveldb::ComparatorMock>::FindGreaterOrEqual' requested here
+  339 |   Node* x = FindGreaterOrEqual(key, prev);
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:45:14: note: in instantiation of member function 'leveldb::SkipList<int, leveldb::ComparatorMock>::Insert' requested here
+   45 |     skiplist.Insert(10);
+      |              ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:108:58: error: type 'const leveldb::ComparatorMock' does not provide a call operator
+  108 |   bool Equal(const Key& a, const Key& b) const { return (compare_(a, b) == 0); }
+      |                                                          ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:342:27: note: in instantiation of member function 'leveldb::SkipList<int, leveldb::ComparatorMock>::Equal' requested here
+  342 |   assert(x == nullptr || !Equal(key, x->key));
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp:45:14: note: in instantiation of member function 'leveldb::SkipList<int, leveldb::ComparatorMock>::Insert' requested here
+   45 |     skiplist.Insert(10);
+      |              ^
+13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_479.dir/build.make:76: generated_build/CMakeFiles/test_479.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_479.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:10360: generated_build/CMakeFiles/test_479.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:10367: generated_build/CMakeFiles/test_479.dir/rule] 오류 2
+gmake: *** [Makefile:4300: test_479] 오류 2

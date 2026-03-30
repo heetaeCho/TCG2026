@@ -1,0 +1,73 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_859.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:29:19: error: allocation of incomplete type 'PDFDoc'
+   29 |         doc = new PDFDoc();
+      |                   ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:31:21: error: allocation of incomplete type 'FormField'
+   31 |         field = new FormField(doc, &dictObject);
+      |                     ^~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:77:7: note: forward declaration of 'FormField'
+   77 | class FormField;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:33:44: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   33 |         annotWidget = new AnnotWidget(doc, move(dictObject), &obj, field);
+      |                                            ^
+      |                                            std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:33:27: error: no matching constructor for initialization of 'AnnotWidget'
+   33 |         annotWidget = new AnnotWidget(doc, move(dictObject), &obj, field);
+      |                           ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1465:5: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<Object &>::type' (aka 'Object') to 'Object *' for 2nd argument
+ 1465 |     AnnotWidget(PDFDoc *docA, Object *dictObject, Object *obj, FormField *fieldA);
+      |     ^                         ~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1464:5: note: candidate constructor not viable: requires 3 arguments, but 4 were provided
+ 1464 |     AnnotWidget(PDFDoc *docA, Object &&dictObject, const Object *obj);
+      |     ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:1453:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+ 1453 | class POPPLER_PRIVATE_EXPORT AnnotWidget : public Annot
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:43:9: warning: deleting pointer to incomplete type 'FormField' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   43 |         delete field;
+      |         ^      ~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:77:7: note: forward declaration of 'FormField'
+   77 | class FormField;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:45:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   45 |         delete doc;
+      |         ^      ~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:67:35: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   67 |     annotWidget->setAppearCharacs(move(newAppearCharacs));
+      |                                   ^
+      |                                   std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:81:35: warning: unqualified call to 'std::move' [-Wunqualified-std-cast-call]
+   81 |     annotWidget->setAppearCharacs(move(newAppearCharacs));
+      |                                   ^
+      |                                   std::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:11:7: warning: 'AnnotWidgetTest_859' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class AnnotWidgetTest_859 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'AnnotAppearanceCharacs'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp:63:29: note: in instantiation of function template specialization 'std::make_unique<AnnotAppearanceCharacs>' requested here
+   63 |     auto newAppearCharacs = make_unique<AnnotAppearanceCharacs>();
+      |                             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:511:14: note: candidate constructor not viable: requires single argument 'dict', but no arguments were provided
+  511 |     explicit AnnotAppearanceCharacs(Dict *dict);
+      |              ^                      ~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:514:5: note: candidate constructor not viable: requires 1 argument, but 0 were provided
+  514 |     AnnotAppearanceCharacs(const AnnotAppearanceCharacs &) = delete;
+      |     ^                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_859.dir/build.make:79: generated_build/CMakeFiles/test_859.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_859.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:93706: generated_build/CMakeFiles/test_859.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:93713: generated_build/CMakeFiles/test_859.dir/rule] 오류 2
+gmake: *** [Makefile:34538: test_859] 오류 2

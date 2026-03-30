@@ -1,0 +1,40 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1206.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp:117:18: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  117 |     EXPECT_THROW(previewImage->writeFile(invalidPath), Error);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~
+/usr/include/gtest/gtest.h:1950:21: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1422:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1422 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp:117:56: error: unknown type name 'Error'
+  117 |     EXPECT_THROW(previewImage->writeFile(invalidPath), Error);
+      |                                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp:117:56: error: use of undeclared identifier 'Error'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp:127:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  127 |     previewImage->writeFile(testFilePath);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~ ~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: calling a private constructor of class 'Exiv2::PreviewImage'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp:31:29: note: in instantiation of function template specialization 'std::make_unique<Exiv2::PreviewImage, Exiv2::PreviewProperties, Exiv2::DataBuf>' requested here
+   31 |         previewImage = std::make_unique<PreviewImage>(
+      |                             ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/preview.hpp:116:3: note: declared private here
+  116 |   PreviewImage(PreviewProperties properties, DataBuf&& data);
+      |   ^
+2 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1206.dir/build.make:79: generated_build/CMakeFiles/test_1206.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1206.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:68299: generated_build/CMakeFiles/test_1206.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:68306: generated_build/CMakeFiles/test_1206.dir/rule] 오류 2
+gmake: *** [Makefile:23709: test_1206] 오류 2

@@ -1,0 +1,31 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_215.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp:51:31: error: must explicitly qualify name of member function when taking its address
+   51 |         filter_policy.name_ = &NameFunc;
+      |                               ^~~~~~~~~
+      |                                leveldb_filterpolicy_t_test::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp:51:31: error: assigning to 'const char *(*)(void *)' from incompatible type 'char *(leveldb_filterpolicy_t_test::*)(void *, const char *const *, const size_t *, int, size_t *)': different number of parameters (1 vs 5)
+   51 |         filter_policy.name_ = &NameFunc;
+      |                               ^~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp:53:33: error: must explicitly qualify name of member function when taking its address
+   53 |         filter_policy.create_ = &CreateFilterFunc;
+      |                                 ^~~~~~~~~~~~~~~~~
+      |                                  leveldb_filterpolicy_t_test::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp:53:33: error: assigning to 'char *(*)(void *, const char *const *, const size_t *, int, size_t *)' (aka 'char *(*)(void *, const char *const *, const unsigned long *, int, unsigned long *)') from incompatible type 'void (leveldb_filterpolicy_t_test::*)(const Slice *, int, std::string *) const': different number of parameters (5 vs 3)
+   53 |         filter_policy.create_ = &CreateFilterFunc;
+      |                                 ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp:55:36: error: must explicitly qualify name of member function when taking its address
+   55 |         filter_policy.key_match_ = &KeyMatchFunc;
+      |                                    ^~~~~~~~~~~~~
+      |                                     leveldb_filterpolicy_t_test::
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp:55:36: error: assigning to 'uint8_t (*)(void *, const char *, size_t, const char *, size_t)' (aka 'unsigned char (*)(void *, const char *, unsigned long, const char *, unsigned long)') from incompatible type 'uint8_t (leveldb_filterpolicy_t_test::*)(void *, const char *, size_t, const char *, size_t)'
+   55 |         filter_policy.key_match_ = &KeyMatchFunc;
+      |                                    ^~~~~~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_215.dir/build.make:76: generated_build/CMakeFiles/test_215.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_215.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:11549: generated_build/CMakeFiles/test_215.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:11556: generated_build/CMakeFiles/test_215.dir/rule] 오류 2
+gmake: *** [Makefile:4833: test_215] 오류 2

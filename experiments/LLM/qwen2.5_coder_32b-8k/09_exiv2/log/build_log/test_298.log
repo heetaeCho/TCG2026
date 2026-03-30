@@ -1,0 +1,57 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_298.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:31:25: error: allocating an object of abstract class type 'TiffEntryBase'
+   31 |         tiffEntry = new TiffEntryBase(0x0112, ifdExif, ttLong);
+      |                         ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:310:16: note: unimplemented pure virtual method 'doAccept' in 'TiffEntryBase'
+  310 |   virtual void doAccept(TiffVisitor& visitor) = 0;
+      |                ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:319:40: note: unimplemented pure virtual method 'doClone' in 'TiffEntryBase'
+  319 |   [[nodiscard]] virtual TiffComponent* doClone() const = 0;
+      |                                        ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:495:16: note: unimplemented pure virtual method 'doEncode' in 'TiffEntryBase'
+  495 |   virtual void doEncode(TiffEncoder& encoder, const Exifdatum* datum) = 0;
+      |                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:53:26: error: 'storage' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   53 |     EXPECT_EQ(tiffEntry->storage(), dataBuffer);
+      |                          ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:540:42: note: declared protected here
+  540 |   [[nodiscard]] std::shared_ptr<DataBuf> storage() const {
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:67:26: error: 'storage' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   67 |     EXPECT_EQ(tiffEntry->storage(), nullptr);
+      |                          ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:540:42: note: declared protected here
+  540 |   [[nodiscard]] std::shared_ptr<DataBuf> storage() const {
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:81:26: error: 'storage' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   81 |     EXPECT_EQ(tiffEntry->storage(), emptyBuffer);
+      |                          ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:540:42: note: declared protected here
+  540 |   [[nodiscard]] std::shared_ptr<DataBuf> storage() const {
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:97:26: error: 'storage' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+   97 |     EXPECT_EQ(tiffEntry->storage(), zeroSizeBuffer);
+      |                          ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:540:42: note: declared protected here
+  540 |   [[nodiscard]] std::shared_ptr<DataBuf> storage() const {
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:113:26: error: 'storage' is a protected member of 'Exiv2::Internal::TiffEntryBase'
+  113 |     EXPECT_EQ(tiffEntry->storage(), nonZeroSizeBuffer);
+      |                          ^
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffcomposite_int.hpp:540:42: note: declared protected here
+  540 |   [[nodiscard]] std::shared_ptr<DataBuf> storage() const {
+      |                                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:31:47: error: use of undeclared identifier 'ifdExif'
+   31 |         tiffEntry = new TiffEntryBase(0x0112, ifdExif, ttLong);
+      |                                               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp:31:56: error: use of undeclared identifier 'ttLong'
+   31 |         tiffEntry = new TiffEntryBase(0x0112, ifdExif, ttLong);
+      |                                                        ^
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_298.dir/build.make:79: generated_build/CMakeFiles/test_298.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_298.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:54869: generated_build/CMakeFiles/test_298.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:54876: generated_build/CMakeFiles/test_298.dir/rule] 오류 2
+gmake: *** [Makefile:18574: test_298] 오류 2

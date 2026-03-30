@@ -1,0 +1,47 @@
+[  0%] Built target gtest
+[ 20%] Built target gtest_main
+[ 80%] Built target leveldb
+[ 80%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_183.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp:25:35: error: calling a private constructor of class 'leveldb::Version'
+   25 |         mock_input_version_ = new Version(nullptr);
+      |                                   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:123:12: note: declared private here
+  123 |   explicit Version(VersionSet* vset)
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp:27:27: error: calling a private constructor of class 'leveldb::Compaction'
+   27 |         compaction_ = new Compaction(nullptr, 0);
+      |                           ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:364:3: note: declared private here
+  364 |   Compaction(const Options* options, int level);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp:29:22: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   29 |         compaction_->input_version_ = mock_input_version_;
+      |                      ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp:51:28: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   51 |     EXPECT_EQ(compaction_->input_version_, nullptr);
+      |                            ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp:59:39: error: use of undeclared identifier 'Unref'
+   59 |     EXPECT_CALL(*mock_input_version_, Unref())
+      |                                       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp:73:18: error: 'input_version_' is a private member of 'leveldb::Compaction'
+   73 |     compaction_->input_version_ = nullptr;
+      |                  ^
+/home/user/TCG2026/TestProjects/leveldb/./db/version_set.h:368:12: note: declared private here
+  368 |   Version* input_version_;
+      |            ^
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_183.dir/build.make:76: generated_build/CMakeFiles/test_183.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_183.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:7373: generated_build/CMakeFiles/test_183.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:7380: generated_build/CMakeFiles/test_183.dir/rule] 오류 2
+gmake: *** [Makefile:2961: test_183] 오류 2

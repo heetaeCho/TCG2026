@@ -1,0 +1,192 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_1015.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:51:8: error: expected class name
+   51 | TEST_F(IRegistryHubTest_1015, GetTestCaseRegistry_ReturnsValidInstance_1015) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:51:1: error: only virtual member functions can be marked 'override'
+   51 | TEST_F(IRegistryHubTest_1015, GetTestCaseRegistry_ReturnsValidInstance_1015) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1536:59: note: expanded from macro 'GTEST_TEST_'
+ 1536 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default; \
+      |                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:51:1: error: only virtual member functions can be marked 'override'
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1543:21: note: expanded from macro 'GTEST_TEST_'
+ 1543 |     void TestBody() override;                                                 \
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:51:8: error: use of undeclared identifier 'IRegistryHubTest_1015'
+   51 | TEST_F(IRegistryHubTest_1015, GetTestCaseRegistry_ReturnsValidInstance_1015) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:51:8: error: use of undeclared identifier 'IRegistryHubTest_1015'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:51:8: error: use of undeclared identifier 'IRegistryHubTest_1015'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:53:22: error: variable type 'IRegistryHubMock' is an abstract class
+   53 |     IRegistryHubMock registryHubMock;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:38:41: note: unimplemented pure virtual method 'getReporterRegistry' in 'IRegistryHubMock'
+   38 |         virtual ReporterRegistry const& getReporterRegistry() const = 0;
+      |                                         ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:40:42: note: unimplemented pure virtual method 'getTagAliasRegistry' in 'IRegistryHubMock'
+   40 |         virtual ITagAliasRegistry const& getTagAliasRegistry() const = 0;
+      |                                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:41:53: note: unimplemented pure virtual method 'getExceptionTranslatorRegistry' in 'IRegistryHubMock'
+   41 |         virtual IExceptionTranslatorRegistry const& getExceptionTranslatorRegistry() const = 0;
+      |                                                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:44:49: note: unimplemented pure virtual method 'getStartupExceptionRegistry' in 'IRegistryHubMock'
+   44 |         virtual StartupExceptionRegistry const& getStartupExceptionRegistry() const = 0;
+      |                                                 ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:55:85: error: allocating an object of abstract class type 'ITestCaseRegistryMock'
+   55 |     EXPECT_CALL(registryHubMock, getTestCaseRegistry()).WillOnce(testing::ReturnRef(ITestCaseRegistryMock()));
+      |                                                                                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_testcase.hpp:23:52: note: unimplemented pure virtual method 'getAllInfos' in 'ITestCaseRegistryMock'
+   23 |         virtual std::vector<TestCaseInfo* > const& getAllInfos() const = 0;
+      |                                                    ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_testcase.hpp:24:52: note: unimplemented pure virtual method 'getAllTests' in 'ITestCaseRegistryMock'
+   24 |         virtual std::vector<TestCaseHandle> const& getAllTests() const = 0;
+      |                                                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:55:66: error: call to deleted function 'ReturnRef'
+   55 |     EXPECT_CALL(registryHubMock, getTestCaseRegistry()).WillOnce(testing::ReturnRef(ITestCaseRegistryMock()));
+      |                                                                  ^~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-actions.h:1266:30: note: candidate function [with R = ITestCaseRegistryMock, $1 = nullptr] has been explicitly deleted
+ 1266 | internal::ReturnRefAction<R> ReturnRef(R&&) = delete;
+      |                              ^
+/usr/include/gmock/gmock-actions.h:1260:37: note: candidate function [with R = ITestCaseRegistryMock] not viable: expects an lvalue for 1st argument
+ 1260 | inline internal::ReturnRefAction<R> ReturnRef(R& x) {  // NOLINT
+      |                                     ^         ~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:65:8: error: expected class name
+   65 | TEST_F(ITestCaseRegistryTest_1015, GetAllTestsSorted_ReturnsEmptyVectorForNoTests_1015) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:65:1: error: only virtual member functions can be marked 'override'
+   65 | TEST_F(ITestCaseRegistryTest_1015, GetAllTestsSorted_ReturnsEmptyVectorForNoTests_1015) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1536:59: note: expanded from macro 'GTEST_TEST_'
+ 1536 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default; \
+      |                                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:65:1: error: only virtual member functions can be marked 'override'
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1543:21: note: expanded from macro 'GTEST_TEST_'
+ 1543 |     void TestBody() override;                                                 \
+      |                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:65:8: error: use of undeclared identifier 'ITestCaseRegistryTest_1015'
+   65 | TEST_F(ITestCaseRegistryTest_1015, GetAllTestsSorted_ReturnsEmptyVectorForNoTests_1015) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:65:8: error: use of undeclared identifier 'ITestCaseRegistryTest_1015'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:65:8: error: use of undeclared identifier 'ITestCaseRegistryTest_1015'
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:67:17: error: variable type 'IConfigMock' is an abstract class
+   67 |     IConfigMock configMock;
+      |                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:71:22: note: unimplemented pure virtual method 'allowThrows' in 'IConfigMock'
+   71 |         virtual bool allowThrows() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:72:27: note: unimplemented pure virtual method 'name' in 'IConfigMock'
+   72 |         virtual StringRef name() const = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:73:22: note: unimplemented pure virtual method 'includeSuccessfulResults' in 'IConfigMock'
+   73 |         virtual bool includeSuccessfulResults() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:74:22: note: unimplemented pure virtual method 'shouldDebugBreak' in 'IConfigMock'
+   74 |         virtual bool shouldDebugBreak() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:75:22: note: unimplemented pure virtual method 'warnAboutMissingAssertions' in 'IConfigMock'
+   75 |         virtual bool warnAboutMissingAssertions() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:76:22: note: unimplemented pure virtual method 'warnAboutUnmatchedTestSpecs' in 'IConfigMock'
+   76 |         virtual bool warnAboutUnmatchedTestSpecs() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:77:22: note: unimplemented pure virtual method 'warnAboutInfiniteGenerators' in 'IConfigMock'
+   77 |         virtual bool warnAboutInfiniteGenerators() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:78:22: note: unimplemented pure virtual method 'zeroTestsCountAsSuccess' in 'IConfigMock'
+   78 |         virtual bool zeroTestsCountAsSuccess() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:79:21: note: unimplemented pure virtual method 'abortAfter' in 'IConfigMock'
+   79 |         virtual int abortAfter() const = 0;
+      |                     ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:80:22: note: unimplemented pure virtual method 'showInvisibles' in 'IConfigMock'
+   80 |         virtual bool showInvisibles() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:81:31: note: unimplemented pure virtual method 'showDurations' in 'IConfigMock'
+   81 |         virtual ShowDurations showDurations() const = 0;
+      |                               ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:82:24: note: unimplemented pure virtual method 'minDuration' in 'IConfigMock'
+   82 |         virtual double minDuration() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:84:22: note: unimplemented pure virtual method 'hasTestFilters' in 'IConfigMock'
+   84 |         virtual bool hasTestFilters() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:85:49: note: unimplemented pure virtual method 'getTestsOrTags' in 'IConfigMock'
+   85 |         virtual std::vector<std::string> const& getTestsOrTags() const = 0;
+      |                                                 ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:86:30: note: unimplemented pure virtual method 'runOrder' in 'IConfigMock'
+   86 |         virtual TestRunOrder runOrder() const = 0;
+      |                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:87:26: note: unimplemented pure virtual method 'rngSeed' in 'IConfigMock'
+   87 |         virtual uint32_t rngSeed() const = 0;
+      |                          ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:88:30: note: unimplemented pure virtual method 'shardCount' in 'IConfigMock'
+   88 |         virtual unsigned int shardCount() const = 0;
+      |                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:89:30: note: unimplemented pure virtual method 'shardIndex' in 'IConfigMock'
+   89 |         virtual unsigned int shardIndex() const = 0;
+      |                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:90:28: note: unimplemented pure virtual method 'defaultColourMode' in 'IConfigMock'
+   90 |         virtual ColourMode defaultColourMode() const = 0;
+      |                            ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:91:48: note: unimplemented pure virtual method 'getPathFilters' in 'IConfigMock'
+   91 |         virtual std::vector<PathFilter> const& getPathFilters() const = 0;
+      |                                                ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:92:22: note: unimplemented pure virtual method 'useNewFilterBehaviour' in 'IConfigMock'
+   92 |         virtual bool useNewFilterBehaviour() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:94:27: note: unimplemented pure virtual method 'verbosity' in 'IConfigMock'
+   94 |         virtual Verbosity verbosity() const = 0;
+      |                           ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:96:22: note: unimplemented pure virtual method 'skipBenchmarks' in 'IConfigMock'
+   96 |         virtual bool skipBenchmarks() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:97:22: note: unimplemented pure virtual method 'benchmarkNoAnalysis' in 'IConfigMock'
+   97 |         virtual bool benchmarkNoAnalysis() const = 0;
+      |                      ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:98:30: note: unimplemented pure virtual method 'benchmarkSamples' in 'IConfigMock'
+   98 |         virtual unsigned int benchmarkSamples() const = 0;
+      |                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:99:24: note: unimplemented pure virtual method 'benchmarkConfidenceInterval' in 'IConfigMock'
+   99 |         virtual double benchmarkConfidenceInterval() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:100:30: note: unimplemented pure virtual method 'benchmarkResamples' in 'IConfigMock'
+  100 |         virtual unsigned int benchmarkResamples() const = 0;
+      |                              ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_config.hpp:101:43: note: unimplemented pure virtual method 'benchmarkWarmupTime' in 'IConfigMock'
+  101 |         virtual std::chrono::milliseconds benchmarkWarmupTime() const = 0;
+      |                                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:69:27: error: variable type 'ITestCaseRegistryMock' is an abstract class
+   69 |     ITestCaseRegistryMock testCaseRegistryMock;
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:85:8: error: expected class name
+   85 | TEST_F(ITestCaseRegistryTest_1015, GetAllTestsSorted_ReturnsNonEmptyVectorForSomeTests_1015) {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp:85:1: error: only virtual member functions can be marked 'override'
+   85 | TEST_F(ITestCaseRegistryTest_1015, GetAllTestsSorted_ReturnsNonEmptyVectorForSomeTests_1015) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1536:59: note: expanded from macro 'GTEST_TEST_'
+ 1536 |     ~GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)() override = default; \
+      |                                                           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1015.dir/build.make:79: generated_build/CMakeFiles/test_1015.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_1015.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:12977: generated_build/CMakeFiles/test_1015.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:12984: generated_build/CMakeFiles/test_1015.dir/rule] 오류 2
+gmake: *** [Makefile:3933: test_1015] 오류 2

@@ -1,0 +1,34 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_197.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_197.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_197.cpp:15:7: warning: 'EOFStreamTest_197' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class EOFStreamTest_197 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_197.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: allocating an object of abstract class type 'OwnedFilterStream'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_197.cpp:27:24: note: in instantiation of function template specialization 'std::make_unique<OwnedFilterStream, std::nullptr_t>' requested here
+   27 |     auto stream = std::make_unique<OwnedFilterStream>(nullptr); // Mock or dummy OwnedFilterStream
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'OwnedFilterStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'OwnedFilterStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:207:17: note: unimplemented pure virtual method 'getChar' in 'OwnedFilterStream'
+  207 |     virtual int getChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:210:17: note: unimplemented pure virtual method 'lookChar' in 'OwnedFilterStream'
+  210 |     virtual int lookChar() = 0;
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'OwnedFilterStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_197.dir/build.make:79: generated_build/CMakeFiles/test_197.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_197.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:57994: generated_build/CMakeFiles/test_197.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:58001: generated_build/CMakeFiles/test_197.dir/rule] 오류 2
+gmake: *** [Makefile:20030: test_197] 오류 2

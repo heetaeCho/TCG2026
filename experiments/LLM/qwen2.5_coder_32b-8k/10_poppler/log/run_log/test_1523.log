@@ -1,0 +1,83 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 16 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 16 tests from DecodeUtf8Test_1523
+[ RUN      ] DecodeUtf8Test_1523.SingleByteAsciiCharacter_1523
+[       OK ] DecodeUtf8Test_1523.SingleByteAsciiCharacter_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.SingleByteNonAsciiCharacter_1523
+[       OK ] DecodeUtf8Test_1523.SingleByteNonAsciiCharacter_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.TwoByteCharacterStart_1523
+[       OK ] DecodeUtf8Test_1523.TwoByteCharacterStart_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.TwoByteCharacterContinuation_1523
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1523.cpp:63: Failure
+Expected equality of these values:
+  decodeUtf8(&state, &codep, byte)
+    Which is: 12
+  UTF8_ACCEPT
+    Which is: 0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1523.cpp:65: Failure
+Expected equality of these values:
+  codep
+    Which is: 41
+  169U
+    Which is: 169
+[  FAILED  ] DecodeUtf8Test_1523.TwoByteCharacterContinuation_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.ThreeByteCharacterStart_1523
+[       OK ] DecodeUtf8Test_1523.ThreeByteCharacterStart_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.ThreeByteCharacterContinuation_1523
+[       OK ] DecodeUtf8Test_1523.ThreeByteCharacterContinuation_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.ThreeByteCharacterFinalContinuation_1523
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1523.cpp:107: Failure
+Expected equality of these values:
+  decodeUtf8(&state, &codep, byte)
+    Which is: 12
+  UTF8_ACCEPT
+    Which is: 0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1523.cpp:109: Failure
+Expected equality of these values:
+  codep
+    Which is: 159773
+  8364U
+    Which is: 8364
+[  FAILED  ] DecodeUtf8Test_1523.ThreeByteCharacterFinalContinuation_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.FourByteCharacterStart_1523
+[       OK ] DecodeUtf8Test_1523.FourByteCharacterStart_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.FourByteCharacterContinuation_1523
+[       OK ] DecodeUtf8Test_1523.FourByteCharacterContinuation_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.FourByteCharacterSecondContinuation_1523
+[       OK ] DecodeUtf8Test_1523.FourByteCharacterSecondContinuation_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.FourByteCharacterFinalContinuation_1523
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1523.cpp:165: Failure
+Expected equality of these values:
+  decodeUtf8(&state, &codep, byte)
+    Which is: 12
+  UTF8_ACCEPT
+    Which is: 0
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1523.cpp:167: Failure
+Expected equality of these values:
+  codep
+    Which is: 41836544
+  128512U
+    Which is: 128512
+[  FAILED  ] DecodeUtf8Test_1523.FourByteCharacterFinalContinuation_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.InvalidStartByte_1523
+[       OK ] DecodeUtf8Test_1523.InvalidStartByte_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.InvalidContinuationByte_1523
+[       OK ] DecodeUtf8Test_1523.InvalidContinuationByte_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.OverlongEncoding_1523
+[       OK ] DecodeUtf8Test_1523.OverlongEncoding_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.OverlongContinuationByte_1523
+[       OK ] DecodeUtf8Test_1523.OverlongContinuationByte_1523 (0 ms)
+[ RUN      ] DecodeUtf8Test_1523.OutOfRangeCharacter_1523
+[       OK ] DecodeUtf8Test_1523.OutOfRangeCharacter_1523 (0 ms)
+[----------] 16 tests from DecodeUtf8Test_1523 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 13 tests.
+[  FAILED  ] 3 tests, listed below:
+[  FAILED  ] DecodeUtf8Test_1523.TwoByteCharacterContinuation_1523
+[  FAILED  ] DecodeUtf8Test_1523.ThreeByteCharacterFinalContinuation_1523
+[  FAILED  ] DecodeUtf8Test_1523.FourByteCharacterFinalContinuation_1523
+
+ 3 FAILED TESTS

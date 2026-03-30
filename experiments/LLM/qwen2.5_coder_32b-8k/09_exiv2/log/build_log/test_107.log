@@ -1,0 +1,428 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_107.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:13:8: error: definition of type 'TiffGroupKey' conflicts with type alias of the same name
+   13 | struct TiffGroupKey {
+      |        ^
+/home/user/TCG2026/TestProjects/exiv2/src/tiffimage_int.hpp:148:7: note: 'TiffGroupKey' declared here
+  148 | using TiffGroupKey = std::pair<uint32_t, IfdId>;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:35:18: error: no matching constructor for initialization of 'TiffGroupKey' (aka 'pair<unsigned int, Exiv2::IfdId>')
+   35 |     TiffGroupKey key = {0x12345678, 0x9ABCDEF0};
+      |                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:322:18: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  322 |        constexpr pair(_U1&& __x, const _T2& __y)
+      |                  ^               ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:266:17: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  266 |       constexpr pair(const _T1& __a, const _T2& __b)
+      |                 ^                    ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:276:26: note: candidate template ignored: requirement '!_PCC<true, unsigned int, Exiv2::IfdId>::_ImplicitlyConvertiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = Exiv2::IfdId]
+  276 |       explicit constexpr pair(const _T1& __a, const _T2& __b)
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:329:27: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveCopyPair()' was not satisfied [with _U1 = int]
+  329 |        explicit constexpr pair(_U1&& __x, const _T2& __y)
+      |                           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:336:18: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  336 |        constexpr pair(const _T1& __x, _U2&& __y)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:343:17: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  343 |        explicit pair(const _T1& __x, _U2&& __y)
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:352:12: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = unsigned int]
+  352 |         constexpr pair(_U1&& __x, _U2&& __y)
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:361:21: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = unsigned int]
+  361 |         explicit constexpr pair(_U1&& __x, _U2&& __y)
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:300:19: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  300 |         constexpr pair(const pair<_U1, _U2>& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:309:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  309 |         explicit constexpr pair(const pair<_U1, _U2>& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:314:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  314 |       constexpr pair(const pair&) = default;    ///< Copy constructor
+      |                 ^    ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:315:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  315 |       constexpr pair(pair&&) = default;         ///< Move constructor
+      |                 ^    ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:371:12: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  371 |         constexpr pair(pair<_U1, _U2>&& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:381:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  381 |         explicit constexpr pair(pair<_U1, _U2>&& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:387:9: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  387 |         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:232:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  232 |       _GLIBCXX_CONSTEXPR pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:245:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  245 |       explicit constexpr pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:452:9: note: candidate constructor template not viable: requires 4 arguments, but 2 were provided
+  452 |         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |              _Index_tuple<_Indexes1...>, _Index_tuple<_Indexes2...>);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:49:18: error: no matching constructor for initialization of 'TiffGroupKey' (aka 'pair<unsigned int, Exiv2::IfdId>')
+   49 |     TiffGroupKey key = {0, 0};
+      |                  ^     ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:322:18: note: candidate constructor template not viable: no known conversion from 'int' to 'const Exiv2::IfdId' for 2nd argument
+  322 |        constexpr pair(_U1&& __x, const _T2& __y)
+      |                  ^               ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:266:17: note: candidate constructor template not viable: no known conversion from 'int' to 'const Exiv2::IfdId' for 2nd argument
+  266 |       constexpr pair(const _T1& __a, const _T2& __b)
+      |                 ^                    ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:276:26: note: candidate template ignored: requirement '!_PCC<true, unsigned int, Exiv2::IfdId>::_ImplicitlyConvertiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = Exiv2::IfdId]
+  276 |       explicit constexpr pair(const _T1& __a, const _T2& __b)
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:329:27: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveCopyPair()' was not satisfied [with _U1 = int]
+  329 |        explicit constexpr pair(_U1&& __x, const _T2& __y)
+      |                           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:336:18: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = int]
+  336 |        constexpr pair(const _T1& __x, _U2&& __y)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:343:17: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = int]
+  343 |        explicit pair(const _T1& __x, _U2&& __y)
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:352:12: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = int]
+  352 |         constexpr pair(_U1&& __x, _U2&& __y)
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:361:21: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = int]
+  361 |         explicit constexpr pair(_U1&& __x, _U2&& __y)
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:300:19: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  300 |         constexpr pair(const pair<_U1, _U2>& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:309:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  309 |         explicit constexpr pair(const pair<_U1, _U2>& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:314:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  314 |       constexpr pair(const pair&) = default;    ///< Copy constructor
+      |                 ^    ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:315:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  315 |       constexpr pair(pair&&) = default;         ///< Move constructor
+      |                 ^    ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:371:12: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  371 |         constexpr pair(pair<_U1, _U2>&& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:381:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  381 |         explicit constexpr pair(pair<_U1, _U2>&& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:387:9: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  387 |         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:232:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  232 |       _GLIBCXX_CONSTEXPR pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:245:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  245 |       explicit constexpr pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:452:9: note: candidate constructor template not viable: requires 4 arguments, but 2 were provided
+  452 |         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |              _Index_tuple<_Indexes1...>, _Index_tuple<_Indexes2...>);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:63:18: error: no matching constructor for initialization of 'TiffGroupKey' (aka 'pair<unsigned int, Exiv2::IfdId>')
+   63 |     TiffGroupKey key = {0xFFFFFFFF, 0xFFFFFFFF};
+      |                  ^     ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:266:17: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  266 |       constexpr pair(const _T1& __a, const _T2& __b)
+      |                 ^                    ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:322:18: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  322 |        constexpr pair(_U1&& __x, const _T2& __y)
+      |                  ^               ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:276:26: note: candidate template ignored: requirement '!_PCC<true, unsigned int, Exiv2::IfdId>::_ImplicitlyConvertiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = Exiv2::IfdId]
+  276 |       explicit constexpr pair(const _T1& __a, const _T2& __b)
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:329:27: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveCopyPair()' was not satisfied [with _U1 = unsigned int]
+  329 |        explicit constexpr pair(_U1&& __x, const _T2& __y)
+      |                           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:336:18: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  336 |        constexpr pair(const _T1& __x, _U2&& __y)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:343:17: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  343 |        explicit pair(const _T1& __x, _U2&& __y)
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:352:12: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = unsigned int]
+  352 |         constexpr pair(_U1&& __x, _U2&& __y)
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:361:21: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = unsigned int]
+  361 |         explicit constexpr pair(_U1&& __x, _U2&& __y)
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:300:19: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  300 |         constexpr pair(const pair<_U1, _U2>& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:309:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  309 |         explicit constexpr pair(const pair<_U1, _U2>& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:314:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  314 |       constexpr pair(const pair&) = default;    ///< Copy constructor
+      |                 ^    ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:315:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  315 |       constexpr pair(pair&&) = default;         ///< Move constructor
+      |                 ^    ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:371:12: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  371 |         constexpr pair(pair<_U1, _U2>&& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:381:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  381 |         explicit constexpr pair(pair<_U1, _U2>&& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:387:9: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  387 |         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:232:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  232 |       _GLIBCXX_CONSTEXPR pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:245:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  245 |       explicit constexpr pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:452:9: note: candidate constructor template not viable: requires 4 arguments, but 2 were provided
+  452 |         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |              _Index_tuple<_Indexes1...>, _Index_tuple<_Indexes2...>);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:77:18: error: no matching constructor for initialization of 'TiffGroupKey' (aka 'pair<unsigned int, Exiv2::IfdId>')
+   77 |     TiffGroupKey key1 = {0x12345678, 0x9ABCDEF0};
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:322:18: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  322 |        constexpr pair(_U1&& __x, const _T2& __y)
+      |                  ^               ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:266:17: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  266 |       constexpr pair(const _T1& __a, const _T2& __b)
+      |                 ^                    ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:276:26: note: candidate template ignored: requirement '!_PCC<true, unsigned int, Exiv2::IfdId>::_ImplicitlyConvertiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = Exiv2::IfdId]
+  276 |       explicit constexpr pair(const _T1& __a, const _T2& __b)
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:329:27: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveCopyPair()' was not satisfied [with _U1 = int]
+  329 |        explicit constexpr pair(_U1&& __x, const _T2& __y)
+      |                           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:336:18: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  336 |        constexpr pair(const _T1& __x, _U2&& __y)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:343:17: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  343 |        explicit pair(const _T1& __x, _U2&& __y)
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:352:12: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = unsigned int]
+  352 |         constexpr pair(_U1&& __x, _U2&& __y)
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:361:21: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = unsigned int]
+  361 |         explicit constexpr pair(_U1&& __x, _U2&& __y)
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:300:19: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  300 |         constexpr pair(const pair<_U1, _U2>& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:309:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  309 |         explicit constexpr pair(const pair<_U1, _U2>& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:314:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  314 |       constexpr pair(const pair&) = default;    ///< Copy constructor
+      |                 ^    ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:315:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  315 |       constexpr pair(pair&&) = default;         ///< Move constructor
+      |                 ^    ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:371:12: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  371 |         constexpr pair(pair<_U1, _U2>&& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:381:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  381 |         explicit constexpr pair(pair<_U1, _U2>&& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:387:9: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  387 |         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:232:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  232 |       _GLIBCXX_CONSTEXPR pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:245:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  245 |       explicit constexpr pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:452:9: note: candidate constructor template not viable: requires 4 arguments, but 2 were provided
+  452 |         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |              _Index_tuple<_Indexes1...>, _Index_tuple<_Indexes2...>);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:79:18: error: no matching constructor for initialization of 'TiffGroupKey' (aka 'pair<unsigned int, Exiv2::IfdId>')
+   79 |     TiffGroupKey key2 = {0x12345678, 0x12345678};
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:322:18: note: candidate constructor template not viable: no known conversion from 'int' to 'const Exiv2::IfdId' for 2nd argument
+  322 |        constexpr pair(_U1&& __x, const _T2& __y)
+      |                  ^               ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:266:17: note: candidate constructor template not viable: no known conversion from 'int' to 'const Exiv2::IfdId' for 2nd argument
+  266 |       constexpr pair(const _T1& __a, const _T2& __b)
+      |                 ^                    ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:276:26: note: candidate template ignored: requirement '!_PCC<true, unsigned int, Exiv2::IfdId>::_ImplicitlyConvertiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = Exiv2::IfdId]
+  276 |       explicit constexpr pair(const _T1& __a, const _T2& __b)
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:329:27: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveCopyPair()' was not satisfied [with _U1 = int]
+  329 |        explicit constexpr pair(_U1&& __x, const _T2& __y)
+      |                           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:336:18: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = int]
+  336 |        constexpr pair(const _T1& __x, _U2&& __y)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:343:17: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = int]
+  343 |        explicit pair(const _T1& __x, _U2&& __y)
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:352:12: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = int]
+  352 |         constexpr pair(_U1&& __x, _U2&& __y)
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:361:21: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = int]
+  361 |         explicit constexpr pair(_U1&& __x, _U2&& __y)
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:300:19: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  300 |         constexpr pair(const pair<_U1, _U2>& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:309:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  309 |         explicit constexpr pair(const pair<_U1, _U2>& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:314:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  314 |       constexpr pair(const pair&) = default;    ///< Copy constructor
+      |                 ^    ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:315:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  315 |       constexpr pair(pair&&) = default;         ///< Move constructor
+      |                 ^    ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:371:12: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  371 |         constexpr pair(pair<_U1, _U2>&& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:381:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  381 |         explicit constexpr pair(pair<_U1, _U2>&& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:387:9: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  387 |         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:232:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  232 |       _GLIBCXX_CONSTEXPR pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:245:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  245 |       explicit constexpr pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:452:9: note: candidate constructor template not viable: requires 4 arguments, but 2 were provided
+  452 |         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |              _Index_tuple<_Indexes1...>, _Index_tuple<_Indexes2...>);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:95:18: error: no matching constructor for initialization of 'TiffGroupKey' (aka 'pair<unsigned int, Exiv2::IfdId>')
+   95 |     TiffGroupKey key1 = {0x12345678, 0x9ABCDEF0};
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:322:18: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  322 |        constexpr pair(_U1&& __x, const _T2& __y)
+      |                  ^               ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:266:17: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  266 |       constexpr pair(const _T1& __a, const _T2& __b)
+      |                 ^                    ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:276:26: note: candidate template ignored: requirement '!_PCC<true, unsigned int, Exiv2::IfdId>::_ImplicitlyConvertiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = Exiv2::IfdId]
+  276 |       explicit constexpr pair(const _T1& __a, const _T2& __b)
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:329:27: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveCopyPair()' was not satisfied [with _U1 = int]
+  329 |        explicit constexpr pair(_U1&& __x, const _T2& __y)
+      |                           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:336:18: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  336 |        constexpr pair(const _T1& __x, _U2&& __y)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:343:17: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  343 |        explicit pair(const _T1& __x, _U2&& __y)
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:352:12: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = unsigned int]
+  352 |         constexpr pair(_U1&& __x, _U2&& __y)
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:361:21: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = int, _U2 = unsigned int]
+  361 |         explicit constexpr pair(_U1&& __x, _U2&& __y)
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:300:19: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  300 |         constexpr pair(const pair<_U1, _U2>& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:309:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  309 |         explicit constexpr pair(const pair<_U1, _U2>& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:314:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  314 |       constexpr pair(const pair&) = default;    ///< Copy constructor
+      |                 ^    ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:315:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  315 |       constexpr pair(pair&&) = default;         ///< Move constructor
+      |                 ^    ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:371:12: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  371 |         constexpr pair(pair<_U1, _U2>&& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:381:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  381 |         explicit constexpr pair(pair<_U1, _U2>&& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:387:9: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  387 |         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:232:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  232 |       _GLIBCXX_CONSTEXPR pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:245:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  245 |       explicit constexpr pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:452:9: note: candidate constructor template not viable: requires 4 arguments, but 2 were provided
+  452 |         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |              _Index_tuple<_Indexes1...>, _Index_tuple<_Indexes2...>);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp:97:18: error: no matching constructor for initialization of 'TiffGroupKey' (aka 'pair<unsigned int, Exiv2::IfdId>')
+   97 |     TiffGroupKey key2 = {0x9ABCDEF0, 0x9ABCDEF0};
+      |                  ^      ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:266:17: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  266 |       constexpr pair(const _T1& __a, const _T2& __b)
+      |                 ^                    ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:322:18: note: candidate constructor template not viable: no known conversion from 'unsigned int' to 'const Exiv2::IfdId' for 2nd argument
+  322 |        constexpr pair(_U1&& __x, const _T2& __y)
+      |                  ^               ~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:276:26: note: candidate template ignored: requirement '!_PCC<true, unsigned int, Exiv2::IfdId>::_ImplicitlyConvertiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = Exiv2::IfdId]
+  276 |       explicit constexpr pair(const _T1& __a, const _T2& __b)
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:329:27: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveCopyPair()' was not satisfied [with _U1 = unsigned int]
+  329 |        explicit constexpr pair(_U1&& __x, const _T2& __y)
+      |                           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:336:18: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  336 |        constexpr pair(const _T1& __x, _U2&& __y)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:343:17: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_CopyMovePair()' was not satisfied [with _U2 = unsigned int]
+  343 |        explicit pair(const _T1& __x, _U2&& __y)
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:352:12: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = unsigned int]
+  352 |         constexpr pair(_U1&& __x, _U2&& __y)
+      |                   ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:361:21: note: candidate template ignored: requirement '_PCC<true, unsigned int, Exiv2::IfdId>::_MoveConstructiblePair()' was not satisfied [with _U1 = unsigned int, _U2 = unsigned int]
+  361 |         explicit constexpr pair(_U1&& __x, _U2&& __y)
+      |                            ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:300:19: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  300 |         constexpr pair(const pair<_U1, _U2>& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:309:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  309 |         explicit constexpr pair(const pair<_U1, _U2>& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:314:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  314 |       constexpr pair(const pair&) = default;    ///< Copy constructor
+      |                 ^    ~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:315:17: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+  315 |       constexpr pair(pair&&) = default;         ///< Move constructor
+      |                 ^    ~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:371:12: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  371 |         constexpr pair(pair<_U1, _U2>&& __p)
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:381:21: note: candidate constructor template not viable: requires single argument '__p', but 2 arguments were provided
+  381 |         explicit constexpr pair(pair<_U1, _U2>&& __p)
+      |                            ^    ~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:387:9: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  387 |         pair(piecewise_construct_t, tuple<_Args1...>, tuple<_Args2...>);
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:232:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  232 |       _GLIBCXX_CONSTEXPR pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:245:26: note: candidate constructor template not viable: requires 0 arguments, but 2 were provided
+  245 |       explicit constexpr pair()
+      |                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_pair.h:452:9: note: candidate constructor template not viable: requires 4 arguments, but 2 were provided
+  452 |         pair(tuple<_Args1...>&, tuple<_Args2...>&,
+      |         ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  453 |              _Index_tuple<_Indexes1...>, _Index_tuple<_Indexes2...>);
+      |              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_107.dir/build.make:79: generated_build/CMakeFiles/test_107.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_107.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:38549: generated_build/CMakeFiles/test_107.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:38556: generated_build/CMakeFiles/test_107.dir/rule] 오류 2
+gmake: *** [Makefile:12334: test_107] 오류 2

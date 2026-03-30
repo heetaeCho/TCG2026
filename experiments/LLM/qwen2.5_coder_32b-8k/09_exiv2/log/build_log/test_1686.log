@@ -1,0 +1,39 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1686.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp:23:37: error: invalid use of incomplete type 'IptcData'
+   23 |     TiffEncoder encoder{ExifData(), IptcData(), XmpData(), nullptr, false, PrimaryGroups{}, nullptr, nullptr};
+      |                                     ^~~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:23:7: note: forward declaration of 'Exiv2::IptcData'
+   23 | class IptcData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp:23:49: error: invalid use of incomplete type 'XmpData'
+   23 |     TiffEncoder encoder{ExifData(), IptcData(), XmpData(), nullptr, false, PrimaryGroups{}, nullptr, nullptr};
+      |                                                 ^~~~~~~~~
+/home/user/TCG2026/./TestProjects/exiv2/src/tiffvisitor_int.hpp:24:7: note: forward declaration of 'Exiv2::XmpData'
+   24 | class XmpData;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp:25:36: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   25 |     TiffSizeEntry sizeEntry{0x123, IfdId::exifIFD, 0x456, IfdId::subIFD};
+      |                                    ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp:25:59: error: incomplete type 'Exiv2::IfdId' named in nested name specifier
+   25 |     TiffSizeEntry sizeEntry{0x123, IfdId::exifIFD, 0x456, IfdId::subIFD};
+      |                                                           ^~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp:33:49: error: 'ExifKey' is an incomplete type
+   33 |         exifdatum = std::make_unique<Exifdatum>(ExifKey("Exif.Image.Artist"), new Value);
+      |                                                 ^
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/exif.hpp:33:7: note: forward declaration of 'Exiv2::ExifKey'
+   33 | class ExifKey;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp:33:83: error: allocation of incomplete type 'Value'
+   33 |         exifdatum = std::make_unique<Exifdatum>(ExifKey("Exif.Image.Artist"), new Value);
+      |                                                                                   ^~~~~
+/home/user/TCG2026/TestProjects/exiv2/include/exiv2/metadatum.hpp:21:7: note: forward declaration of 'Exiv2::Value'
+   21 | class Value;
+      |       ^
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1686.dir/build.make:79: generated_build/CMakeFiles/test_1686.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/09_exiv2/test_files/test_1686.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:24915: generated_build/CMakeFiles/test_1686.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:24922: generated_build/CMakeFiles/test_1686.dir/rule] 오류 2
+gmake: *** [Makefile:7121: test_1686] 오류 2

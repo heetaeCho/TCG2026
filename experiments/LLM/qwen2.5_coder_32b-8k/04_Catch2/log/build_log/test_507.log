@@ -1,0 +1,75 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_507.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_507.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_507.cpp:23:26: error: no matching constructor for initialization of 'Catch::RunContext'
+   23 |         runContext = new Catch::RunContext(nullptr, std::move(mockReporter));
+      |                          ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:43:18: note: candidate constructor not viable: no known conversion from 'typename std::remove_reference<shared_ptr<IEventListener> &>::type' (aka 'std::shared_ptr<Catch::IEventListener>') to 'IEventListenerPtr' (aka 'unique_ptr<IEventListener>') for 2nd argument
+   43 |         explicit RunContext( IConfig const* _config, IEventListenerPtr&& reporter );
+      |                  ^                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:40:9: note: candidate constructor not viable: requires 1 argument, but 2 were provided
+   40 |         RunContext( RunContext const& ) = delete;
+      |         ^           ~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_507.cpp:141:93: error: no member named 'Failure' in 'Catch::ResultWas::OfType'
+  141 |         Catch::MessageBuilder builderFail("MACRO_NAME", lineInfo, Catch::ResultWas::OfType::Failure);
+      |                                                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/usr/include/gtest/gtest.h:1952:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1952 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1465:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1465 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement); \
+      |                                                      ^~~~~~~~~
+/usr/include/gtest/internal/gtest-internal.h:1364:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1364 |     statement;                                                    \
+      |     ^~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_507.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:77:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:53:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:60:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h:91:28: error: invalid application of 'sizeof' to an incomplete type 'Catch::IEventListener'
+   91 |     : std::aligned_storage<sizeof(_Tp), __alignof__(_Tp)>
+      |                            ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:506:35: note: in instantiation of template class '__gnu_cxx::__aligned_buffer<Catch::IEventListener>' requested here
+  506 |         __gnu_cxx::__aligned_buffer<_Tp> _M_storage;
+      |                                          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:567:13: note: in instantiation of member class 'std::_Sp_counted_ptr_inplace<Catch::IEventListener, std::allocator<Catch::IEventListener>, __gnu_cxx::_S_atomic>::_Impl' requested here
+  567 |       _Impl _M_impl;
+      |             ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:647:13: note: in instantiation of template class 'std::_Sp_counted_ptr_inplace<Catch::IEventListener, std::allocator<Catch::IEventListener>, __gnu_cxx::_S_atomic>' requested here
+  647 |           typename _Sp_cp_type::__allocator_type __a2(__a._M_a);
+      |                    ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:1342:14: note: in instantiation of function template specialization 'std::__shared_count<>::__shared_count<Catch::IEventListener, std::allocator<Catch::IEventListener>>' requested here
+ 1342 |         : _M_ptr(), _M_refcount(_M_ptr, __tag, std::forward<_Args>(__args)...)
+      |                     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:409:4: note: in instantiation of function template specialization 'std::__shared_ptr<Catch::IEventListener>::__shared_ptr<std::allocator<Catch::IEventListener>>' requested here
+  409 |         : __shared_ptr<_Tp>(__tag, std::forward<_Args>(__args)...)
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:862:14: note: in instantiation of function template specialization 'std::shared_ptr<Catch::IEventListener>::shared_ptr<std::allocator<Catch::IEventListener>>' requested here
+  862 |       return shared_ptr<_Tp>(_Sp_alloc_shared_tag<_Alloc>{__a},
+      |              ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:878:19: note: in instantiation of function template specialization 'std::allocate_shared<Catch::IEventListener, std::allocator<Catch::IEventListener>>' requested here
+  878 |       return std::allocate_shared<_Tp>(std::allocator<_Tp_nc>(),
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_507.cpp:21:29: note: in instantiation of function template specialization 'std::make_shared<Catch::IEventListener>' requested here
+   21 |         mockReporter = std::make_shared<Catch::IEventListener>();
+      |                             ^
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_507.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:77:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr.h:53:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/shared_ptr_base.h:60:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/ext/aligned_buffer.h:94:23: error: invalid application of 'sizeof' to an incomplete type 'Catch::IEventListener'
+   94 |         std::aligned_storage<sizeof(_Tp), __alignof__(_Tp)>::type _M_storage;
+      |                              ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_run_context.hpp:31:11: note: forward declaration of 'Catch::IEventListener'
+   31 |     class IEventListener;
+      |           ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_507.dir/build.make:79: generated_build/CMakeFiles/test_507.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_507.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:32084: generated_build/CMakeFiles/test_507.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:32091: generated_build/CMakeFiles/test_507.dir/rule] 오류 2
+gmake: *** [Makefile:11460: test_507] 오류 2

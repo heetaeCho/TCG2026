@@ -1,0 +1,46 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1144.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:21:29: error: base class has incomplete type
+   21 |     class MockXRef : public XRef {
+      |                      ~~~~~~~^~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Object.h:85:7: note: forward declaration of 'XRef'
+   85 | class XRef;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:41:36: error: base class has incomplete type
+   41 |     class MockPSOutputDev : public PSOutputDev {
+      |                             ~~~~~~~^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/GfxFont.h:51:7: note: forward declaration of 'PSOutputDev'
+   51 | class PSOutputDev;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:67:22: error: use of undeclared identifier 'gfxFontUnknown'
+   67 |     GfxFontType type{gfxFontUnknown};
+      |                      ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:17:7: warning: 'GfxFontTest_1144' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class GfxFontTest_1144 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to implicitly-deleted default constructor of 'GfxFontTest_1144::MockDict'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:63:53: note: in instantiation of function template specialization 'std::make_unique<GfxFontTest_1144::MockDict>' requested here
+   63 |     std::unique_ptr<MockDict> mock_font_dict = std::make_unique<MockDict>();
+      |                                                     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:97:1: note: in instantiation of member function 'testing::internal::TestFactoryImpl<GfxFontTest_1144_GetName_ReturnsProvidedName_1144_Test>::CreateTest' requested here
+   97 | TEST_F(GfxFontTest_1144, GetName_ReturnsProvidedName_1144) {
+      | ^
+/usr/include/gtest/gtest.h:2385:3: note: expanded from macro 'TEST_F'
+ 2385 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1556:15: note: expanded from macro 'GTEST_TEST_'
+ 1556 |           new ::testing::internal::TestFactoryImpl<GTEST_TEST_CLASS_NAME_(    \
+      |               ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp:31:22: note: default constructor of 'MockDict' is implicitly deleted because base class 'Dict' has no default constructor
+   31 |     class MockDict : public Dict {
+      |                      ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1144.dir/build.make:79: generated_build/CMakeFiles/test_1144.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1144.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:50666: generated_build/CMakeFiles/test_1144.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:50673: generated_build/CMakeFiles/test_1144.dir/rule] 오류 2
+gmake: *** [Makefile:17053: test_1144] 오류 2

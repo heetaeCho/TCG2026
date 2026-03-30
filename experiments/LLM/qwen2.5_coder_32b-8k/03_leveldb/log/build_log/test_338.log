@@ -1,0 +1,55 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_338.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_338.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_338.cpp:109:17: error: no matching constructor for initialization of 'InternalKey'
+  109 |     InternalKey key("test_key");
+      |                 ^   ~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[9]' to 'const InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[9]' to 'InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:139:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  139 |   InternalKey() {}  // Leave rep_ as empty to indicate it is invalid
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:140:3: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+  140 |   InternalKey(const Slice& user_key, SequenceNumber s, ValueType t) {
+      |   ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_338.cpp:135:17: error: no matching constructor for initialization of 'InternalKey'
+  135 |     InternalKey smallest("smallest_key");
+      |                 ^        ~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[13]' to 'const InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[13]' to 'InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:139:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  139 |   InternalKey() {}  // Leave rep_ as empty to indicate it is invalid
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:140:3: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+  140 |   InternalKey(const Slice& user_key, SequenceNumber s, ValueType t) {
+      |   ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_338.cpp:137:17: error: no matching constructor for initialization of 'InternalKey'
+  137 |     InternalKey largest("largest_key");
+      |                 ^       ~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[12]' to 'const InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:134:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[12]' to 'InternalKey' for 1st argument
+  134 | class InternalKey {
+      |       ^~~~~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:139:3: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  139 |   InternalKey() {}  // Leave rep_ as empty to indicate it is invalid
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./db/dbformat.h:140:3: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+  140 |   InternalKey(const Slice& user_key, SequenceNumber s, ValueType t) {
+      |   ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_338.dir/build.make:76: generated_build/CMakeFiles/test_338.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_338.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:14710: generated_build/CMakeFiles/test_338.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:14717: generated_build/CMakeFiles/test_338.dir/rule] 오류 2
+gmake: *** [Makefile:6250: test_338] 오류 2

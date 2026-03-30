@@ -1,0 +1,19 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_574.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_574.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_574.cpp:57:42: error: 'prefilter_vec_' is a private member of 're2::PrefilterTree'
+   57 |     EXPECT_EQ(regexps.size(), prefilters.prefilter_vec_.size());
+      |                                          ^
+/home/user/TCG2026/TestProjects/re2/re2/prefilter_tree.h:136:27: note: declared private here
+  136 |   std::vector<Prefilter*> prefilter_vec_;
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_574.cpp:105:38: error: 'unfiltered_' is a private member of 're2::PrefilterTree'
+  105 |     for (int unfiltered : prefilters.unfiltered_) {
+      |                                      ^
+/home/user/TCG2026/TestProjects/re2/re2/prefilter_tree.h:133:20: note: declared private here
+  133 |   std::vector<int> unfiltered_;
+      |                    ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_574.dir/build.make:79: generated_build/CMakeFiles/test_574.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/02_re2/test_files/test_574.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:8233: generated_build/CMakeFiles/test_574.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:8240: generated_build/CMakeFiles/test_574.dir/rule] 오류 2
+gmake: *** [Makefile:2727: test_574] 오류 2

@@ -1,0 +1,70 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_958.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:31:29: error: use of undeclared identifier 'getRotate'
+   31 |         ON_CALL(*mockPage1, getRotate()).WillByDefault(::testing::Return(90));
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:31:67: error: no member named 'Return' in namespace 'testing'
+   31 |         ON_CALL(*mockPage1, getRotate()).WillByDefault(::testing::Return(90));
+      |                                                        ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:33:29: error: use of undeclared identifier 'getRotate'
+   33 |         ON_CALL(*mockPage2, getRotate()).WillByDefault(::testing::Return(180));
+      |                             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:33:67: error: no member named 'Return' in namespace 'testing'
+   33 |         ON_CALL(*mockPage2, getRotate()).WillByDefault(::testing::Return(180));
+      |                                                        ~~~~~~~~~~~^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:41:17: error: 'pageCache' is a private member of 'PDFDoc'
+   41 |         pdfDoc->pageCache.push_back(std::move(mockPage1));
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:423:40: note: declared private here
+  423 |     std::vector<std::unique_ptr<Page>> pageCache;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:43:17: error: 'pageCache' is a private member of 'PDFDoc'
+   43 |         pdfDoc->pageCache.push_back(std::move(mockPage2));
+      |                 ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:423:40: note: declared private here
+  423 |     std::vector<std::unique_ptr<Page>> pageCache;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:91:13: error: 'pageCache' is a private member of 'PDFDoc'
+   91 |     pdfDoc->pageCache.clear();
+      |             ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:423:40: note: declared private here
+  423 |     std::vector<std::unique_ptr<Page>> pageCache;
+      |                                        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:9:7: warning: 'PDFDocTest_958' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class PDFDocTest_958 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: no matching constructor for initialization of 'PageAttrs'
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:23:82: note: in instantiation of function template specialization 'std::make_unique<PageAttrs>' requested here
+   23 |         mockPage1 = std::make_unique<Page>(nullptr, 1, Object(), Ref(0, 0), std::make_unique<PageAttrs>());
+      |                                                                                  ^
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:66:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 0 were provided
+   66 | class PageAttrs
+      |       ^~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Page.h:72:5: note: candidate constructor not viable: requires 2 arguments, but 0 were provided
+   72 |     PageAttrs(const PageAttrs *attrs, Dict *dict);
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:1:
+In file included from /usr/include/gtest/gtest.h:57:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/memory:76:
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:962:34: error: call to constructor of 'PDFDoc' is ambiguous
+  962 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:39:23: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, std::nullptr_t, const std::nullopt_t &, const std::nullopt_t &, (lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp:39:80)>' requested here
+   39 |         pdfDoc = std::make_unique<PDFDoc>(nullptr, std::nullopt, std::nullopt, [](){});
+      |                       ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+/home/user/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_958.dir/build.make:79: generated_build/CMakeFiles/test_958.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_958.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:21482: generated_build/CMakeFiles/test_958.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:21489: generated_build/CMakeFiles/test_958.dir/rule] 오류 2
+gmake: *** [Makefile:5197: test_958] 오류 2

@@ -1,0 +1,32 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_429.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_429.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_429.cpp:5:
+/home/user/TCG2026/TestProjects/leveldb/./util/env_posix.cc:514:3: error: use of undeclared identifier 'port'
+  514 |   port::Mutex mu_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./util/env_posix.cc:768:3: error: use of undeclared identifier 'port'
+  768 |   port::Mutex background_work_mutex_;
+      |   ^
+/home/user/TCG2026/TestProjects/leveldb/./util/env_posix.cc:769:3: error: use of undeclared identifier 'port'
+  769 |   port::CondVar background_work_cv_ GUARDED_BY(background_work_mutex_);
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_429.cpp:333:19: error: no viable conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_429.cpp:329:17)' to 'void (*)(void *)'
+  333 |     env->Schedule(func, nullptr);
+      |                   ^~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:198:32: note: passing argument to parameter 'function' here
+  198 |   virtual void Schedule(void (*function)(void* arg), void* arg) = 0;
+      |                                ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_429.cpp:351:22: error: no viable conversion from '(lambda at /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_429.cpp:347:17)' to 'void (*)(void *)'
+  351 |     env->StartThread(func, nullptr);
+      |                      ^~~~
+/home/user/TCG2026/TestProjects/leveldb/include/leveldb/env.h:202:35: note: passing argument to parameter 'function' here
+  202 |   virtual void StartThread(void (*function)(void* arg), void* arg) = 0;
+      |                                   ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_429.dir/build.make:76: generated_build/CMakeFiles/test_429.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_429.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:10215: generated_build/CMakeFiles/test_429.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:10222: generated_build/CMakeFiles/test_429.dir/rule] 오류 2
+gmake: *** [Makefile:4235: test_429] 오류 2

@@ -1,0 +1,59 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_928.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp:21:26: error: allocation of incomplete type 'PDFDoc'
+   21 |         mockPDFDoc = new PDFDoc();
+      |                          ^~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp:33:9: warning: deleting pointer to incomplete type 'PDFDoc' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   33 |         delete mockPDFDoc;
+      |         ^      ~~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/AnnotStampImageHelper.h:18:7: note: forward declaration of 'PDFDoc'
+   18 | class PDFDoc;
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp:85:5: error: cannot use 'try' with exceptions disabled
+   85 |     EXPECT_THROW(form->getRootField(-1), std::out_of_range); // Hypothetical exception
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp:87:5: error: cannot use 'try' with exceptions disabled
+   87 |     EXPECT_THROW(form->getRootField(0), std::out_of_range);  // Assuming no fields added initially
+      |     ^
+/usr/include/gtest/gtest.h:1950:3: note: expanded from macro 'EXPECT_THROW'
+ 1950 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/include/gtest/internal/gtest-internal.h:1421:5: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1421 |     try {                                                                   \
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp:103:37: error: no member named 'leftJustify' in 'VariableTextQuadding'; did you mean 'leftJustified'?
+  103 |     EXPECT_EQ(VariableTextQuadding::leftJustify, form->getTextQuadding()); // Assuming default value
+      |               ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~
+      |                                     leftJustified
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/TestProjects/poppler/poppler/Annot.h:110:5: note: 'leftJustified' declared here
+  110 |     leftJustified,
+      |     ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp:9:7: warning: 'FormTest_928' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class FormTest_928 : public ::testing::Test {
+      |       ^
+2 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_928.dir/build.make:79: generated_build/CMakeFiles/test_928.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_928.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:40138: generated_build/CMakeFiles/test_928.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:40145: generated_build/CMakeFiles/test_928.dir/rule] 오류 2
+gmake: *** [Makefile:12776: test_928] 오류 2

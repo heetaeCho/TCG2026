@@ -1,0 +1,50 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_100.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp.o
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:255:29: error: type 'const SkipListTest_100::Comparator' does not provide a call operator
+  255 |   return (n != nullptr) && (compare_(n->key, key) < 0);
+      |                             ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:266:9: note: in instantiation of member function 'leveldb::SkipList<std::basic_string<char>, SkipListTest_100::Comparator>::KeyIsAfterNode' requested here
+  266 |     if (KeyIsAfterNode(key, next)) {
+      |         ^
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:339:13: note: in instantiation of member function 'leveldb::SkipList<std::basic_string<char>, SkipListTest_100::Comparator>::FindGreaterOrEqual' requested here
+  339 |   Node* x = FindGreaterOrEqual(key, prev);
+      |             ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp:51:15: note: in instantiation of member function 'leveldb::SkipList<std::basic_string<char>, SkipListTest_100::Comparator>::Insert' requested here
+   51 |     skiplist_.Insert("key1");
+      |               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:108:58: error: type 'const SkipListTest_100::Comparator' does not provide a call operator
+  108 |   bool Equal(const Key& a, const Key& b) const { return (compare_(a, b) == 0); }
+      |                                                          ^~~~~~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:342:27: note: in instantiation of member function 'leveldb::SkipList<std::basic_string<char>, SkipListTest_100::Comparator>::Equal' requested here
+  342 |   assert(x == nullptr || !Equal(key, x->key));
+      |                           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp:51:15: note: in instantiation of member function 'leveldb::SkipList<std::basic_string<char>, SkipListTest_100::Comparator>::Insert' requested here
+   51 |     skiplist_.Insert("key1");
+      |               ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:287:26: error: type 'const SkipListTest_100::Comparator' does not provide a call operator
+  287 |     assert(x == head_ || compare_(x->key, key) < 0);
+      |                          ^~~~~~~~
+/usr/include/assert.h:93:27: note: expanded from macro 'assert'
+   93 |      (static_cast <bool> (expr)                                         \
+      |                           ^~~~
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:215:18: note: in instantiation of member function 'leveldb::SkipList<std::basic_string<char>, SkipListTest_100::Comparator>::FindLessThan' requested here
+  215 |   node_ = list_->FindLessThan(node_->key);
+      |                  ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp:157:10: note: in instantiation of member function 'leveldb::SkipList<std::basic_string<char>, SkipListTest_100::Comparator>::Iterator::Prev' requested here
+  157 |     iter.Prev();
+      |          ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp:3:
+/home/user/TCG2026/TestProjects/leveldb/./db/skiplist.h:289:28: error: type 'const SkipListTest_100::Comparator' does not provide a call operator
+  289 |     if (next == nullptr || compare_(next->key, key) >= 0) {
+      |                            ^~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_100.dir/build.make:76: generated_build/CMakeFiles/test_100.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/03_leveldb/test_files/test_100.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:10795: generated_build/CMakeFiles/test_100.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:10802: generated_build/CMakeFiles/test_100.dir/rule] 오류 2
+gmake: *** [Makefile:4495: test_100] 오류 2

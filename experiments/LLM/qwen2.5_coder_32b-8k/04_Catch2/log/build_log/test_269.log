@@ -1,0 +1,26 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_269.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_269.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_269.cpp:157:34: error: no member named 'Approx' in namespace 'Catch'
+  157 |     EXPECT_EQ(StringMaker<Catch::Approx>::convert(Approx(3.14)), "WithinAbs(3.14, 0.000001)");
+      |                           ~~~~~~~^
+/usr/include/gtest/gtest.h:2044:63: note: expanded from macro 'EXPECT_EQ'
+ 2044 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/include/gtest/gtest_pred_impl.h:164:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  164 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/include/gtest/gtest_pred_impl.h:149:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  149 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), \
+      |                                       ^~
+/usr/include/gtest/gtest_pred_impl.h:77:52: note: expanded from macro 'GTEST_ASSERT_'
+   77 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_269.cpp:157:51: error: use of undeclared identifier 'Approx'
+  157 |     EXPECT_EQ(StringMaker<Catch::Approx>::convert(Approx(3.14)), "WithinAbs(3.14, 0.000001)");
+      |                                                   ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_269.dir/build.make:79: generated_build/CMakeFiles/test_269.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_269.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:13406: generated_build/CMakeFiles/test_269.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:13413: generated_build/CMakeFiles/test_269.dir/rule] 오류 2
+gmake: *** [Makefile:4102: test_269] 오류 2

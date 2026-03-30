@@ -1,0 +1,190 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1513.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp.o
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:19:42: error: virtual function 'signatureType' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<const SignatureType> ()>::Result' (aka 'const CryptoSign::SignatureType')) than the function it overrides (which has return type 'SignatureType')
+   19 |         MOCK_METHOD(const SignatureType, signatureType, (), (const, override));
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/poppler/poppler/CryptoSignBackend.h:90:27: note: overridden virtual function is here
+   90 |     virtual SignatureType signatureType() const = 0;
+      |             ~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:21:65: error: virtual function 'getCertificateInfo' has a different return type ('unique_ptr<...>') than the function it overrides (which has return type 'unique_ptr<...>')
+   21 |         MOCK_METHOD(const std::unique_ptr<X509CertificateInfo>, getCertificateInfo, (), (const, override));
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:59: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:96:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   96 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),     \
+      |                             ^
+/usr/include/gmock/gmock-function-mocker.h:144:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  144 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/TestProjects/poppler/poppler/CryptoSignBackend.h:91:50: note: overridden virtual function is here
+   91 |     virtual std::unique_ptr<X509CertificateInfo> getCertificateInfo() const = 0;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:23:9: error: static assertion failed: MOCK_METHOD must be called with 3 or 4 arguments. _Ret, _MethodName, _Args and optionally _Spec. _Args and _Spec must be enclosed in parentheses. If _Ret is a type with unprotected commas, it must also be enclosed in parentheses.
+   23 |         MOCK_METHOD(std::variant<std::vector<unsigned char>, SigningErrorMessage>, signDetached, (const std::string &password), (override));
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 2 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+/usr/include/gmock/gmock-function-mocker.h:103:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_5'
+  103 |   GMOCK_INTERNAL_WRONG_ARITY(__VA_ARGS__)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-function-mocker.h:113:7: note: expanded from macro 'GMOCK_INTERNAL_WRONG_ARITY'
+  113 |       false,                                                                 \
+      |       ^~~~~
+/usr/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:47:27: error: allocating an object of abstract class type 'CryptoSign::MockSigningInterface'
+   47 |         mockHandler = new CryptoSign::MockSigningInterface();
+      |                           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/CryptoSignBackend.h:92:75: note: unimplemented pure virtual method 'signDetached' in 'MockSigningInterface'
+   92 |     virtual std::variant<std::vector<unsigned char>, SigningErrorMessage> signDetached(const std::string &password) = 0;
+      |                                                                           ^
+/home/user/TCG2026/TestProjects/poppler/poppler/CryptoSignBackend.h:93:26: note: unimplemented pure virtual method 'estimateSize' in 'MockSigningInterface'
+   93 |     virtual unsigned int estimateSize() const = 0;
+      |                          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:69:19: error: use of undeclared identifier 'hashFileRange'
+   69 |     bool result = hashFileRange(tempFile, mockHandler, 0, 0);
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:89:19: error: use of undeclared identifier 'hashFileRange'
+   89 |     bool result = hashFileRange(tempFile, mockHandler, 0, sizeof(data));
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:115:19: error: use of undeclared identifier 'hashFileRange'
+  115 |     bool result = hashFileRange(tempFile, mockHandler, 0, largeFileSize);
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:129:19: error: use of undeclared identifier 'hashFileRange'
+  129 |     bool result = hashFileRange(tempFile, nullptr, 0, 65536);
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:149:19: error: use of undeclared identifier 'hashFileRange'
+  149 |     bool result = hashFileRange(reinterpret_cast<FILE*>(-1), mockHandler, 0, sizeof(data));
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:169:19: error: use of undeclared identifier 'hashFileRange'
+  169 |     bool result = hashFileRange(tempFile, mockHandler, 0, sizeof(data) + 1);
+      |                   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:13:11: warning: 'MockSigningInterface' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 |     class MockSigningInterface : public SigningInterface {
+      |           ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:31:7: warning: 'HashFileRangeTest_1513' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   31 | class HashFileRangeTest_1513 : public ::testing::Test {
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:3:
+In file included from /usr/include/gmock/gmock.h:61:
+In file included from /usr/include/gmock/gmock-function-mocker.h:42:
+/usr/include/gmock/gmock-spec-builders.h:1327:23: error: call to deleted constructor of 'const std::unique_ptr<X509CertificateInfo>'
+ 1327 |   T Unwrap() { return std::move(value_); }
+      |                       ^~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1381:20: note: in instantiation of member function 'testing::internal::ReferenceOrValueWrapper<const std::unique_ptr<X509CertificateInfo>>::Unwrap' requested here
+ 1381 |     return result_.Unwrap();
+      |                    ^
+/usr/include/gmock/gmock-spec-builders.h:1600:20: note: in instantiation of member function 'testing::internal::ActionResultHolder<const std::unique_ptr<X509CertificateInfo>>::Unwrap' requested here
+ 1600 |     return holder->Unwrap();
+      |                    ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:21:9: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<X509CertificateInfo> ()>::Invoke' requested here
+   21 |         MOCK_METHOD(const std::unique_ptr<X509CertificateInfo>, getCertificateInfo, (), (const, override));
+      |         ^
+/usr/include/gmock/gmock-function-mocker.h:78:3: note: expanded from macro 'MOCK_METHOD'
+   78 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__)
+      |   ^
+/usr/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:85:1: note: expanded from here
+   85 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/include/gmock/gmock-function-mocker.h:95:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+   95 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                            \
+      |   ^
+/usr/include/gmock/gmock-function-mocker.h:150:10: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  150 |         .Invoke(GMOCK_PP_REPEAT(GMOCK_INTERNAL_FORWARD_ARG, _Signature, _N));  \
+      |          ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:3:
+In file included from /usr/include/gmock/gmock.h:61:
+In file included from /usr/include/gmock/gmock-function-mocker.h:42:
+/usr/include/gmock/gmock-spec-builders.h:1321:9: error: call to deleted constructor of 'const std::unique_ptr<X509CertificateInfo>'
+ 1321 |       : value_(std::move(value)) {
+      |         ^      ~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1398:35: note: in instantiation of member function 'testing::internal::ReferenceOrValueWrapper<const std::unique_ptr<X509CertificateInfo>>::ReferenceOrValueWrapper' requested here
+ 1398 |     return new ActionResultHolder(Wrapper(func_mocker->PerformDefaultAction(
+      |                                   ^
+/usr/include/gmock/gmock-spec-builders.h:1548:26: note: in instantiation of function template specialization 'testing::internal::ActionResultHolder<const std::unique_ptr<X509CertificateInfo>>::PerformDefaultAction<const std::unique_ptr<X509CertificateInfo> ()>' requested here
+ 1548 |     return ResultHolder::PerformDefaultAction(this, std::move(*args),
+      |                          ^
+/usr/include/gmock/gmock-spec-builders.h:1488:3: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<X509CertificateInfo> ()>::UntypedPerformDefaultAction' requested here
+ 1488 |   ~FunctionMocker() override GTEST_LOCK_EXCLUDED_(g_gmock_mutex) {
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:13:11: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<X509CertificateInfo> ()>::~FunctionMocker' requested here
+   13 |     class MockSigningInterface : public SigningInterface {
+      |           ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+In file included from /home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:3:
+In file included from /usr/include/gmock/gmock.h:61:
+In file included from /usr/include/gmock/gmock-function-mocker.h:42:
+/usr/include/gmock/gmock-spec-builders.h:1415:9: error: call to implicitly-deleted copy constructor of 'Wrapper' (aka 'ReferenceOrValueWrapper<const std::unique_ptr<X509CertificateInfo, std::default_delete<X509CertificateInfo>>>')
+ 1415 |       : result_(std::move(result)) {
+      |         ^       ~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:1398:16: note: in instantiation of member function 'testing::internal::ActionResultHolder<const std::unique_ptr<X509CertificateInfo>>::ActionResultHolder' requested here
+ 1398 |     return new ActionResultHolder(Wrapper(func_mocker->PerformDefaultAction(
+      |                ^
+/usr/include/gmock/gmock-spec-builders.h:1548:26: note: in instantiation of function template specialization 'testing::internal::ActionResultHolder<const std::unique_ptr<X509CertificateInfo>>::PerformDefaultAction<const std::unique_ptr<X509CertificateInfo> ()>' requested here
+ 1548 |     return ResultHolder::PerformDefaultAction(this, std::move(*args),
+      |                          ^
+/usr/include/gmock/gmock-spec-builders.h:1488:3: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<X509CertificateInfo> ()>::UntypedPerformDefaultAction' requested here
+ 1488 |   ~FunctionMocker() override GTEST_LOCK_EXCLUDED_(g_gmock_mutex) {
+      |   ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp:13:11: note: in instantiation of member function 'testing::internal::FunctionMocker<const std::unique_ptr<X509CertificateInfo> ()>::~FunctionMocker' requested here
+   13 |     class MockSigningInterface : public SigningInterface {
+      |           ^
+/usr/include/gmock/gmock-spec-builders.h:1338:5: note: copy constructor of 'ReferenceOrValueWrapper<const std::unique_ptr<X509CertificateInfo>>' is implicitly deleted because field 'value_' has a deleted copy constructor
+ 1338 |   T value_;
+      |     ^
+/usr/lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/unique_ptr.h:468:7: note: 'unique_ptr' has been explicitly marked deleted here
+  468 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^
+2 warnings and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1513.dir/build.make:79: generated_build/CMakeFiles/test_1513.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/10_poppler/test_files/test_1513.cpp.o] 오류 1
+gmake[2]: *** [CMakeFiles/Makefile2:31562: generated_build/CMakeFiles/test_1513.dir/all] 오류 2
+gmake[1]: *** [CMakeFiles/Makefile2:31569: generated_build/CMakeFiles/test_1513.dir/rule] 오류 2
+gmake: *** [Makefile:9292: test_1513] 오류 2

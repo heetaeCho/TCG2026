@@ -1,0 +1,46 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 7 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 7 tests from WithinRelMatcherTest_206
+[ RUN      ] WithinRelMatcherTest_206.NormalOperation_206
+[       OK ] WithinRelMatcherTest_206.NormalOperation_206 (0 ms)
+[ RUN      ] WithinRelMatcherTest_206.BoundaryConditions_206
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_206.cpp:33: Failure
+Value of: matcher.match(1.1001)
+  Actual: true
+Expected: false
+[  FAILED  ] WithinRelMatcherTest_206.BoundaryConditions_206 (0 ms)
+[ RUN      ] WithinRelMatcherTest_206.ZeroTarget_206
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_206.cpp:45: Failure
+Value of: matcher.match(0.1)
+  Actual: false
+Expected: true
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/04_Catch2/test_files/test_206.cpp:47: Failure
+Value of: matcher.match(-0.1)
+  Actual: false
+Expected: true
+[  FAILED  ] WithinRelMatcherTest_206.ZeroTarget_206 (0 ms)
+[ RUN      ] WithinRelMatcherTest_206.NegativeTarget_206
+[       OK ] WithinRelMatcherTest_206.NegativeTarget_206 (0 ms)
+[ RUN      ] WithinRelMatcherTest_206.ZeroEpsilon_206
+[       OK ] WithinRelMatcherTest_206.ZeroEpsilon_206 (0 ms)
+[ RUN      ] WithinRelMatcherTest_206.LargeEpsilon_206
+unknown file: Failure
+C++ exception with description "Relative comparison with epsilon >= 1 does not make sense." thrown in the test body.
+[  FAILED  ] WithinRelMatcherTest_206.LargeEpsilon_206 (0 ms)
+[ RUN      ] WithinRelMatcherTest_206.NegativeEpsilon_206
+unknown file: Failure
+C++ exception with description "Relative comparison with epsilon <  0 does not make sense." thrown in the test body.
+[  FAILED  ] WithinRelMatcherTest_206.NegativeEpsilon_206 (0 ms)
+[----------] 7 tests from WithinRelMatcherTest_206 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] WithinRelMatcherTest_206.BoundaryConditions_206
+[  FAILED  ] WithinRelMatcherTest_206.ZeroTarget_206
+[  FAILED  ] WithinRelMatcherTest_206.LargeEpsilon_206
+[  FAILED  ] WithinRelMatcherTest_206.NegativeEpsilon_206
+
+ 4 FAILED TESTS

@@ -1,0 +1,72 @@
+Running main() from ./googletest/src/gtest_main.cc
+[==========] Running 11 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 11 tests from StreamTest_75
+[ RUN      ] StreamTest_75.DefaultPositionIsZero_75
+[       OK ] StreamTest_75.DefaultPositionIsZero_75 (0 ms)
+[ RUN      ] StreamTest_75.PeekOnEmptyStreamReturnsEof_75
+[       OK ] StreamTest_75.PeekOnEmptyStreamReturnsEof_75 (0 ms)
+[ RUN      ] StreamTest_75.GetOnEmptyStreamReturnsEof_75
+[       OK ] StreamTest_75.GetOnEmptyStreamReturnsEof_75 (0 ms)
+[ RUN      ] StreamTest_75.PositionDoesNotChangeOnPeek_75
+[       OK ] StreamTest_75.PositionDoesNotChangeOnPeek_75 (0 ms)
+[ RUN      ] StreamTest_75.PositionIncrementsAfterGet_75
+[       OK ] StreamTest_75.PositionIncrementsAfterGet_75 (0 ms)
+[ RUN      ] StreamTest_75.GetMultipleCharactersUpdatesPositionCorrectly_75
+[       OK ] StreamTest_75.GetMultipleCharactersUpdatesPositionCorrectly_75 (0 ms)
+[ RUN      ] StreamTest_75.EatDoesNotChangePositionOnEmptyStream_75
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_75.cpp:99: Failure
+Expected equality of these values:
+  initialPos
+    Which is: 0
+  stream.pos()
+    Which is: 10
+[  FAILED  ] StreamTest_75.EatDoesNotChangePositionOnEmptyStream_75 (0 ms)
+[ RUN      ] StreamTest_75.EatReducesAvailableCharacters_75
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_75.cpp:111: Failure
+Expected equality of these values:
+  stream.get()
+    Which is: '\x4' (4)
+  'c'
+    Which is: 'c' (99, 0x63)
+[  FAILED  ] StreamTest_75.EatReducesAvailableCharacters_75 (0 ms)
+[ RUN      ] StreamTest_75.GetMultipleCharactersWithBoundaryConditions_75
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_75.cpp:121: Failure
+Expected equality of these values:
+  stream.get(10)
+    Which is: "\x4\x4\x4\x4\x4\x4\x4\x4\x4\x4"
+  "a"
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_75.cpp:123: Failure
+Expected equality of these values:
+  stream.pos()
+    Which is: 10
+  1
+[  FAILED  ] StreamTest_75.GetMultipleCharactersWithBoundaryConditions_75 (0 ms)
+[ RUN      ] StreamTest_75.PeekReturnsFirstCharacterWithoutConsumingIt_75
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_75.cpp:135: Failure
+Expected equality of these values:
+  stream.peek()
+    Which is: '\x4' (4)
+  'a'
+    Which is: 'a' (97, 0x61)
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/08_yaml-cpp/test_files/test_75.cpp:137: Failure
+Expected equality of these values:
+  stream.get()
+    Which is: '\x4' (4)
+  'a'
+    Which is: 'a' (97, 0x61)
+[  FAILED  ] StreamTest_75.PeekReturnsFirstCharacterWithoutConsumingIt_75 (0 ms)
+[ RUN      ] StreamTest_75.GetWithZeroLengthDoesNothing_75
+[       OK ] StreamTest_75.GetWithZeroLengthDoesNothing_75 (0 ms)
+[----------] 11 tests from StreamTest_75 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 11 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 7 tests.
+[  FAILED  ] 4 tests, listed below:
+[  FAILED  ] StreamTest_75.EatDoesNotChangePositionOnEmptyStream_75
+[  FAILED  ] StreamTest_75.EatReducesAvailableCharacters_75
+[  FAILED  ] StreamTest_75.GetMultipleCharactersWithBoundaryConditions_75
+[  FAILED  ] StreamTest_75.PeekReturnsFirstCharacterWithoutConsumingIt_75
+
+ 4 FAILED TESTS
