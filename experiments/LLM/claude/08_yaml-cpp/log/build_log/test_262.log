@@ -1,0 +1,38 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_262.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp:13:15: error: use of undeclared identifier 'create_shared_memory'
+   13 |     pMemory = create_shared_memory();
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp:185:9: error: no viable conversion from 'node' to 'node *'
+  185 |   node* result = map.get(std::string("mykey"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp:195:9: error: no viable conversion from 'node' to 'node *'
+  195 |   node* result = map.get(std::string("nonexistent"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp:266:9: error: no viable conversion from 'node' to 'node *'
+  266 |   node* result = map.get(key, pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp:437:9: error: no viable conversion from 'node' to 'node *'
+  437 |   node* result = map.get(std::string("tempkey"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp:1:
+/usr/local/include/gtest/gtest.h:1472:28: error: invalid operands to binary expression ('const std::nullptr_t' and 'const YAML::detail::node')
+ 1472 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/include/gtest/gtest.h:1462:14: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1462 |     if (val1 op val2) {                                                    \
+      |         ~~~~ ^  ~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp:432:3: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<std::nullptr_t, YAML::detail::node>' requested here
+  432 |   EXPECT_NE(nullptr, map.get(std::string("tempkey"), pMemory));
+      |   ^
+/usr/local/include/gtest/gtest.h:1887:44: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/local/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const std::nullptr_t' to 'faketype' for 1st argument
+ 1387 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_262.dir/build.make:79: generated_build/CMakeFiles/test_262.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_262.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:21166: generated_build/CMakeFiles/test_262.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:21173: generated_build/CMakeFiles/test_262.dir/rule] Error 2
+gmake: *** [Makefile:7876: test_262] Error 2

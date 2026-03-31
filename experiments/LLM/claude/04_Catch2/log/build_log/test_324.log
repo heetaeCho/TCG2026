@@ -1,0 +1,21 @@
+[ 80%] Built target Catch2
+[ 80%] Built target Catch2WithMain
+[ 80%] Building CXX object generated_build/CMakeFiles/test_324.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_324.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_324.cpp:23:16: warning: returning reference to local temporary object [-Wreturn-stack-address]
+   23 |         return m_values[m_index];
+      |                ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_324.cpp:18:14: note: in instantiation of member function 'FixedValueGenerator<bool>::get' requested here
+   18 |     explicit FixedValueGenerator(std::vector<T> values) : m_values(std::move(values)) {
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:111:34: note: in instantiation of member function 'FixedValueGenerator<bool>::FixedValueGenerator' requested here
+  111 |         return unique_ptr<T>(new T(CATCH_FORWARD(args)...));
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_324.cpp:35:24: note: in instantiation of function template specialization 'Catch::Detail::make_unique<FixedValueGenerator<bool>, std::vector<bool>>' requested here
+   35 |         Catch::Detail::make_unique<FixedValueGenerator<T>>(std::move(values))
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_324.cpp:97:20: note: in instantiation of function template specialization 'makeFixedValueWrapper<bool>' requested here
+   97 |     auto wrapper = makeFixedValueWrapper<bool>({true, false, true});
+      |                    ^
+1 warning generated.
+[100%] Linking CXX executable /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/build/test_324/test_324
+[100%] Built target test_324

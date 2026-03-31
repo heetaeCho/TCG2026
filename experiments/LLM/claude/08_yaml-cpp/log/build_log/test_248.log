@@ -1,0 +1,22 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_248.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_248.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_248.cpp:13:19: error: use of undeclared identifier 'create_shared_memory_holder'; did you mean 'shared_memory_holder'?
+   13 |         pMemory = create_shared_memory_holder();
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/ptr.h:23:7: note: 'shared_memory_holder' declared here
+   23 | using shared_memory_holder = std::shared_ptr<memory_holder>;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_248.cpp:223:11: error: no viable conversion from 'node' to 'node *'
+  223 |     node* result = map.get(key, pMemory);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_248.cpp:243:11: error: no viable conversion from 'node' to 'node *'
+  243 |     node* result = map.get(std::string("strkey"), pMemory);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_248.cpp:253:11: error: no viable conversion from 'node' to 'node *'
+  253 |     node* result = map.get(std::string("nonexistent"), pMemory);
+      |           ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_248.dir/build.make:79: generated_build/CMakeFiles/test_248.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_248.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:13006: generated_build/CMakeFiles/test_248.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:13013: generated_build/CMakeFiles/test_248.dir/rule] Error 2
+gmake: *** [Makefile:4561: test_248] Error 2

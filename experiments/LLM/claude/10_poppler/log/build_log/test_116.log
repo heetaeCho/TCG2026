@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_116.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_116.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_116.cpp:10:20: error: call to constructor of 'Dict' is ambiguous
+   10 |         dict = new Dict(nullptr);
+      |                    ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_116.cpp:171:17: error: no viable conversion from 'std::unique_ptr<Dict>' to 'const Dict *'
+  171 |     const Dict *copied = dict->copy(nullptr);
+      |                 ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_116.cpp:221:26: error: calling a private constructor of class 'Object'
+  221 |     dict->add("nullVal", Object(objNull));
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_116.cpp:7:7: warning: 'DictTest_116' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class DictTest_116 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_116.dir/build.make:79: generated_build/CMakeFiles/test_116.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_116.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:41386: generated_build/CMakeFiles/test_116.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:41393: generated_build/CMakeFiles/test_116.dir/rule] Error 2
+gmake: *** [Makefile:13283: test_116] Error 2

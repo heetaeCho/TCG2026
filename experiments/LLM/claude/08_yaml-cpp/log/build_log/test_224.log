@@ -1,0 +1,41 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_224.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp:13:25: error: unknown type name 'Memory'; did you mean 'memory'?
+   13 |     m_pMemory.reset(new Memory);
+      |                         ^~~~~~
+      |                         memory
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/memory.h:23:20: note: 'memory' declared here
+   23 | class YAML_CPP_API memory {
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp:13:15: error: no matching member function for call to 'reset'
+   13 |     m_pMemory.reset(new Memory);
+      |     ~~~~~~~~~~^~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1646:2: note: candidate template ignored: requirement '__sp_is_constructible<YAML::detail::memory_holder, YAML::detail::memory>::value' was not satisfied [with _Yp = memory]
+ 1646 |         reset(_Yp* __p) // _Yp must be complete.
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1641:7: note: candidate function not viable: requires 0 arguments, but 1 was provided
+ 1641 |       reset() noexcept
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1655:2: note: candidate function template not viable: requires 2 arguments, but 1 was provided
+ 1655 |         reset(_Yp* __p, _Deleter __d)
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr_base.h:1660:2: note: candidate function template not viable: requires 3 arguments, but 1 was provided
+ 1660 |         reset(_Yp* __p, _Deleter __d, _Alloc __a)
+      |         ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp:269:9: error: no viable conversion from 'node' to 'node *'
+  269 |   node* result = ref.get(std::string("mykey"), m_pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp:284:9: error: no viable conversion from 'node' to 'node *'
+  284 |   node* result = ref.get(std::string("nonexistent"), m_pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp:331:9: error: no viable conversion from 'node' to 'node *'
+  331 |   node* result = ref.get(key, m_pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp:349:9: error: no viable conversion from 'node' to 'node *'
+  349 |   node* result = ref.get(otherKey, m_pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_224.dir/build.make:79: generated_build/CMakeFiles/test_224.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_224.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:16814: generated_build/CMakeFiles/test_224.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:16821: generated_build/CMakeFiles/test_224.dir/rule] Error 2
+gmake: *** [Makefile:6108: test_224] Error 2

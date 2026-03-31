@@ -1,0 +1,46 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_757.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_757.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_757.cpp:27:23: error: no matching constructor for initialization of 'DefaultAppearance'
+   27 |     DefaultAppearance da("Courier", 10.5, 0xFF0000);
+      |                       ^  ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:396:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<AnnotColor>' for 3rd argument
+  396 |     DefaultAppearance(std::string fontNameA, double fontPtSizeA, std::unique_ptr<AnnotColor> &&fontColorA);
+      |     ^                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:397:14: note: candidate constructor not viable: requires single argument 'da', but 3 arguments were provided
+  397 |     explicit DefaultAppearance(const GooString *da);
+      |              ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:406:5: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+  406 |     DefaultAppearance(const DefaultAppearance &) = delete;
+      |     ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_757.cpp:100:21: error: no viable conversion from 'int' to 'std::unique_ptr<AnnotColor>'
+  100 |     da.setFontColor(0x00FF00);
+      |                     ^~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:359:12: note: candidate constructor template not viable: no known conversion from 'int' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  359 |         constexpr unique_ptr(nullptr_t) noexcept
+      |                   ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:366:7: note: candidate constructor not viable: no known conversion from 'int' to 'unique_ptr<AnnotColor> &&' for 1st argument
+  366 |       unique_ptr(unique_ptr&&) = default;
+      |       ^          ~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:522:7: note: candidate constructor not viable: no known conversion from 'int' to 'const unique_ptr<AnnotColor> &' for 1st argument
+  522 |       unique_ptr(const unique_ptr&) = delete;
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:380:2: note: candidate template ignored: could not match 'unique_ptr<_Up, _Ep>' against 'int'
+  380 |         unique_ptr(unique_ptr<_Up, _Ep>&& __u) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:390:2: note: candidate template ignored: could not match 'auto_ptr<_Up>' against 'int'
+  390 |         unique_ptr(auto_ptr<_Up>&& __u) noexcept;
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:317:2: note: explicit constructor is not a candidate
+  317 |         unique_ptr(pointer __p) noexcept
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:402:51: note: passing argument to parameter 'fontColorA' here
+  402 |     void setFontColor(std::unique_ptr<AnnotColor> fontColorA);
+      |                                                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_757.cpp:7:7: warning: 'DefaultAppearanceTest_757' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class DefaultAppearanceTest_757 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_757.dir/build.make:79: generated_build/CMakeFiles/test_757.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_757.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:46474: generated_build/CMakeFiles/test_757.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:46481: generated_build/CMakeFiles/test_757.dir/rule] Error 2
+gmake: *** [Makefile:15350: test_757] Error 2

@@ -1,0 +1,67 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_490.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:16:46: error: non-virtual member function marked 'override' hides virtual member function
+   16 |     const std::unique_ptr<GfxPattern> copy() override {
+      |                                              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:826:41: note: hidden overloaded virtual function 'GfxPattern::copy' declared here: different return type ('unique_ptr<...>' vs 'const unique_ptr<...>')
+  826 |     virtual std::unique_ptr<GfxPattern> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:29:24: error: variable type 'TestableGfxPattern' is an abstract class
+   29 |     TestableGfxPattern pattern(1, 100);
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:826:41: note: unimplemented pure virtual method 'copy' in 'TestableGfxPattern'
+  826 |     virtual std::unique_ptr<GfxPattern> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:35:24: error: variable type 'TestableGfxPattern' is an abstract class
+   35 |     TestableGfxPattern pattern(2, 200);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:41:24: error: variable type 'TestableGfxPattern' is an abstract class
+   41 |     TestableGfxPattern pattern(1, 42);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:47:24: error: variable type 'TestableGfxPattern' is an abstract class
+   47 |     TestableGfxPattern pattern(0, 0);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:53:24: error: variable type 'TestableGfxPattern' is an abstract class
+   53 |     TestableGfxPattern pattern(-1, 50);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:59:24: error: variable type 'TestableGfxPattern' is an abstract class
+   59 |     TestableGfxPattern pattern(1, 0);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:65:24: error: variable type 'TestableGfxPattern' is an abstract class
+   65 |     TestableGfxPattern pattern(1, -1);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:71:24: error: variable type 'TestableGfxPattern' is an abstract class
+   71 |     TestableGfxPattern pattern(1, 100);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:79:24: error: variable type 'TestableGfxPattern' is an abstract class
+   79 |     TestableGfxPattern pattern(2, 55);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:87:24: error: variable type 'TestableGfxPattern' is an abstract class
+   87 |     TestableGfxPattern pattern(1, 100);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:95:24: error: variable type 'TestableGfxPattern' is an abstract class
+   95 |     TestableGfxPattern pattern(999999, 1);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:101:24: error: variable type 'TestableGfxPattern' is an abstract class
+  101 |     TestableGfxPattern pattern(1, 999999);
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:12:7: warning: 'TestableGfxPattern' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class TestableGfxPattern : public GfxPattern {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:21:7: warning: 'GfxPatternTest_490' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   21 | class GfxPatternTest_490 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestableGfxPattern'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp:17:21: note: in instantiation of function template specialization 'std::make_unique<TestableGfxPattern, int, int>' requested here
+   17 |         return std::make_unique<TestableGfxPattern>(getType(), getPatternRefNum());
+      |                     ^
+2 warnings and 14 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_490.dir/build.make:79: generated_build/CMakeFiles/test_490.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_490.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:41002: generated_build/CMakeFiles/test_490.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:41009: generated_build/CMakeFiles/test_490.dir/rule] Error 2
+gmake: *** [Makefile:13127: test_490] Error 2

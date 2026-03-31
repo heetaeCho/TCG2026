@@ -1,0 +1,28 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_216.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_216.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_216.cpp:229:15: error: no viable conversion from 'node_ref' to 'const node'
+  229 |   key.set_ref(node_ref());
+      |               ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: candidate constructor not viable: no known conversion from 'node_ref' to 'const node &' for 1st argument
+   28 |   node(const node&) = delete;
+      |   ^    ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:63:28: note: passing argument to parameter 'rhs' here
+   63 |   void set_ref(const node& rhs) {
+      |                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_216.cpp:230:3: error: 'this' argument to member function 'set_type' has type 'const node_ref', but function is not marked const
+  230 |   key.ref()->set_type(NodeType::Scalar);
+      |   ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_ref.h:34:8: note: 'set_type' declared here
+   34 |   void set_type(NodeType::value type) { m_pData->set_type(type); }
+      |        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_216.cpp:231:3: error: 'this' argument to member function 'set_scalar' has type 'const node_ref', but function is not marked const
+  231 |   key.ref()->set_scalar("key1");
+      |   ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node_ref.h:37:8: note: 'set_scalar' declared here
+   37 |   void set_scalar(const std::string& scalar) { m_pData->set_scalar(scalar); }
+      |        ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_216.dir/build.make:79: generated_build/CMakeFiles/test_216.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_216.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:18190: generated_build/CMakeFiles/test_216.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:18197: generated_build/CMakeFiles/test_216.dir/rule] Error 2
+gmake: *** [Makefile:6667: test_216] Error 2

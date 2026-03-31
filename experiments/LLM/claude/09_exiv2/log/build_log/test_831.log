@@ -1,0 +1,30 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_831.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_831.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_831.cpp:159:21: error: no matching member function for call to 'toString'
+  159 |     EXPECT_EQ(value.toString(), "lang=\"x-default\" A default value");
+      |               ~~~~~~^~~~~~~~
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:857:15: note: candidate function not viable: requires single argument 'n', but no arguments were provided
+  857 |   std::string toString(size_t n) const override;
+      |               ^        ~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/value.hpp:863:15: note: candidate function not viable: requires single argument 'qualifier', but no arguments were provided
+  863 |   std::string toString(const std::string& qualifier) const;
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_831.dir/build.make:79: generated_build/CMakeFiles/test_831.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_831.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:80437: generated_build/CMakeFiles/test_831.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:80444: generated_build/CMakeFiles/test_831.dir/rule] Error 2
+gmake: *** [Makefile:28350: test_831] Error 2

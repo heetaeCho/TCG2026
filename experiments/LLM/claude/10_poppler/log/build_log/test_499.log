@@ -1,0 +1,106 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_499.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp:42:12: error: call to deleted constructor of 'Object'
+   42 |     Object obj(new GooString("test"));
+      |            ^   ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<GooString *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp:64:12: error: call to deleted constructor of 'Object'
+   64 |     Object bboxArray(new Array(static_cast<XRef*>(nullptr)));
+      |            ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp:75:28: error: functional-style cast from 'Dict *' to 'Object' uses deleted function
+   75 |     dict->add("Resources", Object(new Dict(static_cast<XRef*>(nullptr))));
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Dict *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp:78:12: error: call to deleted constructor of 'Object'
+   78 |     Object matrixArray(new Array(static_cast<XRef*>(nullptr)));
+      |            ^           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp:88:12: error: no matching constructor for initialization of 'Object'
+   88 |     Object patObj(static_cast<Stream*>(nullptr), dict);
+      |            ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:245:5: note: candidate constructor not viable: no known conversion from 'Stream *' to 'ObjType' for 1st argument
+  245 |     Object(ObjType typeA, std::string &&stringA)
+      |     ^      ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:252:5: note: candidate constructor not viable: no known conversion from 'Stream *' to 'ObjType' for 1st argument
+  252 |     Object(ObjType typeA, const char *v) : Object(typeA, std::string_view(v)) { }
+      |     ^      ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:253:5: note: candidate constructor not viable: no known conversion from 'Stream *' to 'ObjType' for 1st argument
+  253 |     Object(ObjType typeA, std::string_view v)
+      |     ^      ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor not viable: requires single argument 'boolnA', but 2 arguments were provided
+  218 |     explicit Object(bool boolnA)
+      |              ^      ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:223:14: note: candidate constructor not viable: requires single argument 'intgA', but 2 arguments were provided
+  223 |     explicit Object(int intgA)
+      |              ^      ~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:228:14: note: candidate constructor not viable: requires single argument 'realA', but 2 arguments were provided
+  228 |     explicit Object(double realA)
+      |              ^      ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:233:14: note: candidate constructor not viable: requires single argument 'stringA', but 2 arguments were provided
+  233 |     explicit Object(std::unique_ptr<GooString> stringA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor not viable: requires single argument 'stringA', but 2 arguments were provided
+  239 |     explicit Object(std::string &&stringA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:261:14: note: candidate constructor not viable: requires single argument 'int64gA', but 2 arguments were provided
+  261 |     explicit Object(long long int64gA)
+      |              ^      ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:266:14: note: candidate constructor not viable: requires single argument 'arrayA', but 2 arguments were provided
+  266 |     explicit Object(std::unique_ptr<Array> arrayA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:272:14: note: candidate constructor not viable: requires single argument 'dictA', but 2 arguments were provided
+  272 |     explicit Object(std::unique_ptr<Dict> &&dictA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:280:14: note: candidate constructor template not viable: requires single argument 'streamA', but 2 arguments were provided
+  280 |     explicit Object(std::unique_ptr<StreamType> &&streamA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:286:14: note: candidate constructor not viable: requires single argument 'r', but 2 arguments were provided
+  286 |     explicit Object(const Ref r)
+      |              ^      ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor template not viable: requires 1 argument, but 2 were provided
+  293 |     Object(T) = delete;
+      |     ^      ~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+  295 |     Object(Object &&other) noexcept
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+  312 |     Object(const Object &other) = delete;
+      |     ^      ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: candidate constructor not viable: requires single argument 'typeA', but 2 arguments were provided
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^      ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:215:5: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+  215 |     Object() : type(objNone) { }
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp:145:12: error: call to deleted constructor of 'Object'
+  145 |     Object obj(new Array(static_cast<XRef*>(nullptr)));
+      |            ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp:9:7: warning: 'GfxTilingPatternTest_499' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxTilingPatternTest_499 : public ::testing::Test {
+      |       ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_499.dir/build.make:79: generated_build/CMakeFiles/test_499.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_499.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19210: generated_build/CMakeFiles/test_499.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19217: generated_build/CMakeFiles/test_499.dir/rule] Error 2
+gmake: *** [Makefile:4274: test_499] Error 2

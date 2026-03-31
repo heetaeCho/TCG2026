@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_851.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_851.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_851.cpp:46:97: error: calling a private constructor of class 'Object'
+   46 |         auto *stream = new MemStream(const_cast<char *>(minimalPDF), 0, sizeof(minimalPDF) - 1, Object(objNull));
+      |                                                                                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_851.cpp:47:28: error: no matching constructor for initialization of 'PDFDoc'
+   47 |         auto *newDoc = new PDFDoc(stream);
+      |                            ^      ~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_851.cpp:14:7: warning: 'AnnotCaretTest_851' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   14 | class AnnotCaretTest_851 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_851.dir/build.make:79: generated_build/CMakeFiles/test_851.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_851.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:94282: generated_build/CMakeFiles/test_851.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:94289: generated_build/CMakeFiles/test_851.dir/rule] Error 2
+gmake: *** [Makefile:34772: test_851] Error 2

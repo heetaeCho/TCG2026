@@ -1,0 +1,53 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_385.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:17:20: error: variable type 'ConcreteParser' is an abstract class
+   17 |     ConcreteParser parser;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:471:30: note: unimplemented pure virtual method 'parse' in 'ConcreteParser'
+  471 |                 virtual auto parse( std::string const& exeName,
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:25:20: error: variable type 'ConcreteParser' is an abstract class
+   25 |     ConcreteParser parser;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:32:20: error: variable type 'ConcreteParser' is an abstract class
+   32 |     ConcreteParser parser;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:41:38: error: allocating an object of abstract class type 'ConcreteParser'
+   41 |         ConcreteParser* parser = new ConcreteParser();
+      |                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:49:34: error: allocating an object of abstract class type 'ConcreteParser'
+   49 |         ParserBase* parser = new ConcreteParser();
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:108:20: error: variable type 'ConcreteParser' is an abstract class
+  108 |     ConcreteParser parser;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:125:19: error: variable type 'FailingParser' is an abstract class
+  125 |     FailingParser parser;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:471:30: note: unimplemented pure virtual method 'parse' in 'FailingParser'
+  471 |                 virtual auto parse( std::string const& exeName,
+      |                              ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'FailingParser'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:133:47: note: in instantiation of function template specialization 'std::make_unique<FailingParser>' requested here
+  133 |     std::unique_ptr<ParserBase> parser = std::make_unique<FailingParser>();
+      |                                               ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'ConcreteParser'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp:141:47: note: in instantiation of function template specialization 'std::make_unique<ConcreteParser>' requested here
+  141 |     std::unique_ptr<ParserBase> parser = std::make_unique<ConcreteParser>();
+      |                                               ^
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_385.dir/build.make:79: generated_build/CMakeFiles/test_385.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_385.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19412: generated_build/CMakeFiles/test_385.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19419: generated_build/CMakeFiles/test_385.dir/rule] Error 2
+gmake: *** [Makefile:6468: test_385] Error 2

@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1335.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1335.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1335.cpp:64:20: error: no matching constructor for initialization of 'PDFDoc'
+   64 |         return new PDFDoc(gooStr);
+      |                    ^      ~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'GooString *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1335.cpp:1111:41: warning: unused parameter 'psOut' [-Wunused-parameter]
+ 1111 |         auto dummyCbk = [](PSOutputDev *psOut, void *data) {};
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1335.cpp:1111:54: warning: unused parameter 'data' [-Wunused-parameter]
+ 1111 |         auto dummyCbk = [](PSOutputDev *psOut, void *data) {};
+      |                                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1335.cpp:21:7: warning: 'PSOutputDevTest_1335' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   21 | class PSOutputDevTest_1335 : public ::testing::Test {
+      |       ^
+3 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1335.dir/build.make:79: generated_build/CMakeFiles/test_1335.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1335.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:102474: generated_build/CMakeFiles/test_1335.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:102481: generated_build/CMakeFiles/test_1335.dir/rule] Error 2
+gmake: *** [Makefile:38100: test_1335] Error 2

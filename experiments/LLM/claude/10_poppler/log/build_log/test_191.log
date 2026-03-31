@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_191.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_191.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_191.cpp:23:76: error: calling a private constructor of class 'Object'
+   23 |         auto baseStream = std::make_unique<MemStream>(buf, 0, sizeof(buf), Object(objNull));
+      |                                                                            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_191.cpp:162:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  162 |     stream->rewind();
+      |     ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_191.cpp:171:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  171 |     stream->rewind();
+      |     ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_191.cpp:9:7: warning: 'CCITTFaxStreamTest_191' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class CCITTFaxStreamTest_191 : public ::testing::Test {
+      |       ^
+3 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_191.dir/build.make:79: generated_build/CMakeFiles/test_191.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_191.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:91530: generated_build/CMakeFiles/test_191.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:91537: generated_build/CMakeFiles/test_191.dir/rule] Error 2
+gmake: *** [Makefile:33654: test_191] Error 2

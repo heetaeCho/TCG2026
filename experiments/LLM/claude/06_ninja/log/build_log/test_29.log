@@ -1,0 +1,35 @@
+[ 87%] Built target libninja
+[100%] Built target libninja-re2c
+[100%] Building CXX object generated_build/CMakeFiles/test_29.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_29.cpp.o
+[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_29.cpp:90:23: [0m[0;1;31merror: [0m[1mno viable conversion from 'internal::ReturnAction<Slot>' to 'const Action<F>' (aka 'const Action<Jobserver::Slot ()>')[0m
+   90 |       .WillRepeatedly(::testing::Return(Jobserver::Slot()));[0m
+      | [0;1;32m                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[0m[1m/usr/local/include/gmock/gmock-actions.h:724:7: [0m[0;1;36mnote: [0mcandidate constructor (the implicit copy constructor) not viable: no known conversion from 'internal::ReturnAction<Slot>' to 'const Action<Slot ()> &' for 1st argument[0m
+  724 | [0;34mclass[0m Action;[0m
+      | [0;1;32m      ^~~~~~
+[0m[1m/usr/local/include/gmock/gmock-actions.h:724:7: [0m[0;1;36mnote: [0mcandidate constructor (the implicit move constructor) not viable: no known conversion from 'internal::ReturnAction<Slot>' to 'Action<Slot ()> &&' for 1st argument[0m
+  724 | [0;34mclass[0m Action;[0m
+      | [0;1;32m      ^~~~~~
+[0m[1m/usr/local/include/gmock/gmock-actions.h:769:3: [0m[0;1;36mnote: [0mcandidate template ignored: requirement 'internal::disjunction<std::is_constructible<std::function<Jobserver::Slot ()>, testing::internal::ReturnAction<Jobserver::Slot>>, std::is_constructible<std::function<Jobserver::Slot ()>, testing::internal::ReturnAction<Jobserver::Slot>>>::value' was not satisfied [with G = internal::ReturnAction<Slot>][0m
+  769 |   Action(G&& fun) {  [0;33m// NOLINT[0m
+      | [0;1;32m  ^
+[0m[1m/usr/local/include/gmock/gmock-actions.h:781:3: [0m[0;1;36mnote: [0mcandidate template ignored: could not match 'Action' against 'internal::ReturnAction'[0m
+  781 |   Action([0;34mconst[0m Action<Func>& action)  [0;33m// NOLINT[0m
+      | [0;1;32m  ^
+[0m[1m/usr/local/include/gmock/gmock-actions.h:774:12: [0m[0;1;36mnote: [0mexplicit constructor is not a candidate[0m
+  774 |   [0;34mexplicit[0m Action(ActionInterface<F>* impl)[0m
+      | [0;1;32m           ^
+[0m[1m/usr/local/include/gmock/gmock-actions.h:939:3: [0m[0;1;36mnote: [0mcandidate template ignored: could not match 'OnceAction' against 'Action'[0m
+  939 |   [0;34moperator[0m OnceAction<U(Args...)>() && {  [0;33m// NOLINT[0m
+      | [0;1;32m  ^
+[0m[1m/usr/local/include/gmock/gmock-actions.h:950:3: [0m[0;1;36mnote: [0mcandidate template ignored: requirement 'conjunction<testing::internal::negation<std::is_same<void, Jobserver::Slot>>, testing::internal::negation<std::is_reference<Jobserver::Slot>>, std::is_convertible<const Jobserver::Slot &, Jobserver::Slot>, std::is_copy_constructible<Jobserver::Slot>>::value' was not satisfied [with U = Jobserver::Slot, Args = <>][0m
+  950 |   [0;34moperator[0m Action<U(Args...)>() [0;34mconst[0m {  [0;33m// NOLINT[0m
+      | [0;1;32m  ^
+[0m[1m/usr/local/include/gmock/gmock-spec-builders.h:1033:53: [0m[0;1;36mnote: [0mpassing argument to parameter 'action' here[0m
+ 1033 |   TypedExpectation& WillRepeatedly([0;34mconst[0m Action<F>& action) {[0m
+      | [0;1;32m                                                    ^
+[0m1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_29.dir/build.make:79: generated_build/CMakeFiles/test_29.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_29.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:6354: generated_build/CMakeFiles/test_29.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:6361: generated_build/CMakeFiles/test_29.dir/rule] Error 2
+gmake: *** [Makefile:2428: test_29] Error 2

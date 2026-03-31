@@ -1,0 +1,24 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_275.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_275.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_275.cpp:32:31: error: no template named 'float_bits' in namespace 'YAML::jkj::dragonbox::detail'; did you mean simply 'float_bits'?
+   32 | using float_traits = decltype(detail::float_bits<float>::traits_type())* ;
+      |                               ^~~~~~~~~~~~~~~~~~
+      |                               float_bits
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:521:16: note: 'float_bits' declared here
+  521 |         struct float_bits {
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:523:43: error: type 'YAML::jkj::dragonbox::float_bits<float>::format_traits' (aka 'float') cannot be used prior to '::' because it has no members
+  523 |             using carrier_uint = typename format_traits::carrier_uint;
+      |                                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_275.cpp:32:39: note: in instantiation of template class 'YAML::jkj::dragonbox::float_bits<float>' requested here
+   32 | using float_traits = decltype(detail::float_bits<float>::traits_type())* ;
+      |                                       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_275.cpp:4:
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/src/contrib/dragonbox.h:524:43: error: type 'YAML::jkj::dragonbox::float_bits<float>::format_traits' (aka 'float') cannot be used prior to '::' because it has no members
+  524 |             using exponent_int = typename format_traits::exponent_int;
+      |                                           ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_275.dir/build.make:79: generated_build/CMakeFiles/test_275.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_275.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14190: generated_build/CMakeFiles/test_275.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14197: generated_build/CMakeFiles/test_275.dir/rule] Error 2
+gmake: *** [Makefile:5042: test_275] Error 2

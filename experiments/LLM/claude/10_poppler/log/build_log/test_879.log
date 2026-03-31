@@ -1,0 +1,52 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_879.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:28:33: error: call to constructor of 'Dict' is ambiguous
+   28 |         Object obj = Object(new Dict(nullptr));
+      |                                 ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:27:62: warning: unused parameter 'type' [-Wunused-parameter]
+   27 |     std::unique_ptr<FormField> createFormField(FormFieldType type = formButton) {
+      |                                                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:45:24: error: call to constructor of 'Dict' is ambiguous
+   45 |     Object dictObj(new Dict(nullptr));
+      |                        ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:136:22: error: call to constructor of 'Dict' is ambiguous
+  136 |     Dict *dict = new Dict(nullptr);
+      |                      ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:137:12: error: call to deleted constructor of 'Object'
+  137 |     Object dictObj(dict);
+      |            ^       ~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Dict *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:232:16: error: cannot initialize a variable of type 'GetFQNFunc' (aka 'const GooString *(FormField::*)()') with an rvalue of type 'const GooString *(FormField::*)() const': different qualifiers (unqualified vs 'const')
+  232 |     GetFQNFunc getFQN = &FormField::getFullyQualifiedName;
+      |                ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:15:7: warning: 'FormFieldTest_879' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class FormFieldTest_879 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp:119:7: warning: 'FormFieldWithDocTest_879' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+  119 | class FormFieldWithDocTest_879 : public ::testing::Test {
+      |       ^
+3 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_879.dir/build.make:79: generated_build/CMakeFiles/test_879.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_879.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:92202: generated_build/CMakeFiles/test_879.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:92209: generated_build/CMakeFiles/test_879.dir/rule] Error 2
+gmake: *** [Makefile:33927: test_879] Error 2

@@ -1,0 +1,28 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1472.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1472.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1472.cpp:33:7: warning: 'ShadingColorRadialHelperTest_1472' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   33 | class ShadingColorRadialHelperTest_1472 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1472.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'GfxRadialShading'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1472.cpp:38:24: note: in instantiation of function template specialization 'std::make_unique<GfxRadialShading, double, double, double, double, double, double, double, double, int, bool, bool>' requested here
+   38 |         shading = std::make_unique<GfxRadialShading>(
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1060:5: note: candidate constructor not viable: no known conversion from 'int' to 'std::vector<std::unique_ptr<Function>>' for 9th argument
+ 1060 |     GfxRadialShading(double x0A, double y0A, double r0A, double x1A, double y1A, double r1A, double t0A, double t1A, std::vector<std::unique_ptr<Function>> &&funcsA, bool extend0A, bool extend1A);
+      |     ^                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1061:14: note: candidate constructor not viable: requires single argument 'shading', but 11 arguments were provided
+ 1061 |     explicit GfxRadialShading(const GfxRadialShading *shading);
+      |              ^                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1057:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 11 were provided
+ 1057 | class GfxRadialShading : public GfxUnivariateShading
+      |       ^~~~~~~~~~~~~~~~
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1472.dir/build.make:79: generated_build/CMakeFiles/test_1472.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1472.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:51402: generated_build/CMakeFiles/test_1472.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:51409: generated_build/CMakeFiles/test_1472.dir/rule] Error 2
+gmake: *** [Makefile:17352: test_1472] Error 2

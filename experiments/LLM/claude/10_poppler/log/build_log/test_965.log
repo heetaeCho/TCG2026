@@ -1,0 +1,23 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_965.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_965.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_965.cpp:56:34: error: use of undeclared identifier 'gmalloc'; did you mean 'malloc'?
+   56 |         auto *dataCopy = (char *)gmalloc(pdfData.size());
+      |                                  ^~~~~~~
+      |                                  malloc
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:68:12: note: 'malloc' declared here
+   68 | using std::malloc;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_965.cpp:59:77: error: calling a private constructor of class 'Object'
+   59 |         auto str = std::make_unique<MemStream>(dataCopy, 0, pdfData.size(), Object(objNull));
+      |                                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_965.cpp:10:7: warning: 'PDFDocOkToPrintHighResTest_965' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   10 | class PDFDocOkToPrintHighResTest_965 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_965.dir/build.make:79: generated_build/CMakeFiles/test_965.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_965.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:79146: generated_build/CMakeFiles/test_965.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:79153: generated_build/CMakeFiles/test_965.dir/rule] Error 2
+gmake: *** [Makefile:28623: test_965] Error 2

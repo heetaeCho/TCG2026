@@ -1,0 +1,40 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_369.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_369.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_369.cpp:45:10: warning: unused variable 'imageIdx' [-Wunused-variable]
+   45 |   size_t imageIdx = 0;
+      |          ^~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_369.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'Exiv2::Internal::TiffImageEntry'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_369.cpp:36:21: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffImageEntry, int, Exiv2::IfdId>' requested here
+   36 |   auto entry = std::make_unique<TiffImageEntry>(0x0111, IfdId::ifd0Id);
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:596:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  596 | class TiffDataEntryBase : public TiffEntryBase {
+      |       ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:716:28: note: constructor from base class 'TiffDataEntryBase' inherited here
+  716 |   using TiffDataEntryBase::TiffDataEntryBase;
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:714:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  714 | class TiffImageEntry : public TiffDataEntryBase {
+      |       ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:714:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+  714 | class TiffImageEntry : public TiffDataEntryBase {
+      |       ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:714:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 2 were provided
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:601:3: note: candidate inherited constructor not viable: requires 4 arguments, but 2 were provided
+  601 |   TiffDataEntryBase(uint16_t tag, IfdId group, uint16_t szTag, IfdId szGroup);
+      |   ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:716:28: note: constructor from base class 'TiffDataEntryBase' inherited here
+  716 |   using TiffDataEntryBase::TiffDataEntryBase;
+      |                            ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_369.dir/build.make:79: generated_build/CMakeFiles/test_369.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_369.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:81933: generated_build/CMakeFiles/test_369.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:81940: generated_build/CMakeFiles/test_369.dir/rule] Error 2
+gmake: *** [Makefile:28922: test_369] Error 2

@@ -1,0 +1,37 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_223.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_223.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_223.cpp:15:14: error: no viable overloaded '='
+   15 |     pMemory_ = std::make_shared<memory>();
+      |     ~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:414:19: note: candidate function not viable: no known conversion from 'shared_ptr<_NonArray<memory>>' to 'const shared_ptr<YAML::detail::memory_holder>' for 1st argument
+  414 |       shared_ptr& operator=(const shared_ptr&) noexcept = default;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:418:2: note: candidate template ignored: requirement 'is_assignable<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic> &, const std::shared_ptr<YAML::detail::memory> &>::value' was not satisfied [with _Yp = YAML::detail::memory]
+  418 |         operator=(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:429:2: note: candidate template ignored: could not match 'auto_ptr' against 'shared_ptr'
+  429 |         operator=(auto_ptr<_Yp>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:438:7: note: candidate function not viable: no known conversion from 'shared_ptr<_NonArray<memory>>' to 'shared_ptr<YAML::detail::memory_holder>' for 1st argument
+  438 |       operator=(shared_ptr&& __r) noexcept
+      |       ^         ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:446:2: note: candidate template ignored: requirement 'is_assignable<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic> &, std::shared_ptr<YAML::detail::memory>>::value' was not satisfied [with _Yp = YAML::detail::memory]
+  446 |         operator=(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:454:2: note: candidate template ignored: could not match 'unique_ptr' against 'shared_ptr'
+  454 |         operator=(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_223.cpp:212:9: error: no viable conversion from 'node' to 'node *'
+  212 |   node* result = ref_->get(std::string("mykey"), pMemory_);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_223.cpp:219:9: error: no viable conversion from 'node' to 'node *'
+  219 |   node* result = ref_->get(std::string("nonexistent"), pMemory_);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_223.cpp:288:9: error: no viable conversion from 'node' to 'node *'
+  288 |   node* result = ref_->get(key, pMemory_);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_223.dir/build.make:79: generated_build/CMakeFiles/test_223.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_223.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4590: generated_build/CMakeFiles/test_223.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4597: generated_build/CMakeFiles/test_223.dir/rule] Error 2
+gmake: *** [Makefile:1142: test_223] Error 2

@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_157.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_157.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_157.cpp:12:57: error: non-virtual member function marked 'override' hides virtual member function
+   12 |     size_t init(GooString *url, CachedFile *cachedFile) override
+      |                                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: hidden overloaded virtual function 'CachedFileLoader::init' declared here: different number of parameters (1 vs 2)
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_157.cpp:48:22: error: allocating an object of abstract class type 'TestCachedFileLoader'
+   48 |         loader = new TestCachedFileLoader();
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/CachedFile.h:132:20: note: unimplemented pure virtual method 'init' in 'TestCachedFileLoader'
+  132 |     virtual size_t init(CachedFile *cachedFile) = 0;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_157.cpp:38:7: warning: 'CachedFileStreamTest_157' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   38 | class CachedFileStreamTest_157 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_157.dir/build.make:79: generated_build/CMakeFiles/test_157.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_157.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:94922: generated_build/CMakeFiles/test_157.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:94929: generated_build/CMakeFiles/test_157.dir/rule] Error 2
+gmake: *** [Makefile:35032: test_157] Error 2

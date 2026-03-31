@@ -1,0 +1,52 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_886.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp:25:26: error: call to constructor of 'Dict' is ambiguous
+   25 |         obj = Object(new Dict(nullptr));
+      |                          ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp:38:11: error: calling a private constructor of class 'Object'
+   38 |     obj = Object(objNull);
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp:53:11: error: calling a private constructor of class 'Object'
+   53 |     obj = Object(objNull);
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp:65:11: error: calling a private constructor of class 'Object'
+   65 |     obj = Object(objNull);
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp:374:24: error: no member named 'getLength' in 'GooString'
+  374 |         EXPECT_GT(fqn->getLength(), 0);
+      |                   ~~~  ^
+/usr/local/include/gtest/gtest.h:1895:57: note: expanded from macro 'EXPECT_GT'
+ 1895 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperGT, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp:14:7: warning: 'FormFieldTest_886' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   14 | class FormFieldTest_886 : public ::testing::Test {
+      |       ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_886.dir/build.make:79: generated_build/CMakeFiles/test_886.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_886.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:77386: generated_build/CMakeFiles/test_886.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:77393: generated_build/CMakeFiles/test_886.dir/rule] Error 2
+gmake: *** [Makefile:27908: test_886] Error 2

@@ -1,0 +1,82 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_144.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:18:18: error: only virtual member functions can be marked 'override'
+   18 |     void reset() override { }
+      |                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:25:16: error: virtual function 'getPSFilter' has a different return type ('GooString *') than the function it overrides (which has return type 'std::optional<std::string>' (aka 'optional<basic_string<char>>'))
+   25 |     GooString *getPSFilter(int /*psLevel*/, const char * /*indent*/) override { return nullptr; }
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:26:34: error: non-virtual member function marked 'override' hides virtual member function
+   26 |     bool isBinary(bool /*last*/) override { return false; }
+      |                                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different qualifiers ('const' vs unqualified)
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:43:18: error: only virtual member functions can be marked 'override'
+   43 |     void reset() override { }
+      |                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:47:16: error: virtual function 'getPSFilter' has a different return type ('GooString *') than the function it overrides (which has return type 'std::optional<std::string>' (aka 'optional<basic_string<char>>'))
+   47 |     GooString *getPSFilter(int /*psLevel*/, const char * /*indent*/) override { return nullptr; }
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:48:34: error: non-virtual member function marked 'override' hides virtual member function
+   48 |     bool isBinary(bool /*last*/) override { return false; }
+      |                                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different qualifiers ('const' vs unqualified)
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:54:26: error: allocating an object of abstract class type 'MockBaseStream'
+   54 |         baseStream = new MockBaseStream();
+      |                          ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockBaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'MockBaseStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:55:28: error: allocating an object of abstract class type 'TestFilterStream'
+   55 |         filterStream = new TestFilterStream(baseStream);
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'TestFilterStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'TestFilterStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:140:5: error: cannot use 'try' with exceptions disabled
+  140 |     EXPECT_NO_THROW(filterStream->setPos(0, 0));
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:145:5: error: cannot use 'try' with exceptions disabled
+  145 |     EXPECT_NO_THROW(filterStream->close());
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:12:7: warning: 'MockBaseStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class MockBaseStream : public Stream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:37:7: warning: 'TestFilterStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   37 | class TestFilterStream : public FilterStream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp:51:7: warning: 'FilterStreamTest_144' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   51 | class FilterStreamTest_144 : public ::testing::Test {
+      |       ^
+3 warnings and 10 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_144.dir/build.make:79: generated_build/CMakeFiles/test_144.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_144.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:87786: generated_build/CMakeFiles/test_144.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:87793: generated_build/CMakeFiles/test_144.dir/rule] Error 2
+gmake: *** [Makefile:32133: test_144] Error 2

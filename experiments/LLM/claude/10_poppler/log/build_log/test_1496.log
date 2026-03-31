@@ -1,0 +1,49 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1496.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:73:20: error: variable type 'MockBaseStream' is an abstract class
+   73 |     MockBaseStream mockBase;
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'MockBaseStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'MockBaseStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:368:21: note: unimplemented pure virtual method 'getStart' in 'MockBaseStream'
+  368 |     virtual Goffset getStart() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:369:18: note: unimplemented pure virtual method 'moveStart' in 'MockBaseStream'
+  369 |     virtual void moveStart(Goffset delta) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:74:37: error: allocating an object of abstract class type 'MockBaseStream'
+   74 |     MockBaseStream* innerBase = new MockBaseStream();
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:92:20: error: variable type 'MockBaseStream' is an abstract class
+   92 |     MockBaseStream base;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:201:20: error: variable type 'MockBaseStream' is an abstract class
+  201 |     MockBaseStream outerBase;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:202:20: error: variable type 'MockBaseStream' is an abstract class
+  202 |     MockBaseStream innerBase;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:211:20: error: variable type 'MockBaseStream' is an abstract class
+  211 |     MockBaseStream base;
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:34:7: warning: 'MockBaseStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   34 | class MockBaseStream : public BaseStream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:51:7: warning: 'BaseStreamStreamTest_1496' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   51 | class BaseStreamStreamTest_1496 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:11:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class MockStream : public Stream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp:58:25: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+   58 |     auto mockStr = std::make_unique<MockStream>();
+      |                         ^
+3 warnings and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1496.dir/build.make:79: generated_build/CMakeFiles/test_1496.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1496.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:90570: generated_build/CMakeFiles/test_1496.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:90577: generated_build/CMakeFiles/test_1496.dir/rule] Error 2
+gmake: *** [Makefile:33264: test_1496] Error 2

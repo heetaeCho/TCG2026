@@ -1,0 +1,34 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_342.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_342.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_342.cpp:51:12: error: call to deleted constructor of 'Object'
+   51 |     Object urlObj(new GooString("http://example.com"));
+      |            ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<GooString *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_342.cpp:53:23: error: call to constructor of 'Dict' is ambiguous
+   53 |     dict = Object(new Dict(nullptr));
+      |                       ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_342.cpp:59:28: error: call to constructor of 'Dict' is ambiguous
+   59 |     submitObj = Object(new Dict(nullptr));
+      |                            ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_342.cpp:8:7: warning: 'LinkSubmitFormTest_342' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    8 | class LinkSubmitFormTest_342 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_342.dir/build.make:79: generated_build/CMakeFiles/test_342.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_342.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:67370: generated_build/CMakeFiles/test_342.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:67377: generated_build/CMakeFiles/test_342.dir/rule] Error 2
+gmake: *** [Makefile:23839: test_342] Error 2

@@ -1,0 +1,220 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1667.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:35:70: error: calling a private constructor of class 'Object'
+   35 |     auto memStr = std::make_unique<MemStream>(data, 0, sizeof(data), Object(objNull));
+      |                                                                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:55:56: error: calling a private constructor of class 'Object'
+   55 |     auto memStr = new MemStream(data, 0, sizeof(data), Object(objNull));
+      |                                                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:59:12: error: call to deleted constructor of 'Object'
+   59 |     Object csObj(new GfxDeviceRGBColorSpace());
+      |            ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<GfxDeviceRGBColorSpace *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:62:22: error: call to constructor of 'Dict' is ambiguous
+   62 |     auto *dict = new Dict(nullptr);
+      |                      ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:74:33: error: unknown type name 'DeviceNRecoder'
+   74 |             auto *recoder = new DeviceNRecoder(memStr, 1, 1, colorMap);
+      |                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:92:45: error: calling a private constructor of class 'Object'
+   92 |     auto memStr = new MemStream(data, 0, 0, Object(objNull));
+      |                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:111:7: error: redefinition of 'DeviceNRecoderTest_1667'
+  111 | class DeviceNRecoderTest_1667 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:14:7: note: previous definition is here
+   14 | class DeviceNRecoderTest_1667 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:125:1: error: redefinition of 'DeviceNRecoderTest_1667_IsEncoderReturnsTrue_1667_Test'
+  125 | TEST_F(DeviceNRecoderTest_1667, IsEncoderReturnsTrue_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1486:9: note: expanded from macro 'GTEST_TEST_'
+ 1486 |   class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)                     \
+      |         ^
+/usr/local/include/gtest/internal/gtest-internal.h:1478:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1478 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:83:1: note: expanded from here
+   83 | DeviceNRecoderTest_1667_IsEncoderReturnsTrue_1667_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:46:1: note: previous definition is here
+   46 | TEST_F(DeviceNRecoderTest_1667, IsEncoderReturnsTrue_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1486:9: note: expanded from macro 'GTEST_TEST_'
+ 1486 |   class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)                     \
+      |         ^
+/usr/local/include/gtest/internal/gtest-internal.h:1478:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1478 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:3:1: note: expanded from here
+    3 | DeviceNRecoderTest_1667_IsEncoderReturnsTrue_1667_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:125:1: error: redefinition of 'test_info_'
+  125 | TEST_F(DeviceNRecoderTest_1667, IsEncoderReturnsTrue_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1509:65: note: expanded from macro 'GTEST_TEST_'
+ 1509 |                                                     test_name)::test_info_ =   \
+      |                                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:46:1: note: previous definition is here
+   46 | TEST_F(DeviceNRecoderTest_1667, IsEncoderReturnsTrue_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1509:65: note: expanded from macro 'GTEST_TEST_'
+ 1509 |                                                     test_name)::test_info_ =   \
+      |                                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:125:1: error: redefinition of 'TestBody'
+  125 | TEST_F(DeviceNRecoderTest_1667, IsEncoderReturnsTrue_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1519:60: note: expanded from macro 'GTEST_TEST_'
+ 1519 |   void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody()
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:46:1: note: previous definition is here
+   46 | TEST_F(DeviceNRecoderTest_1667, IsEncoderReturnsTrue_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1519:60: note: expanded from macro 'GTEST_TEST_'
+ 1519 |   void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody()
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:137:1: error: redefinition of 'DeviceNRecoderTest_1667_GetPSFilterReturnsNullopt_1667_Test'
+  137 | TEST_F(DeviceNRecoderTest_1667, GetPSFilterReturnsNullopt_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1486:9: note: expanded from macro 'GTEST_TEST_'
+ 1486 |   class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)                     \
+      |         ^
+/usr/local/include/gtest/internal/gtest-internal.h:1478:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1478 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:15:1: note: expanded from here
+   15 | DeviceNRecoderTest_1667_GetPSFilterReturnsNullopt_1667_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:28:1: note: previous definition is here
+   28 | TEST_F(DeviceNRecoderTest_1667, GetPSFilterReturnsNullopt_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1486:9: note: expanded from macro 'GTEST_TEST_'
+ 1486 |   class GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)                     \
+      |         ^
+/usr/local/include/gtest/internal/gtest-internal.h:1478:3: note: expanded from macro 'GTEST_TEST_CLASS_NAME_'
+ 1478 |   test_suite_name##_##test_name##_Test
+      |   ^
+<scratch space>:128:1: note: expanded from here
+  128 | DeviceNRecoderTest_1667_GetPSFilterReturnsNullopt_1667_Test
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:137:1: error: redefinition of 'test_info_'
+  137 | TEST_F(DeviceNRecoderTest_1667, GetPSFilterReturnsNullopt_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1509:65: note: expanded from macro 'GTEST_TEST_'
+ 1509 |                                                     test_name)::test_info_ =   \
+      |                                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:28:1: note: previous definition is here
+   28 | TEST_F(DeviceNRecoderTest_1667, GetPSFilterReturnsNullopt_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1509:65: note: expanded from macro 'GTEST_TEST_'
+ 1509 |                                                     test_name)::test_info_ =   \
+      |                                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:137:1: error: redefinition of 'TestBody'
+  137 | TEST_F(DeviceNRecoderTest_1667, GetPSFilterReturnsNullopt_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1519:60: note: expanded from macro 'GTEST_TEST_'
+ 1519 |   void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody()
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:28:1: note: previous definition is here
+   28 | TEST_F(DeviceNRecoderTest_1667, GetPSFilterReturnsNullopt_1667) {
+      | ^
+/usr/local/include/gtest/gtest.h:2224:41: note: expanded from macro 'TEST_F'
+ 2224 | #define TEST_F(test_fixture, test_name) GTEST_TEST_F(test_fixture, test_name)
+      |                                         ^
+/usr/local/include/gtest/gtest.h:2221:3: note: expanded from macro 'GTEST_TEST_F'
+ 2221 |   GTEST_TEST_(test_fixture, test_name, test_fixture, \
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1519:60: note: expanded from macro 'GTEST_TEST_'
+ 1519 |   void GTEST_TEST_CLASS_NAME_(test_suite_name, test_name)::TestBody()
+      |                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp:14:7: warning: 'DeviceNRecoderTest_1667' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   14 | class DeviceNRecoderTest_1667 : public ::testing::Test {
+      |       ^
+1 warning and 13 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1667.dir/build.make:79: generated_build/CMakeFiles/test_1667.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1667.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24330: generated_build/CMakeFiles/test_1667.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24337: generated_build/CMakeFiles/test_1667.dir/rule] Error 2
+gmake: *** [Makefile:6354: test_1667] Error 2

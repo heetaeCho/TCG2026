@@ -1,0 +1,46 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_45.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp:47:50: error: too many arguments to function call, expected 2, have 3
+   47 |     auto result = FoFiTrueType::make(nullptr, 0, 0);
+      |                   ~~~~~~~~~~~~~~~~~~             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/fofi/FoFiTrueType.h:59:42: note: 'make' declared here
+   59 |     static std::unique_ptr<FoFiTrueType> make(std::span<const unsigned char> data, int faceIndexA);
+      |                                          ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp:383:35: error: cannot initialize a parameter of type 'FoFiOutputFunc' (aka 'void (*)(void *, const char *, unsigned long)') with an rvalue of type 'void (*)(void *, const char *, int)': type mismatch at 3rd parameter ('size_t' (aka 'unsigned long') vs 'int')
+  383 |                                   &outputToString, &output);
+      |                                   ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/fofi/FoFiTrueType.h:116:113: note: passing argument to parameter 'outputFunc' here
+  116 |     void convertToType42(const char *psName, char **encoding, const std::vector<int> &codeToGID, FoFiOutputFunc outputFunc, void *outputStream) const;
+      |                                                                                                                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp:417:37: error: cannot initialize a parameter of type 'FoFiOutputFunc' (aka 'void (*)(void *, const char *, unsigned long)') with an rvalue of type 'void (*)(void *, const char *, int)': type mismatch at 3rd parameter ('size_t' (aka 'unsigned long') vs 'int')
+  417 |                                     &outputToString, &output);
+      |                                     ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/fofi/FoFiTrueType.h:132:121: note: passing argument to parameter 'outputFunc' here
+  132 |     void convertToCIDType2(const char *psName, const std::vector<int> &cidMap, bool needVerticalMetrics, FoFiOutputFunc outputFunc, void *outputStream) const;
+      |                                                                                                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp:449:19: error: no matching member function for call to 'convertToType0'
+  449 |             font->convertToType0("TestFont", cidMap, false, &maxValidGlyph,
+      |             ~~~~~~^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/fofi/FoFiTrueType.h:144:10: note: candidate function not viable: no known conversion from 'void (*)(void *, const char *, int)' to 'FoFiOutputFunc' (aka 'void (*)(void *, const char *, unsigned long)') for 5th argument
+  144 |     void convertToType0(const std::string &psName, const std::vector<int> &cidMap, bool needVerticalMetrics, int *maxValidGlyph, FoFiOutputFunc outputFunc, void *outputStream) const;
+      |          ^                                                                                                                       ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/fofi/FoFiTrueType.h:149:10: note: candidate function not viable: requires 4 arguments, but 6 were provided
+  149 |     void convertToType0(const std::string &psName, const std::vector<int> &cidMap, FoFiOutputFunc outputFunc, void *outputStream) const;
+      |          ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp:752:19: error: no matching member function for call to 'convertToType0'
+  752 |             font->convertToType0("TestFont", cidMap,
+      |             ~~~~~~^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/fofi/FoFiTrueType.h:149:10: note: candidate function not viable: no known conversion from 'void (*)(void *, const char *, int)' to 'FoFiOutputFunc' (aka 'void (*)(void *, const char *, unsigned long)') for 3rd argument
+  149 |     void convertToType0(const std::string &psName, const std::vector<int> &cidMap, FoFiOutputFunc outputFunc, void *outputStream) const;
+      |          ^                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/fofi/FoFiTrueType.h:144:10: note: candidate function not viable: requires 6 arguments, but 4 were provided
+  144 |     void convertToType0(const std::string &psName, const std::vector<int> &cidMap, bool needVerticalMetrics, int *maxValidGlyph, FoFiOutputFunc outputFunc, void *outputStream) const;
+      |          ^              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp:20:7: warning: 'FoFiTrueTypeTest_45' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   20 | class FoFiTrueTypeTest_45 : public ::testing::Test {
+      |       ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_45.dir/build.make:79: generated_build/CMakeFiles/test_45.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_45.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:17578: generated_build/CMakeFiles/test_45.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:17585: generated_build/CMakeFiles/test_45.dir/rule] Error 2
+gmake: *** [Makefile:3611: test_45] Error 2

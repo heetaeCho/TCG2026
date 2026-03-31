@@ -1,0 +1,26 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 9 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 9 tests from RedirectGuardTest_545
+[ RUN      ] RedirectGuardTest_545.ActivateTrueWhenInactive_DeactivatesOnDestruction_545
+[       OK ] RedirectGuardTest_545.ActivateTrueWhenInactive_DeactivatesOnDestruction_545 (0 ms)
+[ RUN      ] RedirectGuardTest_545.ActivateFalseWhenActive_ReactivatesOnDestruction_545
+[       OK ] RedirectGuardTest_545.ActivateFalseWhenActive_ReactivatesOnDestruction_545 (0 ms)
+[ RUN      ] RedirectGuardTest_545.ActivateTrueWhenAlreadyActive_NoChangeOnDestruction_545
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_545.cpp:76: Failure
+Mock function called more times than expected - returning directly.
+    Function call: deactivateImpl()
+         Expected: to be never called
+           Actual: called once - over-saturated and active
+
+[  FAILED  ] RedirectGuardTest_545.ActivateTrueWhenAlreadyActive_NoChangeOnDestruction_545 (0 ms)
+[ RUN      ] RedirectGuardTest_545.ActivateFalseWhenAlreadyInactive_NoChangeOnDestruction_545
+[       OK ] RedirectGuardTest_545.ActivateFalseWhenAlreadyInactive_NoChangeOnDestruction_545 (0 ms)
+[ RUN      ] RedirectGuardTest_545.MoveConstructorTransfersOwnership_545
+[       OK ] RedirectGuardTest_545.MoveConstructorTransfersOwnership_545 (0 ms)
+[ RUN      ] RedirectGuardTest_545.MoveAssignmentTransfersOwnership_545
+[       OK ] RedirectGuardTest_545.MoveAssignmentTransfersOwnership_545 (0 ms)
+[ RUN      ] RedirectGuardTest_545.OutputRedirectIsActiveReflectsState_545
+[       OK ] RedirectGuardTest_545.OutputRedirectIsActiveReflectsState_545 (0 ms)
+[ RUN      ] RedirectGuardTest_545.MultipleActivateCallsHandled_545
+test_545: /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_output_redirect.hpp:40: void Catch::OutputRedirect::activate(): Assertion `!m_redirectActive && "redirect is already active"' failed.

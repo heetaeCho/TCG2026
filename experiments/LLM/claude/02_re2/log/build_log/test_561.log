@@ -1,0 +1,44 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_561.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_561.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_561.cpp:18:32: error: 'FromRegexp' is a private member of 're2::Prefilter'
+   18 |     Prefilter* pf = Prefilter::FromRegexp(re);
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/prefilter.h:127:21: note: declared private here
+  127 |   static Prefilter* FromRegexp(Regexp* a);
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_561.cpp:29:42: error: expected expression
+   29 |   EXPECT_EQ(pf->op(), Prefilter::ALL) || EXPECT_EQ(pf->op(), Prefilter::ATOM);
+      |                                          ^
+/usr/local/include/gtest/gtest.h:1885:3: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |   ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:3: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:3: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |   ^
+/usr/local/include/gtest/gtest_pred_impl.h:78:3: note: expanded from macro 'GTEST_ASSERT_'
+   78 |   GTEST_AMBIGUOUS_ELSE_BLOCKER_                                 \
+      |   ^
+/usr/local/include/gtest/internal/gtest-port.h:730:3: note: expanded from macro 'GTEST_AMBIGUOUS_ELSE_BLOCKER_'
+  730 |   switch (0)                          \
+      |   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_561.cpp:29:42: error: expected expression
+/usr/local/include/gtest/gtest.h:1885:3: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |   ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:3: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:3: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |   ^
+/usr/local/include/gtest/gtest_pred_impl.h:81:3: note: expanded from macro 'GTEST_ASSERT_'
+   81 |   else                                                          \
+      |   ^
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_561.dir/build.make:79: generated_build/CMakeFiles/test_561.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_561.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:8073: generated_build/CMakeFiles/test_561.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:8080: generated_build/CMakeFiles/test_561.dir/rule] Error 2
+gmake: *** [Makefile:2662: test_561] Error 2

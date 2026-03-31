@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_493.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_493.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_493.cpp:34:12: error: calling a private constructor of class 'Object'
+   34 |     Object obj(objNull);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_493.cpp:51:12: error: call to deleted constructor of 'Object'
+   51 |     Object obj(new GooString("test"));
+      |            ^   ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<GooString *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_493.cpp:86:12: error: call to deleted constructor of 'Object'
+   86 |     Object obj(new Array(nullptr));
+      |            ^   ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_493.cpp:93:20: error: call to constructor of 'Dict' is ambiguous
+   93 |     Object obj(new Dict(nullptr));
+      |                    ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_493.cpp:9:7: warning: 'GfxTilingPatternTest_493' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class GfxTilingPatternTest_493 : public ::testing::Test {
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_493.dir/build.make:79: generated_build/CMakeFiles/test_493.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_493.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:44874: generated_build/CMakeFiles/test_493.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:44881: generated_build/CMakeFiles/test_493.dir/rule] Error 2
+gmake: *** [Makefile:14700: test_493] Error 2

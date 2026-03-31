@@ -1,0 +1,180 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_752.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:23:19: error: call to implicitly-deleted default constructor of 'AssertionInfo'
+   23 |     AssertionInfo info;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:21:24: note: default constructor of 'AssertionInfo' is implicitly deleted because field 'lineInfo' has a deleted default constructor
+   21 |         SourceLineInfo lineInfo;
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_source_line_info.hpp:18:9: note: 'SourceLineInfo' has been explicitly marked deleted here
+   18 |         SourceLineInfo() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:29:25: error: call to deleted constructor of 'AssertionResultData'
+   29 |     AssertionResultData data;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:32:12: error: no matching constructor for initialization of 'AssertionResult'
+   32 |     return AssertionResult(info, CATCH_MOVE(data));
+      |            ^               ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:38:9: note: candidate constructor not viable: expects an rvalue for 2nd argument
+   38 |         AssertionResult( AssertionInfo const& info, AssertionResultData&& data );
+      |         ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   37 |         AssertionResult() = delete;
+      |         ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:1:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_junit.hpp:12:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_cumulative_base.hpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:17:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:25:10: error: 'm_ptr' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   25 |         T* m_ptr;
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:53:53: note: in instantiation of template class 'Catch::Detail::unique_ptr<std::basic_ostream<char> &>' requested here
+   53 |         ReporterConfig reporterConfig(config.get(), Detail::make_unique<std::ostream&>(stream), ColourMode::None, {});
+      |                                                     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:1:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_junit.hpp:12:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_cumulative_base.hpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/reporters/catch_reporter_common_base.hpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:17:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:40: error: 'ptr' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                                        ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:71:10: error: 'operator->' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   71 |         T* operator->() noexcept {
+      |          ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:75:16: error: 'operator->' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   75 |         T const* operator->() const noexcept {
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:80:10: error: 'get' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   80 |         T* get() { return m_ptr; }
+      |          ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:81:16: error: 'get' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   81 |         T const* get() const { return m_ptr; }
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:83:21: error: 'ptr' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   83 |         void reset(T* ptr = nullptr) {
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:88:10: error: 'release' declared as a pointer to a reference of type 'std::basic_ostream<char> &'
+   88 |         T* release() {
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:73:25: error: no matching constructor for initialization of 'TestCaseInfo'
+   73 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::None);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:93:25: error: no matching constructor for initialization of 'TestCaseInfo'
+   93 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::None);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:112:25: error: no matching constructor for initialization of 'TestCaseInfo'
+  112 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::None);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:131:25: error: no matching constructor for initialization of 'TestCaseInfo'
+  131 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::None);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:150:25: error: no matching constructor for initialization of 'TestCaseInfo'
+  150 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::None);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:169:25: error: no matching constructor for initialization of 'TestCaseInfo'
+  169 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::None);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:188:25: error: no matching constructor for initialization of 'TestCaseInfo'
+  188 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::None);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp:215:25: error: no matching constructor for initialization of 'TestCaseInfo'
+  215 |     auto testCaseInfo = TestCaseInfo("test case", {"class"}, {"test.cpp", 1}, "", tags, TestCaseProperties::MayFail);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 6 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 6 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_752.dir/build.make:79: generated_build/CMakeFiles/test_752.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_752.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:7301: generated_build/CMakeFiles/test_752.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:7308: generated_build/CMakeFiles/test_752.dir/rule] Error 2
+gmake: *** [Makefile:1697: test_752] Error 2

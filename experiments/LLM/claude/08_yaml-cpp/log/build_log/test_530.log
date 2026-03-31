@@ -1,0 +1,33 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_530.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_530.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_530.cpp:287:17: error: no matching conversion for functional-style cast from 'const char[7]' to 'YAML::_Tag'
+  287 |   emitter.Write(YAML::_Tag("!mytag"));
+      |                 ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:93:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[7]' to 'const _Tag' for 1st argument
+   93 | struct _Tag {
+      |        ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:93:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[7]' to '_Tag' for 1st argument
+   93 | struct _Tag {
+      |        ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:98:12: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+   98 |   explicit _Tag(const std::string& prefix_, const std::string& content_,
+      |            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   99 |                 Type::value type_)
+      |                 ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_530.cpp:620:50: error: no matching conversion for functional-style cast from 'int' to 'YAML::_Precision'
+  620 |   YAML::Emitter& ref = emitter.SetLocalPrecision(YAML::_Precision(10));
+      |                                                  ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:129:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const _Precision' for 1st argument
+  129 | struct _Precision {
+      |        ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:129:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'int' to '_Precision' for 1st argument
+  129 | struct _Precision {
+      |        ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:130:3: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  130 |   _Precision(int floatPrecision_, int doublePrecision_)
+      |   ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_530.dir/build.make:79: generated_build/CMakeFiles/test_530.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_530.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4206: generated_build/CMakeFiles/test_530.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4213: generated_build/CMakeFiles/test_530.dir/rule] Error 2
+gmake: *** [Makefile:986: test_530] Error 2

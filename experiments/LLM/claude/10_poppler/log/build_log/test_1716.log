@@ -1,0 +1,43 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1716.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp:76:27: error: 'this' argument to member function 'getDoc' has type 'const StructTreeRoot', but function is not marked const
+   76 |                 EXPECT_EQ(root->getDoc(), doc.get());
+      |                           ^~~~
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/StructTreeRoot.h:34:13: note: 'getDoc' declared here
+   34 |     PDFDoc *getDoc() { return doc; }
+      |             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp:148:29: error: cannot initialize a variable of type 'StructTreeRoot *' with an rvalue of type 'const StructTreeRoot *'
+  148 |             StructTreeRoot *root = doc->getStructTreeRoot();
+      |                             ^      ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp:278:29: error: cannot initialize a variable of type 'StructTreeRoot *' with an rvalue of type 'const StructTreeRoot *'
+  278 |             StructTreeRoot *root = doc->getStructTreeRoot();
+      |                             ^      ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp:281:23: warning: unused variable 'roleMap' [-Wunused-variable]
+  281 |                 Dict *roleMap = root->getRoleMap();
+      |                       ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp:318:29: error: cannot initialize a variable of type 'StructTreeRoot *' with an rvalue of type 'const StructTreeRoot *'
+  318 |             StructTreeRoot *root = doc->getStructTreeRoot();
+      |                             ^      ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp:320:23: warning: unused variable 'classMap' [-Wunused-variable]
+  320 |                 Dict *classMap = root->getClassMap();
+      |                       ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp:12:7: warning: 'StructTreeRootTest_1716' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   12 | class StructTreeRootTest_1716 : public ::testing::Test {
+      |       ^
+3 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1716.dir/build.make:79: generated_build/CMakeFiles/test_1716.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1716.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:100746: generated_build/CMakeFiles/test_1716.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:100753: generated_build/CMakeFiles/test_1716.dir/rule] Error 2
+gmake: *** [Makefile:37398: test_1716] Error 2

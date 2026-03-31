@@ -1,0 +1,59 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_674.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp:26:76: error: calling a private constructor of class 'Object'
+   26 |     auto *stream = new MemStream(pdfContent.c_str(), 0, pdfContent.size(), Object(objNull));
+      |                                                                            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp:177:9: error: unknown type name 'PageMode'; did you mean 'Catalog::PageMode'?
+  177 |         PageMode mode = catalog->getPageMode();
+      |         ^~~~~~~~
+      |         Catalog::PageMode
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:235:10: note: 'Catalog::PageMode' declared here
+  235 |     enum PageMode
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp:13:7: warning: 'CatalogTest_674' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class CatalogTest_674 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp:27:17: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, MemStream *&>' requested here
+   27 |     return std::make_unique<PDFDoc>(stream);
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'FileSpec'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<FileSpec>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp:245:28: note: in instantiation of member function 'std::unique_ptr<FileSpec>::~unique_ptr' requested here
+  245 |         auto fs = catalog->embeddedFile(0);
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:68:7: note: forward declaration of 'FileSpec'
+   68 | class FileSpec;
+      |       ^
+1 warning and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_674.dir/build.make:79: generated_build/CMakeFiles/test_674.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_674.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:20042: generated_build/CMakeFiles/test_674.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:20049: generated_build/CMakeFiles/test_674.dir/rule] Error 2
+gmake: *** [Makefile:4612: test_674] Error 2

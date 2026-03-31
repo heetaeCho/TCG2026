@@ -1,0 +1,35 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1661.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1661.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1661.cpp:111:12: warning: unused variable 'initialSize' [-Wunused-variable]
+  111 |     size_t initialSize = exifData_.count();
+      |            ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1661.cpp:201:14: warning: unused variable 'needed' [-Wunused-variable]
+  201 |     uint16_t needed = 8 + nPoints * 4 + nMasks * 3;
+      |              ^~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1661.cpp:324:12: warning: unused variable 'beforeCount' [-Wunused-variable]
+  324 |     size_t beforeCount = exifData_.count();
+      |            ^~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1661.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'Exiv2::Internal::TiffDecoder'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1661.cpp:77:21: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffDecoder, Exiv2::ExifData &, Exiv2::IptcData &, Exiv2::XmpData &, Exiv2::Internal::TiffComponent *&, void (Exiv2::Internal::TiffDecoder::*(&)(const std::basic_string<char> &, unsigned short, Exiv2::IfdId))(const Exiv2::Internal::TiffEntryBase *)>' requested here
+   77 |         return std::make_unique<TiffDecoder>(
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:261:3: note: candidate constructor not viable: no known conversion from 'void (Exiv2::Internal::TiffDecoder::*(const std::basic_string<char> &, unsigned short, Exiv2::IfdId))(const Exiv2::Internal::TiffEntryBase *)' to 'FindDecoderFct' (aka 'void (TiffDecoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(const TiffEntryBase *)') for 5th argument
+  261 |   TiffDecoder(ExifData& exifData, IptcData& iptcData, XmpData& xmpData, TiffComponent* pRoot,
+      |   ^
+  262 |               FindDecoderFct findDecoderFct);
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:252:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 5 were provided
+  252 | class TiffDecoder : public TiffVisitor {
+      |       ^~~~~~~~~~~
+3 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1661.dir/build.make:79: generated_build/CMakeFiles/test_1661.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1661.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:46131: generated_build/CMakeFiles/test_1661.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:46138: generated_build/CMakeFiles/test_1661.dir/rule] Error 2
+gmake: *** [Makefile:15233: test_1661] Error 2

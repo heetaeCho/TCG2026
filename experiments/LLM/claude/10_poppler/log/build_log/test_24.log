@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_24.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_24.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_24.cpp:242:49: error: no viable conversion from 'char' to 'std::string_view' (aka 'basic_string_view<char>')
+  242 |     std::string result = GooString::toLowerCase('A');
+      |                                                 ^~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:136:17: note: candidate constructor not viable: no known conversion from 'char' to 'const basic_string_view<char> &' for 1st argument
+  136 |       constexpr basic_string_view(const basic_string_view&) noexcept = default;
+      |                 ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:140:7: note: candidate constructor not viable: no known conversion from 'char' to 'const char *' for 1st argument
+  140 |       basic_string_view(const _CharT* __str) noexcept
+      |       ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:166:76: note: passing argument to parameter 's' here
+  166 |     POPPLER_PRIVATE_EXPORT static std::string toLowerCase(std::string_view s);
+      |                                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_24.cpp:248:49: error: no viable conversion from 'char' to 'std::string_view' (aka 'basic_string_view<char>')
+  248 |     std::string result = GooString::toLowerCase('z');
+      |                                                 ^~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:136:17: note: candidate constructor not viable: no known conversion from 'char' to 'const basic_string_view<char> &' for 1st argument
+  136 |       constexpr basic_string_view(const basic_string_view&) noexcept = default;
+      |                 ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:140:7: note: candidate constructor not viable: no known conversion from 'char' to 'const char *' for 1st argument
+  140 |       basic_string_view(const _CharT* __str) noexcept
+      |       ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:166:76: note: passing argument to parameter 's' here
+  166 |     POPPLER_PRIVATE_EXPORT static std::string toLowerCase(std::string_view s);
+      |                                                                            ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_24.dir/build.make:79: generated_build/CMakeFiles/test_24.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_24.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:84266: generated_build/CMakeFiles/test_24.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:84273: generated_build/CMakeFiles/test_24.dir/rule] Error 2
+gmake: *** [Makefile:30703: test_24] Error 2

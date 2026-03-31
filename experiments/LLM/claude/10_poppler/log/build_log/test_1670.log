@@ -1,0 +1,46 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1670.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:36:11: error: calling a private constructor of class 'Object'
+   36 |     obj = Object(objNull);
+      |           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:38:97: error: calling a private constructor of class 'Object'
+   38 |     auto baseStr = std::make_unique<MemStream>(const_cast<char *>(rawData), 0, sizeof(rawData), Object(objNull));
+      |                                                                                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:85:63: error: calling a private constructor of class 'Object'
+   85 |     auto baseStr = new MemStream(rawData, 0, sizeof(rawData), Object(objNull));
+      |                                                               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:100:30: error: use of undeclared identifier 'DeviceNRecoder'
+  100 |     using MethodType = bool (DeviceNRecoder::*)() const;
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:101:5: error: unknown type name 'MethodType'
+  101 |     MethodType m = &DeviceNRecoder::isEncoder;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:101:21: error: use of undeclared identifier 'DeviceNRecoder'
+  101 |     MethodType m = &DeviceNRecoder::isEncoder;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:108:30: error: use of undeclared identifier 'DeviceNRecoder'
+  108 |     using MethodType = bool (DeviceNRecoder::*)(bool) const;
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:109:5: error: unknown type name 'MethodType'
+  109 |     MethodType m = &DeviceNRecoder::isBinary;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:109:21: error: use of undeclared identifier 'DeviceNRecoder'
+  109 |     MethodType m = &DeviceNRecoder::isBinary;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp:16:7: warning: 'DeviceNRecoderTest_1670' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   16 | class DeviceNRecoderTest_1670 : public ::testing::Test {
+      |       ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1670.dir/build.make:79: generated_build/CMakeFiles/test_1670.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1670.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:28746: generated_build/CMakeFiles/test_1670.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:28753: generated_build/CMakeFiles/test_1670.dir/rule] Error 2
+gmake: *** [Makefile:8148: test_1670] Error 2

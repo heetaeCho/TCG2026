@@ -1,0 +1,35 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_386.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_386.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_386.cpp:90:125: error: no member named 'Matched' in 'Catch::Clara::Detail::ParseState'
+   90 |     auto opt = Opt([](std::string const&) { return Catch::Clara::Detail::ParserResult::ok(Catch::Clara::Detail::ParseState::Matched); }, "val")["-v"]("Lambda option");
+      |                                                                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_386.cpp:90:16: error: no matching constructor for initialization of 'Opt'
+   90 |     auto opt = Opt([](std::string const&) { return Catch::Clara::Detail::ParserResult::ok(Catch::Clara::Detail::ParseState::Matched); }, "val")["-v"]("Lambda option");
+      |                ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:593:13: note: candidate constructor [with T = (lambda at /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_386.cpp:90:20), $1 = void] not viable: expects an lvalue for 1st argument
+  593 |             Opt( T& ref, StringRef hint ):
+      |             ^    ~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:583:13: note: candidate template ignored: requirement 'Detail::is_unary_function_v<(lambda at /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_386.cpp:90:20), void>' was not satisfied [with LambdaT = (lambda at /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_386.cpp:90:20)]
+  583 |             Opt( LambdaT const& ref, StringRef hint ):
+      |             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:574:22: note: candidate constructor template not viable: requires single argument 'ref', but 2 arguments were provided
+  574 |             explicit Opt(LambdaT const& ref) :
+      |                      ^   ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:578:22: note: candidate constructor not viable: requires single argument 'ref', but 2 arguments were provided
+  578 |             explicit Opt(bool& ref);
+      |                      ^   ~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:568:15: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  568 |         class Opt : public Detail::ParserRefImpl<Opt> {
+      |               ^~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:568:15: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+  568 |         class Opt : public Detail::ParserRefImpl<Opt> {
+      |               ^~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:587:13: note: candidate constructor template not viable: requires 3 arguments, but 2 were provided
+  587 |             Opt( accept_many_t, LambdaT const& ref, StringRef hint ):
+      |             ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_386.dir/build.make:79: generated_build/CMakeFiles/test_386.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_386.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:39575: generated_build/CMakeFiles/test_386.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:39582: generated_build/CMakeFiles/test_386.dir/rule] Error 2
+gmake: *** [Makefile:14411: test_386] Error 2

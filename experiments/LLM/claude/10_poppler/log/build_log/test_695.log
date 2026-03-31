@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_695.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_695.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_695.cpp:195:27: error: calling a private constructor of class 'Object'
+  195 |     attrs.replaceResource(Object(objNull));
+      |                           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_695.cpp:210:12: error: call to deleted constructor of 'Object'
+  210 |     Object mediaBoxArray(new Array(xref));
+      |            ^             ~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_695.cpp:14:7: warning: 'PageAttrsGetMetadataTest_695' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   14 | class PageAttrsGetMetadataTest_695 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_695.dir/build.make:79: generated_build/CMakeFiles/test_695.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_695.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:28330: generated_build/CMakeFiles/test_695.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:28337: generated_build/CMakeFiles/test_695.dir/rule] Error 2
+gmake: *** [Makefile:7979: test_695] Error 2

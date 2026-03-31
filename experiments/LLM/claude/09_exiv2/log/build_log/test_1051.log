@@ -1,0 +1,42 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1051.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1051.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1051.cpp:254:3: error: no member named 'memcpy' in namespace 'std'; did you mean simply 'memcpy'?
+  254 |   std::memcpy(&expected, buf.data(), 2);
+      |   ^~~~~~~~~~~
+      |   memcpy
+/usr/include/string.h:43:14: note: 'memcpy' declared here
+   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1051.cpp:275:3: error: no member named 'memcpy' in namespace 'std'; did you mean simply 'memcpy'?
+  275 |   std::memcpy(&expected, buf.data(), 4);
+      |   ^~~~~~~~~~~
+      |   memcpy
+/usr/include/string.h:43:14: note: 'memcpy' declared here
+   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1051.cpp:286:3: error: no member named 'memcpy' in namespace 'std'; did you mean simply 'memcpy'?
+  286 |   std::memcpy(&expected, buf.data(), 8);
+      |   ^~~~~~~~~~~
+      |   memcpy
+/usr/include/string.h:43:14: note: 'memcpy' declared here
+   43 | extern void *memcpy (void *__restrict __dest, const void *__restrict __src,
+      |              ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1051.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1051.cpp:21:15: note: in instantiation of function template specialization 'std::make_unique<TestImage, std::unique_ptr<Exiv2::MemIo>>' requested here
+   21 |   return std::make_unique<TestImage>(std::move(io));
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'TestImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1051.dir/build.make:79: generated_build/CMakeFiles/test_1051.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1051.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:76493: generated_build/CMakeFiles/test_1051.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:76500: generated_build/CMakeFiles/test_1051.dir/rule] Error 2
+gmake: *** [Makefile:26842: test_1051] Error 2

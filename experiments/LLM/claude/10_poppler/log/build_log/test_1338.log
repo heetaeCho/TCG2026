@@ -1,0 +1,31 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1338.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1338.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1338.cpp:1382:17: warning: unused variable 'data' [-Wunused-variable]
+ 1382 |             int data = 42;
+      |                 ^~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1338.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1338.cpp:78:21: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, int &>' requested here
+   78 |     auto doc = std::make_unique<PDFDoc>(fd);
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'int' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1338.dir/build.make:79: generated_build/CMakeFiles/test_1338.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1338.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29130: generated_build/CMakeFiles/test_1338.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29137: generated_build/CMakeFiles/test_1338.dir/rule] Error 2
+gmake: *** [Makefile:8304: test_1338] Error 2

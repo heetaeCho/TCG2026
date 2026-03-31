@@ -1,0 +1,61 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1104.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp:40:25: error: call to constructor of 'Dict' is ambiguous
+   40 |         auto dict = new Dict(nullptr);
+      |                         ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp:42:33: error: functional-style cast from 'GooString *' to 'Object' uses deleted function
+   42 |         dict->add("ColorSpace", Object(new GooString("DeviceRGB")));
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = GooString *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp:43:29: error: functional-style cast from 'Array *' to 'Object' uses deleted function
+   43 |         dict->add("Coords", Object(coordsArr));
+      |                             ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Array *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp:51:90: error: too few arguments to function call, expected 4, have 3
+   51 |         GfxRadialShading *shading = GfxRadialShading::parse(nullptr, &shadingObj, nullptr);
+      |                                     ~~~~~~~~~~~~~~~~~~~~~~~                              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:1064:46: note: 'parse' declared here
+ 1064 |     static std::unique_ptr<GfxRadialShading> parse(GfxResources *res, Dict *dict, OutputDev *out, GfxState *state);
+      |                                              ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp:94:7: error: redefinition of 'SplashRadialPatternTest_1104'
+   94 | class SplashRadialPatternTest_1104 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp:17:7: note: previous definition is here
+   17 | class SplashRadialPatternTest_1104 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp:17:7: warning: 'SplashRadialPatternTest_1104' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   17 | class SplashRadialPatternTest_1104 : public ::testing::Test {
+      |       ^
+1 warning and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1104.dir/build.make:79: generated_build/CMakeFiles/test_1104.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1104.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:70090: generated_build/CMakeFiles/test_1104.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:70097: generated_build/CMakeFiles/test_1104.dir/rule] Error 2
+gmake: *** [Makefile:24944: test_1104] Error 2

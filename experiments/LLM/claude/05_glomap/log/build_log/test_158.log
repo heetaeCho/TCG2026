@@ -1,0 +1,39 @@
+[ 27%] Built target faiss
+[ 39%] Built target PoseLib
+[ 48%] Built target colmap_vlfeat
+[ 51%] Built target colmap_util
+[ 51%] Built target colmap_feature_types
+[ 54%] Built target colmap_math
+[ 57%] Built target colmap_geometry
+[ 57%] Built target colmap_sensor
+[ 63%] Built target colmap_scene
+[ 66%] Built target colmap_lsd
+[ 66%] Built target colmap_image
+[ 69%] Built target colmap_optim
+[ 75%] Built target colmap_estimators
+[ 78%] Built target colmap_retrieval
+[ 81%] Built target colmap_feature
+[ 81%] Built target colmap_poisson_recon
+[ 84%] Built target colmap_mvs
+[ 87%] Built target colmap_sfm
+[ 90%] Built target colmap_controllers
+[ 90%] Built target colmap_exe
+[100%] Built target glomap
+[100%] Building CXX object generated_build/CMakeFiles/test_158.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_158.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_158.cpp:20:22: error: object of type 'mapped_type' (aka 'glomap::Image') cannot be assigned because its copy assignment operator is implicitly deleted
+   20 |     images[image_id] = img;
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: copy assignment operator of 'Image' is implicitly deleted because field 'image_id' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   17 |   const image_t image_id;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_158.cpp:32:42: error: object of type 'mapped_type' (aka 'glomap::ImagePair') cannot be assigned because its copy assignment operator is implicitly deleted
+   32 |     view_graph.image_pairs[pair.pair_id] = pair;
+      |                                          ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: copy assignment operator of 'ImagePair' is implicitly deleted because field 'image_id1' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   27 |   const image_t image_id1;
+      |                 ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_158.dir/build.make:79: generated_build/CMakeFiles/test_158.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_158.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4167: generated_build/CMakeFiles/test_158.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4174: generated_build/CMakeFiles/test_158.dir/rule] Error 2
+gmake: *** [Makefile:1066: test_158] Error 2

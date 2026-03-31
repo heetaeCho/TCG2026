@@ -1,0 +1,39 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1066.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp:34:37: error: exception specification of overriding function is more lax than base version
+   34 |     MOCK_METHOD(const std::string&, path, (), (const, override));
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/basicio.hpp:219:44: note: overridden virtual function is here
+  219 |   [[nodiscard]] virtual const std::string& path() const noexcept = 0;
+      |                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp:481:15: error: variable type 'TestImage' is an abstract class
+  481 |     TestImage other(std::move(io2));
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'TestImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp:56:21: note: in instantiation of function template specialization 'std::make_unique<TestImage, std::unique_ptr<MockBasicIo>>' requested here
+   56 |         return std::make_unique<TestImage>(std::move(io));
+      |                     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp:229:23: note: in instantiation of function template specialization 'std::make_unique<TestImage, std::unique_ptr<testing::NiceMock<MockBasicIo>>>' requested here
+  229 |         image_ = std::make_unique<TestImage>(std::move(io));
+      |                       ^
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1066.dir/build.make:79: generated_build/CMakeFiles/test_1066.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1066.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:48307: generated_build/CMakeFiles/test_1066.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:48314: generated_build/CMakeFiles/test_1066.dir/rule] Error 2
+gmake: *** [Makefile:16065: test_1066] Error 2

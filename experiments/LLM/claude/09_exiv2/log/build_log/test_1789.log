@@ -1,0 +1,51 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1789.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:127:19: error: member reference base type 'const byte *' (aka 'const unsigned char *') is not a structure or union
+  127 |   EXPECT_FALSE(sig.empty());
+      |                ~~~^~~~~~
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:136:17: error: variable type 'CiffComponent' is an abstract class
+  136 |   CiffComponent comp;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:243:28: note: unimplemented pure virtual method 'doAdd' in 'CiffComponent'
+  243 |   virtual const UniquePtr& doAdd(UniquePtr component) = 0;
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:251:18: note: unimplemented pure virtual method 'doWrite' in 'CiffComponent'
+  251 |   virtual size_t doWrite(Blob& blob, ByteOrder byteOrder, size_t offset) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/crwimage_int.hpp:265:16: note: unimplemented pure virtual method 'doDecode' in 'CiffComponent'
+  265 |   virtual void doDecode(Image& image, ByteOrder byteOrder) const = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:145:17: error: variable type 'CiffComponent' is an abstract class
+  145 |   CiffComponent comp(0x1234, 0x5678);
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:151:17: error: variable type 'CiffComponent' is an abstract class
+  151 |   CiffComponent comp(0x0001, 0x0002);
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:157:17: error: variable type 'CiffComponent' is an abstract class
+  157 |   CiffComponent comp(0x0001, 0x0002);
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:168:17: error: variable type 'CiffComponent' is an abstract class
+  168 |   CiffComponent comp;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:191:17: error: variable type 'CiffComponent' is an abstract class
+  191 |   CiffComponent comp;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp:238:29: error: member reference base type 'const byte *' (aka 'const unsigned char *') is not a structure or union
+  238 |   for (size_t i = 0; i < sig.size() && (6 + i) < data.size(); ++i) {
+      |                          ~~~^~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1789.dir/build.make:79: generated_build/CMakeFiles/test_1789.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1789.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:10329: generated_build/CMakeFiles/test_1789.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:10336: generated_build/CMakeFiles/test_1789.dir/rule] Error 2
+gmake: *** [Makefile:1544: test_1789] Error 2

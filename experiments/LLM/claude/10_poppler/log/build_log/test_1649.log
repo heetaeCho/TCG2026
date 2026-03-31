@@ -1,0 +1,25 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1649.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1649.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1649.cpp:22:16: error: calling a private constructor of class 'Object'
+   22 |         Object dictObj(objNull);
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1649.cpp:23:75: error: calling a private constructor of class 'Object'
+   23 |         auto *memStream = new MemStream(const_cast<char *>(data), 0, len, Object(objNull));
+      |                                                                           ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1649.cpp:24:20: error: no member named 'reset' in 'MemStream'
+   24 |         memStream->reset();
+      |         ~~~~~~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1649.cpp:13:7: warning: 'FlateEncoderTest_1649' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class FlateEncoderTest_1649 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1649.dir/build.make:79: generated_build/CMakeFiles/test_1649.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1649.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:42314: generated_build/CMakeFiles/test_1649.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:42321: generated_build/CMakeFiles/test_1649.dir/rule] Error 2
+gmake: *** [Makefile:13660: test_1649] Error 2

@@ -1,0 +1,44 @@
+[100%] Built target re2
+[100%] Building CXX object generated_build/CMakeFiles/test_128.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_128.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_128.cpp:406:44: error: no type named 'InstOp' in 're2::Prog'; did you mean simply 'InstOp'?
+  406 |     EXPECT_GE(prog->inst_count(static_cast<Prog::InstOp>(op)), 0);
+      |                                            ^~~~~~~~~~~~
+      |                                            InstOp
+/usr/local/include/gtest/gtest.h:1893:57: note: expanded from macro 'EXPECT_GE'
+ 1893 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperGE, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/prog.h:32:6: note: 'InstOp' declared here
+   32 | enum InstOp {
+      |      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_128.cpp:406:58: error: cannot initialize a parameter of type 'InstOp' with an lvalue of type 'int'
+  406 |     EXPECT_GE(prog->inst_count(static_cast<Prog::InstOp>(op)), 0);
+      |                                                          ^~
+/usr/local/include/gtest/gtest.h:1893:57: note: expanded from macro 'EXPECT_GE'
+ 1893 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperGE, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/re2/re2/prog.h:235:25: note: passing argument to parameter 'op' here
+  235 |   int inst_count(InstOp op) { return inst_count_[op]; }
+      |                         ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_128.dir/build.make:79: generated_build/CMakeFiles/test_128.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/02_re2/test_files/test_128.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19561: generated_build/CMakeFiles/test_128.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19568: generated_build/CMakeFiles/test_128.dir/rule] Error 2
+gmake: *** [Makefile:7329: test_128] Error 2

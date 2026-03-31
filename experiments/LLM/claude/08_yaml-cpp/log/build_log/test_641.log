@@ -1,0 +1,77 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_641.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:14:14: error: no viable overloaded '='
+   14 |     pMemory_ = std::make_shared<memory>();
+      |     ~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:414:19: note: candidate function not viable: no known conversion from 'shared_ptr<_NonArray<memory>>' to 'const shared_ptr<YAML::detail::memory_holder>' for 1st argument
+  414 |       shared_ptr& operator=(const shared_ptr&) noexcept = default;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:418:2: note: candidate template ignored: requirement 'is_assignable<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic> &, const std::shared_ptr<YAML::detail::memory> &>::value' was not satisfied [with _Yp = YAML::detail::memory]
+  418 |         operator=(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:429:2: note: candidate template ignored: could not match 'auto_ptr' against 'shared_ptr'
+  429 |         operator=(auto_ptr<_Yp>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:438:7: note: candidate function not viable: no known conversion from 'shared_ptr<_NonArray<memory>>' to 'shared_ptr<YAML::detail::memory_holder>' for 1st argument
+  438 |       operator=(shared_ptr&& __r) noexcept
+      |       ^         ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:446:2: note: candidate template ignored: requirement 'is_assignable<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic> &, std::shared_ptr<YAML::detail::memory>>::value' was not satisfied [with _Yp = YAML::detail::memory]
+  446 |         operator=(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:454:2: note: candidate template ignored: could not match 'unique_ptr' against 'shared_ptr'
+  454 |         operator=(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:246:15: error: no viable conversion from 'node' to 'const node *'
+  246 |   const node* result = data_->get(std::string("mykey"), pMemory_);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:259:15: error: no viable conversion from 'node' to 'const node *'
+  259 |   const node* result = data_->get(std::string("nonexistent"), pMemory_);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:273:15: error: no viable conversion from 'node' to 'const node *'
+  273 |   const node* result = data_->get(key, pMemory_);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:288:15: error: no viable conversion from 'node' to 'const node *'
+  288 |   const node* result = data_->get(otherKey, pMemory_);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:491:15: error: no viable conversion from 'node' to 'const node *'
+  491 |   const node* result = data_->get(0, pMemory_);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:501:15: error: no viable conversion from 'node' to 'const node *'
+  501 |   const node* result = data_->get(5, pMemory_);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:1:
+/usr/local/include/gtest/gtest.h:1472:28: error: invalid operands to binary expression ('const std::nullptr_t' and 'const YAML::detail::node')
+ 1472 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/include/gtest/gtest.h:1462:14: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1462 |     if (val1 op val2) {                                                    \
+      |         ~~~~ ^  ~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:434:3: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<std::nullptr_t, YAML::detail::node>' requested here
+  434 |   EXPECT_NE(nullptr, data_->get(std::string("mykey"), pMemory_));
+      |   ^
+/usr/local/include/gtest/gtest.h:1887:44: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/local/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const std::nullptr_t' to 'faketype' for 1st argument
+ 1387 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+/usr/local/include/gtest/gtest.h:1394:11: error: invalid operands to binary expression ('const std::nullptr_t' and 'const YAML::detail::node')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<std::nullptr_t, YAML::detail::node>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp:436:3: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<std::nullptr_t, YAML::detail::node, nullptr>' requested here
+  436 |   EXPECT_EQ(nullptr, data_->get(std::string("mykey"), pMemory_));
+      |   ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+/usr/local/include/gtest/gtest.h:1386:13: note: candidate function not viable: no known conversion from 'const std::nullptr_t' to 'faketype' for 1st argument
+ 1386 | inline bool operator==(faketype, faketype) { return true; }
+      |             ^          ~~~~~~~~
+9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_641.dir/build.make:79: generated_build/CMakeFiles/test_641.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_641.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:13134: generated_build/CMakeFiles/test_641.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:13141: generated_build/CMakeFiles/test_641.dir/rule] Error 2
+gmake: *** [Makefile:4613: test_641] Error 2

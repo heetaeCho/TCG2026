@@ -1,0 +1,74 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_182.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:14:28: error: use of undeclared identifier 'gmalloc'; did you mean 'malloc'?
+   14 |         char* buf = (char*)gmalloc(len);
+      |                            ^~~~~~~
+      |                            malloc
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:68:12: note: 'malloc' declared here
+   68 | using std::malloc;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:16:68: error: calling a private constructor of class 'Object'
+   16 |         auto baseStream = std::make_unique<MemStream>(buf, 0, len, Object(objNull), true);
+      |                                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:25:13: error: no member named 'reset' in 'ASCII85Stream'
+   25 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:36:13: error: no member named 'reset' in 'ASCII85Stream'
+   36 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:51:13: error: no member named 'reset' in 'ASCII85Stream'
+   51 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:66:13: error: no member named 'reset' in 'ASCII85Stream'
+   66 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:87:13: error: no member named 'reset' in 'ASCII85Stream'
+   87 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:94:23: error: no member named 'reset' in 'ASCII85Stream'
+   94 |     bool ok = stream->reset();
+      |               ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:133:13: error: no member named 'reset' in 'ASCII85Stream'
+  133 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:148:13: error: no member named 'reset' in 'ASCII85Stream'
+  148 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:164:13: error: no member named 'reset' in 'ASCII85Stream'
+  164 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:178:13: error: no member named 'reset' in 'ASCII85Stream'
+  178 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:191:13: error: no member named 'reset' in 'ASCII85Stream'
+  191 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:206:13: error: no member named 'reset' in 'ASCII85Stream'
+  206 |     stream->reset();
+      |     ~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:9:7: warning: 'ASCII85StreamTest_182' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class ASCII85StreamTest_182 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'MemStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp:16:32: note: in instantiation of function template specialization 'std::make_unique<MemStream, char *&, int, int &, Object, bool>' requested here
+   16 |         auto baseStream = std::make_unique<MemStream>(buf, 0, len, Object(objNull), true);
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:771:5: note: candidate constructor not viable: requires 4 arguments, but 5 were provided
+  771 |     MemStream(const char *bufA, Goffset startA, Goffset lengthA, Object &&dictA) : BaseMemStream(bufA, startA, lengthA, std::move(dictA)) { }
+      |     ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:768:30: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 5 were provided
+  768 | class POPPLER_PRIVATE_EXPORT MemStream : public BaseMemStream<const char>
+      |                              ^~~~~~~~~
+1 warning and 15 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_182.dir/build.make:79: generated_build/CMakeFiles/test_182.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_182.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:56138: generated_build/CMakeFiles/test_182.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:56145: generated_build/CMakeFiles/test_182.dir/rule] Error 2
+gmake: *** [Makefile:19276: test_182] Error 2

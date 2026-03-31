@@ -1,0 +1,54 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_79.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_79.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_79.cpp:341:20: error: 'HeaderReader' is a protected member of 'Exiv2::RiffVideo'
+  341 |         RiffVideo::HeaderReader reader(io);
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: declared protected here
+   47 |   class HeaderReader {
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_79.cpp:341:33: error: no matching constructor for initialization of 'RiffVideo::HeaderReader'
+  341 |         RiffVideo::HeaderReader reader(io);
+      |                                 ^      ~~
+/usr/local/include/gtest/gtest.h:1800:24: note: expanded from macro 'ASSERT_NO_THROW'
+ 1800 |   GTEST_TEST_NO_THROW_(statement, GTEST_FATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1415:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1415 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);         \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '__detail::__unique_ptr_t<MemIo>' (aka 'unique_ptr<Exiv2::MemIo>') to 'const HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '__detail::__unique_ptr_t<MemIo>' (aka 'unique_ptr<Exiv2::MemIo>') to 'HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:52:14: note: candidate constructor not viable: no known conversion from 'unique_ptr<Exiv2::MemIo>' to 'const unique_ptr<BasicIo>' for 1st argument
+   52 |     explicit HeaderReader(const std::unique_ptr<BasicIo>& io);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_79.cpp:353:16: error: 'HeaderReader' is a protected member of 'Exiv2::RiffVideo'
+  353 |     RiffVideo::HeaderReader reader(io);
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: declared protected here
+   47 |   class HeaderReader {
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_79.cpp:353:29: error: no matching constructor for initialization of 'RiffVideo::HeaderReader'
+  353 |     RiffVideo::HeaderReader reader(io);
+      |                             ^      ~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from '__detail::__unique_ptr_t<MemIo>' (aka 'unique_ptr<Exiv2::MemIo>') to 'const HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:47:9: note: candidate constructor (the implicit move constructor) not viable: no known conversion from '__detail::__unique_ptr_t<MemIo>' (aka 'unique_ptr<Exiv2::MemIo>') to 'HeaderReader' for 1st argument
+   47 |   class HeaderReader {
+      |         ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/riffvideo.hpp:52:14: note: candidate constructor not viable: no known conversion from 'unique_ptr<Exiv2::MemIo>' to 'const unique_ptr<BasicIo>' for 1st argument
+   52 |     explicit HeaderReader(const std::unique_ptr<BasicIo>& io);
+      |              ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_79.dir/build.make:79: generated_build/CMakeFiles/test_79.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_79.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:64321: generated_build/CMakeFiles/test_79.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:64328: generated_build/CMakeFiles/test_79.dir/rule] Error 2
+gmake: *** [Makefile:22188: test_79] Error 2

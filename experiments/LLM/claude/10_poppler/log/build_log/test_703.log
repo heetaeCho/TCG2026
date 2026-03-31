@@ -1,0 +1,77 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_703.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:117:85: error: calling a private constructor of class 'Object'
+  117 |         auto *stream = new MemStream(const_cast<char*>(pdf.c_str()), 0, pdf.size(), Object(objNull));
+      |                                                                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:119:33: error: use of undeclared identifier 'gmalloc'; did you mean 'malloc'?
+  119 |         char *dataCopy = (char*)gmalloc(pdf.size());
+      |                                 ^~~~~~~
+      |                                 malloc
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:68:12: note: 'malloc' declared here
+   68 | using std::malloc;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:122:84: error: calling a private constructor of class 'Object'
+  122 |         auto doc = std::make_unique<PDFDoc>(new MemStream(dataCopy, 0, pdf.size(), Object(objNull)));
+      |                                                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:124:13: error: use of undeclared identifier 'gfree'; did you mean 'free'?
+  124 |             gfree(dataCopy);
+      |             ^~~~~
+      |             free
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:64:12: note: 'free' declared here
+   64 | using std::free;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:162:33: error: use of undeclared identifier 'gmalloc'; did you mean 'malloc'?
+  162 |         char *dataCopy = (char*)gmalloc(pdf.size());
+      |                                 ^~~~~~~
+      |                                 malloc
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:68:12: note: 'malloc' declared here
+   68 | using std::malloc;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:165:84: error: calling a private constructor of class 'Object'
+  165 |         auto doc = std::make_unique<PDFDoc>(new MemStream(dataCopy, 0, pdf.size(), Object(objNull)));
+      |                                                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:167:13: error: use of undeclared identifier 'gfree'; did you mean 'free'?
+  167 |             gfree(dataCopy);
+      |             ^~~~~
+      |             free
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:64:12: note: 'free' declared here
+   64 | using std::free;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:32:7: warning: 'PageFromBufferTest_703' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   32 | class PageFromBufferTest_703 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp:122:25: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, MemStream *>' requested here
+  122 |         auto doc = std::make_unique<PDFDoc>(new MemStream(dataCopy, 0, pdf.size(), Object(objNull)));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_703.dir/build.make:79: generated_build/CMakeFiles/test_703.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_703.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:61226: generated_build/CMakeFiles/test_703.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:61233: generated_build/CMakeFiles/test_703.dir/rule] Error 2
+gmake: *** [Makefile:21343: test_703] Error 2

@@ -1,0 +1,21 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1079.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1079.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1079.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type '(anonymous namespace)::TestImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1079.cpp:33:17: note: in instantiation of function template specialization 'std::make_unique<(anonymous namespace)::TestImage, std::unique_ptr<Exiv2::MemIo>>' requested here
+   33 |     return std::make_unique<TestImage>(std::move(io));
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'TestImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1079.dir/build.make:79: generated_build/CMakeFiles/test_1079.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1079.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29029: generated_build/CMakeFiles/test_1079.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29036: generated_build/CMakeFiles/test_1079.dir/rule] Error 2
+gmake: *** [Makefile:8694: test_1079] Error 2

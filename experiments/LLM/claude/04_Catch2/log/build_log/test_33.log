@@ -1,0 +1,214 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_33.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:12:41: error: incomplete type 'Catch::ITagAliasRegistry' named in nested name specifier
+   12 |     Catch::TestSpecParser parser(Catch::ITagAliasRegistry::get());
+      |                                  ~~~~~~~^~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_test_spec_parser.hpp:23:11: note: forward declaration of 'Catch::ITagAliasRegistry'
+   23 |     class ITagAliasRegistry;
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:12:33: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   12 |     Catch::TestSpecParser parser(Catch::ITagAliasRegistry::get());
+      |                                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:12:34: note: add a pair of parentheses to declare a variable
+   12 |     Catch::TestSpecParser parser(Catch::ITagAliasRegistry::get());
+      |                                  ^                              
+      |                                  (                              )
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:38:12: error: no matching constructor for initialization of 'Catch::TestCaseInfo'
+   38 |     return Catch::TestCaseInfo(className, {tags, lineInfo}, name, lineInfo);
+      |            ^                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: requires 3 arguments, but 4 were provided
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^            ~~~~~~~~~~~~~~~~~~~~~
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   72 |                      SourceLineInfo const& _lineInfo);
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:50:22: error: no member named 'getFilters' in 'Catch::TestSpec'
+   50 |     EXPECT_TRUE(spec.getFilters().empty());
+      |                 ~~~~ ^
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:55:25: error: no member named 'getFilters' in 'Catch::TestSpec'; did you mean 'hasFilters'?
+   55 |     auto filters = spec.getFilters();
+      |                         ^~~~~~~~~~
+      |                         hasFilters
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:94:14: note: 'hasFilters' declared here
+   94 |         bool hasFilters() const;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:56:25: error: member reference base type 'bool' is not a structure or union
+   56 |     ASSERT_FALSE(filters.empty());
+      |                  ~~~~~~~^~~~~~
+/usr/local/include/gtest/gtest.h:1835:52: note: expanded from macro 'ASSERT_FALSE'
+ 1835 | #define ASSERT_FALSE(condition) GTEST_ASSERT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1816:25: note: expanded from macro 'GTEST_ASSERT_FALSE'
+ 1816 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:60:24: error: subscripted value is not an array, pointer, or vector
+   60 |     EXPECT_TRUE(filters[0].matches(tcInfo));
+      |                 ~~~~~~~^~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:65:25: error: no member named 'getFilters' in 'Catch::TestSpec'; did you mean 'hasFilters'?
+   65 |     auto filters = spec.getFilters();
+      |                         ^~~~~~~~~~
+      |                         hasFilters
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:94:14: note: 'hasFilters' declared here
+   94 |         bool hasFilters() const;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:66:25: error: member reference base type 'bool' is not a structure or union
+   66 |     ASSERT_FALSE(filters.empty());
+      |                  ~~~~~~~^~~~~~
+/usr/local/include/gtest/gtest.h:1835:52: note: expanded from macro 'ASSERT_FALSE'
+ 1835 | #define ASSERT_FALSE(condition) GTEST_ASSERT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1816:25: note: expanded from macro 'GTEST_ASSERT_FALSE'
+ 1816 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:69:25: error: subscripted value is not an array, pointer, or vector
+   69 |     EXPECT_FALSE(filters[0].matches(tcInfo));
+      |                  ~~~~~~~^~
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:74:25: error: no member named 'getFilters' in 'Catch::TestSpec'; did you mean 'hasFilters'?
+   74 |     auto filters = spec.getFilters();
+      |                         ^~~~~~~~~~
+      |                         hasFilters
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:94:14: note: 'hasFilters' declared here
+   94 |         bool hasFilters() const;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:75:25: error: member reference base type 'bool' is not a structure or union
+   75 |     ASSERT_FALSE(filters.empty());
+      |                  ~~~~~~~^~~~~~
+/usr/local/include/gtest/gtest.h:1835:52: note: expanded from macro 'ASSERT_FALSE'
+ 1835 | #define ASSERT_FALSE(condition) GTEST_ASSERT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1816:25: note: expanded from macro 'GTEST_ASSERT_FALSE'
+ 1816 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:81:24: error: subscripted value is not an array, pointer, or vector
+   81 |     EXPECT_TRUE(filters[0].matches(tc1));
+      |                 ~~~~~~~^~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:82:24: error: subscripted value is not an array, pointer, or vector
+   82 |     EXPECT_TRUE(filters[0].matches(tc2));
+      |                 ~~~~~~~^~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:83:25: error: subscripted value is not an array, pointer, or vector
+   83 |     EXPECT_FALSE(filters[0].matches(tc3));
+      |                  ~~~~~~~^~
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:88:25: error: no member named 'getFilters' in 'Catch::TestSpec'; did you mean 'hasFilters'?
+   88 |     auto filters = spec.getFilters();
+      |                         ^~~~~~~~~~
+      |                         hasFilters
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:94:14: note: 'hasFilters' declared here
+   94 |         bool hasFilters() const;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:89:25: error: member reference base type 'bool' is not a structure or union
+   89 |     ASSERT_FALSE(filters.empty());
+      |                  ~~~~~~~^~~~~~
+/usr/local/include/gtest/gtest.h:1835:52: note: expanded from macro 'ASSERT_FALSE'
+ 1835 | #define ASSERT_FALSE(condition) GTEST_ASSERT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1816:25: note: expanded from macro 'GTEST_ASSERT_FALSE'
+ 1816 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:92:25: error: subscripted value is not an array, pointer, or vector
+   92 |     EXPECT_FALSE(filters[0].matches(tcInfo));
+      |                  ~~~~~~~^~
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:97:25: error: no member named 'getFilters' in 'Catch::TestSpec'; did you mean 'hasFilters'?
+   97 |     auto filters = spec.getFilters();
+      |                         ^~~~~~~~~~
+      |                         hasFilters
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_spec.hpp:94:14: note: 'hasFilters' declared here
+   94 |         bool hasFilters() const;
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp:98:25: error: member reference base type 'bool' is not a structure or union
+   98 |     ASSERT_FALSE(filters.empty());
+      |                  ~~~~~~~^~~~~~
+/usr/local/include/gtest/gtest.h:1835:52: note: expanded from macro 'ASSERT_FALSE'
+ 1835 | #define ASSERT_FALSE(condition) GTEST_ASSERT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1816:25: note: expanded from macro 'GTEST_ASSERT_FALSE'
+ 1816 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+1 warning and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_33.dir/build.make:79: generated_build/CMakeFiles/test_33.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_33.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:20468: generated_build/CMakeFiles/test_33.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:20475: generated_build/CMakeFiles/test_33.dir/rule] Error 2
+gmake: *** [Makefile:6884: test_33] Error 2

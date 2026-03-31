@@ -1,0 +1,55 @@
+Running main() from /home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/src/gtest_main.cc
+[==========] Running 12 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 12 tests from FilterBlockReaderTest_374
+[ RUN      ] FilterBlockReaderTest_374.EmptyContentsReturnsTrue_374
+[       OK ] FilterBlockReaderTest_374.EmptyContentsReturnsTrue_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.SingleFilterKeyMatches_374
+[       OK ] FilterBlockReaderTest_374.SingleFilterKeyMatches_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.SingleFilterKeyDoesNotMatch_374
+[       OK ] FilterBlockReaderTest_374.SingleFilterKeyDoesNotMatch_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.BlockOffsetBeyondFiltersReturnsTrue_374
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_374.cpp:173: Failure
+Value of: reader.KeyMayMatch(2048, Slice("anykey"))
+  Actual: false
+Expected: true
+
+[  FAILED  ] FilterBlockReaderTest_374.BlockOffsetBeyondFiltersReturnsTrue_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.MultipleFiltersCorrectSelection_374
+[       OK ] FilterBlockReaderTest_374.MultipleFiltersCorrectSelection_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.EmptyFilterReturnsFalse_374
+[       OK ] FilterBlockReaderTest_374.EmptyFilterReturnsFalse_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.DifferentBaseLg_374
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_374.cpp:252: Failure
+Mock function called more times than expected - returning default value.
+    Function call: KeyMayMatch(@0x7ffc256150a0 16-byte object <33-93 62-88 B2-64 00-00 01-00 00-00 00-00 00-00>, @0x7ffc25614fe0 16-byte object <54-83 25-8C B2-64 00-00 00-00 00-00 00-00 00-00>)
+          Returns: false
+         Expected: to be called once
+           Actual: called twice - over-saturated and active
+
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_374.cpp:257: Failure
+Value of: reader.KeyMayMatch(2, Slice("k"))
+  Actual: false
+Expected: true
+
+[  FAILED  ] FilterBlockReaderTest_374.DifferentBaseLg_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.BuilderAndReaderIntegration_374
+[       OK ] FilterBlockReaderTest_374.BuilderAndReaderIntegration_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.VeryLargeBlockOffset_374
+[       OK ] FilterBlockReaderTest_374.VeryLargeBlockOffset_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.BlockOffsetWithinFirstRange_374
+[       OK ] FilterBlockReaderTest_374.BlockOffsetWithinFirstRange_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.CorrectFilterDataPassedToPolicy_374
+[       OK ] FilterBlockReaderTest_374.CorrectFilterDataPassedToPolicy_374 (0 ms)
+[ RUN      ] FilterBlockReaderTest_374.MinimalValidBlock_374
+[       OK ] FilterBlockReaderTest_374.MinimalValidBlock_374 (0 ms)
+[----------] 12 tests from FilterBlockReaderTest_374 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 10 tests.
+[  FAILED  ] 2 tests, listed below:
+[  FAILED  ] FilterBlockReaderTest_374.BlockOffsetBeyondFiltersReturnsTrue_374
+[  FAILED  ] FilterBlockReaderTest_374.DifferentBaseLg_374
+
+ 2 FAILED TESTS

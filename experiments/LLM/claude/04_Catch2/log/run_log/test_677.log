@@ -1,0 +1,95 @@
+Running main() from /home/user/바탕화면/ccpp/MyGoogleTest/TempProject/googletest/googletest/src/gtest_main.cc
+[==========] Running 20 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 20 tests from TagAliasRegistryTest_677
+[ RUN      ] TagAliasRegistryTest_677.AddValidAlias_677
+[       OK ] TagAliasRegistryTest_677.AddValidAlias_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.FindNonExistentAliasReturnsNull_677
+[       OK ] TagAliasRegistryTest_677.FindNonExistentAliasReturnsNull_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasMissingBracketAtPrefix_677
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_677.cpp:33: Failure
+Expected: registry.add("fast]", "[fast]", defaultLineInfo) throws an exception of type std::runtime_error.
+  Actual: it throws std::domain_error with description "error: tag alias, 'fast]' is not of the form [@alias name].
+test_file.cpp:1".
+
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasMissingBracketAtPrefix_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasMissingSuffix_677
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_677.cpp:38: Failure
+Expected: registry.add("[@fast", "[fast]", defaultLineInfo) throws an exception of type std::runtime_error.
+  Actual: it throws std::domain_error with description "error: tag alias, '[@fast' is not of the form [@alias name].
+test_file.cpp:1".
+
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasMissingSuffix_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasWrongFormat_677
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_677.cpp:43: Failure
+Expected: registry.add("fast", "[fast]", defaultLineInfo) throws an exception of type std::runtime_error.
+  Actual: it throws std::domain_error with description "error: tag alias, 'fast' is not of the form [@alias name].
+test_file.cpp:1".
+
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasWrongFormat_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddDuplicateAliasThrows_677
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_677.cpp:49: Failure
+Expected: registry.add("[@fast]", "[speedy]", secondLineInfo) throws an exception of type std::runtime_error.
+  Actual: it throws std::domain_error with description "error: tag alias, '[@fast]' already registered.
+	First seen at: test_file.cpp:1
+	Redefined at: test_file2.cpp:10".
+
+[  FAILED  ] TagAliasRegistryTest_677.AddDuplicateAliasThrows_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddMultipleDifferentAliases_677
+[       OK ] TagAliasRegistryTest_677.AddMultipleDifferentAliases_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.ExpandAliasesNoAliases_677
+[       OK ] TagAliasRegistryTest_677.ExpandAliasesNoAliases_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.ExpandAliasesExpandsRegisteredAlias_677
+[       OK ] TagAliasRegistryTest_677.ExpandAliasesExpandsRegisteredAlias_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.ExpandAliasesUnregisteredAlias_677
+[       OK ] TagAliasRegistryTest_677.ExpandAliasesUnregisteredAlias_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasMinimalFormat_677
+[       OK ] TagAliasRegistryTest_677.AddAliasMinimalFormat_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasWithSpaces_677
+[       OK ] TagAliasRegistryTest_677.AddAliasWithSpaces_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddEmptyAliasThrows_677
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_677.cpp:104: Failure
+Expected: registry.add("", "[tag]", defaultLineInfo) throws an exception of type std::runtime_error.
+  Actual: it throws std::domain_error with description "error: tag alias, '' is not of the form [@alias name].
+test_file.cpp:1".
+
+[  FAILED  ] TagAliasRegistryTest_677.AddEmptyAliasThrows_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasNoClosingBracketThrows_677
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_677.cpp:109: Failure
+Expected: registry.add("[@", "[tag]", defaultLineInfo) throws an exception of type std::runtime_error.
+  Actual: it throws std::domain_error with description "error: tag alias, '[@' is not of the form [@alias name].
+test_file.cpp:1".
+
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasNoClosingBracketThrows_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasStartsWithBracketOnly_677
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_677.cpp:114: Failure
+Expected: registry.add("[fast]", "[tag]", defaultLineInfo) throws an exception of type std::runtime_error.
+  Actual: it throws std::domain_error with description "error: tag alias, '[fast]' is not of the form [@alias name].
+test_file.cpp:1".
+
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasStartsWithBracketOnly_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AliasStoresCorrectLineInfo_677
+[       OK ] TagAliasRegistryTest_677.AliasStoresCorrectLineInfo_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.ExpandAliasesEmptyString_677
+[       OK ] TagAliasRegistryTest_677.ExpandAliasesEmptyString_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.ExpandAliasesPlainText_677
+[       OK ] TagAliasRegistryTest_677.ExpandAliasesPlainText_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.AddAliasWithEmptyTag_677
+[       OK ] TagAliasRegistryTest_677.AddAliasWithEmptyTag_677 (0 ms)
+[ RUN      ] TagAliasRegistryTest_677.ExpandAliasesMultipleRegistered_677
+[       OK ] TagAliasRegistryTest_677.ExpandAliasesMultipleRegistered_677 (0 ms)
+[----------] 20 tests from TagAliasRegistryTest_677 (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 20 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 13 tests.
+[  FAILED  ] 7 tests, listed below:
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasMissingBracketAtPrefix_677
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasMissingSuffix_677
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasWrongFormat_677
+[  FAILED  ] TagAliasRegistryTest_677.AddDuplicateAliasThrows_677
+[  FAILED  ] TagAliasRegistryTest_677.AddEmptyAliasThrows_677
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasNoClosingBracketThrows_677
+[  FAILED  ] TagAliasRegistryTest_677.AddAliasStartsWithBracketOnly_677
+
+ 7 FAILED TESTS

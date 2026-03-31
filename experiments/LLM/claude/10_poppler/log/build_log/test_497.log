@@ -1,0 +1,55 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_497.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp:21:22: error: calling a private constructor of class 'Object'
+   21 |     Object nullObj = Object(objNone);
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp:88:26: error: call to constructor of 'Dict' is ambiguous
+   88 |         Dict *dict = new Dict(nullptr);
+      |                          ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp:94:16: error: call to deleted constructor of 'Object'
+   94 |         Object bboxArray(new Array(nullptr));
+      |                ^         ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp:104:16: error: functional-style cast from 'Dict *' to 'Object' uses deleted function
+  104 |         return Object(dict);
+      |                ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Dict *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp:133:12: error: call to deleted constructor of 'Object'
+  133 |     Object arrObj(new Array(nullptr));
+      |            ^      ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<Array *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp:10:7: warning: 'GfxTilingPatternTest_497' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   10 | class GfxTilingPatternTest_497 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp:73:7: warning: 'GfxTilingPatternParseTest_497' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   73 | class GfxTilingPatternParseTest_497 : public ::testing::Test {
+      |       ^
+2 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_497.dir/build.make:79: generated_build/CMakeFiles/test_497.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_497.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:73514: generated_build/CMakeFiles/test_497.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:73521: generated_build/CMakeFiles/test_497.dir/rule] Error 2
+gmake: *** [Makefile:26335: test_497] Error 2

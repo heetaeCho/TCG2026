@@ -1,0 +1,68 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_789.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:41:16: error: call to deleted constructor of 'Object'
+   41 |         Object obj(minimalPDF);
+      |                ^   ~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<const char *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:42:97: error: calling a private constructor of class 'Object'
+   42 |         auto *stream = new MemStream(const_cast<char *>(minimalPDF), 0, sizeof(minimalPDF) - 1, Object(objNull));
+      |                                                                                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:383:5: error: unknown type name 'AnnotSubtype'; did you mean 'Annot3D::AnnotSubtype'?
+  383 |     AnnotSubtype type = annot.getType();
+      |     ^~~~~~~~~~~~
+      |     Annot3D::AnnotSubtype
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:663:10: note: 'Annot3D::AnnotSubtype' declared here
+  663 |     enum AnnotSubtype
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:412:35: error: no member named 'getName' in 'Annot'
+  412 |     const GooString *name = annot.getName();
+      |                             ~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:430:40: error: no member named 'getName' in 'Annot'
+  430 |     const GooString *retrieved = annot.getName();
+      |                                  ~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:474:12: error: calling a private constructor of class 'Object'
+  474 |     Object newApp(objNull);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:494:12: error: calling a private constructor of class 'Object'
+  494 |     Object newApp(objNull);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:13:7: warning: 'AnnotTest_789' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class AnnotTest_789 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp:43:25: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, MemStream *&>' requested here
+   43 |         auto doc = std::make_unique<PDFDoc>(stream);
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_789.dir/build.make:79: generated_build/CMakeFiles/test_789.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_789.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:100202: generated_build/CMakeFiles/test_789.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:100209: generated_build/CMakeFiles/test_789.dir/rule] Error 2
+gmake: *** [Makefile:37177: test_789] Error 2

@@ -1,0 +1,21 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_534.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_534.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_534.cpp:351:19: error: no matching conversion for functional-style cast from 'const char[7]' to 'YAML::_Tag'
+  351 |     emitter.Write(YAML::_Tag("!mytag"));
+      |                   ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:93:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char[7]' to 'const _Tag' for 1st argument
+   93 | struct _Tag {
+      |        ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:93:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char[7]' to '_Tag' for 1st argument
+   93 | struct _Tag {
+      |        ^~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/emittermanip.h:98:12: note: candidate constructor not viable: requires 3 arguments, but 1 was provided
+   98 |   explicit _Tag(const std::string& prefix_, const std::string& content_,
+      |            ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   99 |                 Type::value type_)
+      |                 ~~~~~~~~~~~~~~~~~
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_534.dir/build.make:79: generated_build/CMakeFiles/test_534.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_534.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:22446: generated_build/CMakeFiles/test_534.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:22453: generated_build/CMakeFiles/test_534.dir/rule] Error 2
+gmake: *** [Makefile:8396: test_534] Error 2

@@ -1,0 +1,122 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_360.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:26:48: error: no member named 'Ok' in 'Catch::Clara::Detail::ResultBase'
+   26 |         return TestableResultValue(ResultBase::Ok, value);
+      |                                    ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:29:48: error: no member named 'Ok' in 'Catch::Clara::Detail::ResultBase'
+   29 |         return TestableResultValue(ResultBase::Ok, std::move(value));
+      |                                    ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:32:36: error: no member named 'LogicError' in 'Catch::Clara::Detail::ResultBase'; did you mean 'logicError'?
+   32 |         return TestableResultValue(ResultBase::LogicError);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~
+      |                                    logicError
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:31:32: note: 'logicError' declared here
+   31 |     static TestableResultValue logicError() {
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:35:36: error: no member named 'RuntimeError' in 'Catch::Clara::Detail::ResultBase'; did you mean 'runtimeError'?
+   35 |         return TestableResultValue(ResultBase::RuntimeError);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                    runtimeError
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:34:32: note: 'runtimeError' declared here
+   34 |     static TestableResultValue runtimeError() {
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:61:55: error: no member named 'ParseResultType' in namespace 'Catch::Clara::Detail'; did you mean simply 'ParseResultType'?
+   61 |     auto result = ParserResult::ok(Detail::ParseState(Detail::ParseResultType::Matched, 42));
+      |                                                       ^~~~~~~~~~~~~~~~~~~~~~~
+      |                                                       ParseResultType
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:52:20: note: 'ParseResultType' declared here
+   52 |         enum class ParseResultType {
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:61:36: error: no matching constructor for initialization of 'Detail::ParseState'
+   61 |     auto result = ParserResult::ok(Detail::ParseState(Detail::ParseResultType::Matched, 42));
+      |                                    ^                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:290:17: note: candidate constructor not viable: no known conversion from 'int' to 'TokenStream' for 2nd argument
+  290 |                 ParseState( ParseResultType type,
+      |                 ^
+  291 |                             TokenStream remainingTokens );
+      |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:288:19: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  288 |             class ParseState {
+      |                   ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:288:19: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+  288 |             class ParseState {
+      |                   ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:78:29: error: variable type 'ExposedResultValue<int>' is an abstract class
+   78 |     ExposedResultValue<int> result(ResultBase::Ok, 42);
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:159:30: note: unimplemented pure virtual method 'enforceOk' in 'ExposedResultValue'
+  159 |                 virtual void enforceOk() const = 0;
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:78:48: error: no member named 'Ok' in 'Catch::Clara::Detail::ResultBase'
+   78 |     ExposedResultValue<int> result(ResultBase::Ok, 42);
+      |                                    ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:84:37: error: variable type 'ExposedResultValue<std::string>' (aka 'ExposedResultValue<basic_string<char>>') is an abstract class
+   84 |     ExposedResultValue<std::string> result(ResultBase::Ok, testStr);
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_clara.hpp:159:30: note: unimplemented pure virtual method 'enforceOk' in 'ExposedResultValue'
+  159 |                 virtual void enforceOk() const = 0;
+      |                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:84:56: error: no member named 'Ok' in 'Catch::Clara::Detail::ResultBase'
+   84 |     ExposedResultValue<std::string> result(ResultBase::Ok, testStr);
+      |                                            ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:89:48: error: no type named 'LogicError' in 'Catch::Clara::Detail::ResultBase'
+   89 |     ExposedResultValue<int> result(ResultBase::LogicError);
+      |                                    ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:89:35: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   89 |     ExposedResultValue<int> result(ResultBase::LogicError);
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:89:36: note: add a pair of parentheses to declare a variable
+   89 |     ExposedResultValue<int> result(ResultBase::LogicError);
+      |                                    ^
+      |                                    (
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:94:36: error: no type named 'RuntimeError' in 'Catch::Clara::Detail::ResultBase'; did you mean 'std::runtime_error'?
+   94 |     ExposedResultValue<int> result(ResultBase::RuntimeError);
+      |                                    ^~~~~~~~~~~~~~~~~~~~~~~~
+      |                                    std::runtime_error
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdexcept:219:9: note: 'std::runtime_error' declared here
+  219 |   class runtime_error : public exception
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:94:35: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+   94 |     ExposedResultValue<int> result(ResultBase::RuntimeError);
+      |                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:94:36: note: add a pair of parentheses to declare a variable
+   94 |     ExposedResultValue<int> result(ResultBase::RuntimeError);
+      |                                    ^                       
+      |                                    (                       )
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:95:28: error: member reference base type 'ExposedResultValue<int> (std::runtime_error)' is not a structure or union
+   95 |     EXPECT_ANY_THROW(result.value());
+      |                      ~~~~~~^~~~~~
+/usr/local/include/gtest/gtest.h:1796:25: note: expanded from macro 'EXPECT_ANY_THROW'
+ 1796 |   GTEST_TEST_ANY_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1434:54: note: expanded from macro 'GTEST_TEST_ANY_THROW_'
+ 1434 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);     \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:99:29: error: variable type 'ExposedResultValue<int>' is an abstract class
+   99 |     ExposedResultValue<int> original(ResultBase::Ok, 99);
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:99:50: error: no member named 'Ok' in 'Catch::Clara::Detail::ResultBase'
+   99 |     ExposedResultValue<int> original(ResultBase::Ok, 99);
+      |                                      ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:100:29: error: variable type 'ExposedResultValue<int>' is an abstract class
+  100 |     ExposedResultValue<int> copy(original);
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:105:37: error: variable type 'ExposedResultValue<std::string>' (aka 'ExposedResultValue<basic_string<char>>') is an abstract class
+  105 |     ExposedResultValue<std::string> original(ResultBase::Ok, std::string("moved"));
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:105:58: error: no member named 'Ok' in 'Catch::Clara::Detail::ResultBase'
+  105 |     ExposedResultValue<std::string> original(ResultBase::Ok, std::string("moved"));
+      |                                              ~~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp:106:37: error: variable type 'ExposedResultValue<std::string>' (aka 'ExposedResultValue<basic_string<char>>') is an abstract class
+  106 |     ExposedResultValue<std::string> moved(std::move(original));
+      |                                     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+2 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_360.dir/build.make:79: generated_build/CMakeFiles/test_360.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_360.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:6311: generated_build/CMakeFiles/test_360.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:6318: generated_build/CMakeFiles/test_360.dir/rule] Error 2
+gmake: *** [Makefile:1307: test_360] Error 2

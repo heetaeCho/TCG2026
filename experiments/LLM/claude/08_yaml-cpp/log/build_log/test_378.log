@@ -1,0 +1,31 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_378.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:159:19: error: constexpr variable 'result' must be initialized by a constant expression
+  159 |     constexpr int result = NearestToOdd::delegate(s, f);
+      |                   ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:34:22: note: non-constexpr function 'operator()' cannot be used in a constant expression
+   34 |                    ? f(detail::nearest_always_open_t{}, args...)
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:159:28: note: in call to 'delegate<EvenSignificandBits, TestFunc>({}, {})'
+  159 |     constexpr int result = NearestToOdd::delegate(s, f);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:57:9: note: declared here
+   57 |     int operator()(YAML::jkj::dragonbox::detail::nearest_always_open_t) const noexcept {
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:166:19: error: constexpr variable 'result' must be initialized by a constant expression
+  166 |     constexpr int result = NearestToOdd::delegate(s, f);
+      |                   ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:35:22: note: non-constexpr function 'operator()' cannot be used in a constant expression
+   35 |                    : f(detail::nearest_always_closed_t{}, args...);
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:166:28: note: in call to 'delegate<OddSignificandBits, TestFunc>({}, {})'
+  166 |     constexpr int result = NearestToOdd::delegate(s, f);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp:60:9: note: declared here
+   60 |     int operator()(YAML::jkj::dragonbox::detail::nearest_always_closed_t) const noexcept {
+      |         ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_378.dir/build.make:79: generated_build/CMakeFiles/test_378.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_378.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:6638: generated_build/CMakeFiles/test_378.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:6645: generated_build/CMakeFiles/test_378.dir/rule] Error 2
+gmake: *** [Makefile:1974: test_378] Error 2

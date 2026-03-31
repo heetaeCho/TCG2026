@@ -1,0 +1,73 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_117.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_117.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_117.cpp:163:17: error: no viable conversion from 'std::unique_ptr<Dict>' to 'const Dict *'
+  163 |     const Dict *copied = dict->copy(copyXRef);
+      |                 ^        ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_117.cpp:241:25: error: no matching constructor for initialization of 'Object'
+  241 |     dict->add("StrKey", Object(objString, new GooString("Hello")));
+      |                         ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:245:5: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::string' (aka 'basic_string<char>') for 2nd argument; dereference the argument with *
+  245 |     Object(ObjType typeA, std::string &&stringA)
+      |     ^                     ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:252:5: note: candidate constructor not viable: no known conversion from 'GooString *' to 'const char *' for 2nd argument
+  252 |     Object(ObjType typeA, const char *v) : Object(typeA, std::string_view(v)) { }
+      |     ^                     ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:253:5: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::string_view' (aka 'basic_string_view<char>') for 2nd argument
+  253 |     Object(ObjType typeA, std::string_view v)
+      |     ^                     ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor not viable: requires single argument 'boolnA', but 2 arguments were provided
+  218 |     explicit Object(bool boolnA)
+      |              ^      ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:223:14: note: candidate constructor not viable: requires single argument 'intgA', but 2 arguments were provided
+  223 |     explicit Object(int intgA)
+      |              ^      ~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:228:14: note: candidate constructor not viable: requires single argument 'realA', but 2 arguments were provided
+  228 |     explicit Object(double realA)
+      |              ^      ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:233:14: note: candidate constructor not viable: requires single argument 'stringA', but 2 arguments were provided
+  233 |     explicit Object(std::unique_ptr<GooString> stringA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:239:14: note: candidate constructor not viable: requires single argument 'stringA', but 2 arguments were provided
+  239 |     explicit Object(std::string &&stringA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:261:14: note: candidate constructor not viable: requires single argument 'int64gA', but 2 arguments were provided
+  261 |     explicit Object(long long int64gA)
+      |              ^      ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:266:14: note: candidate constructor not viable: requires single argument 'arrayA', but 2 arguments were provided
+  266 |     explicit Object(std::unique_ptr<Array> arrayA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:272:14: note: candidate constructor not viable: requires single argument 'dictA', but 2 arguments were provided
+  272 |     explicit Object(std::unique_ptr<Dict> &&dictA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:280:14: note: candidate constructor template not viable: requires single argument 'streamA', but 2 arguments were provided
+  280 |     explicit Object(std::unique_ptr<StreamType> &&streamA)
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:286:14: note: candidate constructor not viable: requires single argument 'r', but 2 arguments were provided
+  286 |     explicit Object(const Ref r)
+      |              ^      ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor template not viable: requires 1 argument, but 2 were provided
+  293 |     Object(T) = delete;
+      |     ^      ~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+  295 |     Object(Object &&other) noexcept
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor not viable: requires single argument 'other', but 2 arguments were provided
+  312 |     Object(const Object &other) = delete;
+      |     ^      ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: candidate constructor not viable: requires single argument 'typeA', but 2 arguments were provided
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^      ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:215:5: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+  215 |     Object() : type(objNone) { }
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_117.cpp:283:17: error: no viable conversion from 'std::unique_ptr<Dict>' to 'const Dict *'
+  283 |     const Dict *deepCopied = dict->deepCopy();
+      |                 ^            ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_117.cpp:7:7: warning: 'DictTest_117' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class DictTest_117 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_117.dir/build.make:79: generated_build/CMakeFiles/test_117.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_117.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:83594: generated_build/CMakeFiles/test_117.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:83601: generated_build/CMakeFiles/test_117.dir/rule] Error 2
+gmake: *** [Makefile:30430: test_117] Error 2

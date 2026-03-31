@@ -21,6 +21,7 @@ from error_analyzer import ErrorAnalyzer
 import error_category
 from function_analyzer import StructureMetric, LogisticAnalyzer
 import copy 
+import pandas as pd
 
 class Main:
     def __init__(self, llm):
@@ -231,6 +232,7 @@ class Main:
 
     def analyze_structural_metric(self, csv, specific=0, skip=0):
         cwd = os.getcwd()
+        all_dfs = []
         for ix, project in enumerate(self.project_list):
             project_id = ix + 1
             if specific != 0:
@@ -240,9 +242,13 @@ class Main:
                 if project_id <= skip:
                     continue
             sm = StructureMetric(cwd, project_id, project, self.llm)
-            sm.calculate()
+            results = sm.calculate()
+            df = pd.DataFrame(results)
+            df['project'] = project
+            all_dfs.append(df)
+        final_df = pd.concat(all_dfs, ignore_index=True)
+        final_df.to_csv(csv, index=False)
         
-
         # # 모든 프로젝트의 정보가 모여야 가능하니까.
         # la = LogisticAnalyzer()
         # la.analyze()
@@ -252,16 +258,19 @@ class Main:
 
 if __name__ == "__main__":
     print("Experiments Main")
-    # llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
-    llms = ["GPT5"]#, "claude"]
+    # llms = ["qwen2.5_coder_32b-8k"]
+    # llms = ["claude"]
+    # for llm in llms:
+    #     main = Main(llm)
+    #     main.run_build(specific=10)
+
+    llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
     for llm in llms:
         main = Main(llm)
-        # main.run_build()
-        main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
-        main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
-        main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
-        # main.analyze_structural_metric(f'./experiments/{llm}/structural_metric.csv')
-        # break
+        # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
+        # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
+        # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
+        main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 
         # specific is project id
         # main.run_build(specific=0, skip=4)

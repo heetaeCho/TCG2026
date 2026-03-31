@@ -1,0 +1,43 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_895.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp:26:25: error: call to constructor of 'Dict' is ambiguous
+   26 |         Object dict(new Dict(nullptr));
+      |                         ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp:27:16: error: call to deleted constructor of 'Object'
+   27 |         Object ftObj(new GooString(type));
+      |                ^     ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: 'Object<GooString *>' has been explicitly marked deleted here
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp:43:23: error: call to constructor of 'Dict' is ambiguous
+   43 |     dict = Object(new Dict(nullptr));
+      |                       ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp:114:24: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+  114 |     using MethodType = const bool (FormFieldButton::*)(const char*);
+      |                        ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp:115:16: error: cannot initialize a variable of type 'MethodType' (aka 'const bool (FormFieldButton::*)(const char *)') with an rvalue of type 'bool (FormFieldButton::*)(const char *) const': different return type ('const bool' vs 'bool')
+  115 |     MethodType method = &FormFieldButton::getState;
+      |                ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp:13:7: warning: 'FormFieldButtonTest_895' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class FormFieldButtonTest_895 : public ::testing::Test {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp:64:7: warning: 'FormFieldButtonIntegrationTest_895' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   64 | class FormFieldButtonIntegrationTest_895 : public ::testing::Test {
+      |       ^
+3 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_895.dir/build.make:79: generated_build/CMakeFiles/test_895.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_895.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:41546: generated_build/CMakeFiles/test_895.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:41553: generated_build/CMakeFiles/test_895.dir/rule] Error 2
+gmake: *** [Makefile:13348: test_895] Error 2

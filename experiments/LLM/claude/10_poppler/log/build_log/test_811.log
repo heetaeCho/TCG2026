@@ -1,0 +1,76 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_811.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:42:35: error: call to constructor of 'Dict' is ambiguous
+   42 |     Object annotDict = Object(new Dict(nullptr));
+      |                                   ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:46:22: error: functional-style cast from 'GooString *' to 'Object' uses deleted function
+   46 |     Object typeObj = Object(new GooString("Annot"));
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = GooString *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:47:25: error: functional-style cast from 'GooString *' to 'Object' uses deleted function
+   47 |     Object subtypeObj = Object(new GooString("Screen"));
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = GooString *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:48:24: error: functional-style cast from 'Array *' to 'Object' uses deleted function
+   48 |     Object rectArray = Object(new Array(nullptr));
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Array *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:167:31: error: no member named 'getNumAnnots' in 'Annots'
+  167 |         if (annots && annots->getNumAnnots() > 0) {
+      |                       ~~~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:168:36: error: no member named 'getAnnot' in 'Annots'
+  168 |             Annot *annot = annots->getAnnot(0);
+      |                            ~~~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:229:31: error: no member named 'getNumAnnots' in 'Annots'
+  229 |         if (annots && annots->getNumAnnots() > 0) {
+      |                       ~~~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:230:36: error: no member named 'getAnnot' in 'Annots'
+  230 |             Annot *annot = annots->getAnnot(0);
+      |                            ~~~~~~  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp:11:7: warning: 'AnnotScreenTest_811' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class AnnotScreenTest_811 : public ::testing::Test {
+      |       ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_811.dir/build.make:79: generated_build/CMakeFiles/test_811.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_811.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:80010: generated_build/CMakeFiles/test_811.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:80017: generated_build/CMakeFiles/test_811.dir/rule] Error 2
+gmake: *** [Makefile:28974: test_811] Error 2

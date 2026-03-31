@@ -1,0 +1,34 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_652.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_652.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_652.cpp:14:32: error: 'm_pMemory' is a private member of 'YAML::detail::memory_holder'
+   14 |     pMemory_ = memory_holder_->m_pMemory;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/memory.h:43:17: note: declared private here
+   43 |   shared_memory m_pMemory;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_652.cpp:14:14: error: no viable overloaded '='
+   14 |     pMemory_ = memory_holder_->m_pMemory;
+      |     ~~~~~~~~ ^ ~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:414:19: note: candidate function not viable: no known conversion from 'shared_ptr<memory>' to 'const shared_ptr<YAML::detail::memory_holder>' for 1st argument
+  414 |       shared_ptr& operator=(const shared_ptr&) noexcept = default;
+      |                   ^         ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:418:2: note: candidate template ignored: requirement 'is_assignable<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic> &, const std::shared_ptr<YAML::detail::memory> &>::value' was not satisfied [with _Yp = YAML::detail::memory]
+  418 |         operator=(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:429:2: note: candidate template ignored: could not match 'auto_ptr' against 'shared_ptr'
+  429 |         operator=(auto_ptr<_Yp>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:438:7: note: candidate function not viable: no known conversion from 'shared_ptr<memory>' to 'shared_ptr<YAML::detail::memory_holder>' for 1st argument
+  438 |       operator=(shared_ptr&& __r) noexcept
+      |       ^         ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:446:2: note: candidate template ignored: requirement 'is_assignable<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic> &, std::shared_ptr<YAML::detail::memory>>::value' was not satisfied [with _Yp = YAML::detail::memory]
+  446 |         operator=(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:454:2: note: candidate template ignored: could not match 'unique_ptr' against 'shared_ptr'
+  454 |         operator=(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_652.dir/build.make:79: generated_build/CMakeFiles/test_652.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_652.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:23502: generated_build/CMakeFiles/test_652.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:23509: generated_build/CMakeFiles/test_652.dir/rule] Error 2
+gmake: *** [Makefile:8825: test_652] Error 2

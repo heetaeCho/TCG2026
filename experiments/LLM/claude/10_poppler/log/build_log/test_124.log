@@ -1,0 +1,72 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_124.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:21:5: warning: 'const' type qualifier on return type has no effect [-Wignored-qualifiers]
+   21 |     const bool isBinary(bool last) override { return false; }
+      |     ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:21:36: error: non-virtual member function marked 'override' hides virtual member function
+   21 |     const bool isBinary(bool last) override { return false; }
+      |                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different return type ('bool' vs 'const bool')
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:12:50: error: use of undeclared identifier 'streamStr'
+   12 |     StreamKind getKind() const override { return streamStr; }
+      |                                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:20:25: warning: unused parameter 'pos' [-Wunused-parameter]
+   20 |     void setPos(Goffset pos, int dir) override {}
+      |                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:20:34: warning: unused parameter 'dir' [-Wunused-parameter]
+   20 |     void setPos(Goffset pos, int dir) override {}
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:32:22: error: allocating an object of abstract class type 'ConcreteStream'
+   32 |         stream = new ConcreteStream();
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'ConcreteStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'ConcreteStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:101:34: error: use of undeclared identifier 'streamStr'; did you mean 'stream'?
+  101 |     EXPECT_EQ(stream->getKind(), streamStr);
+      |                                  ^~~~~~~~~
+      |                                  stream
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:40:21: note: 'stream' declared here
+   40 |     ConcreteStream *stream;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:7:7: warning: 'ConcreteStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class ConcreteStream : public Stream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:29:7: warning: 'StreamTest_124' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   29 | class StreamTest_124 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:1:
+/usr/local/include/gtest/gtest.h:1394:11: error: comparison between pointer and integer ('StreamKind' and 'ConcreteStream *')
+ 1394 |   if (lhs == rhs) {
+      |       ~~~ ^  ~~~
+/usr/local/include/gtest/gtest.h:1413:12: note: in instantiation of function template specialization 'testing::internal::CmpHelperEQ<StreamKind, ConcreteStream *>' requested here
+ 1413 |     return CmpHelperEQ(lhs_expression, rhs_expression, lhs, rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp:101:5: note: in instantiation of function template specialization 'testing::internal::EqHelper::Compare<StreamKind, ConcreteStream *, nullptr>' requested here
+  101 |     EXPECT_EQ(stream->getKind(), streamStr);
+      |     ^
+/usr/local/include/gtest/gtest.h:1885:54: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                      ^
+5 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_124.dir/build.make:79: generated_build/CMakeFiles/test_124.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_124.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:66442: generated_build/CMakeFiles/test_124.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:66449: generated_build/CMakeFiles/test_124.dir/rule] Error 2
+gmake: *** [Makefile:23462: test_124] Error 2

@@ -1,0 +1,54 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1089.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:350:15: error: variable type 'TestImage' is an abstract class
+  350 |     TestImage other(std::move(io2));
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'TestImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:418:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  418 |     EXPECT_TRUE(image_->supportsMetadata(mdExif));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:419:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  419 |     EXPECT_TRUE(image_->supportsMetadata(mdIptc));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:420:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  420 |     EXPECT_TRUE(image_->supportsMetadata(mdXmp));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:421:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  421 |     EXPECT_TRUE(image_->supportsMetadata(mdComment));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:474:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  474 |     EXPECT_TRUE(image_->supportsMetadata(mdExif));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp:28:23: note: in instantiation of function template specialization 'std::make_unique<TestImage, std::unique_ptr<Exiv2::MemIo>>' requested here
+   28 |         image_ = std::make_unique<TestImage>(std::move(io));
+      |                       ^
+5 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1089.dir/build.make:79: generated_build/CMakeFiles/test_1089.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1089.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:11587: generated_build/CMakeFiles/test_1089.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:11594: generated_build/CMakeFiles/test_1089.dir/rule] Error 2
+gmake: *** [Makefile:2025: test_1089] Error 2

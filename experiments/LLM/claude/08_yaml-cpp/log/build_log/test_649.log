@@ -1,0 +1,25 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_649.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_649.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_649.cpp:14:23: error: no member named 'create_memory' in 'YAML::detail::memory_holder'
+   14 |     memory = pMemory->create_memory();
+      |              ~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_649.cpp:325:16: error: no viable conversion from 'node_data' to 'const node'
+  325 |   key.set_data(*(new node_data()));
+      |                ^~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: candidate constructor not viable: no known conversion from 'node_data' to 'const node &' for 1st argument
+   28 |   node(const node&) = delete;
+      |   ^    ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:68:29: note: passing argument to parameter 'rhs' here
+   68 |   void set_data(const node& rhs) {
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_649.cpp:329:15: error: no viable conversion from 'node' to 'const node *'
+  329 |   const node* result = nd.get(key, memory);
+      |               ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_649.cpp:428:15: error: no viable conversion from 'node' to 'const node *'
+  428 |   const node* result = nd.get(std::string("missing"), memory);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_649.dir/build.make:79: generated_build/CMakeFiles/test_649.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_649.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9710: generated_build/CMakeFiles/test_649.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9717: generated_build/CMakeFiles/test_649.dir/rule] Error 2
+gmake: *** [Makefile:3222: test_649] Error 2

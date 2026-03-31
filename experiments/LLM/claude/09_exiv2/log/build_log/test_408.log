@@ -1,0 +1,110 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_408.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:1:1: error: unknown type name 'size_t'
+    1 | size_t doSizeImage() const { return 0; }
+      | ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:1:22: error: non-member function cannot have 'const' qualifier
+    1 | size_t doSizeImage() const { return 0; }
+      |                      ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:37:20: error: allocating an object of abstract class type 'TestableTiffEntryBase'
+   37 |         return new TestableTiffEntryBase(*this);
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:495:16: note: unimplemented pure virtual method 'doEncode' in 'TestableTiffEntryBase'
+  495 |   virtual void doEncode(TiffEncoder& encoder, const Exifdatum* datum) = 0;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:56:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   56 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:62:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   62 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttShort);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:62:56: error: use of undeclared identifier 'ttShort'; did you mean 'getShort'?
+   62 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttShort);
+      |                                                        ^~~~~~~
+      |                                                        getShort
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:241:18: note: 'getShort' declared here
+  241 | EXIV2API int16_t getShort(const byte* buf, ByteOrder byteOrder);
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:63:15: error: use of undeclared identifier 'ttShort'; did you mean 'getShort'?
+   63 |     EXPECT_EQ(ttShort, entry.tiffType());
+      |               ^~~~~~~
+      |               getShort
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:241:18: note: 'getShort' declared here
+  241 | EXIV2API int16_t getShort(const byte* buf, ByteOrder byteOrder);
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:68:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   68 |     TestableTiffEntryBase entry(0x0101, IfdId::ifd0Id, ttLong);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:68:56: error: use of undeclared identifier 'ttLong'; did you mean 'getLong'?
+   68 |     TestableTiffEntryBase entry(0x0101, IfdId::ifd0Id, ttLong);
+      |                                                        ^~~~~~
+      |                                                        getLong
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:243:18: note: 'getLong' declared here
+  243 | EXIV2API int32_t getLong(const byte* buf, ByteOrder byteOrder);
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:69:15: error: use of undeclared identifier 'ttLong'; did you mean 'getLong'?
+   69 |     EXPECT_EQ(ttLong, entry.tiffType());
+      |               ^~~~~~
+      |               getLong
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/types.hpp:243:18: note: 'getLong' declared here
+  243 | EXIV2API int32_t getLong(const byte* buf, ByteOrder byteOrder);
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:74:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   74 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:80:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   80 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:86:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   86 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:92:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   92 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:98:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+   98 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:105:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+  105 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:112:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+  112 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:120:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+  120 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp:129:27: error: variable type 'TestableTiffEntryBase' is an abstract class
+  129 |     TestableTiffEntryBase entry(0x0100, IfdId::ifd0Id, ttUndefined);
+      |                           ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_408.dir/build.make:79: generated_build/CMakeFiles/test_408.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_408.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:73127: generated_build/CMakeFiles/test_408.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:73134: generated_build/CMakeFiles/test_408.dir/rule] Error 2
+gmake: *** [Makefile:25555: test_408] Error 2

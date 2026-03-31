@@ -1,0 +1,39 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1084.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1084.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1084.cpp:441:20: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  441 |   EXPECT_TRUE(img->supportsMetadata(Exiv2::mdExif));
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1084.cpp:442:20: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  442 |   EXPECT_TRUE(img->supportsMetadata(Exiv2::mdIptc));
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1084.cpp:443:20: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  443 |   EXPECT_TRUE(img->supportsMetadata(Exiv2::mdXmp));
+      |                    ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1084.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1084.cpp:27:17: note: in instantiation of function template specialization 'std::make_unique<TestImage, std::unique_ptr<Exiv2::MemIo>>' requested here
+   27 |     return std::make_unique<TestImage>(std::move(io));
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'TestImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+3 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1084.dir/build.make:79: generated_build/CMakeFiles/test_1084.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1084.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:48885: generated_build/CMakeFiles/test_1084.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:48892: generated_build/CMakeFiles/test_1084.dir/rule] Error 2
+gmake: *** [Makefile:16286: test_1084] Error 2

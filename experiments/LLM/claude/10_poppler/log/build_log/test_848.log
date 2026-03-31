@@ -1,0 +1,77 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_848.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:31:35: error: call to constructor of 'Dict' is ambiguous
+   31 |     Object annotDict = Object(new Dict(nullptr));
+      |                                   ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:39:24: error: functional-style cast from 'Array *' to 'Object' uses deleted function
+   39 |     Object rectArray = Object(new Array(nullptr));
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Array *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:47:24: error: functional-style cast from 'Array *' to 'Object' uses deleted function
+   47 |     Object vertArray = Object(new Array(nullptr));
+      |                        ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:293:5: note: candidate constructor [with T = Array *] has been explicitly deleted
+  293 |     Object(T) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:218:14: note: candidate constructor
+  218 |     explicit Object(bool boolnA)
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:295:5: note: candidate constructor
+  295 |     Object(Object &&other) noexcept
+      |     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:312:5: note: candidate constructor has been explicitly deleted
+  312 |     Object(const Object &other) = delete;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:131:9: error: unknown type name 'AnnotPolygonIntent'; did you mean 'AnnotPolygon::AnnotPolygonIntent'?
+  131 |         AnnotPolygonIntent intent = poly->getIntent();
+      |         ^~~~~~~~~~~~~~~~~~
+      |         AnnotPolygon::AnnotPolygonIntent
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1286:10: note: 'AnnotPolygon::AnnotPolygonIntent' declared here
+ 1286 |     enum AnnotPolygonIntent
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:143:25: error: use of undeclared identifier 'annotPolygonCloud'
+  143 |         poly->setIntent(annotPolygonCloud);
+      |                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:144:38: error: use of undeclared identifier 'annotPolygonCloud'
+  144 |         EXPECT_EQ(poly->getIntent(), annotPolygonCloud);
+      |                                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:180:19: error: no matching constructor for initialization of 'AnnotPath'
+  180 |         AnnotPath path(x, y, 3);
+      |                   ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:140:14: note: candidate constructor not viable: requires single argument 'array', but 3 arguments were provided
+  140 |     explicit AnnotPath(const Array &array);
+      |              ^         ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:141:14: note: candidate constructor not viable: requires single argument 'coords', but 3 arguments were provided
+  141 |     explicit AnnotPath(std::vector<AnnotCoord> &&coords);
+      |              ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:144:5: note: candidate constructor not viable: requires 1 argument, but 3 were provided
+  144 |     AnnotPath(const AnnotPath &) = delete;
+      |     ^         ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:139:5: note: candidate constructor not viable: requires 0 arguments, but 3 were provided
+  139 |     AnnotPath();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp:15:7: warning: 'AnnotPolygonTest_848' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   15 | class AnnotPolygonTest_848 : public ::testing::Test {
+      |       ^
+1 warning and 7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_848.dir/build.make:79: generated_build/CMakeFiles/test_848.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_848.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:86538: generated_build/CMakeFiles/test_848.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:86545: generated_build/CMakeFiles/test_848.dir/rule] Error 2
+gmake: *** [Makefile:31626: test_848] Error 2

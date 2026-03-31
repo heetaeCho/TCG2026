@@ -1,0 +1,34 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1555.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp:30:81: error: non-virtual member function marked 'override' hides virtual member function
+   30 |                    int x0, int y0, SplashClip *clip, SplashClipResult *clipRes) override {
+      |                                                                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:82:18: note: hidden overloaded virtual function 'SplashFont::makeGlyph' declared here: type mismatch at 7th parameter ('const SplashClip &' vs 'SplashClip *')
+   82 |     virtual bool makeGlyph(int c, int xFrac, int yFrac, SplashGlyphBitmap *bitmap, int x0, int y0, const SplashClip &clip, SplashClipResult *clipRes) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp:34:34: warning: unused parameter 'c' [-Wunused-parameter]
+   34 |     SplashPath *getGlyphPath(int c) override {
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp:13:7: warning: 'TestSplashFont' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class TestSplashFont : public SplashFont {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp:39:7: warning: 'SplashFontTest_1555' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   39 | class SplashFontTest_1555 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestSplashFont'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp:52:22: note: in instantiation of function template specialization 'std::make_unique<TestSplashFont, std::nullptr_t, std::array<double, 4> &, std::array<double, 4> &, bool>' requested here
+   52 |     auto font = std::make_unique<TestSplashFont>(nullptr, mat, textMat, false);
+      |                      ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/splash/SplashFont.h:82:18: note: unimplemented pure virtual method 'makeGlyph' in 'TestSplashFont'
+   82 |     virtual bool makeGlyph(int c, int xFrac, int yFrac, SplashGlyphBitmap *bitmap, int x0, int y0, const SplashClip &clip, SplashClipResult *clipRes) = 0;
+      |                  ^
+3 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1555.dir/build.make:79: generated_build/CMakeFiles/test_1555.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1555.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:61674: generated_build/CMakeFiles/test_1555.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:61681: generated_build/CMakeFiles/test_1555.dir/rule] Error 2
+gmake: *** [Makefile:21525: test_1555] Error 2

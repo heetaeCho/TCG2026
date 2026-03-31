@@ -1,0 +1,217 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_814.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:46:5: error: only virtual member functions can be marked 'override'
+   46 |     MOCK_METHOD(const std::vector<std::string>&, getSectionsToRun, (), (const, override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:127:1: note: expanded from here
+  127 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:62:19: error: no matching constructor for initialization of 'AssertionInfo'
+   62 |     AssertionInfo info("test_macro"_catch_sr, lineInfo, expr, ResultDisposition::Normal);
+      |                   ^    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:64:25: error: call to deleted constructor of 'AssertionResultData'
+   64 |     AssertionResultData data;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:70:21: error: no matching constructor for initialization of 'AssertionResult'
+   70 |     AssertionResult result(info, CATCH_MOVE(data));
+      |                     ^      ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:38:9: note: candidate constructor not viable: expects an rvalue for 2nd argument
+   38 |         AssertionResult( AssertionInfo const& info, AssertionResultData&& data );
+      |         ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:93:50: error: no member named 'StringStream' in namespace 'Catch'
+   93 |         auto stream = Detail::make_unique<Catch::StringStream>();
+      |                                           ~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:96:31: error: no matching conversion for functional-style cast from 'Catch::ReusableStringStream *' to 'Detail::unique_ptr<IStream>'
+   96 |                               Detail::unique_ptr<IStream>(new Catch::ReusableStringStream()),
+      |                               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:27:19: note: candidate constructor not viable: no known conversion from 'Catch::ReusableStringStream *' to 'std::nullptr_t' for 1st argument
+   27 |         constexpr unique_ptr(std::nullptr_t = nullptr):
+      |                   ^          ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:30:28: note: candidate constructor not viable: no known conversion from 'Catch::ReusableStringStream *' to 'Catch::IStream *' for 1st argument
+   30 |         explicit constexpr unique_ptr(T* ptr):
+      |                            ^          ~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:46:9: note: candidate constructor not viable: no known conversion from 'Catch::ReusableStringStream *' to 'const unique_ptr<IStream>' for 1st argument
+   46 |         unique_ptr(unique_ptr const&) = delete;
+      |         ^          ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:49:9: note: candidate constructor not viable: no known conversion from 'Catch::ReusableStringStream *' to 'unique_ptr<IStream>' for 1st argument
+   49 |         unique_ptr(unique_ptr&& rhs) noexcept:
+      |         ^          ~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: candidate template ignored: could not match 'unique_ptr<U>' against 'Catch::ReusableStringStream *'
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:120:19: error: no matching constructor for initialization of 'AssertionInfo'
+  120 |     AssertionInfo aInfo(""_catch_sr, lineInfo, "1 == 1", ResultDisposition::Normal);
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:121:25: error: call to deleted constructor of 'AssertionResultData'
+  121 |     AssertionResultData data;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:123:21: error: no matching constructor for initialization of 'AssertionResult'
+  123 |     AssertionResult result(aInfo, CATCH_MOVE(data));
+      |                     ^      ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:38:9: note: candidate constructor not viable: expects an rvalue for 2nd argument
+   38 |         AssertionResult( AssertionInfo const& info, AssertionResultData&& data );
+      |         ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:149:19: error: no matching constructor for initialization of 'AssertionInfo'
+  149 |     AssertionInfo aInfo(""_catch_sr, lineInfo, "1 == 2", ResultDisposition::Normal);
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:150:25: error: call to deleted constructor of 'AssertionResultData'
+  150 |     AssertionResultData data;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:152:21: error: no matching constructor for initialization of 'AssertionResult'
+  152 |     AssertionResult result(aInfo, CATCH_MOVE(data));
+      |                     ^      ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:38:9: note: candidate constructor not viable: expects an rvalue for 2nd argument
+   38 |         AssertionResult( AssertionInfo const& info, AssertionResultData&& data );
+      |         ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:176:19: error: no matching constructor for initialization of 'AssertionInfo'
+  176 |     AssertionInfo aInfo(""_catch_sr, lineInfo, "", ResultDisposition::Normal);
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:177:25: error: call to deleted constructor of 'AssertionResultData'
+  177 |     AssertionResultData data;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:180:21: error: no matching constructor for initialization of 'AssertionResult'
+  180 |     AssertionResult result(aInfo, CATCH_MOVE(data));
+      |                     ^      ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:38:9: note: candidate constructor not viable: expects an rvalue for 2nd argument
+   38 |         AssertionResult( AssertionInfo const& info, AssertionResultData&& data );
+      |         ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:204:19: error: no matching constructor for initialization of 'AssertionInfo'
+  204 |     AssertionInfo aInfo(""_catch_sr, lineInfo, "", ResultDisposition::Normal);
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:205:25: error: call to deleted constructor of 'AssertionResultData'
+  205 |     AssertionResultData data;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:23:9: note: 'AssertionResultData' has been explicitly marked deleted here
+   23 |         AssertionResultData() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:208:21: error: no matching constructor for initialization of 'AssertionResult'
+  208 |     AssertionResult result(aInfo, CATCH_MOVE(data));
+      |                     ^      ~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:38:9: note: candidate constructor not viable: expects an rvalue for 2nd argument
+   38 |         AssertionResult( AssertionInfo const& info, AssertionResultData&& data );
+      |         ^                                           ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:35:11: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+   35 |     class AssertionResult {
+      |           ^~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_result.hpp:37:9: note: candidate constructor not viable: requires 0 arguments, but 2 were provided
+   37 |         AssertionResult() = delete;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp:231:19: error: no matching constructor for initialization of 'AssertionInfo'
+  231 |     AssertionInfo aInfo(""_catch_sr, lineInfo, "true", ResultDisposition::Normal);
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_814.dir/build.make:79: generated_build/CMakeFiles/test_814.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_814.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14264: generated_build/CMakeFiles/test_814.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14271: generated_build/CMakeFiles/test_814.dir/rule] Error 2
+gmake: *** [Makefile:4440: test_814] Error 2

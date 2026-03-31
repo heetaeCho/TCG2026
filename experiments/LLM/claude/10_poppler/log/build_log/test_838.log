@@ -1,0 +1,69 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_838.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:37:95: error: calling a private constructor of class 'Object'
+   37 |         auto stream = new MemStream(const_cast<char*>(minimalPDF), 0, sizeof(minimalPDF) - 1, Object(objNull));
+      |                                                                                               ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:212:22: error: use of undeclared identifier 'annotLineArrow'
+  212 |     annot->setIntent(annotLineArrow);
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:213:35: error: use of undeclared identifier 'annotLineArrow'
+  213 |     EXPECT_EQ(annot->getIntent(), annotLineArrow);
+      |                                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:224:22: error: use of undeclared identifier 'annotLineDimension'; did you mean 'AnnotLine::intentLineDimension'?
+  224 |     annot->setIntent(annotLineDimension);
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      AnnotLine::intentLineDimension
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1121:9: note: 'AnnotLine::intentLineDimension' declared here
+ 1121 |         intentLineDimension // LineDimension
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:225:35: error: use of undeclared identifier 'annotLineDimension'; did you mean 'AnnotLine::intentLineDimension'?
+  225 |     EXPECT_EQ(annot->getIntent(), annotLineDimension);
+      |                                   ^~~~~~~~~~~~~~~~~~
+      |                                   AnnotLine::intentLineDimension
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1121:9: note: 'AnnotLine::intentLineDimension' declared here
+ 1121 |         intentLineDimension // LineDimension
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:11:7: warning: 'AnnotLineTest_838' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class AnnotLineTest_838 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp:38:21: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, MemStream *&>' requested here
+   38 |         return std::make_unique<PDFDoc>(stream);
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_838.dir/build.make:79: generated_build/CMakeFiles/test_838.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_838.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:72746: generated_build/CMakeFiles/test_838.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:72753: generated_build/CMakeFiles/test_838.dir/rule] Error 2
+gmake: *** [Makefile:26023: test_838] Error 2

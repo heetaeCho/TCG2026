@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_113.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_113.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_113.cpp:11:20: error: call to constructor of 'Dict' is ambiguous
+   11 |         dict = new Dict(nullptr);
+      |                    ^    ~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:57:14: note: candidate constructor
+   57 |     explicit Dict(XRef *xrefA);
+      |              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Dict.h:58:14: note: candidate constructor
+   58 |     explicit Dict(const Dict *dictA, PrivateTag /*unused*/ = {});
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_113.cpp:179:17: error: no viable conversion from 'std::unique_ptr<Dict>' to 'const Dict *'
+  179 |     const Dict *copied = dict->copy(nullptr);
+      |                 ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_113.cpp:7:7: warning: 'DictTest_113' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class DictTest_113 : public ::testing::Test {
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_113.dir/build.make:79: generated_build/CMakeFiles/test_113.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_113.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:16682: generated_build/CMakeFiles/test_113.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:16689: generated_build/CMakeFiles/test_113.dir/rule] Error 2
+gmake: *** [Makefile:3247: test_113] Error 2

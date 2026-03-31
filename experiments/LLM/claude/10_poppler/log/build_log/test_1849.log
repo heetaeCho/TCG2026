@@ -1,0 +1,55 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1849.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1849.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1849.cpp:83:18: warning: unused variable 'authorized' [-Wunused-variable]
+   83 |             bool authorized = handler.authorize(authData);
+      |                  ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1849.cpp:104:51: error: no viable conversion from 'GooString' to 'const std::optional<GooString>'
+  104 |             void* authData = handler.makeAuthData(ownerPass, userPass);
+      |                                                   ^~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:705:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'GooString' to 'const optional<GooString> &' for 1st argument
+  705 |     class optional
+      |           ^~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:705:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'GooString' to 'optional<GooString> &&' for 1st argument
+  705 |     class optional
+      |           ^~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:739:17: note: candidate constructor not viable: no known conversion from 'GooString' to 'nullopt_t' for 1st argument
+  739 |       constexpr optional(nullopt_t) noexcept { }
+      |                 ^        ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:747:2: note: candidate template ignored: requirement '__and_v<std::__not_<std::is_same<std::optional<GooString>, GooString>>, std::__not_<std::is_same<std::in_place_t, GooString>>, std::is_constructible<GooString, GooString &>, std::is_convertible<GooString &, GooString>>' was not satisfied [with _Up = GooString &]
+  747 |         optional(_Up&& __t)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:766:2: note: candidate template ignored: could not match 'optional<_Up>' against 'GooString'
+  766 |         optional(const optional<_Up>& __t)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:792:2: note: candidate template ignored: could not match 'optional<_Up>' against 'GooString'
+  792 |         optional(optional<_Up>&& __t)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:756:2: note: explicit constructor is not a candidate
+  756 |         optional(_Up&& __t)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:779:2: note: explicit constructor is not a candidate
+  779 |         optional(const optional<_Up>& __t)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:805:2: note: explicit constructor is not a candidate
+  805 |         optional(optional<_Up>&& __t)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/optional:815:2: note: explicit constructor is not a candidate
+  815 |         optional(in_place_t, _Args&&... __args)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/basic_string.h:932:7: note: candidate function
+  932 |       operator __sv_type() const noexcept
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/SecurityHandler.h:102:56: note: passing argument to parameter 'ownerPassword' here
+  102 |     void *makeAuthData(const std::optional<GooString> &ownerPassword, const std::optional<GooString> &userPassword) override;
+      |                                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1849.cpp:137:18: warning: unused variable 'unencrypted' [-Wunused-variable]
+  137 |             bool unencrypted = handler.isUnencrypted();
+      |                  ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1849.cpp:11:7: warning: 'StandardSecurityHandlerTest_1849' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class StandardSecurityHandlerTest_1849 : public ::testing::Test {
+      |       ^
+3 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1849.dir/build.make:79: generated_build/CMakeFiles/test_1849.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1849.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:66986: generated_build/CMakeFiles/test_1849.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:66993: generated_build/CMakeFiles/test_1849.dir/rule] Error 2
+gmake: *** [Makefile:23683: test_1849] Error 2

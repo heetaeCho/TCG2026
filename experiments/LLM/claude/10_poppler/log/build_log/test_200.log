@@ -1,0 +1,28 @@
+[ 66%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_200.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_200.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_200.cpp:115:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  115 |     stream->rewind();
+      |     ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_200.cpp:11:7: warning: 'EOFStreamTest_200' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class EOFStreamTest_200 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_200.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'EOFStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_200.cpp:25:32: note: in instantiation of function template specialization 'std::make_unique<EOFStream, int>' requested here
+   25 |         auto baseStream = std::make_unique<EOFStream>(0);
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:1270:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'int' to 'const EOFStream' for 1st argument
+ 1270 | class EOFStream : public OwnedFilterStream
+      |       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:1273:14: note: candidate constructor not viable: no known conversion from 'int' to 'std::unique_ptr<Stream>' for 1st argument
+ 1273 |     explicit EOFStream(std::unique_ptr<Stream> strA);
+      |              ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_200.dir/build.make:79: generated_build/CMakeFiles/test_200.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_200.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:26154: generated_build/CMakeFiles/test_200.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:26161: generated_build/CMakeFiles/test_200.dir/rule] Error 2
+gmake: *** [Makefile:7095: test_200] Error 2

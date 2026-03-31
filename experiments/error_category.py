@@ -1,8 +1,10 @@
-CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
+CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
     "Lexical": ['err_character_not_allowed_identifier', 'err_character_too_large', 'err_invalid_suffix_constant', 
                 'err_ucn_escape_invalid', 'err_pp_expected_after', 'err_pp_bad_paste', 'err_unterminated_raw_string', 
                 'err_too_many_args_in_macro_invoc', 'err_character_not_allowed', 'err_unterm_macro_invoc', 
-                'err_pp_file_not_found'],
+                'err_pp_file_not_found', 'err_pp_invalid_directive', 'ext_reserved_user_defined_literal',
+                "err_unterminated_raw_string", "err_escape_too_large"],
+
     "Syntactic": ['err_attributes_not_allowed', 'err_incomplete_array_member_init', 
                   'err_brackets_go_after_unqualified_id', 'err_expected_lparen_after_type', 
                   'err_expected_class_name', 'err_expected_expression', 'err_missing_param', 
@@ -10,12 +12,18 @@ CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
                   'err_invalid_token_after_declarator_suggest_equal', 'err_keyword_as_parameter', 
                   'err_namespace_nonnamespace_scope', 'err_illegal_decl_reference_to_reference', 
                   'err_invalid_reference_qualifier_application', 'err_using_namespace_in_class',
-                   "Unknown_Parse#1"],
+                   "Unknown_Parse#1", "err_unexpected_unqualified_id", "err_bad_parameter_name",
+                   "err_virt_specifier_outside_class", "err_unexpected_template_in_unqualified_id",
+                   "err_function_definition_not_allowed", "err_init_list_bin_op", "err_templated_invalid_declaration",
+                   "err_extraneous_token_before_semi"],
+
     "Linker": ["err_undefined_symbol", "err_undefined_reference", "err_multiple_definition", "err_cannot_find_library"],
+
     "Semantic": { # subtype = 16
-        # Abstract-Type Instantiation = 4 
+        # Abstract-Type Instantiation = 6
         "Abstract-Type Instantiation": ["err_allocation_of_abstract_type", "err_abstract_type_in_decl#1", 
-                                        "err_abstract_type_in_decl#2", "err_abstract_type_in_decl#3"],
+                                        "err_abstract_type_in_decl#2", "err_abstract_type_in_decl#3", "err_array_of_abstract_type",
+                                        "err_abstract_type_in_decl#4"],
         # Access Control = 6
         "Access Control": ["err_access", "err_access_ctor", "err_access_base_ctor", "err_access_dtor_base",
                            "err_access_field_ctor", "err_access_dtor_var"],
@@ -26,55 +34,68 @@ CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
                                           "err_constexpr_body_no_return","err_static_assert_failed", 
                                           "err_static_assert_expression_is_not_constant", "err_forward_ref_enum",
                                           "err_ovl_no_viable_literal_operator"],
-        # Construction/Initialization = 10
+        # Construction/Initialization = 15
         "Construction/Initialization": ["err_ovl_no_viable_function_in_init", "err_ovl_deleted_special_init",
                                         "err_missing_default_ctor#1", "err_missing_default_ctor#2",
                                         "err_default_init_const", "err_default_member_initializer_not_yet_parsed",
                                         "err_ctor_dtor_returns_void", "err_excess_initializers", "err_variable_object_no_init",
-                                        "warn_field_is_uninit"],
-        # Deleted/Special Member = 7
+                                        "warn_field_is_uninit", "err_reference_var_requires_init",
+                                        "err_destructor_return_type", "err_selected_explicit_constructor",
+                                        "err_deleted_inherited_ctor_use", "err_only_constructors_take_base_inits",
+                                        "err_initializer_string_for_char_array_too_long"],
+        # Deleted/Special Member = 9
         "Deleted/Special Member": ["err_ovl_deleted_call", "err_ovl_deleted_init", "err_deleted_function_use", 
                                    "err_deleted_override", "err_ovl_deleted_special_oper", "err_ovl_deleted_oper",
-                                   "warn_defaulted_comparison_deleted"],
-        # Functions/Call Resolution = 10
+                                   "warn_defaulted_comparison_deleted", "err_ovl_deleted_conversion_in_cast",
+                                   "err_typecheck_deleted_function"],
+        # Functions/Call Resolution = 11
         "Functions/Call Resolution": ["err_ovl_ambiguous_init", "err_ovl_no_viable_object_call", 
                                       "err_member_call_without_object", "err_typecheck_call_not_function",
                                       "err_typecheck_call_too_few_args", "err_typecheck_call_too_many_args",
                                       "err_typecheck_call_too_few_args_one", "err_ovl_diff_return_type", "err_ref_qualifier_overload",
-                                      "err_ovl_unresolvable"],
-        # Operator/Call = 10
+                                      "err_ovl_unresolvable", "err_early_catch_all"],
+        # Operator/Call = 14
         "Operator/Call": ["err_typecheck_invalid_operands", "err_ovl_no_viable_oper", "err_ovl_no_viable_subscript",
                           "err_ovl_ambiguous_oper_unary", "err_ovl_no_oper", "err_typecheck_subscript_value",
                           "err_no_subobject_property_setting", "err_typecheck_array_not_modifiable_lvalue",
-                          "err_typecheck_assign_const", "err_typecheck_unary_expr"],
-        # Override/Inheritance = 10
+                          "err_typecheck_assign_const", "err_typecheck_unary_expr", "err_for_range_deduction_failure",
+                          "err_typecheck_illegal_increment_decrement", "err_for_range_invalid",
+                          "err_typecheck_subscript_not_integer"],
+        # Override/Inheritance = 11
         "Override/Inheritance": ["err_function_marked_override_not_overriding", "override_keyword_hides_virtual_member_function",
                                  "override_keyword_only_allowed_on_virtual_member_functions", 
                                  "err_covariant_return_ambiguous_derived_to_base_conv", 
                                  "err_different_return_type_for_overriding_virtual_function",
                                  "err_override_exception_spec", "err_class_marked_final_used_as_base",
-                                 "err_not_direct_base_or_virtual", "err_base_must_be_class", "err_bad_dynamic_cast_not_polymorphic"],
-        # Incomplete Type = 17
+                                 "err_not_direct_base_or_virtual", "err_base_must_be_class", "err_bad_dynamic_cast_not_polymorphic",
+                                 "err_using_decl_constructor_not_in_direct_base"],
+        # Incomplete Type = 19
         "Incomplete Type": ["err_bad_cast_incomplete", "err_typecheck_decl_incomplete_type", "err_field_incomplete_or_sizeless",
                             "err_incomplete_member_access", "err_new_incomplete_or_sizeless_type",
                             "err_typecheck_arithmetic_incomplete_or_sizeless_type", "err_subscript_incomplete_or_sizeless_type",
                             "warn_delete_incomplete", "err_typecheck_incomplete_tag", "err_func_def_incomplete_result",
                             "err_incomplete_nested_name_spec", "err_for_range_incomplete_type", "err_init_incomplete_type",
                             "err_sizeof_alignof_incomplete_or_sizeless_type", "err_invalid_incomplete_type_use",
-                            "err_incomplete_base_class", "err_call_function_incomplete_return"],
-        # Symbol/Lookup = 12
+                            "err_incomplete_base_class", "err_call_function_incomplete_return", "err_call_incomplete_argument",
+                            "err_auto_fn_used_before_defined"],
+        # Symbol/Lookup = 14
         "Symbol/Lookup": ["err_undeclared_var_use", "err_no_member", "err_no_template", "err_not_tag_in_scope", 
                           "err_using_directive_member_suggest", "err_unknown_type_or_class_name_suggest", "err_undeclared_use",
                           "err_ref_non_value", "err_ambiguous_reference", "err_unexpected_namespace", "Unknown_Sema#1",
-                          "err_lambda_impcap"],
-        # Templates/Generics = 13
+                          "err_lambda_impcap", "err_addr_ovl_no_viable", "err_out_of_line_qualified_id_type_names_constructor"],
+        # Templates/Generics = 24
         "Templates/Generics": ["err_implicit_instantiate_member_undefined", "err_template_arg_list_different_arity", 
                                "err_template_missing_args", "err_not_class_template_specialization", "err_template_spec_needs_header",
                                "err_template_arg_must_be_type", "err_template_arg_must_be_template", 
                                "err_template_arg_template_params_mismatch", "err_template_inside_local_class",
                                "err_deduced_class_template_ctor_no_viable", "err_function_template_spec_no_match",
-                               "err_var_spec_no_template", "err_template_spec_redecl_out_of_scope"],
-        # Type Conversion/Reference Binding = 22
+                               "err_var_spec_no_template", "err_template_spec_redecl_out_of_scope",
+                               "err_template_arg_must_be_expr", "err_explicit_instantiation_unqualified_wrong_namespace",
+                               "err_explicit_instantiation_not_known", "Unknown_Sema#2", "err_template_spec_redecl_global_scope",
+                               "err_template_member", "err_function_parameter_pack_without_parameter_packs", "Unknown_Sema#3",
+                               "err_non_template_in_template_id", "err_pack_expansion_without_parameter_packs",
+                               "err_unexpanded_parameter_pack"],
+        # Type Conversion/Reference Binding = 26
         "Type Conversion/Reference Binding": ["err_typecheck_nonviable_condition_incomplete", "err_typecheck_nonviable_condition",
                                               "err_init_conversion_failed", "err_typecheck_convert_incompatible", 
                                               "err_typecheck_convert_incompatible_pointer", "warn_init_list_type_narrowing",
@@ -85,31 +106,42 @@ CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
                                               "err_ovl_no_conversion_in_cast", "err_typecheck_bool_condition",
                                               "err_auto_inconsistent_deduction", "err_auto_var_deduction_failure",
                                               "err_typecheck_convert_discards_qualifiers", "err_reference_bind_drops_quals",
-                                              "err_typecheck_missing_return_type_incompatible"],
-        # Type Redefinition/Redeclaration = 11
+                                              "err_typecheck_missing_return_type_incompatible",
+                                              "err_typecheck_converted_constant_expression", "err_typecheck_comparison_of_distinct_pointers",
+                                              "err_typecheck_convert_int_pointer", "ext_typecheck_convert_incompatible_pointer_sign",
+                                              ],
+        # Type Redefinition/Redeclaration = 14
         "Type Redefinition/Redeclaration": ["err_redefinition", "err_redeclaration_different_type", "err_member_decl_does_not_match",
                                             "err_member_redeclared", "err_duplicate_member", "err_tag_definition_of_typedef",
                                             "err_redefinition_different_typedef", "err_enum_redeclare_type_mismatch",
                                             "err_invalid_declarator_scope", "err_different_language_linkage",
-                                            "err_use_with_wrong_tag"],
-        # Qualifier/Specifier Missuse = 9
+                                            "err_use_with_wrong_tag", "err_static_non_static", "err_enum_redeclare_scoped_mismatch",
+                                            "err_using_decl_conflict_reverse"],
+        # Qualifier/Specifier Missuse = 11
         "Qualifier/Specifier Missuse": ["err_invalid_qualified_function_type", "err_mutable_function", 
                                         "err_mutable_nonmember", "err_auto_not_allowed", "err_void_only_param",
                                         "err_missing_type_specifier", "err_param_default_argument_nonfunc",
-                                        "err_va_start_fixed_function", "warn_unused_expr"],
-        # Pointer/Reference Misuse = 11
+                                        "err_va_start_fixed_function", "warn_unused_expr", "err_static_block_func",
+                                        "err_exceptions_disabled"],
+        # Pointer/Reference Misuse = 14
         "Pointer/Reference Misuse": ["err_typecheck_invalid_lvalue_addrof", "err_reference_to_void", 
                                     "err_deduced_class_template_compound_type", "err_illegal_decl_pointer_to_reference",
                                     "err_illegal_decl_array_of_functions", "err_typecheck_indirection_requires_pointer",
                                     "err_bad_memptr_rhs", "err_delete_operand", "warn_format_nonliteral_noargs",
-                                    "err_func_returning_array_function", "err_reference_to_local_in_enclosing_context"],
-        # Member Access Rules = 13
+                                    "err_func_returning_array_function", "err_reference_to_local_in_enclosing_context",
+                                    "err_typecheck_addrof_temporary", "err_invalid_form_pointer_member_function",
+                                    "err_illegal_decl_mempointer_to_void"],
+        # This/Non-Static Member/Using Misuse = 21
         "This/Non-Static Member/Using Misuse": ["err_invalid_this_use", "err_member_function_call_bad_cvr", "err_bound_member_function",
                                 "err_member_qualification", "err_using_decl_can_not_refer_to_class_member",
                                 "err_using_decl_nested_name_specifier_is_not_class", "err_member_reference_needs_call",
                                 "err_typecheck_member_reference_struct_union", "err_typecheck_member_reference_suggestion",
                                 "err_mem_init_not_member_or_class", "err_expected_class_or_namespace", 
-                                "err_auto_variable_cannot_appear_in_own_initializer", "err_static_data_member_not_allowed_in_local_class"],
+                                "err_auto_variable_cannot_appear_in_own_initializer", "err_static_data_member_not_allowed_in_local_class",
+                                "err_using_decl_nested_name_specifier_is_not_base_class", "err_nested_non_static_member_use",
+                                "err_typecheck_member_reference_type", "err_member_function_call_bad_ref", "err_this_capture",
+                                "err_invalid_non_static_member_use", "err_using_decl_nested_name_specifier_is_current_class",
+                                "err_unqualified_pointer_member_function"],
     },
 }
 

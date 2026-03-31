@@ -1,0 +1,139 @@
+#include <gtest/gtest.h>
+#include <glib.h>
+
+// Include the known dependency
+extern "C" {
+#include "poppler-document.h"
+}
+
+// Test PopplerPermissions enum values
+class PopplerPermissionsTest_2514 : public ::testing::Test {
+protected:
+    void SetUp() override {}
+    void TearDown() override {}
+};
+
+TEST_F(PopplerPermissionsTest_2514, PrintPermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_PRINT, 1);
+}
+
+TEST_F(PopplerPermissionsTest_2514, ModifyPermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_MODIFY, 2);
+}
+
+TEST_F(PopplerPermissionsTest_2514, CopyPermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_COPY, 4);
+}
+
+TEST_F(PopplerPermissionsTest_2514, AddNotesPermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_ADD_NOTES, 8);
+}
+
+TEST_F(PopplerPermissionsTest_2514, FillFormPermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_FILL_FORM, 16);
+}
+
+TEST_F(PopplerPermissionsTest_2514, ExtractContentsPermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_EXTRACT_CONTENTS, 32);
+}
+
+TEST_F(PopplerPermissionsTest_2514, AssemblePermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_ASSEMBLE, 64);
+}
+
+TEST_F(PopplerPermissionsTest_2514, PrintHighResolutionPermissionValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_PRINT_HIGH_RESOLUTION, 128);
+}
+
+TEST_F(PopplerPermissionsTest_2514, FullPermissionsValue_2514)
+{
+    EXPECT_EQ(POPPLER_PERMISSIONS_FULL, 255);
+}
+
+TEST_F(PopplerPermissionsTest_2514, FullPermissionsContainsAllIndividualPermissions_2514)
+{
+    int allPermissions = POPPLER_PERMISSIONS_OK_TO_PRINT |
+                         POPPLER_PERMISSIONS_OK_TO_MODIFY |
+                         POPPLER_PERMISSIONS_OK_TO_COPY |
+                         POPPLER_PERMISSIONS_OK_TO_ADD_NOTES |
+                         POPPLER_PERMISSIONS_OK_TO_FILL_FORM |
+                         POPPLER_PERMISSIONS_OK_TO_EXTRACT_CONTENTS |
+                         POPPLER_PERMISSIONS_OK_TO_ASSEMBLE |
+                         POPPLER_PERMISSIONS_OK_TO_PRINT_HIGH_RESOLUTION;
+    EXPECT_EQ(allPermissions, POPPLER_PERMISSIONS_FULL);
+}
+
+TEST_F(PopplerPermissionsTest_2514, PermissionsArePowersOfTwo_2514)
+{
+    // Each individual permission should be a power of 2 (single bit)
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_PRINT & (POPPLER_PERMISSIONS_OK_TO_PRINT - 1), 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_MODIFY & (POPPLER_PERMISSIONS_OK_TO_MODIFY - 1), 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_COPY & (POPPLER_PERMISSIONS_OK_TO_COPY - 1), 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_ADD_NOTES & (POPPLER_PERMISSIONS_OK_TO_ADD_NOTES - 1), 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_FILL_FORM & (POPPLER_PERMISSIONS_OK_TO_FILL_FORM - 1), 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_EXTRACT_CONTENTS & (POPPLER_PERMISSIONS_OK_TO_EXTRACT_CONTENTS - 1), 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_ASSEMBLE & (POPPLER_PERMISSIONS_OK_TO_ASSEMBLE - 1), 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_PRINT_HIGH_RESOLUTION & (POPPLER_PERMISSIONS_OK_TO_PRINT_HIGH_RESOLUTION - 1), 0);
+}
+
+TEST_F(PopplerPermissionsTest_2514, BitwiseOrCombination_2514)
+{
+    int combined = POPPLER_PERMISSIONS_OK_TO_PRINT | POPPLER_PERMISSIONS_OK_TO_COPY;
+    EXPECT_EQ(combined, 5);
+    EXPECT_TRUE(combined & POPPLER_PERMISSIONS_OK_TO_PRINT);
+    EXPECT_TRUE(combined & POPPLER_PERMISSIONS_OK_TO_COPY);
+    EXPECT_FALSE(combined & POPPLER_PERMISSIONS_OK_TO_MODIFY);
+}
+
+TEST_F(PopplerPermissionsTest_2514, BitwiseAndCheck_2514)
+{
+    int perms = POPPLER_PERMISSIONS_FULL;
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_PRINT);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_MODIFY);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_COPY);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_ADD_NOTES);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_FILL_FORM);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_EXTRACT_CONTENTS);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_ASSEMBLE);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_PRINT_HIGH_RESOLUTION);
+}
+
+TEST_F(PopplerPermissionsTest_2514, NoPermissions_2514)
+{
+    int perms = 0;
+    EXPECT_FALSE(perms & POPPLER_PERMISSIONS_OK_TO_PRINT);
+    EXPECT_FALSE(perms & POPPLER_PERMISSIONS_OK_TO_MODIFY);
+    EXPECT_FALSE(perms & POPPLER_PERMISSIONS_OK_TO_COPY);
+    EXPECT_FALSE(perms & POPPLER_PERMISSIONS_OK_TO_ADD_NOTES);
+}
+
+TEST_F(PopplerPermissionsTest_2514, PermissionsDoNotOverlap_2514)
+{
+    // Each permission bit should be unique
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_PRINT & POPPLER_PERMISSIONS_OK_TO_MODIFY, 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_COPY & POPPLER_PERMISSIONS_OK_TO_ADD_NOTES, 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_FILL_FORM & POPPLER_PERMISSIONS_OK_TO_EXTRACT_CONTENTS, 0);
+    EXPECT_EQ(POPPLER_PERMISSIONS_OK_TO_ASSEMBLE & POPPLER_PERMISSIONS_OK_TO_PRINT_HIGH_RESOLUTION, 0);
+}
+
+TEST_F(PopplerPermissionsTest_2514, FullPermissionsIs255_2514)
+{
+    // FULL should be exactly 0xFF (all 8 lower bits set)
+    EXPECT_EQ(static_cast<int>(POPPLER_PERMISSIONS_FULL), 0xFF);
+}
+
+TEST_F(PopplerPermissionsTest_2514, RemovePermissionFromFull_2514)
+{
+    int perms = POPPLER_PERMISSIONS_FULL & ~POPPLER_PERMISSIONS_OK_TO_PRINT;
+    EXPECT_FALSE(perms & POPPLER_PERMISSIONS_OK_TO_PRINT);
+    EXPECT_TRUE(perms & POPPLER_PERMISSIONS_OK_TO_MODIFY);
+    EXPECT_EQ(perms, 254);
+}

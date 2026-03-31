@@ -1,0 +1,51 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_828.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp:45:119: error: reference to type 'const std::optional<GooString>' could not bind to an rvalue of type 'std::nullptr_t'
+   45 |         doc = PDFDocFactory().createPDFDoc(GooString("./TestProjects/poppler/test/unittestcases/WithActualText.pdf"), nullptr, nullptr);
+      |                                                                                                                       ^~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDocFactory.h:49:96: note: passing argument to parameter 'ownerPassword' here
+   49 |     std::unique_ptr<PDFDoc> createPDFDoc(const GooString &uri, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {});
+      |                                                                                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp:200:17: warning: unused variable 'colorPtr' [-Wunused-variable]
+  200 |     AnnotColor *colorPtr = color.get();
+      |                 ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp:264:22: error: use of undeclared identifier 'annotLineArrow'
+  264 |     annot->setIntent(annotLineArrow);
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp:265:15: error: use of undeclared identifier 'annotLineArrow'
+  265 |     EXPECT_EQ(annotLineArrow, annot->getIntent());
+      |               ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp:273:22: error: use of undeclared identifier 'annotLineDimension'; did you mean 'AnnotLine::intentLineDimension'?
+  273 |     annot->setIntent(annotLineDimension);
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      AnnotLine::intentLineDimension
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1121:9: note: 'AnnotLine::intentLineDimension' declared here
+ 1121 |         intentLineDimension // LineDimension
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp:274:15: error: use of undeclared identifier 'annotLineDimension'; did you mean 'AnnotLine::intentLineDimension'?
+  274 |     EXPECT_EQ(annotLineDimension, annot->getIntent());
+      |               ^~~~~~~~~~~~~~~~~~
+      |               AnnotLine::intentLineDimension
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:1121:9: note: 'AnnotLine::intentLineDimension' declared here
+ 1121 |         intentLineDimension // LineDimension
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp:11:7: warning: 'AnnotLineTest_828' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   11 | class AnnotLineTest_828 : public ::testing::Test {
+      |       ^
+2 warnings and 5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_828.dir/build.make:79: generated_build/CMakeFiles/test_828.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_828.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:41258: generated_build/CMakeFiles/test_828.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:41265: generated_build/CMakeFiles/test_828.dir/rule] Error 2
+gmake: *** [Makefile:13231: test_828] Error 2

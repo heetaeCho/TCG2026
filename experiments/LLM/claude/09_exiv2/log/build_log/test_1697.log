@@ -1,0 +1,34 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1697.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1697.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1697.cpp:25:55: warning: unused parameter 'byteOrder' [-Wunused-parameter]
+   25 |     std::vector<byte> createMinimalTiffData(ByteOrder byteOrder) {
+      |                                                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1697.cpp:186:19: error: no matching constructor for initialization of 'TiffDataEntry'
+  186 |     TiffDataEntry entry(0x0111, IfdId::ifd0Id);  // StripOffsets tag
+      |                   ^     ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:596:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  596 | class TiffDataEntryBase : public TiffEntryBase {
+      |       ^~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:653:28: note: constructor from base class 'TiffDataEntryBase' inherited here
+  653 |   using TiffDataEntryBase::TiffDataEntryBase;
+      |                            ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:649:7: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 2 were provided
+  649 | class TiffDataEntry : public TiffDataEntryBase {
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:649:7: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 2 were provided
+  649 | class TiffDataEntry : public TiffDataEntryBase {
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:649:7: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 2 were provided
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:601:3: note: candidate inherited constructor not viable: requires 4 arguments, but 2 were provided
+  601 |   TiffDataEntryBase(uint16_t tag, IfdId group, uint16_t szTag, IfdId szGroup);
+      |   ^                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffcomposite_int.hpp:653:28: note: constructor from base class 'TiffDataEntryBase' inherited here
+  653 |   using TiffDataEntryBase::TiffDataEntryBase;
+      |                            ^
+1 warning and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1697.dir/build.make:79: generated_build/CMakeFiles/test_1697.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1697.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:35081: generated_build/CMakeFiles/test_1697.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:35088: generated_build/CMakeFiles/test_1697.dir/rule] Error 2
+gmake: *** [Makefile:11008: test_1697] Error 2

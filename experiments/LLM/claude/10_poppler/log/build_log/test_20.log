@@ -1,0 +1,19 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_20.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_20.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_20.cpp:287:49: error: no viable conversion from 'int' to 'std::string_view' (aka 'basic_string_view<char>')
+  287 |     std::string result = GooString::toLowerCase(static_cast<int>('A'));
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:136:17: note: candidate constructor not viable: no known conversion from 'int' to 'const basic_string_view<char> &' for 1st argument
+  136 |       constexpr basic_string_view(const basic_string_view&) noexcept = default;
+      |                 ^                 ~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/string_view:140:7: note: candidate constructor not viable: no known conversion from 'int' to 'const char *' for 1st argument
+  140 |       basic_string_view(const _CharT* __str) noexcept
+      |       ^                 ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/goo/GooString.h:166:76: note: passing argument to parameter 's' here
+  166 |     POPPLER_PRIVATE_EXPORT static std::string toLowerCase(std::string_view s);
+      |                                                                            ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_20.dir/build.make:79: generated_build/CMakeFiles/test_20.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_20.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29258: generated_build/CMakeFiles/test_20.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29265: generated_build/CMakeFiles/test_20.dir/rule] Error 2
+gmake: *** [Makefile:8356: test_20] Error 2

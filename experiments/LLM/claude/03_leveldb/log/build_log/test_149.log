@@ -1,0 +1,38 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_149.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_149.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_149.cpp:2:
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/version_set.h:181:41: error: use of undeclared identifier 'port'
+  181 |   Status LogAndApply(VersionEdit* edit, port::Mutex* mu)
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_149.cpp:52:14: error: incomplete type 'leveldb::Env' named in nested name specifier
+   52 |       : env_(Env::Default()),
+      |              ^~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/options.h:16:7: note: forward declaration of 'leveldb::Env'
+   16 | class Env;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_149.cpp:61:9: error: member access into incomplete type 'Env'
+   61 |     env_->CreateDir(dbname_);
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/include/leveldb/options.h:16:7: note: forward declaration of 'leveldb::Env'
+   16 | class Env;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_149.cpp:62:24: error: allocation of incomplete type 'TableCache'
+   62 |     table_cache_ = new TableCache(dbname_, options_, 100);
+      |                        ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/version_set.h:37:7: note: forward declaration of 'leveldb::TableCache'
+   37 | class TableCache;
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_149.cpp:68:5: error: deleting pointer to incomplete type 'TableCache' is incompatible with C++2c and may cause undefined behavior [-Werror,-Wdelete-incomplete]
+   68 |     delete table_cache_;
+      |     ^      ~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/./db/version_set.h:37:7: note: forward declaration of 'leveldb::TableCache'
+   37 | class TableCache;
+      |       ^
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_149.dir/build.make:76: generated_build/CMakeFiles/test_149.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_149.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:6097: generated_build/CMakeFiles/test_149.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:6104: generated_build/CMakeFiles/test_149.dir/rule] Error 2
+gmake: *** [Makefile:2389: test_149] Error 2

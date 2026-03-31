@@ -1,0 +1,25 @@
+[  0%] Built target gtest
+[ 25%] Built target gtest_main
+[100%] Built target leveldb
+[100%] Built target gmock
+[100%] Building CXX object generated_build/CMakeFiles/test_51.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_51.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_51.cpp:25:26: error: use of undeclared identifier 'PackSequenceAndType'
+   25 |   PutFixed64(&valid_key, PackSequenceAndType(100, kTypeValue));
+      |                          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_51.cpp:77:38: error: member reference base type 'bool' is not a structure or union
+   77 |   EXPECT_TRUE(key.DecodeFrom(Slice()).empty() || !key.DecodeFrom(Slice()));
+      |               ~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1830:50: note: expanded from macro 'EXPECT_TRUE'
+ 1830 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/gtest.h:1815:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1815 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/leveldb/third_party/googletest/googletest/include/gtest/internal/gtest-internal.h:1451:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1451 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_51.dir/build.make:76: generated_build/CMakeFiles/test_51.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/03_leveldb/test_files/test_51.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:8359: generated_build/CMakeFiles/test_51.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:8366: generated_build/CMakeFiles/test_51.dir/rule] Error 2
+gmake: *** [Makefile:3403: test_51] Error 2

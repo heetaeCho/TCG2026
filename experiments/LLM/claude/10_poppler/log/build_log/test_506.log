@@ -1,0 +1,50 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_506.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp:18:46: error: non-virtual member function marked 'override' hides virtual member function
+   18 |     const std::unique_ptr<GfxShading> copy() override {
+      |                                              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:919:41: note: hidden overloaded virtual function 'GfxShading::copy' declared here: different return type ('unique_ptr<...>' vs 'const unique_ptr<...>')
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp:166:47: error: unknown type name 'ShadingType'; did you mean 'GfxAxialShading::ShadingType'?
+  166 |     EXPECT_EQ(shading->getType(), static_cast<ShadingType>(1));
+      |                                               ^~~~~~~~~~~
+      |                                               GfxAxialShading::ShadingType
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:899:10: note: 'GfxAxialShading::ShadingType' declared here
+  899 |     enum ShadingType
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp:7:7: warning: 'TestableGfxShading' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    7 | class TestableGfxShading : public GfxShading {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp:23:7: warning: 'GfxShadingTest_506' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   23 | class GfxShadingTest_506 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestableGfxShading'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp:26:24: note: in instantiation of function template specialization 'std::make_unique<TestableGfxShading>' requested here
+   26 |         shading = std::make_unique<TestableGfxShading>();
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:919:41: note: unimplemented pure virtual method 'copy' in 'TestableGfxShading'
+  919 |     virtual std::unique_ptr<GfxShading> copy() const = 0;
+      |                                         ^
+2 warnings and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_506.dir/build.make:79: generated_build/CMakeFiles/test_506.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_506.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:41866: generated_build/CMakeFiles/test_506.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:41873: generated_build/CMakeFiles/test_506.dir/rule] Error 2
+gmake: *** [Makefile:13478: test_506] Error 2

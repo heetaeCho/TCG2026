@@ -1,0 +1,140 @@
+[ 26%] Built target faiss
+[ 38%] Built target PoseLib
+[ 47%] Built target colmap_vlfeat
+[ 50%] Built target colmap_util
+[ 50%] Built target colmap_feature_types
+[ 52%] Built target colmap_math
+[ 55%] Built target colmap_geometry
+[ 55%] Built target colmap_sensor
+[ 61%] Built target colmap_scene
+[ 64%] Built target colmap_lsd
+[ 64%] Built target colmap_image
+[ 67%] Built target colmap_optim
+[ 73%] Built target colmap_estimators
+[ 76%] Built target colmap_retrieval
+[ 79%] Built target colmap_feature
+[ 79%] Built target colmap_poisson_recon
+[ 82%] Built target colmap_mvs
+[ 85%] Built target colmap_sfm
+[ 88%] Built target colmap_controllers
+[ 88%] Built target colmap_exe
+[ 97%] Built target glomap
+[ 97%] Building CXX object generated_build/CMakeFiles/test_104.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:37:30: error: no member named 'ImagePairToPairId' in 'glomap::ImagePair'; did you mean 'colmap::ImagePairToPairId'?
+   37 |       image_pair_t pair_id = ImagePair::ImagePairToPairId(i, i + num_pairs);
+      |                              ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                              colmap::ImagePairToPairId
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/util/types.h:200:21: note: 'colmap::ImagePairToPairId' declared here
+  200 | inline image_pair_t ImagePairToPairId(image_t image_id1, image_t image_id2) {
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:39:20: error: cannot assign to non-static data member 'image_id1' with const-qualified type 'const image_t' (aka 'const unsigned int')
+   39 |       ip.image_id1 = i;
+      |       ~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: non-static data member 'image_id1' declared const here
+   27 |   const image_t image_id1;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:40:20: error: cannot assign to non-static data member 'image_id2' with const-qualified type 'const image_t' (aka 'const unsigned int')
+   40 |       ip.image_id2 = i + num_pairs;
+      |       ~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:28:17: note: non-static data member 'image_id2' declared const here
+   28 |   const image_t image_id2;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:42:31: error: object of type 'mapped_type' (aka 'glomap::ImagePair') cannot be assigned because its copy assignment operator is implicitly deleted
+   42 |       vg.image_pairs[pair_id] = ip;
+      |                               ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: copy assignment operator of 'ImagePair' is implicitly deleted because field 'image_id1' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   27 |   const image_t image_id1;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:52:11: error: no member named 'rig_id' in 'colmap::Rig'; did you mean 'rig_id_'?
+   52 |       rig.rig_id = i;
+      |           ^~~~~~
+      |           rig_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/sensor/rig.h:103:9: note: 'rig_id_' declared here
+  103 |   rig_t rig_id_ = kInvalidRigId;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:91:9: error: no member named 'frame_id' in 'glomap::Frame'; did you mean 'frame_id_'?
+   91 |       f.frame_id = i;
+      |         ^~~~~~~~
+      |         frame_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:105:11: note: 'frame_id_' declared here
+  105 |   frame_t frame_id_ = kInvalidFrameId;
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:103:20: error: cannot assign to non-static data member 'image_id' with const-qualified type 'const image_t' (aka 'const unsigned int')
+  103 |       img.image_id = i;
+      |       ~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: non-static data member 'image_id' declared const here
+   17 |   const image_t image_id;
+      |   ~~~~~~~~~~~~~~^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:106:11: error: no member named 'is_registered' in 'glomap::Image'
+  106 |       img.is_registered = true;
+      |       ~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:107:17: error: object of type 'mapped_type' (aka 'glomap::Image') cannot be assigned because its copy assignment operator is implicitly deleted
+  107 |       images[i] = img;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: copy assignment operator of 'Image' is implicitly deleted because field 'image_id' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   17 |   const image_t image_id;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:122:30: error: use of undeclared identifier 'ONLY_CAMERAS'; did you mean 'GlobalPositionerOptions::ONLY_CAMERAS'?
+  122 |   options_.constraint_type = ONLY_CAMERAS;
+      |                              ^~~~~~~~~~~~
+      |                              GlobalPositionerOptions::ONLY_CAMERAS
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/estimators/global_positioning.h:15:5: note: 'GlobalPositionerOptions::ONLY_CAMERAS' declared here
+   15 |     ONLY_CAMERAS,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:144:30: error: use of undeclared identifier 'ONLY_POINTS'; did you mean 'GlobalPositionerOptions::ONLY_POINTS'?
+  144 |   options_.constraint_type = ONLY_POINTS;
+      |                              ^~~~~~~~~~~
+      |                              GlobalPositionerOptions::ONLY_POINTS
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/estimators/global_positioning.h:13:5: note: 'GlobalPositionerOptions::ONLY_POINTS' declared here
+   13 |     ONLY_POINTS,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:158:9: error: no member named 'rig_id' in 'glomap::Image'
+  158 |     img.rig_id = 0;
+      |     ~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:162:11: error: no member named 'rig_id' in 'glomap::Frame'; did you mean 'rig_id_'?
+  162 |     frame.rig_id = 0;
+      |           ^~~~~~
+      |           rig_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:114:9: note: 'rig_id_' declared here
+  114 |   rig_t rig_id_ = kInvalidRigId;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:187:30: error: use of undeclared identifier 'ONLY_CAMERAS'; did you mean 'GlobalPositionerOptions::ONLY_CAMERAS'?
+  187 |   options_.constraint_type = ONLY_CAMERAS;
+      |                              ^~~~~~~~~~~~
+      |                              GlobalPositionerOptions::ONLY_CAMERAS
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/estimators/global_positioning.h:15:5: note: 'GlobalPositionerOptions::ONLY_CAMERAS' declared here
+   15 |     ONLY_CAMERAS,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:200:9: error: no member named 'rig_id' in 'glomap::Image'
+  200 |     img.rig_id = 0;
+      |     ~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:203:11: error: no member named 'rig_id' in 'glomap::Frame'; did you mean 'rig_id_'?
+  203 |     frame.rig_id = 0;
+      |           ^~~~~~
+      |           rig_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:114:9: note: 'rig_id_' declared here
+  114 |   rig_t rig_id_ = kInvalidRigId;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:212:30: error: use of undeclared identifier 'ONLY_POINTS'; did you mean 'GlobalPositionerOptions::ONLY_POINTS'?
+  212 |   options_.constraint_type = ONLY_POINTS;
+      |                              ^~~~~~~~~~~
+      |                              GlobalPositionerOptions::ONLY_POINTS
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/estimators/global_positioning.h:13:5: note: 'GlobalPositionerOptions::ONLY_POINTS' declared here
+   13 |     ONLY_POINTS,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:225:9: error: no member named 'rig_id' in 'glomap::Image'
+  225 |     img.rig_id = 0;
+      |     ~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp:228:11: error: no member named 'rig_id' in 'glomap::Frame'; did you mean 'rig_id_'?
+  228 |     frame.rig_id = 0;
+      |           ^~~~~~
+      |           rig_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:114:9: note: 'rig_id_' declared here
+  114 |   rig_t rig_id_ = kInvalidRigId;
+      |         ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_104.dir/build.make:79: generated_build/CMakeFiles/test_104.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_104.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5779: generated_build/CMakeFiles/test_104.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5786: generated_build/CMakeFiles/test_104.dir/rule] Error 2
+gmake: *** [Makefile:1469: test_104] Error 2

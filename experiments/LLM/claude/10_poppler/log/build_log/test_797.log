@@ -1,0 +1,51 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_797.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_797.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_797.cpp:29:48: error: no matching constructor for initialization of 'PDFDoc'
+   29 |         auto doc = std::unique_ptr<PDFDoc>(new PDFDoc(&fileName));
+      |                                                ^      ~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'GooString *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_797.cpp:274:5: error: unknown type name 'AnnotMarkupReplyType'; did you mean 'AnnotCaret::AnnotMarkupReplyType'?
+  274 |     AnnotMarkupReplyType replyTo = annot->getReplyTo();
+      |     ^~~~~~~~~~~~~~~~~~~~
+      |     AnnotCaret::AnnotMarkupReplyType
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:870:10: note: 'AnnotCaret::AnnotMarkupReplyType' declared here
+  870 |     enum AnnotMarkupReplyType
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_797.cpp:291:23: error: no member named 'externalDataMarkupUnknown' in 'AnnotMarkup'; did you mean 'annotExternalDataMarkupUnknown'?
+  291 |     EXPECT_EQ(exData, AnnotMarkup::externalDataMarkupUnknown);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                       annotExternalDataMarkupUnknown
+/usr/local/include/gtest/gtest.h:1885:69: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                                     ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:40: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                        ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:43: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                           ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:104:5: note: 'annotExternalDataMarkupUnknown' declared here
+  104 |     annotExternalDataMarkupUnknown,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_797.cpp:10:7: warning: 'AnnotMarkupTest_797' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   10 | class AnnotMarkupTest_797 : public ::testing::Test {
+      |       ^
+1 warning and 3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_797.dir/build.make:79: generated_build/CMakeFiles/test_797.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_797.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:38570: generated_build/CMakeFiles/test_797.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:38577: generated_build/CMakeFiles/test_797.dir/rule] Error 2
+gmake: *** [Makefile:12139: test_797] Error 2

@@ -1,0 +1,47 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_772.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_772.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_772.cpp:55:16: error: no matching constructor for initialization of 'Catch::TestCaseInfo'
+   55 |         return Catch::TestCaseInfo(
+      |                ^
+   56 |             ""_catch_sr,
+      |             ~~~~~~~~~~~~
+   57 |             {name, "[tag]"_catch_sr},
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~
+   58 |             lineInfo
+      |             ~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:70:9: note: candidate constructor not viable: cannot convert initializer list argument to 'const NameAndTags'
+   70 |         TestCaseInfo(StringRef _className,
+      |         ^
+   71 |                      NameAndTags const& _nameAndTags,
+      |                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_test_case_info.hpp:68:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 3 were provided
+   68 |     struct TestCaseInfo : Detail::NonCopyable {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_772.cpp:165:26: error: no matching constructor for initialization of 'Catch::AssertionInfo'
+  165 |     Catch::AssertionInfo assertInfo("", lineInfo, "", Catch::ResultDisposition::Normal);
+      |                          ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   17 |     struct AssertionInfo {
+      |            ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_assertion_info.hpp:17:12: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 4 were provided
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_772.cpp:186:25: error: no matching constructor for initialization of 'Catch::SectionStats'
+  186 |     Catch::SectionStats sectionStats(sectionInfo, totals, 0.5, false);
+      |                         ^            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:73:9: note: candidate constructor not viable: expects an rvalue for 1st argument
+   73 |         SectionStats(   SectionInfo&& _sectionInfo,
+      |         ^               ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit copy constructor) not viable: requires 1 argument, but 4 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:72:12: note: candidate constructor (the implicit move constructor) not viable: requires 1 argument, but 4 were provided
+   72 |     struct SectionStats {
+      |            ^~~~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_772.dir/build.make:79: generated_build/CMakeFiles/test_772.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_772.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24197: generated_build/CMakeFiles/test_772.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24204: generated_build/CMakeFiles/test_772.dir/rule] Error 2
+gmake: *** [Makefile:8353: test_772] Error 2

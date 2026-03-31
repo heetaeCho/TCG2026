@@ -1,0 +1,142 @@
+[ 27%] Built target faiss
+[ 39%] Built target PoseLib
+[ 48%] Built target colmap_vlfeat
+[ 51%] Built target colmap_util
+[ 51%] Built target colmap_feature_types
+[ 54%] Built target colmap_math
+[ 57%] Built target colmap_geometry
+[ 57%] Built target colmap_sensor
+[ 63%] Built target colmap_scene
+[ 66%] Built target colmap_lsd
+[ 66%] Built target colmap_image
+[ 69%] Built target colmap_optim
+[ 75%] Built target colmap_estimators
+[ 78%] Built target colmap_retrieval
+[ 81%] Built target colmap_feature
+[ 81%] Built target colmap_poisson_recon
+[ 84%] Built target colmap_mvs
+[ 87%] Built target colmap_sfm
+[ 90%] Built target colmap_controllers
+[ 90%] Built target colmap_exe
+[100%] Built target glomap
+[100%] Building CXX object generated_build/CMakeFiles/test_107.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:49:22: error: assigning to 'CameraModelId' from incompatible type 'int'
+   49 |       cam.model_id = 0;  // SIMPLE_PINHOLE or similar
+      |                      ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:58:9: error: no member named 'rig_id' in 'colmap::Rig'; did you mean 'rig_id_'?
+   58 |     rig.rig_id = 0;
+      |         ^~~~~~
+      |         rig_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/sensor/rig.h:103:9: note: 'rig_id_' declared here
+  103 |   rig_t rig_id_ = kInvalidRigId;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:64:13: error: no member named 'frame_id' in 'glomap::Frame'; did you mean 'frame_id_'?
+   64 |       frame.frame_id = i;
+      |             ^~~~~~~~
+      |             frame_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:105:11: note: 'frame_id_' declared here
+  105 |   frame_t frame_id_ = kInvalidFrameId;
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:65:13: error: no member named 'rig_id' in 'glomap::Frame'; did you mean 'rig_id_'?
+   65 |       frame.rig_id = 0;
+      |             ^~~~~~
+      |             rig_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:114:9: note: 'rig_id_' declared here
+  114 |   rig_t rig_id_ = kInvalidRigId;
+      |         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:69:20: error: cannot assign to non-static data member 'image_id' with const-qualified type 'const image_t' (aka 'const unsigned int')
+   69 |       img.image_id = i;
+      |       ~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: non-static data member 'image_id' declared const here
+   17 |   const image_t image_id;
+      |   ~~~~~~~~~~~~~~^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:72:11: error: no member named 'is_registered' in 'glomap::Image'
+   72 |       img.is_registered = true;
+      |       ~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:73:17: error: object of type 'mapped_type' (aka 'glomap::Image') cannot be assigned because its copy assignment operator is implicitly deleted
+   73 |       images[i] = img;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: copy assignment operator of 'Image' is implicitly deleted because field 'image_id' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   17 |   const image_t image_id;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:137:22: error: cannot assign to non-static data member 'image_id1' with const-qualified type 'const image_t' (aka 'const unsigned int')
+  137 |       pair.image_id1 = i;
+      |       ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: non-static data member 'image_id1' declared const here
+   27 |   const image_t image_id1;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:138:22: error: cannot assign to non-static data member 'image_id2' with const-qualified type 'const image_t' (aka 'const unsigned int')
+  138 |       pair.image_id2 = j;
+      |       ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:28:17: note: non-static data member 'image_id2' declared const here
+   28 |   const image_t image_id2;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:140:22: error: no member named 'ImagePairToPairId' in 'glomap::ImagePair'; did you mean 'colmap::ImagePairToPairId'?
+  140 |       vg.image_pairs[ImagePair::ImagePairToPairId(i, j)] = pair;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      colmap::ImagePairToPairId
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/util/types.h:200:21: note: 'colmap::ImagePairToPairId' declared here
+  200 | inline image_pair_t ImagePairToPairId(image_t image_id1, image_t image_id2) {
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:140:58: error: object of type 'mapped_type' (aka 'glomap::ImagePair') cannot be assigned because its copy assignment operator is implicitly deleted
+  140 |       vg.image_pairs[ImagePair::ImagePairToPairId(i, j)] = pair;
+      |                                                          ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: copy assignment operator of 'ImagePair' is implicitly deleted because field 'image_id1' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   27 |   const image_t image_id1;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:166:22: error: cannot assign to non-static data member 'image_id1' with const-qualified type 'const image_t' (aka 'const unsigned int')
+  166 |       pair.image_id1 = i;
+      |       ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: non-static data member 'image_id1' declared const here
+   27 |   const image_t image_id1;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:167:22: error: cannot assign to non-static data member 'image_id2' with const-qualified type 'const image_t' (aka 'const unsigned int')
+  167 |       pair.image_id2 = j;
+      |       ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:28:17: note: non-static data member 'image_id2' declared const here
+   28 |   const image_t image_id2;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:169:22: error: no member named 'ImagePairToPairId' in 'glomap::ImagePair'; did you mean 'colmap::ImagePairToPairId'?
+  169 |       vg.image_pairs[ImagePair::ImagePairToPairId(i, j)] = pair;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      colmap::ImagePairToPairId
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/util/types.h:200:21: note: 'colmap::ImagePairToPairId' declared here
+  200 | inline image_pair_t ImagePairToPairId(image_t image_id1, image_t image_id2) {
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:169:58: error: object of type 'mapped_type' (aka 'glomap::ImagePair') cannot be assigned because its copy assignment operator is implicitly deleted
+  169 |       vg.image_pairs[ImagePair::ImagePairToPairId(i, j)] = pair;
+      |                                                          ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: copy assignment operator of 'ImagePair' is implicitly deleted because field 'image_id1' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   27 |   const image_t image_id1;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:195:22: error: cannot assign to non-static data member 'image_id1' with const-qualified type 'const image_t' (aka 'const unsigned int')
+  195 |       pair.image_id1 = i;
+      |       ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: non-static data member 'image_id1' declared const here
+   27 |   const image_t image_id1;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:196:22: error: cannot assign to non-static data member 'image_id2' with const-qualified type 'const image_t' (aka 'const unsigned int')
+  196 |       pair.image_id2 = j;
+      |       ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:28:17: note: non-static data member 'image_id2' declared const here
+   28 |   const image_t image_id2;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:198:22: error: no member named 'ImagePairToPairId' in 'glomap::ImagePair'; did you mean 'colmap::ImagePairToPairId'?
+  198 |       vg.image_pairs[ImagePair::ImagePairToPairId(i, j)] = pair;
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                      colmap::ImagePairToPairId
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/util/types.h:200:21: note: 'colmap::ImagePairToPairId' declared here
+  200 | inline image_pair_t ImagePairToPairId(image_t image_id1, image_t image_id2) {
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp:198:58: error: object of type 'mapped_type' (aka 'glomap::ImagePair') cannot be assigned because its copy assignment operator is implicitly deleted
+  198 |       vg.image_pairs[ImagePair::ImagePairToPairId(i, j)] = pair;
+      |                                                          ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: copy assignment operator of 'ImagePair' is implicitly deleted because field 'image_id1' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   27 |   const image_t image_id1;
+      |                 ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_107.dir/build.make:79: generated_build/CMakeFiles/test_107.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_107.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:5987: generated_build/CMakeFiles/test_107.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:5994: generated_build/CMakeFiles/test_107.dir/rule] Error 2
+gmake: *** [Makefile:1521: test_107] Error 2

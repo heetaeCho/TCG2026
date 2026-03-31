@@ -1,0 +1,100 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_574.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:36:44: error: no member named 'ProcessorInfo' in namespace 'Catch'
+   36 |     void listProcessors(std::vector<Catch::ProcessorInfo> const&) override {}
+      |                                     ~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:42:35: error: no type named 'GroupInfo' in namespace 'Catch'
+   42 |     void testGroupStarting(Catch::GroupInfo const&) override {}
+      |                            ~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:43:32: error: no type named 'TestGroupStats' in namespace 'Catch'; did you mean 'TestRunStats'?
+   43 |     void testGroupEnded(Catch::TestGroupStats const&) override {}
+      |                         ~~~~~~~^~~~~~~~~~~~~~
+      |                                TestRunStats
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:98:12: note: 'TestRunStats' declared here
+   98 |     struct TestRunStats {
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:43:55: error: only virtual member functions can be marked 'override'
+   43 |     void testGroupEnded(Catch::TestGroupStats const&) override {}
+      |                                                       ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:54:5: error: non-virtual member function marked 'override' hides virtual member function
+   54 |     MOCK_METHOD(Catch::IEventListenerPtr, create, (Catch::ReporterConfig&& config), (const, override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:60:1: note: expanded from here
+   60 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:37:35: note: hidden overloaded virtual function 'Catch::EventListenerFactory::create' declared here: type mismatch at 1st parameter ('const IConfig *' vs 'typename ::testing::internal::Function< ::testing::internal::identity_t<Catch::IEventListenerPtr> (Catch::ReporterConfig &&)>::template template Arg<0>::type' (aka 'Catch::ReporterConfig &&'))
+   37 |         virtual IEventListenerPtr create( IConfig const* config ) const = 0;
+      |                                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:55:35: error: virtual function 'getDescription' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<Catch::StringRef> ()>::Result' (aka 'Catch::StringRef')) than the function it overrides (which has return type 'std::string' (aka 'basic_string<char>'))
+   55 |     MOCK_METHOD(Catch::StringRef, getDescription, (), (const, override));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:115:59: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/local/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:134:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  134 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),  \
+      |                             ^
+/usr/local/include/gmock/gmock-function-mocker.h:183:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  183 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:41:29: note: overridden virtual function is here
+   41 |         virtual std::string getDescription() const = 0;
+      |                 ~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:63:16: error: incomplete type 'Catch::ColourMode' named in nested name specifier
+   63 |         Catch::ColourMode::None,
+      |         ~~~~~~~^~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:4:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:12:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:60:13: warning: deleting pointer to incomplete type 'Catch::IStream' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   60 |             delete m_ptr;
+      |             ^      ~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:62:9: note: in instantiation of member function 'Catch::Detail::unique_ptr<Catch::IStream>::~unique_ptr' requested here
+   62 |         Catch::Detail::unique_ptr<Catch::IStream>(nullptr),
+      |         ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter.hpp:32:11: note: forward declaration of 'Catch::IStream'
+   32 |     class IStream;
+      |           ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:4:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_reporter_registry.hpp:12:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:111:34: error: allocating an object of abstract class type 'MockEventListenerFactory'
+  111 |         return unique_ptr<T>(new T(CATCH_FORWARD(args)...));
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp:143:36: note: in instantiation of function template specialization 'Catch::Detail::make_unique<MockEventListenerFactory>' requested here
+  143 |     auto listener = Catch::Detail::make_unique<MockEventListenerFactory>();
+      |                                    ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:37:35: note: unimplemented pure virtual method 'create' in 'MockEventListenerFactory'
+   37 |         virtual IEventListenerPtr create( IConfig const* config ) const = 0;
+      |                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_reporter_factory.hpp:39:27: note: unimplemented pure virtual method 'getName' in 'MockEventListenerFactory'
+   39 |         virtual StringRef getName() const = 0;
+      |                           ^
+1 warning and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_574.dir/build.make:79: generated_build/CMakeFiles/test_574.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_574.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29378: generated_build/CMakeFiles/test_574.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29385: generated_build/CMakeFiles/test_574.dir/rule] Error 2
+gmake: *** [Makefile:10394: test_574] Error 2

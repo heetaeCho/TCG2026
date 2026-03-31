@@ -1,0 +1,70 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_193.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:16:18: error: only virtual member functions can be marked 'override'
+   16 |     void reset() override {}
+      |                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:20:9: error: virtual function 'getPos' has a different return type ('int') than the function it overrides (which has return type 'Goffset' (aka 'long long'))
+   20 |     int getPos() override { return 0; }
+      |     ~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: overridden virtual function is here
+  234 |     virtual Goffset getPos() = 0;
+      |             ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:22:16: error: virtual function 'getPSFilter' has a different return type ('GooString *') than the function it overrides (which has return type 'std::optional<std::string>' (aka 'optional<basic_string<char>>'))
+   22 |     GooString *getPSFilter(int /*psLevel*/, const char * /*indent*/) override { return nullptr; }
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:184:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  184 |     stream->rewind();
+      |     ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:193:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  193 |     stream->rewind();
+      |     ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:26:7: warning: 'CCITTFaxStreamTest_193' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   26 | class CCITTFaxStreamTest_193 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'MockStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:36:32: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+   36 |         auto underlying = std::make_unique<MockStream>();
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'MockStream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'MockStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'MockStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'MockStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:10:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   10 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<MockStream>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp:36:27: note: in instantiation of member function 'std::unique_ptr<MockStream>::~unique_ptr' requested here
+   36 |         auto underlying = std::make_unique<MockStream>();
+      |                           ^
+4 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_193.dir/build.make:79: generated_build/CMakeFiles/test_193.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_193.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:19146: generated_build/CMakeFiles/test_193.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:19153: generated_build/CMakeFiles/test_193.dir/rule] Error 2
+gmake: *** [Makefile:4248: test_193] Error 2

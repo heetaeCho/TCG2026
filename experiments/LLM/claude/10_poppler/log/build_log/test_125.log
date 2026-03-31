@@ -1,0 +1,58 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_125.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:24:18: error: only virtual member functions can be marked 'override'
+   24 |     void reset() override {}
+      |                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:29:16: error: virtual function 'getPSFilter' has a different return type ('GooString *') than the function it overrides (which has return type 'std::optional<std::string>' (aka 'optional<basic_string<char>>'))
+   29 |     GooString *getPSFilter(int /*psLevel*/, const char * /*indent*/) override { return nullptr; }
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:32:28: error: only virtual member functions can be marked 'override'
+   32 |     void unfilteredReset() override {}
+      |                            ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:28:25: warning: unused parameter 'pos' [-Wunused-parameter]
+   28 |     void setPos(Goffset pos, int dir = 0) override {}
+      |                         ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:28:34: warning: unused parameter 'dir' [-Wunused-parameter]
+   28 |     void setPos(Goffset pos, int dir = 0) override {}
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:19:7: warning: 'TestableBaseStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   19 | class TestableBaseStream : public BaseStream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:35:7: warning: 'BaseStreamTest_125' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   35 | class BaseStreamTest_125 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestableBaseStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp:38:23: note: in instantiation of function template specialization 'std::make_unique<TestableBaseStream>' requested here
+   38 |         stream = std::make_unique<TestableBaseStream>();
+      |                       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'TestableBaseStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'TestableBaseStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: unimplemented pure virtual method 'copy' in 'TestableBaseStream'
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |                                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: unimplemented pure virtual method 'makeSubStream' in 'TestableBaseStream'
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:368:21: note: unimplemented pure virtual method 'getStart' in 'TestableBaseStream'
+  368 |     virtual Goffset getStart() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:369:18: note: unimplemented pure virtual method 'moveStart' in 'TestableBaseStream'
+  369 |     virtual void moveStart(Goffset delta) = 0;
+      |                  ^
+4 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_125.dir/build.make:79: generated_build/CMakeFiles/test_125.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_125.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:70922: generated_build/CMakeFiles/test_125.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:70929: generated_build/CMakeFiles/test_125.dir/rule] Error 2
+gmake: *** [Makefile:25282: test_125] Error 2

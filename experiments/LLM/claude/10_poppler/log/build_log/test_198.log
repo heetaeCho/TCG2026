@@ -1,0 +1,22 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_198.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_198.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_198.cpp:15:97: error: calling a private constructor of class 'Object'
+   15 |         auto baseStream = std::make_unique<MemStream>(const_cast<char*>(data), 0, strlen(data), Object(objNull));
+      |                                                                                                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_198.cpp:67:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   67 |     stream->rewind();
+      |     ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_198.cpp:74:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   74 |     stream->rewind();
+      |     ^~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_198.cpp:10:7: warning: 'EOFStreamTest_198' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   10 | class EOFStreamTest_198 : public ::testing::Test {
+      |       ^
+3 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_198.dir/build.make:79: generated_build/CMakeFiles/test_198.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_198.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:18954: generated_build/CMakeFiles/test_198.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:18961: generated_build/CMakeFiles/test_198.dir/rule] Error 2
+gmake: *** [Makefile:4170: test_198] Error 2

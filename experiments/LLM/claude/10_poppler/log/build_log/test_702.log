@@ -1,0 +1,63 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_702.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp:34:19: error: no matching constructor for initialization of 'PDFDoc'
+   34 |         doc = new PDFDoc(gooFilename);
+      |                   ^      ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'GooString *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'GooString *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp:71:29: error: use of undeclared identifier 'gmalloc'; did you mean 'malloc'?
+   71 |         char *buf = (char *)gmalloc(len);
+      |                             ^~~~~~~
+      |                             malloc
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/stdlib.h:68:12: note: 'malloc' declared here
+   68 | using std::malloc;
+      |            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp:73:51: error: calling a private constructor of class 'Object'
+   73 |         auto *stream = new MemStream(buf, 0, len, Object(objNull));
+      |                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp:74:19: error: no matching constructor for initialization of 'PDFDoc'
+   74 |         doc = new PDFDoc(stream);
+      |                   ^      ~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp:415:70: error: use of undeclared identifier 'Bool'; did you mean 'testing::Bool'?
+  415 |     page->makeBox(72.0, 72.0, 0, true, false, 0, 0, 612, 792, &box, (Bool *)&crop);
+      |                                                                      ^~~~
+      |                                                                      testing::Bool
+/usr/local/include/gtest/gtest-param-test.h:359:39: note: 'testing::Bool' declared here
+  359 | inline internal::ParamGenerator<bool> Bool() { return Values(false, true); }
+      |                                       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp:415:76: error: expected expression
+  415 |     page->makeBox(72.0, 72.0, 0, true, false, 0, 0, 612, 792, &box, (Bool *)&crop);
+      |                                                                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp:44:7: warning: 'PageWithDocTest_702' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   44 | class PageWithDocTest_702 : public ::testing::Test {
+      |       ^
+1 warning and 6 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_702.dir/build.make:79: generated_build/CMakeFiles/test_702.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_702.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:16106: generated_build/CMakeFiles/test_702.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:16113: generated_build/CMakeFiles/test_702.dir/rule] Error 2
+gmake: *** [Makefile:3013: test_702] Error 2

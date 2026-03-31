@@ -1,0 +1,77 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_787.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:43:93: error: calling a private constructor of class 'Object'
+   43 |         auto *stream = new MemStream(const_cast<char *>(minimalPDF), 0, strlen(minimalPDF), Object(objNull));
+      |                                                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:62:22: warning: unused variable 'modified' [-Wunused-variable]
+   62 |     const GooString *modified = annot->getModified();
+      |                      ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:214:10: warning: unused variable 'onEdge' [-Wunused-variable]
+  214 |     bool onEdge = annot->inRect(10.0, 50.0);
+      |          ^~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:281:5: error: unknown type name 'AnnotSubtype'; did you mean 'Annot3D::AnnotSubtype'?
+  281 |     AnnotSubtype type = annot->getType();
+      |     ^~~~~~~~~~~~
+      |     Annot3D::AnnotSubtype
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Annot.h:663:10: note: 'Annot3D::AnnotSubtype' declared here
+  663 |     enum AnnotSubtype
+      |          ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:306:18: warning: unused variable 'border' [-Wunused-variable]
+  306 |     AnnotBorder *border = annot->getBorder();
+      |                  ^~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:319:17: warning: unused variable 'color' [-Wunused-variable]
+  319 |     AnnotColor *color = annot->getColor();
+      |                 ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:332:22: warning: unused variable 'streams' [-Wunused-variable]
+  332 |     AnnotAppearance *streams = annot->getAppearStreams();
+      |                      ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:344:22: warning: unused variable 'state' [-Wunused-variable]
+  344 |     const GooString *state = annot->getAppearState();
+      |                      ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:423:9: warning: unused variable 'pageNum' [-Wunused-variable]
+  423 |     int pageNum = annot->getPageNum();
+      |         ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:435:9: warning: unused variable 'treeKey' [-Wunused-variable]
+  435 |     int treeKey = annot->getTreeKey();
+      |         ^~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:447:36: error: no member named 'getName' in 'Annot'
+  447 |     const GooString *name = annot->getName();
+      |                             ~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:460:10: warning: unused variable 'hasRef' [-Wunused-variable]
+  460 |     bool hasRef = annot->getHasRef();
+      |          ^~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:500:19: warning: unused variable 'annotObj' [-Wunused-variable]
+  500 |     const Object &annotObj = annot->getAnnotObj();
+      |                   ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:13:7: warning: 'AnnotTest_787' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class AnnotTest_787 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp:44:21: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, MemStream *&>' requested here
+   44 |         return std::make_unique<PDFDoc>(stream);
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+11 warnings and 4 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_787.dir/build.make:79: generated_build/CMakeFiles/test_787.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_787.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:54922: generated_build/CMakeFiles/test_787.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:54929: generated_build/CMakeFiles/test_787.dir/rule] Error 2
+gmake: *** [Makefile:18782: test_787] Error 2

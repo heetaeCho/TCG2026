@@ -1,0 +1,70 @@
+[100%] Built target Catch2
+[100%] Built target Catch2WithMain
+[100%] Building CXX object generated_build/CMakeFiles/test_319.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp.o
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp:2:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:89:23: error: static assertion failed due to requirement '!std::is_same<bool, bool>::value': FixedValuesGenerator does not support bools because of std::vector<bool>specialization, use SingleValue Generator instead.
+   89 |         static_assert(!std::is_same<T, bool>::value,
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/type_traits:1411:58: note: in instantiation of template class 'Catch::Generators::FixedValuesGenerator<bool>' requested here
+ 1411 |     : public integral_constant<bool, __is_base_of(_Base, _Derived)>
+      |                                                          ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:34:64: note: in instantiation of template class 'std::is_base_of<Catch::Generators::IGenerator<bool>, Catch::Generators::FixedValuesGenerator<bool>>' requested here
+   34 |         template <typename U, typename = std::enable_if_t<std::is_base_of<T, U>::value>>
+      |                                                                ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:35:9: note: in instantiation of default argument for 'unique_ptr<Catch::Generators::FixedValuesGenerator<bool>>' required here
+   35 |         unique_ptr(unique_ptr<U>&& from):
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   36 |             m_ptr(from.release())
+      |             ~~~~~~~~~~~~~~~~~~~~~
+   37 |         {}
+      |         ~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:125:36: note: while substituting deduced template arguments into function template 'unique_ptr' [with U = Catch::Generators::FixedValuesGenerator<bool>, $1 = (no value)]
+  125 |         return GeneratorWrapper<T>(Catch::Detail::make_unique<FixedValuesGenerator<T>>(values));
+      |                                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp:63:35: note: in instantiation of function template specialization 'Catch::Generators::values<bool>' requested here
+   63 |     auto gen = Catch::Generators::values({true, false});
+      |                                   ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp:2:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:125:16: error: no matching conversion for functional-style cast from 'unique_ptr<FixedValuesGenerator<bool>>' to 'GeneratorWrapper<bool>'
+  125 |         return GeneratorWrapper<T>(Catch::Detail::make_unique<FixedValuesGenerator<T>>(values));
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp:63:35: note: in instantiation of function template specialization 'Catch::Generators::values<bool>' requested here
+   63 |     auto gen = Catch::Generators::values({true, false});
+      |                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:45:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'unique_ptr<FixedValuesGenerator<bool>>' to 'const GeneratorWrapper<bool>' for 1st argument
+   45 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:45:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'unique_ptr<FixedValuesGenerator<bool>>' to 'GeneratorWrapper<bool>' for 1st argument
+   45 |     class GeneratorWrapper final {
+      |           ^~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:49:9: note: candidate constructor not viable: no known conversion from 'unique_ptr<FixedValuesGenerator<bool>>' to 'IGenerator<bool> *' for 1st argument
+   49 |         GeneratorWrapper(IGenerator<T>* generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:51:9: note: candidate constructor not viable: no known conversion from 'unique_ptr<Catch::Generators::FixedValuesGenerator<bool>>' to 'unique_ptr<IGenerator<bool>>' for 1st argument
+   51 |         GeneratorWrapper(GeneratorPtr<T> generator):
+      |         ^                ~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp:2:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:11:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/catch_tostring.hpp:633:
+In file included from /home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/interfaces/catch_interfaces_registry_hub.hpp:11:
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/internal/catch_unique_ptr.hpp:111:34: error: no matching constructor for initialization of 'Catch::Generators::FixedValuesGenerator<bool>'
+  111 |         return unique_ptr<T>(new T(CATCH_FORWARD(args)...));
+      |                                  ^ ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:125:51: note: in instantiation of function template specialization 'Catch::Detail::make_unique<Catch::Generators::FixedValuesGenerator<bool>, std::initializer_list<bool> &>' requested here
+  125 |         return GeneratorWrapper<T>(Catch::Detail::make_unique<FixedValuesGenerator<T>>(values));
+      |                                                   ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp:63:35: note: in instantiation of function template specialization 'Catch::Generators::values<bool>' requested here
+   63 |     auto gen = Catch::Generators::values({true, false});
+      |                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'std::initializer_list<bool>' to 'const FixedValuesGenerator<bool>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'std::initializer_list<bool>' to 'FixedValuesGenerator<bool>' for 1st argument
+   88 |     class FixedValuesGenerator final : public IGenerator<T> {
+      |           ^~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/Catch2/src/catch2/generators/catch_generators.hpp:88:11: note: candidate constructor (the implicit default constructor) not viable: requires 0 arguments, but 1 was provided
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_319.dir/build.make:79: generated_build/CMakeFiles/test_319.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/04_Catch2/test_files/test_319.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:37958: generated_build/CMakeFiles/test_319.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:37965: generated_build/CMakeFiles/test_319.dir/rule] Error 2
+gmake: *** [Makefile:13774: test_319] Error 2

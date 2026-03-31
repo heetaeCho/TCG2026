@@ -1,0 +1,25 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_651.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_651.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_651.cpp:163:8: error: no viable conversion from 'const char[12]' to 'Node'
+  163 |   Node key_node = "complex_key";
+      |        ^          ~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/impl.h:45:14: note: candidate constructor not viable: no known conversion from 'const char[12]' to 'const Node &' for 1st argument
+   45 | inline Node::Node(const Node&) = default;
+      |              ^    ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:45:12: note: explicit constructor is not a candidate
+   45 |   explicit Node(NodeType::value type);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:47:12: note: explicit constructor is not a candidate
+   47 |   explicit Node(const T& rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:48:12: note: explicit constructor is not a candidate
+   48 |   explicit Node(const detail::iterator_value& rhs);
+      |            ^
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/node.h:119:12: note: explicit constructor is not a candidate
+  119 |   explicit Node(Zombie);
+      |            ^
+1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_651.dir/build.make:79: generated_build/CMakeFiles/test_651.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_651.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:10510: generated_build/CMakeFiles/test_651.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:10517: generated_build/CMakeFiles/test_651.dir/rule] Error 2
+gmake: *** [Makefile:3547: test_651] Error 2

@@ -1,0 +1,94 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1465.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:19:18: error: only virtual member functions can be marked 'override'
+   19 |     void reset() override { }
+      |                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:23:30: error: non-virtual member function marked 'override' hides virtual member function
+   23 |     bool isBinary(bool last) override { return false; }
+      |                              ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: hidden overloaded virtual function 'Stream::isBinary' declared here: different qualifiers ('const' vs unqualified)
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:25:16: error: virtual function 'getPSFilter' has a different return type ('GooString *') than the function it overrides (which has return type 'std::optional<std::string>' (aka 'optional<basic_string<char>>'))
+   25 |     GooString *getPSFilter(int psLevel, const char *indent) { return nullptr; }
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:28:28: error: only virtual member functions can be marked 'override'
+   28 |     void unfilteredReset() override { }
+      |                            ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:29:24: error: only virtual member functions can be marked 'override'
+   29 |     Goffset getStart() override { return 0; }
+      |                        ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:25:16: warning: 'getPSFilter' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   25 |     GooString *getPSFilter(int psLevel, const char *indent) { return nullptr; }
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:25:32: warning: unused parameter 'psLevel' [-Wunused-parameter]
+   25 |     GooString *getPSFilter(int psLevel, const char *indent) { return nullptr; }
+      |                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:25:53: warning: unused parameter 'indent' [-Wunused-parameter]
+   25 |     GooString *getPSFilter(int psLevel, const char *indent) { return nullptr; }
+      |                                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:26:48: warning: unused parameter 'psLevel' [-Wunused-parameter]
+   26 |     std::optional<std::string> getPSFilter(int psLevel, const char *indent, bool /*unused*/) { return std::nullopt; }
+      |                                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:26:69: warning: unused parameter 'indent' [-Wunused-parameter]
+   26 |     std::optional<std::string> getPSFilter(int psLevel, const char *indent, bool /*unused*/) { return std::nullopt; }
+      |                                                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:136:5: error: cannot use 'try' with exceptions disabled
+  136 |     EXPECT_NO_THROW(stream->close());
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:160:5: error: cannot use 'try' with exceptions disabled
+  160 |     EXPECT_NO_THROW(stream->getImageParams(&bitsPerComponent, &csMode, &hasAlpha));
+      |     ^
+/usr/local/include/gtest/gtest.h:1794:3: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |   ^
+/usr/local/include/gtest/internal/gtest-internal.h:1414:5: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1414 |     try {                                                                \
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:13:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   13 | class MockStream : public Stream {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:35:7: warning: 'JPXStreamTest_1465' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   35 | class JPXStreamTest_1465 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'MockStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp:38:29: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+   38 |         auto mockStr = std::make_unique<MockStream>();
+      |                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:239:18: note: unimplemented pure virtual method 'setPos' in 'MockStream'
+  239 |     virtual void setPos(Goffset pos, int dir = 0) = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:245:18: note: unimplemented pure virtual method 'isBinary' in 'MockStream'
+  245 |     virtual bool isBinary(bool last = true) const = 0;
+      |                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'MockStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+7 warnings and 8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1465.dir/build.make:79: generated_build/CMakeFiles/test_1465.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1465.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:55050: generated_build/CMakeFiles/test_1465.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:55057: generated_build/CMakeFiles/test_1465.dir/rule] Error 2
+gmake: *** [Makefile:18834: test_1465] Error 2

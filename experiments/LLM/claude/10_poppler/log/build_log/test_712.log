@@ -1,0 +1,79 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_712.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:47:83: error: calling a private constructor of class 'Object'
+   47 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:74:83: error: calling a private constructor of class 'Object'
+   74 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:104:83: error: calling a private constructor of class 'Object'
+  104 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:138:83: error: calling a private constructor of class 'Object'
+  138 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:169:83: error: calling a private constructor of class 'Object'
+  169 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:201:83: error: calling a private constructor of class 'Object'
+  201 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:230:83: error: calling a private constructor of class 'Object'
+  230 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:264:83: error: calling a private constructor of class 'Object'
+  264 |     auto *stream = new MemStream(const_cast<char *>(pdfData), 0, strlen(pdfData), Object(objNull));
+      |                                                                                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Object.h:586:14: note: declared private here
+  586 |     explicit Object(ObjType typeA) { type = typeA; }
+      |              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:10:7: warning: 'PageGetArtBoxTest_712' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   10 | class PageGetArtBoxTest_712 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'PDFDoc'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp:48:21: note: in instantiation of function template specialization 'std::make_unique<PDFDoc, MemStream *&>' requested here
+   48 |     auto doc = std::make_unique<PDFDoc>(stream);
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:135:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<GooString>' for 1st argument
+  135 |     explicit PDFDoc(std::unique_ptr<GooString> &&fileNameA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:141:14: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'std::unique_ptr<BaseStream>' for 1st argument
+  141 |     explicit PDFDoc(std::unique_ptr<BaseStream> strA, const std::optional<GooString> &ownerPassword = {}, const std::optional<GooString> &userPassword = {}, const std::function<void()> &xrefReconstructedCallback = {});
+      |              ^      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:144:5: note: candidate constructor not viable: no known conversion from 'MemStream *' to 'const PDFDoc' for 1st argument
+  144 |     PDFDoc(const PDFDoc &) = delete;
+      |     ^      ~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/PDFDoc.h:388:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  388 |     PDFDoc();
+      |     ^
+1 warning and 9 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_712.dir/build.make:79: generated_build/CMakeFiles/test_712.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_712.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:32330: generated_build/CMakeFiles/test_712.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:32337: generated_build/CMakeFiles/test_712.dir/rule] Error 2
+gmake: *** [Makefile:9604: test_712] Error 2

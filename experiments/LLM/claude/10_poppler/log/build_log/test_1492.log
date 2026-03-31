@@ -1,0 +1,183 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1492.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:49:30: error: virtual function 'copy' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<BaseStream *> ()>::Result' (aka 'BaseStream *')) than the function it overrides (which has return type 'std::unique_ptr<BaseStream>')
+   49 |     MOCK_METHOD(BaseStream*, copy, (), (override));
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:115:59: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/local/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:134:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  134 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),  \
+      |                             ^
+/usr/local/include/gmock/gmock-function-mocker.h:183:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  183 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:356:41: note: overridden virtual function is here
+  356 |     virtual std::unique_ptr<BaseStream> copy() = 0;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:50:26: error: virtual function 'makeSubStream' has a different return type ('typename ::testing::internal::Function< ::testing::internal::identity_t<Stream *> (Goffset, bool, Goffset, Object &&)>::Result' (aka 'Stream *')) than the function it overrides (which has return type 'std::unique_ptr<Stream>')
+   50 |     MOCK_METHOD(Stream*, makeSubStream, (Goffset start, bool limited, Goffset length, Object &&dict), (override));
+      |     ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:115:59: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+/usr/local/include/gmock/internal/gmock-pp.h:49:56: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   48 |   GMOCK_PP_IDENTITY(                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:134:29: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  134 |       GMOCK_PP_NARG0 _Args, _MethodName, GMOCK_INTERNAL_HAS_CONST(_Spec),  \
+      |                             ^
+/usr/local/include/gmock/gmock-function-mocker.h:183:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  183 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:17:31: note: expanded from macro 'GMOCK_PP_IDENTITY'
+   17 | #define GMOCK_PP_IDENTITY(_1) _1
+      |                               ^~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:357:37: note: overridden virtual function is here
+  357 |     virtual std::unique_ptr<Stream> makeSubStream(Goffset start, bool limited, Goffset length, Object &&dict) = 0;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:77:5: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   77 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:77:5: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+   77 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     AutoFreeMemStream::BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:77:22: error: no matching constructor for initialization of 'AutoFreeMemStream::BaseMemStream<const char>'
+   77 |     BaseStreamStream bss(std::move(mockStream));
+      |                      ^   ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockStream> &>::type' (aka 'std::unique_ptr<MockStream>') to 'const BaseMemStream<const char>' for 1st argument
+  665 | class BaseMemStream : public BaseStream
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:668:5: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+  668 |     BaseMemStream(T *bufA, Goffset startA, Goffset lengthA, Object &&dictA) : BaseStream(std::move(dictA), lengthA)
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:97:5: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+   97 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:97:5: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+   97 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     AutoFreeMemStream::BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:97:22: error: no matching constructor for initialization of 'AutoFreeMemStream::BaseMemStream<const char>'
+   97 |     BaseStreamStream bss(std::move(mockStream));
+      |                      ^   ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockStream> &>::type' (aka 'std::unique_ptr<MockStream>') to 'const BaseMemStream<const char>' for 1st argument
+  665 | class BaseMemStream : public BaseStream
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:668:5: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+  668 |     BaseMemStream(T *bufA, Goffset startA, Goffset lengthA, Object &&dictA) : BaseStream(std::move(dictA), lengthA)
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:117:5: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+  117 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:117:5: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+  117 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     AutoFreeMemStream::BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:117:22: error: no matching constructor for initialization of 'AutoFreeMemStream::BaseMemStream<const char>'
+  117 |     BaseStreamStream bss(std::move(mockStream));
+      |                      ^   ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockStream> &>::type' (aka 'std::unique_ptr<MockStream>') to 'const BaseMemStream<const char>' for 1st argument
+  665 | class BaseMemStream : public BaseStream
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:668:5: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+  668 |     BaseMemStream(T *bufA, Goffset startA, Goffset lengthA, Object &&dictA) : BaseStream(std::move(dictA), lengthA)
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:137:5: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+  137 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:137:5: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+  137 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     AutoFreeMemStream::BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:137:22: error: no matching constructor for initialization of 'AutoFreeMemStream::BaseMemStream<const char>'
+  137 |     BaseStreamStream bss(std::move(mockStream));
+      |                      ^   ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockStream> &>::type' (aka 'std::unique_ptr<MockStream>') to 'const BaseMemStream<const char>' for 1st argument
+  665 | class BaseMemStream : public BaseStream
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:668:5: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+  668 |     BaseMemStream(T *bufA, Goffset startA, Goffset lengthA, Object &&dictA) : BaseStream(std::move(dictA), lengthA)
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:160:5: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+  160 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:160:5: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+  160 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     AutoFreeMemStream::BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:160:22: error: no matching constructor for initialization of 'AutoFreeMemStream::BaseMemStream<const char>'
+  160 |     BaseStreamStream bss(std::move(mockStream));
+      |                      ^   ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'typename std::remove_reference<unique_ptr<MockStream> &>::type' (aka 'std::unique_ptr<MockStream>') to 'const BaseMemStream<const char>' for 1st argument
+  665 | class BaseMemStream : public BaseStream
+      |       ^~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:668:5: note: candidate constructor not viable: requires 4 arguments, but 1 was provided
+  668 |     BaseMemStream(T *bufA, Goffset startA, Goffset lengthA, Object &&dictA) : BaseStream(std::move(dictA), lengthA)
+      |     ^             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:178:5: error: use of undeclared identifier 'BaseStreamStream'; did you mean 'BaseMemStream'?
+  178 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp:178:5: error: unknown type name 'BaseStreamStream'; did you mean 'AutoFreeMemStream::BaseMemStream'?
+  178 |     BaseStreamStream bss(std::move(mockStream));
+      |     ^~~~~~~~~~~~~~~~
+      |     AutoFreeMemStream::BaseMemStream
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:665:7: note: 'AutoFreeMemStream::BaseMemStream' declared here
+  665 | class BaseMemStream : public BaseStream
+      |       ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1492.dir/build.make:79: generated_build/CMakeFiles/test_1492.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1492.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:47914: generated_build/CMakeFiles/test_1492.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:47921: generated_build/CMakeFiles/test_1492.dir/rule] Error 2
+gmake: *** [Makefile:15935: test_1492] Error 2

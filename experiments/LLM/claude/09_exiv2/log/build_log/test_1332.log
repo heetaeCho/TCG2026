@@ -1,0 +1,51 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1332.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1332.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1332.cpp:152:20: error: no matching constructor for initialization of 'Exiv2::ExifKey'
+  152 |     Exiv2::ExifKey key(0x0100, Exiv2::IfdId::ifd0Id);
+      |                    ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:296:3: note: candidate constructor not viable: no known conversion from 'Exiv2::IfdId' to 'const std::string' (aka 'const basic_string<char>') for 2nd argument
+  296 |   ExifKey(uint16_t tag, const std::string& groupName);
+      |   ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:286:12: note: candidate constructor not viable: requires single argument 'key', but 2 arguments were provided
+  286 |   explicit ExifKey(const std::string& key);
+      |            ^       ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:303:12: note: candidate constructor not viable: requires single argument 'ti', but 2 arguments were provided
+  303 |   explicit ExifKey(const TagInfo& ti);
+      |            ^       ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:306:3: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+  306 |   ExifKey(const ExifKey& rhs);
+      |   ^       ~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1332.cpp:188:22: error: no member named 'ifdItem' in 'Exiv2::ExifKey'
+  188 |     EXPECT_FALSE(key.ifdItem().empty());
+      |                  ~~~ ^
+/usr/local/include/gtest/gtest.h:1827:52: note: expanded from macro 'EXPECT_FALSE'
+ 1827 | #define EXPECT_FALSE(condition) GTEST_EXPECT_FALSE(condition)
+      |                                                    ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1811:25: note: expanded from macro 'GTEST_EXPECT_FALSE'
+ 1811 |   GTEST_TEST_BOOLEAN_(!(condition), #condition, true, false, \
+      |                         ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1332.cpp:228:20: error: no matching constructor for initialization of 'Exiv2::ExifKey'
+  228 |     Exiv2::ExifKey key(0x829a, Exiv2::IfdId::exifId);
+      |                    ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:296:3: note: candidate constructor not viable: no known conversion from 'Exiv2::IfdId' to 'const std::string' (aka 'const basic_string<char>') for 2nd argument
+  296 |   ExifKey(uint16_t tag, const std::string& groupName);
+      |   ^                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:286:12: note: candidate constructor not viable: requires single argument 'key', but 2 arguments were provided
+  286 |   explicit ExifKey(const std::string& key);
+      |            ^       ~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:303:12: note: candidate constructor not viable: requires single argument 'ti', but 2 arguments were provided
+  303 |   explicit ExifKey(const TagInfo& ti);
+      |            ^       ~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/tags.hpp:306:3: note: candidate constructor not viable: requires single argument 'rhs', but 2 arguments were provided
+  306 |   ExifKey(const ExifKey& rhs);
+      |   ^       ~~~~~~~~~~~~~~~~~~
+3 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1332.dir/build.make:79: generated_build/CMakeFiles/test_1332.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1332.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:30559: generated_build/CMakeFiles/test_1332.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:30566: generated_build/CMakeFiles/test_1332.dir/rule] Error 2
+gmake: *** [Makefile:9279: test_1332] Error 2

@@ -1,0 +1,56 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1460.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp:11:5: error: non-virtual member function marked 'override' hides virtual member function
+   11 |     MOCK_METHOD(StreamKind, getKind, (), (override));
+      |     ^
+/usr/local/include/gmock/gmock-function-mocker.h:115:3: note: expanded from macro 'MOCK_METHOD'
+  115 |   GMOCK_PP_VARIADIC_CALL(GMOCK_INTERNAL_MOCK_METHOD_ARG_, __VA_ARGS__) \
+      |   ^
+/usr/local/include/gmock/internal/gmock-pp.h:49:7: note: expanded from macro 'GMOCK_PP_VARIADIC_CALL'
+   49 |       GMOCK_PP_CAT(_Macro, GMOCK_PP_NARG(__VA_ARGS__))(__VA_ARGS__))
+      |       ^
+/usr/local/include/gmock/internal/gmock-pp.h:5:30: note: expanded from macro 'GMOCK_PP_CAT'
+    5 | #define GMOCK_PP_CAT(_1, _2) GMOCK_PP_INTERNAL_CAT(_1, _2)
+      |                              ^
+note: (skipping 1 expansions in backtrace; use -fmacro-backtrace-limit=0 to see all)
+<scratch space>:275:1: note: expanded from here
+  275 | GMOCK_INTERNAL_MOCK_METHOD_ARG_4
+      | ^
+/usr/local/include/gmock/gmock-function-mocker.h:133:3: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_ARG_4'
+  133 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                         \
+      |   ^
+/usr/local/include/gmock/gmock-function-mocker.h:185:61: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  185 |               _RefSpec _NoexceptSpec GMOCK_PP_IF(_Override, override, )        \
+      |                                                             ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: hidden overloaded virtual function 'Stream::getKind' declared here: different qualifiers ('const' vs unqualified)
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp:32:7: warning: 'LexerTest_1460' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   32 | class LexerTest_1460 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'MockStream'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp:133:24: note: in instantiation of function template specialization 'std::make_unique<MockStream>' requested here
+  133 |     auto stream = std::make_unique<MockStream>();
+      |                        ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:129:24: note: unimplemented pure virtual method 'getKind' in 'MockStream'
+  129 |     virtual StreamKind getKind() const = 0;
+      |                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp:9:7: warning: 'MockStream' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class MockStream : public Stream {
+      |       ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<MockStream>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp:133:19: note: in instantiation of member function 'std::unique_ptr<MockStream>::~unique_ptr' requested here
+  133 |     auto stream = std::make_unique<MockStream>();
+      |                   ^
+2 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1460.dir/build.make:79: generated_build/CMakeFiles/test_1460.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1460.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:29610: generated_build/CMakeFiles/test_1460.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:29617: generated_build/CMakeFiles/test_1460.dir/rule] Error 2
+gmake: *** [Makefile:8499: test_1460] Error 2

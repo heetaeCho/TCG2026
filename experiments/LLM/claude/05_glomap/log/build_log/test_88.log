@@ -1,0 +1,152 @@
+[ 27%] Built target faiss
+[ 39%] Built target PoseLib
+[ 48%] Built target colmap_vlfeat
+[ 51%] Built target colmap_util
+[ 51%] Built target colmap_feature_types
+[ 54%] Built target colmap_math
+[ 57%] Built target colmap_geometry
+[ 57%] Built target colmap_sensor
+[ 63%] Built target colmap_scene
+[ 66%] Built target colmap_lsd
+[ 66%] Built target colmap_image
+[ 69%] Built target colmap_optim
+[ 75%] Built target colmap_estimators
+[ 78%] Built target colmap_retrieval
+[ 81%] Built target colmap_feature
+[ 81%] Built target colmap_poisson_recon
+[ 84%] Built target colmap_mvs
+[ 87%] Built target colmap_sfm
+[ 90%] Built target colmap_controllers
+[ 90%] Built target colmap_exe
+[100%] Built target glomap
+[100%] Building CXX object generated_build/CMakeFiles/test_88.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:19:20: error: cannot assign to non-static data member 'image_id' with const-qualified type 'const image_t' (aka 'const unsigned int')
+   19 |       img.image_id = i;
+      |       ~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: non-static data member 'image_id' declared const here
+   17 |   const image_t image_id;
+      |   ~~~~~~~~~~~~~~^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:21:11: error: no member named 'is_registered' in 'glomap::Image'
+   21 |       img.is_registered = true;
+      |       ~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:22:17: error: object of type 'mapped_type' (aka 'glomap::Image') cannot be assigned because its copy assignment operator is implicitly deleted
+   22 |       images[i] = img;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image.h:17:17: note: copy assignment operator of 'Image' is implicitly deleted because field 'image_id' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   17 |   const image_t image_id;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:25:13: error: no member named 'frame_id' in 'glomap::Frame'; did you mean 'frame_id_'?
+   25 |       frame.frame_id = i;
+      |             ^~~~~~~~
+      |             frame_id_
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/scene/frame.h:105:11: note: 'frame_id_' declared here
+  105 |   frame_t frame_id_ = kInvalidFrameId;
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:33:28: error: no member named 'ImagePairToPairId' in 'glomap::ImagePair'; did you mean 'colmap::ImagePairToPairId'?
+   33 |     image_pair_t pair_id = ImagePair::ImagePairToPairId(id1, id2);
+      |                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                            colmap::ImagePairToPairId
+/home/user/MyProjects/TCG2026/TestProjects/glomap/build/_deps/colmap-src/src/colmap/util/types.h:200:21: note: 'colmap::ImagePairToPairId' declared here
+  200 | inline image_pair_t ImagePairToPairId(image_t image_id1, image_t image_id2) {
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:35:20: error: cannot assign to non-static data member 'image_id1' with const-qualified type 'const image_t' (aka 'const unsigned int')
+   35 |     pair.image_id1 = id1;
+      |     ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: non-static data member 'image_id1' declared const here
+   27 |   const image_t image_id1;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:36:20: error: cannot assign to non-static data member 'image_id2' with const-qualified type 'const image_t' (aka 'const unsigned int')
+   36 |     pair.image_id2 = id2;
+      |     ~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:28:17: note: non-static data member 'image_id2' declared const here
+   28 |   const image_t image_id2;
+      |   ~~~~~~~~~~~~~~^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:43:37: error: object of type 'mapped_type' (aka 'glomap::ImagePair') cannot be assigned because its copy assignment operator is implicitly deleted
+   43 |     view_graph.image_pairs[pair_id] = pair;
+      |                                     ^
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/scene/image_pair.h:27:17: note: copy assignment operator of 'ImagePair' is implicitly deleted because field 'image_id1' is of const-qualified type 'const image_t' (aka 'const unsigned int')
+   27 |   const image_t image_id1;
+      |                 ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:55:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+   55 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:66:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+   66 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:84:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+   84 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:98:35: error: use of undeclared identifier 'WEIGHT'; did you mean 'ViewGraphManipulater::WEIGHT'?
+   98 |       view_graph, frames, images, WEIGHT, 10.0, 1);
+      |                                   ^~~~~~
+      |                                   ViewGraphManipulater::WEIGHT
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:10:5: note: 'ViewGraphManipulater::WEIGHT' declared here
+   10 |     WEIGHT,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:113:35: error: use of undeclared identifier 'WEIGHT'; did you mean 'ViewGraphManipulater::WEIGHT'?
+  113 |       view_graph, frames, images, WEIGHT, 10.0, 1);
+      |                                   ^~~~~~
+      |                                   ViewGraphManipulater::WEIGHT
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:10:5: note: 'ViewGraphManipulater::WEIGHT' declared here
+   10 |     WEIGHT,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:125:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+  125 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:141:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+  141 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:154:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+  154 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:173:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+  173 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:190:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+  190 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp:206:35: error: use of undeclared identifier 'INLIER_NUM'; did you mean 'ViewGraphManipulater::INLIER_NUM'?
+  206 |       view_graph, frames, images, INLIER_NUM, 10.0, 1);
+      |                                   ^~~~~~~~~~
+      |                                   ViewGraphManipulater::INLIER_NUM
+/home/user/MyProjects/TCG2026/TestProjects/glomap/glomap/processors/view_graph_manipulation.h:9:5: note: 'ViewGraphManipulater::INLIER_NUM' declared here
+    9 |     INLIER_NUM,
+      |     ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_88.dir/build.make:79: generated_build/CMakeFiles/test_88.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/05_glomap/test_files/test_88.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:9367: generated_build/CMakeFiles/test_88.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:9374: generated_build/CMakeFiles/test_88.dir/rule] Error 2
+gmake: *** [Makefile:2366: test_88] Error 2

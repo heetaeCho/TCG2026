@@ -1,0 +1,128 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_208.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:16:18: error: only virtual member functions can be marked 'override'
+   16 |     void reset() override {}
+      |                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:19:16: error: virtual function 'getPSFilter' has a different return type ('GooString *') than the function it overrides (which has return type 'std::optional<std::string>' (aka 'optional<basic_string<char>>'))
+   19 |     GooString *getPSFilter(int /*psLevel*/, const char * /*indent*/) { return nullptr; }
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:21:9: error: virtual function 'getPos' has a different return type ('int') than the function it overrides (which has return type 'Goffset' (aka 'long long'))
+   21 |     int getPos() override { return 0; }
+      |     ~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: overridden virtual function is here
+  234 |     virtual Goffset getPos() = 0;
+      |             ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:23:24: error: only virtual member functions can be marked 'override'
+   23 |     Goffset getStart() override { return 0; }
+      |                        ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:24:39: error: only virtual member functions can be marked 'override'
+   24 |     void moveStart(Goffset /*delta*/) override {}
+      |                                       ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:25:32: error: functions that differ only in their return type cannot be overloaded
+   25 |     std::optional<std::string> getPSFilter(int, const char*) override { return std::nullopt; }
+      |     ~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:19:16: note: previous definition is here
+   19 |     GooString *getPSFilter(int /*psLevel*/, const char * /*indent*/) { return nullptr; }
+      |     ~~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:19:16: warning: 'getPSFilter' overrides a member function but is not marked 'override' [-Winconsistent-missing-override]
+   19 |     GooString *getPSFilter(int /*psLevel*/, const char * /*indent*/) { return nullptr; }
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:242:40: note: overridden virtual function is here
+  242 |     virtual std::optional<std::string> getPSFilter(int psLevel, const char *indent);
+      |                                        ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:36:18: error: only virtual member functions can be marked 'override'
+   36 |     void reset() override { pos_ = 0; }
+      |                  ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:45:9: error: virtual function 'getPos' has a different return type ('int') than the function it overrides (which has return type 'Goffset' (aka 'long long'))
+   45 |     int getPos() override { return pos_; }
+      |     ~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:234:21: note: overridden virtual function is here
+  234 |     virtual Goffset getPos() = 0;
+      |             ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:52:24: error: only virtual member functions can be marked 'override'
+   52 |     Goffset getStart() override { return 0; }
+      |                        ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:53:35: error: only virtual member functions can be marked 'override'
+   53 |     void moveStart(Goffset delta) override {}
+      |                                   ^~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:53:28: warning: unused parameter 'delta' [-Wunused-parameter]
+   53 |     void moveStart(Goffset delta) override {}
+      |                            ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:71:16: error: variable type 'MockStream' is an abstract class
+   71 |     MockStream mockStream;
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'MockStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'MockStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'MockStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'MockStream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'MockStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'MockStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'MockStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:77:16: error: variable type 'MockStream' is an abstract class
+   77 |     MockStream mockStream;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:83:16: error: variable type 'MockStream' is an abstract class
+   83 |     MockStream mockStream;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:90:16: error: variable type 'MockStream' is an abstract class
+   90 |     MockStream mockStream;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:98:16: error: variable type 'MockStream' is an abstract class
+   98 |     MockStream mockStream;
+      |                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:100:13: error: no member named 'reset' in 'ASCIIHexEncoder'
+  100 |     encoder.reset();
+      |     ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:118:16: error: variable type 'DataStream' is an abstract class
+  118 |     DataStream dataStream(data, 1);
+      |                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:132:32: note: unimplemented pure virtual method 'rewind' in 'DataStream'
+  132 |     [[nodiscard]] virtual bool rewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:218:17: note: unimplemented pure virtual method 'getUnfilteredChar' in 'DataStream'
+  218 |     virtual int getUnfilteredChar() = 0;
+      |                 ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:223:32: note: unimplemented pure virtual method 'unfilteredRewind' in 'DataStream'
+  223 |     [[nodiscard]] virtual bool unfilteredRewind() = 0;
+      |                                ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:248:25: note: unimplemented pure virtual method 'getBaseStream' in 'DataStream'
+  248 |     virtual BaseStream *getBaseStream() = 0;
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:252:21: note: unimplemented pure virtual method 'getUndecodedStream' in 'DataStream'
+  252 |     virtual Stream *getUndecodedStream() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:255:19: note: unimplemented pure virtual method 'getDict' in 'DataStream'
+  255 |     virtual Dict *getDict() = 0;
+      |                   ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Stream.h:256:21: note: unimplemented pure virtual method 'getDictObject' in 'DataStream'
+  256 |     virtual Object *getDictObject() = 0;
+      |                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:120:13: error: no member named 'reset' in 'ASCIIHexEncoder'
+  120 |     encoder.reset();
+      |     ~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp:137:16: error: variable type 'DataStream' is an abstract class
+  137 |     DataStream dataStream(data, 1);
+      |                ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+2 warnings and 20 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_208.dir/build.make:79: generated_build/CMakeFiles/test_208.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_208.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:71690: generated_build/CMakeFiles/test_208.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:71697: generated_build/CMakeFiles/test_208.dir/rule] Error 2
+gmake: *** [Makefile:25594: test_208] Error 2

@@ -1,0 +1,86 @@
+[ 66%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_232.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:14:40: error: unknown type name 'Memory'; did you mean 'memory'?
+   14 |     pMemory = shared_memory_holder(new Memory);
+      |                                        ^~~~~~
+      |                                        memory
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/memory.h:23:20: note: 'memory' declared here
+   23 | class YAML_CPP_API memory {
+      |                    ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:14:15: error: no matching conversion for functional-style cast from 'memory *' to 'shared_memory_holder' (aka 'shared_ptr<memory_holder>')
+   14 |     pMemory = shared_memory_holder(new Memory);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:204:7: note: candidate constructor not viable: no known conversion from 'memory *' to 'const shared_ptr<memory_holder>' for 1st argument
+  204 |       shared_ptr(const shared_ptr&) noexcept = default; ///< Copy constructor
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:359:7: note: candidate constructor not viable: no known conversion from 'memory *' to 'shared_ptr<memory_holder>' for 1st argument
+  359 |       shared_ptr(shared_ptr&& __r) noexcept
+      |       ^          ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:412:17: note: candidate constructor not viable: no known conversion from 'memory *' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  412 |       constexpr shared_ptr(nullptr_t) noexcept : shared_ptr() { }
+      |                 ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:214:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic>, YAML::detail::memory *>::value' was not satisfied [with _Yp = memory]
+  214 |         shared_ptr(_Yp* __p) : __shared_ptr<_Tp>(__p) { }
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:351:2: note: candidate template ignored: could not match 'shared_ptr<_Yp>' against 'memory *'
+  351 |         shared_ptr(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:368:2: note: candidate template ignored: could not match 'shared_ptr<_Yp>' against 'memory *'
+  368 |         shared_ptr(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:380:11: note: candidate template ignored: could not match 'weak_ptr<_Yp>' against 'memory *'
+  380 |         explicit shared_ptr(const weak_ptr<_Yp>& __r)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:387:2: note: candidate template ignored: could not match 'auto_ptr<_Yp>' against 'memory *'
+  387 |         shared_ptr(auto_ptr<_Yp>&& __r);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:395:2: note: candidate template ignored: could not match 'unique_ptr<_Yp, _Del>' against 'memory *'
+  395 |         shared_ptr(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:463:2: note: candidate template ignored: could not match '_Sp_alloc_shared_tag<_Alloc>' against 'memory *'
+  463 |         shared_ptr(_Sp_alloc_shared_tag<_Alloc> __tag, _Args&&... __args)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:202:17: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  202 |       constexpr shared_ptr() noexcept : __shared_ptr<_Tp>() { }
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:231:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  231 |         shared_ptr(_Yp* __p, _Deleter __d)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:248:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  248 |         shared_ptr(nullptr_t __p, _Deleter __d)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:311:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  311 |         shared_ptr(const shared_ptr<_Yp>& __r, element_type* __p) noexcept
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:535:7: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  535 |       shared_ptr(const weak_ptr<_Tp>& __r, std::nothrow_t) noexcept
+      |       ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:268:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  268 |         shared_ptr(_Yp* __p, _Deleter __d, _Alloc __a)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:287:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  287 |         shared_ptr(nullptr_t __p, _Deleter __d, _Alloc __a)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:164:9: error: no viable conversion from 'node' to 'node *'
+  164 |   node* result = ref.get(key, pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:179:9: error: no viable conversion from 'node' to 'node *'
+  179 |   node* result = ref.get(key, pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:199:9: error: no viable conversion from 'node' to 'node *'
+  199 |   node* result = ref.get(std::string("0"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:327:9: error: no viable conversion from 'node' to 'node *'
+  327 |   node* result = ref.get(0, pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:340:9: error: no viable conversion from 'node' to 'node *'
+  340 |   node* result = ref.get(5, pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp:355:9: error: no viable conversion from 'node' to 'node *'
+  355 |   node* found = ref.get(key, pMemory);
+      |         ^       ~~~~~~~~~~~~~~~~~~~~~
+8 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_232.dir/build.make:79: generated_build/CMakeFiles/test_232.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_232.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:24462: generated_build/CMakeFiles/test_232.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:24469: generated_build/CMakeFiles/test_232.dir/rule] Error 2
+gmake: *** [Makefile:9215: test_232] Error 2

@@ -1,0 +1,92 @@
+[100%] Built target yaml-cpp
+[100%] Building CXX object generated_build/CMakeFiles/test_260.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:13:15: error: no matching conversion for functional-style cast from 'memory *' to 'shared_memory_holder' (aka 'shared_ptr<memory_holder>')
+   13 |     pMemory = shared_memory_holder(new memory);
+      |               ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:204:7: note: candidate constructor not viable: no known conversion from 'memory *' to 'const shared_ptr<memory_holder>' for 1st argument
+  204 |       shared_ptr(const shared_ptr&) noexcept = default; ///< Copy constructor
+      |       ^          ~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:359:7: note: candidate constructor not viable: no known conversion from 'memory *' to 'shared_ptr<memory_holder>' for 1st argument
+  359 |       shared_ptr(shared_ptr&& __r) noexcept
+      |       ^          ~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:412:17: note: candidate constructor not viable: no known conversion from 'memory *' to 'nullptr_t' (aka 'std::nullptr_t') for 1st argument
+  412 |       constexpr shared_ptr(nullptr_t) noexcept : shared_ptr() { }
+      |                 ^          ~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:214:2: note: candidate template ignored: requirement 'is_constructible<std::__shared_ptr<YAML::detail::memory_holder, __gnu_cxx::_S_atomic>, YAML::detail::memory *>::value' was not satisfied [with _Yp = memory]
+  214 |         shared_ptr(_Yp* __p) : __shared_ptr<_Tp>(__p) { }
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:351:2: note: candidate template ignored: could not match 'shared_ptr<_Yp>' against 'memory *'
+  351 |         shared_ptr(const shared_ptr<_Yp>& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:368:2: note: candidate template ignored: could not match 'shared_ptr<_Yp>' against 'memory *'
+  368 |         shared_ptr(shared_ptr<_Yp>&& __r) noexcept
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:380:11: note: candidate template ignored: could not match 'weak_ptr<_Yp>' against 'memory *'
+  380 |         explicit shared_ptr(const weak_ptr<_Yp>& __r)
+      |                  ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:387:2: note: candidate template ignored: could not match 'auto_ptr<_Yp>' against 'memory *'
+  387 |         shared_ptr(auto_ptr<_Yp>&& __r);
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:395:2: note: candidate template ignored: could not match 'unique_ptr<_Yp, _Del>' against 'memory *'
+  395 |         shared_ptr(unique_ptr<_Yp, _Del>&& __r)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:463:2: note: candidate template ignored: could not match '_Sp_alloc_shared_tag<_Alloc>' against 'memory *'
+  463 |         shared_ptr(_Sp_alloc_shared_tag<_Alloc> __tag, _Args&&... __args)
+      |         ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:202:17: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+  202 |       constexpr shared_ptr() noexcept : __shared_ptr<_Tp>() { }
+      |                 ^
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:231:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  231 |         shared_ptr(_Yp* __p, _Deleter __d)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:248:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  248 |         shared_ptr(nullptr_t __p, _Deleter __d)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:311:2: note: candidate constructor template not viable: requires 2 arguments, but 1 was provided
+  311 |         shared_ptr(const shared_ptr<_Yp>& __r, element_type* __p) noexcept
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:535:7: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+  535 |       shared_ptr(const weak_ptr<_Tp>& __r, std::nothrow_t) noexcept
+      |       ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:268:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  268 |         shared_ptr(_Yp* __p, _Deleter __d, _Alloc __a)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/shared_ptr.h:287:2: note: candidate constructor template not viable: requires 3 arguments, but 1 was provided
+  287 |         shared_ptr(nullptr_t __p, _Deleter __d, _Alloc __a)
+      |         ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:169:9: error: no viable conversion from 'node' to 'node *'
+  169 |   node* result = n.get(std::string("mykey"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:179:9: error: no viable conversion from 'node' to 'node *'
+  179 |   node* result = n.get(std::string("nonexistent"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:363:9: error: no viable conversion from 'node' to 'node *'
+  363 |   node* result = n.get(key, pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:407:9: error: no viable conversion from 'node' to 'node *'
+  407 |   node* result = n.get(std::string("fkey"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:448:9: error: no viable conversion from 'node' to 'node *'
+  448 |   node* result = n.get(std::string("tempkey"), pMemory);
+      |         ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:1:
+/usr/local/include/gtest/gtest.h:1472:28: error: invalid operands to binary expression ('const YAML::detail::node' and 'const std::nullptr_t')
+ 1472 | GTEST_IMPL_CMP_HELPER_(NE, !=)
+      | ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+/usr/local/include/gtest/gtest.h:1462:14: note: expanded from macro 'GTEST_IMPL_CMP_HELPER_'
+ 1462 |     if (val1 op val2) {                                                    \
+      |         ~~~~ ^  ~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp:443:3: note: in instantiation of function template specialization 'testing::internal::CmpHelperNE<YAML::detail::node, std::nullptr_t>' requested here
+  443 |   EXPECT_NE(n.get(std::string("tempkey"), pMemory), nullptr);
+      |   ^
+/usr/local/include/gtest/gtest.h:1887:44: note: expanded from macro 'EXPECT_NE'
+ 1887 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperNE, val1, val2)
+      |                                            ^
+/usr/local/include/gtest/gtest.h:1387:13: note: candidate function not viable: no known conversion from 'const YAML::detail::node' to 'faketype' for 1st argument
+ 1387 | inline bool operator!=(faketype, faketype) { return false; }
+      |             ^          ~~~~~~~~
+7 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_260.dir/build.make:79: generated_build/CMakeFiles/test_260.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_260.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:14638: generated_build/CMakeFiles/test_260.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:14645: generated_build/CMakeFiles/test_260.dir/rule] Error 2
+gmake: *** [Makefile:5224: test_260] Error 2

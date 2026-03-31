@@ -1,0 +1,40 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_679.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_679.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_679.cpp:357:25: error: no member named 'getLength' in 'GooString'
+  357 |         EXPECT_GT(label.getLength(), 0);
+      |                   ~~~~~ ^
+/usr/local/include/gtest/gtest.h:1895:57: note: expanded from macro 'EXPECT_GT'
+ 1895 |   EXPECT_PRED_FORMAT2(::testing::internal::CmpHelperGT, val1, val2)
+      |                                                         ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_679.cpp:9:7: warning: 'CatalogTest_679' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+    9 | class CatalogTest_679 : public ::testing::Test {
+      |       ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_679.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:97:16: error: invalid application of 'sizeof' to an incomplete type 'FileSpec'
+   97 |         static_assert(sizeof(_Tp)>0,
+      |                       ^~~~~~~~~~~
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:404:4: note: in instantiation of member function 'std::default_delete<FileSpec>::operator()' requested here
+  404 |           get_deleter()(std::move(__ptr));
+      |           ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_679.cpp:459:34: note: in instantiation of member function 'std::unique_ptr<FileSpec>::~unique_ptr' requested here
+  459 |         auto fileSpec = catalog->embeddedFile(0);
+      |                                  ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/Catalog.h:68:7: note: forward declaration of 'FileSpec'
+   68 | class FileSpec;
+      |       ^
+1 warning and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_679.dir/build.make:79: generated_build/CMakeFiles/test_679.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_679.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:80202: generated_build/CMakeFiles/test_679.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:80209: generated_build/CMakeFiles/test_679.dir/rule] Error 2
+gmake: *** [Makefile:29052: test_679] Error 2

@@ -1,0 +1,72 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_16.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp:84:13: error: cannot assign to return value because function 'at' returns a const value
+   84 |   sub.at(0) = 42;
+      |   ~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:99:23: note: function 'at' which returns const-qualified type 'const value_type &' (aka 'const int &') declared here
+   99 |   [[nodiscard]] const auto& at(size_t index) const {
+      |                       ^~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp:99:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+   99 |   EXPECT_THROW(slice.subSlice(5, 3), std::out_of_range);
+      |                ^~~~~~~~~~~~~~ ~~~~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp:104:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  104 |   EXPECT_THROW(slice.subSlice(0, 6), std::out_of_range);
+      |                ^~~~~~~~~~~~~~ ~~~~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp:198:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  198 |   EXPECT_THROW(slice.subSlice(7, 3), std::out_of_range);
+      |                ^~~~~~~~~~~~~~ ~~~~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp:203:16: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  203 |   EXPECT_THROW(slice.subSlice(0, 6), std::out_of_range);
+      |                ^~~~~~~~~~~~~~ ~~~~
+/usr/local/include/gtest/gtest.h:1792:21: note: expanded from macro 'EXPECT_THROW'
+ 1792 |   GTEST_TEST_THROW_(statement, expected_exception, GTEST_NONFATAL_FAILURE_)
+      |                     ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1372:54: note: expanded from macro 'GTEST_TEST_THROW_'
+ 1372 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);            \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp:218:28: error: no viable conversion from 'Slice<int *>' to 'Slice<const int *>'
+  218 |   Exiv2::Slice<const int*> constSub = slice.subSlice(2, 5);
+      |                            ^          ~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:437:8: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'Slice<int *>' to 'const Slice<const int *> &' for 1st argument
+  437 | struct Slice<const T*> : public Internal::ConstSliceBase<Internal::PtrSliceStorage, const T*> {
+      |        ^~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/slice.hpp:437:8: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'Slice<int *>' to 'Slice<const int *> &&' for 1st argument
+  437 | struct Slice<const T*> : public Internal::ConstSliceBase<Internal::PtrSliceStorage, const T*> {
+      |        ^~~~~
+4 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_16.dir/build.make:79: generated_build/CMakeFiles/test_16.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_16.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:28417: generated_build/CMakeFiles/test_16.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:28424: generated_build/CMakeFiles/test_16.dir/rule] Error 2
+gmake: *** [Makefile:8460: test_16] Error 2

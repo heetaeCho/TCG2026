@@ -1,0 +1,63 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1099.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:186:21: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  186 |     EXPECT_NO_THROW(io.size());
+      |                     ^~~~~~~
+/usr/local/include/gtest/gtest.h:1794:24: note: expanded from macro 'EXPECT_NO_THROW'
+ 1794 |   GTEST_TEST_NO_THROW_(statement, GTEST_NONFATAL_FAILURE_)
+      |                        ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1415:54: note: expanded from macro 'GTEST_TEST_NO_THROW_'
+ 1415 |       GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_(statement);         \
+      |                                                      ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1314:5: note: expanded from macro 'GTEST_SUPPRESS_UNREACHABLE_CODE_WARNING_BELOW_'
+ 1314 |     statement;                                                    \
+      |     ^~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:212:15: error: variable type 'TestImage' is an abstract class
+  212 |     TestImage other(std::move(io2));
+      |               ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:369:37: note: unimplemented pure virtual method 'mimeType' in 'TestImage'
+  369 |   [[nodiscard]] virtual std::string mimeType() const = 0;
+      |                                     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:358:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  358 |     EXPECT_TRUE(image_->supportsMetadata(mdExif));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:362:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  362 |     EXPECT_TRUE(image_->supportsMetadata(mdIptc));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:366:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  366 |     EXPECT_TRUE(image_->supportsMetadata(mdXmp));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:370:25: warning: 'supportsMetadata' is deprecated [-Wdeprecated-declarations]
+  370 |     EXPECT_TRUE(image_->supportsMetadata(mdComment));
+      |                         ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/include/exiv2/image.hpp:448:5: note: 'supportsMetadata' has been explicitly marked deprecated here
+  448 |   [[deprecated]] [[nodiscard]] bool supportsMetadata(MetadataId metadataId) const;
+      |     ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:446:13: warning: unused variable 'bytes' [-Wunused-variable]
+  446 |     uint8_t bytes[4] = {0x01, 0x02, 0x03, 0x04};
+      |             ^~~~~
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: allocating an object of abstract class type 'TestImage'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp:28:23: note: in instantiation of function template specialization 'std::make_unique<TestImage, std::unique_ptr<Exiv2::MemIo>>' requested here
+   28 |         image_ = std::make_unique<TestImage>(std::move(io));
+      |                       ^
+6 warnings and 2 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1099.dir/build.make:79: generated_build/CMakeFiles/test_1099.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1099.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:59119: generated_build/CMakeFiles/test_1099.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:59126: generated_build/CMakeFiles/test_1099.dir/rule] Error 2
+gmake: *** [Makefile:20199: test_1099] Error 2

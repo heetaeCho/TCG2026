@@ -1,0 +1,28 @@
+[ 66%] Built target yaml-cpp
+[ 66%] Building CXX object generated_build/CMakeFiles/test_206.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_206.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_206.cpp:17:27: error: no member named 'create_memory' in 'YAML::detail::memory_holder'
+   17 |     m_pMemory = m_memory->create_memory();
+      |                 ~~~~~~~~~~^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_206.cpp:202:14: error: no viable conversion from 'node_data' to 'const node'
+  202 |   n.set_data(node_data());
+      |              ^~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:28:3: note: candidate constructor not viable: no known conversion from 'node_data' to 'const node &' for 1st argument
+   28 |   node(const node&) = delete;
+      |   ^    ~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/yaml-cpp/include/yaml-cpp/node/detail/node.h:68:29: note: passing argument to parameter 'rhs' here
+   68 |   void set_data(const node& rhs) {
+      |                             ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_206.cpp:285:15: error: no viable conversion from 'node' to 'const node *'
+  285 |   const node* result = nd.get(std::string("mykey"), m_pMemory);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_206.cpp:294:15: error: no viable conversion from 'node' to 'const node *'
+  294 |   const node* result = nd.get(std::string("nonexistent"), m_pMemory);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_206.cpp:401:15: error: no viable conversion from 'node' to 'const node *'
+  401 |   const node* result = nd.get(lookupKey, m_pMemory);
+      |               ^        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_206.dir/build.make:79: generated_build/CMakeFiles/test_206.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/test_206.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:22318: generated_build/CMakeFiles/test_206.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:22325: generated_build/CMakeFiles/test_206.dir/rule] Error 2
+gmake: *** [Makefile:8344: test_206] Error 2

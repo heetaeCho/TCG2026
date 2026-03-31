@@ -1,0 +1,37 @@
+[100%] Built target poppler
+[100%] Building CXX object generated_build/CMakeFiles/test_1575.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1575.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1575.cpp:30:24: error: virtual function 'copy' has a different return type ('unique_ptr<...>') than the function it overrides (which has return type 'unique_ptr<...>')
+   30 |     MOCK_CONST_METHOD0(copy, const std::unique_ptr<GfxColorSpace>());
+      |     ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:371:40: note: expanded from macro 'MOCK_CONST_METHOD0'
+  371 |   GMOCK_INTERNAL_MOCK_METHODN(const, , m, 0, __VA_ARGS__)
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:513:17: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHODN'
+  512 |   GMOCK_INTERNAL_MOCK_METHOD_IMPL(                                        \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  513 |       args_num, Method, GMOCK_PP_NARG0(constness), 0, 0, , ct, ,          \
+      |       ~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  514 |       (::testing::internal::identity_t<__VA_ARGS__>))
+      |       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/local/include/gmock/gmock-function-mocker.h:183:7: note: expanded from macro 'GMOCK_INTERNAL_MOCK_METHOD_IMPL'
+  180 |   typename ::testing::internal::Function<GMOCK_PP_REMOVE_PARENS(               \
+      |   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  181 |       _Signature)>::Result                                                     \
+      |       ~~~~~~~~~~~~~~~~~~~~
+  182 |   GMOCK_INTERNAL_EXPAND(_CallType)                                             \
+  183 |       _MethodName(GMOCK_PP_REPEAT(GMOCK_INTERNAL_PARAMETER, _Signature, _N))   \
+      |       ^
+/home/user/MyProjects/TCG2026/TestProjects/poppler/poppler/GfxState.h:263:44: note: overridden virtual function is here
+  263 |     virtual std::unique_ptr<GfxColorSpace> copy() const = 0;
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1575.cpp:18:7: warning: 'MockGfxColorSpace' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   18 | class MockGfxColorSpace : public GfxColorSpace {
+      |       ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1575.cpp:33:7: warning: 'ConvertGfxShortColorTest_1575' has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit [-Wweak-vtables]
+   33 | class ConvertGfxShortColorTest_1575 : public ::testing::Test {
+      |       ^
+2 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1575.dir/build.make:79: generated_build/CMakeFiles/test_1575.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/10_poppler/test_files/test_1575.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:39018: generated_build/CMakeFiles/test_1575.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:39025: generated_build/CMakeFiles/test_1575.dir/rule] Error 2
+gmake: *** [Makefile:12321: test_1575] Error 2

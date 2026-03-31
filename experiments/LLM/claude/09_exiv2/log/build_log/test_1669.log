@@ -1,0 +1,36 @@
+[  0%] Built target exiv2lib_int
+[  0%] Built target exiv2-xmp
+[100%] Built target exiv2lib
+[100%] Building CXX object generated_build/CMakeFiles/test_1669.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1669.cpp.o
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1669.cpp:22:62: warning: unused parameter 'make' [-Wunused-parameter]
+   22 | const TiffMappingInfo* testFindEncoderFct(const std::string& make,
+      |                                                              ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1669.cpp:23:48: warning: unused parameter 'tag' [-Wunused-parameter]
+   23 |                                            int tag,
+      |                                                ^
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1669.cpp:24:50: warning: unused parameter 'group' [-Wunused-parameter]
+   24 |                                            IfdId group) {
+      |                                                  ^
+In file included from /home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1669.cpp:1:
+In file included from /usr/local/include/gtest/gtest.h:55:
+In file included from /usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/memory:78:
+/usr/lib/gcc/x86_64-linux-gnu/13/../../../../include/c++/13/bits/unique_ptr.h:1070:34: error: no matching constructor for initialization of 'Exiv2::Internal::TiffEncoder'
+ 1070 |     { return unique_ptr<_Tp>(new _Tp(std::forward<_Args>(__args)...)); }
+      |                                  ^   ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1669.cpp:41:21: note: in instantiation of function template specialization 'std::make_unique<Exiv2::Internal::TiffEncoder, Exiv2::ExifData, const Exiv2::IptcData &, const Exiv2::XmpData &, Exiv2::Internal::TiffComponent *&, bool &, std::vector<Exiv2::IfdId>, (anonymous namespace)::TestTiffHeader *, const Exiv2::Internal::TiffMappingInfo *(&)(const std::basic_string<char> &, int, Exiv2::IfdId)>' requested here
+   41 |         return std::make_unique<TiffEncoder>(
+      |                     ^
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:349:3: note: candidate constructor not viable: no known conversion from 'const Exiv2::Internal::TiffMappingInfo *(const std::basic_string<char> &, int, Exiv2::IfdId)' to 'FindEncoderFct' (aka 'void (TiffEncoder::*(*)(basic_string_view<char>, unsigned int, Exiv2::IfdId))(TiffEntryBase *, const Exifdatum *)') for 8th argument
+  349 |   TiffEncoder(ExifData exifData, const IptcData& iptcData, const XmpData& xmpData, TiffComponent* pRoot,
+      |   ^
+  350 |               bool isNewImage, PrimaryGroups pPrimaryGroups, const TiffHeaderBase* pHeader,
+  351 |               FindEncoderFct findEncoderFct);
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/user/MyProjects/TCG2026/TestProjects/exiv2/src/tiffvisitor_int.hpp:352:3: note: candidate constructor not viable: requires 1 argument, but 8 were provided
+  352 |   TiffEncoder(const TiffEncoder&) = delete;
+      |   ^           ~~~~~~~~~~~~~~~~~~
+3 warnings and 1 error generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_1669.dir/build.make:79: generated_build/CMakeFiles/test_1669.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/09_exiv2/test_files/test_1669.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:79587: generated_build/CMakeFiles/test_1669.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:79594: generated_build/CMakeFiles/test_1669.dir/rule] Error 2
+gmake: *** [Makefile:28025: test_1669] Error 2

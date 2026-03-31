@@ -1,0 +1,137 @@
+[ 87%] Built target libninja
+[100%] Built target libninja-re2c
+[100%] Building CXX object generated_build/CMakeFiles/test_46.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp.o
+[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:7:35: [0m[0;1;31merror: [0m[1mbase class has incomplete type[0m
+    7 | [0;34mstruct[0m MockDiskInterface : [0;34mpublic[0m DiskInterface {[0m
+      | [0;1;32m                           ~~~~~~~^~~~~~~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: [0m[0;1;36mnote: [0mforward declaration of 'DiskInterface'[0m
+   24 | [0;34mstruct[0m DiskInterface;[0m
+      | [0;1;32m       ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:14:67: [0m[0;1;31merror: [0m[1monly virtual member functions can be marked 'override'[0m
+   14 |   TimeStamp Stat([0;34mconst[0m std::string& path, std::string* err) [0;34mconst[0m override {[0m
+      | [0;1;32m                                                                  ^~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:17:41: [0m[0;1;31merror: [0m[1monly virtual member functions can be marked 'override'[0m
+   17 |   [0;34mbool[0m MakeDir([0;34mconst[0m std::string& path) override { [0;34mreturn[0m make_dir_result; }[0m
+      | [0;1;32m                                        ^~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:18:72: [0m[0;1;31merror: [0m[1monly virtual member functions can be marked 'override'[0m
+   18 |   [0;34mbool[0m WriteFile([0;34mconst[0m std::string& path, [0;34mconst[0m std::string& contents) override { [0;34mreturn[0m write_result; }[0m
+      | [0;1;32m                                                                       ^~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:19:94: [0m[0;1;31merror: [0m[1monly virtual member functions can be marked 'override'[0m
+   19 |   std::string ReadFile([0;34mconst[0m std::string& path, std::string* err, [0;34mbool[0m* not_found = [0;32mnullptr[0m) override { [0;34mreturn[0m read_result; }[0m
+      | [0;1;32m                                                                                             ^~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:20:43: [0m[0;1;31merror: [0m[1monly virtual member functions can be marked 'override'[0m
+   20 |   [0;34mint[0m RemoveFile([0;34mconst[0m std::string& path) override { [0;34mreturn[0m remove_result ? [0;32m0[0m : -[0;32m1[0m; }[0m
+      | [0;1;32m                                          ^~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:185:25: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  185 |   EXPECT_TRUE(node.Stat(&disk, &err));[0m
+      | [0;1;32m                        ^~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1823:50: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_TRUE'[0m
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)[0m
+      | [0;1;32m                                                 ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1808:23: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_EXPECT_TRUE'[0m
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, [0;32mfalse[0m, [0;32mtrue[0m, \[0m
+      | [0;1;32m                      ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/internal/gtest-internal.h:1453:38: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_TEST_BOOLEAN_'[0m
+ 1453 |           ::testing::AssertionResult(expression))                     \[0m
+      | [0;1;32m                                     ^~~~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:196:25: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  196 |   EXPECT_TRUE(node.Stat(&disk, &err));[0m
+      | [0;1;32m                        ^~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1823:50: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_TRUE'[0m
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)[0m
+      | [0;1;32m                                                 ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1808:23: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_EXPECT_TRUE'[0m
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, [0;32mfalse[0m, [0;32mtrue[0m, \[0m
+      | [0;1;32m                      ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/internal/gtest-internal.h:1453:38: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_TEST_BOOLEAN_'[0m
+ 1453 |           ::testing::AssertionResult(expression))                     \[0m
+      | [0;1;32m                                     ^~~~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:207:36: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  207 |   EXPECT_TRUE(node.StatIfNecessary(&disk, &err));[0m
+      | [0;1;32m                                   ^~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1823:50: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_TRUE'[0m
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)[0m
+      | [0;1;32m                                                 ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1808:23: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_EXPECT_TRUE'[0m
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, [0;32mfalse[0m, [0;32mtrue[0m, \[0m
+      | [0;1;32m                      ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/internal/gtest-internal.h:1453:38: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_TEST_BOOLEAN_'[0m
+ 1453 |           ::testing::AssertionResult(expression))                     \[0m
+      | [0;1;32m                                     ^~~~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:53:39: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   53 |   [0;34mbool[0m StatIfNecessary(DiskInterface* disk_interface, std::string* err) {[0m
+      | [0;1;32m                                      ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:212:36: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  212 |   EXPECT_TRUE(node.StatIfNecessary(&disk, &err));[0m
+      | [0;1;32m                                   ^~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1823:50: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_TRUE'[0m
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)[0m
+      | [0;1;32m                                                 ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/gtest.h:1808:23: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_EXPECT_TRUE'[0m
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, [0;32mfalse[0m, [0;32mtrue[0m, \[0m
+      | [0;1;32m                      ^~~~~~~~~
+[0m[1m/usr/local/include/gtest/internal/gtest-internal.h:1453:38: [0m[0;1;36mnote: [0mexpanded from macro 'GTEST_TEST_BOOLEAN_'[0m
+ 1453 |           ::testing::AssertionResult(expression))                     \[0m
+      | [0;1;32m                                     ^~~~~~~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:53:39: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   53 |   [0;34mbool[0m StatIfNecessary(DiskInterface* disk_interface, std::string* err) {[0m
+      | [0;1;32m                                      ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:221:13: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  221 |   node.Stat(&disk, &err);[0m
+      | [0;1;32m            ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:265:13: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  265 |   node.Stat(&disk, &err);[0m
+      | [0;1;32m            ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:274:13: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  274 |   node.Stat(&disk, &err);[0m
+      | [0;1;32m            ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:298:13: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  298 |   node.Stat(&disk, &err);[0m
+      | [0;1;32m            ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:307:13: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  307 |   node.Stat(&disk, &err);[0m
+      | [0;1;32m            ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:314:13: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  314 |   node.Stat(&disk, &err);[0m
+      | [0;1;32m            ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:47:28: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   47 |   [0;34mbool[0m Stat(DiskInterface* disk_interface, std::string* err);[0m
+      | [0;1;32m                           ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:323:24: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  323 |   node.StatIfNecessary(&disk, &err);[0m
+      | [0;1;32m                       ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:53:39: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   53 |   [0;34mbool[0m StatIfNecessary(DiskInterface* disk_interface, std::string* err) {[0m
+      | [0;1;32m                                      ^
+[0m[1m/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp:328:24: [0m[0;1;31merror: [0m[1mcannot initialize a parameter of type 'DiskInterface *' with an rvalue of type 'MockDiskInterface *'[0m
+  328 |   node.StatIfNecessary(&disk, &err);[0m
+      | [0;1;32m                       ^~~~~
+[0m[1m/home/user/MyProjects/TCG2026/TestProjects/ninja/src/graph.h:53:39: [0m[0;1;36mnote: [0mpassing argument to parameter 'disk_interface' here[0m
+   53 |   [0;34mbool[0m StatIfNecessary(DiskInterface* disk_interface, std::string* err) {[0m
+      | [0;1;32m                                      ^
+[0m18 errors generated.
+gmake[3]: *** [generated_build/CMakeFiles/test_46.dir/build.make:79: generated_build/CMakeFiles/test_46.dir/home/user/MyProjects/TCG2026/experiments/LLM/claude/06_ninja/test_files/test_46.cpp.o] Error 1
+gmake[2]: *** [CMakeFiles/Makefile2:4209: generated_build/CMakeFiles/test_46.dir/all] Error 2
+gmake[1]: *** [CMakeFiles/Makefile2:4216: generated_build/CMakeFiles/test_46.dir/rule] Error 2
+gmake: *** [Makefile:1583: test_46] Error 2
