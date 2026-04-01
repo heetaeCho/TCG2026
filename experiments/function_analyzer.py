@@ -4,6 +4,10 @@ from error_analyzer import ErrorAnalyzer
 from error_category import CATEGORIES
 import os
 import re
+import pandas as pd
+import statsmodels.api as sm
+from sklearn.preprocessing import StandardScaler
+import clang.cindex as cl
 
 DATABASE_PATH = "./Database/{}_info.db"
 class Mapper:
@@ -104,6 +108,7 @@ class StructureMetric:
             function = function_data[FULL_FUNCTION_INDEX]
             params = function_data[PARAMETER_INDEX]
 
+            halstead = self.measure_halstead(function)
             metrics = {
                 'loc': self.measure_loc(function),
                 'cc': self.measure_cc(function),
@@ -112,6 +117,8 @@ class StructureMetric:
                 'object_params': self.measure_object_params(params),
                 'fan_in': self.measure_fan_in(function_id),
                 'fan_out': self.measure_fan_out(function_id),
+                "halstead_volume": halstead.get("volume"),
+                "halstead_effort": halstead.get("effort")
             }
 
             errors = log_error_map.get(log_name, [])
@@ -202,5 +209,174 @@ class StructureMetric:
         )
         return result[0][0]
 
+    def measure_halstead(self, function):
+        index = cl.Index.create()
+        import tempfile
+        with tempfile.NamedTemporaryFile(suffix=".cpp", mode='w', delete=False) as f:
+            f.write(function)
+            temp = f.name
+        tu = index.parse(temp, args=['-ferror-limit=0'])
+        os.unlink(temp)
+
+        operators = []
+        operands = []
+
+        for token in tu.get_tokens(extent=tu.cursor.extent):
+            if token.kind == cl.TokenKind.KEYWORD or token.kind == cl.TokenKind.PUNCTUATION:
+                operators.append(token.spelling)
+            elif token.kind == cl.TokenKind.IDENTIFIER or token.kind == cl.TokenKind.LITERAL:
+                operands.append(token.spelling)
+        
+        n1, n2 = len(set(operators)), len(set(operands))
+        N1, N2 = len(operators), len(operands)
+
+        if n1 == 0 or n2 == 0:
+            return {"volume": 0, "effort": 0}
+        
+        from math import log2
+        vocabulary  = n1 + n2
+        length      = N1 + N2
+        volume     = length * log2(vocabulary)
+        difficulty  = (n1 / 2) * (N2 / n2)
+        effort      = difficulty * volume
+        print(volume)
+        print(difficulty)
+        print(effort)
+        exit()
+        return {"volume": round(volume, 2), "effort": round(effort, 2)}
+
+class Integrator:
+    def __init__(self, cwd):
+        self.cwd = cwd
+        self.llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+        self.r_csv = "structural_metric.csv"
+        self.results = {"integrated": {}}
+
+    def analyze(self):
+        integrated_df = []
+        for llm in self.llms:
+            self.results[llm] = {}
+            base_path = os.path.join("experiments", f"LLM/{llm}")
+            csv_path = os.path.join(base_path, self.r_csv)
+            df = pd.read_csv(csv_path)
+            self._apf(llm, df)
+            self._pe(llm, df)
+            integrated_df.append(df)
+        integrated_df = pd.concat(integrated_df, ignore_index=True)
+        self._apf("integrated", integrated_df)
+        self._pe("integrated", integrated_df)
+
+    def _apf(self, llm, df):
+        df_all = df
+        df_pass = df[df['error_type'] == "PASS"]
+        df_fail = df[df['error_type'] != "PASS"]
+
+        mean_all = df_all.mean(numeric_only=True)
+        mean_pass = df_pass.mean(numeric_only=True)
+        mean_fail = df_fail.mean(numeric_only=True)
+
+        result = pd.DataFrame({
+            "ALL": mean_all,
+            "PASS": mean_pass,
+            "FAIL": mean_fail
+        }).T
+        self.results[llm]['apf'] = result
+
+    def _pe(self, llm, df):
+        df_fail = df[df['error_type'] != "PASS"]
+        result = df_fail.groupby('error_type').mean(numeric_only=True)
+        self.results[llm]['pe'] = result
+
+    def get_integrated_apf(self):
+        return self.results["integrated"].get("apf")
+    def get_integrated_pe(self):
+        return self.results["integrated"].get("pe")
+    def get_gpt_apf(self):
+        return self.results["GPT5"].get("apf")
+    def get_gpt_pe(self):
+        return self.results["GPT5"].get("pe")
+    def get_claude_apf(self):
+        return self.results["claude"].get("apf")
+    def get_claude_pe(self):
+        return self.results["claude"].get("pe")
+    def get_qwen_apf(self):
+        return self.results["qwen2.5_coder_32b-8k"].get("apf")
+    def get_qwen_pe(self):
+        return self.results["qwen2.5_coder_32b-8k"].get("pe")
+
 class LogisticAnalyzer:
-    pass
+    def __init__(self, cwd):
+        self.cwd = cwd
+        self.llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+        self.r_csv = "structural_metric.csv"
+
+    def analyze(self):
+        integrated_df = []
+        for llm in self.llms:
+            base_path = os.path.join("experiments", f"LLM/{llm}")
+            csv_path = os.path.join(base_path, self.r_csv)
+            df = pd.read_csv(csv_path)
+            integrated_df.append(df)
+        integrated_df = pd.concat(integrated_df, ignore_index=True)
+        self.bin_model = self.logistic_binary(integrated_df)
+        self.mn_model = self.logistic_pe(integrated_df)
+    
+    def get_bin(self):
+        return self.bin_model
+
+    def get_mn(self):
+        return self.mn_model
+    
+    def logistic_binary(self, df):
+        # 1에 대한 영향력
+        # pass = 0, error = 1
+        df['target'] = (df['error_type'] != "PASS").astype(int)
+        X = df[['loc', 'cc', 'nested_depth', 'params', 'object_params', 'fan_in','fan_out','halstead_volume','halstead_effort']]
+        Y = df['target']
+
+        scaler = StandardScaler()
+        X_scaled = pd.DataFrame(scaler.fit_transform(X), columns=X.columns, index=X.index)
+
+        X_const = sm.add_constant(X_scaled)
+        model = sm.Logit(Y, X_const).fit(
+            method='lbfgs',
+            maxiter=1000,
+            disp=True
+        )
+
+        # print(model.summary().tables[1].as_text())
+        # print(model.pvalues)
+        return model.summary2().tables[1].drop("const")
+
+    def logistic_pe(self, df):
+        scaler = StandardScaler()
+        y = df['error_type']
+        categories = ['PASS'] + [c for c in y.unique() if c != "PASS"]
+        class_map = {i: c for i, c in enumerate(categories)}
+        y_encoded = pd.Categorical(y, categories=categories).codes # pass=0
+
+        X = df[['loc', 'cc', 'nested_depth', 'params', 'object_params', 'fan_in','fan_out','halstead_volume','halstead_effort']]
+        X_scaled = pd.DataFrame(scaler.fit_transform(X), columns=X.columns, index=X.index)
+        
+        X_const = sm.add_constant(X_scaled)
+
+        # print(y_encoded)
+        # print(X_const)
+
+        print("in MNLogit")
+        model = sm.MNLogit(y_encoded, X_const).fit(
+            method='lbfgs',
+            maxiter=1000,
+            disp=True
+        )
+        # print(model.summary())
+        result = model.summary2().tables[1].drop("const")
+        print(result.index)
+        print(result.columns)
+
+        result.columns = pd.MultiIndex.from_tuples(
+            [class_map[int(col.split('=')[1])] if '=' in str(col) else col for col in result.columns]
+        )
+        return result
+
+        

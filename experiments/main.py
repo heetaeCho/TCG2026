@@ -19,7 +19,7 @@ from statistic import Statistic
 from coverage import CoverageChecker
 from error_analyzer import ErrorAnalyzer
 import error_category
-from function_analyzer import StructureMetric, LogisticAnalyzer
+from function_analyzer import StructureMetric, Integrator, LogisticAnalyzer
 import copy 
 import pandas as pd
 
@@ -248,13 +248,61 @@ class Main:
             all_dfs.append(df)
         final_df = pd.concat(all_dfs, ignore_index=True)
         final_df.to_csv(csv, index=False)
-        
-        # # 모든 프로젝트의 정보가 모여야 가능하니까.
-        # la = LogisticAnalyzer()
-        # la.analyze()
+    
+    def integrate_metric(self):
+        cwd = os.getcwd()
+        # 1: 통합본
+        # 2: LLM별
+        # -1: 평균/성공/실패 수치
+        # -2: 에러별 수치
+        # 1) 3개 df, 1개 통합 df
+        integrator = Integrator(cwd)
+        integrator.analyze()
+
+        integrated_csv_apf = f'./experiments/LLM/integrated_apf.csv'
+        gpt_csv_apf = f'./experiments/LLM/GPT5/gpt_apf.csv'
+        claude_csv_apf = f'./experiments/LLM/claude/claude_apf.csv'
+        qwen_csv_apf = f'./experiments/LLM/qwen2.5_coder_32b-8k/qwen_apf.csv'
+
+        integrated_csv_pe = f'./experiments/LLM/integrated_pe.csv'
+        gpt_csv_pe = f'./experiments/LLM/GPT5/gpt_pe.csv'
+        claude_csv_pe = f'./experiments/LLM/claude/claude_pe.csv'
+        qwen_csv_pe = f'./experiments/LLM/qwen2.5_coder_32b-8k/qwen_pe.csv'
+
+        integrated_apf = integrator.get_integrated_apf()
+        integrated_apf.to_csv(integrated_csv_apf)
+
+        integrated_pe = integrator.get_integrated_pe()
+        integrated_pe.to_csv(integrated_csv_pe)
+
+        gpt_apf = integrator.get_gpt_apf()
+        gpt_apf.to_csv(gpt_csv_apf, index=False)
+        gpt_pe = integrator.get_gpt_pe()
+        gpt_pe.to_csv(gpt_csv_pe, index=False)
+
+        claude_apf = integrator.get_claude_apf()
+        claude_apf.to_csv(claude_csv_apf, index=False)
+        claude_pe = integrator.get_claude_pe()
+        claude_pe.to_csv(claude_csv_pe, index=False)
+
+        qwen_apf = integrator.get_qwen_apf()
+        qwen_apf.to_csv(qwen_csv_apf, index=False)
+        qwen_pe = integrator.get_qwen_pe()
+        qwen_pe.to_csv(qwen_csv_pe, index=False)
 
 
+    def analyze_logistic(self):
+        cwd = os.getcwd()
+        la = LogisticAnalyzer(cwd)
+        la.analyze()
 
+        binary = la.get_bin()
+        bin_csv = f'./experiments/LLM/binary_logistic.csv'
+        binary.to_csv(bin_csv, float_format="%.6e")
+
+        multi = la.get_mn()
+        mn_csv = f'./experiments/LLM/multiclass_logistic.csv'
+        multi.to_csv(mn_csv, float_format="%.6e")
 
 if __name__ == "__main__":
     print("Experiments Main")
@@ -264,13 +312,17 @@ if __name__ == "__main__":
     #     main = Main(llm)
     #     main.run_build(specific=10)
 
-    llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+    # llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
     for llm in llms:
         main = Main(llm)
         # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
         # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
         # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
         main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
+
+    main = Main(None)
+    main.integrate_metric()
+    main.analyze_logistic()
 
         # specific is project id
         # main.run_build(specific=0, skip=4)
