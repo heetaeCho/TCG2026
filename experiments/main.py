@@ -302,7 +302,7 @@ class Main:
 
         multi = la.get_mn()
         mn_csv = f'./experiments/LLM/multiclass_logistic.csv'
-        multi.to_csv(mn_csv, float_format="%.6e")
+        multi.to_csv(mn_csv, float_format="%.6e", index=False)
 
 if __name__ == "__main__":
     print("Experiments Main")
@@ -312,17 +312,17 @@ if __name__ == "__main__":
     #     main = Main(llm)
     #     main.run_build(specific=10)
 
-    # llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+    llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
     for llm in llms:
         main = Main(llm)
         # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
         # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
         # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
-        main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
+        # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 
     main = Main(None)
-    main.integrate_metric()
-    main.analyze_logistic()
+    # main.integrate_metric()
+    # main.analyze_logistic()
 
         # specific is project id
         # main.run_build(specific=0, skip=4)

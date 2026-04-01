@@ -239,10 +239,6 @@ class StructureMetric:
         volume     = length * log2(vocabulary)
         difficulty  = (n1 / 2) * (N2 / n2)
         effort      = difficulty * volume
-        print(volume)
-        print(difficulty)
-        print(effort)
-        exit()
         return {"volume": round(volume, 2), "effort": round(effort, 2)}
 
 class Integrator:
@@ -331,7 +327,7 @@ class LogisticAnalyzer:
         # 1에 대한 영향력
         # pass = 0, error = 1
         df['target'] = (df['error_type'] != "PASS").astype(int)
-        X = df[['loc', 'cc', 'nested_depth', 'params', 'object_params', 'fan_in','fan_out','halstead_volume','halstead_effort']]
+        X = df[['loc', 'cc', 'nested_depth', 'params', 'object_params', 'fan_in','fan_out', 'halstead_effort']]
         Y = df['target']
 
         scaler = StandardScaler()
@@ -346,7 +342,8 @@ class LogisticAnalyzer:
 
         # print(model.summary().tables[1].as_text())
         # print(model.pvalues)
-        return model.summary2().tables[1].drop("const")
+        result = model.summary2().tables[1].drop('const')
+        return result
 
     def logistic_pe(self, df):
         scaler = StandardScaler()
@@ -355,7 +352,7 @@ class LogisticAnalyzer:
         class_map = {i: c for i, c in enumerate(categories)}
         y_encoded = pd.Categorical(y, categories=categories).codes # pass=0
 
-        X = df[['loc', 'cc', 'nested_depth', 'params', 'object_params', 'fan_in','fan_out','halstead_volume','halstead_effort']]
+        X = df[['loc', 'cc', 'nested_depth', 'params', 'object_params', 'fan_in','fan_out','halstead_effort']]
         X_scaled = pd.DataFrame(scaler.fit_transform(X), columns=X.columns, index=X.index)
         
         X_const = sm.add_constant(X_scaled)
@@ -370,13 +367,20 @@ class LogisticAnalyzer:
             disp=True
         )
         # print(model.summary())
-        result = model.summary2().tables[1].drop("const")
-        print(result.index)
-        print(result.columns)
+        # result = model.summary2().tables[1].drop("const")
+        tables = model.summary2().tables
 
-        result.columns = pd.MultiIndex.from_tuples(
-            [class_map[int(col.split('=')[1])] if '=' in str(col) else col for col in result.columns]
-        )
+        dfs = []
+        for i in range(1, len(tables)):
+            df_tmp = tables[i].drop('const').copy()
+            df_tmp = df_tmp.drop(columns=df_tmp.columns[0])  # 'y = 0' 같은 첫번째 컬럼 제거
+            df_tmp.insert(0, 'error_type', class_map[i])
+            dfs.append(df_tmp)
+
+        result = pd.concat(dfs).reset_index()
+        # print(result)
+        
+        # result.columns = [class_map[int(col.split('=')[1])] if '=' in str(col) else col for col in result.columns]
         return result
 
         
