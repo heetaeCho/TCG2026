@@ -67,6 +67,7 @@ class Main:
                 text = f',TOTAL,{total_code_files},{total_loc},{total_num_function_under_test},{total_num_generated_test_cases},{total_num_build_success},{avg_build_success_rate},{total_num_run_success},{avg_run_success_rate}'
                 f.write(text)
 
+        prepare_csv(csv)
         cwd = os.getcwd()
         for ix, project in enumerate(self.project_list):
             project_id = ix + 1
@@ -98,7 +99,6 @@ class Main:
             with open(csv, 'a', encoding='utf-8') as f:
                 text = f'{project_id},{project},{num_code_files},{loc},{num_function_under_test},{num_generated_test_cases},{num_build_success},{build_success_rate},{num_run_success},{run_success_rate}\n'
                 f.write(text)
-        prepare_csv(csv)
         post_csv(csv)
 
 
@@ -312,24 +312,25 @@ if __name__ == "__main__":
     print("Experiments Main")
     # llms = ["qwen2.5_coder_32b-8k"]
     # llms = ["claude"]
-    llms = ["claude", "qwen2.5_coder_32b-8k"]
-    for llm in llms:
-        main = Main(llm)
-        main.run_build(specific=6)
+    # llms = ["claude", "qwen2.5_coder_32b-8k"]
+    # for llm in llms:
+    #     main = Main(llm)
+    #     main.run_build(specific=6)
 
     llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+    # llms = ["GPT5"]
     for llm in llms:
         print("LLM: ", llm)
         main = Main(llm)
         # main.run_build(specific=6)
-        # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
+        main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
         # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
-        main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
-        main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
+        # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
+        # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 
-    main = Main(None)
-    main.integrate_metric()
-    main.analyze_logistic()
+    # main = Main(None)
+    # main.integrate_metric()
+    # main.analyze_logistic()
 
         # specific is project id
         # main.run_build(specific=0, skip=4)
