@@ -103,17 +103,20 @@ class Main:
 
 
     def coverage_check(self, csv, specific=0, skip=0):
+        line_coverages = []
+        branch_coverages = []
         def prepare_csv(csv):
             with open(csv, 'w', encoding='utf-8') as f:
                 text = 'index,PROJECT,Line Coverage,Branch Coverage\n'
                 f.write(text)
 
         def post_csv(csv):
-            avg_line_coverage, avg_branch_coverage = cov_checker.get_total()
+            avg_line_coverage, avg_branch_coverage = cov_checker.get_total(line_coverages, branch_coverages)
             with open(csv, 'a', encoding='utf-8') as f:
                 text = f',Total,{avg_line_coverage}%,{avg_branch_coverage}%\n'
                 f.write(text)
 
+        prepare_csv(csv)
         cwd = os.getcwd()
         for ix, project in enumerate(self.project_list):
             project_id = ix + 1
@@ -127,13 +130,14 @@ class Main:
             cov_checker.check()
             line_coverage = cov_checker.get_line_coverage()
             branch_coverage = cov_checker.get_branch_coverage()
+            line_coverages.append(line_coverage)
+            branch_coverages.append(branch_coverage)
             # print("PROJTECT: ", project)
             # print(f"Line Coverage: {line_coverage}")
             # print(f"Branch Coverage: {branch_coverage}")
             with open(csv, 'a', encoding='utf-8') as f:
                 text = f'{project_id},{project},{line_coverage},{branch_coverage}\n'
                 f.write(text)
-        prepare_csv(csv)
         post_csv(csv)
 
     def analyze_error(self, csv, specific=0, skip=0):
@@ -323,8 +327,8 @@ if __name__ == "__main__":
         print("LLM: ", llm)
         main = Main(llm)
         # main.run_build(specific=6)
-        main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
-        # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
+        # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
+        main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
         # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
         # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 

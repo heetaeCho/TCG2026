@@ -3,8 +3,6 @@ import subprocess
 import glob
 
 class CoverageChecker:
-    line_coverage = []
-    branch_coverage = []
     def __init__(self, cwd, project_id, project, llm):
         self.cwd = cwd
         self.llm = llm
@@ -12,6 +10,8 @@ class CoverageChecker:
         self.project_id = f"{project_id:02d}"
         self.real_project_base = "TestProjects"
         self.real_project_path = os.path.join(self.cwd, self.real_project_base, self.project)
+        self.line_coverage = 0
+        self.branch_coverage = 0
 
         self.project_bin_map = {
             "JsonBox": ["libJsonBox.a"],
@@ -108,22 +108,22 @@ class CoverageChecker:
             total_coverage_line = lines[-1].split()
             line_coverage = total_coverage_line[line_coverage_index]
             branch_coverage = total_coverage_line[branch_coverage_index]
-            self.line_coverage.append(line_coverage)
-            self.branch_coverage.append(branch_coverage)
+            self.line_coverage = line_coverage
+            self.branch_coverage = branch_coverage
         except IndexError:
             line_coverage = '0.0%'
             branch_coverage = '0.0%'
-            self.line_coverage.append(line_coverage)
-            self.branch_coverage.append(branch_coverage)
+            self.line_coverage = line_coverage
+            self.branch_coverage = branch_coverage
         return line_coverage
     
     def get_branch_coverage(self):
-        return self.branch_coverage[int(self.project_id)-1]
+        return self.branch_coverage
     
-    def get_total(self):
+    def get_total(self, line_coverages, branch_coverages):
         temp_line_coverage = []
         temp_branch_coverage = []
-        for line_coverage, branch_coverage in zip(self.line_coverage, self.branch_coverage):
+        for line_coverage, branch_coverage in zip(line_coverages, branch_coverages):
             temp_line_coverage.append(float(line_coverage.split("%")[0]))
             temp_branch_coverage.append(float(branch_coverage.split("%")[0]))
         
