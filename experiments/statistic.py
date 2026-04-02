@@ -117,3 +117,14 @@ class Statistic:
         sum(self.total_run_success_rate) / len(self.total_run_success_rate),\
         sum(self.total_loc),\
         sum(self.total_code_files)
+
+    @classmethod
+    def reset(cls):
+        cls.total_num_function_under_test = []
+        cls.total_num_generated_test_cases = []
+        cls.total_num_build_success = []
+        cls.total_build_success_rate = []
+        cls.total_num_run_success = []
+        cls.total_run_success_rate = []
+        cls.total_loc = []
+        cls.total_code_files = []

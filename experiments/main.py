@@ -77,6 +77,7 @@ class Main:
             if skip != 0:
                 if project_id <= skip:
                     continue
+
             statistic = Statistic(cwd, project_id, project, self.llm)
             num_function_under_test = statistic.get_num_function_under_tests()
             num_generated_test_cases = statistic.get_num_generated_test_cases()
@@ -86,6 +87,7 @@ class Main:
             run_success_rate = statistic.get_run_success_rate()
             loc = statistic.get_loc()
             num_code_files = statistic.get_num_code_files()
+            
             # print("-"*50)
             # print(f"PROJECT: {project}")
             # print(f"#Code Files: {num_code_files}")
@@ -100,6 +102,7 @@ class Main:
                 text = f'{project_id},{project},{num_code_files},{loc},{num_function_under_test},{num_generated_test_cases},{num_build_success},{build_success_rate},{num_run_success},{run_success_rate}\n'
                 f.write(text)
         post_csv(csv)
+        Statistic.reset()
 
 
     def coverage_check(self, csv, specific=0, skip=0):
@@ -327,8 +330,8 @@ if __name__ == "__main__":
         print("LLM: ", llm)
         main = Main(llm)
         # main.run_build(specific=6)
-        # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
-        main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
+        main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
+        # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
         # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
         # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 
