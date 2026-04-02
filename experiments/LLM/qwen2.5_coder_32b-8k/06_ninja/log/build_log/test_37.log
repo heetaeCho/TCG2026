@@ -1,50 +1,50 @@
 [ 77%] Built target libninja
 [ 88%] Built target libninja-re2c
 [ 88%] Building CXX object generated_build/CMakeFiles/test_37.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp.o
-[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:29:35: [0m[0;1;31merror: [0m[1munknown type name 'MockDiskInterface'; did you mean 'DiskInterface'?[0m
-   29 |         mock_disk_interface = [0;34mnew[0m MockDiskInterface();[0m
-      | [0;1;32m                                  ^~~~~~~~~~~~~~~~~
-[0m      | [0;32m                                  DiskInterface
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/graph.h:33:8: [0m[0;1;36mnote: [0m'DiskInterface' declared here[0m
-   33 | [0;34mstruct[0m DiskInterface;[0m
-      | [0;1;32m       ^
-[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:29:35: [0m[0;1;31merror: [0m[1mallocation of incomplete type 'DiskInterface'[0m
-   29 |         mock_disk_interface = [0;34mnew[0m MockDiskInterface();[0m
-      | [0;1;32m                                  ^~~~~~~~~~~~~~~~~
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: [0m[0;1;36mnote: [0mforward declaration of 'DiskInterface'[0m
-   24 | [0;34mstruct[0m DiskInterface;[0m
-      | [0;1;32m       ^
-[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:37:9: [0m[0;1;35mwarning: [0m[1mdeleting pointer to incomplete type 'DiskInterface' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete][0m
-   37 |         [0;34mdelete[0m mock_disk_interface;[0m
-      | [0;1;32m        ^      ~~~~~~~~~~~~~~~~~~~
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: [0m[0;1;36mnote: [0mforward declaration of 'DiskInterface'[0m
-   24 | [0;34mstruct[0m DiskInterface;[0m
-      | [0;1;32m       ^
-[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:67:5: [0m[0;1;31merror: [0m[1mmember access into incomplete type 'DiskInterface'[0m
-   67 |     EXPECT_CALL(*mock_disk_interface, Stat(StrEq([0;32m"test_path"[0m), _))[0m
-      | [0;1;32m    ^
-[0m[1m/usr/include/gmock/gmock-spec-builders.h:2036:3: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_CALL'[0m
- 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)[0m
-      | [0;1;32m  ^
-[0m[1m/usr/include/gmock/gmock-spec-builders.h:2028:15: [0m[0;1;36mnote: [0mexpanded from macro 'GMOCK_ON_CALL_IMPL_'[0m
- 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \[0m
-      | [0;1;32m              ^
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: [0m[0;1;36mnote: [0mforward declaration of 'DiskInterface'[0m
-   24 | [0;34mstruct[0m DiskInterface;[0m
-      | [0;1;32m       ^
-[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:87:5: [0m[0;1;31merror: [0m[1mmember access into incomplete type 'DiskInterface'[0m
-   87 |     EXPECT_CALL(*mock_disk_interface, Stat(StrEq([0;32m"test_path"[0m), _))[0m
-      | [0;1;32m    ^
-[0m[1m/usr/include/gmock/gmock-spec-builders.h:2036:3: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_CALL'[0m
- 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)[0m
-      | [0;1;32m  ^
-[0m[1m/usr/include/gmock/gmock-spec-builders.h:2028:15: [0m[0;1;36mnote: [0mexpanded from macro 'GMOCK_ON_CALL_IMPL_'[0m
- 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \[0m
-      | [0;1;32m              ^
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: [0m[0;1;36mnote: [0mforward declaration of 'DiskInterface'[0m
-   24 | [0;34mstruct[0m DiskInterface;[0m
-      | [0;1;32m       ^
-[0m1 warning and 4 errors generated.
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:29:35: error: unknown type name 'MockDiskInterface'; did you mean 'DiskInterface'?
+   29 |         mock_disk_interface = new MockDiskInterface();
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   DiskInterface
+/home/user/TCG2026/TestProjects/ninja/src/graph.h:33:8: note: 'DiskInterface' declared here
+   33 | struct DiskInterface;
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:29:35: error: allocation of incomplete type 'DiskInterface'
+   29 |         mock_disk_interface = new MockDiskInterface();
+      |                                   ^~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: note: forward declaration of 'DiskInterface'
+   24 | struct DiskInterface;
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:37:9: warning: deleting pointer to incomplete type 'DiskInterface' is incompatible with C++2c and may cause undefined behavior [-Wdelete-incomplete]
+   37 |         delete mock_disk_interface;
+      |         ^      ~~~~~~~~~~~~~~~~~~~
+/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: note: forward declaration of 'DiskInterface'
+   24 | struct DiskInterface;
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:67:5: error: member access into incomplete type 'DiskInterface'
+   67 |     EXPECT_CALL(*mock_disk_interface, Stat(StrEq("test_path"), _))
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: note: forward declaration of 'DiskInterface'
+   24 | struct DiskInterface;
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp:87:5: error: member access into incomplete type 'DiskInterface'
+   87 |     EXPECT_CALL(*mock_disk_interface, Stat(StrEq("test_path"), _))
+      |     ^
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^
+/usr/include/gmock/gmock-spec-builders.h:2028:15: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |               ^
+/home/user/TCG2026/TestProjects/ninja/src/dyndep.h:24:8: note: forward declaration of 'DiskInterface'
+   24 | struct DiskInterface;
+      |        ^
+1 warning and 4 errors generated.
 gmake[3]: *** [generated_build/CMakeFiles/test_37.dir/build.make:79: generated_build/CMakeFiles/test_37.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_37.cpp.o] 오류 1
 gmake[2]: *** [CMakeFiles/Makefile2:6651: generated_build/CMakeFiles/test_37.dir/all] 오류 2
 gmake[1]: *** [CMakeFiles/Makefile2:6658: generated_build/CMakeFiles/test_37.dir/rule] 오류 2

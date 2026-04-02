@@ -28,6 +28,7 @@ class Main:
         self.llm = llm
         self.project_list = ["JsonBox", "re2", "leveldb", "Catch2", "glomap",
                              "ninja", "tinyxml2", "yaml-cpp", "exiv2", "poppler"]
+        # self.project_list.reverse()
 
     def run_build(self, specific=0, skip=0):
         cwd = os.getcwd()
@@ -66,7 +67,6 @@ class Main:
                 text = f',TOTAL,{total_code_files},{total_loc},{total_num_function_under_test},{total_num_generated_test_cases},{total_num_build_success},{avg_build_success_rate},{total_num_run_success},{avg_run_success_rate}'
                 f.write(text)
 
-        prepare_csv(csv)
         cwd = os.getcwd()
         for ix, project in enumerate(self.project_list):
             project_id = ix + 1
@@ -98,6 +98,7 @@ class Main:
             with open(csv, 'a', encoding='utf-8') as f:
                 text = f'{project_id},{project},{num_code_files},{loc},{num_function_under_test},{num_generated_test_cases},{num_build_success},{build_success_rate},{num_run_success},{run_success_rate}\n'
                 f.write(text)
+        prepare_csv(csv)
         post_csv(csv)
 
 
@@ -113,7 +114,6 @@ class Main:
                 text = f',Total,{avg_line_coverage}%,{avg_branch_coverage}%\n'
                 f.write(text)
 
-        prepare_csv(csv)
         cwd = os.getcwd()
         for ix, project in enumerate(self.project_list):
             project_id = ix + 1
@@ -133,6 +133,7 @@ class Main:
             with open(csv, 'a', encoding='utf-8') as f:
                 text = f'{project_id},{project},{line_coverage},{branch_coverage}\n'
                 f.write(text)
+        prepare_csv(csv)
         post_csv(csv)
 
     def analyze_error(self, csv, specific=0, skip=0):
@@ -168,13 +169,16 @@ class Main:
             return count
 
         def type_4_rate(total, _error_count):
-            rate = _error_count.copy()
+            rate = {"Lexical": 0,
+                     "Syntactic": 0,
+                     "Linker": 0,
+                     "Semantic": 0}
             for category in _error_count.keys():
                 rate[category] = (_error_count[category] / total) * 100
             return rate
 
         def type_19_rate(total, _error_count):
-            rate = _error_count.copy()
+            rate = copy.deepcopy(error_category.COUNT_CATEGORIES)
             for category in _error_count.keys():
                 if category != "Semantic":
                     rate[category] = (_error_count[category] / total) * 100
@@ -183,9 +187,8 @@ class Main:
                         rate[category][subtype] = (_error_count[category][subtype] / total) * 100
             return rate
 
-        prepare_csv(csv)
         cwd = os.getcwd()
-        error_count = error_category.COUNT_CATEGORIES.copy()
+        error_count = copy.deepcopy(error_category.COUNT_CATEGORIES)
         # frequency = []
         # unique = set()
         for ix, project in enumerate(self.project_list):
@@ -197,7 +200,7 @@ class Main:
                 if project_id <= skip:
                     continue
             
-            # print("PROJECT: ", project)
+            print("PROJECT: ", project)
             error_analyzer = ErrorAnalyzer(cwd, project_id, project, self.llm)
             project_error_count = error_analyzer.analyze()
             for category in project_error_count:
@@ -218,6 +221,7 @@ class Main:
         type19_rate = type_19_rate(total, error_count)
         # print(type4_rate)
         # print(type19_rate)
+        prepare_csv(csv)
         post_csv(csv, type4_count, type19_count, type4_rate, type19_rate)
         '''
             f, u = error_analyzer._pre_analyze() 
@@ -308,21 +312,24 @@ if __name__ == "__main__":
     print("Experiments Main")
     # llms = ["qwen2.5_coder_32b-8k"]
     # llms = ["claude"]
-    # for llm in llms:
-    #     main = Main(llm)
-    #     main.run_build(specific=10)
+    llms = ["claude", "qwen2.5_coder_32b-8k"]
+    for llm in llms:
+        main = Main(llm)
+        main.run_build(specific=6)
 
-    # llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
-    # for llm in llms:
-    #     main = Main(llm)
+    llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+    for llm in llms:
+        print("LLM: ", llm)
+        main = Main(llm)
+        # main.run_build(specific=6)
         # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
         # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
-        # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
-        # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
+        main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
+        main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 
     main = Main(None)
     main.integrate_metric()
-    # main.analyze_logistic()
+    main.analyze_logistic()
 
         # specific is project id
         # main.run_build(specific=0, skip=4)

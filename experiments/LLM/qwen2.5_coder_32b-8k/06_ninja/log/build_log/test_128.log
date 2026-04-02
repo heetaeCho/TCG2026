@@ -1,19 +1,19 @@
 [ 87%] Built target libninja
 [100%] Built target libninja-re2c
 [100%] Building CXX object generated_build/CMakeFiles/test_128.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_128.cpp.o
-[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_128.cpp:25:36: [0m[0;1;31merror: [0m[1m'SlidingRateInfo' is a private member of 'StatusPrinter'[0m
-   25 |     std::unique_ptr<StatusPrinter::SlidingRateInfo> info;[0m
-      | [0;1;32m                                   ^
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/status_printer.h:105:10: [0m[0;1;36mnote: [0mdeclared private here[0m
-  105 |   [0;34mstruct[0m SlidingRateInfo {[0m
-      | [0;1;32m         ^
-[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_128.cpp:19:48: [0m[0;1;31merror: [0m[1m'SlidingRateInfo' is a private member of 'StatusPrinter'[0m
-   19 |         info = std::make_unique<StatusPrinter::SlidingRateInfo>([0;32m5[0m); [0;33m// Example with N=5[0m
-      | [0;1;32m                                               ^
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/status_printer.h:105:10: [0m[0;1;36mnote: [0mdeclared private here[0m
-  105 |   [0;34mstruct[0m SlidingRateInfo {[0m
-      | [0;1;32m         ^
-[0m2 errors generated.
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_128.cpp:25:36: error: 'SlidingRateInfo' is a private member of 'StatusPrinter'
+   25 |     std::unique_ptr<StatusPrinter::SlidingRateInfo> info;
+      |                                    ^
+/home/user/TCG2026/TestProjects/ninja/src/status_printer.h:105:10: note: declared private here
+  105 |   struct SlidingRateInfo {
+      |          ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_128.cpp:19:48: error: 'SlidingRateInfo' is a private member of 'StatusPrinter'
+   19 |         info = std::make_unique<StatusPrinter::SlidingRateInfo>(5); // Example with N=5
+      |                                                ^
+/home/user/TCG2026/TestProjects/ninja/src/status_printer.h:105:10: note: declared private here
+  105 |   struct SlidingRateInfo {
+      |          ^
+2 errors generated.
 gmake[3]: *** [generated_build/CMakeFiles/test_128.dir/build.make:79: generated_build/CMakeFiles/test_128.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_128.cpp.o] 오류 1
 gmake[2]: *** [CMakeFiles/Makefile2:7113: generated_build/CMakeFiles/test_128.dir/all] 오류 2
 gmake[1]: *** [CMakeFiles/Makefile2:7120: generated_build/CMakeFiles/test_128.dir/rule] 오류 2

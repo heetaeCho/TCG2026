@@ -1,26 +1,26 @@
 [ 77%] Built target libninja
 [ 88%] Built target libninja-re2c
 [100%] Building CXX object generated_build/CMakeFiles/test_77.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_77.cpp.o
-[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_77.cpp:83:5: [0m[0;1;31merror: [0m[1munknown type name 'MockEdgePriorityQueue'; did you mean 'EdgePriorityQueue'?[0m
-   83 |     MockEdgePriorityQueue mock_ready_queue;[0m
-      | [0;1;32m    ^~~~~~~~~~~~~~~~~~~~~
-[0m      | [0;32m    EdgePriorityQueue
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/graph.h:422:7: [0m[0;1;36mnote: [0m'EdgePriorityQueue' declared here[0m
-  422 | [0;34mclass[0m EdgePriorityQueue:[0m
-      | [0;1;32m      ^
-[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_77.cpp:93:5: [0m[0;1;31merror: [0m[1mno member named 'gmock_push' in 'EdgePriorityQueue'[0m
-   93 |     EXPECT_CALL(mock_ready_queue, push(::testing::_)).Times([0;32m2[0m);[0m
-      | [0;1;32m    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[0m[1m/usr/include/gmock/gmock-spec-builders.h:2036:3: [0m[0;1;36mnote: [0mexpanded from macro 'EXPECT_CALL'[0m
- 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)[0m
-      | [0;1;32m  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[0m[1m/usr/include/gmock/gmock-spec-builders.h:2028:16: [0m[0;1;36mnote: [0mexpanded from macro 'GMOCK_ON_CALL_IMPL_'[0m
- 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \[0m
-      | [0;1;32m   ~~~~~~~~~~~ ^
-[0m[1m<scratch space>:4:1: [0m[0;1;36mnote: [0mexpanded from here[0m
-    4 | gmock_push[0m
-      | [0;1;32m^
-[0m2 errors generated.
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_77.cpp:83:5: error: unknown type name 'MockEdgePriorityQueue'; did you mean 'EdgePriorityQueue'?
+   83 |     MockEdgePriorityQueue mock_ready_queue;
+      |     ^~~~~~~~~~~~~~~~~~~~~
+      |     EdgePriorityQueue
+/home/user/TCG2026/TestProjects/ninja/src/graph.h:422:7: note: 'EdgePriorityQueue' declared here
+  422 | class EdgePriorityQueue:
+      |       ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_77.cpp:93:5: error: no member named 'gmock_push' in 'EdgePriorityQueue'
+   93 |     EXPECT_CALL(mock_ready_queue, push(::testing::_)).Times(2);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2036:3: note: expanded from macro 'EXPECT_CALL'
+ 2036 |   GMOCK_ON_CALL_IMPL_(obj, InternalExpectedAt, call)
+      |   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/gmock/gmock-spec-builders.h:2028:16: note: expanded from macro 'GMOCK_ON_CALL_IMPL_'
+ 2028 |   ((mock_expr).gmock_##call)(::testing::internal::GetWithoutMatchers(), \
+      |    ~~~~~~~~~~~ ^
+<scratch space>:4:1: note: expanded from here
+    4 | gmock_push
+      | ^
+2 errors generated.
 gmake[3]: *** [generated_build/CMakeFiles/test_77.dir/build.make:79: generated_build/CMakeFiles/test_77.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_77.cpp.o] 오류 1
 gmake[2]: *** [CMakeFiles/Makefile2:7476: generated_build/CMakeFiles/test_77.dir/all] 오류 2
 gmake[1]: *** [CMakeFiles/Makefile2:7483: generated_build/CMakeFiles/test_77.dir/rule] 오류 2

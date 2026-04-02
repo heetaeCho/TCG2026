@@ -79,7 +79,8 @@ class ErrorAnalyzer:
         return None, None
 
     def analyze(self): 
-        project_error_count = error_category.COUNT_CATEGORIES.copy()
+        import copy 
+        project_error_count = copy.deepcopy(error_category.COUNT_CATEGORIES)
         error_lines = self.find_error_lines(self._get_build_failed_list())
         for log, lines in error_lines.items():
             # leveldb = "cannot use 'try' with exceptions disabled" which is removed since this's setting problem

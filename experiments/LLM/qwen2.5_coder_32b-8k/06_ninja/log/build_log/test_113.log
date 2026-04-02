@@ -1,17 +1,17 @@
 [ 87%] Built target libninja
 [100%] Built target libninja-re2c
 [100%] Building CXX object generated_build/CMakeFiles/test_113.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_113.cpp.o
-[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_113.cpp:57:42: [0m[0;1;31merror: [0m[1muse of undeclared identifier 'LineType'; did you mean 'LinePrinter::LineType'?[0m
-   57 |     line_printer.Print([0;32m"This is a test"[0m, LineType::kNormal);[0m
-      | [0;1;32m                                         ^~~~~~~~
-[0m      | [0;32m                                         LinePrinter::LineType
-[0m[1m/home/user/TCG2026/TestProjects/ninja/src/line_printer.h:31:8: [0m[0;1;36mnote: [0m'LinePrinter::LineType' declared here[0m
-   31 |   [0;34menum[0m LineType {[0m
-      | [0;1;32m       ^
-[0m[1m/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_113.cpp:57:52: [0m[0;1;31merror: [0m[1mno member named 'kNormal' in 'LinePrinter::LineType'[0m
-   57 |     line_printer.Print([0;32m"This is a test"[0m, LineType::kNormal);[0m
-      | [0;1;32m                                         ~~~~~~~~~~^
-[0m2 errors generated.
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_113.cpp:57:42: error: use of undeclared identifier 'LineType'; did you mean 'LinePrinter::LineType'?
+   57 |     line_printer.Print("This is a test", LineType::kNormal);
+      |                                          ^~~~~~~~
+      |                                          LinePrinter::LineType
+/home/user/TCG2026/TestProjects/ninja/src/line_printer.h:31:8: note: 'LinePrinter::LineType' declared here
+   31 |   enum LineType {
+      |        ^
+/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_113.cpp:57:52: error: no member named 'kNormal' in 'LinePrinter::LineType'
+   57 |     line_printer.Print("This is a test", LineType::kNormal);
+      |                                          ~~~~~~~~~~^
+2 errors generated.
 gmake[3]: *** [generated_build/CMakeFiles/test_113.dir/build.make:79: generated_build/CMakeFiles/test_113.dir/home/user/TCG2026/experiments/LLM/qwen2.5_coder_32b-8k/06_ninja/test_files/test_113.cpp.o] 오류 1
 gmake[2]: *** [CMakeFiles/Makefile2:6057: generated_build/CMakeFiles/test_113.dir/all] 오류 2
 gmake[1]: *** [CMakeFiles/Makefile2:6064: generated_build/CMakeFiles/test_113.dir/rule] 오류 2
