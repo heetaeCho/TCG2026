@@ -2,7 +2,6 @@ import os
 import re
 import error_patterns
 import error_category
-import error_category_description
 
 class ErrorAnalyzer:
     count = 0
@@ -40,17 +39,26 @@ class ErrorAnalyzer:
                     log_errors_map[log][ix] = subtype
         return log_errors_map
 
-    def find_error_lines(self, build_failed_list):
+    def find_error_lines(self, build_failed_list, log_path=None):
         error_lines = {}
         for build_failed in build_failed_list:
-            build_failed = os.path.join(self.BUILD_LOG_DIR, build_failed)
+            if log_path is None:
+                build_failed = os.path.join(self.BUILD_LOG_DIR, build_failed)
+            else:
+                build_failed = os.path.join(log_path, build_failed)
             with open(build_failed, 'r', encoding='utf-8') as log:
                 name = build_failed.split('/')[-1]
+                if log_path is None:
+                    TEST_FILES_PATH = os.path.join(self.project_path, "test_files")
+                    TEST_FILES_PATH = TEST_FILES_PATH.replace("\\", "/")
+                else:
+                    TEST_FILES_PATH = os.path.join(log_path.split('/log/')[0][1:], 'test_files')
+
+                try_again_flag = False
                 for line in log.readlines():
-                    if self._is_error_line(line):
-                        TEST_FILES_PATH = os.path.join(self.project_path, "test_files")
-                        TEST_FILES_PATH = TEST_FILES_PATH.replace("\\", "/")
-                        if TEST_FILES_PATH in line:
+                    if TEST_FILES_PATH in line or try_again_flag:
+                        try_again_flag = False
+                        if self._is_error_line(line):
                             error_log = line.split("error:")[-1].strip()
                             
                             # error_lines.append(error_log)
@@ -58,6 +66,8 @@ class ErrorAnalyzer:
                                 error_lines[name].append(error_log)
                             else:
                                 error_lines[name] = [error_log]
+                        else:
+                            try_again_flag = True
         return error_lines
 
     def match_line_to_pattern(self, line):

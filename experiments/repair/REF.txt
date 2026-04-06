@@ -1,0 +1,16 @@
+curl -fsSL https://ollama.com/install.sh | sh
+
+ollama pull qwen2.5-coder:32b
+ollama serve
+
+------------------------------------------------
+# Modelfile 생성
+nano Modelfile
+
+FROM qwen2.5-coder:32b
+PARAMETER num_ctx 8192
+
+# 새 모델로 등록
+ollama create qwen2.5-coder:32b-8k -f Modelfile
+
+ollama serve

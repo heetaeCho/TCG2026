@@ -251,8 +251,6 @@ PATTERNS = {
     "err_ovl_deleted_oper": (r"overload resolution selected deleted operator '='", "overload resolution selected deleted operator"),
     # 유효하지 않은 전처리 토큰 생성
     "err_pp_bad_paste": (r"pasting formed '.+?', an invalid preprocessing token", "pasting formed invalid preprocessing token"),
-    # raw string 리터럴의 종료 구분자가 없음
-    "err_unterminated_raw_string": (r'raw string missing terminating delimiter \).*?"', "raw string missing terminating delimiter"),  
     # 동일한 이름에 대해 서로 다른 타입으로 선언이 충돌함
     "err_redeclaration_different_type": (r"(?:redeclaration of '.+?' with a different type: '.+?' vs '.+?'|conflicting types for '.+?')", "redeclaration with different type or conflicting types"),
     # 재정의
@@ -496,7 +494,7 @@ PATTERNS = {
     # 생성자가 아닌 함수에서 베이스 클래스 초기화를 시도함 Construction/Initialization 
     "err_only_constructors_take_base_inits": (r"only constructors take base initializers", "only constructors take base initializers"),  
     # raw string 리터럴의 종료 구분자가 없음 Lexical
-    "err_unterminated_raw_string": (r'raw string missing terminating delimiter \)"', "raw string missing terminating delimiter"),  
+    "err_unterminated_raw_string": (r'raw string missing terminating delimiter \).*?"', "raw string missing terminating delimiter"),  
     # 추론된 반환 타입을 가진 함수가 정의되기 전에 사용됨 Incomplete Type
     "err_auto_fn_used_before_defined": (r"function '.+?' with deduced return type cannot be used before it is defined", "function with deduced return type cannot be used before it is defined"),  
     # 블록 스코프에서 선언된 함수에 static 저장 클래스를 지정하려 함 Qualifier/Specifier Misuse 
@@ -535,6 +533,11 @@ PATTERNS = {
     "err_escape_too_large": (r"hex escape sequence out of range", "hex escape sequence out of range"),  
     # 한정된 참조가 타입이 아닌 생성자 이름으로 해석됨 Symbol/Lookup
     "err_out_of_line_qualified_id_type_names_constructor": (r"qualified reference to '.+?' is a constructor name rather than a type in this context", "qualified reference is a constructor name rather than a type"),  
+
+    # reinterpret_cast로 오버로드된 함수를 특정 타입으로 해석할 수 없음  Type Conversion & Reference Binding
+    "err_bad_reinterpret_cast_overload": (r"reinterpret_cast cannot resolve overloaded function '.+?' to type '.+?'(?:\s*\(aka '.+?'\))?", "reinterpret_cast cannot resolve overloaded function"),  
+    # 함수에 필요한 예외 명세가 누락됨 Override/Inheritance
+    "err_missing_exception_specification": (r"'.+?' is missing exception specification '(?:throw|noexcept)\([^)]*\)'", "missing exception specification"),  
 
     "err_undefined_symbol": (r"undefined reference to symbol:?\s*.+?", "undefined symbol"),
     "err_undefined_reference": (r"undefined reference to `.+?'", "undefined reference"),

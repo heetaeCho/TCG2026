@@ -1,8 +1,10 @@
-CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
+CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
     "Lexical": ['err_character_not_allowed_identifier', 'err_character_too_large', 'err_invalid_suffix_constant', 
                 'err_ucn_escape_invalid', 'err_pp_expected_after', 'err_pp_bad_paste', 'err_unterminated_raw_string', 
                 'err_too_many_args_in_macro_invoc', 'err_character_not_allowed', 'err_unterm_macro_invoc', 
-                'err_pp_file_not_found'],
+                'err_pp_file_not_found', 'err_pp_invalid_directive', 'ext_reserved_user_defined_literal',
+                "err_unterminated_raw_string", "err_escape_too_large"],
+
     "Syntactic": ['err_attributes_not_allowed', 'err_incomplete_array_member_init', 
                   'err_brackets_go_after_unqualified_id', 'err_expected_lparen_after_type', 
                   'err_expected_class_name', 'err_expected_expression', 'err_missing_param', 
@@ -10,12 +12,18 @@ CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
                   'err_invalid_token_after_declarator_suggest_equal', 'err_keyword_as_parameter', 
                   'err_namespace_nonnamespace_scope', 'err_illegal_decl_reference_to_reference', 
                   'err_invalid_reference_qualifier_application', 'err_using_namespace_in_class',
-                   "Unknown_Parse#1"],
+                   "Unknown_Parse#1", "err_unexpected_unqualified_id", "err_bad_parameter_name",
+                   "err_virt_specifier_outside_class", "err_unexpected_template_in_unqualified_id",
+                   "err_function_definition_not_allowed", "err_init_list_bin_op", "err_templated_invalid_declaration",
+                   "err_extraneous_token_before_semi"],
+
     "Linker": ["err_undefined_symbol", "err_undefined_reference", "err_multiple_definition", "err_cannot_find_library"],
+
     "Semantic": { # subtype = 16
-        # Abstract-Type Instantiation = 4 
+        # Abstract-Type Instantiation = 6
         "Abstract-Type Instantiation": ["err_allocation_of_abstract_type", "err_abstract_type_in_decl#1", 
-                                        "err_abstract_type_in_decl#2", "err_abstract_type_in_decl#3"],
+                                        "err_abstract_type_in_decl#2", "err_abstract_type_in_decl#3", "err_array_of_abstract_type",
+                                        "err_abstract_type_in_decl#4"],
         # Access Control = 6
         "Access Control": ["err_access", "err_access_ctor", "err_access_base_ctor", "err_access_dtor_base",
                            "err_access_field_ctor", "err_access_dtor_var"],
@@ -26,55 +34,68 @@ CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
                                           "err_constexpr_body_no_return","err_static_assert_failed", 
                                           "err_static_assert_expression_is_not_constant", "err_forward_ref_enum",
                                           "err_ovl_no_viable_literal_operator"],
-        # Construction/Initialization = 10
+        # Construction/Initialization = 15
         "Construction/Initialization": ["err_ovl_no_viable_function_in_init", "err_ovl_deleted_special_init",
                                         "err_missing_default_ctor#1", "err_missing_default_ctor#2",
                                         "err_default_init_const", "err_default_member_initializer_not_yet_parsed",
                                         "err_ctor_dtor_returns_void", "err_excess_initializers", "err_variable_object_no_init",
-                                        "warn_field_is_uninit"],
-        # Deleted/Special Member = 7
+                                        "warn_field_is_uninit", "err_reference_var_requires_init",
+                                        "err_destructor_return_type", "err_selected_explicit_constructor",
+                                        "err_deleted_inherited_ctor_use", "err_only_constructors_take_base_inits",
+                                        "err_initializer_string_for_char_array_too_long"],
+        # Deleted/Special Member = 9
         "Deleted/Special Member": ["err_ovl_deleted_call", "err_ovl_deleted_init", "err_deleted_function_use", 
                                    "err_deleted_override", "err_ovl_deleted_special_oper", "err_ovl_deleted_oper",
-                                   "warn_defaulted_comparison_deleted"],
-        # Functions/Call Resolution = 10
+                                   "warn_defaulted_comparison_deleted", "err_ovl_deleted_conversion_in_cast",
+                                   "err_typecheck_deleted_function"],
+        # Functions/Call Resolution = 11
         "Functions/Call Resolution": ["err_ovl_ambiguous_init", "err_ovl_no_viable_object_call", 
                                       "err_member_call_without_object", "err_typecheck_call_not_function",
                                       "err_typecheck_call_too_few_args", "err_typecheck_call_too_many_args",
                                       "err_typecheck_call_too_few_args_one", "err_ovl_diff_return_type", "err_ref_qualifier_overload",
-                                      "err_ovl_unresolvable"],
-        # Operator/Call = 10
+                                      "err_ovl_unresolvable", "err_early_catch_all"],
+        # Operator/Call = 14
         "Operator/Call": ["err_typecheck_invalid_operands", "err_ovl_no_viable_oper", "err_ovl_no_viable_subscript",
                           "err_ovl_ambiguous_oper_unary", "err_ovl_no_oper", "err_typecheck_subscript_value",
                           "err_no_subobject_property_setting", "err_typecheck_array_not_modifiable_lvalue",
-                          "err_typecheck_assign_const", "err_typecheck_unary_expr"],
-        # Override/Inheritance = 10
+                          "err_typecheck_assign_const", "err_typecheck_unary_expr", "err_for_range_deduction_failure",
+                          "err_typecheck_illegal_increment_decrement", "err_for_range_invalid",
+                          "err_typecheck_subscript_not_integer"],
+        # Override/Inheritance = 12
         "Override/Inheritance": ["err_function_marked_override_not_overriding", "override_keyword_hides_virtual_member_function",
                                  "override_keyword_only_allowed_on_virtual_member_functions", 
                                  "err_covariant_return_ambiguous_derived_to_base_conv", 
                                  "err_different_return_type_for_overriding_virtual_function",
                                  "err_override_exception_spec", "err_class_marked_final_used_as_base",
-                                 "err_not_direct_base_or_virtual", "err_base_must_be_class", "err_bad_dynamic_cast_not_polymorphic"],
-        # Incomplete Type = 17
+                                 "err_not_direct_base_or_virtual", "err_base_must_be_class", "err_bad_dynamic_cast_not_polymorphic",
+                                 "err_using_decl_constructor_not_in_direct_base", "err_missing_exception_specification"],
+        # Incomplete Type = 19
         "Incomplete Type": ["err_bad_cast_incomplete", "err_typecheck_decl_incomplete_type", "err_field_incomplete_or_sizeless",
                             "err_incomplete_member_access", "err_new_incomplete_or_sizeless_type",
                             "err_typecheck_arithmetic_incomplete_or_sizeless_type", "err_subscript_incomplete_or_sizeless_type",
                             "warn_delete_incomplete", "err_typecheck_incomplete_tag", "err_func_def_incomplete_result",
                             "err_incomplete_nested_name_spec", "err_for_range_incomplete_type", "err_init_incomplete_type",
                             "err_sizeof_alignof_incomplete_or_sizeless_type", "err_invalid_incomplete_type_use",
-                            "err_incomplete_base_class", "err_call_function_incomplete_return"],
-        # Symbol/Lookup = 12
+                            "err_incomplete_base_class", "err_call_function_incomplete_return", "err_call_incomplete_argument",
+                            "err_auto_fn_used_before_defined"],
+        # Symbol/Lookup = 14
         "Symbol/Lookup": ["err_undeclared_var_use", "err_no_member", "err_no_template", "err_not_tag_in_scope", 
                           "err_using_directive_member_suggest", "err_unknown_type_or_class_name_suggest", "err_undeclared_use",
                           "err_ref_non_value", "err_ambiguous_reference", "err_unexpected_namespace", "Unknown_Sema#1",
-                          "err_lambda_impcap"],
-        # Templates/Generics = 13
+                          "err_lambda_impcap", "err_addr_ovl_no_viable", "err_out_of_line_qualified_id_type_names_constructor"],
+        # Templates/Generics = 24
         "Templates/Generics": ["err_implicit_instantiate_member_undefined", "err_template_arg_list_different_arity", 
                                "err_template_missing_args", "err_not_class_template_specialization", "err_template_spec_needs_header",
                                "err_template_arg_must_be_type", "err_template_arg_must_be_template", 
                                "err_template_arg_template_params_mismatch", "err_template_inside_local_class",
                                "err_deduced_class_template_ctor_no_viable", "err_function_template_spec_no_match",
-                               "err_var_spec_no_template", "err_template_spec_redecl_out_of_scope"],
-        # Type Conversion/Reference Binding = 22
+                               "err_var_spec_no_template", "err_template_spec_redecl_out_of_scope",
+                               "err_template_arg_must_be_expr", "err_explicit_instantiation_unqualified_wrong_namespace",
+                               "err_explicit_instantiation_not_known", "Unknown_Sema#2", "err_template_spec_redecl_global_scope",
+                               "err_template_member", "err_function_parameter_pack_without_parameter_packs", "Unknown_Sema#3",
+                               "err_non_template_in_template_id", "err_pack_expansion_without_parameter_packs",
+                               "err_unexpanded_parameter_pack"],
+        # Type Conversion/Reference Binding = 27
         "Type Conversion/Reference Binding": ["err_typecheck_nonviable_condition_incomplete", "err_typecheck_nonviable_condition",
                                               "err_init_conversion_failed", "err_typecheck_convert_incompatible", 
                                               "err_typecheck_convert_incompatible_pointer", "warn_init_list_type_narrowing",
@@ -85,31 +106,43 @@ CATEGORIES = { # Lexical = 11, Syntactic = 17, Linker = 4, Semantic = 175 => 207
                                               "err_ovl_no_conversion_in_cast", "err_typecheck_bool_condition",
                                               "err_auto_inconsistent_deduction", "err_auto_var_deduction_failure",
                                               "err_typecheck_convert_discards_qualifiers", "err_reference_bind_drops_quals",
-                                              "err_typecheck_missing_return_type_incompatible"],
-        # Type Redefinition/Redeclaration = 11
+                                              "err_typecheck_missing_return_type_incompatible",
+                                              "err_typecheck_converted_constant_expression", "err_typecheck_comparison_of_distinct_pointers",
+                                              "err_typecheck_convert_int_pointer", "ext_typecheck_convert_incompatible_pointer_sign",
+                                              "err_bad_reinterpret_cast_overload"
+                                              ],
+        # Type Redefinition/Redeclaration = 14
         "Type Redefinition/Redeclaration": ["err_redefinition", "err_redeclaration_different_type", "err_member_decl_does_not_match",
                                             "err_member_redeclared", "err_duplicate_member", "err_tag_definition_of_typedef",
                                             "err_redefinition_different_typedef", "err_enum_redeclare_type_mismatch",
                                             "err_invalid_declarator_scope", "err_different_language_linkage",
-                                            "err_use_with_wrong_tag"],
-        # Qualifier/Specifier Missuse = 9
+                                            "err_use_with_wrong_tag", "err_static_non_static", "err_enum_redeclare_scoped_mismatch",
+                                            "err_using_decl_conflict_reverse"],
+        # Qualifier/Specifier Missuse = 11
         "Qualifier/Specifier Missuse": ["err_invalid_qualified_function_type", "err_mutable_function", 
                                         "err_mutable_nonmember", "err_auto_not_allowed", "err_void_only_param",
                                         "err_missing_type_specifier", "err_param_default_argument_nonfunc",
-                                        "err_va_start_fixed_function", "warn_unused_expr"],
-        # Pointer/Reference Rules = 11
-        "Pointer/Reference Rules": ["err_typecheck_invalid_lvalue_addrof", "err_reference_to_void", 
+                                        "err_va_start_fixed_function", "warn_unused_expr", "err_static_block_func",
+                                        "err_exceptions_disabled"],
+        # Pointer/Reference Misuse = 14
+        "Pointer/Reference Misuse": ["err_typecheck_invalid_lvalue_addrof", "err_reference_to_void", 
                                     "err_deduced_class_template_compound_type", "err_illegal_decl_pointer_to_reference",
                                     "err_illegal_decl_array_of_functions", "err_typecheck_indirection_requires_pointer",
                                     "err_bad_memptr_rhs", "err_delete_operand", "warn_format_nonliteral_noargs",
-                                    "err_func_returning_array_function", "err_reference_to_local_in_enclosing_context"],
-        # Member Access Rules = 13
-        "Member Access Rules": ["err_invalid_this_use", "err_member_function_call_bad_cvr", "err_bound_member_function",
+                                    "err_func_returning_array_function", "err_reference_to_local_in_enclosing_context",
+                                    "err_typecheck_addrof_temporary", "err_invalid_form_pointer_member_function",
+                                    "err_illegal_decl_mempointer_to_void"],
+        # This/Non-Static Member/Using Misuse = 21
+        "This/Non-Static Member/Using Misuse": ["err_invalid_this_use", "err_member_function_call_bad_cvr", "err_bound_member_function",
                                 "err_member_qualification", "err_using_decl_can_not_refer_to_class_member",
                                 "err_using_decl_nested_name_specifier_is_not_class", "err_member_reference_needs_call",
                                 "err_typecheck_member_reference_struct_union", "err_typecheck_member_reference_suggestion",
                                 "err_mem_init_not_member_or_class", "err_expected_class_or_namespace", 
-                                "err_auto_variable_cannot_appear_in_own_initializer", "err_static_data_member_not_allowed_in_local_class"],
+                                "err_auto_variable_cannot_appear_in_own_initializer", "err_static_data_member_not_allowed_in_local_class",
+                                "err_using_decl_nested_name_specifier_is_not_base_class", "err_nested_non_static_member_use",
+                                "err_typecheck_member_reference_type", "err_member_function_call_bad_ref", "err_this_capture",
+                                "err_invalid_non_static_member_use", "err_using_decl_nested_name_specifier_is_current_class",
+                                "err_unqualified_pointer_member_function"],
     },
 }
 
@@ -169,7 +202,7 @@ PATTERNS = {
     # private/protected 생성자/소멸자 호출
     "err_access_ctor": (r"calling a (?:private|protected) (?:constructor|destructor) of class '.+?'", "calling private or protected constructor or destructor"),
     # const 한정 타입에 대입 불가
-    "err_typecheck_assign_const": (r"cannot assign to (?:non-static data member|variable) '.+?' with const-qualified type '.+?'(?:\s*\(aka '.+?'\))?", "cannot assign to const-qualified type"),
+    "err_typecheck_assign_const": (r"cannot assign to (?:non-static data member|static data member|variable) '.+?' with const-qualified type '.+?'(?:\s*\(aka '.+?'\))?|cannot assign to return value because function '.+?' returns a const value", "cannot assign to const-qualified type or value"),
     # 변환 연산자 없이 타입 변환 불가
     "err_ovl_no_conversion_in_cast": (r"cannot convert '.+?'(?:\s*\(aka '.+?'\))? to '.+?'(?:\s*\(aka '.+?'\))? without a conversion operator", "cannot convert without conversion operator"),
     # 네임스페이스 범위 밖에서 정의/재선언 불가
@@ -188,6 +221,8 @@ PATTERNS = {
     "err_not_class_template_specialization": (r"cannot specialize a dependent template", "cannot specialize dependent template"),
     # rvalue 주소 참조 불가
     "err_typecheck_invalid_lvalue_addrof": (r"cannot take the address of an rvalue of type '.+?'", "cannot take address of rvalue"),
+    # 예외 비활성화 상태에서 try/throw 사용 불가
+    "err_exceptions_disabled": (r"cannot use '(?:try|throw)' with exceptions disabled", "cannot use try or throw with exceptions disabled"),
     # 불완전한 타입을 range로 사용 불가
     "err_for_range_incomplete_type": (r"cannot use incomplete type '.+?' as a range", "cannot use incomplete type as range"),
     # 식별자에 허용되지 않는 문자
@@ -215,23 +250,23 @@ PATTERNS = {
     # 초기화 리스트 원소 타입 추론 충돌
     "err_auto_inconsistent_deduction": (r"deduced conflicting types \('.+?' vs '.+?'(?:\s*\(aka '.+?'\))?\) for initializer list element type", "deduced conflicting types for initializer list element type"),
     # user-provided 기본 생성자 없는 const 타입 기본 초기화
-    "err_default_init_const": (r"default initialization of an object of const type '.+?'(?:\s*\(aka '.+?'\))? without a user-provided default constructor", "default initialization of const type without user-provided default constructor"),
+    "err_default_init_const": (r"default initialization of an object of const type '.+?'(?:\s*\(aka '.+?'\))?(?:\s*without a user-provided default constructor)?", "default initialization of const type without user-provided default constructor"),
     # 멤버 함수 밖에서 기본 멤버 초기화자 필요
     "err_default_member_initializer_not_yet_parsed": (r"default member initializer for '.+?' needed within definition of enclosing class '.+?' outside of member functions", "default member initializer needed outside of member functions"),
-    # 타입 정의가 동일한 이름의 타입 별칭과 충돌
-    "err_tag_definition_of_typedef": (r"definition of type '.+?' conflicts with type alias of the same name", "definition conflicts with type alias"),
+    # 타입 정의가 동일한 이름의 type alias 또는 typedef와 충돌함
+    "err_tag_definition_of_typedef": (r"definition of type '.+?' conflicts with (?:type alias|typedef) of the same name", "definition conflicts with type alias or typedef")  ,
     # 삭제된 함수가 비삭제 함수를 오버라이드할 수 없음
     "err_deleted_override": (r"deleted function '.+?' cannot override a non-deleted function", "deleted function cannot override non-deleted function"),
     # 불완전한 타입 포인터 삭제로 인한 미정의 동작
-    "warn_delete_incomplete": (r"deleting pointer to incomplete type '.+?' may cause undefined behavior", "deleting pointer to incomplete type may cause undefined behavior"),
+    "warn_delete_incomplete": (r"deleting pointer to incomplete type '.+?'(?:\s*\(aka '.+?'\))? (?:may cause undefined behavior|is incompatible with C\+\+\w+ and may cause undefined behavior)", "deleting pointer to incomplete type may cause undefined behavior"),
     # 중복 멤버 선언
     "err_duplicate_member": (r"duplicate member '.+?'", "duplicate member"),
     # 다른 기본 타입으로 열거형 재선언
     "err_enum_redeclare_type_mismatch": (r"enumeration redeclared with different underlying type '.+?' \(was '.+?'(?:\s*\(aka '.+?'\))?\)", "enumeration redeclared with different underlying type"),
     # 오버라이딩 함수의 예외 명세가 기본 버전보다 느슨함
     "err_override_exception_spec": (r"exception specification of overriding function is more lax than base version", "exception specification more lax than base version"),
-    # 스칼라 초기화자에 초과 원소
-    "err_excess_initializers": (r"excess elements in scalar initializer", "excess elements in scalar initializer"),
+    # 초기화 목록에 허용된 것보다 많은 요소가 포함됨
+    "err_excess_initializers": (r"excess elements in (?:scalar|array|struct) initializer", "excess elements in initializer"),
     # 구문 기호/키워드 필요 (구체적인 패턴 먼저)
     "err_expected_lparen_after_type": (r"expected '\(' for function-style cast or type construction", "expected '(' for function-style cast or type construction"),
     "err_expected_class_name": (r"expected class name", "expected class name"),
@@ -244,8 +279,8 @@ PATTERNS = {
     "Unknown_Parse#1": (r"expected .+", "expected punctuation or keyword"),
     # 명시적으로 기본 설정된 생성자/소멸자가 암묵적으로 삭제됨
     "warn_defaulted_comparison_deleted": (r"explicitly defaulted (?:default constructor|destructor) is implicitly deleted", "explicitly defaulted constructor or destructor is implicitly deleted"),
-    # 대입 불가능한 표현식
-    "err_no_subobject_property_setting": (r"expression is not assignable", "expression is not assignable"),
+    # 할당 불가능한 표현식 또는 비객체 타입에 대한 할당 시도
+    "err_no_subobject_property_setting": (r"(?:expression|non-object type '.+?'(?:\s*\(aka '.+?'\))?) is not assignable", "expression or non-object type is not assignable"),
     # 사용되지 않는 표현식 결과
     "warn_unused_expr": (r"expression result unused", "expression result unused"),
     # 불필요한 닫는 중괄호
@@ -254,8 +289,8 @@ PATTERNS = {
     "warn_field_is_uninit": (r"field '.+?' is uninitialized when used here", "field is uninitialized when used"),
     # 필드가 불완전한 타입
     "err_field_incomplete_or_sizeless": (r"field has incomplete type '.+?'", "field has incomplete type"),
-    # 필드 타입의 기본 생성자/소멸자가 private
-    "err_access_field_ctor": (r"field of type '.+?' has private (?:(?:default )?constructor|destructor)", "field of type has private constructor or destructor"),
+    # 필드 타입의 기본 생성자/소멸자가 private/protected
+    "err_access_field_ctor": (r"field of type '.+?' has (?:private|protected) (?:(?:default )?constructor|destructor)", "field of type has private or protected constructor or destructor"),
     # 필드 타입이 추상 클래스
     "err_abstract_type_in_decl#1": (r"field type '.+?'(?:\s*\(aka '.+?'\))? is an abstract class", "field type is abstract class"),
     # 포맷 문자열이 문자열 리터럴이 아님
@@ -269,7 +304,7 @@ PATTERNS = {
     # 정의되지 않은 템플릿의 암묵적 인스턴스화
     "err_implicit_instantiate_member_undefined": (r"implicit instantiation of undefined template '.+?'", "implicit instantiation of undefined template"),
     # 호환되지 않는 포인터 타입 대입
-    "err_typecheck_convert_incompatible_pointer": (r"incompatible pointer types assigning to '.+?' from '.+?'", "incompatible pointer types assigning"),
+    "err_typecheck_convert_incompatible_pointer": (r"incompatible pointer types assigning to '.+?'(?:\s*\(aka '.+?'\))? from '.+?'(?:\s*\(aka '.+?'\))?", "incompatible pointer types assigning"),
     # 타입의 불완전한 정의
     "err_typecheck_incomplete_tag": (r"incomplete definition of type '.+?'", "incomplete definition of type"),
     # 함수 정의/람다에서 불완전한 결과 타입
@@ -304,12 +339,12 @@ PATTERNS = {
     "err_mem_init_not_member_or_class": (r"member initializer '.+?' does not name a non-static data member or base class", "member initializer does not name non-static data member or base class"),
     # 멤버 참조 기본 타입이 구조체 또는 유니온이 아님
     "err_typecheck_member_reference_struct_union": (r"member reference base type '.+?'(?:\s*\(aka '.+?'\))? is not a structure or union", "member reference base type is not structure or union"),
-    # 잘못된 멤버 접근 연산자 사용
-    "err_typecheck_member_reference_suggestion": (r"member reference type '.+?'(?:\s*\(aka '.+?'\))? is (?:not a pointer; did you mean to use '\.'|a pointer; did you mean to use '->')\?", "member reference type wrong operator"),
+    # 멤버 참조 시 포인터 여부에 맞지 않는 연산자를 사용하려 함
+    "err_typecheck_member_reference_suggestion": (r"member reference type '.+?'(?:\s*\(aka '.+?'\))? is (?:not a pointer(?:; did you mean to use '\.')?|a pointer(?:; did you mean to use '->')?)\??", "member reference type wrong operator"),
     # 'defined' 뒤에 ')' 누락
     "err_pp_expected_after": (r"missing '\)' after 'defined'", "missing ')' after defined"),
-    # 타입 참조 시 'class' 태그 필요
-    "Unknown_Sema#1": (r"must use 'class' tag to refer to type '.+?' in this scope", "must use class tag to refer to type"),
+    # 해당 타입을 참조할 때 올바른 태그 키워드를 사용해야 함
+    "Unknown_Sema#1": (r"must use '(?:class|struct|union)' tag to refer to type '.+?'(?:\s*\(aka '.+?'\))? in this scope", "must use class or struct tag to refer to type"),
     # 네임스페이스는 전역 또는 네임스페이스 범위에서만 정의 가능
     "err_namespace_nonnamespace_scope": (r"namespaces can only be defined in global or namespace scope", "namespaces can only be defined in global or namespace scope"),
     # 네임스페이스에 해당 클래스 없음
@@ -323,7 +358,7 @@ PATTERNS = {
     # 매칭되는 함수/멤버 함수 없음
     "err_ovl_no_viable_object_call": (r"no matching (?:member )?function for call to (?:object of type )?'.+?'(?:\s*\(aka '.+?'\))?", "no matching function or member function for call"),
     # 매칭되는 리터럴 연산자 없음
-    "err_ovl_no_viable_literal_operator": (r"no matching literal operator for call to '.+?' with arguments of types '.+?' and '.+?', and no matching literal operator template", "no matching literal operator for call"),
+    "err_ovl_no_viable_literal_operator": (r"no matching literal operator for call to '.+?' with argument(?:s)? of type(?:s)? '.+?'(?:\s*or\s*'.+?'|(?:\s*\(aka '.+?'\))?\s*and\s*'.+?')?, and no matching literal operator template", "no matching literal operator for call"),
     # 네임스페이스/클래스/전역에 해당 멤버 없음
     "err_no_member": (r"no member named '.+?' in (?:namespace '.+?'|'.+?'|the global namespace)(?:; did you mean .+?)?", "no member named in namespace or class"),
     # 네임스페이스/클래스/전역에 해당 타입/템플릿 없음 #err_typename_nested_not_found
@@ -335,11 +370,11 @@ PATTERNS = {
     # 타입 변환 불가
     "err_typecheck_nonviable_condition_incomplete": (r"no viable conversion from '.+?'(?:\s*\(aka '.+?'\))? to (?:incomplete type )?'.+?'(?:\s*\(aka '.+?'\))?", "no viable conversion"),
     # 오버로드된 '=' 연산자 없음
-    "err_ovl_no_viable_oper": (r"no viable overloaded '='", "no viable overloaded '='"),
+    "err_ovl_no_viable_oper": (r"no viable overloaded '.+?'", "no viable overloaded operator"),  # 해당 타입에 적합한 오버로드된 연산자가 없음
     # 오버로드된 [] 연산자 없음 #err_ovl_no_viable_oper
     "err_ovl_no_viable_subscript": (r"no viable overloaded operator\[\] for type '.+?'(?:\s*\(aka '.+?'\))?", "no viable overloaded operator[]"),
     # non-const lvalue 참조 바인딩 불가
-    "err_lvalue_reference_bind_to_initlist": (r"non-const lvalue reference to type '.+?'(?:\s*\(aka '.+?'\))? cannot bind to (?:a value of unrelated type|a temporary of type) '.+?'(?:\s*\(aka '.+?'\))?", "non-const lvalue reference cannot bind"),
+    "err_lvalue_reference_bind_to_initlist": (r"non-const lvalue reference to type '.+?'(?:\s*\(aka '.+?'\))? cannot bind to (?:a value of unrelated type|a temporary of type|an initializer list temporary)(?:\s*'.+?'(?:\s*\(aka '.+?'\))?)?", "non-const lvalue reference cannot bind"),
     # 비친구 클래스 멤버에 한정된 이름 불가
     "err_member_qualification": (r"non-friend class member '.+?' cannot have a qualified name", "non-friend class member cannot have qualified name"),
     # 비가상 멤버 함수가 가상 멤버 함수를 숨김
@@ -360,24 +395,22 @@ PATTERNS = {
     "err_ovl_deleted_oper": (r"overload resolution selected deleted operator '='", "overload resolution selected deleted operator"),
     # 유효하지 않은 전처리 토큰 생성
     "err_pp_bad_paste": (r"pasting formed '.+?', an invalid preprocessing token", "pasting formed invalid preprocessing token"),
-    # raw 문자열 종료 구분자 누락
-    "err_unterminated_raw_string": (r"raw string missing terminating delimiter \).+?\"", "raw string missing terminating delimiter"),
-    # 다른 타입으로 재선언
-    "err_redeclaration_different_type": (r"redeclaration of '.+?' with a different type: '.+?' vs '.+?'", "redeclaration with different type"),
+    # 동일한 이름에 대해 서로 다른 타입으로 선언이 충돌함
+    "err_redeclaration_different_type": (r"(?:redeclaration of '.+?' with a different type: '.+?' vs '.+?'|conflicting types for '.+?')", "redeclaration with different type or conflicting types"),
     # 재정의
-    "err_redefinition": (r"redefinition of '.+?'(?: as different kind of symbol)?", "redefinition"),
-    # 람다 표현식에서 선언된 지역 변수 참조
-    "err_reference_to_local_in_enclosing_context": (r"reference to local variable '.+?' declared in enclosing lambda expression", "reference to local variable in enclosing lambda"),
+    "err_redefinition": (r"redefinition of (?:default argument|parameter '.+?'|'.+?'(?:(?: as different kind of symbol)?)?)", "redefinition"),
+    # 외부 람다 또는 함수에서 선언된 지역 변수를 참조하려 함
+    "err_reference_to_local_in_enclosing_context": (r"reference to local variable '.+?' declared in enclosing (?:lambda expression|function '.+?')", "reference to local variable in enclosing lambda or function"),
     # 비정적 멤버 함수 참조는 호출되어야 함
     "err_bound_member_function": (r"reference to non-static member function must be called(?:; did you mean to call it with no arguments\?)?", "reference to non-static member function must be called"),
     # 오버로드된 함수 참조 해결 불가
     "err_ovl_unresolvable": (r"reference to overloaded function could not be resolved(?:; did you mean to call it\?)?", "reference to overloaded function could not be resolved"),
     # 타입 참조가 lvalue/rvalue에 바인딩 불가
     "err_reference_bind_failed": (r"reference to type '.+?'(?:\s*\(aka '.+?'\))? could not bind to (?:an lvalue|an rvalue) of type '.+?'(?:\s*\(aka '.+?'\))?", "reference to type could not bind"),
-    # reinterpret_cast 불가
-    "err_bad_cxx_cast_generic": (r"reinterpret_cast from '.+?' to '.+?'(?:\s*\(aka '.+?'\))? is not allowed", "reinterpret_cast is not allowed"),
+    # reinterpret_cast 또는 const_cast가 허용되지 않거나 qualifier를 제거함
+    "err_bad_cxx_cast_generic": (r"(?:reinterpret_cast|const_cast) from (?:rvalue|'.+?'(?:\s*\(aka '.+?'\))?) to (?:reference type )?'.+?'(?:\s*\(aka '.+?'\))?(?:(?:, which are not related by inheritance,)? is not allowed| casts away qualifiers)?", "reinterpret_cast or const_cast is not allowed or casts away qualifiers"),
     # 람다 반환 타입 불일치
-    "err_typecheck_missing_return_type_incompatible": (r"return type '.+?'(?:\s*\(aka '.+?'\))? must match previous return type '.+?' when lambda expression has unspecified explicit return type", "return type must match previous return type in lambda"),
+    "err_typecheck_missing_return_type_incompatible": (r"return type '.+?'(?:\s*\(aka '.+?'\))? must match previous return type '.+?'(?:\s*\(aka '.+?'\))? when lambda expression has unspecified explicit return type", "return type must match previous return type in lambda"),
     # 반환 타입이 추상 클래스
     "err_abstract_type_in_decl#2": (r"return type '.+?'(?:\s*\(aka '.+?'\))? is an abstract class", "return type is abstract class"),
     # 가상 함수의 반환 타입이 공변적이지 않음
@@ -393,9 +426,9 @@ PATTERNS = {
     # 정적 어서션 실패
     "err_static_assert_failed": (r"static assertion failed.*", "static assertion failed"),
     # 지역 구조체에 정적 데이터 멤버 불가
-    "err_static_data_member_not_allowed_in_local_class": (r"static data member '.+?' not allowed in local struct '.+?'", "static data member not allowed in local struct"),
-    # 상속 관계 없는 타입 간 static_cast 불가
-    "err_bad_cxx_cast_unrelated_class": (r"static_cast from '.+?'(?:\s*\(aka '.+?'\))? to '.+?', which are not related by inheritance, is not allowed", "static_cast between unrelated types is not allowed"),
+    "err_static_data_member_not_allowed_in_local_class": (r"static data member '.+?' not allowed in (?:local|anonymous) struct", "static data member not allowed in local or anonymous struct"),
+    # static_cast가 허용되지 않거나 qualifier를 제거함
+    "err_bad_cxx_cast_unrelated_class": (r"static_cast from '.+?'(?:\s*\(aka '.+?'\))? to '.+?'(?:\s*\(aka '.+?'\))?(?:(?:, which are not related by inheritance,)? is not allowed| casts away qualifiers)", "static_cast is not allowed or casts away qualifiers"),
     # 불완전한 타입 포인터 서브스크립트
     "err_subscript_incomplete_or_sizeless_type": (r"subscript of pointer to incomplete type '.+?'", "subscript of pointer to incomplete type"),
     # 서브스크립트 대상이 배열/포인터/벡터가 아님
@@ -424,24 +457,24 @@ PATTERNS = {
     "warn_init_list_type_narrowing": (r"type '.+?' cannot be narrowed to '.+?'(?:\s*\(aka '.+?'\))? in initializer list", "type cannot be narrowed in initializer list"),
     # 타입이 서브스크립트 연산자를 제공하지 않음
     "err_ovl_no_oper": (r"type '.+?'(?:\s*\(aka '.+?'\))? does not provide a (?:subscript|call) operator", "type does not provide subscript or call operator"),
-    # 타입 별칭 재정의 시 타입 불일치
-    "err_redefinition_different_typedef": (r"type alias redefinition with different types \('.+?' vs '.+?'\)", "type alias redefinition with different types"),
+    # type alias 또는 typedef가 다른 타입으로 재정의됨
+    "err_redefinition_different_typedef": (r"(?:type alias|typedef) redefinition with different types \('.+?'(?:\s*\(aka '.+?'\))? vs '.+?'(?:\s*\(aka '.+?'\))?\)", "type alias or typedef redefinition with different types") ,
     # 참조의 참조 타입 이름 선언
     "err_illegal_decl_reference_to_reference": (r"type name declared as a reference to a reference", "type name declared as reference to reference"),
     # 예상치 못한 문자
     "err_character_not_allowed": (r"unexpected character <.+?>", "unexpected character"),
     # 예상치 못한 네임스페이스 이름
     "err_unexpected_namespace": (r"unexpected namespace name '.+?': expected expression", "unexpected namespace name"),
-    # 알 수 없는 클래스/타입 이름
-    "err_unknown_type_or_class_name_suggest": (r"unknown (?:class|type) name '.+?'(?:; did you mean '.+?')?", "unknown class name"),
+    # 알 수 없는 클래스/타입/템플릿 이름
+    "err_unknown_type_or_class_name_suggest": (r"unknown (?:class|type|template) name '.+?'(?:; did you mean '.+?')?", "unknown class or template name"),
     # 함수형 매크로 호출이 종료되지 않음
     "err_unterm_macro_invoc": (r"unterminated function-like macro invocation", "unterminated function-like macro invocation"),
     # 이전 선언과 일치하지 않는 태그 타입으로 OfType 사용
-    "err_use_with_wrong_tag": (r"use of 'OfType' with tag type that does not match previous declaration", "use of OfType with mismatched tag type"),
+    "err_use_with_wrong_tag": (r"use of '.+?' with tag type that does not match previous declaration", "use of identifier with mismatched tag type"),
     # 클래스 템플릿에 템플릿 인자 필요
     "err_template_missing_args": (r"use of class template '.+?' requires template arguments(?:; argument deduction not allowed .+?)?", "use of class template requires template arguments"),
-    # 오버로드된 [] 연산자 사용이 모호함
-    "err_ovl_ambiguous_oper_unary": (r"use of overloaded operator '\[\]' is ambiguous \(with operand types '.+?' and '.+?'\)", "use of overloaded operator[] is ambiguous"),
+    # 오버로드된 연산자 사용이 모호함
+    "err_ovl_ambiguous_oper_unary": (r"use of overloaded operator '.+?' is ambiguous \(with operand types '.+?'(?:\s*\(aka '.+?'\))? and '.+?'(?:\s*\(aka '.+?'\))?\)", "use of overloaded operator is ambiguous"),
     # 선언되지 않은 식별자 사용
     "err_undeclared_var_use": (r"use of undeclared identifier '.+?'(?:; did you mean '.+?')?", "use of undeclared identifier"),
     # 선언되지 않은 operator() 사용
@@ -455,13 +488,13 @@ PATTERNS = {
     # 캡처 기본값 없는 람다에서 암묵적 캡처 불가
     "err_lambda_impcap": (r"variable '.+?' cannot be implicitly captured in a lambda with no capture-default specified", "variable cannot be implicitly captured in lambda"),
     # auto 타입 변수의 호환되지 않는 초기화자
-    "err_auto_var_deduction_failure": (r"variable '.+?' with type 'auto' has incompatible initializer of type '.+?'", "variable with auto type has incompatible initializer"),
+    "err_auto_var_deduction_failure": (r"variable '.+?' with type 'auto\s*\*?' has incompatible initializer of type '.+?'(?:\s*\(aka '.+?'\))?", "variable with auto type has incompatible initializer"),
     # auto 추론 타입 변수가 자신의 초기화자에 등장
     "err_auto_variable_cannot_appear_in_own_initializer": (r"variable '.+?' declared with deduced type 'auto' cannot appear in its own initializer", "variable with deduced auto type cannot appear in its own initializer"),
     # 불완전한 타입의 변수
     "err_typecheck_decl_incomplete_type": (r"variable has incomplete type '.+?'(?:\s*\(aka '.+?'\))?", "variable has incomplete type"),
     # private/protected 소멸자를 가진 타입의 변수
-    "err_access_dtor_var": (r"variable of type '.+?' has (?:private|protected) destructor", "variable of type has private or protected destructor"),
+    "err_access_dtor_var": (r"(?:variable|temporary) of type '.+?'(?:\s*\(aka '.+?'\))? has (?:private|protected) destructor", "variable or temporary of type has private or protected destructor"),
     # 변수 타입이 추상 클래스
     "err_abstract_type_in_decl#3": (r"variable type '.+?'(?:\s*\(aka '.+?'\))? is an abstract class", "variable type is abstract class"),
     # 가상 함수의 반환 타입이 오버라이드하는 함수와 다름
@@ -476,8 +509,8 @@ PATTERNS = {
     "err_bad_cast_incomplete": (r"'.+?' is an incomplete type", "incomplete type"),
     # const가 아닌 함수에 const 객체로 this 인자 전달
     "err_member_function_call_bad_cvr": (r"'this' argument to member function '.+?' has type '.+?'(?:\s*\(aka '.+?'\))?, but function is not marked const", "this argument to non-const member function"),
-    # auto가 함수 프로토타입에서 허용되지 않음
-    "err_auto_not_allowed": (r"'auto' not allowed in function prototype", "auto not allowed in function prototype"),
+    # 함수 프로토타입에 auto 또는 decltype(auto)를 사용하려 함
+    "err_auto_not_allowed": (r"'(?:auto|decltype\(auto\))' not allowed in function prototype", "auto or decltype(auto) not allowed in function prototype"),
     # const 한정자가 참조에 적용될 수 없음
     "err_invalid_reference_qualifier_application": (r"'const' qualifier may not be applied to a reference", "const qualifier may not be applied to reference"),
     # mutable이 함수에 적용될 수 없음
@@ -495,13 +528,13 @@ PATTERNS = {
     # va_start가 고정 인자 함수에서 사용됨
     "err_va_start_fixed_function": (r"'va_start' used in function with fixed args", "va_start used in function with fixed args"),
     # 클래스, 네임스페이스, 열거형이 아닌 식별자
-    "err_expected_class_or_namespace": (r"'.+?' is not a class, namespace, or enumeration", "is not a class namespace or enumeration"),
+    "err_expected_class_or_namespace": (r"'.+?'(?:\s*\(aka '.+?'\))? is not a class, namespace, or enumeration", "is not a class namespace or enumeration"),
     # 참조에 대한 포인터로 선언된 타입 이름
     "err_illegal_decl_pointer_to_reference": (r"'.+?' declared as a pointer to a reference of type '.+?'(?:\s*\(aka '.+?'\))?", "declared as pointer to reference"),
     # 다형성이 아닌 타입
     "err_bad_dynamic_cast_not_polymorphic": (r"'.+?' is not polymorphic", "is not polymorphic"),
     # 단항 표현식에 잘못된 인자 타입
-    "err_typecheck_unary_expr": (r"invalid argument type '.+?' to unary expression", "invalid argument type to unary expression"),
+    "err_typecheck_unary_expr": (r"invalid argument type '.+?'(?:\s*\(aka '.+?'\))? to unary expression", "invalid argument type to unary expression"),
     # 포인터를 더 작은 타입으로 캐스트 시 정보 손실
     "err_bad_reinterpret_cast_small_int": (r"cast from pointer to smaller type '.+?'(?:\s*\(aka '.+?'\))? loses information", "cast from pointer to smaller type loses information"),
     # 비멤버 함수에 const 한정자 불가
@@ -509,12 +542,147 @@ PATTERNS = {
     # mutable은 멤버 변수에만 적용 가능
     "err_mutable_nonmember": (r"'mutable' can only be applied to member variables", "mutable can only be applied to member variables"),
     # 함수 호출 인자 누락
-    "err_typecheck_call_too_few_args_one": (r"too few arguments to function call, single argument '.+?' was not specified", "too few arguments to function call single argument not specified"),
+    "err_typecheck_call_too_few_args_one": (r"too few arguments to function call, (?:single|at least) argument '.+?' (?:was not|must be) specified", "too few arguments to function call single argument not specified"),
     # 선언의 언어 링키지가 다름
     "err_different_language_linkage": (r"declaration of '.+?' has a different language linkage", "declaration has different language linkage"),
     # 기본 인자는 함수 선언의 매개변수에만 지정 가능
     "err_param_default_argument_nonfunc": (r"default arguments can only be specified for parameters in a function declaration", "default arguments only for parameters in function declaration"),
-    
+
+    # 함수형 캐스트 시도 시 삭제된 함수(생성자 등)가 호출됨
+    "err_ovl_deleted_conversion_in_cast": (r"functional-style cast from '.+?'(?:\s*\(aka '.+?'\))? to '.+?' uses deleted function", "functional-style cast uses deleted function"),
+    # 타입 변환 시 삭제된 변환 함수가 호출됨
+    "err_typecheck_deleted_function": (r"conversion function from '.+?'(?:\s*\(aka '.+?'\))? to '.+?' invokes a deleted function", "conversion function invokes deleted function"),
+    # 레퍼런스 변수 또는 추론된 타입의 변수 선언 시 초기화가 누락됨
+    "err_reference_var_requires_init": (r"declaration of (?:reference variable '.+?'|variable '.+?' with deduced type '.+?') requires an initializer", "declaration of variable requires an initializer"),
+    # 생성자, 소멸자, 또는 변환 함수에 반환 타입이 잘못 지정됨
+    "err_destructor_return_type": (r"(?:constructor|destructor|conversion function) cannot have a return type", "constructor or destructor or conversion function cannot have a return type"),
+    # using 선언이 베이스 클래스가 아닌 타입을 참조함
+    "err_using_decl_nested_name_specifier_is_not_base_class": (r"using declaration refers into '.+?', which is not a base class of '.+?'", "using declaration refers into non-base class"),
+#######################
+    # 임시 객체의 주소를 취하려 함 Pointer/Reference Misuse
+    "err_typecheck_addrof_temporary": (r"taking the address of a temporary object of type '.+?'(?:\s*\(aka '.+?'\))?", "taking address of temporary object"),  
+    # 비타입 템플릿 파라미터에 표현식이 아닌 값이 전달됨 Templates/Generics
+    "err_template_arg_must_be_expr": (r"template argument for non-type template parameter must be an expression", "template argument for non-type template parameter must be an expression"),  
+    # 중첩 타입에서 외부 클래스의 non-static 멤버를 참조함 This/Non-Static Member/Using Misuse
+    "err_nested_non_static_member_use": (r"use of non-static data member '.+?' of '.+?' from nested type '.+?'", "use of non-static data member from nested type"),  
+
+    # 명시적 인스턴스화가 올바른 네임스페이스 안에 없음 Templates/Generics
+    "err_explicit_instantiation_unqualified_wrong_namespace": (r"explicit instantiation of '.+?' must occur in namespace '.+?'", "explicit instantiation must occur in enclosing namespace"),  
+    # 명시적 인스턴스화 대상이 유효한 템플릿 요소가 아님 Templates/Generics
+    "err_explicit_instantiation_not_known": (r"explicit instantiation of '.+?' does not refer to a function template, variable template, member function, member class, or static data member", "explicit instantiation does not refer to valid template target"),  
+    # 템플릿이 아닌 타입에 대해 명시적 특수화를 시도함 Templates/Generics
+    "Unknown_Sema#2": (r"explicit specialization of non-template (?:struct|class|union) '.+?'", "explicit specialization of non-template type"),  
+
+    # static 선언이 이전의 non-static 선언과 충돌함 Type Redefinition/Redeclaration
+    "err_static_non_static": (r"static declaration of '.+?' follows non-static declaration", "static declaration follows non-static declaration"),  
+    # 추상 클래스 타입의 배열을 선언하려 함 Abstract-Type Instantiation
+    "err_array_of_abstract_type": (r"array of abstract class type '.+?'", "array of abstract class type"),  
+    # 해당 타입이 대상 타입으로 암묵적 변환이 불가능함 Type Conversion & Reference Binding 
+    "err_typecheck_converted_constant_expression": (r"value of type '.+?'(?:\s*\(aka '.+?'\))? is not implicitly convertible to '.+?'(?:\s*\(aka '.+?'\))?", "value of type is not implicitly convertible"),  
+    # 서로 다른 포인터 타입 간의 비교 시도 Type Conversion & Reference Binding 
+    "err_typecheck_comparison_of_distinct_pointers": (r"comparison of distinct pointer types \('.+?'(?:\s*\(aka '.+?'\))? and '.+?'(?:\s*\(aka '.+?'\))?\)", "comparison of distinct pointer types"),  
+    # 범위 기반 for문에서 iterate 불가능한 타입을 범위로 사용하려 함 Operator/Call
+    "err_for_range_deduction_failure": (r"cannot use type '.+?'(?:\s*\(aka '.+?'\))? as a range", "cannot use type as a range"),  
+    # 타입 멤버에 화살표 또는 점 연산자로 잘못 접근하려 함 This/Non-Static Member/Using Misuse
+    "err_typecheck_member_reference_type": (r"cannot (?:refer to type member '.+?' in '.+?'(?:\s*\(aka '.+?'\))? with '(?:->|\.)'|use (?:arrow|dot) operator on a type)", "cannot use arrow or dot operator on type member"),  
+    # lvalue 객체에서 rvalue ref-qualifier가 있는 멤버 함수를 호출하려 함 This/Non-Static Member/Using Misuse
+    "err_member_function_call_bad_ref": (r"'this' argument to member function '.+?' is an lvalue, but function has rvalue ref-qualifier", "this argument is lvalue but function has rvalue ref-qualifier"),  
+    # 캡처 기본값 없이 this를 암묵적으로 캡처하려 함 This/Non-Static Member/Using Misuse 
+    "err_this_capture": (r"'this' cannot be implicitly captured in this context", "this cannot be implicitly captured in this context"),  
+    # 멤버 함수에 대한 non-constant 포인터를 생성하려 함 Pointer/Reference Misuse
+    "err_invalid_form_pointer_member_function": (r"cannot create a non-constant pointer to member function", "cannot create non-constant pointer to member function"),  
+    # 감소 연산이 불가능한 타입에 대해 decrement 연산자를 사용하려 함 Operator/Call 
+    "err_typecheck_illegal_increment_decrement": (r"cannot decrement value of type '.+?'(?:\s*\(aka '.+?'\))?", "cannot decrement value of type"),  
+
+    # 유효하지 않은 전처리 지시문이 사용됨 Lexical
+    "err_pp_invalid_directive": (r"invalid preprocessing directive", "invalid preprocessing directive"),  
+    # 범위 기반 for문에서 begin() 함수가 없는 타입을 범위로 사용하려 함 Operator/Call
+    "err_for_range_invalid": (r"invalid range expression of type '.+?'(?:\s*\(aka '.+?'\))?; no viable 'begin' function available", "invalid range expression type no viable begin function"),  
+    # 리터럴과 식별자 사이에 공백이 없어 잘못된 suffix로 인식됨 Lexical 
+    "ext_reserved_user_defined_literal": (r"invalid suffix on literal; C\+\+11 requires a space between literal and identifier", "invalid suffix on literal requires space"),  
+    # non-static 데이터 멤버를 유효하지 않은 문맥에서 사용하려 함  This/Non-Static Member/Using Misuse
+    "err_invalid_non_static_member_use": (r"invalid use of non-static data member '.+?'", "invalid use of non-static data member"),  
+    # 직접 베이스 클래스가 아닌 클래스에서 생성자를 상속하려 함 Override/Inheritance
+    "err_using_decl_constructor_not_in_direct_base": (r"'.+?' is not a direct base of '.+?', cannot inherit constructors", "is not a direct base cannot inherit constructors"), 
+    # 함수 인자로 불완전한 타입을 전달하려 함 Incomplete Type 
+    "err_call_incomplete_argument": (r"argument type '.+?'(?:\s*\(aka '.+?'\))? is incomplete", "argument type is incomplete"),  
+    # 클래스 템플릿 특수화가 전역 스코프에 없음 Templates/Generics 
+    "err_template_spec_redecl_global_scope": (r"class template specialization of '.+?' must occur at global scope", "class template specialization must occur at global scope"),  
+
+    # non-static 데이터 멤버를 템플릿으로 선언하려 함 Templates/Generics 
+    "err_template_member": (r"non-static data member '.+?' cannot be declared as a template", "non-static data member cannot be declared as a template"),  
+    # 함수 파라미터 팩의 타입에 전개되지 않은 파라미터 팩이 없음 Templates/Generics 
+    "err_function_parameter_pack_without_parameter_packs": (r"type '.+?'(?:\s*\(aka '.+?'\))? of function parameter pack does not contain any unexpanded parameter packs", "type of function parameter pack does not contain unexpanded parameter packs"),  
+    # type-id 문맥에서 이름을 지정하려 함 Syntactic
+    "err_unexpected_unqualified_id": (r"type-id cannot have a name", "type-id cannot have a name"),
+    # using 선언이 자기 자신의 클래스를 참조하려 함 This/Non-Static Member/Using Misuse 
+    "err_using_decl_nested_name_specifier_is_current_class": (r"using declaration refers to its own class", "using declaration refers to its own class"),  
+    # catch-all 핸들러가 마지막에 위치하지 않음 Functions/Calls Resolution
+    "err_early_catch_all": (r"catch-all handler must come last", "catch-all handler must come last"),  
+    # 복사 초기화 문맥에서 explicit 생성자가 선택됨 Construction/Initialization 
+    "err_selected_explicit_constructor": (r"chosen constructor is explicit in copy-initialization", "chosen constructor is explicit in copy-initialization"),  
+    # 베이스 클래스에서 상속된 생성자가 암묵적으로 삭제됨 Construction/Initialization 
+    "err_deleted_inherited_ctor_use": (r"constructor inherited by '.+?' from base class '.+?' is implicitly deleted", "inherited constructor is implicitly deleted"),  
+    # 템플릿 인자에 auto를 사용하려 함 Templates/Generics
+    "Unknown_Sema#3": (r"'auto' not allowed in template argument", "auto not allowed in template argument"), 
+    # operator()를 파라미터 이름으로 사용하려 함 Syntactic
+    "err_bad_parameter_name": (r"'operator\(\)' cannot be the name of a parameter", "operator() cannot be the name of a parameter"),  
+    # 클래스 정의 외부에서 override 지정자를 사용하려 함 Syntactic
+    "err_virt_specifier_outside_class": (r"'override' specifier is not allowed outside a class definition", "override specifier is not allowed outside a class definition"),  
+    # 템플릿이 아닌 이름 뒤에 템플릿 인자가 사용됨 Templates/Generics 
+    "err_non_template_in_template_id": (r"'.+?' does not name a template but is followed by template arguments", "identifier does not name a template but is followed by template arguments"),  
+    # 허용되지 않는 문맥에서 template 키워드를 사용하려 함 Syntactic
+    "err_unexpected_template_in_unqualified_id": (r"'template' keyword not permitted here", "template keyword not permitted here"),  
+    # void 타입에 대한 멤버 포인터를 선언하려 함 Pointer/Reference Misuse
+    "err_illegal_decl_mempointer_to_void": (r"'.+?' declared as a member pointer to void", "declared as member pointer to void"),  
+    # 생성자가 아닌 함수에서 베이스 클래스 초기화를 시도함 Construction/Initialization 
+    "err_only_constructors_take_base_inits": (r"only constructors take base initializers", "only constructors take base initializers"),  
+    # raw string 리터럴의 종료 구분자가 없음 Lexical
+    "err_unterminated_raw_string": (r'raw string missing terminating delimiter \).*?"', "raw string missing terminating delimiter"),  
+    # 추론된 반환 타입을 가진 함수가 정의되기 전에 사용됨 Incomplete Type
+    "err_auto_fn_used_before_defined": (r"function '.+?' with deduced return type cannot be used before it is defined", "function with deduced return type cannot be used before it is defined"),  
+    # 블록 스코프에서 선언된 함수에 static 저장 클래스를 지정하려 함 Qualifier/Specifier Misuse 
+    "err_static_block_func": (r"function declared in block scope cannot have 'static' storage class", "function declared in block scope cannot have static storage class"),  
+    # 허용되지 않는 문맥에서 함수를 정의하려 함 Syntactic
+    "err_function_definition_not_allowed": (r"function definition is not allowed here", "function definition is not allowed here"),  
+    # 멤버 함수의 주소를 취할 때 명시적으로 이름을 한정해야 함 This/Non-Static Member/Using Misuse
+    "err_unqualified_pointer_member_function": (r"must explicitly qualify name of member function when taking its address", "must explicitly qualify name of member function when taking its address"),  
+    # 정수 타입을 포인터 타입으로 암묵적 변환하여 할당하려 함 Type Conversion & Reference Binding
+    "err_typecheck_convert_int_pointer": (r"incompatible integer to pointer conversion assigning to '.+?'(?:\s*\(aka '.+?'\))? from '.+?'(?:\s*\(aka '.+?'\))?", "incompatible integer to pointer conversion assigning"),  
+    # 연산자의 우측 피연산자로 initializer list를 사용하려 함 Syntactic
+    "err_init_list_bin_op": (r"initializer list cannot be used on the right hand side of operator '.+?'", "initializer list cannot be used on right hand side of operator"),  
+    # char 배열 초기화 문자열이 배열 크기보다 큼 Construction/Initialization 
+    "err_initializer_string_for_char_array_too_long": (r"initializer-string for char array is too long, array size is \d+ but initializer has size \d+ \(including the null terminating character\)", "initializer string for char array is too long"),  
+    # static_assert 선언을 템플릿으로 사용하려 함 Syntactic
+    "err_templated_invalid_declaration": (r"a static_assert declaration cannot be a template", "static_assert declaration cannot be a template"),  
+    # 오버로드된 함수의 주소가 요구되는 타입과 일치하지 않음 Symbol/Lookup
+    "err_addr_ovl_no_viable": (r"address of overloaded function '.+?' does not match required type '.+?'(?:\s*\(aka '.+?'\))?", "address of overloaded function does not match required type"),  
+    # 배열 첨자로 정수가 아닌 타입을 사용하려 함 Operator/Call 
+    "err_typecheck_subscript_not_integer": (r"array subscript is not an integer", "array subscript is not an integer"),  
+    # plain char 타입과 다른 정수 타입 간의 포인터 변환으로 할당하려 함 Type Conversion & Reference Binding 
+    "ext_typecheck_convert_incompatible_pointer_sign": (r"assigning to '.+?'(?:\s*\(aka '.+?'\))? from '.+?'(?:\s*\(aka '.+?'\))? converts between pointers to integer types where one is of the unique plain 'char' type and the other is not", "assigning converts between pointers to integer types with plain char"),  
+    # 팩 확장에 전개되지 않은 파라미터 팩이 없음 Templates/Generics 
+    "err_pack_expansion_without_parameter_packs": (r"pack expansion does not contain any unexpanded parameter packs", "pack expansion does not contain any unexpanded parameter packs"),  
+    # 함수 파라미터 타입으로 추상 클래스를 사용하려 함 Abstract-Type Instantiation 
+    "err_abstract_type_in_decl#4": (r"parameter type '.+?'(?:\s*\(aka '.+?'\))? is an abstract class", "parameter type is an abstract class"),  
+    # 이전에 unscoped로 선언된 열거형을 scoped로 재선언하려 함 Type Redefinition/Redeclaration 
+    "err_enum_redeclare_scoped_mismatch": (r"enumeration previously declared as unscoped", "enumeration previously declared as unscoped"),  
+    # 표현식, static_assert, 또는 선언 타입에 전개되지 않은 파라미터 팩이 포함됨 Templates/Generics 
+    "err_unexpanded_parameter_pack": (r"(?:static assertion|expression|declaration type) contains unexpanded parameter pack '.+?'", "contains unexpanded parameter pack"),  
+    # 세미콜론 앞에 불필요한 닫는 괄호가 있음 Syntactic
+    "err_extraneous_token_before_semi": (r"extraneous '\)' before ';'", "extraneous ) before ;"), 
+    # 선언이 스코프 내 using 선언의 대상과 충돌함 Type Redefinition/Redeclaration 
+    "err_using_decl_conflict_reverse": (r"declaration conflicts with target of using declaration already in scope", "declaration conflicts with target of using declaration already in scope"), 
+    # 16진수 이스케이프 시퀀스가 유효 범위를 벗어남 Lexical
+    "err_escape_too_large": (r"hex escape sequence out of range", "hex escape sequence out of range"),  
+    # 한정된 참조가 타입이 아닌 생성자 이름으로 해석됨 Symbol/Lookup
+    "err_out_of_line_qualified_id_type_names_constructor": (r"qualified reference to '.+?' is a constructor name rather than a type in this context", "qualified reference is a constructor name rather than a type"),  
+
+    # reinterpret_cast로 오버로드된 함수를 특정 타입으로 해석할 수 없음  Type Conversion & Reference Binding
+    "err_bad_reinterpret_cast_overload": (r"reinterpret_cast cannot resolve overloaded function '.+?' to type '.+?'(?:\s*\(aka '.+?'\))?", "reinterpret_cast cannot resolve overloaded function"),  
+    # 함수에 필요한 예외 명세가 누락됨 Override/Inheritance
+    "err_missing_exception_specification": (r"'.+?' is missing exception specification '(?:throw|noexcept)\([^)]*\)'", "missing exception specification"),  
+
     "err_undefined_symbol": (r"undefined reference to symbol:?\s*.+?", "undefined symbol"),
     "err_undefined_reference": (r"undefined reference to `.+?'", "undefined reference"),
     "err_multiple_definition": (r"multiple definition of `.+?'", "multiple definition"),
@@ -618,5 +786,20 @@ for key in CATEGORIES.keys():
         subtypes = CATEGORIE_DESCRIPTIONS.get(key).get("subtypes")
         for subtype in subtypes.keys():
             description, solution = subtypes.get(subtype).items()
-            print(f"{key}: {description}")
+            print(f"{subtype}: {description}")
             print(f"solution: {solution}\n")
+
+total = 0
+total_semantic = 0
+for key in CATEGORIES.keys():
+    if key != "Semantic":
+        value = CATEGORIES.get(key)
+        print(f"{key}: {len(value)}")
+        total += len(value)
+    else:
+        subtypes = CATEGORIES.get(key)
+        for subtype in subtypes:
+            print(f"{subtype}: {len(subtypes.get(subtype))}")
+            total_semantic += len(subtypes.get(subtype))
+print("Semantic: ", total_semantic)
+print("Total: ", total+total_semantic)

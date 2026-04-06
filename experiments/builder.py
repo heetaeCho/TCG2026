@@ -57,10 +57,14 @@ class ProjectBuilder(Builder):
         with open(self.cmake_lists, 'w', encoding='utf-8') as f:
             f.writelines(lines[:-1])
 
-    def modify_cmake_lists(self):
-        path = self.project_id + '_' + self.project
-        with open(self.cmake_lists, 'a', encoding='utf-8') as cmake_list:
-            cmake_list.write(f"add_subdirectory(../../experiments/LLM/{self.llm}/{path}/build generated_build)")
+    def modify_cmake_lists(self, repair=False, round=0, round_dir=None):
+        if not repair:
+            path = self.project_id + '_' + self.project
+            with open(self.cmake_lists, 'a', encoding='utf-8') as cmake_list:
+                cmake_list.write(f"add_subdirectory(../../experiments/LLM/{self.llm}/{path}/build generated_build)")
+        else:
+            with open(self.cmake_lists, 'a', encoding='utf-8') as cmake_list:
+                cmake_list.write(f"add_subdirectory(../../{round_dir}/build generated_build)")
 
 class TestBuilder(Builder):
     cmake_template = \
@@ -83,9 +87,15 @@ class TestBuilder(Builder):
     set(CMAKE_CXX_COMPILER /usr/lib/llvm-20/bin/clang++)
     """
 
-    def __init__(self, cwd, project_id, project, llm):
+    def __init__(self, cwd, project_id, project, llm, repair=False, round=0, round_dir=None):
         super().__init__(cwd, int(project_id), project, llm)
-        self.project_path = os.path.join("experiments", f"LLM/{self.llm}", self.project_id + '_' + self.project)
+        self.repair = repair
+        self.round = round
+        self.round_dir = round_dir
+        if not self.repair:
+            self.project_path = os.path.join("experiments", f"LLM/{self.llm}", self.project_id + '_' + self.project)
+        else:
+            self.project_path = round_dir
         self.TEST_FILES_PATH = os.path.join(self.project_path, "test_files")
         self.BUILD_DIR = os.path.join(self.project_path, "build")
         self.LOG_DIR = os.path.join(self.project_path, "log")
@@ -101,7 +111,7 @@ class TestBuilder(Builder):
                 self.PASS_DIR, self.BUILD_PASS_DIR, self.RUN_PASS_DIR, 
                 self.FAIL_DIR, self.BUILD_FAIL_DIR, self.RUN_FAIL_DIR]
 
-    def build(self):
+    def build(self, test_file=None):
         # print(os.getcwd())
         ## Project별 test 파일 위치 및 빌드/실행 준비
         for d in self.DIRS:
@@ -238,11 +248,14 @@ class TestBuilder(Builder):
             self.project_depenendy[self.project].extend(libs)
             self.project_depenendy[self.project] = list(set(self.project_depenendy[self.project]))
         ## 테스트 빌드
-        test_files = os.listdir(self.TEST_FILES_PATH)
+        if test_file is None:
+            test_files = os.listdir(self.TEST_FILES_PATH)
+        else:
+            test_files = [test_file]
         cmake_lists = self.__make_cmake_lists(test_files)
         with open(os.path.join(self.BUILD_DIR, "CMakeLists.txt"), 'w') as f:
             f.write(cmake_lists)
-        self.__rebuild(test_files)
+        return self.__rebuild(test_files)
     
     def _parse_cmakelist(self):
         def collect_options():
@@ -369,9 +382,10 @@ class TestBuilder(Builder):
         
     def __rebuild(self, test_files):
         import shutil
+        is_pass = False
         try:
             pb = ProjectBuilder(self.cwd, int(self.project_id), self.project, self.llm)
-            pb.modify_cmake_lists()
+            pb.modify_cmake_lists(self.repair, self.round, self.round_dir)
             pb.build(update=True)
             for test_file in test_files:
                 test_name = os.path.splitext(test_file)[0]
@@ -382,13 +396,16 @@ class TestBuilder(Builder):
                                        cwd=self.real_project_path, check=True, stdout=log, stderr=log)
                         shutil.copy(os.path.join(self.TEST_FILES_PATH, test_name+".cpp"), os.path.join(self.BUILD_PASS_DIR, test_name+".cpp"))
                         print(f"[BUILD PASS] : {test_name}")
+                        is_pass = True
                     except subprocess.CalledProcessError:
                         shutil.copy(os.path.join(self.TEST_FILES_PATH, test_name+".cpp"), os.path.join(self.BUILD_FAIL_DIR, test_name+".cpp"))
                         print(f"[BUILD FAIL] : {test_name}")
+                        is_pass = False
         except:
             pass
         finally:
             pb.init_cmake_lists()
+            return is_pass
 
     def execute(self):
         import shutil

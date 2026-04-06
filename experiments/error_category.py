@@ -1,4 +1,4 @@
-CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
+CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 227, Total = 271
     "Lexical": ['err_character_not_allowed_identifier', 'err_character_too_large', 'err_invalid_suffix_constant', 
                 'err_ucn_escape_invalid', 'err_pp_expected_after', 'err_pp_bad_paste', 'err_unterminated_raw_string', 
                 'err_too_many_args_in_macro_invoc', 'err_character_not_allowed', 'err_unterm_macro_invoc', 
@@ -34,7 +34,7 @@ CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
                                           "err_constexpr_body_no_return","err_static_assert_failed", 
                                           "err_static_assert_expression_is_not_constant", "err_forward_ref_enum",
                                           "err_ovl_no_viable_literal_operator"],
-        # Construction/Initialization = 15
+        # Construction/Initialization = 16
         "Construction/Initialization": ["err_ovl_no_viable_function_in_init", "err_ovl_deleted_special_init",
                                         "err_missing_default_ctor#1", "err_missing_default_ctor#2",
                                         "err_default_init_const", "err_default_member_initializer_not_yet_parsed",
@@ -61,14 +61,14 @@ CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
                           "err_typecheck_assign_const", "err_typecheck_unary_expr", "err_for_range_deduction_failure",
                           "err_typecheck_illegal_increment_decrement", "err_for_range_invalid",
                           "err_typecheck_subscript_not_integer"],
-        # Override/Inheritance = 11
+        # Override/Inheritance = 12
         "Override/Inheritance": ["err_function_marked_override_not_overriding", "override_keyword_hides_virtual_member_function",
                                  "override_keyword_only_allowed_on_virtual_member_functions", 
                                  "err_covariant_return_ambiguous_derived_to_base_conv", 
                                  "err_different_return_type_for_overriding_virtual_function",
                                  "err_override_exception_spec", "err_class_marked_final_used_as_base",
                                  "err_not_direct_base_or_virtual", "err_base_must_be_class", "err_bad_dynamic_cast_not_polymorphic",
-                                 "err_using_decl_constructor_not_in_direct_base"],
+                                 "err_using_decl_constructor_not_in_direct_base", "err_missing_exception_specification"],
         # Incomplete Type = 19
         "Incomplete Type": ["err_bad_cast_incomplete", "err_typecheck_decl_incomplete_type", "err_field_incomplete_or_sizeless",
                             "err_incomplete_member_access", "err_new_incomplete_or_sizeless_type",
@@ -95,7 +95,7 @@ CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
                                "err_template_member", "err_function_parameter_pack_without_parameter_packs", "Unknown_Sema#3",
                                "err_non_template_in_template_id", "err_pack_expansion_without_parameter_packs",
                                "err_unexpanded_parameter_pack"],
-        # Type Conversion/Reference Binding = 26
+        # Type Conversion/Reference Binding = 27
         "Type Conversion/Reference Binding": ["err_typecheck_nonviable_condition_incomplete", "err_typecheck_nonviable_condition",
                                               "err_init_conversion_failed", "err_typecheck_convert_incompatible", 
                                               "err_typecheck_convert_incompatible_pointer", "warn_init_list_type_narrowing",
@@ -109,6 +109,7 @@ CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
                                               "err_typecheck_missing_return_type_incompatible",
                                               "err_typecheck_converted_constant_expression", "err_typecheck_comparison_of_distinct_pointers",
                                               "err_typecheck_convert_int_pointer", "ext_typecheck_convert_incompatible_pointer_sign",
+                                              "err_bad_reinterpret_cast_overload"
                                               ],
         # Type Redefinition/Redeclaration = 14
         "Type Redefinition/Redeclaration": ["err_redefinition", "err_redeclaration_different_type", "err_member_decl_does_not_match",
@@ -118,7 +119,7 @@ CATEGORIES = { # Lexical = 15, Syntactic = 25, Linker = 4, Semantic = 175 => 207
                                             "err_use_with_wrong_tag", "err_static_non_static", "err_enum_redeclare_scoped_mismatch",
                                             "err_using_decl_conflict_reverse"],
         # Qualifier/Specifier Missuse = 11
-        "Qualifier/Specifier Missuse": ["err_invalid_qualified_function_type", "err_mutable_function", 
+        "Qualifier/Specifier Misuse": ["err_invalid_qualified_function_type", "err_mutable_function", 
                                         "err_mutable_nonmember", "err_auto_not_allowed", "err_void_only_param",
                                         "err_missing_type_specifier", "err_param_default_argument_nonfunc",
                                         "err_va_start_fixed_function", "warn_unused_expr", "err_static_block_func",
