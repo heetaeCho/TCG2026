@@ -89,6 +89,8 @@ class MAIN:
         cwd = os.getcwd()
         for llm in self.llms:
             for ix, project in enumerate(self.project_list):
+                print(project)
+                if ix != 4: continue
                 self.repair_path = os.path.join("./experiments", "repair", "generated_test")
                 self.repair_project_dir = os.path.join(self.repair_path, project)
                 os.makedirs(self.repair_project_dir, exist_ok=True)
@@ -99,7 +101,8 @@ class MAIN:
                 failed_log_list = ea._get_build_failed_list()
                 
                 for _ in range(3):
-                    for failed_log in failed_log_list:
+                    for ix, failed_log in enumerate(failed_log_list):
+                        print(f"{ix+1}/{len(failed_log_list)}")
                         error_lines = self.get_error_lines(ea, failed_log)
                         if error_lines is None:
                             continue
@@ -112,10 +115,13 @@ class MAIN:
                         categorized_errors = self.get_categorized_error(ea, error_lines)
 
                         if self.condition_1_flag:
+                            print("condition_1")
                             self.condition_1(ea, failed_log, init_prompt, error_lines, init_test)
                         elif self.condition_2_flag:
+                            print("condition_2")
                             self.condition_2(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
                         elif self.condition_3_flag:
+                            print("condition_3")
                             self.condition_3(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
                     if self.condition_1_flag:
                         self.condition_1_flag = False
@@ -180,15 +186,19 @@ class MAIN:
         
         return error_lines, test_code, attempt, categories
 
-    def is_done(self, condition_dir, test_name, round):
+    def is_done(self, condition_dir, test_name):
         path = os.path.join(condition_dir, 'check_list.txt')
         if not os.path.exists(path):
             return False
         with open(path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
-            for line in lines:
-                if f"{test_name}: {round}" in line:
+            for ix, line in enumerate(lines):
+                if f"{test_name}: 5: False" in line:
                     return True
+                else:
+                    for round in range(1, 6):
+                        if f"{test_name}: {round}: True" in line:
+                            return True
             return False
 
     def condition_1(self, ea, test_name, init_prompt, error_lines, init_test):
@@ -198,11 +208,11 @@ class MAIN:
         test_name = test_name.replace('.log', '.cpp')
         condition_dir = os.path.join(self.repair_project_dir, 'cond_1')
         os.makedirs(condition_dir, exist_ok=True)
-        
+        print(test_name)
+        if self.is_done(condition_dir, test_name):
+            return
         for i in range(5):
             round = str(i+1)
-            if self.is_done(condition_dir, test_name, round):
-                continue
             print(f"ROUND #{round}")
             if i != 0:
                 error_lines, init_test, attempt, _ = self._get_after_first(ea, i, test_name, condition_dir, error_messages)
@@ -235,7 +245,7 @@ class MAIN:
             tb = TestBuilder(cwd, self.project_id, self.project, self.llm, repair=True, round=round, round_dir=round_dir)
             passed = tb.build(test_name)
             with open(os.path.join(condition_dir, 'check_list.txt'), 'a', encoding='utf-8') as f:
-                f.write(f"{test_name}: {round}\n")
+                f.write(f"{test_name}: {round}: {str(passed)}\n")
             if passed:
                 break
 
@@ -254,10 +264,10 @@ class MAIN:
             else:
                 categories[category] = (description, guide)
         
+        if self.is_done(condition_dir, test_name):
+            return
         for i in range(5):
             round = str(i+1)
-            if self.is_done(condition_dir, test_name, round):
-                continue
             print(f"ROUND #{round}")
             if i != 0:
                 error_lines, init_test, attempt, categories = self._get_after_first(ea, i, test_name, condition_dir, error_messages)
@@ -299,6 +309,8 @@ class MAIN:
             ## 2: TRY BUILD
             tb = TestBuilder(cwd, self.project_id, self.project, self.llm, repair=True, round=round, round_dir=round_dir)
             passed = tb.build(test_name)
+            with open(os.path.join(condition_dir, 'check_list.txt'), 'a', encoding='utf-8') as f:
+                f.write(f"{test_name}: {round}: {str(passed)}\n")
             if passed:
                 break
 
@@ -316,11 +328,11 @@ class MAIN:
                 categories['-'.join([category, subtype])] = (description, guide)
             else:
                 categories[category] = (description, guide)
-        
+
+        if self.is_done(condition_dir, test_name):
+            return
         for i in range(5):
             round = str(i+1)
-            if self.is_done(condition_dir, test_name, round):
-                continue
             print(f"ROUND #{round}")
             if i != 0:
                 error_lines, init_test, attempt, categories = self._get_after_first(ea, i, test_name, condition_dir, error_messages)
@@ -366,5 +378,7 @@ class MAIN:
             ## 2: TRY BUILD
             tb = TestBuilder(cwd, self.project_id, self.project, self.llm, repair=True, round=round, round_dir=round_dir)
             passed = tb.build(test_name)
+            with open(os.path.join(condition_dir, 'check_list.txt'), 'a', encoding='utf-8') as f:
+                f.write(f"{test_name}: {round}: {str(passed)}\n")
             if passed:
                 break

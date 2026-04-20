@@ -1,0 +1,69 @@
+./01_JsonBox/test_files/test_58.cpp:589:12: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+  589 |     Value v(Object());
+      |            ^~~~~~~~~~
+./01_JsonBox/test_files/test_58.cpp:589:13: note: add a pair of parentheses to declare a variable
+  589 |     Value v(Object());
+      |             ^       
+      |             (       )
+./01_JsonBox/test_files/test_58.cpp:590:18: error: member reference base type 'Value (Object (*)())' (aka 'JsonBox::Value (map<basic_string<char>, JsonBox::Value> (*)())') is not a structure or union
+  590 |     EXPECT_TRUE(v.isObject());
+      |                 ~^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+./01_JsonBox/test_files/test_58.cpp:591:16: error: member reference base type 'Value (Object (*)())' (aka 'JsonBox::Value (map<basic_string<char>, JsonBox::Value> (*)())') is not a structure or union
+  591 |     EXPECT_EQ(v.getObject().size(), 0u);
+      |               ~^~~~~~~~~~
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+./01_JsonBox/test_files/test_58.cpp:595:12: warning: parentheses were disambiguated as a function declaration [-Wvexing-parse]
+  595 |     Value v(Array());
+      |            ^~~~~~~~~
+./01_JsonBox/test_files/test_58.cpp:595:13: note: add a pair of parentheses to declare a variable
+  595 |     Value v(Array());
+      |             ^      
+      |             (      )
+./01_JsonBox/test_files/test_58.cpp:596:18: error: member reference base type 'Value (Array (*)())' (aka 'JsonBox::Value (vector<Value> (*)())') is not a structure or union
+  596 |     EXPECT_TRUE(v.isArray());
+      |                 ~^~~~~~~~
+/usr/local/include/gtest/gtest.h:1823:50: note: expanded from macro 'EXPECT_TRUE'
+ 1823 | #define EXPECT_TRUE(condition) GTEST_EXPECT_TRUE(condition)
+      |                                                  ^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1808:23: note: expanded from macro 'GTEST_EXPECT_TRUE'
+ 1808 |   GTEST_TEST_BOOLEAN_(condition, #condition, false, true, \
+      |                       ^~~~~~~~~
+/usr/local/include/gtest/internal/gtest-internal.h:1453:38: note: expanded from macro 'GTEST_TEST_BOOLEAN_'
+ 1453 |           ::testing::AssertionResult(expression))                     \
+      |                                      ^~~~~~~~~~
+./01_JsonBox/test_files/test_58.cpp:597:16: error: member reference base type 'Value (Array (*)())' (aka 'JsonBox::Value (vector<Value> (*)())') is not a structure or union
+  597 |     EXPECT_EQ(v.getArray().size(), 0u);
+      |               ~^~~~~~~~~
+/usr/local/include/gtest/gtest.h:1885:63: note: expanded from macro 'EXPECT_EQ'
+ 1885 |   EXPECT_PRED_FORMAT2(::testing::internal::EqHelper::Compare, val1, val2)
+      |                                                               ^~~~
+/usr/local/include/gtest/gtest_pred_impl.h:144:36: note: expanded from macro 'EXPECT_PRED_FORMAT2'
+  144 |   GTEST_PRED_FORMAT2_(pred_format, v1, v2, GTEST_NONFATAL_FAILURE_)
+      |                                    ^~
+/usr/local/include/gtest/gtest_pred_impl.h:134:39: note: expanded from macro 'GTEST_PRED_FORMAT2_'
+  134 |   GTEST_ASSERT_(pred_format(#v1, #v2, v1, v2), on_failure)
+      |                                       ^~
+/usr/local/include/gtest/gtest_pred_impl.h:79:52: note: expanded from macro 'GTEST_ASSERT_'
+   79 |   if (const ::testing::AssertionResult gtest_ar = (expression)) \
+      |                                                    ^~~~~~~~~~
+2 warnings and 4 errors generated.

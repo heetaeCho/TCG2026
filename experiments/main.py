@@ -324,24 +324,24 @@ if __name__ == "__main__":
     #     main = Main(llm)
     #     main.run_build(specific=6)
 
-    llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
-    # llms = ["GPT5"]
+    # llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+    llms = ["qwen2.5_coder_32b-8k"]
     for llm in llms:
         print("LLM: ", llm)
         main = Main(llm)
-        # main.run_build(specific=6)
+        main.run_build(specific=1)
         # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
-        # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv')
-        print("error analyzation")
-        main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
-        print("structural metric analyzation")
-        main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
+        main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv', specific=1)
+        # print("error analyzation")
+        # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
+        # print("structural metric analyzation")
+        # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 
-    main = Main(None)
-    print("integration")
-    main.integrate_metric()
-    print("logistic")
-    main.analyze_logistic()
+    # main = Main(None)
+    # print("integration")
+    # main.integrate_metric()
+    # print("logistic")
+    # main.analyze_logistic()
 
         # specific is project id
         # main.run_build(specific=0, skip=4)
