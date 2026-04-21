@@ -1,4 +1,4 @@
-import os
+import os, sys
 import subprocess
 import argparse
 
@@ -226,6 +226,7 @@ class TestBuilder(Builder):
 
     def __rebuild(self, test_files):
         is_pass = False
+        result = None
         try:
             pb = ProjectBuilder(self.llm, self.project_folder_name, self.project)
             pb.modify_cmake_lists()
@@ -237,9 +238,10 @@ class TestBuilder(Builder):
                         os.path.join(self.real_project_path,"build"), "--target", test_name], capture_output=True, cwd=self.cwd, check=True)
                     print(f"[BUILD PASS] : {test_name}")
                     is_pass = True
-                except subprocess.CalledProcessError:
+                except subprocess.CalledProcessError as e:
                     print(f"[BUILD FAIL] : {test_name}")
                     is_pass = False
+                    result = e
         except:
             pass
         finally:
@@ -353,19 +355,27 @@ class TestBuilder(Builder):
         return libs
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Description")
-    
+    parser = argparse.ArgumentParser()
     parser.add_argument("--LLM")
     parser.add_argument("--project_folder_name")
     parser.add_argument("--project")
     parser.add_argument("--test_file")
-    
     args = parser.parse_args()
+
+    base = "claude-proj" if args.LLM == "claude" else "codex-proj"
+    test_name = os.path.splitext(args.test_file)[0]
+    log_dir = f"./{base}/{args.project_folder_name}/results/logs"
+    os.makedirs(log_dir, exist_ok=True)
 
     pb = ProjectBuilder(args.LLM, args.project_folder_name, args.project)
     pb.build()
-
     tb = TestBuilder(args.LLM, args.project_folder_name, args.project)
-    is_pass, error = tb.rebuild(args.test_file)
+    is_pass, result = tb.rebuild(args.test_file)
+
     if not is_pass:
-        print(error)
+        with open(f"{log_dir}/{test_name}_compile.txt", "w") as f:
+            f.write(result.stdout.decode() if result.stdout else "")
+            f.write(result.stderr.decode() if result.stderr else "")
+        sys.exit(1)
+
+    sys.exit(0)
