@@ -20,9 +20,13 @@ else
 fi
 
 if [ "$3" = "JsonBox" ]; then
-    ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
     cp -r "./$1/TCG2026/experiments/LLM/claude/01_JsonBox/test_files" "./$1/$2/"
 elif [ "$3" = "glomap" ]; then
-    ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
     cp -r "./$1/TCG2026/experiments/LLM/claude/05_glomap/test_files" "./$1/$2/"
 fi

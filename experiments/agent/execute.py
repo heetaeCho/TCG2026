@@ -52,6 +52,7 @@ if __name__ == "__main__":
     parser.add_argument("--project_folder_name")
     parser.add_argument("--project")
     parser.add_argument("--test_file")
+    parser.add_argument("--retry", type=int, default=0)
     args = parser.parse_args()
 
     base = "claude-proj" if args.LLM == "claude" else "codex-proj"
@@ -63,7 +64,7 @@ if __name__ == "__main__":
     is_pass, result = executor.execute(args.test_file)
 
     # gtest 출력을 로그 파일에 저장 (bash에서 grep -q "FAILED" 로 판단)
-    with open(f"{log_dir}/{test_name}_result.txt", "w") as f:
+    with open(f"{log_dir}/{test_name}_result_retry#{args.retry}.txt", "w") as f:
         if result is not None:
             f.write(result.stdout.decode() if result.stdout else "")
             f.write(result.stderr.decode() if result.stderr else "")

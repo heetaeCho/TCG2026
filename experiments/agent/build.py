@@ -9,9 +9,9 @@ class Builder:
         self.project = project
         claude_path = "claude-proj"
         codex_path = "codex-proj"
-        if os.path.exists(claude_path):
+        if self.llm == "claude" and os.path.exists(claude_path):
             self.base = claude_path
-        elif os.path.exists(codex_path):
+        elif self.llm == "codex" and os.path.exists(codex_path):
             self.base = codex_path
         else:
             raise
@@ -360,6 +360,7 @@ if __name__ == "__main__":
     parser.add_argument("--project_folder_name")
     parser.add_argument("--project")
     parser.add_argument("--test_file")
+    parser.add_argument("--retry", type=int, default=0)
     args = parser.parse_args()
 
     base = "claude-proj" if args.LLM == "claude" else "codex-proj"
@@ -373,7 +374,7 @@ if __name__ == "__main__":
     is_pass, result = tb.rebuild(args.test_file)
 
     if not is_pass:
-        with open(f"{log_dir}/{test_name}_compile.txt", "w") as f:
+        with open(f"{log_dir}/{test_name}_compile_retry#{args.retry}.txt", "w") as f:
             f.write(result.stdout.decode() if result.stdout else "")
             f.write(result.stderr.decode() if result.stderr else "")
         sys.exit(1)

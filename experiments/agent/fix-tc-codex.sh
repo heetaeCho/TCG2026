@@ -11,11 +11,7 @@ PROJ_DIR="$3"
 TEST_FILE="$4"
 
 # BASE 설정
-if [ "$LLM" = "claude" ]; then
-    BASE="claude-proj"
-elif [ "$LLM" = "codex" ]; then
-    BASE="codex-proj"
-fi
+BASE="codex-proj"
 
 ROOT="./$BASE/$PROJ_DIR"
 
@@ -33,15 +29,16 @@ mkdir -p "$LOG_DIR" "$FIX_DIR"
 compile_and_run() {
     local src="$1"
     local name="$2"
+    local retry="${3:-0}"  # 0이면 초기 실행
 
-    $PYTHON build.py --LLM "$LLM" --project_folder_name "$PROJ_DIR" --project "$PROJECT" --test_file "$name.cpp" > /dev/null 2>&1
+    $PYTHON build.py --LLM "$LLM" --project_folder_name "$PROJ_DIR" --project "$PROJECT" --test_file "$name.cpp" --retry "$retry" > /dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo "COMPILE_FAIL"
         return 1
     fi
 
-    $PYTHON execute.py --LLM "$LLM" --project_folder_name "$PROJ_DIR" --project "$PROJECT" --test_file "$name.cpp" > /dev/null 2>&1
-    if grep -q "FAILED" "$LOG_DIR/${name}_result.txt"; then
+    $PYTHON execute.py --LLM "$LLM" --project_folder_name "$PROJ_DIR" --project "$PROJECT" --test_file "$name.cpp" --retry "$retry" > /dev/null 2>&1
+    if grep -q "FAILED" "$LOG_DIR/${name}_result_retry#${retry}.txt"; then
         echo "TEST_FAIL"
         return 2
     fi
@@ -56,14 +53,15 @@ fix_with_codex() {
     local src="$1"
     local name="$2"
     local status="$3"
+    local retry="$4"
     local real_project_path="./$BASE/$PROJECT"
 
     echo "  [Codex] 수정 중..."
 
     local compile_log=""
     local result_log=""
-    [ -f "$LOG_DIR/${name}_compile.txt" ] && compile_log=$(cat "$LOG_DIR/${name}_compile.txt")
-    [ -f "$LOG_DIR/${name}_result.txt" ]  && result_log=$(cat "$LOG_DIR/${name}_result.txt")
+    [ -f "$LOG_DIR/${name}_compile_retry#${retry}.txt" ] && compile_log=$(cat "$LOG_DIR/${name}_compile_retry#${retry}.txt")
+    [ -f "$LOG_DIR/${name}_result_retry#${retry}.txt" ]  && result_log=$(cat "$LOG_DIR/${name}_result_retry#${retry}.txt")
 
     codex exec \
         "## 역할
@@ -129,7 +127,7 @@ run_one() {
         retry=$((retry + 1))
         echo "  [시도 $retry/$MAX_RETRY]"
 
-        fix_with_codex "$src" "$name" "$status"
+        fix_with_codex "$src" "$name" "$status" "$retry"
 
         if [ "$PROJECT" = "JsonBox" ]; then
             original_src="./$BASE/TCG2026/experiments/LLM/claude/01_JsonBox/test_files/${name}.cpp"
@@ -146,7 +144,7 @@ run_one() {
             echo "  📝 파일 변경됨"
         fi
 
-        status=$(compile_and_run "$src" "$name")
+        status=$(compile_and_run "$src" "$name" "$retry")
         if [ "$status" = "PASS" ]; then
             echo "  ✅ 수정 성공!"
             fixed=$((fixed + 1))

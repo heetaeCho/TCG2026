@@ -10,7 +10,7 @@ import json
 class MAIN:
     def __init__(self):
         # self.llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
-        self.llms = ["qwen2.5_coder_32b-8k"]
+        self.llms = ["claude"]
         self.project_list = ["JsonBox", "re2", "leveldb", "Catch2", "glomap",
                              "ninja", "tinyxml2", "yaml-cpp", "exiv2", "poppler"]
         self.condition_1_flag = True
@@ -34,6 +34,55 @@ class MAIN:
         self.FAIL_DIR = os.path.join(self.project_path, "fail")
         self.BUILD_FAIL_DIR = os.path.join(self.FAIL_DIR, "build_fail")
         self.RUN_FAIL_DIR = os.path.join(self.FAIL_DIR, "run_fail")
+
+    def run(self):
+        print("run")
+        cwd = os.getcwd()
+        for llm in self.llms:
+            for ix, project in enumerate(self.project_list):
+                print(project)
+                if ix != 0: continue
+                self.repair_path = os.path.join("./experiments", "repair", "generated_test")
+                self.repair_project_dir = os.path.join(self.repair_path, project)
+                os.makedirs(self.repair_project_dir, exist_ok=True)
+
+                project_id = ix + 1
+                self.init_path(llm, project_id, project)
+                ea = ErrorAnalyzer(cwd, project_id, project, llm)
+                failed_log_list = ea._get_build_failed_list()
+                
+                for _ in range(3):
+                    for ix, failed_log in enumerate(failed_log_list):
+                        print(f"{ix+1}/{len(failed_log_list)}")
+                        error_lines = self.get_error_lines(ea, failed_log)
+                        if error_lines is None:
+                            continue
+
+                        init_prompt = self.get_init_prompt(failed_log)
+                        init_test = self.get_init_test(failed_log)
+                        init_test = "\n".join([line for line in init_test.split('\n') if line != ''])
+
+                        error_lines = list(set(error_lines))
+                        categorized_errors = self.get_categorized_error(ea, error_lines)
+
+                        if self.condition_1_flag:
+                            print("condition_1")
+                            self.condition_1(ea, failed_log, init_prompt, error_lines, init_test)
+                        elif self.condition_2_flag:
+                            print("condition_2")
+                            self.condition_2(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
+                        elif self.condition_3_flag:
+                            print("condition_3")
+                            self.condition_3(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
+                    if self.condition_1_flag:
+                        self.condition_1_flag = False
+                        self.condition_2_flag = True
+                    elif self.condition_2_flag:
+                        self.condition_2_flag = False
+                        self.condition_3_flag = True
+                    elif self.condition_3_flag:
+                        self.condition_3_flag = False
+                        self.condition_1_flag = True
 
     def __update_init_prompt_path(self):
         base = os.path.join("./experiments", "repair", "init_prompts")
@@ -83,55 +132,6 @@ class MAIN:
                         f.write(line)
                         f.write('\n')
         return categorized_errors
-
-    def run(self):
-        print("run")
-        cwd = os.getcwd()
-        for llm in self.llms:
-            for ix, project in enumerate(self.project_list):
-                print(project)
-                if ix != 4: continue
-                self.repair_path = os.path.join("./experiments", "repair", "generated_test")
-                self.repair_project_dir = os.path.join(self.repair_path, project)
-                os.makedirs(self.repair_project_dir, exist_ok=True)
-
-                project_id = ix + 1
-                self.init_path(llm, project_id, project)
-                ea = ErrorAnalyzer(cwd, project_id, project, llm)
-                failed_log_list = ea._get_build_failed_list()
-                
-                for _ in range(3):
-                    for ix, failed_log in enumerate(failed_log_list):
-                        print(f"{ix+1}/{len(failed_log_list)}")
-                        error_lines = self.get_error_lines(ea, failed_log)
-                        if error_lines is None:
-                            continue
-
-                        init_prompt = self.get_init_prompt(failed_log)
-                        init_test = self.get_init_test(failed_log)
-                        init_test = "\n".join([line for line in init_test.split('\n') if line != ''])
-
-                        error_lines = list(set(error_lines))
-                        categorized_errors = self.get_categorized_error(ea, error_lines)
-
-                        if self.condition_1_flag:
-                            print("condition_1")
-                            self.condition_1(ea, failed_log, init_prompt, error_lines, init_test)
-                        elif self.condition_2_flag:
-                            print("condition_2")
-                            self.condition_2(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
-                        elif self.condition_3_flag:
-                            print("condition_3")
-                            self.condition_3(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
-                    if self.condition_1_flag:
-                        self.condition_1_flag = False
-                        self.condition_2_flag = True
-                    elif self.condition_2_flag:
-                        self.condition_2_flag = False
-                        self.condition_3_flag = True
-                    elif self.condition_3_flag:
-                        self.condition_3_flag = False
-                        self.condition_1_flag = True
 
     def generate_test(self, prompt):
         client = ollama.Client()
