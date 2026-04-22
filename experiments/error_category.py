@@ -164,7 +164,7 @@ COUNT_CATEGORIES = {
         "Templates/Generics": 0,
         "Type Conversion/Reference Binding": 0,
         "Type Redefinition/Redeclaration": 0,
-        "Qualifier/Specifier Missuse": 0,
+        "Qualifier/Specifier Misuse": 0,
         "Pointer/Reference Misuse": 0,
         "This/Non-Static Member/Using Misuse": 0,
     },

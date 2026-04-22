@@ -144,6 +144,46 @@ class Main:
         post_csv(csv)
 
     def analyze_error(self, csv, specific=0, skip=0):
+        def save_project_csv(csv, project_id, project, type4_count, type19_count, type4_rate, type19_rate):
+            """각 프로젝트별 결과를 별도 CSV로 저장"""
+            parts = csv.split("/")
+            dir_path = "/".join(parts[:-1])
+            csv_name = parts[-1]
+            project_id = f"{int(project_id):02d}"
+            base = f"{dir_path}/{project_id}_{project}/"
+
+            # type4_count
+            with open(base + "type4_count_" + csv_name, 'w', encoding='utf-8') as f:
+                f.write('index,Category,#Error\n')
+                for category, value in type4_count.items():
+                    f.write(f',{category},{value}\n')
+
+            # type19_count
+            with open(base + "type19_count_" + csv_name, 'w', encoding='utf-8') as f:
+                f.write('index,Category,#Error\n')
+                for category, value in type19_count.items():
+                    if category != "Semantic":
+                        f.write(f',{category},{value}\n')
+                    else:
+                        for subtype, subvalue in value.items():
+                            f.write(f',{subtype},{subvalue}\n')
+
+            # type4_rate
+            with open(base + "type4_rate_" + csv_name, 'w', encoding='utf-8') as f:
+                f.write('index,Category,%Error\n')
+                for category, rate in type4_rate.items():
+                    f.write(f',{category},{rate:.2f}%\n')
+
+            # type19_rate
+            with open(base + "type19_rate_" + csv_name, 'w', encoding='utf-8') as f:
+                f.write('index,Category,%Error\n')
+                for category, value in type19_rate.items():
+                    if category != "Semantic":
+                        f.write(f',{category},{value:.2f}%\n')
+                    else:
+                        for subtype, rate in value.items():
+                            f.write(f',{subtype},{rate:.2f}%\n')
+        
         def prepare_csv(csv):
             with open(csv, 'w', encoding='utf-8') as f:
                 text = 'index,Category,#Error,%Error\n'
@@ -216,6 +256,17 @@ class Main:
                 else:
                     for subtype in project_error_count[category]:
                         error_count[category][subtype] += project_error_count[category][subtype]
+            # ↓ 프로젝트별 저장 추가
+            proj_type4 = type_4(project_error_count)
+            proj_total = sum(proj_type4.values())
+            if proj_total > 0:  # 에러가 없는 프로젝트 방어
+                proj_type4_rate = type_4_rate(proj_total, proj_type4)
+                proj_type19_rate = type_19_rate(proj_total, project_error_count)
+                save_project_csv(
+                    csv, str(project_id), project,
+                    proj_type4, project_error_count,
+                    proj_type4_rate, proj_type19_rate
+                )
 
         type4_count = type_4(error_count)
         type19_count = copy.deepcopy(error_count)
@@ -324,16 +375,16 @@ if __name__ == "__main__":
     #     main = Main(llm)
     #     main.run_build(specific=6)
 
-    # llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
-    llms = ["qwen2.5_coder_32b-8k"]
+    llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
+    # llms = ["qwen2.5_coder_32b-8k"]
     for llm in llms:
         print("LLM: ", llm)
         main = Main(llm)
-        main.run_build(specific=1)
+        # main.run_build(specific=1)
         # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
-        main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv', specific=1)
+        # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv', specific=1)
         # print("error analyzation")
-        # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
+        main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
         # print("structural metric analyzation")
         # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
 
