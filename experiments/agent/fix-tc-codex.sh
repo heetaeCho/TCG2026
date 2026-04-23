@@ -129,12 +129,27 @@ run_one() {
 
         fix_with_codex "$src" "$name" "$status" "$retry"
 
-        if [ "$PROJECT" = "JsonBox" ]; then
+        if [ "$3" = "JsonBox" ]; then
             original_src="./$BASE/TCG2026/experiments/LLM/claude/01_JsonBox/test_files/${name}.cpp"
-        elif [ "$PROJECT" = "glomap" ]; then
+        elif [ "$3" = "re2" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/02_re2/test_files/${name}.cpp"
+        elif [ "$3" = "leveldb" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/03_leveldb/test_files/${name}.cpp"
+        elif [ "$3" = "Catch2" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/04_Catch2/test_files/${name}.cpp"
+        elif [ "$3" = "glomap" ]; then
             original_src="./$BASE/TCG2026/experiments/LLM/claude/05_glomap/test_files/${name}.cpp"
+        elif [ "$3" = "ninja" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/06_ninja/test_files/${name}.cpp"
+        elif [ "$3" = "tinyxml2" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/07_tinyxml2/test_files/${name}.cpp"
+        elif [ "$3" = "yaml-cpp" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/08_yaml-cpp/test_files/${name}.cpp"
+        elif [ "$3" = "exiv2" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/09_exiv2/test_files/${name}.cpp"
+        elif [ "$3" = "poppler" ]; then
+            original_src="./$BASE/TCG2026/experiments/LLM/claude/10_poppler/test_files/${name}.cpp"
         fi
-
         echo "$original_src" 
         echo "$src"
 

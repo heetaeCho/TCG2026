@@ -1,4 +1,9 @@
 #!/bin/bash
+PYTHON=python3
+
+LLM="$1"
+PROJ_DIR="$2"
+PROJECT="$3"
 
 if [ "$4" = "My" ]; then
     path="$HOME/MyProjects/TCG2026"
@@ -19,14 +24,51 @@ else
     exit 1
 fi
 
+$PYTHON target_copy.py --LLM "claude" --project_folder_name "$PROJ_DIR" --project "$PROJECT" > /dev/null 2>&1
 if [ "$3" = "JsonBox" ]; then
     if [ ! -e "./$1/$2/$3" ]; then
         ln -s "$path/TestProjects/$3" "./$1/$2/$3"
     fi
-    cp -r "./$1/TCG2026/experiments/LLM/claude/01_JsonBox/test_files" "./$1/$2/"
+elif [ "$3" = "re2" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
+elif [ "$3" = "leveldb" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
+
+elif [ "$3" = "Catch2" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
+
 elif [ "$3" = "glomap" ]; then
     if [ ! -e "./$1/$2/$3" ]; then
         ln -s "$path/TestProjects/$3" "./$1/$2/$3"
     fi
-    cp -r "./$1/TCG2026/experiments/LLM/claude/05_glomap/test_files" "./$1/$2/"
+
+elif [ "$3" = "ninja" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
+
+elif [ "$3" = "tinyxml2" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
+
+elif [ "$3" = "yaml-cpp" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
+
+elif [ "$3" = "exiv2" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
+elif [ "$3" = "poppler" ]; then
+    if [ ! -e "./$1/$2/$3" ]; then
+        ln -s "$path/TestProjects/$3" "./$1/$2/$3"
+    fi
 fi
