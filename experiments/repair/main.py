@@ -9,13 +9,11 @@ import json
 
 class MAIN:
     def __init__(self):
-        # self.llms = ["GPT5", "claude", "qwen2.5_coder_32b-8k"]
         self.llms = ["claude"]
         self.project_list = ["JsonBox", "re2", "leveldb", "Catch2", "glomap",
-                             "ninja", "tinyxml2", "yaml-cpp", "exiv2", "poppler"]
+                            "ninja", "tinyxml2", "yaml-cpp", "exiv2", "poppler"]
         self.condition_1_flag = True
         self.condition_2_flag = False
-        self.condition_3_flag = False
         self.complete_flag = False
 
     def init_path(self, llm, project_id, project):
@@ -41,7 +39,6 @@ class MAIN:
         for llm in self.llms:
             for ix, project in enumerate(self.project_list):
                 print(project)
-                if ix != 0: continue
                 self.repair_path = os.path.join("./experiments", "repair", "generated_test")
                 self.repair_project_dir = os.path.join(self.repair_path, project)
                 os.makedirs(self.repair_project_dir, exist_ok=True)
@@ -49,9 +46,18 @@ class MAIN:
                 project_id = ix + 1
                 self.init_path(llm, project_id, project)
                 ea = ErrorAnalyzer(cwd, project_id, project, llm)
-                failed_log_list = ea._get_build_failed_list()
-                
-                for _ in range(3):
+
+                # copy된 파일 목록에서 failed_log_list 구성
+                test_files_dir = os.path.join(self.repair_project_dir, "test_files")
+                if not os.path.exists(test_files_dir):
+                    print(f"  [{project}] test_files 없음, 스킵")
+                    continue
+                failed_log_list = [
+                    f.replace(".cpp", ".log")
+                    for f in sorted(os.listdir(test_files_dir)) if f.endswith(".cpp")
+                ]
+
+                for _ in range(2):
                     for ix, failed_log in enumerate(failed_log_list):
                         print(f"{ix+1}/{len(failed_log_list)}")
                         error_lines = self.get_error_lines(ea, failed_log)
@@ -71,17 +77,12 @@ class MAIN:
                         elif self.condition_2_flag:
                             print("condition_2")
                             self.condition_2(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
-                        elif self.condition_3_flag:
-                            print("condition_3")
-                            self.condition_3(ea, failed_log, init_prompt, error_lines, init_test, categorized_errors)
+
                     if self.condition_1_flag:
                         self.condition_1_flag = False
                         self.condition_2_flag = True
                     elif self.condition_2_flag:
                         self.condition_2_flag = False
-                        self.condition_3_flag = True
-                    elif self.condition_3_flag:
-                        self.condition_3_flag = False
                         self.condition_1_flag = True
 
     def __update_init_prompt_path(self):
@@ -108,9 +109,8 @@ class MAIN:
     def get_init_test(self, failed_log):
         ix = failed_log.split('_')[-1].replace(".log", '')
         test_name = f"test_{ix}.cpp"
-        test_path = os.path.join(self.BUILD_FAIL_DIR, test_name)
-        test = open(test_path, 'r', encoding='utf-8').read()
-        return test
+        test_path = os.path.join("./experiments", "repair", "generated_test", self.project, "test_files", test_name)
+        return open(test_path, 'r', encoding='utf-8').read()
 
     def get_error_lines(self, ea, failed_log, log_path=None):
         return ea.find_error_lines([failed_log], log_path).get(failed_log)
@@ -293,75 +293,6 @@ class MAIN:
                 errors='\n'.join(error_lines),
                 errors_categories=errors_categories,
                 category_descriptions='\n'.join(category_description),
-                attempt=attempt,
-                test_code=init_test
-            )
-            prompt += f"\nThis is for repair the test file and this round is {i+1}"
-            prompt += "\nOnly the test cases should be produced. If you output anything other than test code, the answer is incorrect."
-            with open(os.path.join(prompts_dir, test_name.replace(".cpp", ".log").replace("test", "prompt")), 'w', encoding='utf-8') as f:
-                f.write(prompt)
-            ## 1: MAKE TEST
-            test = self.get_code(self.generate_test(prompt))
-            test_path = os.path.join(round_dir, 'test_files', test_name)
-            with open(test_path, 'w', encoding='utf-8') as f:
-                f.write(test)
-
-            ## 2: TRY BUILD
-            tb = TestBuilder(cwd, self.project_id, self.project, self.llm, repair=True, round=round, round_dir=round_dir)
-            passed = tb.build(test_name)
-            with open(os.path.join(condition_dir, 'check_list.txt'), 'a', encoding='utf-8') as f:
-                f.write(f"{test_name}: {round}: {str(passed)}\n")
-            if passed:
-                break
-
-    def condition_3(self, ea, test_name, init_prompt, error_lines, init_test, categorized_errors):
-        cwd = os.getcwd()
-        error_messages = {}
-        attempt = ''
-        test_name = test_name.replace('.log', '.cpp')
-        condition_dir = os.path.join(self.repair_project_dir, 'cond_3')
-        os.makedirs(condition_dir, exist_ok=True)
-        categories = {}
-        for error in categorized_errors:
-            category, subtype, description, guide = error
-            if subtype is not None:
-                categories['-'.join([category, subtype])] = (description, guide)
-            else:
-                categories[category] = (description, guide)
-
-        if self.is_done(condition_dir, test_name):
-            return
-        for i in range(5):
-            round = str(i+1)
-            print(f"ROUND #{round}")
-            if i != 0:
-                error_lines, init_test, attempt, categories = self._get_after_first(ea, i, test_name, condition_dir, error_messages)
-
-            round_dir = os.path.join(condition_dir, round)
-            test_path_dir = os.path.join(round_dir, "test_files")
-            prompts_dir = os.path.join(round_dir, "prompts")
-            os.makedirs(test_path_dir, exist_ok=True)
-            os.makedirs(prompts_dir, exist_ok=True)
-
-            category_description = []
-            solution_guide = []
-            if categories:
-                errors_categories = '\n'.join(list(categories.keys()))
-                for key in categories.keys():
-                    description, guide = categories.get(key)
-                    if description not in category_description:
-                        category_description.append(description)
-                    if guide not in solution_guide:
-                        solution_guide.append(guide)
-
-            error_messages[i] = error_lines
-            prompt = copy.deepcopy(repair_prompt.CONDITION_3)
-            prompt = prompt.format(
-                init_prompt=init_prompt,
-                errors='\n'.join(error_lines),
-                errors_categories=errors_categories,
-                category_descriptions='\n'.join(category_description),
-                solutions='\n'.join(solution_guide),
                 attempt=attempt,
                 test_code=init_test
             )

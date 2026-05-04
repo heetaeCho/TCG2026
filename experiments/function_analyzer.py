@@ -383,4 +383,109 @@ class LogisticAnalyzer:
         # result.columns = [class_map[int(col.split('=')[1])] if '=' in str(col) else col for col in result.columns]
         return result
 
+class TestStructureMetric:
+    def __init__(self, cwd, project_id, project, llm):
+        self.cwd = cwd
+        self.llm = llm
+        self.project = project
+        self.project_id = f"{project_id:02d}"
+        self.mapper = Mapper(cwd, project_id, project, llm)
+
+    def calculate(self):
+        # function = (id, name, q_name, access, ?, return_type, parameters, body, full_function, cxx, names, file)
+        # parameters = string => need to split by ',' 
+        # log_function_map = self.mapper.get_log_function_map()
+        log_error_map = self.mapper.get_log_error_map()
+        failed_log_list = [k for k, _ in log_error_map.items()]
+        pass_log_list = self.mapper.get_pass_log_list()
+        # print(failed_log_list)
+        # print(pass_log_list)
+        # print(len(failed_log_list) + len(pass_log_list))
+        failed_df = self.calc_features(failed_log_list, "failed")
+        pass_df = self.calc_features(pass_log_list, "pass")
+
+    def calc_features(self, log_list, _type):
+        self.base_path = os.path.join("experiments", f"LLM/{self.llm}", f"{self.project_id}_{self.project}")
         
+        rows = []
+        for log in log_list:
+            test_file = log.replace(".log", ".cpp")
+            test_file_path = os.path.join(self.base_path, "test_files", test_file)
+            with open(test_file_path, 'r', encoding='utf-8') as test:
+                code = test.read()
+                loc = self.count_loc(code)
+                tc = self.count_test_cases(code)
+                assertions = self.count_assertions(code)
+                calls = self.count_function_calls(code)
+                deps = self.count_external_dependencies(code)
+                mock = self.count_mock_usage(code)
+                unique_calls = self.count_unique_functions(code)
+
+                # normalized features
+                loc_per_tc = loc / tc if tc else 0
+                assertions_per_tc = assertions / tc if tc else 0
+                calls_per_tc = calls / tc if tc else 0
+
+                rows.append({
+                    "file": test_file,
+                    "LOC": loc,
+                    "num_test_cases": tc,
+                    "assertion_count": assertions,
+                    "function_call_count": calls,
+                    "unique_function_count": unique_calls,
+                    "external_dependency": deps,
+                    "mock_usage": mock,
+                    "LOC_per_test": loc_per_tc,
+                    "assertions_per_test": assertions_per_tc,
+                    "calls_per_test": calls_per_tc,
+                })
+        df = pd.DataFrame(rows)
+        df.to_csv(os.path.join(self.base_path,f'{self.project}_{_type}_test_features.csv'), index=False)
+        return df
+    
+    def count_loc(self, code: str) -> int:
+        lines = [l for l in code.splitlines() if l.strip()]
+        return len(lines)
+
+
+    def count_test_cases(self, code: str) -> int:
+        return len(re.findall(r'\bTEST(_F)?\s*\(', code))
+
+
+    def count_assertions(self, code: str) -> int:
+        return len(re.findall(r'\b(EXPECT|ASSERT)_[A-Z_]+\s*\(', code))
+
+
+    def count_function_calls(self, code: str) -> int:
+        # 단순 함수 호출 패턴 (control statement 제외)
+        calls = re.findall(r'\b([a-zA-Z_]\w*)\s*\(', code)
+
+        exclude = {
+            'if', 'for', 'while', 'switch', 'return', 'sizeof',
+            'EXPECT_EQ', 'EXPECT_CALL', 'ASSERT_EQ', 'TEST', 'TEST_F'
+        }
+
+        return sum(1 for c in calls if c not in exclude)
+
+
+    def count_external_dependencies(self, code: str) -> int:
+        # include + 객체 생성 기반 단순 추정
+        includes = re.findall(r'#include\s+[<"](.*?)[>"]', code)
+
+        # gtest 제외
+        includes = [inc for inc in includes if 'gtest' not in inc]
+
+        # 객체 생성 (Type var;)
+        obj_decl = re.findall(r'\b([A-Z]\w*)\s+\w+\s*(;|\()', code)
+
+        return len(set(includes)) + len(obj_decl)
+
+
+    def count_mock_usage(self, code: str) -> int:
+        return len(re.findall(r'\b(MOCK_METHOD|EXPECT_CALL)\b', code))
+
+
+    def count_unique_functions(self, code: str) -> int:
+        calls = re.findall(r'\b([a-zA-Z_]\w*)\s*\(', code)
+        return len(set(calls))
+

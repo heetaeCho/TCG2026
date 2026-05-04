@@ -19,7 +19,7 @@ from statistic import Statistic
 from coverage import CoverageChecker
 from error_analyzer import ErrorAnalyzer
 import error_category
-from function_analyzer import StructureMetric, Integrator, LogisticAnalyzer
+from function_analyzer import StructureMetric, Integrator, LogisticAnalyzer, TestStructureMetric
 import copy 
 import pandas as pd
 
@@ -366,6 +366,20 @@ class Main:
         mn_csv = f'./experiments/LLM/multiclass_logistic.csv'
         multi.to_csv(mn_csv, float_format="%.6e")
 
+    def get_test_statistics(self, csv, specific=0, skip=0):
+        cwd = os.getcwd()
+        for ix, project in enumerate(self.project_list):
+            project_id = ix + 1
+            if specific != 0:
+                if project_id != specific:
+                    continue
+            if skip != 0:
+                if project_id <= skip:
+                    continue
+            tsm = TestStructureMetric(cwd, project_id, project, self.llm)
+            tsm.calculate()
+            
+
 if __name__ == "__main__":
     print("Experiments Main")
     # llms = ["qwen2.5_coder_32b-8k"]
@@ -384,9 +398,10 @@ if __name__ == "__main__":
         # main.get_statistics(f'./experiments/LLM/{llm}/statistic.csv')
         # main.coverage_check(f'./experiments/LLM/{llm}/coverage.csv', specific=1)
         # print("error analyzation")
-        main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
+        # main.analyze_error(f'./experiments/LLM/{llm}/error.csv')
         # print("structural metric analyzation")
         # main.analyze_structural_metric(f'./experiments/LLM/{llm}/structural_metric.csv')
+        main.get_test_statistics(f'./experiments/LLM/{llm}/test_statistic.csv')
 
     # main = Main(None)
     # print("integration")
